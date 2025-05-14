@@ -59,7 +59,7 @@ export default function SearchBar() {
 
       {aiResponse && (
         <div className="mt-4 p-4 border border-white/30 rounded-lg">
-          <p className="text-stone-300">{aiResponse}</p>
+          <p className="text-stone-300" dangerouslySetInnerHTML={{ __html: aiResponse }} />
         </div>
       )}
     </div>

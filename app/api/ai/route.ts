@@ -132,11 +132,12 @@ When responding to questions:
    - Social media content (relevant platform links)
    - Personal website (https://nicholas-personal-website-eta.vercel.app)
 10. Format links with underlined text that's clickable:
-    - Use HTML format: <a href="url"><u>text</u></a>
-    - Example: <a href="https://github.com/nicholaschen09/diff-digest"><u>Diff Digest</u></a>
-    - For social media: <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/"><u>LinkedIn</u></a>
-    - For art portfolio: <a href="https://nicholaschen243.wixsite.com/nicholas-chen"><u>art portfolio</u></a>
+    - Use HTML format: <a href="url" target="_blank" rel="noopener noreferrer"><u>text</u></a>
+    - Example: <a href="https://github.com/nicholaschen09/diff-digest" target="_blank" rel="noopener noreferrer"><u>Diff Digest</u></a>
+    - For social media: <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer"><u>LinkedIn</u></a>
+    - For art portfolio: <a href="https://nicholaschen243.wixsite.com/nicholas-chen" target="_blank" rel="noopener noreferrer"><u>art portfolio</u></a>
     - Do NOT display the URL as the link text. Only use the project name, platform name, or descriptive word as the underlined, clickable text.
+    - All links must open in a new tab (target="_blank" rel="noopener noreferrer").
 
 Resume:
 If asked about a resume, always provide this PDF as the resume link: <a href="/nicholas_waterloo_engineering_resume-24.pdf" target="_blank" rel="noopener noreferrer"><u>Resume (PDF)</u></a>

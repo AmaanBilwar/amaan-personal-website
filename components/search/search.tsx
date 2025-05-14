@@ -31,19 +31,11 @@ export default function SearchBar() {
   }, [query]);
 
   function getLink(r: any) {
-    return r.category === 'projects'
-      ? `/projects/${r.id}`
-      : r.category === 'blogs'
-        ? `/blogs/${r.id}`
-        : '/';
+    return '/';
   }
 
   function getCategoryIcon(cat: string) {
-    return cat === 'projects' ? (
-      <FolderKanban className="h-4 w-4" />
-    ) : cat === 'blogs' ? (
-      <FileText className="h-4 w-4" />
-    ) : null;
+    return null;
   }
 
   return (
@@ -54,7 +46,7 @@ export default function SearchBar() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="search for my other projects/blogs"
+          placeholder="what do you want to know about me?"
           className="
             w-full pl-10 py-6 rounded-lg border border-white/30
             bg-transparent text-white placeholder-stone-400
@@ -94,7 +86,7 @@ export default function SearchBar() {
       {/* Hint text when the search box is empty */}
       {!query && (
         <p className="text-stone-400 text-xs mt-2 opacity-70 italic">
-          Hint: type "projects" or "blogs" in the search bar to see them all
+
         </p>
       )}
       {loading && query && (

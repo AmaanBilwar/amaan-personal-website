@@ -229,6 +229,32 @@ export default function About() {
                   Software systems
                 </p>
               </div>
+
+              <div className="space-y-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                  <h4 className="text-normal sm:text-xl font-semibold text-white">
+                    Art Portfolio
+                  </h4>
+                </div>
+                <p className="text-stone-300 font-medium">Digital Artist</p>
+                <p className="text-stone-400 text-sm sm:text-base">
+                  Check out my art portfolio website where I share my digital art creations and design process.
+                </p>
+                <Link
+                  href="https://nicholaschen243.wixsite.com/nicholas-chen"
+                  className="inline-flex items-center text-white hover:text-stone-300 transition-colors"
+                  target="_blank"
+                >
+                  <span className="hover:text-stone-300 transition-colors">
+                    View Art Portfolio
+                  </span>
+                  <img
+                    src="/link1.png"
+                    alt="Link"
+                    className="ml-2 w-5 h-5 hover:opacity-75 transition-opacity"
+                  />
+                </Link>
+              </div>
             </div>
           </section>
 
@@ -259,7 +285,6 @@ export default function About() {
               </div>
             </div>
           </section>
-          <Footer />
         </div>
       </div>
     </main>

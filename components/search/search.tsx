@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Search as SearchIcon } from 'lucide-react';
 
 export default function SearchBar() {
@@ -8,42 +8,38 @@ export default function SearchBar() {
   const [aiResponse, setAiResponse] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Debounced search
-  useEffect(() => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     const trimmed = query.trim();
     if (!trimmed) {
       setAiResponse(null);
       return;
     }
 
-    const timer = setTimeout(async () => {
-      setIsLoading(true);
-      try {
-        const aiResult = await fetch('/api/ai', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ query: trimmed }),
-        });
+    setIsLoading(true);
+    try {
+      const aiResult = await fetch('/api/ai', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: trimmed }),
+      });
 
-        if (aiResult.ok) {
-          const aiData = await aiResult.json();
-          setAiResponse(aiData.response);
-        }
-      } catch (error) {
-        console.error('Search error:', error);
-      } finally {
-        setIsLoading(false);
+      if (aiResult.ok) {
+        const aiData = await aiResult.json();
+        setAiResponse(aiData.response);
       }
-    }, 500); // Wait 500ms after user stops typing
-
-    return () => clearTimeout(timer);
-  }, [query]);
+    } catch (error) {
+      console.error('Search error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="relative group">
+      <form onSubmit={handleSubmit} className="relative group">
         <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400 group-focus-within:text-white transition-colors" />
         <input
           type="text"
@@ -52,7 +48,7 @@ export default function SearchBar() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-      </div>
+      </form>
 
       {isLoading && (
         <div className="mt-4 flex items-center gap-2 text-stone-400 pl-2">

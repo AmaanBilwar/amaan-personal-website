@@ -133,9 +133,6 @@ export default function About() {
                   </span>
                 </div>
                 <p className="text-stone-300 font-medium">Ownr - RBCx</p>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Full-stack web development and infrastructure
-                </p>
               </div>
 
               <div className="space-y-2">
@@ -150,9 +147,6 @@ export default function About() {
                 <p className="text-stone-300 font-medium">
                   Royal Bank of Canada
                 </p>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Machine learning
-                </p>
               </div>
 
               <div className="space-y-2">
@@ -165,7 +159,6 @@ export default function About() {
                   </span>
                 </div>
                 <p className="text-stone-300 font-medium">Meta Hash Capital</p>
-                <p className="text-stone-400 text-sm sm:text-base">Figma</p>
               </div>
             </div>
           </section>
@@ -187,10 +180,6 @@ export default function About() {
               <p className="text-stone-300 font-medium">
                 University of Waterloo
               </p>
-              <p className="text-stone-400 text-sm sm:text-base">
-                Interdisciplinary engineering with specialization in software
-                systems and human-centered design
-              </p>
             </div>
           </section>
 
@@ -210,9 +199,6 @@ export default function About() {
                   </span>
                 </div>
                 <p className="text-stone-300 font-medium">Software Engineer</p>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Software systems
-                </p>
               </div>
 
               <div className="space-y-2">
@@ -221,10 +207,6 @@ export default function About() {
                     Art Portfolio
                   </h4>
                 </div>
-                <p className="text-stone-300 font-medium">Digital Artist</p>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Check out my art portfolio website where I share my digital art creations and design process.
-                </p>
                 <Link
                   href="https://nicholaschen243.wixsite.com/nicholas-chen"
                   className="inline-flex items-center text-white hover:text-stone-300 transition-colors"
@@ -258,11 +240,6 @@ export default function About() {
                 </div>
                 <p className="text-stone-300 font-medium">
                   University of Toronto
-                </p>
-                <p className="text-stone-400">
-                  Placed second with a team of four people to develop an
-                  innovative solution (Fernando) for helping people with bad
-                  posture.
                 </p>
 
                 {/* Project Details */}

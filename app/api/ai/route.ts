@@ -23,6 +23,7 @@ Contact Information:
 
 Education:
 - University of Waterloo (Expected Graduation: April 2029)
+-   - <a href="https://uwaterloo.ca" target="_blank" rel="noopener noreferrer"><u>University of Waterloo Website</u></a>
 - Bachelor of Applied Science in Systems Design Engineering
 - President's Scholarship of Distinction ($5000)
 - Relevant Courses: Introduction to Design, Digital Computation, Elementary Engineering Math, Data Structures and Algorithms

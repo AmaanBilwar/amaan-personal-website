@@ -1,12 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Search as SearchIcon } from 'lucide-react';
+import SamplePrompts from './sample-prompts';
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [aiResponse, setAiResponse] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,9 +39,19 @@ export default function SearchBar() {
     }
   };
 
+  const handlePromptClick = (prompt: string) => {
+    setQuery(prompt);
+    // Automatically submit the form when a prompt is clicked
+    if (formRef.current) {
+      formRef.current.requestSubmit();
+    }
+  };
+
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <form onSubmit={handleSubmit} className="relative group">
+      <SamplePrompts onPromptClick={handlePromptClick} />
+
+      <form ref={formRef} onSubmit={handleSubmit} className="relative group">
         <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400 group-focus-within:text-white transition-colors" />
         <input
           type="text"

@@ -1,9 +1,13 @@
 'use client';
-import Footer from '@/components/footer/footer';
 import Link from 'next/link';
-import { TypeAnimation } from 'react-type-animation';
+import { useState } from 'react';
+import { Typewriter } from 'react-simple-typewriter';
 
 export default function About() {
+  const [done, setDone] = useState(false);
+  const summaryText =
+    "I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining TextQL as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at Ownr, RBC, and Meta Hash Capital.";
+  const summaryHtml = `I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining <a href=\"https://textql.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">TextQL</a> as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at <a href=\"https://www.ownr.co/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">Ownr</a>, <a href=\"https://www.rbc.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">RBC</a>, and <a href=\"https://www.metahashtechnology.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">Meta Hash Capital</a>.`;
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 md:p-24 pt-20 md:pt-16">
       <div className="max-w-6xl w-full">
@@ -14,16 +18,24 @@ export default function About() {
               Hey I'm Nicholas!
             </h1>
             <div className="text-base sm:text-lg text-stone-300 min-h-[150px] md:min-h-[120px]">
-              <TypeAnimation
-                sequence={[
-                  "Hello! I'm a Systems Design Engineering student at the University of Waterloo. In the past, I've worked at companies like Ownr, RBC and Meta Hash Capital where I made some pretty cool things.",
-                  1000,
-                ]}
-                wrapper="p"
-                speed={50}
-                className="text-base sm:text-lg text-stone-400"
-                repeat={0}
-              />
+              {!done ? (
+                <span className="text-base sm:text-lg text-stone-400">
+                  <Typewriter
+                    words={[summaryText]}
+                    loop={1}
+                    cursor
+                    typeSpeed={25}
+                    deleteSpeed={50}
+                    delaySpeed={500}
+                    onLoopDone={() => setDone(true)}
+                  />
+                </span>
+              ) : (
+                <div
+                  className="text-base sm:text-lg text-stone-400"
+                  dangerouslySetInnerHTML={{ __html: summaryHtml }}
+                />
+              )}
             </div>
 
             {/* Social Media Links */}

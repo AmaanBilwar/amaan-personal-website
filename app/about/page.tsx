@@ -109,7 +109,7 @@ export default function About() {
           </div>
         </div>
         <section className="">
-          <h2 className="text-4xl font-bold text-white mt-8 mb-4">
+          <h2 className="text-4xl font-bold text-white mt-12 mb-4">
             Contact Me
           </h2>
           <p className="text-stone-400 text-base">
@@ -146,6 +146,18 @@ export default function About() {
               Work Experience
             </h3>
             <div className="space-y-5 md:space-y-6">
+              <div className="space-y-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                  <h4 className="text-lg sm:text-xl font-semibold text-white">
+                    Software Engineer Intern
+                  </h4>
+                  <span className="text-stone-400 text-sm sm:text-base">
+                    Sept 2025 - Present
+                  </span>
+                </div>
+                <p className="text-stone-300 font-medium">TextQL</p>
+              </div>
+
               <div className="space-y-2">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
                   <h4 className="text-lg sm:text-xl font-semibold text-white">
@@ -238,11 +250,6 @@ export default function About() {
                   <span className="hover:text-stone-300 transition-colors">
                     View Art Portfolio
                   </span>
-                  <img
-                    src="/link1.png"
-                    alt="Link"
-                    className="ml-2 w-5 h-5 hover:opacity-75 transition-opacity"
-                  />
                 </Link>
               </div>
             </div>

@@ -24,6 +24,8 @@ Education:
 - Bachelor of Applied Science in Systems Design Engineering
 - President's Scholarship of Distinction ($5000)
 - Relevant Courses: Introduction to Design, Digital Computation, Elementary Engineering Math, Data Structures and Algorithms
+- Earl Haig Secondary School (Toronto, Canada)
+  - Claude Watson Visual Arts Program
 
 Technical Skills:
 Languages: Python, Java, C++, HTML/CSS, JavaScript, TypeScript, Kotlin, SQL, MATLAB, Bash, Scala, Swift, JSON, Golang, Haskell

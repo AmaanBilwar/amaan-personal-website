@@ -2,13 +2,25 @@
 import SearchBar from '@/components/search/search';
 import Link from 'next/link';
 import { Typewriter } from 'react-simple-typewriter';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [done, setDone] = useState(false);
   const summaryText =
     "I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining TextQL as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at Ownr, RBC, and Meta Hash Capital.";
   const summaryHtml = `I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining <a href="https://textql.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">TextQL</a> as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">Ownr</a>, <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">RBC</a>, and <a href="https://www.metahashtechnology.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">Meta Hash Capital</a>.`;
+
+  // Calculate approximate typing duration
+  const typingDuration = (summaryText.length * 25) + 500; // typeSpeed * length + delaySpeed
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDone(true);
+    }, typingDuration);
+
+    return () => clearTimeout(timer);
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden">
       {/* Hero Section */}
@@ -27,7 +39,6 @@ export default function Home() {
                 typeSpeed={25}
                 deleteSpeed={50}
                 delaySpeed={500}
-                onLoopDone={() => setDone(true)}
               />
             </span>
           ) : (

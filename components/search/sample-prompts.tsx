@@ -19,7 +19,7 @@ export default function SamplePrompts({ onPromptClick }: SamplePromptsProps) {
                     <button
                         key={index}
                         onClick={() => onPromptClick(prompt)}
-                        className="px-3 py-1.5 text-sm bg-white/5 hover:bg-white/10 text-stone-300 rounded-full transition-colors"
+                        className="px-3 py-1.5 text-sm bg-white/5 hover:bg-white/10 text-stone-300 rounded-md transition-colors"
                     >
                         {prompt}
                     </button>

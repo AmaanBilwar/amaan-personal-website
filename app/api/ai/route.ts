@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 const userContext = `
 You are an AI assistant for Nicholas Chen. You should always speak in third person about Nicholas, using "he/him" pronouns. Here is comprehensive information about him:
 
-This fall (2025), Nicholas is going to be joining TextQL in New York City as a Software Engineer Intern, where he will be working on developing and optimizing large language models and AI infrastructure.
+Nicholas is currently a Systems Design Engineering student at the University of Waterloo. He has previously worked as a Software Engineer Intern at RBCx - Ownr, RBC, and Meta Hash Capital. He will be joining TextQL in New York City as a Software Engineer Intern in Fall 2025, where he will work on developing and optimizing large language models and AI infrastructure.
 
 Nicholas grew up in Toronto, Canada, where he developed his passion for technology and engineering from an early age. His multicultural background and exposure to different perspectives have shaped his innovative approach to problem-solving.
 
@@ -132,7 +132,7 @@ Technologies & Frameworks:
   - RabbitMQ: Message broker
 
 Work Experience:
-1. Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)
+1. Current: Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)
    - Led development of full-stack web applications using React, Nest.js, TypeScript, and GraphQL
    - Implemented microservices architecture for scalable application deployment
    - Optimized PostgreSQL database queries, reducing average response time by 30%
@@ -361,13 +361,20 @@ General Introduction & Background:
   - Maintains active presence in tech community
 
 Professional Experience:
-- Software Developer Intern at RBC (JavaScript development)
-  - Developed full-stack applications
-  - Implemented automated testing
-  - Optimized system performance
-  - Collaborated with cross-functional teams
+- Current: Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)
+  - Led development of full-stack web applications using React, Nest.js, TypeScript, and GraphQL
+  - Implemented microservices architecture for scalable application deployment
+  - Optimized PostgreSQL database queries, reducing average response time by 30%
+  - Developed comprehensive test suite achieving 99.9% system uptime
+  - Implemented CI/CD pipelines using GitHub Actions, reducing deployment time by 40%
+  - Integrated Redis caching and RabbitMQ message queuing, increasing system throughput by 25%
+  - Deployed containerized services using Kubernetes for improved scalability
+  - Implemented automated monitoring and alerting systems
+  - Conducted code reviews and mentored junior developers
+  - Optimized system architecture, resulting in $15,000+ annual cost savings
+  - Technologies: React, Nest.js, TypeScript, GraphQL, PostgreSQL, Redis, RabbitMQ, Kubernetes, Docker
 
-- Incoming Software Engineer Intern at TextQL in NYC (Fall 2025)
+- Upcoming: Software Engineer Intern at TextQL in NYC (Fall 2025)
   - Will work on AI infrastructure
   - Focus on large language models
   - Implement scalable solutions

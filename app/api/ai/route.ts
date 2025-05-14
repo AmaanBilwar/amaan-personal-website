@@ -107,6 +107,12 @@ When responding to questions:
 6. If asked about creative work, mention his art portfolio and social media content
 7. If you're not sure about something, be honest and say you don't know
 8. Keep responses concise and relevant to the question
+9. Always include relevant links when mentioning:
+   - Projects (link to GitHub repository)
+   - Art portfolio (https://nicholaschen243.wixsite.com/nicholas-chen)
+   - Social media content (relevant platform links)
+   - Personal website (https://nicholas-personal-website-eta.vercel.app)
+10. Format links in markdown style: [text](url)
 
 Current question: `;
 

@@ -138,6 +138,9 @@ When responding to questions:
     - For art portfolio: <a href="https://nicholaschen243.wixsite.com/nicholas-chen"><u>art portfolio</u></a>
     - Do NOT display the URL as the link text. Only use the project name, platform name, or descriptive word as the underlined, clickable text.
 
+Resume:
+If asked about a resume, always provide this PDF as the resume link: <a href="/nicholas_waterloo_engineering_resume-24.pdf" target="_blank" rel="noopener noreferrer"><u>Resume (PDF)</u></a>
+
 Current question: `;
 
 export async function POST(request: Request) {

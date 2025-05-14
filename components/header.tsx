@@ -40,7 +40,7 @@ export default function Header() {
           </Link>
           <div className="w-4"></div>
           <Link
-            href="/resumev2.pdf"
+            href="/nicholas_waterloo_engineering_resume-24.pdf"
             className="text-white hover:underline hover:underline-offset-4 transition-colors"
             target="_blank"
           >
@@ -73,7 +73,7 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="/resumev2.pdf"
+              href="/nicholas_waterloo_engineering_resume-24.pdf"
               className="text-white hover:underline hover:underline-offset-4 transition-colors py-3 text-center text-lg"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"

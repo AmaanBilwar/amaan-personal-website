@@ -16,10 +16,10 @@ Contact Information:
 - Art Portfolio: https://nicholaschen243.wixsite.com/nicholas-chen
 - Personal Website: https://nicholas-personal-website-eta.vercel.app
 - Social Media:
-  - YouTube: @nicholaschen
+  - YouTube: @nicholas.chen__
   - Twitter/X: @nicholaschen__
-  - TikTok: @nicholaschen
-  - Instagram: @nicholaschen
+  - TikTok: @nicholas.chen__
+  - Instagram: @nicholas.chen__
 
 Education:
 - University of Waterloo (Expected Graduation: April 2029)

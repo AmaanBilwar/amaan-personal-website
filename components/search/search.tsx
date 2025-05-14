@@ -42,7 +42,7 @@ export default function SearchBar() {
   }, [query]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto">
       <div className="relative group">
         <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400 group-focus-within:text-white transition-colors" />
         <input

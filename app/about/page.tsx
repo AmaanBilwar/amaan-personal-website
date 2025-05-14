@@ -82,21 +82,6 @@ export default function About() {
                 </div>
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link
-                href="https://linktr.ee/nicholas.chen__"
-                className="text-white hover:text-stone-300 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-8 h-8 flex items-center justify-center mt-0.5">
-                  <img
-                    src="/linktree.png"
-                    alt="Linktree"
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-                <span className="sr-only">Linktree</span>
-              </Link>
             </div>
           </div>
         </div>

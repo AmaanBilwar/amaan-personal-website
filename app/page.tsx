@@ -27,7 +27,9 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex space-x-8 pt-1 justify-center sm:justify-start">
+        <SearchBar />
+
+        <div className="flex space-x-8 pt-1 justify-center sm:justify-start mt-24">
           <Link
             href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
             className="text-white hover:text-stone-300 transition-colors"
@@ -82,25 +84,8 @@ export default function Home() {
             </div>
             <span className="sr-only">Twitter</span>
           </Link>
-          <Link
-            href="https://linktr.ee/nicholas.chen__"
-            className="text-white hover:text-stone-300 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="w-8 h-8 flex items-center justify-center mt-0.5">
-              <img
-                src="/linktree.png"
-                alt="Linktree"
-                className="max-w-full max-h-full object-contain"
-              />
-            </div>
-            <span className="sr-only">Linktree</span>
-          </Link>
         </div>
       </div>
-
-      <SearchBar />
     </main>
   );
 }

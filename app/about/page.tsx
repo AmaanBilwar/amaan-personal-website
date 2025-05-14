@@ -108,6 +108,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        <hr className="border-t border-stone-700 my-10" />
         <section className="">
           <h2 className="text-4xl font-bold text-white mt-12 mb-4">
             Contact Me
@@ -133,7 +134,7 @@ export default function About() {
             .
           </p>
         </section>
-
+        <hr className="border-t border-stone-700 my-10 mt-12" />
         {/* Experience, Education, Community, Awards Section */}
         <div className="space-y-8 mt-10 md:mt-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white border-b border-stone-700 pb-2">
@@ -197,7 +198,7 @@ export default function About() {
               </div>
             </div>
           </section>
-
+          <hr className="border-t border-stone-700 my-10" />
           {/* Education */}
           <section>
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
@@ -217,7 +218,7 @@ export default function About() {
               </p>
             </div>
           </section>
-
+          <hr className="border-t border-stone-700 my-10" />
           {/* Community Involvement */}
           <section>
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
@@ -254,7 +255,7 @@ export default function About() {
               </div>
             </div>
           </section>
-
+          <hr className="border-t border-stone-700 my-10" />
           {/* Awards */}
           <section>
             <h3 className="text-2xl font-bold text-white mb-4">

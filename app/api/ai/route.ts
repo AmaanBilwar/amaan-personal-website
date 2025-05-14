@@ -1,8 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
 import { NextResponse } from 'next/server';
-
-// Initialize the Gemini API
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 // Context about the user
 const userContext = `
@@ -36,15 +32,38 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Query is required' }, { status: 400 });
         }
 
-        // Get the Gemini Pro model
-        const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+        // Generate content with context using Groq
+        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                model: 'llama-3.3-70b-versatile',
+                messages: [
+                    {
+                        role: 'system',
+                        content: userContext
+                    },
+                    {
+                        role: 'user',
+                        content: query
+                    }
+                ],
+                temperature: 0.7,
+                max_tokens: 1024,
+            }),
+        });
 
-        // Generate content with context
-        const result = await model.generateContent(userContext + query);
-        const response = await result.response;
-        const text = response.text();
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Groq API error details:', errorData);
+            throw new Error(`Groq API error: ${response.statusText}`);
+        }
 
-        return NextResponse.json({ response: text });
+        const data = await response.json();
+        return NextResponse.json({ response: data.choices[0].message.content });
     } catch (error) {
         console.error('Error in AI route:', error);
         return NextResponse.json(

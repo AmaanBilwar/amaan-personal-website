@@ -10,7 +10,6 @@ Nicholas grew up in Toronto, Canada, where he developed his passion for technolo
 
 Contact Information:
 - Email: n224chen@uwaterloo.ca (Academic), nicholas.chen243@gmail.com (Professional)
-- Phone: (647) 639-9446
 - LinkedIn: <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer"><u>LinkedIn Profile</u></a>
 - GitHub: <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer"><u>GitHub Portfolio</u></a>
 - Art Portfolio: <a href="https://nicholaschen243.wixsite.com/nicholas-chen" target="_blank" rel="noopener noreferrer"><u>Digital Art Gallery</u></a>

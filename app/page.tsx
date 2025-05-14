@@ -3,8 +3,13 @@ import SearchBar from '@/components/search/search';
 import Link from 'next/link';
 import { TypeAnimation } from 'react-type-animation';
 import Footer from '@/components/footer/footer';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showHtmlSummary, setShowHtmlSummary] = useState(false);
+  const summaryText =
+    "I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining TextQL as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at Ownr, RBC, and Meta Hash Capital.";
+  const summaryHtml = `I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining <a href="https://textql.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">TextQL</a> as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">Ownr</a>, <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">RBC</a>, and <a href="https://www.metahashtechnology.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">Meta Hash Capital</a>.`;
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden">
       {/* Hero Section */}
@@ -14,17 +19,24 @@ export default function Home() {
         </h1>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
-          <TypeAnimation
-            sequence={[
-              500,
-              "I am currently studying Systems Design Engineering at the University of Waterloo. Previously, I've helped create some awesome things at Ownr, RBC and Meta Hash Capital.",
-              1000,
-            ]}
-            wrapper="p"
-            speed={10} // Types each character in 10ms
-            className="text-base sm:text-lg md:text-xl text-stone-400"
-            repeat={0}
-          />
+          {!showHtmlSummary ? (
+            <TypeAnimation
+              sequence={[
+                500,
+                summaryText,
+                () => setShowHtmlSummary(true),
+              ]}
+              wrapper="p"
+              speed={1}
+              className="text-base sm:text-lg md:text-xl text-stone-400"
+              repeat={0}
+            />
+          ) : (
+            <div
+              className="text-base sm:text-lg md:text-xl text-stone-400"
+              dangerouslySetInnerHTML={{ __html: summaryHtml }}
+            />
+          )}
         </div>
 
         <SearchBar />

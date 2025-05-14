@@ -19,11 +19,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-6">
         <Link
           href="/"
-          className={`text-lg font-normal text-white transition-colors ${
-            pathname === '/'
-              ? 'underline decoration-2 underline-offset-4'
-              : 'hover:underline hover:underline-offset-4'
-          }`}
+          className={`text-lg font-normal text-white transition-colors ${pathname === '/'
+            ? 'underline decoration-2 underline-offset-4'
+            : 'hover:underline hover:underline-offset-4'
+            }`}
         >
           Nicholas Chen
         </Link>
@@ -32,37 +31,16 @@ export default function Header() {
         <nav className="hidden md:flex items-center">
           <Link
             href="/about"
-            className={`text-white transition-colors mx-4 ${
-              pathname === '/about'
-                ? 'underline decoration-2 underline-offset-4'
-                : 'hover:underline hover:underline-offset-4'
-            }`}
+            className={`text-white transition-colors mx-4 ${pathname === '/about'
+              ? 'underline decoration-2 underline-offset-4'
+              : 'hover:underline hover:underline-offset-4'
+              }`}
           >
             About
           </Link>
-          <Link
-            href="/blogs"
-            className={`text-white transition-colors mx-4 ${
-              pathname === '/blogs'
-                ? 'underline decoration-2 underline-offset-4'
-                : 'hover:underline hover:underline-offset-4'
-            }`}
-          >
-            Blogs
-          </Link>
-          <Link
-            href="/projects"
-            className={`text-white transition-colors mx-4 ${
-              pathname === '/projects'
-                ? 'underline decoration-2 underline-offset-4'
-                : 'hover:underline hover:underline-offset-4'
-            }`}
-          >
-            Projects
-          </Link>
           <div className="w-4"></div>
           <Link
-            href="/resumev2.pdf"
+            href="/nicholas_waterloo_engineering_resume-24.pdf"
             className="text-white hover:underline hover:underline-offset-4 transition-colors"
             target="_blank"
           >
@@ -86,39 +64,16 @@ export default function Header() {
           <nav className="flex flex-col p-4">
             <Link
               href="/about"
-              className={`text-white transition-colors py-3 text-center text-lg ${
-                pathname === '/about'
-                  ? 'underline decoration-2 underline-offset-4'
-                  : 'hover:underline hover:underline-offset-4'
-              }`}
+              className={`text-white transition-colors py-3 text-center text-lg ${pathname === '/about'
+                ? 'underline decoration-2 underline-offset-4'
+                : 'hover:underline hover:underline-offset-4'
+                }`}
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
-              href="/blogs"
-              className={`text-white transition-colors py-3 text-center text-lg ${
-                pathname === '/blogs'
-                  ? 'underline decoration-2 underline-offset-4'
-                  : 'hover:underline hover:underline-offset-4'
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blogs
-            </Link>
-            <Link
-              href="/projects"
-              className={`text-white transition-colors py-3 text-center text-lg ${
-                pathname === '/projects'
-                  ? 'underline decoration-2 underline-offset-4'
-                  : 'hover:underline hover:underline-offset-4'
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/resumev2.pdf"
+              href="/nicholas_waterloo_engineering_resume-24.pdf"
               className="text-white hover:underline hover:underline-offset-4 transition-colors py-3 text-center text-lg"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"

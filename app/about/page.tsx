@@ -1,9 +1,25 @@
 'use client';
-import Footer from '@/components/footer/footer';
 import Link from 'next/link';
-import { TypeAnimation } from 'react-type-animation';
+import { useState, useEffect } from 'react';
+import { Typewriter } from 'react-simple-typewriter';
 
 export default function About() {
+  const [done, setDone] = useState(false);
+  const summaryText =
+    "I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining TextQL as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at Ownr, RBC, and Meta Hash Capital.";
+  const summaryHtml = `I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining <a href=\"https://textql.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">TextQL</a> as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at <a href=\"https://www.ownr.co/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">Ownr</a>, <a href=\"https://www.rbc.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">RBC</a>, and <a href=\"https://www.metahashtechnology.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-stone-300\">Meta Hash Capital</a>.`;
+
+  // Calculate approximate typing duration
+  const typingDuration = (summaryText.length * 25) + 500; // typeSpeed * length + delaySpeed
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDone(true);
+    }, typingDuration);
+
+    return () => clearTimeout(timer);
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 md:p-24 pt-20 md:pt-16">
       <div className="max-w-6xl w-full">
@@ -14,16 +30,23 @@ export default function About() {
               Hey I'm Nicholas!
             </h1>
             <div className="text-base sm:text-lg text-stone-300 min-h-[150px] md:min-h-[120px]">
-              <TypeAnimation
-                sequence={[
-                  "Hello! I'm a Systems Design Engineering student at the University of Waterloo. In the past, I've worked at companies like Ownr, RBC and Meta Hash Capital where I made some pretty cool things.",
-                  1000,
-                ]}
-                wrapper="p"
-                speed={50}
-                className="text-base sm:text-lg text-stone-400"
-                repeat={0}
-              />
+              {!done ? (
+                <span className="text-base sm:text-lg text-stone-400">
+                  <Typewriter
+                    words={[summaryText]}
+                    loop={1}
+                    cursor
+                    typeSpeed={25}
+                    deleteSpeed={50}
+                    delaySpeed={500}
+                  />
+                </span>
+              ) : (
+                <div
+                  className="text-base sm:text-lg text-stone-400"
+                  dangerouslySetInnerHTML={{ __html: summaryHtml }}
+                />
+              )}
             </div>
 
             {/* Social Media Links */}
@@ -82,26 +105,12 @@ export default function About() {
                 </div>
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link
-                href="https://linktr.ee/nicholas.chen__"
-                className="text-white hover:text-stone-300 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-8 h-8 flex items-center justify-center mt-0.5">
-                  <img
-                    src="/linktree.png"
-                    alt="Linktree"
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-                <span className="sr-only">Linktree</span>
-              </Link>
             </div>
           </div>
         </div>
+        <hr className="border-t border-stone-700 my-10" />
         <section className="">
-          <h2 className="text-4xl font-bold text-white mt-8 mb-4">
+          <h2 className="text-4xl font-bold text-white mt-12 mb-4">
             Contact Me
           </h2>
           <p className="text-stone-400 text-base">
@@ -125,7 +134,6 @@ export default function About() {
             .
           </p>
         </section>
-
         {/* Experience, Education, Community, Awards Section */}
         <div className="space-y-8 mt-10 md:mt-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white border-b border-stone-700 pb-2">
@@ -144,13 +152,22 @@ export default function About() {
                     Software Engineer Intern
                   </h4>
                   <span className="text-stone-400 text-sm sm:text-base">
+                    Sept 2025 - Present
+                  </span>
+                </div>
+                <p className="text-stone-300 font-medium">TextQL</p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                  <h4 className="text-lg sm:text-xl font-semibold text-white">
+                    Software Engineer Intern
+                  </h4>
+                  <span className="text-stone-400 text-sm sm:text-base">
                     Jan 2025 - April 2025
                   </span>
                 </div>
                 <p className="text-stone-300 font-medium">Ownr - RBCx</p>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Full-stack web development and infrastructure
-                </p>
               </div>
 
               <div className="space-y-2">
@@ -165,9 +182,6 @@ export default function About() {
                 <p className="text-stone-300 font-medium">
                   Royal Bank of Canada
                 </p>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Machine learning
-                </p>
               </div>
 
               <div className="space-y-2">
@@ -180,11 +194,10 @@ export default function About() {
                   </span>
                 </div>
                 <p className="text-stone-300 font-medium">Meta Hash Capital</p>
-                <p className="text-stone-400 text-sm sm:text-base">Figma</p>
               </div>
             </div>
           </section>
-
+          <hr className="border-t border-stone-700 my-10" />
           {/* Education */}
           <section>
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
@@ -202,13 +215,9 @@ export default function About() {
               <p className="text-stone-300 font-medium">
                 University of Waterloo
               </p>
-              <p className="text-stone-400 text-sm sm:text-base">
-                Interdisciplinary engineering with specialization in software
-                systems and human-centered design
-              </p>
             </div>
           </section>
-
+          <hr className="border-t border-stone-700 my-10" />
           {/* Community Involvement */}
           <section>
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
@@ -225,13 +234,27 @@ export default function About() {
                   </span>
                 </div>
                 <p className="text-stone-300 font-medium">Software Engineer</p>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Software systems
-                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                  <h4 className="text-normal sm:text-xl font-semibold text-white">
+                    Art Portfolio
+                  </h4>
+                </div>
+                <Link
+                  href="https://nicholaschen243.wixsite.com/nicholas-chen"
+                  className="inline-flex items-center text-white hover:text-stone-300 transition-colors"
+                  target="_blank"
+                >
+                  <span className="hover:text-stone-300 transition-colors">
+                    View Art Portfolio
+                  </span>
+                </Link>
               </div>
             </div>
           </section>
-
+          <hr className="border-t border-stone-700 my-10" />
           {/* Awards */}
           <section>
             <h3 className="text-2xl font-bold text-white mb-4">
@@ -248,18 +271,12 @@ export default function About() {
                 <p className="text-stone-300 font-medium">
                   University of Toronto
                 </p>
-                <p className="text-stone-400">
-                  Placed second with a team of four people to develop an
-                  innovative solution (Fernando) for helping people with bad
-                  posture.
-                </p>
 
                 {/* Project Details */}
                 <div className="mt-2"></div>
               </div>
             </div>
           </section>
-          <Footer />
         </div>
       </div>
     </main>

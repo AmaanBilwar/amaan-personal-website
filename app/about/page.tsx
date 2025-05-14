@@ -134,7 +134,6 @@ export default function About() {
             .
           </p>
         </section>
-        <hr className="border-t border-stone-700 my-10 mt-12" />
         {/* Experience, Education, Community, Awards Section */}
         <div className="space-y-8 mt-10 md:mt-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white border-b border-stone-700 pb-2">

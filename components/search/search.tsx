@@ -52,13 +52,14 @@ export default function SearchBar() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
+      <h2 className="text-xl text-stone-300 mb-4">What do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
       <form ref={formRef} onSubmit={handleSubmit} className="relative group">
         <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400 group-focus-within:text-white transition-colors" />
         <input
           type="text"
-          placeholder="what do you want to know about nicholas?"
+          placeholder="Ask me anything"
           className="w-full pl-10 pr-4 py-3 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
           value={query}
           onChange={(e) => setQuery(e.target.value)}

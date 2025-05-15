@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Search as SearchIcon } from 'lucide-react';
 import SamplePrompts from './sample-prompts';
 
@@ -8,7 +8,16 @@ export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [aiResponse, setAiResponse] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [dotCount, setDotCount] = useState(1);
   const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (!isLoading) return;
+    const interval = setInterval(() => {
+      setDotCount((prev) => (prev % 3) + 1);
+    }, 500);
+    return () => clearInterval(interval);
+  }, [isLoading]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,6 +45,7 @@ export default function SearchBar() {
       console.error('Search error:', error);
     } finally {
       setIsLoading(false);
+      setDotCount(1);
     }
   };
 
@@ -69,7 +79,7 @@ export default function SearchBar() {
       {isLoading && (
         <div className="mt-4 flex items-center gap-2 text-stone-400 pl-2">
           <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
-          <span>Thinking...</span>
+          <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
         </div>
       )}
 

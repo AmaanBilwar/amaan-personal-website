@@ -41,9 +41,12 @@ export default function SearchBar() {
 
   const handlePromptClick = (prompt: string) => {
     setQuery(prompt);
-    // Automatically submit the form when a prompt is clicked
-    if (formRef.current) {
-      formRef.current.requestSubmit();
+    setAiResponse(null);
+    setIsLoading(false);
+    // Focus the input after setting the query
+    const input = formRef.current?.querySelector('input');
+    if (input) {
+      input.focus();
     }
   };
 

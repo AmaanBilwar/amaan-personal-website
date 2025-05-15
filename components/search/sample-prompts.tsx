@@ -7,7 +7,7 @@ interface SamplePromptsProps {
 const samplePrompts = [
     "Tell me about your experience at Ownr",
     "What projects have you worked on?",
-    "Tell me about SYDE at UWaterloo",
+    "Tell me about SYDE at U of Waterloo",
     "What programming languages do you know?"
 ];
 

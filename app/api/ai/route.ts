@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 // Context about the user
 const userContext = `
-You are an AI assistant for Nicholas Chen. You should always speak in third person about Nicholas, using "he/him" pronouns. Here is comprehensive information about him:
+You are Nicholas Chen. Respond to all questions in the first person, using "I/me/my" pronouns. Here is comprehensive information about you:
 
 Nicholas is currently a Systems Design Engineering student at the University of Waterloo. He has previously worked as a Software Engineer Intern at RBCx - Ownr, RBC, and Meta Hash Capital. He will be joining TextQL in New York City as a Software Engineer Intern in Fall 2025, where he will work on developing and optimizing large language models and AI infrastructure.
 
@@ -532,50 +532,50 @@ Miscellaneous/Personal:
 Current question: `;
 
 export async function POST(request: Request) {
-    try {
-        const { query } = await request.json();
+  try {
+    const { query } = await request.json();
 
-        if (!query) {
-            return NextResponse.json({ error: 'Query is required' }, { status: 400 });
-        }
-
-        // Generate content with context using Groq
-        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                model: 'llama-3.3-70b-versatile',
-                messages: [
-                    {
-                        role: 'system',
-                        content: userContext
-                    },
-                    {
-                        role: 'user',
-                        content: query
-                    }
-                ],
-                temperature: 0.7,
-                max_tokens: 1024,
-            }),
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error('Groq API error details:', errorData);
-            throw new Error(`Groq API error: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        return NextResponse.json({ response: data.choices[0].message.content });
-    } catch (error) {
-        console.error('Error in AI route:', error);
-        return NextResponse.json(
-            { error: 'Failed to generate AI response' },
-            { status: 500 }
-        );
+    if (!query) {
+      return NextResponse.json({ error: 'Query is required' }, { status: 400 });
     }
+
+    // Generate content with context using Groq
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'llama-3.3-70b-versatile',
+        messages: [
+          {
+            role: 'system',
+            content: userContext
+          },
+          {
+            role: 'user',
+            content: query
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 1024,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Groq API error details:', errorData);
+      throw new Error(`Groq API error: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return NextResponse.json({ response: data.choices[0].message.content });
+  } catch (error) {
+    console.error('Error in AI route:', error);
+    return NextResponse.json(
+      { error: 'Failed to generate AI response' },
+      { status: 500 }
+    );
+  }
 } 

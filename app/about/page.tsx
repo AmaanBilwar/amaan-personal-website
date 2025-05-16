@@ -249,20 +249,21 @@ export default function About() {
             title="Work Experience"
             description="Software Engineering/Design Internships"
             details={
-              <div className="space-y-10 text-stone-300">
+              <div className="space-y-4 text-stone-300">
                 <div>
-                  <p className="text-xl font-bold mb-2">Upcoming:</p>
-                  <p className="text-base mb-2">Software Engineer Intern at TextQL (Fall 2025)</p>
+                  <p className="font-medium">Upcoming:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Software Engineer Intern at TextQL (Fall 2025)</li>
+                  </ul>
                 </div>
-                <hr className="border-t border-stone-800 my-2" />
                 <div>
-                  <p className="text-xl font-bold mb-2">Previous:</p>
-                  <div className="space-y-3">
-                    <p className="text-base">Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)</p>
-                    <p className="text-base">Software Engineer Intern at RBC (Jul 2024 - Aug 2024)</p>
-                    <p className="text-base">Software Engineer at UW Alternative Fuels Team (Sep 2024 - Dec 2024)</p>
-                    <p className="text-base">UX Design Intern at Meta Hash Capital (Mar 2023 - Aug 2023)</p>
-                  </div>
+                  <p className="font-medium">Previous:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)</li>
+                    <li>Software Engineer Intern at RBC (Jul 2024 - Aug 2024)</li>
+                    <li>Software Engineer at UW Alternative Fuels Team (Sep 2024 - Dec 2024)</li>
+                    <li>UX Design Intern at Meta Hash Capital (Mar 2023 - Aug 2023)</li>
+                  </ul>
                 </div>
               </div>
             }

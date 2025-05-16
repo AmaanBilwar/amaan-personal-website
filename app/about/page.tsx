@@ -30,7 +30,7 @@ export default function About() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-10 mt-10">
               Hey I'm Nicholas!
             </h1>
-            <div className="text-base sm:text-lg text-stone-300 min-h-[150px] md:min-h-[120px]">
+            <div className="text-base sm:text-lg text-stone-300 min-h-[100px] md:min-h-[80px] mb-2">
               {!done ? (
                 <span className="text-base sm:text-lg text-stone-400">
                   <Typewriter
@@ -51,7 +51,7 @@ export default function About() {
             </div>
 
             {/* Social Media Links */}
-            <div className="flex space-x-8 pt-1 justify-center sm:justify-start">
+            <div className="flex space-x-8 justify-center sm:justify-start">
               <Link
                 href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
                 className="text-white hover:text-stone-300 transition-colors"
@@ -136,7 +136,7 @@ export default function About() {
 
           <InfoCard
             title="Projects"
-            description="Notable Engineering & Software Projects"
+            description="Engineering & Software Projects"
             details={
               <div className="space-y-2 text-stone-300">
                 <p className="font-medium">Featured Projects:</p>
@@ -209,7 +209,7 @@ export default function About() {
 
           <InfoCard
             title="Work Experience"
-            description="Software Engineering & Development"
+            description="Software Engineering/Design Internships"
             details={
               <div className="space-y-4 text-stone-300">
                 <div>
@@ -319,150 +319,6 @@ export default function About() {
             .
           </p>
         </section>
-        {/* Experience, Education, Community, Awards Section */}
-        <div className="space-y-8 mt-10 md:mt-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white border-b border-stone-700 pb-2">
-            Some of the Cool Things I've Done
-          </h2>
-
-          {/* Work Experience */}
-          <section>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
-              Work Experience
-            </h3>
-            <div className="space-y-5 md:space-y-6">
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    Software Engineer Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Sept 2025 - Present
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">TextQL</p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    Software Engineer Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Jan 2025 - April 2025
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">Ownr - RBCx</p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    Innovation Developer Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Jul 2024 - Aug 2024
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">
-                  Royal Bank of Canada
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    UX Design Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Mar 2023 - Aug 2023
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">Meta Hash Capital</p>
-              </div>
-            </div>
-          </section>
-          <hr className="border-t border-stone-700 my-10" />
-          {/* Education */}
-          <section>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
-              Education
-            </h3>
-            <div className="space-y-2">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                <h4 className="text-lg sm:text-xl font-semibold text-white">
-                  Systems Design Engineering
-                </h4>
-                <span className="text-stone-400 text-sm sm:text-base">
-                  2024 - 2029
-                </span>
-              </div>
-              <p className="text-stone-300 font-medium">
-                University of Waterloo
-              </p>
-            </div>
-          </section>
-          <hr className="border-t border-stone-700 my-10" />
-          {/* Community Involvement */}
-          <section>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
-              Community Involvement
-            </h3>
-            <div className="space-y-5 md:space-y-6">
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-normal sm:text-xl font-semibold text-white">
-                    University of Waterloo Alternative Fuels Team
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Sept 2024 - Dec 2024
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">Software Engineer</p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-normal sm:text-xl font-semibold text-white">
-                    Art Portfolio
-                  </h4>
-                </div>
-                <Link
-                  href="https://nicholaschen243.wixsite.com/nicholas-chen"
-                  className="inline-flex items-center text-white hover:text-stone-300 transition-colors"
-                  target="_blank"
-                >
-                  <span className="hover:text-stone-300 transition-colors">
-                    View Art Portfolio
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </section>
-          <hr className="border-t border-stone-700 my-10" />
-          {/* Awards */}
-          <section>
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Awards & Achievements
-            </h3>
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <div className="flex justify-between items-baseline">
-                  <h4 className="text-lg font-semibold text-white">
-                    Second Place - UTRA Hacks
-                  </h4>
-                  <span className="text-stone-400">Feb 2025</span>
-                </div>
-                <p className="text-stone-300 font-medium">
-                  University of Toronto
-                </p>
-
-                {/* Project Details */}
-                <div className="mt-2"></div>
-              </div>
-            </div>
-          </section>
-        </div>
       </div>
     </main>
   );

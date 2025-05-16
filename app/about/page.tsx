@@ -160,13 +160,29 @@ export default function About() {
             title="Projects"
             description="Engineering & Software Projects"
             details={
-              <div className="space-y-2 text-stone-300">
-                <p className="font-medium">Featured Projects:</p>
-                <ul className="list-disc list-inside text-sm">
-                  <li>Fernando - Posture-correcting robot</li>
-                  <li>BasketBin - Smart recycling system</li>
-                  <li>Customer Feedback ETL Pipeline</li>
-                </ul>
+              <div className="space-y-4 text-stone-300">
+                <div>
+                  <p className="font-medium">Featured Projects:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Basketbin - Interactive trash bin with sensor integration and motorized arm system</li>
+                    <li>Hack the 6ix Basketbin - Collaborative hardware/software project</li>
+                    <li>Fernando - 2nd place at UTRA Hacks, posture-correcting robot with OpenCV</li>
+                    <li>Musicmaker - Generative music project with AI composition</li>
+                    <li>Customer Feedback ETL Piaeline - Data engineering and analysis system</li>
+                    <li>Whiteboard - Collaborative brainstorming platform with real-time features</li>
+                    <li>Diff Digest - Real-time GitHub PR diff processing with OpenAI integration</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-medium">Additional Projects:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Web applications and mobile apps</li>
+                    <li>Data analysis tools and automation scripts</li>
+                    <li>Various hardware/software integrations</li>
+                  </ul>
+                </div>
+
                 <Link
                   href="https://github.com/nicholaschen09"
                   className="text-pink-500 hover:underline text-sm block mt-2"

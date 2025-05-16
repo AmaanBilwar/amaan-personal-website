@@ -117,19 +117,41 @@ export default function About() {
             title="Technical Skills"
             description="Languages, Tools, and Technologies"
             details={
-              <div className="space-y-2 text-stone-300">
-                <p className="font-medium">Languages:</p>
-                <ul className="list-disc list-inside text-sm">
-                  <li>Python, JavaScript/TypeScript</li>
-                  <li>Java, C++, HTML/CSS</li>
-                  <li>SQL, Kotlin, Swift</li>
-                </ul>
-                <p className="font-medium mt-2">Tools:</p>
-                <ul className="list-disc list-inside text-sm">
-                  <li>Git, VS Code, Docker</li>
-                  <li>AWS, Azure, GCP</li>
-                  <li>Figma, Adobe Creative Suite</li>
-                </ul>
+              <div className="space-y-4 text-stone-300">
+                <div>
+                  <p className="font-medium">Languages:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Python, Java, C++, HTML/CSS</li>
+                    <li>JavaScript, TypeScript, Kotlin, SQL</li>
+                    <li>MATLAB, Bash, Swift, JSON</li>
+                    <li>Golang, Haskell</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-medium">Developer/Design Tools:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>VS Code, Android Studio, Postico, Jupyter Notebook</li>
+                    <li>Git, GitHub, Docker, Heroku</li>
+                    <li>AWS, S3, Azure, CircleCI, Kubernetes</li>
+                    <li>ChatGPT, Claude, Copilot, Cursor</li>
+                    <li>Figma, SOLIDWORKS, AutoCAD</li>
+                    <li>Apache Airflow, Dbt, XCode</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-medium">Technologies/Frameworks:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>React, React Native, Node.js, Express.js, Nest.js</li>
+                    <li>Supabase, Firebase, Flask, PostgreSQL, MongoDB</li>
+                    <li>Redis, RabbitMQ, GraphQL, Jest, PyTorch, TensorFlow</li>
+                    <li>Numpy, Pandas, REST APIs, Puppeteer, Tailwind CSS</li>
+                    <li>Apache Spark, Kafka, Snowflake, Google BigQuery</li>
+                    <li>Angular, Databricks, LangChain, RAG, Vite</li>
+                    <li>Next.js, gRPC, Vue.js, Svelte</li>
+                  </ul>
+                </div>
               </div>
             }
           />

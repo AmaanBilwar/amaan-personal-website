@@ -27,7 +27,7 @@ export default function InfoCard({ title, description, details }: InfoCardProps)
                         className="absolute inset-0 bg-stone-950/80 backdrop-blur-sm"
                         onClick={() => setIsOpen(false)}
                     />
-                    <div className="relative bg-stone-900 p-6 rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-stone-800/50 [&::-webkit-scrollbar-thumb]:bg-stone-600/50 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-stone-500/50">
+                    <div className="relative bg-stone-900 p-6 rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto animate-fade-scale [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-stone-800/50 [&::-webkit-scrollbar-thumb]:bg-stone-600/50 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-stone-500/50">
                         <button
                             className="absolute top-4 right-4 text-stone-400 hover:text-white"
                             onClick={() => setIsOpen(false)}
@@ -42,6 +42,22 @@ export default function InfoCard({ title, description, details }: InfoCardProps)
                     </div>
                 </div>
             )}
+            {/* Animation styles */}
+            <style>{`
+                @keyframes fadeScale {
+                  0% {
+                    opacity: 0;
+                    transform: scale(0.95);
+                  }
+                  100% {
+                    opacity: 1;
+                    transform: scale(1);
+                  }
+                }
+                .animate-fade-scale {
+                  animation: fadeScale 0.25s cubic-bezier(0.4,0,0.2,1);
+                }
+            `}</style>
         </>
     );
 } 

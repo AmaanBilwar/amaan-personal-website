@@ -249,52 +249,18 @@ export default function About() {
             title="Work Experience"
             description="Software Engineering/Design Internships"
             details={
-              <div className="space-y-4 text-stone-300">
+              <div className="space-y-6 text-stone-300">
                 <div>
-                  <p className="font-medium">Current:</p>
-                  <p className="text-sm">Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)</p>
-                  <ul className="list-disc list-inside text-sm mt-1 ml-2">
-                    <li>Full-stack development with React, Nest.js, TypeScript</li>
-                    <li>Microservices architecture implementation</li>
-                    <li>Database optimization and CI/CD pipelines</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="font-medium">Previous:</p>
-                  <p className="text-sm">Software Engineer Intern at RBC (Jul 2024 - Aug 2024)</p>
-                  <ul className="list-disc list-inside text-sm mt-1 ml-2">
-                    <li>ML models for time series forecasting</li>
-                    <li>Data processing pipelines and visualizations</li>
-                    <li>Workflow optimization and cost savings</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="text-sm">Software Engineer at UW Alternative Fuels Team (Sep 2024 - Dec 2024)</p>
-                  <ul className="list-disc list-inside text-sm mt-1 ml-2">
-                    <li>Hybrid energy management systems</li>
-                    <li>Vehicle dynamics simulation</li>
-                    <li>Embedded control systems</li>
-                  </ul>
-                </div>
-
-                <div>
+                  <p className="font-medium mb-1">Previous:</p>
+                  <p className="text-sm mb-4">Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)</p>
+                  <p className="text-sm mb-2">Software Engineer Intern at RBC (Jul 2024 - Aug 2024)</p>
+                  <p className="text-sm mb-2">Software Engineer at UW Alternative Fuels Team (Sep 2024 - Dec 2024)</p>
                   <p className="text-sm">UX Design Intern at Meta Hash Capital (Mar 2023 - Aug 2023)</p>
-                  <ul className="list-disc list-inside text-sm mt-1 ml-2">
-                    <li>User interface design and prototyping</li>
-                    <li>User experience research and testing</li>
-                    <li>Design system implementation</li>
-                  </ul>
                 </div>
 
                 <div>
-                  <p className="font-medium">Upcoming:</p>
+                  <p className="font-medium mb-1">Upcoming:</p>
                   <p className="text-sm">Software Engineer Intern at TextQL (Fall 2025)</p>
-                  <ul className="list-disc list-inside text-sm mt-1 ml-2">
-                    <li>Full-stack development</li>
-                    <li>Data and AI engineering</li>
-                  </ul>
                 </div>
               </div>
             }

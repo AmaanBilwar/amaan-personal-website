@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
+import InfoCard from '@/components/info-card/info-card';
 
 export default function About() {
   const [done, setDone] = useState(false);
@@ -29,7 +30,7 @@ export default function About() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-10 mt-10">
               Hey I'm Nicholas!
             </h1>
-            <div className="text-base sm:text-lg text-stone-300 min-h-[150px] md:min-h-[120px]">
+            <div className="text-base sm:text-lg text-stone-300 min-h-[100px] md:min-h-[80px] mb-2">
               {!done ? (
                 <span className="text-base sm:text-lg text-stone-400">
                   <Typewriter
@@ -50,7 +51,7 @@ export default function About() {
             </div>
 
             {/* Social Media Links */}
-            <div className="flex space-x-8 pt-1 justify-center sm:justify-start">
+            <div className="flex space-x-8 justify-center sm:justify-start">
               <Link
                 href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
                 className="text-white hover:text-stone-300 transition-colors"
@@ -109,6 +110,195 @@ export default function About() {
           </div>
         </div>
         <hr className="border-t border-stone-700 my-10" />
+
+        {/* Grid Layout for Additional Information */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+          <InfoCard
+            title="Technical Skills"
+            description="Languages, Tools, and Technologies"
+            details={
+              <div className="space-y-4 text-stone-300">
+                <div>
+                  <p className="font-medium">Languages:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Python, Java, C++, HTML/CSS</li>
+                    <li>JavaScript, TypeScript, Kotlin, SQL</li>
+                    <li>MATLAB, Bash, Swift, JSON</li>
+                    <li>Golang, Haskell</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-medium">Developer/Design Tools:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>VS Code, Android Studio, Postico, Jupyter Notebook</li>
+                    <li>Git, GitHub, Docker, Heroku</li>
+                    <li>AWS, S3, Azure, CircleCI, Kubernetes</li>
+                    <li>ChatGPT, Claude, Copilot, Cursor</li>
+                    <li>Figma, SOLIDWORKS, AutoCAD</li>
+                    <li>Apache Airflow, Dbt, XCode</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-medium">Technologies/Frameworks:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>React, React Native, Node.js, Express.js, Nest.js</li>
+                    <li>Supabase, Firebase, Flask, PostgreSQL, MongoDB</li>
+                    <li>Redis, RabbitMQ, GraphQL, Jest, PyTorch, TensorFlow</li>
+                    <li>Numpy, Pandas, REST APIs, Puppeteer, Tailwind CSS</li>
+                    <li>Apache Spark, Kafka, Snowflake, Google BigQuery</li>
+                    <li>Angular, Databricks, LangChain, RAG, Vite</li>
+                    <li>Next.js, gRPC, Vue.js, Svelte</li>
+                  </ul>
+                </div>
+              </div>
+            }
+          />
+
+          <InfoCard
+            title="Projects"
+            description="Engineering & Software Projects"
+            details={
+              <div className="space-y-4 text-stone-300">
+                <div>
+                  <p className="font-medium">Featured Projects:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Basketbin - Interactive trash bin with sensor integration and motorized arm system</li>
+                    <li>Hack the 6ix Basketbin - Collaborative hardware/software project</li>
+                    <li>Fernando - 2nd place at UTRA Hacks, posture-correcting robot with OpenCV</li>
+                    <li>Musicmaker - Generative music project with AI composition</li>
+                    <li>Customer Feedback ETL Piaeline - Data engineering and analysis system</li>
+                    <li>Whiteboard - Collaborative brainstorming platform with real-time features</li>
+                    <li>Diff Digest - Real-time GitHub PR diff processing with OpenAI integration</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="font-medium">Additional Projects:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Web applications and mobile apps</li>
+                    <li>Data analysis tools and automation scripts</li>
+                    <li>Various hardware/software integrations</li>
+                  </ul>
+                </div>
+
+                <Link
+                  href="https://github.com/nicholaschen09"
+                  className="text-pink-500 hover:underline text-sm block mt-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View GitHub Portfolio
+                </Link>
+              </div>
+            }
+          />
+
+          <InfoCard
+            title="Content Creation"
+            description="Social Media & Educational Content"
+            details={
+              <div className="space-y-2 text-stone-300">
+                <p className="font-medium">Platforms:</p>
+                <ul className="list-disc list-inside text-sm">
+                  <li>YouTube - Tech tutorials</li>
+                  <li>TikTok - Engineering life</li>
+                  <li>Twitter - Tech insights</li>
+                </ul>
+                <p className="text-sm mt-2">30k+ followers, 8M+ views</p>
+              </div>
+            }
+          />
+
+          <InfoCard
+            title="Creative Work"
+            description="Art Portfolio & Photography"
+            details={
+              <div className="space-y-2 text-stone-300">
+                <p className="font-medium">Portfolio:</p>
+                <Link
+                  href="https://nicholaschen243.wixsite.com/nicholas-chen"
+                  className="text-pink-500 hover:underline text-sm block"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Art Portfolio
+                </Link>
+                <p className="text-sm mt-2">Digital art, photography, and design work</p>
+              </div>
+            }
+          />
+
+          <InfoCard
+            title="Education"
+            description="University of Waterloo Systems Design Engineering"
+            details={
+              <div className="space-y-2 text-stone-300">
+                <p className="font-medium">Systems Design Engineering</p>
+                <p className="text-sm">Expected Graduation: 2029</p>
+                <ul className="list-disc list-inside text-sm mt-2">
+                  <li>President's Scholarship</li>
+                  <li>Dean's Honor List</li>
+                </ul>
+              </div>
+            }
+          />
+
+          <InfoCard
+            title="Work Experience"
+            description="Software Engineering/Design Internships"
+            details={
+              <div className="space-y-4 text-stone-300">
+                <div>
+                  <p className="font-medium">Upcoming:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Software Engineer Intern at TextQL (Fall 2025)</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-medium">Previous:</p>
+                  <ul className="list-disc list-inside text-sm">
+                    <li>Software Engineer Intern at RBCx - Ownr (Jan 2025 - Apr 2025)</li>
+                    <li>Software Engineer Intern at RBC (Jul 2024 - Aug 2024)</li>
+                    <li>Software Engineer at UW Alternative Fuels Team (Sep 2024 - Dec 2024)</li>
+                    <li>UX Design Intern at Meta Hash Capital (Mar 2023 - Aug 2023)</li>
+                  </ul>
+                </div>
+              </div>
+            }
+          />
+
+          <InfoCard
+            title="Languages"
+            description="English, Chinese, French, Japanese"
+            details={
+              <div className="space-y-2 text-stone-300">
+                <ul className="list-disc list-inside text-sm">
+                  <li>English - Native</li>
+                  <li>Chinese (Mandarin) - Fluent</li>
+                  <li>French - Intermediate</li>
+                  <li>Japanese - Basic</li>
+                </ul>
+              </div>
+            }
+          />
+
+          <InfoCard
+            title="Interests"
+            description="Fitness, Reading, Creative Hobbies"
+            details={
+              <div className="space-y-2 text-stone-300">
+                <ul className="list-disc list-inside text-sm">
+                  <li>Gym training</li>
+                  <li>Tech and business books</li>
+                  <li>Sewing and fashion design</li>
+                </ul>
+              </div>
+            }
+          />
+        </div>
+
         <section className="">
           <h2 className="text-4xl font-bold text-white mt-12 mb-4">
             Contact Me
@@ -134,150 +324,6 @@ export default function About() {
             .
           </p>
         </section>
-        {/* Experience, Education, Community, Awards Section */}
-        <div className="space-y-8 mt-10 md:mt-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white border-b border-stone-700 pb-2">
-            Some of the Cool Things I've Done
-          </h2>
-
-          {/* Work Experience */}
-          <section>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
-              Work Experience
-            </h3>
-            <div className="space-y-5 md:space-y-6">
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    Software Engineer Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Sept 2025 - Present
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">TextQL</p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    Software Engineer Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Jan 2025 - April 2025
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">Ownr - RBCx</p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    Innovation Developer Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Jul 2024 - Aug 2024
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">
-                  Royal Bank of Canada
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">
-                    UX Design Intern
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Mar 2023 - Aug 2023
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">Meta Hash Capital</p>
-              </div>
-            </div>
-          </section>
-          <hr className="border-t border-stone-700 my-10" />
-          {/* Education */}
-          <section>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
-              Education
-            </h3>
-            <div className="space-y-2">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                <h4 className="text-lg sm:text-xl font-semibold text-white">
-                  Systems Design Engineering
-                </h4>
-                <span className="text-stone-400 text-sm sm:text-base">
-                  2024 - 2029
-                </span>
-              </div>
-              <p className="text-stone-300 font-medium">
-                University of Waterloo
-              </p>
-            </div>
-          </section>
-          <hr className="border-t border-stone-700 my-10" />
-          {/* Community Involvement */}
-          <section>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4">
-              Community Involvement
-            </h3>
-            <div className="space-y-5 md:space-y-6">
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-normal sm:text-xl font-semibold text-white">
-                    University of Waterloo Alternative Fuels Team
-                  </h4>
-                  <span className="text-stone-400 text-sm sm:text-base">
-                    Sept 2024 - Dec 2024
-                  </span>
-                </div>
-                <p className="text-stone-300 font-medium">Software Engineer</p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                  <h4 className="text-normal sm:text-xl font-semibold text-white">
-                    Art Portfolio
-                  </h4>
-                </div>
-                <Link
-                  href="https://nicholaschen243.wixsite.com/nicholas-chen"
-                  className="inline-flex items-center text-white hover:text-stone-300 transition-colors"
-                  target="_blank"
-                >
-                  <span className="hover:text-stone-300 transition-colors">
-                    View Art Portfolio
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </section>
-          <hr className="border-t border-stone-700 my-10" />
-          {/* Awards */}
-          <section>
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Awards & Achievements
-            </h3>
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <div className="flex justify-between items-baseline">
-                  <h4 className="text-lg font-semibold text-white">
-                    Second Place - UTRA Hacks
-                  </h4>
-                  <span className="text-stone-400">Feb 2025</span>
-                </div>
-                <p className="text-stone-300 font-medium">
-                  University of Toronto
-                </p>
-
-                {/* Project Details */}
-                <div className="mt-2"></div>
-              </div>
-            </div>
-          </section>
-        </div>
       </div>
     </main>
   );

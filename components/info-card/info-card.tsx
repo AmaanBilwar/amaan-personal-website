@@ -14,7 +14,7 @@ export default function InfoCard({ title, description, details }: InfoCardProps)
     return (
         <>
             <div
-                className="bg-stone-800/50 p-4 rounded-lg cursor-pointer hover:bg-stone-700/50 transition-colors"
+                className="bg-stone-700/50 p-4 rounded-lg cursor-pointer hover:bg-stone-800/50 transition-colors"
                 onClick={() => setIsOpen(true)}
             >
                 <h3 className="text-lg font-semibold text-white">{title}</h3>
@@ -24,10 +24,10 @@ export default function InfoCard({ title, description, details }: InfoCardProps)
             {isOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center">
                     <div
-                        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                        className="absolute inset-0 bg-stone-950/80 backdrop-blur-sm"
                         onClick={() => setIsOpen(false)}
                     />
-                    <div className="relative bg-stone-800 p-6 rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                    <div className="relative bg-stone-900 p-6 rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto border border-stone-800">
                         <button
                             className="absolute top-4 right-4 text-stone-400 hover:text-white"
                             onClick={() => setIsOpen(false)}

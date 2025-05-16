@@ -194,7 +194,7 @@ export default function About() {
 
           <InfoCard
             title="Education"
-            description="University of Waterloo SYDE"
+            description="University of Waterloo Systems Design Engineering"
             details={
               <div className="space-y-2 text-stone-300">
                 <p className="font-medium">Systems Design Engineering</p>

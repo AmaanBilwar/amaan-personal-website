@@ -254,9 +254,8 @@ export default function About() {
                   <p className="font-medium">Upcoming:</p>
                   <p className="text-sm">Software Engineer Intern at TextQL (Fall 2025)</p>
                   <ul className="list-disc list-inside text-sm mt-1 ml-2">
-                    <li>AI infrastructure development</li>
-                    <li>Large language model optimization</li>
-                    <li>Scalable solutions implementation</li>
+                    <li>Full-stack development</li>
+                    <li>Data and AI engineering</li>
                   </ul>
                 </div>
               </div>

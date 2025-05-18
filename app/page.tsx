@@ -32,7 +32,7 @@ export default function Home() {
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">
             <div>
-              <p className="mb-2">I'm currently...</p>
+              <p className="mb-2 text-stone-300">I'm currently...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>studying systems design engineering at the university of waterloo</li>
                 <li>preparing to join textql as a software engineer intern in nyc soon</li>
@@ -41,7 +41,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="mb-2">I'm excited about...</p>
+              <p className="mb-2 text-stone-300">I'm excited about...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>building ai agents that surprise and delight people everywhere</li>
                 <li>turning data into tools, visuals, and magic for everyone</li>
@@ -50,7 +50,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="mb-2">Previously...</p>
+              <p className="mb-2 text-stone-300">Previously...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>software engineer intern at rbcx - ownr, building tools for entrepreneurs worldwide</li>
                 <li>software engineer intern at rbc, working on large-scale systems development</li>
@@ -64,7 +64,7 @@ export default function Home() {
         <SearchBar />
 
         <section className="mt-10 mb-6">
-          <p className="text-base text-stone-400">
+          <p className="text-sm text-stone-400">
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a
               href="mailto:nicholas.chen243@gmail.com"

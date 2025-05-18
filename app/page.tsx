@@ -75,7 +75,6 @@ export default function Home() {
         <SearchBar />
 
         <section className="mt-10 mb-6">
-          <h2 className="text-3xl font-bold text-white mb-2">Contact Me</h2>
           <p className="text-base sm:text-lg text-stone-400">
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a

@@ -290,7 +290,7 @@ export default function About() {
             details={
               <div className="space-y-2 text-stone-300">
                 <ul className="list-disc list-inside text-sm">
-                  <li>Gym training</li>
+                  <li>Going to the gym</li>
                   <li>Tech and business books</li>
                   <li>Sewing and fashion design</li>
                 </ul>

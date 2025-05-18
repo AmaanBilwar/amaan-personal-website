@@ -524,7 +524,7 @@ Miscellaneous/Personal:
 
 - Personal Interests:
   - Reading
-  - Gym training
+  - Going to the gym
   - Sewing
   - Pet care (Mia)
   - Outdoor activities

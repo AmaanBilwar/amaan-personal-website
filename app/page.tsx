@@ -79,7 +79,7 @@ export default function Home() {
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a
               href="mailto:nicholas.chen243@gmail.com"
-              className="text-pink-500 hover:underline transition-colors"
+              className="text-stone-400 underline hover:text-stone-200 transition-colors"
             >
               email
             </a>
@@ -88,7 +88,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-pink-500 hover:underline transition-colors"
+              className="text-stone-400 underline hover:text-stone-200 transition-colors"
             >
               linkedin
             </a>

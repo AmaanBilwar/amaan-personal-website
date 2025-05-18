@@ -30,61 +30,46 @@ export default function Home() {
         </h1>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
-          {!done ? (
-            <span className="text-base sm:text-lg md:text-xl text-stone-400">
-              <Typewriter
-                words={[summaryText]}
-                loop={1}
-                cursor
-                typeSpeed={25}
-                deleteSpeed={50}
-                delaySpeed={500}
-              />
-            </span>
-          ) : (
-            <>
-              <div className="mt-8 space-y-6">
-                <div>
-                  <p className="mb-2">I'm currently...</p>
-                  <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
-                    <li>studying systems design engineering at Waterloo</li>
-                    <li>on our varsity rowing team as coxie</li>
-                    <li>building hardware for cheap clean energy</li>
-                    <li>raising Socratica, a collective of engineers, artists, ++ that work on / demo their passion projects</li>
-                    <li>making a feature length documentary on a cautiously pro-growth, resilient, pragmatic, optimistic, and bipartisan approach to climate change (a mouthful!)</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-2">I'm excited about ...</p>
-                  <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
-                    <li>the climate cinematic universe, electrification and resilience (history, energy policy, batteries, etc)</li>
-                    <li>the weird and silly</li>
-                    <li>cultivating the potential of people, throwing life-changing events, match-making, raising baby ideas</li>
-                    <li>engineering that makes your heart flutter</li>
-                    <li>telling the history of technology, theories of civilizational prosperity, institution design</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-2">Previously...</p>
-                  <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
-                    <li>Software Engineer Intern at RBCx - Ownr</li>
-                    <li>Software Engineer Intern at RBC</li>
-                    <li>UX Design Intern at Meta Hash Capital</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="mb-2">Projects...</p>
-                  <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
-                    <li>Basketbin - Interactive trash bin with sensor integration and motorized arm system</li>
-                    <li>Fernando - posture-correcting robot with OpenCV</li>
-                    <li>Whiteboard - Real-time collaborative brainstorming platform</li>
-                    <li>Diff Digest - Real-time GitHub PR diff processing with OpenAI integration</li>
-                    <li>SQL Query Parser - Natural language to SQL translation tool</li>
-                  </ul>
-                </div>
-              </div>
-            </>
-          )}
+          <div className="mt-8 space-y-6">
+            <div>
+              <p className="mb-2">I'm currently...</p>
+              <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
+                <li>studying systems design engineering at Waterloo</li>
+                <li>on our varsity rowing team as coxie</li>
+                <li>building hardware for cheap clean energy</li>
+                <li>raising Socratica, a collective of engineers, artists, ++ that work on / demo their passion projects</li>
+                <li>making a feature length documentary on a cautiously pro-growth, resilient, pragmatic, optimistic, and bipartisan approach to climate change (a mouthful!)</li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-2">I'm excited about ...</p>
+              <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
+                <li>the climate cinematic universe, electrification and resilience (history, energy policy, batteries, etc)</li>
+                <li>the weird and silly</li>
+                <li>cultivating the potential of people, throwing life-changing events, match-making, raising baby ideas</li>
+                <li>engineering that makes your heart flutter</li>
+                <li>telling the history of technology, theories of civilizational prosperity, institution design</li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-2">Previously...</p>
+              <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
+                <li>Software Engineer Intern at RBCx - Ownr</li>
+                <li>Software Engineer Intern at RBC</li>
+                <li>UX Design Intern at Meta Hash Capital</li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-2">Projects...</p>
+              <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
+                <li>Basketbin - Interactive trash bin with sensor integration and motorized arm system</li>
+                <li>Fernando - posture-correcting robot with OpenCV</li>
+                <li>Whiteboard - Real-time collaborative brainstorming platform</li>
+                <li>Diff Digest - Real-time GitHub PR diff processing with OpenAI integration</li>
+                <li>SQL Query Parser - Natural language to SQL translation tool</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <SearchBar />
@@ -145,6 +130,28 @@ export default function Home() {
             <span className="sr-only">Twitter</span>
           </Link>
         </div>
+        <section className="mt-16">
+          <h2 className="text-3xl font-bold text-white mb-2">Contact Me</h2>
+          <p className="text-base sm:text-lg text-stone-400">
+            I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
+            <a
+              href="mailto:nicholas.chen243@gmail.com"
+              className="text-pink-500 hover:underline transition-colors"
+            >
+              email
+            </a>
+            , or connect with me on{' '}
+            <a
+              href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-500 hover:underline transition-colors"
+            >
+              linkedin
+            </a>
+            .
+          </p>
+        </section>
       </div>
     </main>
   );

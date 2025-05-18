@@ -29,60 +29,9 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center">
-          <Link
-            href="/about"
-            className={`text-white transition-colors mx-4 ${pathname === '/about'
-              ? 'underline decoration-2 underline-offset-4'
-              : 'hover:underline hover:underline-offset-4'
-              }`}
-          >
-            About
-          </Link>
-          <div className="w-4"></div>
-          <Link
-            href="/nicholas_waterloo_engineering_resume-24.pdf"
-            className="text-white hover:underline hover:underline-offset-4 transition-colors"
-            target="_blank"
-          >
-            Resume
-          </Link>
+          {/* Removed About and Resume links */}
         </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-black bg-opacity-95 border-t border-stone-800">
-          <nav className="flex flex-col p-4">
-            <Link
-              href="/about"
-              className={`text-white transition-colors py-3 text-center text-lg ${pathname === '/about'
-                ? 'underline decoration-2 underline-offset-4'
-                : 'hover:underline hover:underline-offset-4'
-                }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/nicholas_waterloo_engineering_resume-24.pdf"
-              className="text-white hover:underline hover:underline-offset-4 transition-colors py-3 text-center text-lg"
-              onClick={() => setIsMenuOpen(false)}
-              target="_blank"
-            >
-              Resume
-            </Link>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }

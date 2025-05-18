@@ -30,28 +30,62 @@ export default function Home() {
         </h1>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
-          {!done ? (
-            <span className="text-base sm:text-lg md:text-xl text-stone-400">
-              <Typewriter
-                words={[summaryText]}
-                loop={1}
-                cursor
-                typeSpeed={25}
-                deleteSpeed={50}
-                delaySpeed={500}
-              />
-            </span>
-          ) : (
-            <div
-              className="text-base sm:text-lg md:text-xl text-stone-400"
-              dangerouslySetInnerHTML={{ __html: summaryHtml }}
-            />
-          )}
+          <div className="mt-8 space-y-6">
+            <div>
+              <p className="mb-2 text-stone-300">I'm currently...</p>
+              <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
+                <li>studying systems design engineering at the university of waterloo</li>
+                <li>preparing to join textql as a software engineer intern in nyc soon</li>
+                <li>building projects to help others create and invent new things</li>
+                <li>sharing my journey in tech and creativity online with everyone to see</li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-2 text-stone-300">I'm excited about...</p>
+              <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
+                <li>building ai agents that surprise and delight people everywhere</li>
+                <li>turning data into tools, visuals, and magic for everyone</li>
+                <li>chasing creative art sparks, sketching doodles, and imagining new designs every single day</li>
+                <li>engineering projects that make me say, "whoa, that's so cool!"</li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-2 text-stone-300">Previously...</p>
+              <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
+                <li>was a software engineer intern at ownr, building tools for entrepreneurs worldwide</li>
+                <li>was a software engineer intern at rbc, working on machine learning models</li>
+                <li>was a ux design intern at meta hash capital, focusing on user experience in finance technology</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
 
         <SearchBar />
 
-        <div className="flex space-x-8 pt-1 justify-center sm:justify-start" style={{ marginTop: '5rem' }}>
+        <section className="mt-10 mb-6">
+          <p className="text-sm text-stone-400">
+            I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
+            <a
+              href="mailto:nicholas.chen243@gmail.com"
+              className="text-stone-400 underline hover:text-stone-200 transition-colors"
+            >
+              email
+            </a>
+            , or connect with me on{' '}
+            <a
+              href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-400 underline hover:text-stone-200 transition-colors"
+            >
+              linkedin
+            </a>
+            .
+          </p>
+        </section>
+
+        <div className="flex space-x-8 pt-1 justify-center sm:justify-start" style={{ marginTop: '2rem' }}>
           <Link
             href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
             className="text-white hover:text-stone-300 transition-colors"

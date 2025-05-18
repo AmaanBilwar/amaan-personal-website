@@ -34,11 +34,8 @@ export default function Home() {
             <div>
               <p className="mb-2">I'm currently...</p>
               <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
-                <li>studying systems design engineering at Waterloo</li>
-                <li>on our varsity rowing team as coxie</li>
-                <li>building hardware for cheap clean energy</li>
-                <li>raising Socratica, a collective of engineers, artists, ++ that work on / demo their passion projects</li>
-                <li>making a feature length documentary on a cautiously pro-growth, resilient, pragmatic, optimistic, and bipartisan approach to climate change (a mouthful!)</li>
+                <li>studying systems design engineering at the university of waterloo</li>
+                <li>sharing tech, engineering, and creative projects online</li>
               </ul>
             </div>
             <div>

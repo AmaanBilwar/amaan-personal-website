@@ -299,8 +299,8 @@ export default function About() {
           />
         </div>
 
-        <section className="">
-          <h2 className="text-4xl font-bold text-white mt-12 mb-4">
+        <section className="mt-20 mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Contact Me
           </h2>
           <p className="text-stone-400 text-base">

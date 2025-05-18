@@ -93,7 +93,7 @@ export default function Home() {
           </p>
         </section>
 
-        <div className="flex space-x-8 pt-1 justify-center sm:justify-start" style={{ marginTop: '5rem' }}>
+        <div className="flex space-x-8 pt-1 justify-center sm:justify-start" style={{ marginTop: '2rem' }}>
           <Link
             href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
             className="text-white hover:text-stone-300 transition-colors"

@@ -7,8 +7,7 @@ interface SamplePromptsProps {
 const samplePrompts = [
     "Tell me about your experience at Ownr",
     "What projects have you worked on?",
-    "Tell me about SYDE at U of Waterloo",
-    "What programming languages do you know?"
+    "Tell me about Systems Design Engineering at the University of Waterloo",
 ];
 
 export default function SamplePrompts({ onPromptClick }: SamplePromptsProps) {

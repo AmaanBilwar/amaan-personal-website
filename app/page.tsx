@@ -74,6 +74,29 @@ export default function Home() {
 
         <SearchBar />
 
+        <section className="mt-10 mb-6">
+          <h2 className="text-3xl font-bold text-white mb-2">Contact Me</h2>
+          <p className="text-base sm:text-lg text-stone-400">
+            I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
+            <a
+              href="mailto:nicholas.chen243@gmail.com"
+              className="text-pink-500 hover:underline transition-colors"
+            >
+              email
+            </a>
+            , or connect with me on{' '}
+            <a
+              href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-500 hover:underline transition-colors"
+            >
+              linkedin
+            </a>
+            .
+          </p>
+        </section>
+
         <div className="flex space-x-8 pt-1 justify-center sm:justify-start" style={{ marginTop: '5rem' }}>
           <Link
             href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
@@ -130,28 +153,6 @@ export default function Home() {
             <span className="sr-only">Twitter</span>
           </Link>
         </div>
-        <section className="mt-16">
-          <h2 className="text-3xl font-bold text-white mb-2">Contact Me</h2>
-          <p className="text-base sm:text-lg text-stone-400">
-            I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
-            <a
-              href="mailto:nicholas.chen243@gmail.com"
-              className="text-pink-500 hover:underline transition-colors"
-            >
-              email
-            </a>
-            , or connect with me on{' '}
-            <a
-              href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-500 hover:underline transition-colors"
-            >
-              linkedin
-            </a>
-            .
-          </p>
-        </section>
       </div>
     </main>
   );

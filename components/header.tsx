@@ -31,25 +31,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center">
           {/* Removed About and Resume links */}
         </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-black bg-opacity-95 border-t border-stone-800">
-          <nav className="flex flex-col p-4">
-            {/* Removed About and Resume links */}
-          </nav>
-        </div>
-      )}
     </header>
   );
 }

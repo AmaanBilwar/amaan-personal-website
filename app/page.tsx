@@ -37,7 +37,7 @@ export default function Home() {
                 <li>studying systems design engineering at the university of waterloo</li>
                 <li>preparing to join textql as a software engineer intern in nyc soon</li>
                 <li>building projects to help others create and invent new things</li>
-                <li>sharing my journey in tech and creativity online with friends</li>
+                <li>sharing my journey in tech and creativity online with everyone to see</li>
               </ul>
             </div>
             <div>
@@ -45,16 +45,16 @@ export default function Home() {
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>building ai agents that surprise and delight people everywhere</li>
                 <li>turning data into tools, visuals, and magic for everyone</li>
-                <li>chasing creative sparks—art, doodles, and new designs daily</li>
-                <li>engineering projects that make me say, "whoa, that's awesome!"</li>
+                <li>chasing creative art sparks, sketching doodles, and imagining new designs every single day</li>
+                <li>engineering projects that make me say, "whoa, that's so cool!"</li>
               </ul>
             </div>
             <div>
               <p className="mb-2 text-stone-300">Previously...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>software engineer intern at rbcx - ownr, building tools for entrepreneurs worldwide</li>
-                <li>software engineer intern at rbc, working on large-scale systems development</li>
-                <li>ux design intern at meta hash capital, focusing on user experience in finance technology</li>
+                <li>was a software engineer intern at ownr, building tools for entrepreneurs worldwide</li>
+                <li>was a software engineer intern at rbc, working on machine learning models</li>
+                <li>was a ux design intern at meta hash capital, focusing on user experience in finance technology</li>
               </ul>
             </div>
 

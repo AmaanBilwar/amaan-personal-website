@@ -34,38 +34,30 @@ export default function Home() {
             <div>
               <p className="mb-2">I'm currently...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>I'm studying Systems Design Engineering at the University of Waterloo, where I get to explore how technology and people interact to solve real-world problems.</li>
-                <li>I'm preparing to join TextQL as a Software Engineer Intern in NYC, excited to dive into new challenges and learn from an amazing team.</li>
-                <li>I'm building hardware and software projects designed to help other people create, invent, and bring their own ideas to life.</li>
-                <li>I'm sharing my journey in tech, engineering, and creativity online, hoping to inspire and connect with others who love to build.</li>
+                <li>studying systems design engineering at the university of waterloo</li>
+                <li>preparing to join textql as a software engineer intern in nyc soon</li>
+                <li>building projects to help others create and invent new things</li>
+                <li>sharing my journey in tech and creativity online with friends</li>
               </ul>
             </div>
             <div>
               <p className="mb-2">I'm excited about...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>I'm passionate about building AI agents that surprise, delight, and sometimes even make me laugh with their unexpected behaviors and clever solutions.</li>
-                <li>I love turning mountains of raw data into useful tools, visualizations, and even a few magic tricks that make information more accessible and fun.</li>
-                <li>I'm always chasing creative sparks—whether that's making art, doodling in my sketchbook, or experimenting with new forms of design and expression.</li>
-                <li>I get a thrill from engineering projects that make me say, "whoa, that's cool!" and push the boundaries of what I thought was possible.</li>
+                <li>building ai agents that surprise and delight people everywhere</li>
+                <li>turning data into tools, visuals, and magic for everyone</li>
+                <li>chasing creative sparks—art, doodles, and new designs daily</li>
+                <li>engineering projects that make me say, "whoa, that's awesome!"</li>
               </ul>
             </div>
             <div>
               <p className="mb-2">Previously...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>I worked as a Software Engineer Intern at RBCx - Ownr, where I contributed to building tools for entrepreneurs and small businesses.</li>
-                <li>I was a Software Engineer Intern at RBC, gaining experience in large-scale systems and collaborating with talented teams.</li>
-                <li>I served as a UX Design Intern at Meta Hash Capital, focusing on user experience and the intersection of design and technology in finance.</li>
+                <li>software engineer intern at rbcx - ownr, building tools for entrepreneurs worldwide</li>
+                <li>software engineer intern at rbc, working on large-scale systems development</li>
+                <li>ux design intern at meta hash capital, focusing on user experience in finance technology</li>
               </ul>
             </div>
-            <div>
-              <p className="mb-2">Projects I've worked on...</p>
-              <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>Fernando: A posture-correcting robot built with OpenCV, designed to help people improve their posture in a playful and engaging way.</li>
-                <li>Whiteboard: A brainstorming platform that makes it easy for teams to share ideas and sketch ideas from anywhere.</li>
-                <li>Diff Digest: A tool for real-time GitHub PR diff processing, leveraging OpenAI integration to summarize and highlight important changes.</li>
-                <li>SQL Query Parser: A project that translates natural language into SQL queries, making data exploration more accessible to everyone.</li>
-              </ul>
-            </div>
+
           </div>
         </div>
 

@@ -75,7 +75,7 @@ export default function Home() {
         <SearchBar />
 
         <section className="mt-10 mb-6">
-          <p className="text-base sm:text-lg text-stone-400">
+          <p className="text-base text-stone-400">
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a
               href="mailto:nicholas.chen243@gmail.com"

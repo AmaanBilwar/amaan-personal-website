@@ -35,21 +35,22 @@ export default function Home() {
               <p className="mb-2">I'm currently...</p>
               <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
                 <li>studying systems design engineering at the university of waterloo</li>
+                <li>preparing to join textql as a software engineer intern in nyc</li>
+                <li>building hardware/software projects to help people build things</li>
                 <li>sharing tech, engineering, and creative projects online</li>
               </ul>
             </div>
             <div>
               <p className="mb-2">I'm excited about ...</p>
               <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
-                <li>the climate cinematic universe, electrification and resilience (history, energy policy, batteries, etc)</li>
-                <li>the weird and silly</li>
-                <li>cultivating the potential of people, throwing life-changing events, match-making, raising baby ideas</li>
+                <li>AI agents and the future of intelligent automation</li>
+                <li>data engineering, analytics, and building with data</li>
+                <li>art, design, and creative expression</li>
                 <li>engineering that makes your heart flutter</li>
-                <li>telling the history of technology, theories of civilizational prosperity, institution design</li>
               </ul>
             </div>
             <div>
-              <p className="mb-2">Previously...</p>
+              <p className="mb-2">Previously I...</p>
               <ul className="list-disc list-inside text-base text-stone-400 space-y-1">
                 <li>Software Engineer Intern at RBCx - Ownr</li>
                 <li>Software Engineer Intern at RBC</li>

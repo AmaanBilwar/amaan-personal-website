@@ -533,8 +533,10 @@ Miscellaneous/Personal:
 Current question: `;
 
 export async function POST(request: Request) {
+  let query: string | undefined = undefined;
   try {
-    const { query } = await request.json();
+    const body = await request.json();
+    query = body.query;
 
     if (!query) {
       return NextResponse.json({ error: 'Query is required' }, { status: 400 });
@@ -566,14 +568,14 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Groq API error details:', errorData);
+      console.error('Groq API error details:', errorData, 'Status:', response.status, 'Query:', query);
       throw new Error(`Groq API error: ${response.statusText}`);
     }
 
     const data = await response.json();
     return NextResponse.json({ response: data.choices[0].message.content });
   } catch (error) {
-    console.error('Error in AI route:', error);
+    console.error('Error in AI route:', error, 'Query:', typeof query !== 'undefined' ? query : 'N/A');
     if (error instanceof Error) {
       console.error('Stack trace:', error.stack);
       return NextResponse.json(

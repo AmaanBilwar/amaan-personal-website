@@ -574,9 +574,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ response: data.choices[0].message.content });
   } catch (error) {
     console.error('Error in AI route:', error);
-    return NextResponse.json(
-      { error: 'Failed to generate AI response' },
-      { status: 500 }
-    );
+    if (error instanceof Error) {
+      console.error('Stack trace:', error.stack);
+      return NextResponse.json(
+        { error: 'Failed to generate AI response', details: error.message },
+        { status: 500 }
+      );
+    } else {
+      return NextResponse.json(
+        { error: 'Failed to generate AI response', details: String(error) },
+        { status: 500 }
+      );
+    }
   }
 } 

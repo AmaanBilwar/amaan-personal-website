@@ -82,7 +82,31 @@ body {
   }
 
   body {
-    background-color: hsl(var(--background)) !important;
-    color: hsl(var(--foreground)) !important;
+    @apply bg-background text-foreground;
+    font-feature-settings: "tnum" on, "lnum" on;
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-bold tracking-tight;
+  }
+
+  h4 {
+    @apply text-xl font-bold tracking-tight;
+  }
+
+  p {
+    @apply text-base leading-7;
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }

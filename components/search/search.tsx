@@ -61,7 +61,7 @@ export default function SearchBar() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <h2 className="text-xl text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
+      <h2 className="text-lg text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
       <form ref={formRef} onSubmit={handleSubmit} className="relative group">

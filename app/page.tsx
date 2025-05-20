@@ -26,7 +26,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="max-w-6xl w-full space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
         <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white">
-          Nicholas Chen
+          Hey, I'm Nicholas!
         </h1>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">

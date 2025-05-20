@@ -1,9 +1,14 @@
 import type React from 'react';
-import { Inter } from 'next/font/google';
+import { JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
 
-const inter = Inter({ subsets: ['latin'] });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+  weight: ['400', '700'],
+});
 
 export const metadata = {
   title: 'Nicholas Chen | Portfolio',
@@ -17,15 +22,16 @@ export const generateViewport = () => ({
   initialScale: 1,
   maximumScale: 1,
 });
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={jetbrainsMono.variable}>
       <body
-        className={`${inter.className} bg-black bg-dotted-pattern min-h-screen`}
+        className={`${jetbrainsMono.className} bg-[#1a1a1a] min-h-screen antialiased`}
       >
         <Header />
         {children}

@@ -50,7 +50,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="mb-2 text-stone-300">Previously...</p>
+              <p className="mb-2 text-stone-300">Previously I...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>was a software engineer intern at ownr, building tools for entrepreneurs worldwide</li>
                 <li>was a software engineer intern at rbc, working on machine learning models</li>

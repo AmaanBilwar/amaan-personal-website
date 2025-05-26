@@ -57,9 +57,9 @@ export default function SearchBar() {
     } catch (error) {
       console.error('Search error:', error);
       // Add error message
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please try again.' 
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Sorry, I encountered an error. Please try again.'
       }]);
     } finally {
       setIsLoading(false);

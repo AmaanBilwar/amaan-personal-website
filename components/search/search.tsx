@@ -27,7 +27,9 @@ export default function SearchBar() {
   const [typedAI, setTypedAI] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -63,10 +65,26 @@ export default function SearchBar() {
     };
   }, [pendingAI]);
 
-  // Scroll to bottom when messages or typing changes
+  // Track if user is near the bottom
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, typedAI]);
+    const chatDiv = chatContainerRef.current;
+    if (!chatDiv) return;
+    function handleScroll() {
+      if (!chatDiv) return;
+      const threshold = 80; // px from bottom
+      const atBottom = chatDiv.scrollHeight - chatDiv.scrollTop - chatDiv.clientHeight < threshold;
+      setShouldAutoScroll(atBottom);
+    }
+    chatDiv.addEventListener('scroll', handleScroll);
+    return () => chatDiv.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to bottom when messages change, only if user is near bottom
+  useEffect(() => {
+    if (shouldAutoScroll) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages, shouldAutoScroll]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,8 +135,15 @@ export default function SearchBar() {
       <h2 className="text-lg text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
-      <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden">
-        <div className="flex-1 overflow-y-auto">
+      <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative">
+        {/* Overlay for AI typing, allows scroll/select but blocks input */}
+        {(pendingAI || typedAI) && (
+          <div
+            className="absolute inset-0 z-10 bg-transparent pointer-events-none"
+            aria-hidden="true"
+          />
+        )}
+        <div className="flex-1 overflow-y-auto" ref={chatContainerRef}>
           {messages.map((message, index) => (
             <ChatMessage
               key={index}
@@ -144,7 +169,7 @@ export default function SearchBar() {
           <div ref={messagesEndRef} />
         </div>
 
-        <form ref={formRef} onSubmit={handleSubmit} className="p-4 border-t border-white/30">
+        <form ref={formRef} onSubmit={handleSubmit} className="p-4 border-t border-white/30 relative z-20">
           <div className="relative">
             <input
               type="text"
@@ -152,11 +177,12 @@ export default function SearchBar() {
               className="w-full pl-4 pr-4 py-3 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              disabled={isLoading || !!pendingAI || !!typedAI}
             />
             <button
               type="submit"
               className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors"
-              disabled={isLoading || !!pendingAI}
+              disabled={isLoading || !!pendingAI || !!typedAI}
             >
               Send
             </button>

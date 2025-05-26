@@ -6,17 +6,32 @@ interface ChatMessageProps {
     content: string;
 }
 
+function linkify(text: string) {
+    // Regex to match URLs
+    const urlRegex = /(https?:\/\/[\w\-._~:/?#[\]@!$&'()*+,;=%]+)(?![^<]*>|[^\[]*\])/g;
+    return text.replace(urlRegex, (url) => {
+        let display = url;
+        if (url.includes('github.com')) display = 'GitHub';
+        else try { display = new URL(url).hostname; } catch { }
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">${display}</a>`;
+    });
+}
+
 export default function ChatMessage({ role, content }: ChatMessageProps) {
     return (
         <div className={`flex gap-4 p-4 ${role === 'assistant' ? 'bg-white/5' : ''}`}>
-            <Avatar className="h-8 w-8">
+            <Avatar className="h-8 w-8 mt-1">
                 <AvatarFallback className={role === 'assistant' ? 'bg-purple-500' : 'bg-blue-500'}>
                     {role === 'assistant' ? 'AI' : <User className="h-4 w-4" />}
                 </AvatarFallback>
             </Avatar>
-            <div className="flex-1 space-y-2">
-                <p className="text-sm text-stone-300 whitespace-pre-line">{content}</p>
+            <div className="flex-1 flex items-center">
+                {role === 'assistant' ? (
+                    <p className="text-sm text-stone-300 whitespace-pre-line" dangerouslySetInnerHTML={{ __html: linkify(content) }} />
+                ) : (
+                    <p className="text-sm text-stone-300 whitespace-pre-line text-center w-full">{content}</p>
+                )}
             </div>
         </div>
     );
-} 
+}

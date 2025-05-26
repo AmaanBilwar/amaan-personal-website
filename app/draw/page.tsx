@@ -159,6 +159,15 @@ export default function DrawPage() {
         }
     };
 
+    const handleDownload = () => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const link = document.createElement('a');
+        link.download = 'drawing.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    };
+
     return (
         <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
             <div className="max-w-4xl mx-auto">
@@ -186,13 +195,22 @@ export default function DrawPage() {
                         onTouchMove={handlePointerMove}
                         onTouchEnd={handlePointerUp}
                     />
-                    <button
-                        onClick={handleClear}
-                        className="absolute top-4 right-4 border border-stone-500 text-gray-400 hover:text-white px-3 py-1 rounded shadow bg-transparent"
-                    >
-                        Clear
-                    </button>
+                    <div className="absolute top-4 right-4 flex gap-2">
+                        <button
+                            onClick={handleClear}
+                            className="border border-stone-500 text-gray-400 hover:text-white px-3 py-1 rounded shadow bg-transparent"
+                        >
+                            Clear
+                        </button>
+                        <button
+                            onClick={handleDownload}
+                            className="border border-stone-500 text-gray-400 hover:text-white px-3 py-1 rounded shadow bg-transparent"
+                        >
+                            Download
+                        </button>
+                    </div>
                 </div>
+                <p className="text-center text-stone-500 mt-4">draw anything!</p>
             </div>
         </div>
     );

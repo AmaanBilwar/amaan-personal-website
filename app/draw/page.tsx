@@ -197,7 +197,7 @@ export default function DrawPage() {
                     />
                 </div>
                 <div className="flex items-center justify-between mt-4 w-full">
-                    <p className="text-stone-400">draw anything!</p>
+                    <p className="text-stone-400">Draw Anything!</p>
                     <div className="flex gap-2">
                         <button
                             onClick={handleClear}

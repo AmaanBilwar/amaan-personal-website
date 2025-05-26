@@ -170,7 +170,7 @@ export default function SearchBar() {
         </div>
 
         <form ref={formRef} onSubmit={handleSubmit} className="p-4 border-t border-white/30 relative z-20">
-          <div className="flex items-center gap-2">
+          <div className="flex items-stretch gap-2">
             <input
               type="text"
               placeholder="Ask me anything"
@@ -181,7 +181,7 @@ export default function SearchBar() {
             />
             <button
               type="submit"
-              className="px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2"
+              className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2"
               disabled={isLoading || !!pendingAI || !!typedAI}
             >
               {(!!pendingAI || !!typedAI) ? (
@@ -195,7 +195,7 @@ export default function SearchBar() {
             </button>
             <button
               type="button"
-              className="px-3 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md border border-white/20 transition-colors"
+              className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2"
               onClick={() => {
                 setMessages([]);
                 setPendingAI(null);

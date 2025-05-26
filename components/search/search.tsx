@@ -200,7 +200,7 @@ export default function SearchBar() {
               }}
               disabled={isLoading || !!pendingAI || !!typedAI}
             >
-              Clear Chat
+              Clear
             </button>
           </div>
         </form>

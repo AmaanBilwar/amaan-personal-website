@@ -22,7 +22,7 @@ const stories = [
         text: "It's always sparking new ideas and helping me to see the world from different perspectives."
     },
     {
-        text: "That deep connection to creativity is precisely why I've included this little canvas here."
+        text: "That deep connection to creativity is why I've included this little canvas here."
     },
     {
         text: "It's a piece of my journey, inviting you to doodle, design, and create something alongside me!"

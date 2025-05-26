@@ -6,9 +6,11 @@ import SamplePrompts from './sample-prompts';
 export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [aiResponse, setAiResponse] = useState<string | null>(null);
+  const [typedResponse, setTypedResponse] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
   const [dotCount, setDotCount] = useState(1);
   const formRef = useRef<HTMLFormElement>(null);
+  const typingTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -18,15 +20,47 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading]);
 
+  // Typing effect for AI response
+  useEffect(() => {
+    if (!aiResponse) {
+      setTypedResponse('');
+      return;
+    }
+    setTypedResponse('');
+    let idx = 0;
+    const typeChar = () => {
+      if (!aiResponse) return;
+      // If HTML, type as text, then set as HTML at the end
+      // We'll type out the text content, then set the HTML at the end for formatting
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = aiResponse;
+      const textContent = tempDiv.textContent || '';
+      if (idx < textContent.length) {
+        setTypedResponse(textContent.slice(0, idx + 1));
+        idx++;
+        typingTimeout.current = setTimeout(typeChar, 50); // speed of typing
+      } else {
+        // After typing, set the full HTML for formatting
+        setTypedResponse(aiResponse);
+      }
+    };
+    typeChar();
+    return () => {
+      if (typingTimeout.current) clearTimeout(typingTimeout.current);
+    };
+  }, [aiResponse]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = query.trim();
     if (!trimmed) {
       setAiResponse(null);
+      setTypedResponse('');
       return;
     }
 
     setIsLoading(true);
+    setTypedResponse('');
     try {
       const aiResult = await fetch('/api/ai', {
         method: 'POST',
@@ -51,6 +85,7 @@ export default function SearchBar() {
   const handlePromptClick = (prompt: string) => {
     setQuery(prompt);
     setAiResponse(null);
+    setTypedResponse('');
     setIsLoading(false);
     // Focus the input after setting the query
     const input = formRef.current?.querySelector('input');
@@ -81,9 +116,14 @@ export default function SearchBar() {
         </div>
       )}
 
-      {aiResponse && (
+      {typedResponse && (
         <div className="mt-4 p-4 border border-white/30 rounded-lg">
-          <p className="text-stone-300" dangerouslySetInnerHTML={{ __html: aiResponse }} />
+          {/* If not done typing, show as plain text. If done, show as HTML. */}
+          {typedResponse === aiResponse ? (
+            <p className="text-stone-300" dangerouslySetInnerHTML={{ __html: aiResponse || '' }} />
+          ) : (
+            <p className="text-stone-300 whitespace-pre-line">{typedResponse}<span className="animate-pulse">|</span></p>
+          )}
         </div>
       )}
     </div>

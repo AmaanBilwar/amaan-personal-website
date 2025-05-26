@@ -16,7 +16,10 @@ const stories = [
         text: "Even though I'm not in an art program anymore like I was in high school, I still love to make YouTube videos and create art."
     },
     {
-        text: "Because, in a way, engineering involves art every single day. It's about elegantly solving problems and designing intuitive, functional, and aesthetically pleasing solutions."
+        text: "Because, in a way, engineering involves art every single day."
+    },
+    {
+        text: "It's about elegantly solving problems and designing intuitive, functional, and aesthetically pleasing solutions."
     },
     {
         text: "It's always sparking new ideas and helping me to see the world from different perspectives."
@@ -148,9 +151,9 @@ export default function DrawPage() {
         <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-3xl font-bold mb-8">auto-typing nicholas's story</h1>
-                <div className="mb-8">
-                    <div className="p-4 bg-gray-800 rounded-lg">
-                        <p className="text-xl">
+                <div className="mb-8 w-full max-w-6xl mx-auto">
+                    <div className="p-4 bg-gray-800 rounded-lg min-h-[84px] w-full">
+                        <p className="text-xl break-words">
                             {isTyping ? (
                                 <span className="font-mono">{currentText}<span className="animate-pulse">|</span></span>
                             ) : (

@@ -134,19 +134,6 @@ export default function SearchBar() {
     <div className="w-full max-w-6xl mx-auto">
       <h2 className="text-lg text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
-      <div className="flex justify-end mb-2">
-        <button
-          className="px-3 py-1 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md border border-white/20 transition-colors"
-          onClick={() => {
-            setMessages([]);
-            setPendingAI(null);
-            setTypedAI('');
-          }}
-          disabled={isLoading || !!pendingAI || !!typedAI}
-        >
-          Clear Chat
-        </button>
-      </div>
 
       <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative">
         {/* Overlay for AI typing, allows scroll/select but blocks input */}
@@ -180,7 +167,7 @@ export default function SearchBar() {
         </div>
 
         <form ref={formRef} onSubmit={handleSubmit} className="p-4 border-t border-white/30 relative z-20">
-          <div className="relative flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <input
               type="text"
               placeholder="Ask me anything"
@@ -193,7 +180,6 @@ export default function SearchBar() {
               type="submit"
               className="px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2"
               disabled={isLoading || !!pendingAI || !!typedAI}
-              style={{ position: 'absolute', right: '110px', top: '50%', transform: 'translateY(-50%)' }}
             >
               {(!!pendingAI || !!typedAI) ? (
                 <>
@@ -213,7 +199,6 @@ export default function SearchBar() {
                 setTypedAI('');
               }}
               disabled={isLoading || !!pendingAI || !!typedAI}
-              style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)' }}
             >
               Clear Chat
             </button>

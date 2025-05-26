@@ -48,6 +48,35 @@ export default function DrawPage() {
     const [drawing, setDrawing] = useState(false);
     const points = useRef<{ x: number; y: number }[]>([]);
 
+    // Restore canvas from localStorage on mount
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        const dataUrl = localStorage.getItem('drawing-canvas');
+        if (dataUrl) {
+            const img = new window.Image();
+            img.onload = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+            img.src = dataUrl;
+        }
+    }, []);
+
+    // Save canvas to localStorage
+    const saveCanvas = () => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        try {
+            const dataUrl = canvas.toDataURL('image/png');
+            localStorage.setItem('drawing-canvas', dataUrl);
+        } catch (e) {
+            // ignore quota errors
+        }
+    };
+
     // Resize canvas to fill container
     useEffect(() => {
         function resizeCanvas() {
@@ -149,6 +178,7 @@ export default function DrawPage() {
     const handlePointerUp = () => {
         setDrawing(false);
         points.current = [];
+        saveCanvas();
     };
 
     const handleClear = () => {
@@ -156,6 +186,7 @@ export default function DrawPage() {
         const ctx = canvas?.getContext('2d');
         if (canvas && ctx) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            localStorage.removeItem('drawing-canvas');
         }
     };
 

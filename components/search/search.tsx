@@ -157,10 +157,7 @@ export default function SearchBar() {
           )}
           {isLoading && !typedAI && !pendingAI && (
             <div className="flex gap-4 p-4 bg-white/5">
-              <div className="h-8 w-8 rounded-full bg-purple-500 flex items-center justify-center text-sm">
-                AI
-              </div>
-              <div className="flex items-center gap-2 text-stone-400">
+              <div className="flex items-center gap-2 text-stone-400 pl-2">
                 <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
                 <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
               </div>
@@ -181,10 +178,17 @@ export default function SearchBar() {
             />
             <button
               type="submit"
-              className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2"
               disabled={isLoading || !!pendingAI || !!typedAI}
             >
-              Send
+              {(!!pendingAI || !!typedAI) ? (
+                <>
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent inline-block"></span>
+                  Responding...
+                </>
+              ) : (
+                'Send'
+              )}
             </button>
           </div>
         </form>

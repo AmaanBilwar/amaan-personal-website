@@ -46,8 +46,7 @@ export default function DrawPage() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [drawing, setDrawing] = useState(false);
-    const lastPos = useRef<{ x: number; y: number } | null>(null);
-    const prevPos = useRef<{ x: number; y: number } | null>(null);
+    const points = useRef<{ x: number; y: number }[]>([]);
 
     // Resize canvas to fill container
     useEffect(() => {
@@ -114,8 +113,7 @@ export default function DrawPage() {
 
     const handlePointerDown = (e: React.MouseEvent | React.TouchEvent) => {
         setDrawing(true);
-        lastPos.current = getCanvasPos(e);
-        prevPos.current = null;
+        points.current = [getCanvasPos(e)];
     };
 
     const handlePointerMove = (e: React.MouseEvent | React.TouchEvent) => {
@@ -128,27 +126,29 @@ export default function DrawPage() {
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         const pos = getCanvasPos(e);
-        if (lastPos.current) {
-            if (prevPos.current) {
-                ctx.beginPath();
-                ctx.moveTo(prevPos.current.x, prevPos.current.y);
-                ctx.quadraticCurveTo(lastPos.current.x, lastPos.current.y, pos.x, pos.y);
-                ctx.stroke();
-            } else {
-                ctx.beginPath();
-                ctx.moveTo(lastPos.current.x, lastPos.current.y);
-                ctx.lineTo(pos.x, pos.y);
-                ctx.stroke();
-            }
-            prevPos.current = lastPos.current;
+        points.current.push(pos);
+        if (points.current.length < 3) {
+            // Draw a dot for the first point
+            ctx.beginPath();
+            ctx.arc(pos.x, pos.y, ctx.lineWidth / 2, 0, Math.PI * 2, true);
+            ctx.fillStyle = ctx.strokeStyle;
+            ctx.fill();
+            ctx.closePath();
+            return;
         }
-        lastPos.current = pos;
+        // Use the last three points to draw a smooth curve
+        const [p1, p2, p3] = points.current.slice(-3);
+        const mid1 = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
+        const mid2 = { x: (p2.x + p3.x) / 2, y: (p2.y + p3.y) / 2 };
+        ctx.beginPath();
+        ctx.moveTo(mid1.x, mid1.y);
+        ctx.quadraticCurveTo(p2.x, p2.y, mid2.x, mid2.y);
+        ctx.stroke();
     };
 
     const handlePointerUp = () => {
         setDrawing(false);
-        lastPos.current = null;
-        prevPos.current = null;
+        points.current = [];
     };
 
     const handleClear = () => {

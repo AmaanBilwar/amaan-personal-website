@@ -23,8 +23,11 @@ export default function SearchBar() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [dotCount, setDotCount] = useState(1);
+  const [pendingAI, setPendingAI] = useState<string | null>(null);
+  const [typedAI, setTypedAI] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const typingTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -34,10 +37,36 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading]);
 
-  // Scroll to bottom when messages change
+  // Typing animation for AI response
+  useEffect(() => {
+    if (pendingAI === null) return;
+    setTypedAI('');
+    let idx = 0;
+    function typeChar() {
+      if (pendingAI === null) return;
+      if (idx < pendingAI.length) {
+        setTypedAI(pendingAI.slice(0, idx + 1));
+        idx++;
+        typingTimeout.current = setTimeout(typeChar, 18); // typing speed
+      } else {
+        setMessages(prev => [
+          ...prev,
+          { role: 'assistant', content: pendingAI }
+        ]);
+        setPendingAI(null);
+        setTypedAI('');
+      }
+    }
+    typeChar();
+    return () => {
+      if (typingTimeout.current) clearTimeout(typingTimeout.current);
+    };
+  }, [pendingAI]);
+
+  // Scroll to bottom when messages or typing changes
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [messages, typedAI]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,19 +89,15 @@ export default function SearchBar() {
 
       if (aiResult.ok) {
         const aiData = await aiResult.json();
-        // Add AI response, filtering out personal website mentions
-        setMessages(prev => [
-          ...prev,
-          { role: 'assistant', content: filterPersonalWebsite(aiData.response) }
-        ]);
+        // Filter out personal website mentions and type out the response
+        setPendingAI(filterPersonalWebsite(aiData.response));
       }
     } catch (error) {
       console.error('Search error:', error);
-      // Add error message
-      setMessages(prev => [...prev, {
-        role: 'assistant',
-        content: 'Sorry, I encountered an error. Please try again.'
-      }]);
+      setMessages(prev => [
+        ...prev,
+        { role: 'assistant', content: 'Sorry, I encountered an error. Please try again.' }
+      ]);
     } finally {
       setIsLoading(false);
       setDotCount(1);
@@ -81,7 +106,6 @@ export default function SearchBar() {
 
   const handlePromptClick = (prompt: string) => {
     setQuery(prompt);
-    // Focus the input after setting the query
     const input = formRef.current?.querySelector('input');
     if (input) {
       input.focus();
@@ -102,7 +126,11 @@ export default function SearchBar() {
               content={message.content}
             />
           ))}
-          {isLoading && (
+          {/* Typing animation for AI */}
+          {typedAI && (
+            <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
+          )}
+          {isLoading && !typedAI && !pendingAI && (
             <div className="flex gap-4 p-4 bg-white/5">
               <div className="h-8 w-8 rounded-full bg-purple-500 flex items-center justify-center text-sm">
                 AI
@@ -128,7 +156,7 @@ export default function SearchBar() {
             <button
               type="submit"
               className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors"
-              disabled={isLoading}
+              disabled={isLoading || !!pendingAI}
             >
               Send
             </button>

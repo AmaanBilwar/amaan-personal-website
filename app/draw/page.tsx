@@ -4,22 +4,28 @@ import { useEffect, useState, useRef } from 'react';
 
 const stories = [
     {
-        text: "nicholas enjoys playing the piano and making music in his free time."
+        text: "Ever since I was a kid, drawing and making art has been a huge part of my life."
     },
     {
-        text: "he used to make art as a kid and still loves to doodle and design."
+        text: "For over 13 years, it's been a constant source of inspiration and expression."
     },
     {
-        text: "nicholas is passionate about building things that help people build things."
+        text: "This blend of creativity and problem-solving is actually why Systems Design Engineering really appealed to me."
     },
     {
-        text: "he's curious about ai agents, data, and creative technology."
+        text: "Even though I'm not in an art program anymore like I was in high school, I still love to make YouTube videos and create art."
     },
     {
-        text: "he loves learning, exploring new ideas, and collaborating with others."
+        text: "Because, in a way, engineering involves art every single day. It's about elegantly solving problems and designing intuitive, functional, and aesthetically pleasing solutions."
     },
     {
-        text: "when he's not coding, nicholas enjoys hiking, reading, and playing basketball."
+        text: "It's always sparking new ideas and helping me to see the world from different perspectives."
+    },
+    {
+        text: "That deep connection to creativity is precisely why I've included this little canvas here."
+    },
+    {
+        text: "It's a piece of my journey, inviting you to doodle, design, and create something alongside me!"
     }
 ];
 
@@ -31,12 +37,29 @@ export default function DrawPage() {
     const [isTyping, setIsTyping] = useState(false);
     const [currentIdx, setCurrentIdx] = useState(0);
     const charIndex = useRef(0);
-    const animationFrame = useRef<number>();
+    const animationFrame = useRef<number>(null);
 
     // Drawing state
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [drawing, setDrawing] = useState(false);
     const lastPos = useRef<{ x: number; y: number } | null>(null);
+
+    // Resize canvas to fill container
+    useEffect(() => {
+        function resizeCanvas() {
+            const canvas = canvasRef.current;
+            const container = containerRef.current;
+            if (canvas && container) {
+                const rect = container.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        return () => window.removeEventListener('resize', resizeCanvas);
+    }, []);
 
     useEffect(() => {
         const typeParagraph = () => {
@@ -137,13 +160,11 @@ export default function DrawPage() {
                         </p>
                     </div>
                 </div>
-                <div className="flex flex-col items-center aspect-video w-full bg-gray-800 rounded-lg overflow-hidden relative">
+                <div ref={containerRef} className="flex flex-col items-center aspect-video w-full bg-gray-800 rounded-lg overflow-hidden relative">
                     <canvas
                         ref={canvasRef}
-                        width={IMAGE_WIDTH}
-                        height={IMAGE_HEIGHT}
-                        className="bg-[#181e29] rounded-lg border border-gray-700 cursor-crosshair"
-                        style={{ touchAction: 'none', maxWidth: '100%', maxHeight: '100%' }}
+                        className="bg-[#181e29] rounded-lg border border-gray-700 cursor-crosshair w-full h-full"
+                        style={{ touchAction: 'none', display: 'block' }}
                         onMouseDown={handlePointerDown}
                         onMouseMove={handlePointerMove}
                         onMouseUp={handlePointerUp}

@@ -151,7 +151,7 @@ export default function DrawPage() {
         <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
             <div className="max-w-4xl mx-auto">
                 <div className="mb-8 mt-16 w-full max-w-6xl mx-auto">
-                    <div className="p-4 border border-gray-700 rounded-lg min-h-[200px] md:min-h-[84px] w-full">
+                    <div className="p-4 border border-stone-500 rounded-lg min-h-[200px] md:min-h-[84px] w-full">
                         <p className="text-xl break-words">
                             {isTyping ? (
                                 <span className="font-mono">{currentText}<span className="animate-pulse">|</span></span>
@@ -164,7 +164,7 @@ export default function DrawPage() {
                 <div ref={containerRef} className="flex flex-col items-center aspect-video w-full bg-gray-800 rounded-lg overflow-hidden relative">
                     <canvas
                         ref={canvasRef}
-                        className="bg-[#181e29] rounded-lg border border-gray-700 cursor-crosshair w-full h-full"
+                        className="bg-[#1a1a1a] rounded-lg border border-stone-500 cursor-crosshair w-full h-full"
                         style={{ touchAction: 'none', display: 'block' }}
                         onMouseDown={handlePointerDown}
                         onMouseMove={handlePointerMove}
@@ -176,7 +176,7 @@ export default function DrawPage() {
                     />
                     <button
                         onClick={handleClear}
-                        className="absolute top-4 right-4 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded shadow"
+                        className="absolute top-4 right-4 border border-stone-500 text-gray-400 hover:text-white px-3 py-1 rounded shadow bg-transparent"
                     >
                         Clear
                     </button>

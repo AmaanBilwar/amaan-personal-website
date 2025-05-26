@@ -79,9 +79,12 @@ export default function SearchBar() {
     return () => chatDiv.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to bottom when messages change, only if user is near bottom
+  // Scroll to bottom only when a new AI message is added and user is near bottom
   useEffect(() => {
-    if (shouldAutoScroll) {
+    if (!shouldAutoScroll) return;
+    if (messages.length === 0) return;
+    const lastMsg = messages[messages.length - 1];
+    if (lastMsg.role === 'assistant') {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, shouldAutoScroll]);

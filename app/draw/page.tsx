@@ -62,12 +62,13 @@ export default function DrawPage() {
     }, []);
 
     useEffect(() => {
+        let timeoutId: NodeJS.Timeout | null = null;
         const typeParagraph = () => {
             const para = stories[currentIdx].text;
             if (charIndex.current < para.length) {
                 setCurrentText(para.slice(0, charIndex.current + 1));
                 charIndex.current++;
-                animationFrame.current = requestAnimationFrame(typeParagraph);
+                timeoutId = setTimeout(typeParagraph, 40);
             } else {
                 setIsTyping(false);
                 setTimeout(() => {
@@ -78,12 +79,10 @@ export default function DrawPage() {
             }
         };
         if (isTyping) {
-            animationFrame.current = requestAnimationFrame(typeParagraph);
+            typeParagraph();
         }
         return () => {
-            if (animationFrame.current) {
-                cancelAnimationFrame(animationFrame.current);
-            }
+            if (timeoutId) clearTimeout(timeoutId);
         };
     }, [isTyping, currentIdx]);
 

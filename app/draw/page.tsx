@@ -182,10 +182,10 @@ export default function DrawPage() {
                         </p>
                     </div>
                 </div>
-                <div ref={containerRef} className="flex flex-col items-center aspect-video w-full bg-gray-800 rounded-lg overflow-hidden relative">
+                <div ref={containerRef} className="flex flex-col items-center w-full border border-stone-500 rounded-lg bg-[#1a1a1a] overflow-hidden relative min-h-[350px] md:min-h-[250px]">
                     <canvas
                         ref={canvasRef}
-                        className="bg-[#1a1a1a] rounded-lg border border-stone-500 cursor-crosshair w-full h-full"
+                        className="w-full h-full cursor-crosshair"
                         style={{ touchAction: 'none', display: 'block' }}
                         onMouseDown={handlePointerDown}
                         onMouseMove={handlePointerMove}

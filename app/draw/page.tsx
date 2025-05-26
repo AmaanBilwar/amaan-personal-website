@@ -1,34 +1,30 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
 
 const stories = [
     {
-        text: "nicholas enjoys playing the piano and making music in his free time.",
-        img: "/piano.png"
+        text: "nicholas enjoys playing the piano and making music in his free time."
     },
     {
-        text: "he used to make art as a kid and still loves to doodle and design.",
-        img: "/art.png"
+        text: "he used to make art as a kid and still loves to doodle and design."
     },
     {
-        text: "nicholas is passionate about building things that help people build things.",
-        img: "/build.png"
+        text: "nicholas is passionate about building things that help people build things."
     },
     {
-        text: "he's curious about ai agents, data, and creative technology.",
-        img: "/ai.png"
+        text: "he's curious about ai agents, data, and creative technology."
     },
     {
-        text: "he loves learning, exploring new ideas, and collaborating with others.",
-        img: "/explore.png"
+        text: "he loves learning, exploring new ideas, and collaborating with others."
     },
     {
-        text: "when he's not coding, nicholas enjoys hiking, reading, and playing basketball.",
-        img: "/hiking.png"
+        text: "when he's not coding, nicholas enjoys hiking, reading, and playing basketball."
     }
 ];
+
+const IMAGE_WIDTH = 400;
+const IMAGE_HEIGHT = 300;
 
 export default function DrawPage() {
     const [currentText, setCurrentText] = useState('');
@@ -36,6 +32,11 @@ export default function DrawPage() {
     const [currentIdx, setCurrentIdx] = useState(0);
     const charIndex = useRef(0);
     const animationFrame = useRef<number>();
+
+    // Drawing state
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [drawing, setDrawing] = useState(false);
+    const lastPos = useRef<{ x: number; y: number } | null>(null);
 
     useEffect(() => {
         const typeParagraph = () => {
@@ -67,6 +68,60 @@ export default function DrawPage() {
         setIsTyping(true);
     }, []);
 
+    // Drawing handlers
+    const getCanvasPos = (e: React.MouseEvent | React.TouchEvent) => {
+        const canvas = canvasRef.current;
+        if (!canvas) return { x: 0, y: 0 };
+        const rect = canvas.getBoundingClientRect();
+        if ('touches' in e) {
+            return {
+                x: e.touches[0].clientX - rect.left,
+                y: e.touches[0].clientY - rect.top,
+            };
+        } else {
+            return {
+                x: (e as React.MouseEvent).clientX - rect.left,
+                y: (e as React.MouseEvent).clientY - rect.top,
+            };
+        }
+    };
+
+    const handlePointerDown = (e: React.MouseEvent | React.TouchEvent) => {
+        setDrawing(true);
+        lastPos.current = getCanvasPos(e);
+    };
+
+    const handlePointerMove = (e: React.MouseEvent | React.TouchEvent) => {
+        if (!drawing) return;
+        const canvas = canvasRef.current;
+        const ctx = canvas?.getContext('2d');
+        if (!canvas || !ctx) return;
+        const pos = getCanvasPos(e);
+        if (lastPos.current) {
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(lastPos.current.x, lastPos.current.y);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+        }
+        lastPos.current = pos;
+    };
+
+    const handlePointerUp = () => {
+        setDrawing(false);
+        lastPos.current = null;
+    };
+
+    const handleClear = () => {
+        const canvas = canvasRef.current;
+        const ctx = canvas?.getContext('2d');
+        if (canvas && ctx) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
             <div className="max-w-4xl mx-auto">
@@ -82,15 +137,27 @@ export default function DrawPage() {
                         </p>
                     </div>
                 </div>
-                <div className="flex justify-center items-center aspect-video w-full bg-gray-800 rounded-lg overflow-hidden">
-                    <Image
-                        src={stories[currentIdx].img}
-                        alt={stories[currentIdx].text}
-                        width={400}
-                        height={300}
-                        className="object-contain max-h-full max-w-full"
-                        priority
+                <div className="flex flex-col items-center aspect-video w-full bg-gray-800 rounded-lg overflow-hidden relative">
+                    <canvas
+                        ref={canvasRef}
+                        width={IMAGE_WIDTH}
+                        height={IMAGE_HEIGHT}
+                        className="bg-[#181e29] rounded-lg border border-gray-700 cursor-crosshair"
+                        style={{ touchAction: 'none', maxWidth: '100%', maxHeight: '100%' }}
+                        onMouseDown={handlePointerDown}
+                        onMouseMove={handlePointerMove}
+                        onMouseUp={handlePointerUp}
+                        onMouseLeave={handlePointerUp}
+                        onTouchStart={handlePointerDown}
+                        onTouchMove={handlePointerMove}
+                        onTouchEnd={handlePointerUp}
                     />
+                    <button
+                        onClick={handleClear}
+                        className="absolute top-4 right-4 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded shadow"
+                    >
+                        Clear
+                    </button>
                 </div>
             </div>
         </div>

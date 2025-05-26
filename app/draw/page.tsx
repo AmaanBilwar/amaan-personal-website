@@ -47,6 +47,7 @@ export default function DrawPage() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [drawing, setDrawing] = useState(false);
     const lastPos = useRef<{ x: number; y: number } | null>(null);
+    const prevPos = useRef<{ x: number; y: number } | null>(null);
 
     // Resize canvas to fill container
     useEffect(() => {
@@ -114,6 +115,7 @@ export default function DrawPage() {
     const handlePointerDown = (e: React.MouseEvent | React.TouchEvent) => {
         setDrawing(true);
         lastPos.current = getCanvasPos(e);
+        prevPos.current = null;
     };
 
     const handlePointerMove = (e: React.MouseEvent | React.TouchEvent) => {
@@ -121,15 +123,24 @@ export default function DrawPage() {
         const canvas = canvasRef.current;
         const ctx = canvas?.getContext('2d');
         if (!canvas || !ctx) return;
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
         const pos = getCanvasPos(e);
         if (lastPos.current) {
-            ctx.strokeStyle = '#fff';
-            ctx.lineWidth = 2;
-            ctx.lineCap = 'round';
-            ctx.beginPath();
-            ctx.moveTo(lastPos.current.x, lastPos.current.y);
-            ctx.lineTo(pos.x, pos.y);
-            ctx.stroke();
+            if (prevPos.current) {
+                ctx.beginPath();
+                ctx.moveTo(prevPos.current.x, prevPos.current.y);
+                ctx.quadraticCurveTo(lastPos.current.x, lastPos.current.y, pos.x, pos.y);
+                ctx.stroke();
+            } else {
+                ctx.beginPath();
+                ctx.moveTo(lastPos.current.x, lastPos.current.y);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+            }
+            prevPos.current = lastPos.current;
         }
         lastPos.current = pos;
     };
@@ -137,6 +148,7 @@ export default function DrawPage() {
     const handlePointerUp = () => {
         setDrawing(false);
         lastPos.current = null;
+        prevPos.current = null;
     };
 
     const handleClear = () => {

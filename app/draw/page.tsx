@@ -163,8 +163,8 @@ export default function DrawPage() {
         <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
             <div className="max-w-4xl mx-auto">
                 <div className="mb-8 mt-16 w-full max-w-6xl mx-auto">
-                    <div className="p-4 border border-stone-500 rounded-lg min-h-[200px] md:min-h-[84px] w-full">
-                        <p className="text-xl break-words">
+                    <div className="p-4 border border-stone-500 rounded-lg min-h-[150px] md:min-h-[84px] w-full">
+                        <p className="text-base break-words">
                             {isTyping ? (
                                 <span className="font-mono">{currentText}<span className="animate-pulse">|</span></span>
                             ) : (

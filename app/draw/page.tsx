@@ -198,13 +198,13 @@ export default function DrawPage() {
                     <div className="absolute top-4 right-4 flex gap-2">
                         <button
                             onClick={handleClear}
-                            className="border border-stone-500 text-gray-400 hover:text-white px-3 py-1 rounded shadow bg-transparent"
+                            className="border border-stone-500 text-gray-400 hover:text-white focus:text-gray-400 active:text-gray-400 px-3 py-1 rounded shadow bg-transparent"
                         >
                             Clear
                         </button>
                         <button
                             onClick={handleDownload}
-                            className="border border-stone-500 text-gray-400 hover:text-white px-3 py-1 rounded shadow bg-transparent"
+                            className="border border-stone-500 text-gray-400 hover:text-white focus:text-gray-400 active:text-gray-400 px-3 py-1 rounded shadow bg-transparent"
                         >
                             Download
                         </button>

@@ -2,15 +2,20 @@
 
 import { useState, useRef, useEffect } from 'react';
 import SamplePrompts from './sample-prompts';
+import ChatMessage from './chat-message';
+
+interface Message {
+  role: 'user' | 'assistant';
+  content: string;
+}
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
-  const [aiResponse, setAiResponse] = useState<string | null>(null);
-  const [typedResponse, setTypedResponse] = useState<string>('');
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [dotCount, setDotCount] = useState(1);
   const formRef = useRef<HTMLFormElement>(null);
-  const typingTimeout = useRef<NodeJS.Timeout | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -20,47 +25,21 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading]);
 
-  // Typing effect for AI response
+  // Scroll to bottom when messages change
   useEffect(() => {
-    if (!aiResponse) {
-      setTypedResponse('');
-      return;
-    }
-    setTypedResponse('');
-    let idx = 0;
-    const typeChar = () => {
-      if (!aiResponse) return;
-      // If HTML, type as text, then set as HTML at the end
-      // We'll type out the text content, then set the HTML at the end for formatting
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = aiResponse;
-      const textContent = tempDiv.textContent || '';
-      if (idx < textContent.length) {
-        setTypedResponse(textContent.slice(0, idx + 1));
-        idx++;
-        typingTimeout.current = setTimeout(typeChar, 50); // speed of typing
-      } else {
-        // After typing, set the full HTML for formatting
-        setTypedResponse(aiResponse);
-      }
-    };
-    typeChar();
-    return () => {
-      if (typingTimeout.current) clearTimeout(typingTimeout.current);
-    };
-  }, [aiResponse]);
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = query.trim();
-    if (!trimmed) {
-      setAiResponse(null);
-      setTypedResponse('');
-      return;
-    }
+    if (!trimmed) return;
 
+    // Add user message
+    setMessages(prev => [...prev, { role: 'user', content: trimmed }]);
+    setQuery('');
     setIsLoading(true);
-    setTypedResponse('');
+
     try {
       const aiResult = await fetch('/api/ai', {
         method: 'POST',
@@ -72,10 +51,16 @@ export default function SearchBar() {
 
       if (aiResult.ok) {
         const aiData = await aiResult.json();
-        setAiResponse(aiData.response);
+        // Add AI response
+        setMessages(prev => [...prev, { role: 'assistant', content: aiData.response }]);
       }
     } catch (error) {
       console.error('Search error:', error);
+      // Add error message
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: 'Sorry, I encountered an error. Please try again.' 
+      }]);
     } finally {
       setIsLoading(false);
       setDotCount(1);
@@ -84,9 +69,6 @@ export default function SearchBar() {
 
   const handlePromptClick = (prompt: string) => {
     setQuery(prompt);
-    setAiResponse(null);
-    setTypedResponse('');
-    setIsLoading(false);
     // Focus the input after setting the query
     const input = formRef.current?.querySelector('input');
     if (input) {
@@ -99,33 +81,48 @@ export default function SearchBar() {
       <h2 className="text-lg text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
-      <form ref={formRef} onSubmit={handleSubmit} className="relative group">
-        <input
-          type="text"
-          placeholder="Ask me anything"
-          className="w-full pl-4 pr-4 py-3 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </form>
-
-      {isLoading && (
-        <div className="mt-4 flex items-center gap-2 text-stone-400 pl-2">
-          <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
-          <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
-        </div>
-      )}
-
-      {typedResponse && (
-        <div className="mt-4 p-4 border border-white/30 rounded-lg">
-          {/* If not done typing, show as plain text. If done, show as HTML. */}
-          {typedResponse === aiResponse ? (
-            <p className="text-stone-300" dangerouslySetInnerHTML={{ __html: aiResponse || '' }} />
-          ) : (
-            <p className="text-stone-300 whitespace-pre-line">{typedResponse}<span className="animate-pulse">|</span></p>
+      <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden">
+        <div className="flex-1 overflow-y-auto">
+          {messages.map((message, index) => (
+            <ChatMessage
+              key={index}
+              role={message.role}
+              content={message.content}
+            />
+          ))}
+          {isLoading && (
+            <div className="flex gap-4 p-4 bg-white/5">
+              <div className="h-8 w-8 rounded-full bg-purple-500 flex items-center justify-center text-sm">
+                AI
+              </div>
+              <div className="flex items-center gap-2 text-stone-400">
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
+                <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
+              </div>
+            </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
-      )}
+
+        <form ref={formRef} onSubmit={handleSubmit} className="p-4 border-t border-white/30">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Ask me anything"
+              className="w-full pl-4 pr-4 py-3 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors"
+              disabled={isLoading}
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

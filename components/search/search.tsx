@@ -9,6 +9,15 @@ interface Message {
   content: string;
 }
 
+function filterPersonalWebsite(text: string) {
+  // Remove phrases like 'personal website' and links to your own domain
+  return text
+    .replace(/(my\s+)?personal website(\.|,|!|\s|$)/gi, '')
+    .replace(/https?:\/\/(www\.)?nicholaschen\.ca\S*/gi, '') // replace with your actual domain if different
+    .replace(/\s{2,}/g, ' ') // clean up extra spaces
+    .trim();
+}
+
 export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
@@ -51,8 +60,11 @@ export default function SearchBar() {
 
       if (aiResult.ok) {
         const aiData = await aiResult.json();
-        // Add AI response
-        setMessages(prev => [...prev, { role: 'assistant', content: aiData.response }]);
+        // Add AI response, filtering out personal website mentions
+        setMessages(prev => [
+          ...prev,
+          { role: 'assistant', content: filterPersonalWebsite(aiData.response) }
+        ]);
       }
     } catch (error) {
       console.error('Search error:', error);

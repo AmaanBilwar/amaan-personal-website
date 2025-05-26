@@ -198,7 +198,6 @@ export default function SearchBar() {
                 setPendingAI(null);
                 setTypedAI('');
               }}
-              disabled={isLoading || !!pendingAI || !!typedAI}
             >
               Clear
             </button>

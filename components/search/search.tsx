@@ -49,7 +49,7 @@ export default function SearchBar() {
       if (idx < pendingAI.length) {
         setTypedAI(pendingAI.slice(0, idx + 1));
         idx++;
-        typingTimeout.current = setTimeout(typeChar, 18); // typing speed
+        typingTimeout.current = setTimeout(typeChar, 35); // slower typing speed
       } else {
         setMessages(prev => [
           ...prev,

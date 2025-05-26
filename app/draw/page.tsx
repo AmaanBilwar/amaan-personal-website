@@ -195,7 +195,10 @@ export default function DrawPage() {
                         onTouchMove={handlePointerMove}
                         onTouchEnd={handlePointerUp}
                     />
-                    <div className="absolute top-4 right-4 flex gap-2">
+                </div>
+                <div className="flex items-center justify-between mt-4 w-full">
+                    <p className="text-stone-400">draw anything!</p>
+                    <div className="flex gap-2">
                         <button
                             onClick={handleClear}
                             className="border border-stone-500 text-stone-400 hover:text-white focus:text-gray-400 active:text-gray-400 px-3 py-1 rounded shadow bg-transparent"
@@ -210,7 +213,6 @@ export default function DrawPage() {
                         </button>
                     </div>
                 </div>
-                <p className="text-center text-stone-500 mt-4">draw anything!</p>
             </div>
         </div>
     );

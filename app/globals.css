@@ -109,4 +109,25 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Custom scrollbar for AI chat history */
+  .ai-chat-scroll::-webkit-scrollbar {
+    width: 8px;
+    background: #1a1a1a;
+  }
+
+  .ai-chat-scroll::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 6px;
+  }
+
+  .ai-chat-scroll::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+
+  /* For Firefox */
+  .ai-chat-scroll {
+    scrollbar-color: #333 #1a1a1a;
+    scrollbar-width: thin;
+  }
 }

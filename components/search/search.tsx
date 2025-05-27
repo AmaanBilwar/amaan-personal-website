@@ -223,7 +223,11 @@ export default function SearchBar() {
               aria-hidden="true"
             />
           )}
-          <div className="flex-1 overflow-y-auto" ref={chatContainerRef}>
+          <div
+            className="flex-1 overflow-y-auto ai-chat-scroll"
+            ref={chatContainerRef}
+            style={{ scrollbarGutter: 'stable' }}
+          >
             {messages.map((message, index) => (
               <ChatMessage
                 key={index}

@@ -48,6 +48,7 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -88,7 +89,29 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom scrollbar for AI chat history */
+.ai-chat-scroll::-webkit-scrollbar {
+  width: 8px;
+  background: #181818;
+}
+
+.ai-chat-scroll::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 6px;
+}
+
+.ai-chat-scroll::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+/* For Firefox */
+.ai-chat-scroll {
+  scrollbar-color: #333 #181818;
+  scrollbar-width: thin;
 }

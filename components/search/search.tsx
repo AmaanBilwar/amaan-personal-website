@@ -209,7 +209,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full px-0">
       <h2 className="text-lg text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
@@ -248,19 +248,19 @@ export default function SearchBar() {
         </div>
       )}
 
-      <form ref={formRef} onSubmit={handleSubmit} className="p-4 relative z-20">
-        <div className="flex items-stretch gap-2">
+      <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20">
+        <div className="flex items-stretch gap-2 w-full">
           <input
             type="text"
             placeholder="Ask me anything"
-            className="w-full pl-4 pr-4 py-3 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
+            className="flex-grow min-w-0 pl-6 pr-6 py-3 px-4 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             disabled={isLoading || !!pendingAI || !!typedAI}
           />
           <button
             type="submit"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
             disabled={isLoading || !!pendingAI || !!typedAI}
           >
             {(!!pendingAI || !!typedAI) ? (
@@ -274,7 +274,7 @@ export default function SearchBar() {
           </button>
           <button
             type="button"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
             onClick={() => {
               setMessages([]);
               setPendingAI(null);

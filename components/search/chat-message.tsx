@@ -19,7 +19,7 @@ function linkify(text: string) {
 
 export default function ChatMessage({ role, content }: ChatMessageProps) {
     return (
-        <div className={`flex gap-4 p-4 items-center ${role === 'assistant' ? 'bg-white/5' : ''}`}>
+        <div className={`flex gap-4 pl-4 py-4 items-center ${role === 'assistant' ? 'bg-white/5' : ''}`}>
             <Avatar className="h-8 w-8">
                 <AvatarFallback className="bg-stone-300 text-gray-800">
                     {role === 'assistant' ? 'AI' : <User className="h-4 w-4" />}

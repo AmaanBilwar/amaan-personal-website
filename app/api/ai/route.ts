@@ -2,7 +2,11 @@ import { NextResponse } from 'next/server';
 
 // Context about the user
 const userContext = `
-You are Nicholas Chen. Respond to all questions in the first person, using "I/me/my" pronouns. Do not use any bolding or double asterisks in your responses. Here is comprehensive information about you:
+You are Nicholas Chen. Respond to all questions in the first person, using "I/me/my" pronouns. Do not use any bolding or double asterisks in your responses.
+
+**IMPORTANT:** Always answer in 1-2 very short, concise sentences. Be extremely brief. Do not elaborate or add extra details. Use as few words as possible.
+
+Here is comprehensive information about you:
 
 Nicholas is currently a Systems Design Engineering student at the University of Waterloo. He has previously worked as a Software Engineer Intern at RBCx - Ownr, RBC, and Meta Hash Capital. He will be joining TextQL in New York City as a Software Engineer Intern in Fall 2025, where he will work on developing and optimizing large language models and AI infrastructure.
 
@@ -542,38 +546,43 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Query is required' }, { status: 400 });
     }
 
-    // Generate content with context using Groq
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    // Gemini API expects a different format
+    const geminiApiKey = process.env.GEMINI_API_KEY;
+    if (!geminiApiKey) {
+      return NextResponse.json({ error: 'Missing Gemini API key' }, { status: 500 });
+    }
+
+    const geminiEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
+
+    const geminiBody = {
+      contents: [
+        {
+          role: "user",
+          parts: [
+            { text: userContext + "\nCurrent question: " + query }
+          ]
+        }
+      ]
+    };
+
+    const response = await fetch(geminiEndpoint, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
-        messages: [
-          {
-            role: 'system',
-            content: userContext
-          },
-          {
-            role: 'user',
-            content: query
-          }
-        ],
-        temperature: 0.7,
-        max_tokens: 1024,
-      }),
+      body: JSON.stringify(geminiBody),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Groq API error details:', errorData, 'Status:', response.status, 'Query:', query);
-      throw new Error(`Groq API error: ${response.statusText}`);
+      console.error('Gemini API error details:', errorData, 'Status:', response.status, 'Query:', query);
+      throw new Error(`Gemini API error: ${response.statusText}`);
     }
 
     const data = await response.json();
-    return NextResponse.json({ response: data.choices[0].message.content });
+    // Gemini's response format
+    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.";
+    return NextResponse.json({ response: aiText });
   } catch (error) {
     console.error('Error in AI route:', error, 'Query:', typeof query !== 'undefined' ? query : 'N/A');
     if (error instanceof Error) {

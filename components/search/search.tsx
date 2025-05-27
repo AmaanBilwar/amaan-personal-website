@@ -2,15 +2,36 @@
 
 import { useState, useRef, useEffect } from 'react';
 import SamplePrompts from './sample-prompts';
+import ChatMessage from './chat-message';
+
+interface Message {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+function filterPersonalWebsite(text: string) {
+  // Remove phrases like 'personal website' and links to your own domain
+  return text
+    .replace(/(my\s+)?personal website(\.|,|!|\s|$)/gi, '')
+    .replace(/https?:\/\/(www\.)?nicholaschen\.ca\S*/gi, '') // replace with your actual domain if different
+    .replace(/\s{2,}/g, ' ') // clean up extra spaces
+    .trim();
+}
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
-  const [aiResponse, setAiResponse] = useState<string | null>(null);
-  const [typedResponse, setTypedResponse] = useState<string>('');
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [dotCount, setDotCount] = useState(1);
+  const [pendingAI, setPendingAI] = useState<string | null>(null);
+  const [typedAI, setTypedAI] = useState('');
+  const [rehydrated, setRehydrated] = useState(false);
+  const [resuming, setResuming] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -20,47 +41,139 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading]);
 
-  // Typing effect for AI response
+  // Hydrate all state from localStorage on mount (client only)
   useEffect(() => {
-    if (!aiResponse) {
-      setTypedResponse('');
-      return;
-    }
-    setTypedResponse('');
-    let idx = 0;
-    const typeChar = () => {
-      if (!aiResponse) return;
-      // If HTML, type as text, then set as HTML at the end
-      // We'll type out the text content, then set the HTML at the end for formatting
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = aiResponse;
-      const textContent = tempDiv.textContent || '';
-      if (idx < textContent.length) {
-        setTypedResponse(textContent.slice(0, idx + 1));
-        idx++;
-        typingTimeout.current = setTimeout(typeChar, 50); // speed of typing
-      } else {
-        // After typing, set the full HTML for formatting
-        setTypedResponse(aiResponse);
+    try {
+      const saved = localStorage.getItem('chat-messages');
+      if (saved) setMessages(JSON.parse(saved));
+      const pending = localStorage.getItem('chat-pendingAI');
+      if (pending) setPendingAI(pending);
+      const typed = localStorage.getItem('chat-typedAI');
+      if (typed) setTypedAI(typed);
+    } catch { }
+    setRehydrated(true);
+  }, []);
+
+  // Resume typing if needed after hydration
+  useEffect(() => {
+    if (!rehydrated) return;
+    if (pendingAI && typedAI.length < pendingAI.length) {
+      setResuming(true);
+      let idx = typedAI.length;
+      function typeChar() {
+        if (!pendingAI) return;
+        if (idx < pendingAI.length) {
+          setTypedAI(pendingAI.slice(0, idx + 1));
+          idx++;
+          setTimeout(typeChar, 20);
+        } else {
+          setMessages(prev => [
+            ...prev,
+            { role: 'assistant', content: pendingAI }
+          ]);
+          setPendingAI(null);
+          setTypedAI('');
+          localStorage.removeItem('chat-pendingAI');
+          localStorage.removeItem('chat-typedAI');
+          setResuming(false);
+        }
       }
-    };
+      typeChar();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rehydrated]);
+
+  // Typing animation for AI response (only if not resuming)
+  useEffect(() => {
+    if (!rehydrated || resuming) return;
+    if (pendingAI === null) return;
+    setTypedAI('');
+    let idx = 0;
+    function typeChar() {
+      if (pendingAI === null) return;
+      if (idx < pendingAI.length) {
+        setTypedAI(pendingAI.slice(0, idx + 1));
+        idx++;
+        typingTimeout.current = setTimeout(typeChar, 20);
+      } else {
+        setMessages(prev => [
+          ...prev,
+          { role: 'assistant', content: pendingAI }
+        ]);
+        setPendingAI(null);
+        setTypedAI('');
+        localStorage.removeItem('chat-pendingAI');
+        localStorage.removeItem('chat-typedAI');
+      }
+    }
     typeChar();
     return () => {
       if (typingTimeout.current) clearTimeout(typingTimeout.current);
     };
-  }, [aiResponse]);
+  }, [pendingAI, rehydrated, resuming]);
+
+  // Track if user is near the bottom
+  useEffect(() => {
+    const chatDiv = chatContainerRef.current;
+    if (!chatDiv) return;
+    function handleScroll() {
+      if (!chatDiv) return;
+      const threshold = 80; // px from bottom
+      const atBottom = chatDiv.scrollHeight - chatDiv.scrollTop - chatDiv.clientHeight < threshold;
+      setShouldAutoScroll(atBottom);
+    }
+    chatDiv.addEventListener('scroll', handleScroll);
+    return () => chatDiv.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to bottom only when a new AI message is added and user is near bottom
+  useEffect(() => {
+    if (!shouldAutoScroll) return;
+    if (messages.length === 0) return;
+    const lastMsg = messages[messages.length - 1];
+    if (lastMsg.role === 'assistant') {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages, shouldAutoScroll]);
+
+  // Persist messages to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('chat-messages', JSON.stringify(messages));
+    } catch { }
+  }, [messages]);
+
+  // Persist pendingAI and typedAI to localStorage
+  useEffect(() => {
+    try {
+      if (pendingAI) {
+        localStorage.setItem('chat-pendingAI', pendingAI);
+      } else {
+        localStorage.removeItem('chat-pendingAI');
+      }
+    } catch { }
+  }, [pendingAI]);
+
+  useEffect(() => {
+    try {
+      if (typedAI) {
+        localStorage.setItem('chat-typedAI', typedAI);
+      } else {
+        localStorage.removeItem('chat-typedAI');
+      }
+    } catch { }
+  }, [typedAI]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = query.trim();
-    if (!trimmed) {
-      setAiResponse(null);
-      setTypedResponse('');
-      return;
-    }
+    if (!trimmed) return;
 
+    // Add user message
+    setMessages(prev => [...prev, { role: 'user', content: trimmed }]);
+    setQuery('');
     setIsLoading(true);
-    setTypedResponse('');
+
     try {
       const aiResult = await fetch('/api/ai', {
         method: 'POST',
@@ -72,10 +185,15 @@ export default function SearchBar() {
 
       if (aiResult.ok) {
         const aiData = await aiResult.json();
-        setAiResponse(aiData.response);
+        // Filter out personal website mentions and type out the response
+        setPendingAI(filterPersonalWebsite(aiData.response));
       }
     } catch (error) {
       console.error('Search error:', error);
+      setMessages(prev => [
+        ...prev,
+        { role: 'assistant', content: 'Sorry, I encountered an error. Please try again.' }
+      ]);
     } finally {
       setIsLoading(false);
       setDotCount(1);
@@ -84,10 +202,6 @@ export default function SearchBar() {
 
   const handlePromptClick = (prompt: string) => {
     setQuery(prompt);
-    setAiResponse(null);
-    setTypedResponse('');
-    setIsLoading(false);
-    // Focus the input after setting the query
     const input = formRef.current?.querySelector('input');
     if (input) {
       input.focus();
@@ -95,37 +209,85 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full px-0">
       <h2 className="text-lg text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
-      <form ref={formRef} onSubmit={handleSubmit} className="relative group">
-        <input
-          type="text"
-          placeholder="Ask me anything"
-          className="w-full pl-4 pr-4 py-3 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </form>
-
-      {isLoading && (
-        <div className="mt-4 flex items-center gap-2 text-stone-400 pl-2">
-          <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
-          <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
-        </div>
-      )}
-
-      {typedResponse && (
-        <div className="mt-4 p-4 border border-white/30 rounded-lg">
-          {/* If not done typing, show as plain text. If done, show as HTML. */}
-          {typedResponse === aiResponse ? (
-            <p className="text-stone-300" dangerouslySetInnerHTML={{ __html: aiResponse || '' }} />
-          ) : (
-            <p className="text-stone-300 whitespace-pre-line">{typedResponse}<span className="animate-pulse">|</span></p>
+      {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
+      {(messages.length > 0 || pendingAI || typedAI) && (
+        <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative">
+          {/* Overlay for AI typing, allows scroll/select but blocks input */}
+          {(pendingAI || typedAI) && (
+            <div
+              className="absolute inset-0 z-10 bg-transparent pointer-events-none"
+              aria-hidden="true"
+            />
           )}
+          <div className="flex-1 overflow-y-auto" ref={chatContainerRef}>
+            {messages.map((message, index) => (
+              <ChatMessage
+                key={index}
+                role={message.role}
+                content={message.content}
+              />
+            ))}
+            {/* Typing animation for AI */}
+            {typedAI && (
+              <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
+            )}
+            {isLoading && !typedAI && !pendingAI && (
+              <div className="flex gap-4 p-4 bg-white/5">
+                <div className="flex items-center gap-2 text-stone-400 pl-2">
+                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
+                  <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
         </div>
       )}
+
+      <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20">
+        <div className="flex items-stretch gap-2 w-full mt-4">
+          <input
+            type="text"
+            placeholder="Ask me anything"
+            className="flex-grow min-w-0 pl-6 pr-6 py-3 px-4 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            disabled={isLoading || !!pendingAI || !!typedAI}
+          />
+          <button
+            type="submit"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
+            disabled={isLoading || !!pendingAI || !!typedAI}
+          >
+            {(!!pendingAI || !!typedAI) ? (
+              <>
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent inline-block"></span>
+                Responding...
+              </>
+            ) : (
+              'Send'
+            )}
+          </button>
+          <button
+            type="button"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
+            onClick={() => {
+              setMessages([]);
+              setPendingAI(null);
+              setTypedAI('');
+              localStorage.removeItem('chat-messages');
+              localStorage.removeItem('chat-pendingAI');
+              localStorage.removeItem('chat-typedAI');
+            }}
+          >
+            Clear
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

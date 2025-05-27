@@ -24,7 +24,7 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
                 {role === 'assistant' ? (
                     <p className="text-sm text-stone-300 whitespace-pre-line" dangerouslySetInnerHTML={{ __html: linkify(content) }} />
                 ) : (
-                    <p className="text-sm text-stone-300 whitespace-pre-line">{content}</p>
+                    <p className="text-sm text-stone-300 whitespace-pre-line font-bold">{content}</p>
                 )}
             </div>
         </div>

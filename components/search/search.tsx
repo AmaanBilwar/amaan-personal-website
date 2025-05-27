@@ -20,16 +20,39 @@ function filterPersonalWebsite(text: string) {
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('chat-messages');
+        if (saved) return JSON.parse(saved);
+      } catch { }
+    }
+    return [];
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [dotCount, setDotCount] = useState(1);
-  const [pendingAI, setPendingAI] = useState<string | null>(null);
-  const [typedAI, setTypedAI] = useState('');
+  const [pendingAI, setPendingAI] = useState<string | null>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('chat-pendingAI');
+      } catch { }
+    }
+    return null;
+  });
+  const [typedAI, setTypedAI] = useState(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        return localStorage.getItem('chat-typedAI') || '';
+      } catch { }
+    }
+    return '';
+  });
   const formRef = useRef<HTMLFormElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
+  const [resuming, setResuming] = useState(false);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -39,8 +62,46 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading]);
 
+  // Track if we are resuming from localStorage to avoid double typing
+  useEffect(() => {
+    if (pendingAI && typeof window !== 'undefined') {
+      setResuming(true);
+      let idx = typedAI.length;
+      function typeChar() {
+        if (!pendingAI) return;
+        if (idx < pendingAI.length) {
+          setTypedAI(pendingAI.slice(0, idx + 1));
+          idx++;
+          setTimeout(typeChar, 35);
+        } else {
+          setMessages(prev => [
+            ...prev,
+            { role: 'assistant', content: pendingAI }
+          ]);
+          setPendingAI(null);
+          setTypedAI('');
+          localStorage.removeItem('chat-pendingAI');
+          localStorage.removeItem('chat-typedAI');
+          setResuming(false);
+        }
+      }
+      if (typedAI.length < pendingAI.length) {
+        typeChar();
+      } else {
+        // If already finished, clean up
+        setPendingAI(null);
+        setTypedAI('');
+        localStorage.removeItem('chat-pendingAI');
+        localStorage.removeItem('chat-typedAI');
+        setResuming(false);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Typing animation for AI response
   useEffect(() => {
+    if (resuming) return; // Don't run if resuming from localStorage
     if (pendingAI === null) return;
     setTypedAI('');
     let idx = 0;
@@ -57,13 +118,15 @@ export default function SearchBar() {
         ]);
         setPendingAI(null);
         setTypedAI('');
+        localStorage.removeItem('chat-pendingAI');
+        localStorage.removeItem('chat-typedAI');
       }
     }
     typeChar();
     return () => {
       if (typingTimeout.current) clearTimeout(typingTimeout.current);
     };
-  }, [pendingAI]);
+  }, [pendingAI, resuming]);
 
   // Track if user is near the bottom
   useEffect(() => {
@@ -88,6 +151,34 @@ export default function SearchBar() {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, shouldAutoScroll]);
+
+  // Persist messages to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('chat-messages', JSON.stringify(messages));
+    } catch { }
+  }, [messages]);
+
+  // Persist pendingAI and typedAI to localStorage
+  useEffect(() => {
+    try {
+      if (pendingAI) {
+        localStorage.setItem('chat-pendingAI', pendingAI);
+      } else {
+        localStorage.removeItem('chat-pendingAI');
+      }
+    } catch { }
+  }, [pendingAI]);
+
+  useEffect(() => {
+    try {
+      if (typedAI) {
+        localStorage.setItem('chat-typedAI', typedAI);
+      } else {
+        localStorage.removeItem('chat-typedAI');
+      }
+    } catch { }
+  }, [typedAI]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -200,6 +291,9 @@ export default function SearchBar() {
                 setMessages([]);
                 setPendingAI(null);
                 setTypedAI('');
+                localStorage.removeItem('chat-messages');
+                localStorage.removeItem('chat-pendingAI');
+                localStorage.removeItem('chat-typedAI');
               }}
             >
               Clear

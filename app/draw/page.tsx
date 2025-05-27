@@ -232,13 +232,13 @@ export default function DrawPage() {
                     <div className="flex gap-2">
                         <button
                             onClick={handleClear}
-                            className="border border-stone-500 text-stone-400 hover:text-white focus:text-gray-400 active:text-gray-400 px-3 py-1 rounded shadow bg-transparent"
+                            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
                         >
                             Clear
                         </button>
                         <button
                             onClick={handleDownload}
-                            className="border border-stone-500 text-stone-400 hover:text-white focus:text-gray-400 active:text-gray-400 px-3 py-1 rounded shadow bg-transparent"
+                            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
                         >
                             Download
                         </button>

@@ -248,7 +248,7 @@ export default function SearchBar() {
         </div>
       )}
 
-      <form ref={formRef} onSubmit={handleSubmit} className="p-4 border-t border-white/30 relative z-20">
+      <form ref={formRef} onSubmit={handleSubmit} className="p-4 relative z-20">
         <div className="flex items-stretch gap-2">
           <input
             type="text"

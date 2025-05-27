@@ -20,39 +20,18 @@ function filterPersonalWebsite(text: string) {
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
-  const [messages, setMessages] = useState<Message[]>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem('chat-messages');
-        if (saved) return JSON.parse(saved);
-      } catch { }
-    }
-    return [];
-  });
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [dotCount, setDotCount] = useState(1);
-  const [pendingAI, setPendingAI] = useState<string | null>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        return localStorage.getItem('chat-pendingAI');
-      } catch { }
-    }
-    return null;
-  });
-  const [typedAI, setTypedAI] = useState(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        return localStorage.getItem('chat-typedAI') || '';
-      } catch { }
-    }
-    return '';
-  });
+  const [pendingAI, setPendingAI] = useState<string | null>(null);
+  const [typedAI, setTypedAI] = useState('');
+  const [rehydrated, setRehydrated] = useState(false);
+  const [resuming, setResuming] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
-  const [resuming, setResuming] = useState(false);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -62,9 +41,23 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading]);
 
-  // Track if we are resuming from localStorage to avoid double typing
+  // Hydrate all state from localStorage on mount (client only)
   useEffect(() => {
-    if (pendingAI && typeof window !== 'undefined') {
+    try {
+      const saved = localStorage.getItem('chat-messages');
+      if (saved) setMessages(JSON.parse(saved));
+      const pending = localStorage.getItem('chat-pendingAI');
+      if (pending) setPendingAI(pending);
+      const typed = localStorage.getItem('chat-typedAI');
+      if (typed) setTypedAI(typed);
+    } catch { }
+    setRehydrated(true);
+  }, []);
+
+  // Resume typing if needed after hydration
+  useEffect(() => {
+    if (!rehydrated) return;
+    if (pendingAI && typedAI.length < pendingAI.length) {
       setResuming(true);
       let idx = typedAI.length;
       function typeChar() {
@@ -85,23 +78,14 @@ export default function SearchBar() {
           setResuming(false);
         }
       }
-      if (typedAI.length < pendingAI.length) {
-        typeChar();
-      } else {
-        // If already finished, clean up
-        setPendingAI(null);
-        setTypedAI('');
-        localStorage.removeItem('chat-pendingAI');
-        localStorage.removeItem('chat-typedAI');
-        setResuming(false);
-      }
+      typeChar();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [rehydrated]);
 
-  // Typing animation for AI response
+  // Typing animation for AI response (only if not resuming)
   useEffect(() => {
-    if (resuming) return; // Don't run if resuming from localStorage
+    if (!rehydrated || resuming) return;
     if (pendingAI === null) return;
     setTypedAI('');
     let idx = 0;
@@ -110,7 +94,7 @@ export default function SearchBar() {
       if (idx < pendingAI.length) {
         setTypedAI(pendingAI.slice(0, idx + 1));
         idx++;
-        typingTimeout.current = setTimeout(typeChar, 20); // faster typing speed
+        typingTimeout.current = setTimeout(typeChar, 20);
       } else {
         setMessages(prev => [
           ...prev,
@@ -126,7 +110,7 @@ export default function SearchBar() {
     return () => {
       if (typingTimeout.current) clearTimeout(typingTimeout.current);
     };
-  }, [pendingAI, resuming]);
+  }, [pendingAI, rehydrated, resuming]);
 
   // Track if user is near the bottom
   useEffect(() => {

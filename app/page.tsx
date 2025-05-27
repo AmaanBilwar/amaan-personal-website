@@ -55,6 +55,7 @@ export default function Home() {
                 <li>was a software engineer intern at ownr, building tools for entrepreneurs worldwide</li>
                 <li>was a software engineer intern at rbc, working on machine learning models</li>
                 <li>was a ux design intern at meta hash capital, focusing on user experience in finance technology</li>
+                <li>was a ux design intern at voluntrack, designing tools for their volunteer management platform</li>
               </ul>
             </div>
 

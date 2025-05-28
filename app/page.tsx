@@ -86,62 +86,7 @@ export default function Home() {
           </p>
         </section>
 
-        <div className="flex space-x-8 pt-1 justify-center sm:justify-start" style={{ marginTop: '2rem' }}>
-          <Link
-            href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
-            className="text-white hover:text-stone-300 transition-colors"
-          >
-            <div className="w-10 h-10 flex items-center justify-center">
-              <img
-                src="/linkedin.png"
-                alt="LinkedIn"
-                className="max-w-full max-h-full object-contain"
-              />
-            </div>
-            <span className="sr-only">LinkedIn</span>
-          </Link>
-          <Link
-            href="https://github.com/nicholaschen09"
-            className="text-white hover:text-stone-300 transition-colors"
-          >
-            <div className="w-12 h-8 flex items-center justify-center mt-1">
-              <img
-                src="/github1.png"
-                alt="GitHub"
-                className="w-10 h-10 md:w-12 md:h-12"
-              />
-            </div>
-            <span className="sr-only">GitHub</span>
-          </Link>
-          <Link
-            href="mailto:nicholas.chen243@gmail.com"
-            className="text-white hover:text-stone-300 transition-colors"
-          >
-            <div className="w-11 h-12 flex items-center justify-center relative -top-1">
-              <img
-                src="/email.png"
-                alt="Email"
-                className="max-w-full max-h-full object-contain"
-              />
-            </div>
-            <span className="sr-only">Email</span>
-          </Link>
-          <Link
-            href="https://x.com/nicholaschen__"
-            className="text-white hover:text-stone-300 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="w-11 h-8 flex items-center justify-center relative">
-              <img
-                src="/twitter.png"
-                alt="Twitter"
-                className="max-w-full max-h-full object-contain translate-y-1 translate-x-1"
-              />
-            </div>
-            <span className="sr-only">Twitter</span>
-          </Link>
-        </div>
+        
       </div>
     </main>
   );

@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden">
       {/* Hero Section */}
-      <div className="max-w-6xl w-full space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
+      <div className="max-w-3xl w-full mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
         <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8">
           Hey, I'm Nicholas!
         </h1>

@@ -29,24 +29,34 @@ export default function Home() {
           Hey, I'm Nicholas!
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
-          <p>i'm 19, from toronto.</p>
+          <p className="text-stone-400">
+            i'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">toronto</a>.
+          </p>
           <p>i've been building things for 3673 days.</p>
-          </div>
+        </div>
         <div>
           <p className="mb-2 text-stone-300">A few of my achievements...</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
             <li>30k followers on social media (x, instagram, tiktok, youtube) and over 10m views</li>
-            <li>won 2nd place at the largest robotics hackathon in canada</li>
+            <li>won 2nd place at <a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">UTRA Hacks</a>, the largest robotics hackathon in canada</li>
             <li>designed award winning book covers for authors</li>
           </ul>
         </div>
         <div>
           <p className="mb-4 text-stone-300">I'm currently...</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-            <li>studying systems design engineering at the university of waterloo</li>
-            <li>preparing to join textql as a software engineer intern in nyc soon</li>
-            <li>building projects to help others create and invent new things</li>
-            <li>sharing my journey in tech and creativity online with everyone to see</li>
+            <li>
+              studying <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">systems design engineering</a> at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">university of waterloo</a>
+            </li>
+            <li>
+              preparing to join <a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">textql</a> as a software engineer intern in <a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">nyc</a> soon
+            </li>
+            <li>
+              building projects to help others create and invent new things
+            </li>
+            <li>
+              sharing my journey in tech and creativity online with everyone to see
+            </li>
           </ul>
         </div>
 
@@ -57,9 +67,15 @@ export default function Home() {
             <div>
               <p className="mb-2 text-stone-300">A few projects I'm working on...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>diff digest - website that turns git diffs into release notes </li>
-                <li>sql query parser - parser that can query flat JSON objects</li>
-                <li>whiteboard - app to brainstorm,create and share ideas</li>
+                <li>
+                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">diff digest</a> - website that turns git diffs into release notes
+                </li>
+                <li>
+                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">sql query parser</a> - parser that can query flat JSON objects
+                </li>
+                <li>
+                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">whiteboard</a> - app to brainstorm,create and share ideas
+                </li>
               </ul>
             </div>
             <div>
@@ -74,10 +90,18 @@ export default function Home() {
             <div>
               <p className="mb-2 text-stone-300">Previously I...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>was a software engineer intern at ownr, building tools for entrepreneurs worldwide</li>
-                <li>was a software engineer intern at rbc, working on machine learning models</li>
-                <li>was a ux design intern at meta hash capital, focusing on user experience in finance technology</li>
-                <li>was a ux design intern at voluntrack, designing tools for their volunteer management platform</li>
+                <li>
+                  was a software engineer intern at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">ownr</a>, building tools for entrepreneurs worldwide
+                </li>
+                <li>
+                  was a software engineer intern at <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">rbc</a>, working on machine learning models
+                </li>
+                <li>
+                  was a ux design intern at <a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">meta hash capital</a>, focusing on user experience in finance technology
+                </li>
+                <li>
+                  was a ux design intern at <a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">voluntrack</a>, designing tools for their volunteer management platform
+                </li>
               </ul>
             </div>
 

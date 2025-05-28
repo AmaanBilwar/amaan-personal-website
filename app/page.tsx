@@ -22,7 +22,7 @@ export default function Home() {
   }, []); // Empty dependency array means this runs once on mount
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden ml-10">
+    <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10">
       {/* Hero Section */}
       <div className="max-w-3xl w-full mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
         <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8">

@@ -25,19 +25,39 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden">
       {/* Hero Section */}
       <div className="max-w-6xl w-full space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
-        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white">
+        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8">
           Hey, I'm Nicholas!
         </h1>
+        <p className="text-stone-400 text-sm font-mono">i'm 19, from toronto.</p>
+        <p className="text-stone-400 text-sm font-mono">i've been building things for 3673 days.</p>
+        <div>
+          <p className="mb-2 text-stone-300">A few of my achievements...</p>
+          <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
+            <li>30k followers on social media (x, instagram, tiktok, youtube) and over 10m views</li>
+            <li>won 2nd place at the largest robotics hackathon in canada</li>
+            <li>designed award winning book covers for authors</li>
+          </ul>
+        </div>
+        <div>
+          <p className="mb-4 text-stone-300">I'm currently...</p>
+          <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
+            <li>studying systems design engineering at the university of waterloo</li>
+            <li>preparing to join textql as a software engineer intern in nyc soon</li>
+            <li>building projects to help others create and invent new things</li>
+            <li>sharing my journey in tech and creativity online with everyone to see</li>
+          </ul>
+        </div>
+
+        <p className="mb-2 mt-2 text-sm text-stone-300">I've done pretty much everything you think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour's driveways, internships, freelance work in design and coding as well as brand deals from social media.</p>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">
             <div>
-              <p className="mb-2 text-stone-300">I'm currently...</p>
+              <p className="mb-2 text-stone-300">A few projects I'm working on...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>studying systems design engineering at the university of waterloo</li>
-                <li>preparing to join textql as a software engineer intern in nyc soon</li>
-                <li>building projects to help others create and invent new things</li>
-                <li>sharing my journey in tech and creativity online with everyone to see</li>
+                <li>diff digest - website that turns git diffs into release notes </li>
+                <li>sql query parser - parser that can query flat JSON objects</li>
+                <li>whiteboard - app to brainstorm,create and share ideas</li>
               </ul>
             </div>
             <div>
@@ -86,8 +106,8 @@ export default function Home() {
           </p>
         </section>
 
-        
+
       </div>
-    </main>
+    </main >
   );
 }

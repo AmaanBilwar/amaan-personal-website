@@ -27,10 +27,11 @@ export default function RootLayout({
         {/* Easter egg button */}
         <Link
           href="/draw"
-          className="fixed bottom-4 right-4 w-8 h-8 bg-gray-800 hover:bg-gray-700 text-white rounded-full flex items-center justify-center text-sm opacity-50 hover:opacity-100 transition-all duration-300 z-50"
-          title="Easter egg"
+          className="fixed bottom-6 right-6 px-5 py-3 bg-[#232323] hover:bg-[#2d2d2d] border border-stone-500 text-white rounded-full flex items-center justify-center text-base font-bold shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2"
+          title="Draw something!"
         >
-          🎨
+          <span className="text-xl">🎨</span>
+          <span className="hidden sm:inline">Draw</span>
         </Link>
         <Header />
         {children}

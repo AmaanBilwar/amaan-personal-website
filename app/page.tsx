@@ -21,28 +21,9 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []); // Empty dependency array means this runs once on mount
 
-  // Previous ventures data
-  const ventures = [
-    {
-      year: '2019',
-      name: 'lemonayd',
-      link: '#',
-      description: 'Fundraising app for schools, youngest winner of the congressional app challenge.'
-    },
-    {
-      year: '2021',
-      name: 'book cover design',
-      link: '#',
-      description: 'Designed award-winning covers for indie authors.'
-    },
-    {
-      year: '2022',
-      name: 'startup hackathon',
-      link: '#',
-      description: 'Built MVPs and pitched at several hackathons.'
-    },
-  ];
-  const [openVenture, setOpenVenture] = useState<number | null>(null);
+  // Accordion state for each section
+  const [openHowIStarted, setOpenHowIStarted] = useState(false);
+  const [openFuture, setOpenFuture] = useState(false);
 
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10">
@@ -130,27 +111,27 @@ export default function Home() {
 
           </div>
         </div>
-
-        <h2 className="mt-12 mb-4 text-xl font-bold font-mono">MY PREVIOUS VENTURES:</h2>
-        <div className="space-y-2">
-          {ventures.map((venture, idx) => (
-            <div key={idx} className="border border-stone-700 rounded-md">
-              <button
-                className="w-full flex justify-between items-center px-4 py-2 font-mono text-base text-stone-200 focus:outline-none"
-                onClick={() => setOpenVenture(openVenture === idx ? null : idx)}
-              >
-                <span>
-                  <span className="font-bold">({venture.year})</span> <a href={venture.link} className="underline hover:text-stone-200" target="_blank" rel="noopener noreferrer">{venture.name}</a>
-                </span>
-                <span className="text-xs font-mono">{openVenture === idx ? 'CLOSE' : 'OPEN'}</span>
-              </button>
-              {openVenture === idx && (
-                <div className="px-4 pb-4 text-stone-300 font-mono text-sm">
-                  {venture.description}
-                </div>
-              )}
-            </div>
-          ))}
+        {/* How I Started Section */}
+        <div className="mt-12 mb-4">
+          <div className="border border-stone-700 rounded-md">
+            <button
+              className="w-full flex justify-between items-center px-4 py-2 font-mono text-base text-stone-200 focus:outline-none"
+              onClick={() => setOpenHowIStarted((prev) => !prev)}
+            >
+              <span>How I Started</span>
+              <span className="text-xs font-mono">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
+            </button>
+            {openHowIStarted && (
+              <div className="px-4 pb-4 text-stone-300 font-mono text-sm">
+                <p>i taught myself to code summer of 6th grade.</p>
+                <p>i "launched" my first app, lemonayd (<a href="#" className="underline">lemonaid</a> was taken) later that year.</p>
+                <p>it was a fundraising app for schools. i became one of the youngest winners of the <a href="#" className="underline">congressional app challenge</a> from my submission.</p>
+                <p>i recently got into startups (mid-2023) after watching <a href="#" className="underline">this video</a>.</p>
+                <p>one of my earliest ambitions was to "invent" something. the idea of creating things that other people could use seemed pretty interesting.</p>
+                <p>i always knew this is what i wanted to do.</p>
+              </div>
+            )}
+          </div>
         </div>
 
         <SearchBar />

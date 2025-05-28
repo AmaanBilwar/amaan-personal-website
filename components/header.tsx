@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a]">
-      <div className="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-6">
+      <div className="max-w-6txl mx-auto flex justify-between items-center p-4 md:p-6">
         <Link
           href="/"
           className={`flex items-center transition-colors ${pathname === '/'
@@ -32,8 +32,13 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center">
-          {/* Removed About and Resume links */}
+        <nav className="flex items-center">
+          <nav className="flex gap-2 items-center mx-auto ">
+            <a href="mailto:nicholas.chen243@gmail.com" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">Contact</a>
+            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">LinkedIn</a>
+            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">GitHub</a>
+            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">Twitter</a>
+          </nav>
         </nav>
       </div>
     </header>

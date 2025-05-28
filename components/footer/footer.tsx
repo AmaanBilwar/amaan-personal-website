@@ -16,7 +16,6 @@ export default function Footer() {
           </button>
         </span>
         <span className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-sm bg-gradient-to-b from-blue-600 to-blue-800 inline-block" />
           <span className="text-stone-400 text-sm font-mono">BY <span className="underline">NICHOLAS®</span></span>
         </span>
       </div>

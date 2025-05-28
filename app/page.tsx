@@ -26,7 +26,7 @@ export default function Home() {
   const [openFuture, setOpenFuture] = useState(false);
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10">
+    <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
       {/* Hero Section */}
       <div className="max-w-3xl w-full mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
         <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8">
@@ -136,7 +136,7 @@ export default function Home() {
 
         <SearchBar />
 
-        <section className="mt-10 mb-6">
+        <section className="mt-10 -mb-6">
           <p className="text-sm text-stone-400">
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a
@@ -157,8 +157,6 @@ export default function Home() {
             .
           </p>
         </section>
-
-
       </div>
     </main >
   );

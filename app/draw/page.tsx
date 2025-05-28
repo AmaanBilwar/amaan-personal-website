@@ -200,48 +200,50 @@ export default function DrawPage() {
     };
 
     return (
-        <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
-            <div className="max-w-4xl mx-auto">
-                <div className="mb-8 mt-16 w-full max-w-6xl mx-auto">
-                    <div className="p-4 border border-stone-500 rounded-lg min-h-[150px] md:min-h-[84px] w-full">
-                        <p className="text-base break-words">
-                            {isTyping ? (
-                                <span className="font-mono">{currentText}<span className="animate-pulse">|</span></span>
-                            ) : (
-                                <span className="font-mono">{currentText}</span>
-                            )}
-                        </p>
+        <div className="max-w-3xl w-full mx-auto p-4 mt-8">
+            <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
+                <div className="max-w-4xl mx-auto">
+                    <div className="mb-8 mt-16 w-full max-w-6xl mx-auto">
+                        <div className="p-4 border border-stone-500 rounded-lg min-h-[150px] md:min-h-[84px] w-full">
+                            <p className="text-base break-words">
+                                {isTyping ? (
+                                    <span className="font-mono">{currentText}<span className="animate-pulse">|</span></span>
+                                ) : (
+                                    <span className="font-mono">{currentText}</span>
+                                )}
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div ref={containerRef} className="flex flex-col items-center w-full border border-stone-500 rounded-lg bg-[#1a1a1a] overflow-hidden relative min-h-[350px] md:min-h-[250px]">
-                    <canvas
-                        ref={canvasRef}
-                        className="w-full h-full cursor-crosshair"
-                        style={{ touchAction: 'none', display: 'block' }}
-                        onMouseDown={handlePointerDown}
-                        onMouseMove={handlePointerMove}
-                        onMouseUp={handlePointerUp}
-                        onMouseLeave={handlePointerUp}
-                        onTouchStart={handlePointerDown}
-                        onTouchMove={handlePointerMove}
-                        onTouchEnd={handlePointerUp}
-                    />
-                </div>
-                <div className="flex items-center justify-between mt-4 w-full">
-                    <p className="text-stone-400">Draw Anything!</p>
-                    <div className="flex gap-2">
-                        <button
-                            onClick={handleClear}
-                            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
-                        >
-                            Clear
-                        </button>
-                        <button
-                            onClick={handleDownload}
-                            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
-                        >
-                            Download
-                        </button>
+                    <div ref={containerRef} className="flex flex-col items-center w-full border border-stone-500 rounded-lg bg-[#1a1a1a] overflow-hidden relative min-h-[350px] md:min-h-[250px]">
+                        <canvas
+                            ref={canvasRef}
+                            className="w-full h-full cursor-crosshair"
+                            style={{ touchAction: 'none', display: 'block' }}
+                            onMouseDown={handlePointerDown}
+                            onMouseMove={handlePointerMove}
+                            onMouseUp={handlePointerUp}
+                            onMouseLeave={handlePointerUp}
+                            onTouchStart={handlePointerDown}
+                            onTouchMove={handlePointerMove}
+                            onTouchEnd={handlePointerUp}
+                        />
+                    </div>
+                    <div className="flex items-center justify-between mt-4 w-full">
+                        <p className="text-stone-400">Draw Anything!</p>
+                        <div className="flex gap-2">
+                            <button
+                                onClick={handleClear}
+                                className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
+                            >
+                                Clear
+                            </button>
+                            <button
+                                onClick={handleDownload}
+                                className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
+                            >
+                                Download
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

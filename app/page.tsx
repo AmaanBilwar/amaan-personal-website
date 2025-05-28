@@ -22,22 +22,60 @@ export default function Home() {
   }, []); // Empty dependency array means this runs once on mount
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden">
+    <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10">
       {/* Hero Section */}
-      <div className="max-w-6xl w-full space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
-        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white">
+      <div className="max-w-3xl w-full mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
+        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8">
           Hey, I'm Nicholas!
         </h1>
+        <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
+          <p className="text-stone-400">
+            i'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">toronto</a>.
+          </p>
+          <p>i've been building things for 3673 days.</p>
+        </div>
+        <div>
+          <p className="mb-2 text-stone-300">A few of my achievements...</p>
+          <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
+            <li>30k followers on social media (x, instagram, tiktok, youtube) and over 10m views</li>
+            <li>won 2nd place at <a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">UTRA Hacks</a>, the largest robotics hackathon in canada</li>
+            <li>designed award winning book covers for authors</li>
+          </ul>
+        </div>
+        <div>
+          <p className="mb-4 text-stone-300">I'm currently...</p>
+          <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
+            <li>
+              studying <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">systems design engineering</a> at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">university of waterloo</a>
+            </li>
+            <li>
+              preparing to join <a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">textql</a> as a software engineer intern in <a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">nyc</a> soon
+            </li>
+            <li>
+              building projects to help others create and invent new things
+            </li>
+            <li>
+              sharing my journey in tech and creativity online with everyone to see
+            </li>
+          </ul>
+        </div>
+
+        <p className="mb-2 mt-2 text-sm text-stone-300">I've done pretty much everything you think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour's driveways, internships, freelance work in design and coding as well as brand deals from social media.</p>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">
             <div>
-              <p className="mb-2 text-stone-300">I'm currently...</p>
+              <p className="mb-2 text-stone-300">A few projects I'm working on...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>studying systems design engineering at the university of waterloo</li>
-                <li>preparing to join textql as a software engineer intern in nyc soon</li>
-                <li>building projects to help others create and invent new things</li>
-                <li>sharing my journey in tech and creativity online with everyone to see</li>
+                <li>
+                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">diff digest</a> - website that turns git diffs into release notes
+                </li>
+                <li>
+                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">sql query parser</a> - parser that can query flat JSON objects
+                </li>
+                <li>
+                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">whiteboard</a> - app to brainstorm,create and share ideas
+                </li>
               </ul>
             </div>
             <div>
@@ -52,10 +90,18 @@ export default function Home() {
             <div>
               <p className="mb-2 text-stone-300">Previously I...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>was a software engineer intern at ownr, building tools for entrepreneurs worldwide</li>
-                <li>was a software engineer intern at rbc, working on machine learning models</li>
-                <li>was a ux design intern at meta hash capital, focusing on user experience in finance technology</li>
-                <li>was a ux design intern at voluntrack, designing tools for their volunteer management platform</li>
+                <li>
+                  was a software engineer intern at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">ownr</a>, building tools for entrepreneurs worldwide
+                </li>
+                <li>
+                  was a software engineer intern at <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">rbc</a>, working on machine learning models
+                </li>
+                <li>
+                  was a ux design intern at <a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">meta hash capital</a>, focusing on user experience in fintech
+                </li>
+                <li>
+                  was a ux design intern at <a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">voluntrack</a>, designing tools for their volunteering platform
+                </li>
               </ul>
             </div>
 
@@ -86,63 +132,8 @@ export default function Home() {
           </p>
         </section>
 
-        <div className="flex space-x-8 pt-1 justify-center sm:justify-start" style={{ marginTop: '2rem' }}>
-          <Link
-            href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
-            className="text-white hover:text-stone-300 transition-colors"
-          >
-            <div className="w-10 h-10 flex items-center justify-center">
-              <img
-                src="/linkedin.png"
-                alt="LinkedIn"
-                className="max-w-full max-h-full object-contain"
-              />
-            </div>
-            <span className="sr-only">LinkedIn</span>
-          </Link>
-          <Link
-            href="https://github.com/nicholaschen09"
-            className="text-white hover:text-stone-300 transition-colors"
-          >
-            <div className="w-12 h-8 flex items-center justify-center mt-1">
-              <img
-                src="/github1.png"
-                alt="GitHub"
-                className="w-10 h-10 md:w-12 md:h-12"
-              />
-            </div>
-            <span className="sr-only">GitHub</span>
-          </Link>
-          <Link
-            href="mailto:nicholas.chen243@gmail.com"
-            className="text-white hover:text-stone-300 transition-colors"
-          >
-            <div className="w-11 h-12 flex items-center justify-center relative -top-1">
-              <img
-                src="/email.png"
-                alt="Email"
-                className="max-w-full max-h-full object-contain"
-              />
-            </div>
-            <span className="sr-only">Email</span>
-          </Link>
-          <Link
-            href="https://x.com/nicholaschen__"
-            className="text-white hover:text-stone-300 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="w-11 h-8 flex items-center justify-center relative">
-              <img
-                src="/twitter.png"
-                alt="Twitter"
-                className="max-w-full max-h-full object-contain translate-y-1 translate-x-1"
-              />
-            </div>
-            <span className="sr-only">Twitter</span>
-          </Link>
-        </div>
+
       </div>
-    </main>
+    </main >
   );
 }

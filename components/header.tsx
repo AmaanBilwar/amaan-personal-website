@@ -19,12 +19,16 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-6">
         <Link
           href="/"
-          className={`text-lg font-normal text-white transition-colors ${pathname === '/'
-            ? 'underline decoration-2 underline-offset-4'
-            : 'hover:underline hover:underline-offset-4'
+          className={`flex items-center transition-colors ${pathname === '/'
+            ? 'opacity-100'
+            : 'hover:opacity-80'
             }`}
         >
-          Nicholas Chen
+          <img
+            src="/ghcat.png"
+            alt="Nicholas Chen"
+            className="h-10 w-auto rounded-sm"
+          />
         </Link>
 
         {/* Desktop Navigation */}

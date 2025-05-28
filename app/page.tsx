@@ -122,7 +122,7 @@ export default function Home() {
               <span className="text-xs font-mono">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
             </button>
             {openHowIStarted && (
-              <div className="px-4 pb-4 text-stone-300 font-mono text-sm">
+              <div className="px-4 pb-4 text-stone-300 font-mono text-xs">
                 <p>i taught myself to code summer of 6th grade.</p>
                 <p>i "launched" my first app, lemonayd (<a href="#" className="underline">lemonaid</a> was taken) later that year.</p>
                 <p>it was a fundraising app for schools. i became one of the youngest winners of the <a href="#" className="underline">congressional app challenge</a> from my submission.</p>

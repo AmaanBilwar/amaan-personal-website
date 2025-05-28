@@ -150,7 +150,7 @@ export default function DrawPage() {
         const canvas = canvasRef.current;
         const ctx = canvas?.getContext('2d');
         if (!canvas || !ctx) return;
-        ctx.strokeStyle = '#fff';
+        ctx.strokeStyle = '#a3a3a3';
         ctx.lineWidth = 2;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
@@ -200,12 +200,12 @@ export default function DrawPage() {
     };
 
     return (
-        <div className="max-w-3xl w-full mx-auto p-4 mt-8">
+        <div className="max-w-3xl w-full mx-auto p-4 pt-20">
             <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-8 mt-16 w-full max-w-6xl mx-auto">
                         <div className="p-4 border border-stone-500 rounded-lg min-h-[150px] md:min-h-[84px] w-full">
-                            <p className="text-base break-words">
+                            <p className="text-sm break-words text-stone-300">
                                 {isTyping ? (
                                     <span className="font-mono">{currentText}<span className="animate-pulse">|</span></span>
                                 ) : (
@@ -229,7 +229,7 @@ export default function DrawPage() {
                         />
                     </div>
                     <div className="flex items-center justify-between mt-4 w-full">
-                        <p className="text-stone-400">Draw Anything!</p>
+                        <p className="text-stone-400 text-sm">Draw Anything!</p>
                         <div className="flex gap-2">
                             <button
                                 onClick={handleClear}

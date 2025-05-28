@@ -30,9 +30,9 @@ export default function Home() {
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
           <p className="text-stone-400">
-            i'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">toronto</a>.
+            I'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">toronto</a>.
           </p>
-          <p>i've been building things for 3673 days.</p>
+          <p>I've been building things for 3673 days.</p>
         </div>
         <div>
           <p className="mb-2 text-stone-300">A few of my achievements...</p>

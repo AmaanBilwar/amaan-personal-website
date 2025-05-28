@@ -28,8 +28,10 @@ export default function Home() {
         <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8">
           Hey, I'm Nicholas!
         </h1>
-        <p className="text-stone-400 text-sm font-mono">i'm 19, from toronto.</p>
-        <p className="text-stone-400 text-sm font-mono">i've been building things for 3673 days.</p>
+        <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
+          <p>i'm 19, from toronto.</p>
+          <p>i've been building things for 3673 days.</p>
+          </div>
         <div>
           <p className="mb-2 text-stone-300">A few of my achievements...</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">

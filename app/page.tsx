@@ -21,6 +21,29 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []); // Empty dependency array means this runs once on mount
 
+  // Previous ventures data
+  const ventures = [
+    {
+      year: '2019',
+      name: 'lemonayd',
+      link: '#',
+      description: 'Fundraising app for schools, youngest winner of the congressional app challenge.'
+    },
+    {
+      year: '2021',
+      name: 'book cover design',
+      link: '#',
+      description: 'Designed award-winning covers for indie authors.'
+    },
+    {
+      year: '2022',
+      name: 'startup hackathon',
+      link: '#',
+      description: 'Built MVPs and pitched at several hackathons.'
+    },
+  ];
+  const [openVenture, setOpenVenture] = useState<number | null>(null);
+
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10">
       {/* Hero Section */}
@@ -83,7 +106,7 @@ export default function Home() {
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>building ai agents that surprise and delight people everywhere</li>
                 <li>turning data into tools, visuals, and magic for everyone</li>
-                <li>chasing creative art sparks, sketching doodles, and imagining new designs every single day</li>
+                <li>chasing creative art sparks, sketching doodles, and imagining new designs everyday</li>
                 <li>engineering projects that make me say, "whoa, that's so cool!"</li>
               </ul>
             </div>
@@ -106,6 +129,28 @@ export default function Home() {
             </div>
 
           </div>
+        </div>
+
+        <h2 className="mt-12 mb-4 text-xl font-bold font-mono">MY PREVIOUS VENTURES:</h2>
+        <div className="space-y-2">
+          {ventures.map((venture, idx) => (
+            <div key={idx} className="border border-stone-700 rounded-md">
+              <button
+                className="w-full flex justify-between items-center px-4 py-2 font-mono text-base text-stone-200 focus:outline-none"
+                onClick={() => setOpenVenture(openVenture === idx ? null : idx)}
+              >
+                <span>
+                  <span className="font-bold">({venture.year})</span> <a href={venture.link} className="underline hover:text-stone-200" target="_blank" rel="noopener noreferrer">{venture.name}</a>
+                </span>
+                <span className="text-xs font-mono">{openVenture === idx ? 'CLOSE' : 'OPEN'}</span>
+              </button>
+              {openVenture === idx && (
+                <div className="px-4 pb-4 text-stone-300 font-mono text-sm">
+                  {venture.description}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
         <SearchBar />

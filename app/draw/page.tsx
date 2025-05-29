@@ -200,7 +200,7 @@ export default function DrawPage() {
     };
 
     return (
-        <div className="max-w-3xl w-full mx-auto p-4 pt-8 pb-0">
+        <div className="max-w-3xl w-full mx-auto p-4 pt-8 pb-8">
             <div className="bg-[#1a1a1a] text-white p-8 pb-16">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-8 mt-16 w-full max-w-6xl mx-auto">

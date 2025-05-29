@@ -65,7 +65,7 @@ export default function Home() {
           </ul>
         </div>
 
-        <p className="mb-2 mt-2 text-sm text-stone-300">I've done pretty much everything you think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour's driveways, internships, freelance work in design and coding as well as brand deals from social media.</p>
+        <p className="mb-2 mt-2 text-sm text-stone-300">I've done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour's driveways, internships, freelance work in design and coding as well as brand deals from social media.</p>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">

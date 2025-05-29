@@ -116,11 +116,11 @@ export default function Home() {
         <div className="mt-12 mb-4">
           <div className="border border-stone-700 rounded-md">
             <button
-              className="w-full flex justify-between items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none"
+              className="w-full flex justify-start items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenHowIStarted((prev) => !prev)}
             >
-              <span>How I Started</span>
-              <span className="text-xs font-mono hover:underline cursor-pointer">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
+              <span className="flex-1 text-left">How I Started</span>
+              <span className="text-xs font-mono hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
             </button>
             {openHowIStarted && (
               <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-6">
@@ -140,11 +140,11 @@ export default function Home() {
         <div className="mt-12 mb-4">
           <div className="border border-stone-700 rounded-md">
             <button
-              className="w-full flex justify-between items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none"
+              className="w-full flex justify-start items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenUnconventional((prev) => !prev)}
             >
-              <span>The Unconventional Ways I Get Things Done</span>
-              <span className="text-xs font-mono hover:underline cursor-pointer">{openUnconventional ? 'CLOSE' : 'OPEN'}</span>
+              <span className="flex-1 text-left">The Unconventional Ways I Get Things Done</span>
+              <span className="text-xs font-mono hover:underline cursor-pointer ml-auto">{openUnconventional ? 'CLOSE' : 'OPEN'}</span>
             </button>
             {openUnconventional && (
               <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-6">

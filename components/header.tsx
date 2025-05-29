@@ -27,7 +27,7 @@ export default function Header() {
           <img
             src="/ghcat.png"
             alt="Nicholas Chen"
-            className="h-10 w-auto rounded-sm"
+            className="h-9 w-auto rounded-sm"
           />
         </Link>
 

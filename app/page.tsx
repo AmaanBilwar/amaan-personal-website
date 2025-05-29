@@ -24,6 +24,7 @@ export default function Home() {
   // Accordion state for each section
   const [openHowIStarted, setOpenHowIStarted] = useState(false);
   const [openFuture, setOpenFuture] = useState(false);
+  const [openUnconventional, setOpenUnconventional] = useState(false);
 
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
@@ -125,11 +126,40 @@ export default function Home() {
               <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-6">
                 <p className="px-4 pb-4 text-stone-400 font-mono text-sm mt-2">I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">Early on, I built a simple app to help my immigrant parents navigate local services and appointments more easily. It wasn't fancy, but it solved a real problem and that's when it clicked for me, I could use tech to actually help people.</p>
+                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn't fancy, but it solved a real problem and that's when it clicked for me, I could use tech to actually help people.</p>
                 <br />
                 <p className="px-4 pb-4 text-stone-400 font-mono text-sm">I've always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it's robots, web apps, and tools that help others learn, create, or solve problems.</p>
                 <br />
                 <p className="px-4 pb-4 text-stone-400 font-mono text-sm -mb-6">Since then, I've done freelance work, internships, launched side projects, and shared everything I've learned online. I've always wanted to invent and create things that matter.</p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Unconventional Way Section */}
+        <div className="mt-12 mb-4">
+          <div className="border border-stone-700 rounded-md">
+            <button
+              className="w-full flex justify-between items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none"
+              onClick={() => setOpenUnconventional((prev) => !prev)}
+            >
+              <span>The Unconventional Ways I Get Things Done</span>
+              <span className="text-xs font-mono hover:underline cursor-pointer">{openUnconventional ? 'CLOSE' : 'OPEN'}</span>
+            </button>
+            {openUnconventional && (
+              <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-6">
+                <p className="px-4 pb-4 text-stone-400 font-mono text-sm mt-2">
+                  I've always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. Growing up, I was an art kid at heart, but I found myself equally drawn to coding and engineering—blending creativity with technology in everything I do.
+                </p>
+                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                  I started by intentionally building my presence on social media platforms, sharing my projects and insights publicly rather than relying on traditional networking. This unconventional approach directly led to my first internships, secured by leveraging platforms like X (Twitter) to showcase my work and connect with industry professionals.
+                </p>
+                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                  Beyond internships, I love experimenting with new ways to reach people, whether that's through viral posts, creative side projects, or simply being open about my process and failures.
+                </p>
+                <p className="px-4 pb-4 text-stone-400 font-mono text-sm -mb-6">
+                  I believe that being visible, authentic, and a little bit bold online can open doors that traditional paths might never reveal.
+                </p>
               </div>
             )}
           </div>

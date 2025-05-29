@@ -15,8 +15,8 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a]">
-      <div className="max-w-3xl mx-auto flex justify-between items-center p-4 md:p-6">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] border-b border-stone-700">
+      <div className="max-w-3xl mx-auto flex justify-between items-center py-2 md:py-3 px-4 md:px-6">
         <Link
           href="/"
           className={`flex items-center transition-colors ${pathname === '/'

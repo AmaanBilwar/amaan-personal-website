@@ -200,8 +200,8 @@ export default function DrawPage() {
     };
 
     return (
-        <div className="max-w-3xl w-full mx-auto p-4 pt-20">
-            <div className="min-h-screen bg-[#1a1a1a] text-white p-8">
+        <div className="max-w-3xl w-full mx-auto p-4 pt-8 pb-0">
+            <div className="bg-[#1a1a1a] text-white p-8 pb-16">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-8 mt-16 w-full max-w-6xl mx-auto">
                         <div className="p-4 border border-stone-500 rounded-lg min-h-[150px] md:min-h-[84px] w-full">

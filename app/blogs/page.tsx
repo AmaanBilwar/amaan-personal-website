@@ -18,14 +18,50 @@ export default function BlogsPage() {
                             <span className="text-xs font-mono hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
                         </button>
                         {openHowIStarted && (
-                            <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-6">
-                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm mt-2">I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.</p>
-                                <br />
-                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn't fancy, but it solved a real problem and that's when it clicked for me, I could use tech to actually help people.</p>
-                                <br />
-                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">I've always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it's robots, web apps, and tools that help others learn, create, or solve problems.</p>
-                                <br />
-                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm -mb-6">Since then, I've done freelance work, internships, launched side projects, and shared everything I've learned online. I've always wanted to invent and create things that matter.</p>
+                            <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-2">
+                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm mt-2">
+                                    At the University of Waterloo, I never really did things the "normal" way.
+                                    I came from an arts background, not your typical pre-engineering track, so I
+                                    already felt like an outsider. I thought joining design teams would help me
+                                    find my place, but they never felt right—I just couldn't get into the structure,
+                                    the meetings, the pace. Everyone else seemed to be grinding classes, chasing
+                                    co-op positions, and going to parties. Me? I skipped most lectures, didn't
+                                    really show up to events, and I definitely wasn't at Clarke on a Thursday.
+                                    Instead, I spent my time learning things on my own—watching tutorials, messing
+                                    around with side projects, teaching myself stuff I actually cared about.
+                                </p>
+                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                                    I'd study in the most random corners of campus—empty classrooms,
+                                    tucked-away staircases, places where no one would notice me—because
+                                    I didn't want to run into people and have to explain why I wasn't in
+                                    class. It wasn't that I didn't care; I just found that I learned way
+                                    more when I could do it my own way. What really changed things for me
+                                    was social media. I started posting what I was building—projects, ideas,
+                                    little wins—and slowly people started noticing. I made real friends
+                                    through TikTok and Twitter (X now, I guess), people who were also
+                                    doing their own thing and didn't totally fit the mold. Some of my
+                                    closest friends in engineering didn't come from my classes—they
+                                    came from DMs and comment sections.
+                                </p>
+                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                                    Eventually, one of my tweets about a project I built
+                                    went semi-viral, and that led to my first real job offer.
+                                    That's when it hit me: I didn't need to do things the "right"
+                                    way to get where I wanted. I just needed to keep learning,
+                                    building, and showing up online. Looking back, I'm glad
+                                    I didn't force myself to fit into a system that didn't work
+                                    for me. I learned more from failing fast, experimenting, and
+                                    being honest about my journey than I ever did from a lecture.
+                                    Doing things differently wasn't just my strategy—it became who I am.
+                                </p>
+                                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                                    And honestly, as much as I love doing things my own way,
+                                    know I'm going to miss the late night Harvey's runs and
+                                    those marathon study sessions until 3am with my buddies in CMH.
+                                    Those moments—half delirious, laughing over fries, or cramming
+                                    for an exam together—are some of the best memories I'll take
+                                    with me. It's those little things that made the journey special.
+                                </p>
                             </div>
                         )}
                     </div>

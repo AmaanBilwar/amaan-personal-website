@@ -14,7 +14,7 @@ export default function BlogsPage() {
                             className="w-full flex justify-start items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none text-left"
                             onClick={() => setOpenHowIStarted((prev) => !prev)}
                         >
-                            <span className="flex-1 text-left">Doing Things Differently in My First Year as an Engineering Student at the University of Waterloo</span>
+                            <span className="flex-1 text-left">Doing Things Differently</span>
                             <span className="text-xs font-mono hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
                         </button>
                         {openHowIStarted && (

@@ -62,6 +62,16 @@ export default function RootLayout({
             <span>Draw</span>
           </Link>
         )}
+        {/* Blogs button */}
+        {pathname !== '/blogs' && (
+          <Link
+            href="/blogs"
+            className="fixed bottom-6 left-6 px-5 py-3 bg-[#232323] hover:bg-[#2d2d2d] border border-stone-500 text-white rounded-full flex items-center justify-center text-base shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2"
+            title="Read my blogs!"
+          >
+            <span>Blogs</span>
+          </Link>
+        )}
         <Header />
         {children}
         <Footer />

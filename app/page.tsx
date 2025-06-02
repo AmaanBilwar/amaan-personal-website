@@ -82,7 +82,7 @@ export default function Home() {
                   <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">whiteboard</a> - app to brainstorm,create and share ideas
                 </li>
                 <li>
-                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">dependabot</a> - app for checking and updating dependencies in repositories
+                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">dependabot</a> - app with 200+ users for checking and updating dependencies in repositories
                 </li>
               </ul>
             </div>

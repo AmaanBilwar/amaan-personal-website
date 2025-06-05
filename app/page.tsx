@@ -26,12 +26,53 @@ export default function Home() {
   const [openFuture, setOpenFuture] = useState(false);
   const [openUnconventional, setOpenUnconventional] = useState(false);
 
+  // Typewriter effect state
+  const [displayText, setDisplayText] = useState('');
+  const [phase, setPhase] = useState<'typing' | 'backspacing' | 'retyping'>('typing');
+  const [charIndex, setCharIndex] = useState(0);
+
+  const fullName = "Nicholas!";
+  const shortName = "Nic!";
+  const baseText = "Hey, I'm ";
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout | undefined;
+    if (phase === 'typing') {
+      if (charIndex <= fullName.length) {
+        setDisplayText(baseText + fullName.slice(0, charIndex));
+        timeout = setTimeout(() => setCharIndex(charIndex + 1), 120);
+      } else {
+        timeout = setTimeout(() => setPhase('backspacing'), 1000);
+      }
+    } else if (phase === 'backspacing') {
+      if (charIndex > 0) {
+        setDisplayText(baseText + fullName.slice(0, charIndex - 1));
+        timeout = setTimeout(() => setCharIndex(charIndex - 1), 80);
+      } else {
+        setPhase('retyping');
+        setCharIndex(0);
+      }
+    } else if (phase === 'retyping') {
+      if (charIndex <= shortName.length) {
+        setDisplayText(baseText + shortName.slice(0, charIndex));
+        timeout = setTimeout(() => setCharIndex(charIndex + 1), 120);
+      } else {
+        timeout = setTimeout(() => {
+          setPhase('typing');
+          setCharIndex(0);
+        }, 1000);
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [phase, charIndex]);
+
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
       {/* Hero Section */}
       <div className="max-w-3xl w-full mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
-        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8">
-          Hey, I'm Nicholas!
+        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8 font-mono min-h-[3.5rem]">
+          {displayText}
+          <span className="animate-pulse">|</span>
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
           <p className="text-stone-400">

@@ -28,39 +28,44 @@ export default function Home() {
 
   // Typewriter effect state
   const [displayText, setDisplayText] = useState('');
-  const [phase, setPhase] = useState<'typing' | 'backspacing' | 'retyping'>('typing');
+  const [phase, setPhase] = useState<'typingFull' | 'backspacingFull' | 'typingShort' | 'backspacingShort'>('typingFull');
   const [charIndex, setCharIndex] = useState(0);
 
+  const baseText = "Hey, I'm ";
   const fullName = "Nicholas!";
   const shortName = "Nic!";
-  const baseText = "Hey, I'm ";
 
   useEffect(() => {
     let timeout: NodeJS.Timeout | undefined;
-    if (phase === 'typing') {
+    if (phase === 'typingFull') {
       if (charIndex <= fullName.length) {
         setDisplayText(baseText + fullName.slice(0, charIndex));
         timeout = setTimeout(() => setCharIndex(charIndex + 1), 120);
       } else {
-        timeout = setTimeout(() => setPhase('backspacing'), 1000);
+        timeout = setTimeout(() => setPhase('backspacingFull'), 1000);
       }
-    } else if (phase === 'backspacing') {
+    } else if (phase === 'backspacingFull') {
       if (charIndex > 0) {
         setDisplayText(baseText + fullName.slice(0, charIndex - 1));
         timeout = setTimeout(() => setCharIndex(charIndex - 1), 80);
       } else {
-        setPhase('retyping');
+        setPhase('typingShort');
         setCharIndex(0);
       }
-    } else if (phase === 'retyping') {
+    } else if (phase === 'typingShort') {
       if (charIndex <= shortName.length) {
         setDisplayText(baseText + shortName.slice(0, charIndex));
         timeout = setTimeout(() => setCharIndex(charIndex + 1), 120);
       } else {
-        timeout = setTimeout(() => {
-          setPhase('typing');
-          setCharIndex(0);
-        }, 1000);
+        timeout = setTimeout(() => setPhase('backspacingShort'), 1000);
+      }
+    } else if (phase === 'backspacingShort') {
+      if (charIndex > 0) {
+        setDisplayText(baseText + shortName.slice(0, charIndex - 1));
+        timeout = setTimeout(() => setCharIndex(charIndex - 1), 80);
+      } else {
+        setPhase('typingFull');
+        setCharIndex(0);
       }
     }
     return () => clearTimeout(timeout);

@@ -253,11 +253,11 @@ export default function SearchBar() {
       )}
 
       <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20">
-        <div className="flex items-stretch gap-2 w-full mt-4">
+        <div className="flex items-stretch gap-1 w-full mt-4">
           <input
             type="text"
             placeholder="Ask me anything"
-            className="flex-grow min-w-0 pl-6 pr-6 py-3 px-4 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
+            className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             disabled={isLoading || !!pendingAI || !!typedAI}

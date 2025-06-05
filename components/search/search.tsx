@@ -264,7 +264,7 @@ export default function SearchBar() {
           />
           <button
             type="submit"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200"
             disabled={isLoading || !!pendingAI || !!typedAI}
           >
             {(!!pendingAI || !!typedAI) ? (
@@ -278,7 +278,7 @@ export default function SearchBar() {
           </button>
           <button
             type="button"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200"
             onClick={() => {
               setMessages([]);
               setPendingAI(null);

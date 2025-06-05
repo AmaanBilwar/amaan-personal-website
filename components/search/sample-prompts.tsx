@@ -12,12 +12,12 @@ const samplePrompts = [
 export default function SamplePrompts({ onPromptClick }: SamplePromptsProps) {
     return (
         <div className="w-full max-w-6xl mx-auto mb-4">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-6">
                 {samplePrompts.map((prompt, index) => (
                     <button
                         key={index}
                         onClick={() => onPromptClick(prompt)}
-                        className="px-3 py-1.5 text-sm bg-white/5 hover:bg-white/10 text-stone-300 rounded-md transition-colors"
+                        className="px-3 py-1.5 text-sm bg-white/5 hover:bg-white/10 text-stone-300 rounded-md transition-colors hover:scale-105 transition-transform duration-200"
                     >
                         {prompt}
                     </button>

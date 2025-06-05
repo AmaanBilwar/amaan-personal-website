@@ -4,7 +4,7 @@ import React from 'react';
 export default function BlogsPage() {
     const [openHowIStarted, setOpenHowIStarted] = React.useState(false);
     return (
-        <main className="min-h-screen max-w-2xl mt-20 mx-auto p-8 text-white">
+        <main className="min-h-screen max-w-3xl mt-20 mx-auto p-8 text-white">
             <h1 className="text-3xl font-bold mb-8">Blogs</h1>
             <ul className="space-y-4">
                 {/* How I Started Section */}

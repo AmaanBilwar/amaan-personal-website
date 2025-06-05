@@ -40,10 +40,10 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="flex items-center">
           <nav className="flex gap-2 items-center mx-auto ">
-            <a href="mailto:nicholas.chen243@gmail.com" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">Contact</a>
-            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">LinkedIn</a>
-            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">GitHub</a>
-            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors">Twitter</a>
+            <a href="mailto:nicholas.chen243@gmail.com" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors hover:scale-110 transition-transform duration-200">Contact</a>
+            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors hover:scale-110 transition-transform duration-200">LinkedIn</a>
+            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors hover:scale-110 transition-transform duration-200">GitHub</a>
+            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-mono uppercase tracking-widest text-sm text-stone-500 hover:underline underline-offset-4 transition-colors hover:scale-110 transition-transform duration-200">Twitter</a>
           </nav>
         </nav>
       </div>

@@ -17,19 +17,25 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] border-b border-stone-700">
       <div className="max-w-3xl mx-auto flex justify-between items-center py-2 md:py-3 px-4 md:px-6">
-        <Link
-          href="/"
-          className={`flex items-center transition-colors ${pathname === '/'
-            ? 'opacity-100'
-            : 'hover:opacity-80'
-            }`}
-        >
-          <img
-            src="/ghcat.png"
-            alt="Nicholas Chen"
-            className="h-9 w-auto rounded-sm"
-          />
-        </Link>
+        <div className="relative group">
+          <Link
+            href="/"
+            className={`flex items-center transition-all duration-200 p-1 rounded-full ${pathname === '/'
+              ? 'opacity-100'
+              : 'hover:opacity-80 hover:bg-stone-800 hover:scale-110'
+              }`}
+            aria-label="Home"
+          >
+            <img
+              src="/ghcat.png"
+              alt="Nicholas Chen"
+              className="h-9 w-auto rounded-sm"
+            />
+          </Link>
+          <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
+            Home
+          </span>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="flex items-center">

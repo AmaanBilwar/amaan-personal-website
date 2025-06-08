@@ -8,7 +8,7 @@ export default function Footer() {
           © 2025 NICHOLAS CHEN{' '}
         </span>
         <span className="flex items-center gap-2">
-          <span className="text-stone-400 text-sm font-minecraft">BY NICHOLAS®</span>
+          <span className="text-stone-400 text-sm font-minecraft mr-4">BY NICHOLAS®</span>
         </span>
       </div>
     </footer>

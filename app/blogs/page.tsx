@@ -5,11 +5,11 @@ export default function BlogsPage() {
     const [openHowIStarted, setOpenHowIStarted] = React.useState(false);
     return (
         <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
-            <div className="max-w-2xl w-full mr-8 space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
+            <div className="max-w-2xl w-full md:mr-8 space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16 px-2">
                 <h1 className="text-3xl font-bold mb-8">Blogs</h1>
                 <ul className="space-y-4">
                     {/* How I Started Section */}
-                    <div className="mt-12 mb-4">
+                    <div className="mt-6 md:mt-12 mb-4">
                         <div className="border border-stone-700 rounded-md">
                             <button
                                 className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"

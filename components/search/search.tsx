@@ -221,7 +221,7 @@ export default function SearchBar() {
 
       {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
       {(messages.length > 0 || pendingAI || typedAI) && (
-        <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative font-minecraft">
+        <div className="flex flex-col max-h-[600px] overflow-y-auto border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative font-minecraft">
           {/* Overlay for AI typing, allows scroll/select but blocks input */}
           {(pendingAI || typedAI) && (
             <div

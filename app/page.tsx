@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
       {/* Hero Section */}
-      <div className="max-w-3xl w-full mx-auto space-y-2 md:space-y-4 mb-10 md:mb-16 pt-24 md:pt-16">
+      <div className="max-w-3xl w-full space-y-4 md:space-y-4 mb-10 md:mb-16 pt-24 md:pt-16 ml-16">
         <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft min-h-[3.5rem]">
           {displayText}
           <span className="animate-pulse">|</span>

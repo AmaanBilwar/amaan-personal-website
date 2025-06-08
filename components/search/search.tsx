@@ -259,7 +259,7 @@ export default function SearchBar() {
       )}
 
       <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20">
-        <div className="flex items-stretch gap-1 w-full mt-4">
+        <div className="max-w-2xl flex items-stretch gap-1 w-full mt-4">
           <input
             type="text"
             placeholder="Ask me anything"

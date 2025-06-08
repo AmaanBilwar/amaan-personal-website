@@ -75,7 +75,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
       {/* Hero Section */}
       <div className="max-w-3xl w-full mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
-        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8 font-mono min-h-[3.5rem]">
+        <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-8 font-minecraft min-h-[3.5rem]">
           {displayText}
           <span className="animate-pulse">|</span>
         </h1>
@@ -165,21 +165,21 @@ export default function Home() {
         <div className="mt-12 mb-4">
           <div className="border border-stone-700 rounded-md">
             <button
-              className="w-full flex justify-start items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none text-left"
+              className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenHowIStarted((prev) => !prev)}
             >
               <span className="flex-1 text-left">How I Started</span>
-              <span className="text-xs font-mono hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
+              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
             </button>
             {openHowIStarted && (
-              <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-6">
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm mt-2">I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.</p>
+              <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn't fancy, but it solved a real problem and that's when it clicked for me, I could use tech to actually help people.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn't fancy, but it solved a real problem and that's when it clicked for me, I could use tech to actually help people.</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">I've always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it's robots, web apps, and tools that help others learn, create, or solve problems.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">I've always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it's robots, web apps, and tools that help others learn, create, or solve problems.</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm -mb-6">Since then, I've done freelance work, internships, launched side projects, and shared everything I've learned online. I've always wanted to invent and create things that matter.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">Since then, I've done freelance work, internships, launched side projects, and shared everything I've learned online. I've always wanted to invent and create things that matter.</p>
               </div>
             )}
           </div>
@@ -189,24 +189,24 @@ export default function Home() {
         <div className="mt-12 mb-4">
           <div className="border border-stone-700 rounded-md">
             <button
-              className="w-full flex justify-start items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none text-left"
+              className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenUnconventional((prev) => !prev)}
             >
               <span className="flex-1 text-left">The Unconventional Ways I Get Things Done</span>
-              <span className="text-xs font-mono hover:underline cursor-pointer ml-auto">{openUnconventional ? 'CLOSE' : 'OPEN'}</span>
+              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openUnconventional ? 'CLOSE' : 'OPEN'}</span>
             </button>
             {openUnconventional && (
-              <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-6">
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm mt-2">
+              <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">
                   I've always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. Growing up, I was an art kid at heart, but I found myself equally drawn to coding and engineering—blending creativity with technology in everything I do.
                 </p>
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
                   I started by intentionally building my presence on social media platforms, sharing my projects and insights publicly rather than relying on traditional networking. This unconventional approach directly led to my first internships, secured by leveraging platforms like X (Twitter) to showcase my work and connect with industry professionals.
                 </p>
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
                   Beyond internships, I love experimenting with new ways to reach people, whether that's through viral posts, creative side projects, or simply being open about my process and failures.
                 </p>
-                <p className="px-4 pb-4 text-stone-400 font-mono text-sm -mb-6">
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">
                   I believe that being visible, authentic, and a little bit bold online can open doors that traditional paths might never reveal.
                 </p>
               </div>
@@ -216,12 +216,12 @@ export default function Home() {
 
         <SearchBar />
 
-        <section className="mt-10 -mb-6">
-          <p className="text-sm text-stone-400">
+        <section className="mt-10 -mb-6 font-minecraft">
+          <p className="text-sm text-stone-400 font-minecraft">
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a
               href="mailto:nicholas.chen243@gmail.com"
-              className="text-stone-400 underline hover:text-stone-200 transition-colors"
+              className="text-stone-400 underline hover:text-stone-200 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
               email
             </a>
@@ -230,7 +230,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone-400 underline hover:text-stone-200 transition-colors"
+              className="text-stone-400 underline hover:text-stone-200 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
               linkedin
             </a>

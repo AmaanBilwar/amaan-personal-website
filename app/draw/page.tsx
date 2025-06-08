@@ -208,9 +208,9 @@ export default function DrawPage() {
                             <div className="p-4 border border-stone-500 rounded-lg min-h-[150px] md:min-h-[84px] w-full">
                                 <p className="text-sm break-words text-stone-300">
                                     {isTyping ? (
-                                        <span className="font-mono">{currentText}<span className="animate-pulse">|</span></span>
+                                        <span className="font-minecraft">{currentText}<span className="animate-pulse">|</span></span>
                                     ) : (
-                                        <span className="font-mono">{currentText}</span>
+                                        <span className="font-minecraft">{currentText}</span>
                                     )}
                                 </p>
                             </div>

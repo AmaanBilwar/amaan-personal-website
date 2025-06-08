@@ -3,6 +3,12 @@
 import { useState, useRef, useEffect } from 'react';
 import SamplePrompts from './sample-prompts';
 import ChatMessage from './chat-message';
+import localFont from 'next/font/local';
+
+const minecraft = localFont({
+  src: '../../public/fonts/MinecraftRegular-Bmg3.otf',
+  variable: '--font-minecraft',
+});
 
 interface Message {
   role: 'user' | 'assistant';
@@ -209,13 +215,13 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="w-full px-0">
-      <h2 className="text-lg text-stone-300 mb-4 mt-8">What else do you want to know about me?</h2>
+    <div className={`w-full px-0 ${minecraft.variable} font-minecraft`}>
+      <h2 className="text-lg text-stone-300 mb-4 mt-8 font-minecraft">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
       {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
       {(messages.length > 0 || pendingAI || typedAI) && (
-        <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative">
+        <div className="flex flex-col h-[600px] border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative font-minecraft">
           {/* Overlay for AI typing, allows scroll/select but blocks input */}
           {(pendingAI || typedAI) && (
             <div
@@ -257,14 +263,14 @@ export default function SearchBar() {
           <input
             type="text"
             placeholder="Ask me anything"
-            className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all"
+            className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             disabled={isLoading || !!pendingAI || !!typedAI}
           />
           <button
             type="submit"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
             disabled={isLoading || !!pendingAI || !!typedAI}
           >
             {(!!pendingAI || !!typedAI) ? (
@@ -278,7 +284,7 @@ export default function SearchBar() {
           </button>
           <button
             type="button"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200"
+            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
             onClick={() => {
               setMessages([]);
               setPendingAI(null);

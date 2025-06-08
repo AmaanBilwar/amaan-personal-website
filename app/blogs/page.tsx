@@ -12,15 +12,15 @@ export default function BlogsPage() {
                     <div className="mt-12 mb-4">
                         <div className="border border-stone-700 rounded-md">
                             <button
-                                className="w-full flex justify-start items-center px-4 py-2 font-mono text-sm text-stone-200 focus:outline-none text-left"
+                                className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
                                 onClick={() => setOpenHowIStarted((prev) => !prev)}
                             >
                                 <span className="flex-1 text-left">Doing Things Differently</span>
-                                <span className="text-xs font-mono hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
+                                <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
                             </button>
                             {openHowIStarted && (
-                                <div className="px-4 pb-4 text-stone-400 font-mono text-[9px] leading-tight mb-2">
-                                    <p className="px-4 pb-4 text-stone-400 font-mono text-sm mt-2">
+                                <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-2">
+                                    <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">
                                         At the University of Waterloo, I never really did things the "normal" way.
                                         I came from an arts background, not your typical pre-engineering track, so I
                                         already felt a little different. I thought joining design teams would help me,
@@ -31,7 +31,7 @@ export default function BlogsPage() {
                                         on my own, messing around with side projects, learning how to use AI and
                                         teaching myself skills I actually cared and was interested in.
                                     </p>
-                                    <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                                    <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
                                         I'd study in the most random corners of campus where there were empty classrooms,
                                         or places where no one would be because I didn't want to run into people. I found
                                         that I learned way more when I could do it my own way. What really changed things for me
@@ -43,7 +43,7 @@ export default function BlogsPage() {
                                         closest friends in engineering didn't come from my classes, they
                                         came from DMs and comment sections of my posts online.
                                     </p>
-                                    <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                                    <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
                                         Eventually, one of my tweets about a project I built and cold emailing
                                         startups in San Francisco and New York City
                                         went semi-viral, that led to my first real job offer.
@@ -57,7 +57,7 @@ export default function BlogsPage() {
                                         being honest about my journey than I ever did from a lecture.
                                         Doing things differently helped me get where I wanted to be quicker.
                                     </p>
-                                    <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                                    <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
                                         Honestly, as much as I love doing things my own way, I
                                         know I'm going to miss the late night Harvey's runs and
                                         those super long study sessions until 3am with my buddies in CMH.
@@ -65,7 +65,7 @@ export default function BlogsPage() {
                                         for an exam together are some of the best memories I'll take
                                         with me. It's those little things that made the journey special.
                                     </p>
-                                    <p className="px-4 pb-4 text-stone-400 font-mono text-sm">
+                                    <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
                                         I'm still doing summer term as of me writing this blog, but this fall,
                                         I'm going to be joining a startup in New York City called TextQL as a software engineer intern.
                                         I'm super excited to learn as much as I can and see what the future holds and to continue doing

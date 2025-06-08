@@ -2,6 +2,7 @@
 
 import type React from 'react';
 import { JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/header';
 import Link from 'next/link';
@@ -16,6 +17,11 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '700'],
 });
 
+const minecraft = localFont({
+  src: '../public/fonts/MinecraftRegular-Bmg3.otf',
+  variable: '--font-minecraft',
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -23,7 +29,7 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
   return (
-    <html lang="en" className={jetbrainsMono.variable}>
+    <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable} font-minecraft`}>
       <Head>
         {/* Google Tag Manager */}
         <script
@@ -40,7 +46,7 @@ export default function RootLayout({
         {/* End Google Tag Manager */}
       </Head>
       <body
-        className={`${jetbrainsMono.className} bg-[#1a1a1a] min-h-screen antialiased`}
+        className={`bg-[#1a1a1a] min-h-screen antialiased font-minecraft`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>

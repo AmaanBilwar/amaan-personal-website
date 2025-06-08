@@ -215,87 +215,91 @@ export default function SearchBar() {
   };
 
   return (
-    <div className={`w-full px-0 ${minecraft.variable} font-minecraft`}>
+    <div className={`px-0 ${minecraft.variable} font-minecraft`}>
       <h2 className="text-lg text-stone-300 mb-4 mt-8 font-minecraft">What else do you want to know about me?</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
       {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
       {(messages.length > 0 || pendingAI || typedAI) && (
-        <div className="flex flex-col max-h-[600px] overflow-y-auto border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative font-minecraft">
-          {/* Overlay for AI typing, allows scroll/select but blocks input */}
-          {(pendingAI || typedAI) && (
-            <div
-              className="absolute inset-0 z-10 bg-transparent pointer-events-none"
-              aria-hidden="true"
-            />
-          )}
-          <div
-            className="flex-1 overflow-y-auto ai-chat-scroll"
-            ref={chatContainerRef}
-            style={{ scrollbarGutter: 'stable' }}
-          >
-            {messages.map((message, index) => (
-              <ChatMessage
-                key={index}
-                role={message.role}
-                content={message.content}
+        <div className="max-w-2xl w-full mt-8 mb-6">
+          <div className="flex flex-col max-h-[600px] overflow-y-auto border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative font-minecraft">
+            {/* Overlay for AI typing, allows scroll/select but blocks input */}
+            {(pendingAI || typedAI) && (
+              <div
+                className="absolute inset-0 z-10 bg-transparent pointer-events-none"
+                aria-hidden="true"
               />
-            ))}
-            {/* Typing animation for AI */}
-            {typedAI && (
-              <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
             )}
-            {isLoading && !typedAI && !pendingAI && (
-              <div className="flex gap-4 p-4 bg-white/5">
-                <div className="flex items-center gap-2 text-stone-400 pl-2">
-                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
-                  <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
+            <div
+              className="maflex-1 overflow-y-auto ai-chat-scroll"
+              ref={chatContainerRef}
+              style={{ scrollbarGutter: 'stable' }}
+            >
+              {messages.map((message, index) => (
+                <ChatMessage
+                  key={index}
+                  role={message.role}
+                  content={message.content}
+                />
+              ))}
+              {/* Typing animation for AI */}
+              {typedAI && (
+                <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
+              )}
+              {isLoading && !typedAI && !pendingAI && (
+                <div className="flex gap-4 p-4 bg-white/5">
+                  <div className="flex items-center gap-2 text-stone-400 pl-2">
+                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-stone-400 border-t-transparent"></div>
+                    <span className="font-medium animate-pulse">Thinking{'...'.slice(0, dotCount + 1)}</span>
+                  </div>
                 </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
+              )}
+              <div ref={messagesEndRef} />
+            </div>
           </div>
         </div>
       )}
 
       <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20">
-        <div className="max-w-2xl flex items-stretch gap-1 w-full mt-4">
-          <input
-            type="text"
-            placeholder="Ask me anything"
-            className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            disabled={isLoading || !!pendingAI || !!typedAI}
-          />
-          <button
-            type="submit"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
-            disabled={isLoading || !!pendingAI || !!typedAI}
-          >
-            {(!!pendingAI || !!typedAI) ? (
-              <>
-                <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent inline-block"></span>
-                Responding...
-              </>
-            ) : (
-              'Send'
-            )}
-          </button>
-          <button
-            type="button"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
-            onClick={() => {
-              setMessages([]);
-              setPendingAI(null);
-              setTypedAI('');
-              localStorage.removeItem('chat-messages');
-              localStorage.removeItem('chat-pendingAI');
-              localStorage.removeItem('chat-typedAI');
-            }}
-          >
-            Clear
-          </button>
+        <div className="max-w-2xl w-full mt-8">
+          <div className="flex items-stretch gap-1">
+            <input
+              type="text"
+              placeholder="Ask me anything"
+              className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              disabled={isLoading || !!pendingAI || !!typedAI}
+            />
+            <button
+              type="submit"
+              className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
+              disabled={isLoading || !!pendingAI || !!typedAI}
+            >
+              {(!!pendingAI || !!typedAI) ? (
+                <>
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent inline-block"></span>
+                  Responding...
+                </>
+              ) : (
+                'Send'
+              )}
+            </button>
+            <button
+              type="button"
+              className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
+              onClick={() => {
+                setMessages([]);
+                setPendingAI(null);
+                setTypedAI('');
+                localStorage.removeItem('chat-messages');
+                localStorage.removeItem('chat-pendingAI');
+                localStorage.removeItem('chat-typedAI');
+              }}
+            >
+              Clear
+            </button>
+          </div>
         </div>
       </form>
     </div>

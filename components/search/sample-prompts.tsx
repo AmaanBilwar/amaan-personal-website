@@ -12,7 +12,7 @@ const samplePrompts = [
 export default function SamplePrompts({ onPromptClick }: SamplePromptsProps) {
     return (
         <div className="w-full max-w-6xl mx-auto mb-4 font-minecraft">
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-2">
                 {samplePrompts.map((prompt, index) => (
                     <button
                         key={index}

@@ -5,22 +5,6 @@ import { Typewriter } from 'react-simple-typewriter';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [done, setDone] = useState(false);
-  const summaryText =
-    "I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining TextQL as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at Ownr, RBC, and Meta Hash Capital.";
-  const summaryHtml = `I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining <a href="https://textql.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">TextQL</a> as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">Ownr</a>, <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">RBC</a>, and <a href="https://www.metahashtechnology.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">Meta Hash Capital</a>.`;
-
-  // Calculate approximate typing duration
-  const typingDuration = (summaryText.length * 25) + 500; // typeSpeed * length + delaySpeed
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDone(true);
-    }, typingDuration);
-
-    return () => clearTimeout(timer);
-  }, []); // Empty dependency array means this runs once on mount
-
   // Accordion state for each section
   const [openHowIStarted, setOpenHowIStarted] = useState(false);
   const [openFuture, setOpenFuture] = useState(false);

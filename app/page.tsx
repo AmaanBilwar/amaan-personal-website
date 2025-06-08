@@ -217,7 +217,7 @@ export default function Home() {
         <SearchBar />
 
         <section className="mt-10 -mb-6 font-minecraft">
-          <p className="text-sm text-stone-400 font-minecraft">
+          <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a
               href="mailto:nicholas.chen243@gmail.com"

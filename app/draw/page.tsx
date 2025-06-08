@@ -201,11 +201,11 @@ export default function DrawPage() {
 
     return (
         <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
-            <div className="max-w-3xl w-full mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
-                <div className="bg-[#1a1a1a] text-white p-8 pb-16">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="mb-8 w-full max-w-6xl mx-auto">
-                            <div className="p-4 border border-stone-500 rounded-lg min-h-[150px] md:min-h-[84px] w-full">
+            <div className="w-full max-w-full md:max-w-3xl mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
+                <div className="bg-[#1a1a1a] text-white p-3 md:p-8 pb-8 md:pb-16">
+                    <div className="w-full md:max-w-4xl mx-auto">
+                        <div className="mb-8 w-full md:max-w-6xl mx-auto">
+                            <div className="px-4 py-2 md:p-4 border border-stone-500 rounded-lg h-[6.5rem] md:h-[6.5rem] w-full">
                                 <p className="text-sm break-words text-stone-300">
                                     {isTyping ? (
                                         <span className="font-minecraft">{currentText}<span className="animate-pulse">|</span></span>

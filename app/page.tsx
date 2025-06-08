@@ -8,7 +8,7 @@ export default function Home() {
   const [done, setDone] = useState(false);
   const summaryText =
     "I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining TextQL as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at Ownr, RBC, and Meta Hash Capital.";
-  const summaryHtml = `I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining <a href="https://textql.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">TextQL</a> as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">Ownr</a>, <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">RBC</a>, and <a href="https://www.metahashtechnology.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-300">Meta Hash Capital</a>.`;
+  const summaryHtml = `I am currently studying Systems Design Engineering at the University of Waterloo. This fall, I'll be joining <a href="https://textql.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">TextQL</a> as a Software Engineer Intern in NYC. Previously, I've helped create some awesome things at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">Ownr</a>, <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">RBC</a>, and <a href="https://www.metahashtechnology.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-stone-100 inline-block transform transition-transform duration-200 hover:scale-110">Meta Hash Capital</a>.`;
 
   // Calculate approximate typing duration
   const typingDuration = (summaryText.length * 25) + 500; // typeSpeed * length + delaySpeed
@@ -81,7 +81,7 @@ export default function Home() {
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
           <p className="text-stone-400">
-            I'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">toronto</a>.
+            I'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">toronto</a>.
           </p>
           <p>I've been building things for 3673 days.</p>
         </div>
@@ -89,7 +89,7 @@ export default function Home() {
           <p className="mb-2 text-stone-300">A few of my achievements...</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
             <li>30k followers on social media (x, instagram, tiktok, youtube) and over 10m views</li>
-            <li>won 2nd place at <a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">UTRA Hacks</a>, the largest robotics hackathon in canada</li>
+            <li>won 2nd place at <a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">UTRA Hacks</a>, the largest robotics hackathon in canada</li>
             <li>designed award winning book covers for authors</li>
           </ul>
         </div>
@@ -97,10 +97,10 @@ export default function Home() {
           <p className="mb-4 text-stone-300">I'm currently...</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
             <li>
-              studying <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">systems design engineering</a> at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">university of waterloo</a>
+              studying <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a> at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">university of waterloo</a>
             </li>
             <li>
-              excited to join <a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">textql</a> as a software engineer intern in <a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">nyc</a> soon
+              excited to join <a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a> as a software engineer intern in <a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a> soon
             </li>
             <li>
               building projects to help others create and invent new things
@@ -119,16 +119,16 @@ export default function Home() {
               <p className="mb-2 text-stone-300">A few projects I'm working on...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>
-                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">diff digest</a> - website that turns git diffs into release notes
+                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - website that turns git diffs into release notes
                 </li>
                 <li>
-                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">sql query parser</a> - parser that can query flat JSON objects
+                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - parser that can query flat JSON objects
                 </li>
                 <li>
-                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">whiteboard</a> - app to brainstorm,create and share ideas
+                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">whiteboard</a> - app to brainstorm,create and share ideas
                 </li>
                 <li>
-                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">dependabot</a> - app with 200+ users for checking and updating dependencies in repositories
+                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - app with 200+ users for checking and updating dependencies in repositories
                 </li>
               </ul>
             </div>
@@ -145,16 +145,16 @@ export default function Home() {
               <p className="mb-2 text-stone-300">Previously I...</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>
-                  was a software engineer intern at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">ownr</a>, building tools for entrepreneurs worldwide
+                  was a software engineer intern at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>, building tools for entrepreneurs worldwide
                 </li>
                 <li>
-                  was a software engineer intern at <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">rbc</a>, working on machine learning models
+                  was a software engineer intern at <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>, working on machine learning models
                 </li>
                 <li>
-                  was a ux design intern at <a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">meta hash capital</a>, focusing on user experience in fintech
+                  was a ux design intern at <a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">meta hash capital</a>, focusing on user experience in fintech
                 </li>
                 <li>
-                  was a ux design intern at <a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-200 transition-colors">voluntrack</a>, designing tools for their volunteering platform
+                  was a ux design intern at <a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">voluntrack</a>, designing tools for their volunteering platform
                 </li>
               </ul>
             </div>
@@ -221,7 +221,7 @@ export default function Home() {
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
             <a
               href="mailto:nicholas.chen243@gmail.com"
-              className="text-stone-400 underline hover:text-stone-200 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
+              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
               email
             </a>
@@ -230,7 +230,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone-400 underline hover:text-stone-200 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
+              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
               linkedin
             </a>

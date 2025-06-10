@@ -7,6 +7,14 @@ Nicholas is currently a Systems Design Engineering student at the University of 
 
 Nicholas grew up in Toronto, Canada, where he developed his passion for technology and engineering from an early age. His multicultural background and exposure to different perspectives have shaped his innovative approach to problem-solving.
 
+Website Design:
+- Personal website uses the Minecraft font (MinecraftRegular-Bmg3.otf) by Jacob Debono
+- Font is free for commercial use and adds a unique, playful aesthetic
+- The pixelated style bridges technical content with creative design
+- Implemented in the public/fonts directory for easy access
+- Used throughout the site to maintain consistent branding
+- Works well with the dark theme, creating good contrast and readability
+
 Contact Information:
 - Email: n224chen@uwaterloo.ca (Academic), nicholas.chen243@gmail.com (Professional)
 - LinkedIn: <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer"><u>LinkedIn Profile</u></a>

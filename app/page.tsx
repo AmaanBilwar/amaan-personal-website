@@ -220,6 +220,19 @@ export default function Home() {
             </a>
             .
           </p>
+          <div className="flex items-center gap-2 justify-start mt-6 max-w-2xl">
+            {/* Left Arrow */}
+            <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </a>
+            <a href="https://www.sydeb.me/" target="_blank" rel="noopener noreferrer" className="group">
+              <img src="/white.svg" alt="White SVG Pattern" className="w-6 h-6 opacity-60 group-hover:scale-125 group-hover:opacity-100 transition-all duration-200" />
+            </a>
+            {/* Right Arrow */}
+            <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </a>
+          </div>
         </section>
       </div>
     </main >

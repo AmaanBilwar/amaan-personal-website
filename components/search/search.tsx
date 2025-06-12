@@ -38,6 +38,7 @@ export default function SearchBar() {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
+  const stoppedRef = useRef(false);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -175,6 +176,7 @@ export default function SearchBar() {
     const trimmed = query.trim();
     if (!trimmed) return;
 
+    stoppedRef.current = false;
     // Interrupt current AI response if any
     if (pendingAI || typedAI) {
       if (typingTimeout.current) clearTimeout(typingTimeout.current);
@@ -201,6 +203,7 @@ export default function SearchBar() {
       if (aiResult.ok) {
         const aiData = await aiResult.json();
         // Filter out personal website mentions and type out the response
+        if (stoppedRef.current) return;
         setPendingAI(filterPersonalWebsite(aiData.response));
       }
     } catch (error) {
@@ -286,15 +289,21 @@ export default function SearchBar() {
             type="button"
             className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
             onClick={() => {
-              setMessages([]);
-              setPendingAI(null);
-              setTypedAI('');
-              localStorage.removeItem('chat-messages');
-              localStorage.removeItem('chat-pendingAI');
-              localStorage.removeItem('chat-typedAI');
+              if (isLoading || pendingAI || typedAI) {
+                stoppedRef.current = true;
+                if (typingTimeout.current) clearTimeout(typingTimeout.current);
+                setPendingAI(null);
+                setTypedAI('');
+                setIsLoading(false);
+                localStorage.removeItem('chat-pendingAI');
+                localStorage.removeItem('chat-typedAI');
+              } else {
+                setMessages([]);
+                localStorage.removeItem('chat-messages');
+              }
             }}
           >
-            Clear
+            {isLoading || pendingAI || typedAI ? 'Stop' : 'Clear'}
           </button>
         </div>
       </form>

@@ -210,7 +210,7 @@ export default function SearchBar() {
       console.error('Search error:', error);
       setMessages(prev => [
         ...prev,
-        { role: 'assistant', content: 'Sorry, I encountered an error. Please try again.' }
+        { role: 'assistant', content: 'Sorry, I had trouble processing that. Could you try again?' }
       ]);
     } finally {
       setIsLoading(false);

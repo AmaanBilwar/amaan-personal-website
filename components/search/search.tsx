@@ -175,6 +175,15 @@ export default function SearchBar() {
     const trimmed = query.trim();
     if (!trimmed) return;
 
+    // Interrupt current AI response if any
+    if (pendingAI || typedAI) {
+      if (typingTimeout.current) clearTimeout(typingTimeout.current);
+      setPendingAI(null);
+      setTypedAI('');
+      localStorage.removeItem('chat-pendingAI');
+      localStorage.removeItem('chat-typedAI');
+    }
+
     // Add user message
     setMessages(prev => [...prev, { role: 'user', content: trimmed }]);
     setQuery('');
@@ -259,7 +268,6 @@ export default function SearchBar() {
             className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            disabled={isLoading || !!pendingAI || !!typedAI}
           />
           {isLoading || !!pendingAI || !!typedAI ? (
             <div className="h-full px-4 py-4 text-sm bg-white/10 text-white rounded-md flex items-center gap-2 flex-shrink-0 font-minecraft select-none cursor-default min-w-[110px] justify-center">
@@ -270,7 +278,6 @@ export default function SearchBar() {
             <button
               type="submit"
               className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
-              disabled={isLoading || !!pendingAI || !!typedAI}
             >
               Send
             </button>

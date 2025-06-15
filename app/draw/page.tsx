@@ -218,7 +218,7 @@ export default function DrawPage() {
                         <div ref={containerRef} className="flex flex-col items-center w-full border border-stone-500 rounded-lg bg-[#1a1a1a] overflow-hidden relative min-h-[350px] md:min-h-[250px]">
                             <canvas
                                 ref={canvasRef}
-                                className="w-full h-full cursor-crosshair"
+                                className="w-full h-full cursor-[url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBvbHlnb24gZmlsbD0iIzMzMyIgcG9pbnRzPSI4LDEgNyw1IDksNSIvPgo8cmVjdCBmaWxsPSIjZDk5IiB4PSI3IiB5PSI1IiB3aWR0aD0iMiIgaGVpZ2h0PSI4Ii8+CjxyZWN0IGZpbGw9IiM4ODgiIHg9IjciIHk9IjEzIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIi8+CjxjaXJjbGUgZmlsbD0iI2Y2NiIgY3g9IjgiIGN5PSIxNC41IiByPSIxIi8+Cjwvc3ZnPg==),8_1,crosshair]"
                                 style={{ touchAction: 'none', display: 'block' }}
                                 onMouseDown={handlePointerDown}
                                 onMouseMove={handlePointerMove}

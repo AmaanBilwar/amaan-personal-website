@@ -69,15 +69,15 @@ export default function RootLayout({
           </Link>
         )}
         {/* Blogs button */}
-        {pathname !== '/blogs' && (
-          <Link
-            href="/blogs"
-            className="fixed bottom-6 left-6 px-5 py-3 bg-[#232323] border border-stone-500 text-white rounded-full flex items-center justify-center text-base shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2 hover:scale-110 transition-transform duration-200"
-            title="Read my blogs!"
-          >
-            <span>Blogs</span>
-          </Link>
-        )}
+        <a
+          href="https://medium.com/@nicholas.chen243"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 left-6 px-5 py-3 bg-[#232323] border border-stone-500 text-white rounded-full flex items-center justify-center text-base shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2 hover:scale-110 transition-transform duration-200"
+          title="Read my blogs!"
+        >
+          <span>Blogs</span>
+        </a>
         <Header />
         {children}
         <Footer />

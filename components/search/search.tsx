@@ -26,7 +26,7 @@ function filterPersonalWebsite(text: string) {
 }
 
 export default function SearchBar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [query, setQuery] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -199,7 +199,7 @@ export default function SearchBar() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query: trimmed }),
+        body: JSON.stringify({ query: trimmed, language: language }),
       });
 
       if (aiResult.ok) {

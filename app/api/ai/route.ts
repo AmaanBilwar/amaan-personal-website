@@ -6,6 +6,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     query = body.query;
+    const language = body.language || 'en';
 
     if (!query) {
       return NextResponse.json({ error: 'Query is required' }, { status: 400 });
@@ -19,12 +20,17 @@ export async function POST(request: Request) {
 
     const geminiEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
 
+    // Add language instruction based on the language setting
+    const languageInstruction = language === 'zh'
+      ? "\n\nIMPORTANT: Please respond in Chinese (中文). The user has set their language preference to Chinese."
+      : "\n\nIMPORTANT: Please respond in English. The user has set their language preference to English.";
+
     const geminiBody = {
       contents: [
         {
           role: "user",
           parts: [
-            { text: userContext + "\nCurrent question: " + query }
+            { text: userContext + languageInstruction + "\nCurrent question: " + query }
           ]
         }
       ]

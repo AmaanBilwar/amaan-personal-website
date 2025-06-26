@@ -203,33 +203,6 @@ export default function Home() {
 
         <SearchBar />
 
-        {/* Language Toggle Button */}
-        <div className="mt-8 mb-6 flex justify-center">
-          <div className="flex items-center gap-3 p-4 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
-            <span className="text-stone-300 text-sm font-minecraft">Language:</span>
-            <div className="flex items-center gap-2">
-              <span className={`text-sm transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
-                EN
-              </span>
-              <button
-                onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
-                className="relative inline-flex h-6 w-11 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
-                role="switch"
-                aria-checked={language === 'zh'}
-                aria-label="Toggle language"
-              >
-                <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-6' : 'translate-x-1'
-                    }`}
-                />
-              </button>
-              <span className={`text-sm transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
-                中文
-              </span>
-            </div>
-          </div>
-        </div>
-
         <section className="mt-10 -mb-6 font-minecraft">
           <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
             I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
@@ -264,6 +237,33 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        {/* Language Toggle Button */}
+        <div className="mt-8 mb-6 flex justify-center">
+          <div className="flex items-center gap-3 p-4 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
+            <span className="text-stone-300 text-sm font-minecraft">Language:</span>
+            <div className="flex items-center gap-2">
+              <span className={`text-sm transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
+                EN
+              </span>
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+                className="relative inline-flex h-6 w-11 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
+                role="switch"
+                aria-checked={language === 'zh'}
+                aria-label="Toggle language"
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-6' : 'translate-x-1'
+                    }`}
+                />
+              </button>
+              <span className={`text-sm transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
+                中文
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </main >
   );

@@ -185,7 +185,7 @@ export default function DrawPage() {
     return (
         <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
             <div className="w-full max-w-full md:max-w-3xl mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
-                <div className="bg-[#1a1a1a] text-white p-3 md:p-8 pb-8 md:pb-16 -mb-10">
+                <div className="bg-[#1a1a1a] text-white p-3 md:p-8 pb-8 md:pb-16 -mb-6md:mb-10">
                     <div className="w-full md:max-w-4xl mx-auto">
                         <div className="mb-8 w-full md:max-w-6xl mx-auto">
                             <div className="px-4 py-2 md:p-4 border border-stone-500 rounded-lg h-[6.5rem] md:h-[6.5rem] w-full">
@@ -229,32 +229,32 @@ export default function DrawPage() {
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                {/* Language Toggle Button */}
-                <div className=" mb-6 flex justify-center">
-                    <div className="flex items-center gap-3 p-3 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
-                        <span className="text-stone-300 text-sm font-minecraft">{t('language.label')}</span>
-                        <div className="flex items-center gap-2">
-                            <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
-                                EN
-                            </span>
-                            <button
-                                onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
-                                className="relative inline-flex h-5 w-9 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
-                                role="switch"
-                                aria-checked={language === 'zh'}
-                                aria-label="Toggle language"
-                            >
-                                <span
-                                    className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-5' : 'translate-x-1'
-                                        }`}
-                                />
-                            </button>
-                            <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
-                                中文
-                            </span>
+                        {/* Language Toggle Button */}
+                        <div className="mt-8 md:mt-4 mb-0 w-full">
+                            <div className="flex items-center gap-3 p-3 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors w-fit">
+                                <span className="text-stone-300 text-sm font-minecraft">{t('language.label')}</span>
+                                <div className="flex items-center gap-2">
+                                    <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
+                                        EN
+                                    </span>
+                                    <button
+                                        onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+                                        className="relative inline-flex h-5 w-9 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
+                                        role="switch"
+                                        aria-checked={language === 'zh'}
+                                        aria-label="Toggle language"
+                                    >
+                                        <span
+                                            className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-5' : 'translate-x-1'
+                                                }`}
+                                        />
+                                    </button>
+                                    <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
+                                        中文
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

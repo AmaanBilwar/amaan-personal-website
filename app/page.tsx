@@ -240,25 +240,25 @@ export default function Home() {
 
         {/* Language Toggle Button */}
         <div className="mt-8 mb-6 flex justify-start">
-          <div className="flex items-center gap-3 p-4 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
-            <span className="text-stone-300 text-sm font-minecraft">Language:</span>
+          <div className="flex items-center gap-3 p-3 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
+            <span className="text-stone-300 text-sm font-minecraft">{t('language.label')}</span>
             <div className="flex items-center gap-2">
-              <span className={`text-sm transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
+              <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
                 EN
               </span>
               <button
                 onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
-                className="relative inline-flex h-6 w-11 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
+                className="relative inline-flex h-5 w-9 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
                 role="switch"
                 aria-checked={language === 'zh'}
                 aria-label="Toggle language"
               >
                 <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-6' : 'translate-x-1'
+                  className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-5' : 'translate-x-1'
                     }`}
                 />
               </button>
-              <span className={`text-sm transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
+              <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
                 中文
               </span>
             </div>

@@ -130,6 +130,9 @@ const translations: Record<Language, Record<string, string>> = {
         'nav.github': 'GitHub',
         'nav.twitter': 'Twitter',
 
+        // Language
+        'language.label': 'Language:',
+
         // Sample prompts
         'prompt1': 'Tell me about your experience at Ownr',
         'prompt2': 'What projects have you worked on?',
@@ -240,6 +243,9 @@ const translations: Record<Language, Record<string, string>> = {
         'nav.linkedin': 'LinkedIn',
         'nav.github': 'GitHub',
         'nav.twitter': 'Twitter',
+
+        // Language
+        'language.label': '语言：',
 
         // Sample prompts
         'prompt1': '告诉我你在Ownr的经历',

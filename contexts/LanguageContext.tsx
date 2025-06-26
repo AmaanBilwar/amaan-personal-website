@@ -132,6 +132,27 @@ const translations: Record<Language, Record<string, string>> = {
         // Money making
         'moneyMaking.text': 'I\'ve done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour\'s driveways, internships, freelance work in design and coding as well as brand deals from social media.',
 
+        // Projects section
+        'projects.title': 'A few projects I\'m working on...',
+        'projects.diffDigest': 'website that turns git diffs into release notes',
+        'projects.sqlParser': 'parser that can query flat JSON objects',
+        'projects.whiteboard': 'app to brainstorm, create and share ideas',
+        'projects.dependabot': 'app with 200+ users for checking and updating dependencies in repositories',
+
+        // Excited section  
+        'excited.title': 'I\'m excited about...',
+        'excited.item1': 'building ai agents that surprise and delight people everywhere',
+        'excited.item2': 'turning data into tools, visuals, and magic for everyone',
+        'excited.item3': 'chasing creative art sparks, sketching doodles, and imagining new designs everyday',
+        'excited.item4': 'engineering projects that make me say, "whoa, that\'s so cool!"',
+
+        // Previously section
+        'previously.title': 'Previously I...',
+        'previously.item1': 'was a software engineer intern at ownr, building tools for entrepreneurs worldwide',
+        'previously.item2': 'was a software engineer intern at rbc, working on machine learning models',
+        'previously.item3': 'was a ux design intern at meta hash capital, focusing on user experience in fintech',
+        'previously.item4': 'was a ux design intern at voluntrack, designing tools for their volunteering platform',
+
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',
         'footer.by': 'BY NICHOLAS®',
@@ -216,6 +237,27 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Money making
         'moneyMaking.text': '我做过几乎所有你能想到的青少年赚钱的事情：辅导、快餐店工作、卖东西、为邻居铲雪道、实习、设计和编程的自由职业工作以及社交媒体的品牌合作。',
+
+        // Projects section
+        'projects.title': '我正在进行的几个项目...',
+        'projects.diffDigest': '将git差异转换为发布说明的网站',
+        'projects.sqlParser': '可以查询扁平JSON对象的解析器',
+        'projects.whiteboard': '用于头脑风暴、创建和分享想法的应用',
+        'projects.dependabot': '拥有200+用户的应用，用于检查和更新存储库中的依赖项',
+
+        // Excited section
+        'excited.title': '我对以下事情感到兴奋...',
+        'excited.item1': '构建能在各处给人惊喜和快乐的AI代理',
+        'excited.item2': '将数据转化为工具、视觉效果和魔法，为每个人服务',
+        'excited.item3': '追逐创意艺术火花，绘制涂鸦，每天想象新设计',
+        'excited.item4': '进行让我说"哇，太酷了！"的工程项目',
+
+        // Previously section
+        'previously.title': '以前我...',
+        'previously.item1': '在ownr担任软件工程师实习生，为全球企业家构建工具',
+        'previously.item2': '在rbc担任软件工程师实习生，从事机器学习模型工作',
+        'previously.item3': '在meta hash capital担任用户体验设计实习生，专注于金融科技的用户体验',
+        'previously.item4': '在voluntrack担任用户体验设计实习生，为他们的志愿服务平台设计工具',
 
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',

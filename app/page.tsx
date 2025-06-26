@@ -98,50 +98,50 @@ export default function Home() {
           </ul>
         </div>
 
-        <p className="max-w-2xl mb-2 mt-2 text-sm text-stone-300">I've done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour's driveways, internships, freelance work in design and coding as well as brand deals from social media.</p>
+        <p className="max-w-2xl mb-2 mt-8 text-sm text-stone-300">{t('moneyMaking.text')}</p>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">
             <div>
-              <p className="mb-2 text-stone-300">A few projects I'm working on...</p>
+              <p className="mb-2 text-stone-300">{t('projects.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>
-                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - website that turns git diffs into release notes
+                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - {t('projects.diffDigest')}
                 </li>
                 <li>
-                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - parser that can query flat JSON objects
+                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - {t('projects.sqlParser')}
                 </li>
                 <li>
-                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">whiteboard</a> - app to brainstorm, create and share ideas
+                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">whiteboard</a> - {t('projects.whiteboard')}
                 </li>
                 <li>
-                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - app with 200+ users for checking and updating dependencies in repositories
+                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - {t('projects.dependabot')}
                 </li>
               </ul>
             </div>
             <div>
-              <p className="mb-2 text-stone-300">I'm excited about...</p>
+              <p className="mb-2 text-stone-300">{t('excited.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>building ai agents that surprise and delight people everywhere</li>
-                <li>turning data into tools, visuals, and magic for everyone</li>
-                <li>chasing creative art sparks, sketching doodles, and imagining new designs everyday</li>
-                <li>engineering projects that make me say, "whoa, that's so cool!"</li>
+                <li>{t('excited.item1')}</li>
+                <li>{t('excited.item2')}</li>
+                <li>{t('excited.item3')}</li>
+                <li>{t('excited.item4')}</li>
               </ul>
             </div>
             <div>
-              <p className="mb-2 text-stone-300">Previously I...</p>
+              <p className="mb-2 text-stone-300">{t('previously.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>
-                  was a software engineer intern at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>, building tools for entrepreneurs worldwide
+                  {t('previously.item1').split('ownr')[0]}<a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>{t('previously.item1').split('ownr')[1]}
                 </li>
                 <li>
-                  was a software engineer intern at <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>, working on machine learning models
+                  {t('previously.item2').split('rbc')[0]}<a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>{t('previously.item2').split('rbc')[1]}
                 </li>
                 <li>
-                  was a ux design intern at <a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">meta hash capital</a>, focusing on user experience in fintech
+                  {t('previously.item3').split('meta hash capital')[0]}<a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">meta hash capital</a>{t('previously.item3').split('meta hash capital')[1]}
                 </li>
                 <li>
-                  was a ux design intern at <a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">voluntrack</a>, designing tools for their volunteering platform
+                  {t('previously.item4').split('voluntrack')[0]}<a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">voluntrack</a>{t('previously.item4').split('voluntrack')[1]}
                 </li>
               </ul>
             </div>
@@ -160,13 +160,13 @@ export default function Home() {
             </button>
             {openHowIStarted && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">{t('section.howIStarted.text1')}</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn't fancy, but it solved a real problem and that's when it clicked for me, I could use tech to actually help people.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">{t('section.howIStarted.text2')}</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">I've always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it's robots, web apps, and tools that help others learn, create, or solve problems.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">{t('section.howIStarted.text3')}</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">Since then, I've done freelance work, internships, launched side projects, and shared everything I've learned online. I've always wanted to invent and create things that matter.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">{t('section.howIStarted.text4')}</p>
               </div>
             )}
           </div>
@@ -185,16 +185,16 @@ export default function Home() {
             {openUnconventional && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">
-                  I've always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. Growing up, I was an art kid at heart, but I found myself equally drawn to coding and engineering—blending creativity with technology in everything I do.
+                  {t('section.unconventional.text1')}
                 </p>
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
-                  I started by intentionally building my presence on social media platforms, sharing my projects and insights publicly rather than relying on traditional networking. This unconventional approach directly led to my first internships, secured by leveraging platforms like X (Twitter) to showcase my work and connect with industry professionals.
+                  {t('section.unconventional.text2')}
                 </p>
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
-                  Beyond internships, I love experimenting with new ways to reach people, whether that's through viral posts, creative side projects, or simply being open about my process and failures.
+                  {t('section.unconventional.text3')}
                 </p>
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">
-                  I believe that being visible, authentic, and a little bit bold online can open doors that traditional paths might never reveal.
+                  {t('section.unconventional.text4')}
                 </p>
               </div>
             )}

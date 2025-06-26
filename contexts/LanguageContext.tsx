@@ -131,6 +131,10 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Money making
         'moneyMaking.text': 'I\'ve done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour\'s driveways, internships, freelance work in design and coding as well as brand deals from social media.',
+
+        // Footer
+        'footer.copyright': '© 2025 NICHOLAS CHEN',
+        'footer.by': 'BY NICHOLAS®',
     },
     zh: {
         // Hero section
@@ -212,5 +216,9 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Money making
         'moneyMaking.text': '我做过几乎所有你能想到的青少年赚钱的事情：辅导、快餐店工作、卖东西、为邻居铲雪道、实习、设计和编程的自由职业工作以及社交媒体的品牌合作。',
+
+        // Footer
+        'footer.copyright': '© 2025 NICHOLAS CHEN',
+        'footer.by': '设计：NICHOLAS®',
     },
 }; 

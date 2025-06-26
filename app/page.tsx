@@ -98,7 +98,7 @@ export default function Home() {
           </ul>
         </div>
 
-        <p className="max-w-2xl mb-2 mt-8 text-sm text-stone-300">{t('moneyMaking.text')}</p>
+        <p className="max-w-2xl mb-2 mt-20 text-sm text-stone-300">{t('moneyMaking.text')}</p>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">

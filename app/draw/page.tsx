@@ -1,41 +1,24 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-
-const stories = [
-    {
-        text: "Ever since I was a kid, drawing and making art has been a huge part of my life."
-    },
-    {
-        text: "For over 13 years, it's been a constant source of inspiration and expression."
-    },
-    {
-        text: "This blend of creativity and problem-solving is actually why Systems Design Engineering really appealed to me."
-    },
-    {
-        text: "Even though I'm not in an art program anymore like I was in high school, I still love to make YouTube videos and create art."
-    },
-    {
-        text: "Because, in a way, engineering involves art every single day."
-    },
-    {
-        text: "It's about elegantly solving problems and designing intuitive, functional, and aesthetically pleasing solutions."
-    },
-    {
-        text: "It's always sparking new ideas and helping me to see the world from different perspectives."
-    },
-    {
-        text: "That deep connection to creativity is why I've included this little canvas here."
-    },
-    {
-        text: "It's a piece of my journey, inviting you to doodle, design, and create something alongside me!"
-    }
-];
-
-const IMAGE_WIDTH = 400;
-const IMAGE_HEIGHT = 300;
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function DrawPage() {
+    const { t } = useLanguage();
+
+    // Get stories from translations
+    const stories = [
+        { text: t('draw.story1') },
+        { text: t('draw.story2') },
+        { text: t('draw.story3') },
+        { text: t('draw.story4') },
+        { text: t('draw.story5') },
+        { text: t('draw.story6') },
+        { text: t('draw.story7') },
+        { text: t('draw.story8') },
+        { text: t('draw.story9') }
+    ];
+
     const [currentText, setCurrentText] = useState('');
     const [isTyping, setIsTyping] = useState(false);
     const [currentIdx, setCurrentIdx] = useState(0);
@@ -230,19 +213,19 @@ export default function DrawPage() {
                             />
                         </div>
                         <div className="flex items-center justify-between mt-4 w-full">
-                            <p className="text-stone-400 text-sm">Draw Anything!</p>
+                            <p className="text-stone-400 text-sm">{t('draw.title')}</p>
                             <div className="flex gap-2">
                                 <button
                                     onClick={handleClear}
                                     className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors transition-all duration-200 transition-transform hover:scale-110 flex items-center gap-2 flex-shrink-0"
                                 >
-                                    Clear
+                                    {t('action.clear')}
                                 </button>
                                 <button
                                     onClick={handleDownload}
                                     className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors transition-all duration-200 transition-transform hover:scale-110 flex items-center gap-2 flex-shrink-0"
                                 >
-                                    Download
+                                    {t('action.download')}
                                 </button>
                             </div>
                         </div>

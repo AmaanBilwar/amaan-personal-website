@@ -1,5 +1,5 @@
 # Nicholas Chen – Personal Website
-<img width="1279" alt="Screenshot 2025-05-28 at 1 13 32 AM" src="https://github.com/user-attachments/assets/93f969d8-98d8-4a71-a102-fe1665889817" />
+<img width="1287" alt="Screenshot 2025-06-26 at 11 14 01 AM" src="https://github.com/user-attachments/assets/175b7b6a-1fd7-455a-a0dd-550462e01aee" />
 
 Welcome to my personal website!  
 This site serves as a central hub to showcase my projects, share my experiences, and provide ways to connect with me.

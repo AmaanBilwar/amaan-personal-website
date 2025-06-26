@@ -120,10 +120,15 @@ const translations: Record<Language, Record<string, string>> = {
         'contact.text': 'I\'d love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by email, or connect with me on linkedin.',
 
         // Navigation
+        'nav.home': 'Home',
         'nav.draw': 'Draw',
         'nav.blogs': 'Blogs',
         'nav.draw.title': 'Draw something!',
         'nav.blogs.title': 'Read my blogs!',
+        'nav.contact': 'Contact',
+        'nav.linkedin': 'LinkedIn',
+        'nav.github': 'GitHub',
+        'nav.twitter': 'Twitter',
 
         // Sample prompts
         'prompt1': 'Tell me about your experience at Ownr',
@@ -226,10 +231,15 @@ const translations: Record<Language, Record<string, string>> = {
         'contact.text': '我很想听到你的声音！想雇用我？还是只是想聊天？随时通过电子邮件联系我，或在linkedin上与我联系。',
 
         // Navigation
+        'nav.home': '首页',
         'nav.draw': '绘画',
         'nav.blogs': '博客',
         'nav.draw.title': '画点什么！',
         'nav.blogs.title': '阅读我的博客！',
+        'nav.contact': '联系',
+        'nav.linkedin': 'LinkedIn',
+        'nav.github': 'GitHub',
+        'nav.twitter': 'Twitter',
 
         // Sample prompts
         'prompt1': '告诉我你在Ownr的经历',

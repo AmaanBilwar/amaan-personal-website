@@ -239,7 +239,7 @@ export default function Home() {
         </section>
 
         {/* Language Toggle Button */}
-        <div className="mt-8 mb-6 flex justify-center">
+        <div className="mt-8 mb-6 flex justify-start">
           <div className="flex items-center gap-3 p-4 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
             <span className="text-stone-300 text-sm font-minecraft">Language:</span>
             <div className="flex items-center gap-2">

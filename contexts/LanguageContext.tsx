@@ -1,0 +1,216 @@
+'use client';
+
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+
+type Language = 'en' | 'zh';
+
+interface LanguageContextType {
+    language: Language;
+    setLanguage: (lang: Language) => void;
+    t: (key: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const useLanguage = () => {
+    const context = useContext(LanguageContext);
+    if (!context) {
+        throw new Error('useLanguage must be used within a LanguageProvider');
+    }
+    return context;
+};
+
+interface LanguageProviderProps {
+    children: ReactNode;
+}
+
+export const LanguageProvider = ({ children }: LanguageProviderProps) => {
+    const [language, setLanguage] = useState<Language>('en');
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') as Language;
+        if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'zh')) {
+            setLanguage(savedLanguage);
+        }
+    }, []);
+
+    const handleSetLanguage = (lang: Language) => {
+        setLanguage(lang);
+        localStorage.setItem('language', lang);
+    };
+
+    const t = (key: string): string => {
+        return translations[language][key] || key;
+    };
+
+    return (
+        <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+            {children}
+        </LanguageContext.Provider>
+    );
+};
+
+const translations: Record<Language, Record<string, string>> = {
+    en: {
+        // Hero section
+        'hero.greeting': "Hey, I'm ",
+        'hero.name.full': 'Nicholas!',
+        'hero.name.short': 'Nic!',
+        'hero.location': "I'm 19, from ",
+        'hero.building': "I've been building things for 3673 days.",
+        'hero.achievements': 'A few of my achievements...',
+        'hero.achievement1': '30k followers on social media (x, instagram, tiktok, youtube) and over 10m views',
+        'hero.achievement2': 'won 2nd place at UTRA Hacks, the largest robotics hackathon in canada',
+        'hero.achievement3': 'designed award winning book covers for authors',
+        'hero.currently': "I'm currently...",
+        'hero.current1': 'studying systems design engineering at the university of waterloo',
+        'hero.current2': 'excited to join textql as a software engineer intern in nyc soon',
+        'hero.current3': 'building projects to help others create and invent new things',
+        'hero.current4': 'sharing my journey in tech and creativity online with everyone to see',
+        'hero.excited': "I'm excited about...",
+        'hero.excited1': 'building ai agents that surprise and delight people everywhere',
+        'hero.excited2': 'turning data into tools, visuals, and magic for everyone',
+        'hero.excited3': 'chasing creative art sparks, sketching doodles, and imagining new designs everyday',
+        'hero.excited4': 'engineering projects that make me say, "whoa, that\'s so cool!"',
+        'hero.previously': 'Previously I...',
+        'hero.prev1': 'was a software engineer intern at ownr, building tools for entrepreneurs worldwide',
+        'hero.prev2': 'was a software engineer intern at rbc, working on machine learning models',
+        'hero.prev3': 'was a ux design intern at meta hash capital, focusing on user experience in fintech',
+
+        // Sections
+        'section.howIStarted': 'How I Started',
+        'section.howIStarted.text1': 'I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.',
+        'section.howIStarted.text2': 'Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn\'t fancy, but it solved a real problem and that\'s when it clicked for me, I could use tech to actually help people.',
+        'section.howIStarted.text3': 'I\'ve always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it\'s robots, web apps, and tools that help others learn, create, or solve problems.',
+        'section.howIStarted.text4': 'Since then, I\'ve done freelance work, internships, launched side projects, and shared everything I\'ve learned online. I\'ve always wanted to invent and create things that matter.',
+
+        'section.unconventional': 'The Unconventional Ways I Get Things Done',
+        'section.unconventional.text1': 'I\'ve always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. Growing up, I was an art kid at heart, but I found myself equally drawn to coding and engineering—blending creativity with technology in everything I do.',
+        'section.unconventional.text2': 'I started by intentionally building my presence on social media platforms, sharing my projects and insights publicly rather than relying on traditional networking. This unconventional approach directly led to my first internships, secured by leveraging platforms like X (Twitter) to showcase my work and connect with industry professionals.',
+        'section.unconventional.text3': 'Beyond internships, I love experimenting with new ways to reach people, whether that\'s through viral posts, creative side projects, or simply being open about my process and failures.',
+        'section.unconventional.text4': 'I believe that being visible, authentic, and a little bit bold online can open doors that traditional paths might never reveal.',
+
+        // Actions
+        'action.open': 'OPEN',
+        'action.close': 'CLOSE',
+        'action.clear': 'Clear',
+        'action.download': 'Download',
+        'action.send': 'Send',
+        'action.stop': 'Stop',
+
+        // Search
+        'search.title': 'What else do you want to know about me?',
+        'search.placeholder': 'Ask me anything',
+        'search.thinking': 'Thinking',
+        'search.responding': 'Responding',
+
+        // Draw page
+        'draw.title': 'Draw Anything!',
+        'draw.story1': 'Ever since I was a kid, drawing and making art has been a huge part of my life.',
+        'draw.story2': 'For over 13 years, it\'s been a constant source of inspiration and expression.',
+        'draw.story3': 'This blend of creativity and problem-solving is actually why Systems Design Engineering really appealed to me.',
+        'draw.story4': 'Even though I\'m not in an art program anymore like I was in high school, I still love to make YouTube videos and create art.',
+        'draw.story5': 'Because, in a way, engineering involves art every single day.',
+        'draw.story6': 'It\'s about elegantly solving problems and designing intuitive, functional, and aesthetically pleasing solutions.',
+        'draw.story7': 'It\'s always sparking new ideas and helping me to see the world from different perspectives.',
+        'draw.story8': 'That deep connection to creativity is why I\'ve included this little canvas here.',
+        'draw.story9': 'It\'s a piece of my journey, inviting you to doodle, design, and create something alongside me!',
+
+        // Contact
+        'contact.text': 'I\'d love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by email, or connect with me on linkedin.',
+
+        // Navigation
+        'nav.draw': 'Draw',
+        'nav.blogs': 'Blogs',
+        'nav.draw.title': 'Draw something!',
+        'nav.blogs.title': 'Read my blogs!',
+
+        // Sample prompts
+        'prompt1': 'Tell me about your experience at Ownr',
+        'prompt2': 'What projects have you worked on?',
+
+        // Money making
+        'moneyMaking.text': 'I\'ve done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour\'s driveways, internships, freelance work in design and coding as well as brand deals from social media.',
+    },
+    zh: {
+        // Hero section
+        'hero.greeting': '嗨，我是',
+        'hero.name.full': 'Nicholas!',
+        'hero.name.short': 'Nic!',
+        'hero.location': '我19岁，来自',
+        'hero.building': '我已经构建了3673天。',
+        'hero.achievements': '我的一些成就...',
+        'hero.achievement1': '在社交媒体上有3万粉丝（x、instagram、tiktok、youtube），超过1千万观看量',
+        'hero.achievement2': '在加拿大最大的机器人黑客马拉松UTRA Hacks中获得第二名',
+        'hero.achievement3': '为作者设计了获奖书籍封面',
+        'hero.currently': '我目前在...',
+        'hero.current1': '在滑铁卢大学学习系统设计工程',
+        'hero.current2': '即将作为软件工程师实习生加入纽约的textql',
+        'hero.current3': '构建项目帮助他人创造和发明新事物',
+        'hero.current4': '在网上与大家分享我在技术和创意方面的旅程',
+        'hero.excited': '我对以下事情感到兴奋...',
+        'hero.excited1': '构建能在各处给人惊喜和快乐的AI代理',
+        'hero.excited2': '将数据转化为工具、视觉效果和魔法，为每个人服务',
+        'hero.excited3': '追逐创意艺术火花，绘制涂鸦，每天想象新设计',
+        'hero.excited4': '进行让我说"哇，太酷了！"的工程项目',
+        'hero.previously': '以前我...',
+        'hero.prev1': '在ownr担任软件工程师实习生，为全球企业家构建工具',
+        'hero.prev2': '在rbc担任软件工程师实习生，从事机器学习模型工作',
+        'hero.prev3': '在meta hash capital担任用户体验设计实习生，专注于金融科技的用户体验',
+
+        // Sections
+        'section.howIStarted': '我是如何开始的',
+        'section.howIStarted.text1': '我在八年级的夏天开始编程，主要是出于好奇心。我想了解我每天使用的应用程序是如何工作的，所以我开始构建自己的应用程序。',
+        'section.howIStarted.text2': '早期，我构建了一个简单的应用程序来帮助我的移民父母将中国钱币转换为加拿大元。它并不花哨，但它解决了一个真正的问题，这时我明白了，我可以用技术真正帮助人们。',
+        'section.howIStarted.text3': '我一直是那种想要构建东西的人。小时候，是乐高和纸板装置。现在是机器人、网络应用程序和帮助他人学习、创造或解决问题的工具。',
+        'section.howIStarted.text4': '从那时起，我做过自由职业工作、实习、推出副业项目，并在网上分享我学到的一切。我一直想发明和创造重要的东西。',
+
+        'section.unconventional': '我完成事情的非传统方式',
+        'section.unconventional.text1': '我总是以非传统的方式处理事情，这种心态一直为我带来许多独特的机会。在成长过程中，我本质上是一个艺术孩子，但我发现自己同样被编程和工程所吸引——在我做的每件事中都融合了创造力和技术。',
+        'section.unconventional.text2': '我开始有意在社交媒体平台上建立自己的存在感，公开分享我的项目和见解，而不是依赖传统的网络建设。这种非传统的方法直接导致了我的第一次实习，通过利用X（Twitter）等平台展示我的工作并与行业专业人士建立联系。',
+        'section.unconventional.text3': '除了实习，我喜欢尝试接触人们的新方法，无论是通过病毒式帖子、创意副业项目，还是简单地对我的过程和失败保持开放。',
+        'section.unconventional.text4': '我相信在网上保持可见、真实和稍微大胆一点可以打开传统路径可能永远不会揭示的大门。',
+
+        // Actions
+        'action.open': '打开',
+        'action.close': '关闭',
+        'action.clear': '清除',
+        'action.download': '下载',
+        'action.send': '发送',
+        'action.stop': '停止',
+
+        // Search
+        'search.title': '你还想了解我什么？',
+        'search.placeholder': '问我任何问题',
+        'search.thinking': '思考中',
+        'search.responding': '回应中',
+
+        // Draw page
+        'draw.title': '画任何东西！',
+        'draw.story1': '从小时候起，绘画和制作艺术就是我生活的重要组成部分。',
+        'draw.story2': '13年多来，它一直是我灵感和表达的恒定源泉。',
+        'draw.story3': '这种创造力和解决问题的融合实际上是系统设计工程真正吸引我的原因。',
+        'draw.story4': '尽管我不再像高中时那样在艺术课程中，但我仍然喜欢制作YouTube视频和创作艺术。',
+        'draw.story5': '因为，在某种程度上，工程每天都涉及艺术。',
+        'draw.story6': '这是关于优雅地解决问题，设计直观、功能性和美观的解决方案。',
+        'draw.story7': '它总是激发新想法，帮助我从不同的角度看世界。',
+        'draw.story8': '与创造力的深层联系是我在这里包含这个小画布的原因。',
+        'draw.story9': '这是我旅程的一部分，邀请你与我一起涂鸦、设计和创造！',
+
+        // Contact
+        'contact.text': '我很想听到你的声音！想雇用我？还是只是想聊天？随时通过电子邮件联系我，或在linkedin上与我联系。',
+
+        // Navigation
+        'nav.draw': '绘画',
+        'nav.blogs': '博客',
+        'nav.draw.title': '画点什么！',
+        'nav.blogs.title': '阅读我的博客！',
+
+        // Sample prompts
+        'prompt1': '告诉我你在Ownr的经历',
+        'prompt2': '你做过什么项目？',
+
+        // Money making
+        'moneyMaking.text': '我做过几乎所有你能想到的青少年赚钱的事情：辅导、快餐店工作、卖东西、为邻居铲雪道、实习、设计和编程的自由职业工作以及社交媒体的品牌合作。',
+    },
+}; 

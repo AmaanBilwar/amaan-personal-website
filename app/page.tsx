@@ -3,8 +3,11 @@ import SearchBar from '@/components/search/search';
 import Link from 'next/link';
 import { Typewriter } from 'react-simple-typewriter';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
+  const { t, language, setLanguage } = useLanguage();
+
   // Accordion state for each section
   const [openHowIStarted, setOpenHowIStarted] = useState(false);
   const [openFuture, setOpenFuture] = useState(false);
@@ -15,9 +18,9 @@ export default function Home() {
   const [phase, setPhase] = useState<'typingFull' | 'backspacingFull' | 'typingShort' | 'backspacingShort'>('typingFull');
   const [charIndex, setCharIndex] = useState(0);
 
-  const baseText = "Hey, I'm ";
-  const fullName = "Nicholas!";
-  const shortName = "Nic!";
+  const baseText = t('hero.greeting');
+  const fullName = t('hero.name.full');
+  const shortName = t('hero.name.short');
 
   useEffect(() => {
     let timeout: NodeJS.Timeout | undefined;
@@ -65,32 +68,32 @@ export default function Home() {
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
           <p className="text-stone-400">
-            I'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">toronto</a>.
+            {t('hero.location')} <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">toronto</a>.
           </p>
-          <p>I've been building things for 3673 days.</p>
+          <p>{t('hero.building')}</p>
         </div>
         <div>
-          <p className="mb-2 text-stone-300">A few of my achievements...</p>
+          <p className="mb-2 text-stone-300">{t('hero.achievements')}</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-            <li>30k followers on social media (x, instagram, tiktok, youtube) and over 10m views</li>
-            <li>won 2nd place at <a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">UTRA Hacks</a>, the largest robotics hackathon in canada</li>
-            <li>designed award winning book covers for authors</li>
+            <li>{t('hero.achievement1')}</li>
+            <li>{t('hero.achievement2').split('UTRA Hacks')[0]}<a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">UTRA Hacks</a>{t('hero.achievement2').split('UTRA Hacks')[1]}</li>
+            <li>{t('hero.achievement3')}</li>
           </ul>
         </div>
         <div>
-          <p className="mb-4 text-stone-300">I'm currently...</p>
+          <p className="mb-4 text-stone-300">{t('hero.currently')}</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
             <li>
-              studying <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a> at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">university of waterloo</a>
+              {t('hero.current1').split('systems design engineering')[0]}<a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a>{t('hero.current1').split('university of waterloo')[0].split('systems design engineering')[1]}<a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">university of waterloo</a>
             </li>
             <li>
-              excited to join <a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a> as a software engineer intern in <a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a> soon
+              {t('hero.current2').split('textql')[0]}<a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a>{t('hero.current2').split('nyc')[1]}
             </li>
             <li>
-              building projects to help others create and invent new things
+              {t('hero.current3')}
             </li>
             <li>
-              sharing my journey in tech and creativity online with everyone to see
+              {t('hero.current4')}
             </li>
           </ul>
         </div>
@@ -199,6 +202,33 @@ export default function Home() {
         </div>
 
         <SearchBar />
+
+        {/* Language Toggle Button */}
+        <div className="mt-8 mb-6 flex justify-center">
+          <div className="flex items-center gap-3 p-4 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
+            <span className="text-stone-300 text-sm font-minecraft">Language:</span>
+            <div className="flex items-center gap-2">
+              <span className={`text-sm transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
+                EN
+              </span>
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+                className="relative inline-flex h-6 w-11 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
+                role="switch"
+                aria-checked={language === 'zh'}
+                aria-label="Toggle language"
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-6' : 'translate-x-1'
+                    }`}
+                />
+              </button>
+              <span className={`text-sm transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
+                中文
+              </span>
+            </div>
+          </div>
+        </div>
 
         <section className="mt-10 -mb-6 font-minecraft">
           <p className="max-w-2xl text-sm text-stone-400 font-minecraft">

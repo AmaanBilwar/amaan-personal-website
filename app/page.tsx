@@ -155,8 +155,8 @@ export default function Home() {
               className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenHowIStarted((prev) => !prev)}
             >
-              <span className="flex-1 text-left">How I Started</span>
-              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
+              <span className="flex-1 text-left">{t('section.howIStarted')}</span>
+              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openHowIStarted ? t('action.close') : t('action.open')}</span>
             </button>
             {openHowIStarted && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
@@ -179,8 +179,8 @@ export default function Home() {
               className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenUnconventional((prev) => !prev)}
             >
-              <span className="flex-1 text-left">The Unconventional Ways I Get Things Done</span>
-              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openUnconventional ? 'CLOSE' : 'OPEN'}</span>
+              <span className="flex-1 text-left">{t('section.unconventional')}</span>
+              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openUnconventional ? t('action.close') : t('action.open')}</span>
             </button>
             {openUnconventional && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
@@ -205,14 +205,14 @@ export default function Home() {
 
         <section className="mt-10 -mb-6 font-minecraft">
           <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
-            I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
+            {t('contact.text').split('email')[0]}
             <a
               href="mailto:nicholas.chen243@gmail.com"
               className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
               email
             </a>
-            , or connect with me on{' '}
+            {t('contact.text').split('linkedin')[0].split('email')[1]}
             <a
               href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
               target="_blank"
@@ -221,7 +221,7 @@ export default function Home() {
             >
               linkedin
             </a>
-            .
+            {t('contact.text').split('linkedin')[1]}
           </p>
           <div className="flex items-center gap-2 justify-start mt-6 max-w-2xl">
             {/* Left Arrow */}

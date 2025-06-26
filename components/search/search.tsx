@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import SamplePrompts from './sample-prompts';
 import ChatMessage from './chat-message';
 import localFont from 'next/font/local';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const minecraft = localFont({
   src: '../../public/fonts/MinecraftRegular-Bmg3.otf',
@@ -25,6 +26,7 @@ function filterPersonalWebsite(text: string) {
 }
 
 export default function SearchBar() {
+  const { t, language } = useLanguage();
   const [query, setQuery] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -197,7 +199,7 @@ export default function SearchBar() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query: trimmed }),
+        body: JSON.stringify({ query: trimmed, language: language }),
       });
 
       if (aiResult.ok) {
@@ -228,7 +230,7 @@ export default function SearchBar() {
 
   return (
     <div className={`px-0 ${minecraft.variable} font-minecraft`}>
-      <h2 className="text-lg text-stone-300 mb-4 mt-8 font-minecraft">What else do you want to know about me?</h2>
+      <h2 className="text-lg text-stone-300 mb-4 mt-8 font-minecraft">{t('search.title')}</h2>
       <SamplePrompts onPromptClick={handlePromptClick} />
 
       {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
@@ -267,7 +269,7 @@ export default function SearchBar() {
         <div className="max-w-2xl flex items-stretch gap-1 w-full">
           <input
             type="text"
-            placeholder="Ask me anything"
+            placeholder={t('search.placeholder')}
             className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -275,14 +277,14 @@ export default function SearchBar() {
           {isLoading || !!pendingAI || !!typedAI ? (
             <div className="h-full px-4 py-4 text-sm bg-white/10 text-white rounded-md flex items-center gap-2 flex-shrink-0 font-minecraft select-none cursor-default min-w-[110px] justify-center">
               <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent inline-block"></span>
-              <span>{!!pendingAI || !!typedAI ? 'Responding' : 'Thinking'}</span>
+              <span>{!!pendingAI || !!typedAI ? t('search.responding') : t('search.thinking')}</span>
             </div>
           ) : (
             <button
               type="submit"
               className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
             >
-              Send
+              {t('action.send')}
             </button>
           )}
           <button
@@ -303,7 +305,7 @@ export default function SearchBar() {
               }
             }}
           >
-            {isLoading || pendingAI || typedAI ? 'Stop' : 'Clear'}
+            {isLoading || pendingAI || typedAI ? t('action.stop') : t('action.clear')}
           </button>
         </div>
       </form>

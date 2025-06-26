@@ -3,8 +3,11 @@ import SearchBar from '@/components/search/search';
 import Link from 'next/link';
 import { Typewriter } from 'react-simple-typewriter';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
+  const { t, language, setLanguage } = useLanguage();
+
   // Accordion state for each section
   const [openHowIStarted, setOpenHowIStarted] = useState(false);
   const [openFuture, setOpenFuture] = useState(false);
@@ -15,9 +18,9 @@ export default function Home() {
   const [phase, setPhase] = useState<'typingFull' | 'backspacingFull' | 'typingShort' | 'backspacingShort'>('typingFull');
   const [charIndex, setCharIndex] = useState(0);
 
-  const baseText = "Hey, I'm ";
-  const fullName = "Nicholas!";
-  const shortName = "Nic!";
+  const baseText = t('hero.greeting');
+  const fullName = t('hero.name.full');
+  const shortName = t('hero.name.short');
 
   useEffect(() => {
     let timeout: NodeJS.Timeout | undefined;
@@ -65,80 +68,80 @@ export default function Home() {
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
           <p className="text-stone-400">
-            I'm 19, from <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">toronto</a>.
+            {t('hero.location')} <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">toronto</a>.
           </p>
-          <p>I've been building things for 3673 days.</p>
+          <p>{t('hero.building')}</p>
         </div>
         <div>
-          <p className="mb-2 text-stone-300">A few of my achievements...</p>
+          <p className="mb-2 text-stone-300">{t('hero.achievements')}</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-            <li>30k followers on social media (x, instagram, tiktok, youtube) and over 10m views</li>
-            <li>won 2nd place at <a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">UTRA Hacks</a>, the largest robotics hackathon in canada</li>
-            <li>designed award winning book covers for authors</li>
+            <li>{t('hero.achievement1')}</li>
+            <li>{t('hero.achievement2').split('UTRA Hacks')[0]}<a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">UTRA Hacks</a>{t('hero.achievement2').split('UTRA Hacks')[1]}</li>
+            <li>{t('hero.achievement3')}</li>
           </ul>
         </div>
         <div>
-          <p className="mb-4 text-stone-300">I'm currently...</p>
+          <p className="mb-4 text-stone-300">{t('hero.currently')}</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
             <li>
-              studying <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a> at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">university of waterloo</a>
+              {t('hero.current1').split('systems design engineering')[0]}<a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a>{t('hero.current1').split('university of waterloo')[0].split('systems design engineering')[1]}<a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">university of waterloo</a>
             </li>
             <li>
-              excited to join <a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a> as a software engineer intern in <a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a> soon
+              {t('hero.current2').split('textql')[0]}<a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a>{t('hero.current2').split('nyc')[1]}
             </li>
             <li>
-              building projects to help others create and invent new things
+              {t('hero.current3')}
             </li>
             <li>
-              sharing my journey in tech and creativity online with everyone to see
+              {t('hero.current4')}
             </li>
           </ul>
         </div>
 
-        <p className="max-w-2xl mb-2 mt-2 text-sm text-stone-300">I've done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour's driveways, internships, freelance work in design and coding as well as brand deals from social media.</p>
+        <p className="max-w-2xl mb-2 mt-20 text-sm text-stone-300">{t('moneyMaking.text')}</p>
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">
             <div>
-              <p className="mb-2 text-stone-300">A few projects I'm working on...</p>
+              <p className="mb-2 text-stone-300">{t('projects.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>
-                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - website that turns git diffs into release notes
+                  <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - {t('projects.diffDigest')}
                 </li>
                 <li>
-                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - parser that can query flat JSON objects
+                  <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - {t('projects.sqlParser')}
                 </li>
                 <li>
-                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">whiteboard</a> - app to brainstorm, create and share ideas
+                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">whiteboard</a> - {t('projects.whiteboard')}
                 </li>
                 <li>
-                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - app with 200+ users for checking and updating dependencies in repositories
+                  <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - {t('projects.dependabot')}
                 </li>
               </ul>
             </div>
             <div>
-              <p className="mb-2 text-stone-300">I'm excited about...</p>
+              <p className="mb-2 text-stone-300">{t('excited.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>building ai agents that surprise and delight people everywhere</li>
-                <li>turning data into tools, visuals, and magic for everyone</li>
-                <li>chasing creative art sparks, sketching doodles, and imagining new designs everyday</li>
-                <li>engineering projects that make me say, "whoa, that's so cool!"</li>
+                <li>{t('excited.item1')}</li>
+                <li>{t('excited.item2')}</li>
+                <li>{t('excited.item3')}</li>
+                <li>{t('excited.item4')}</li>
               </ul>
             </div>
             <div>
-              <p className="mb-2 text-stone-300">Previously I...</p>
+              <p className="mb-2 text-stone-300">{t('previously.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
                 <li>
-                  was a software engineer intern at <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>, building tools for entrepreneurs worldwide
+                  {t('previously.item1').split('ownr')[0]}<a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>{t('previously.item1').split('ownr')[1]}
                 </li>
                 <li>
-                  was a software engineer intern at <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>, working on machine learning models
+                  {t('previously.item2').split('rbc')[0]}<a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>{t('previously.item2').split('rbc')[1]}
                 </li>
                 <li>
-                  was a ux design intern at <a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">meta hash capital</a>, focusing on user experience in fintech
+                  {t('previously.item3').split('meta hash capital')[0]}<a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">meta hash capital</a>{t('previously.item3').split('meta hash capital')[1]}
                 </li>
                 <li>
-                  was a ux design intern at <a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">voluntrack</a>, designing tools for their volunteering platform
+                  {t('previously.item4').split('voluntrack')[0]}<a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">voluntrack</a>{t('previously.item4').split('voluntrack')[1]}
                 </li>
               </ul>
             </div>
@@ -152,18 +155,18 @@ export default function Home() {
               className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenHowIStarted((prev) => !prev)}
             >
-              <span className="flex-1 text-left">How I Started</span>
-              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openHowIStarted ? 'CLOSE' : 'OPEN'}</span>
+              <span className="flex-1 text-left">{t('section.howIStarted')}</span>
+              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openHowIStarted ? t('action.close') : t('action.open')}</span>
             </button>
             {openHowIStarted && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">{t('section.howIStarted.text1')}</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn't fancy, but it solved a real problem and that's when it clicked for me, I could use tech to actually help people.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">{t('section.howIStarted.text2')}</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">I've always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it's robots, web apps, and tools that help others learn, create, or solve problems.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">{t('section.howIStarted.text3')}</p>
                 <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">Since then, I've done freelance work, internships, launched side projects, and shared everything I've learned online. I've always wanted to invent and create things that matter.</p>
+                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">{t('section.howIStarted.text4')}</p>
               </div>
             )}
           </div>
@@ -176,22 +179,22 @@ export default function Home() {
               className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
               onClick={() => setOpenUnconventional((prev) => !prev)}
             >
-              <span className="flex-1 text-left">The Unconventional Ways I Get Things Done</span>
-              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openUnconventional ? 'CLOSE' : 'OPEN'}</span>
+              <span className="flex-1 text-left">{t('section.unconventional')}</span>
+              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openUnconventional ? t('action.close') : t('action.open')}</span>
             </button>
             {openUnconventional && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">
-                  I've always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. Growing up, I was an art kid at heart, but I found myself equally drawn to coding and engineering—blending creativity with technology in everything I do.
+                  {t('section.unconventional.text1')}
                 </p>
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
-                  I started by intentionally building my presence on social media platforms, sharing my projects and insights publicly rather than relying on traditional networking. This unconventional approach directly led to my first internships, secured by leveraging platforms like X (Twitter) to showcase my work and connect with industry professionals.
+                  {t('section.unconventional.text2')}
                 </p>
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
-                  Beyond internships, I love experimenting with new ways to reach people, whether that's through viral posts, creative side projects, or simply being open about my process and failures.
+                  {t('section.unconventional.text3')}
                 </p>
                 <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">
-                  I believe that being visible, authentic, and a little bit bold online can open doors that traditional paths might never reveal.
+                  {t('section.unconventional.text4')}
                 </p>
               </div>
             )}
@@ -202,14 +205,14 @@ export default function Home() {
 
         <section className="mt-10 -mb-6 font-minecraft">
           <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
-            I'd love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by{' '}
+            {t('contact.text').split('email')[0]}
             <a
               href="mailto:nicholas.chen243@gmail.com"
               className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
               email
             </a>
-            , or connect with me on{' '}
+            {t('contact.text').split('linkedin')[0].split('email')[1]}
             <a
               href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
               target="_blank"
@@ -218,7 +221,7 @@ export default function Home() {
             >
               linkedin
             </a>
-            .
+            {t('contact.text').split('linkedin')[1]}
           </p>
           <div className="flex items-center gap-2 justify-start mt-6 max-w-2xl">
             {/* Left Arrow */}
@@ -234,6 +237,33 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        {/* Language Toggle Button */}
+        <div className="mt-8 mb-6 flex justify-start">
+          <div className="flex items-center gap-3 p-3 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors">
+            <span className="text-stone-300 text-sm font-minecraft">{t('language.label')}</span>
+            <div className="flex items-center gap-2">
+              <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
+                EN
+              </span>
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+                className="relative inline-flex h-5 w-9 items-center rounded-full bg-stone-600 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-[#1a1a1a] hover:bg-stone-500"
+                role="switch"
+                aria-checked={language === 'zh'}
+                aria-label="Toggle language"
+              >
+                <span
+                  className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-200 ${language === 'zh' ? 'translate-x-5' : 'translate-x-1'
+                    }`}
+                />
+              </button>
+              <span className={`text-sm font-minecraft transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
+                中文
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </main >
   );

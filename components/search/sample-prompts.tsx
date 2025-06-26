@@ -1,15 +1,17 @@
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SamplePromptsProps {
     onPromptClick: (prompt: string) => void;
 }
 
-const samplePrompts = [
-    "Tell me about your experience at Ownr",
-    "What projects have you worked on?"
-];
-
 export default function SamplePrompts({ onPromptClick }: SamplePromptsProps) {
+    const { t } = useLanguage();
+
+    const samplePrompts = [
+        t('prompt1'),
+        t('prompt2')
+    ];
     return (
         <div className="w-full max-w-6xl mx-auto mb-4 font-minecraft">
             <div className="flex flex-wrap gap-2">

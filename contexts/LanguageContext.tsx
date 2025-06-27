@@ -137,6 +137,12 @@ const translations: Record<Language, Record<string, string>> = {
         // Language
         'language.label': 'Language:',
 
+        // Blogs page
+        'blogs.pageTitle': 'Blogs',
+        'blogs.description': 'A collection of my thoughts, experiences, and reflections on life, growth, and learning.',
+        'blogs.note': 'Note:',
+        'blogs.noteText': 'These articles were originally published on Medium and reflect my personal thoughts and experiences.',
+
         // Sample prompts
         'prompt1': 'Tell me about your experience at Ownr',
         'prompt2': 'What projects have you worked on?',
@@ -254,6 +260,12 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Language
         'language.label': '语言：',
+
+        // Blogs page
+        'blogs.pageTitle': '博客',
+        'blogs.description': '我的想法、经历和对生活、成长及学习的反思集合。',
+        'blogs.note': '注：',
+        'blogs.noteText': '这些文章最初发布在Medium上，反映了我的个人想法和经历。',
 
         // Sample prompts
         'prompt1': '告诉我你在Ownr的经历',

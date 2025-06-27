@@ -19,11 +19,16 @@ export default function BlogsPage() {
         url: string;
         description: string;
         fullContent?: string;
+        titleZh?: string;
+        descriptionZh?: string;
+        fullContentZh?: string;
     }> = [
             {
                 title: "How My Grandpa (Lao Ye) Shaped Me Into The Man I Am Today",
+                titleZh: "我的爷爷（老爷）如何塑造了今天的我",
                 url: "https://medium.com/@nicholas.chen243/how-my-grandpa-lao-ye-shaped-me-into-the-man-i-am-today-b595fc74bbc0",
                 description: "A personal reflection on family influence and life lessons",
+                descriptionZh: "对家庭影响和人生教训的个人反思",
                 fullContent: `usually you hear about all the fathers that have influenced their children in becoming a better man blah blah blah, but in my case, it was my grandpa or at home i call him lao ye in chinese.
 
 my grandpa has always influenced me in many ways when it comes to money, way of life and education.
@@ -44,12 +49,35 @@ towards the end of highschool he started to respect me and see that i was becomi
 
 my grandpa taught me a lot about life and his life is a continuation through me as i study engineering at a good school just like him.
 
-one day, i want to be able to buy him a mechanical engineering warehouse/factory where he can mess around and build whatever he desires (and also to stop him from trying to revamp our entire house into one).`
+one day, i want to be able to buy him a mechanical engineering warehouse/factory where he can mess around and build whatever he desires (and also to stop him from trying to revamp our entire house into one).`,
+                fullContentZh: `通常你会听到所有关于父亲如何影响他们的孩子成为更好的人的故事，但在我的情况下，是我的爷爷，在家里我用中文叫他老爷。
+
+我的爷爷在金钱、生活方式和教育方面一直以许多方式影响着我。
+
+在三年级或四年级时，他每天接我从托儿所回来时，会让我和我的小弟弟坐在车后座，让我们俩背诵乘法表。他不会带我们回家，直到我们能快速准确地背出所有1×1到10×10。我仍然记得讨厌这件事，每当我们搞错并让我们重新来过时，我哭了很多次。
+
+在五年级时，他教我学校非常重要，然后对我炫耀说他一生中都得100分，甚至在大学里也是如此。
+
+在六年级时，我记得他抓到我把掉在我们家厨房地板上的苹果扔掉，告诉我捡起来，洗干净然后吃掉，因为浪费食物在道德上是错误的。
+
+在八年级时，当我准备进入一所新学校学习艺术时，他解释说艺术非常重要，他认为每当看到我的画作时，我们的生活中需要更多艺术。
+
+在九年级时，当我从一个胎儿变成一个成熟的青少年时，我被告知需要上一所好大学，这样当我长大后就能找到好工作并取得成功。这是推动我想要承诺滑铁卢大学并在整个高中努力学习以进入的部分动力。我知道在简历上有滑铁卢会给我更多机会，这至今仍然是真的。
+
+在十年级和十一年级时，他对我说，你应该为世界而不是为自己建设。你赚的钱应该回馈给世界，你建造的产品应该帮助人类作为一个物种成长。这也是他开始感到虚弱并注意到自己衰老的时候。所有这些疯狂的部分是这并没有阻止他每天工作。到今天为止，他仍然是我认识的最勤奋的人（也是唯一一个80岁还想经营自己的生意、赚钱和改变世界的人）。
+
+在高中即将结束时，他开始尊重我，看到我正在成为他曾经的那个人，这在我心中激起了喜悦，让他为我感到骄傲，这是我很久以来第一次有这种感觉。
+
+我的爷爷教了我很多关于生活的东西，他的生活通过我在一所好学校学习工程学而得以延续，就像他一样。
+
+有一天，我想能够为他买一个机械工程仓库/工厂，让他可以在那里胡闹并建造他想要的任何东西（也是为了阻止他试图把我们整个房子改造成一个工厂）。`
             },
             {
                 title: "You Should Always Want More",
+                titleZh: "你应该永远想要更多",
                 url: "https://medium.com/@nicholas.chen243/you-should-always-want-more-6383767c6c72",
                 description: "On ambition, growth, and never settling for mediocrity",
+                descriptionZh: "关于野心、成长和永不满足于平庸",
                 fullContent: `if you met me now, you might think that i'm a rather ambitious person, but i wasn't always this way.
 
 when i realized i was pretty good at school and excelled at those one minute times tables i was given in grade 5, i fell in love with wanting more. i remember being in class so hyped whenever our teacher gave us them to be marked because i knew it was going to be an easy 100.
@@ -90,7 +118,48 @@ during this time around i also started posting on social media and what actually
 
 okay, so my point of writing all this is that i'm not exactly sure if all this was just an accumulation of my hard work, luck or something else, but one thing i do know is if i wasn't so ambitious and wanted more, these opportunities would've never come to me.
 
-basically, you should never be complacent and change is good for you (especially if you're young). you should always want more.`
+basically, you should never be complacent and change is good for you (especially if you're young). you should always want more.`,
+                fullContentZh: `如果你现在遇到我，你可能会认为我是一个相当有野心的人，但我并不总是这样。
+
+当我意识到我在学校表现相当不错，并在五年级时擅长那些一分钟乘法表时，我爱上了想要更多。我记得在课堂上每当我们的老师给我们标记时我都非常兴奋，因为我知道这将是一个轻松的100分。
+
+显然，一开始学习乘法表并不是很容易。
+
+我想指出，我的爷爷在这方面起了很大作用，他在我的余生中继续这样做 -> 你可以在这里阅读更多关于他和我之间的关系以及他如何塑造了今天的我。
+
+即使在五年级知道我的乘法表也不是特别令人印象深刻。
+
+我总是很平均。
+
+我记得我的母亲一直试图安慰我，说我在所有事情上都做得很好，但在任何特定的事情上都不是特别好，这没关系，但我不这么认为。
+
+我们在每年的中期和年末都有颁奖典礼。在我小学的最后一年，我记得在五年级中期没有获得任何奖项，感到非常失望。
+
+在被学校和验证打击后，这激励我非常努力地工作，虽然我在五年级，但我觉得我比其他同龄人成熟得更快，工作得非常努力。几个月后 -> 我最终在毕业前的那年年末获得了其中一个奖项。
+
+看到我的努力得到回报在五年级时对我来说是令人震惊的哈哈。之后我意识到如果我足够努力，我可以做得更好并完成更多目标。
+
+这种心态贯穿了整个中学，我试图在我写的每个测试中取得优异成绩，在我提交的每个作业中得到满分。我做得越好，我就越有动力想要更多。这变成了一个积极的反馈循环，我的父母终于开始在我身上看到一些东西。
+
+在八年级中学时，我申请了厄尔黑格的克劳德沃森艺术学院（特别是视觉艺术），我只记得每个人（包括我的父母）都告诉我进入有多困难，他们不希望我如果没有进入会感到难过。
+
+我花了整整4个月的时间制作我的申请作品集。
+
+你猜怎么着？我进了哈哈。那是在夏天放学后的某一天，我的母亲打电话给我告诉我这个好消息。这进一步加强了我想要更多的动力，因为现在我认为如果我足够努力，任何事情都是可以实现的。
+
+总有更多的东西要追求，有趣的部分甚至不是当你完成目标时，更多的是让你到达那里的过程和努力。我喜欢努力过程胜过结果。我对努力上瘾了。
+
+当大学/大学申请来临时，我再次坚持这种心态。
+
+在整个11和12年级努力学习，参加俱乐部会议，领导志愿工作，做实习，参加黑客马拉松和建设项目后，我最终进入了我的梦想项目，滑铁卢大学的系统设计工程。
+
+我现在在滑铁卢学习系统设计工程，我过去的实习工作不是最理想的，所以你猜怎么着？我想要更多。我在工作内外都努力学习尽可能多的东西，建立我的个人品牌和网络。我刷LeetCode，做项目，参加尽可能多的黑客马拉松。我建立了我的LinkedIn并在平台上与很多人联系，为招聘人员获得更多曝光。我甚至在某个时候变得如此绝望，我开始发冷邮件。
+
+在这段时间里，我也开始在社交媒体上发帖，实际上让我找到工作的是X或Twitter，正如过去的用户称呼它。一位创始工程师联系我进行面试。我很长时间以来第一次感到非常兴奋。我记得在他给我的作业上花了很多时间，因为这是一个非常好的机会。我最终得到了offer并接受了，因为说实话，薪水对我来说是前所未有的，最重要的是，我将去纽约做实习！
+
+好的，所以我写这一切的重点是，我不确定这一切是否只是我努力工作、运气或其他东西的积累，但我知道的一件事是，如果我不那么有野心并想要更多，这些机会永远不会来到我身边。
+
+基本上，你永远不应该自满，改变对你有好处（特别是如果你年轻）。你应该永远想要更多。`
             },
 
         ];
@@ -101,7 +170,7 @@ basically, you should never be complacent and change is good for you (especially
                 {/* Page Title */}
                 <div className="mb-6 md:mb-8 ml-4 md:ml-8">
                     <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft">
-                        Blogs
+                        {t('blogs.pageTitle')}
                     </h1>
                 </div>
 
@@ -109,7 +178,7 @@ basically, you should never be complacent and change is good for you (especially
                     <div className="w-full md:max-w-4xl mx-auto">
                         <div className="mb-8 w-full">
                             <p className="text-stone-300 text-sm font-minecraft mb-6">
-                                A collection of my thoughts, experiences, and reflections on life, growth, and learning.
+                                {t('blogs.description')}
                             </p>
                         </div>
 
@@ -123,7 +192,9 @@ basically, you should never be complacent and change is good for you (especially
                                             className="w-full flex justify-between items-center px-4 py-3 font-minecraft text-sm text-stone-200 focus:outline-none text-left hover:bg-stone-800/30 transition-colors"
                                             onClick={() => toggleBlog(index)}
                                         >
-                                            <span className="flex-1 text-left pr-4">{blog.title}</span>
+                                            <span className="flex-1 text-left pr-4">
+                                                {language === 'zh' && blog.titleZh ? blog.titleZh : blog.title}
+                                            </span>
                                             <svg
                                                 className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
                                                 fill="none"
@@ -136,12 +207,15 @@ basically, you should never be complacent and change is good for you (especially
                                         {isExpanded && (
                                             <div className="px-4 pb-4 border-t border-stone-700">
                                                 <div className="text-stone-400 text-sm font-minecraft mb-4 mt-3 leading-relaxed">
-                                                    {blog.fullContent ? (
+                                                    {blog.fullContent || blog.fullContentZh ? (
                                                         <div className="whitespace-pre-line">
-                                                            {blog.fullContent}
+                                                            {language === 'zh' && blog.fullContentZh
+                                                                ? blog.fullContentZh
+                                                                : blog.fullContent
+                                                            }
                                                         </div>
                                                     ) : (
-                                                        <p>{blog.description}</p>
+                                                        <p>{language === 'zh' && blog.descriptionZh ? blog.descriptionZh : blog.description}</p>
                                                     )}
                                                 </div>
                                             </div>

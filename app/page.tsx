@@ -179,12 +179,12 @@ export default function Home() {
         <div className="max-w-2xl mt-12 mb-4">
           <div className="border border-stone-700 rounded-md">
             <button
-              className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
+              className="w-full flex justify-between items-center px-4 py-3 font-minecraft text-sm text-stone-200 focus:outline-none text-left hover:bg-stone-800/30 transition-colors"
               onClick={() => setOpenHowIStarted((prev) => !prev)}
             >
-              <span className="flex-1 text-left">{t('section.howIStarted')}</span>
+              <span className="flex-1 text-left pr-4">{t('section.howIStarted')}</span>
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${openHowIStarted ? 'rotate-180' : ''}`}
+                className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${openHowIStarted ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -193,14 +193,18 @@ export default function Home() {
               </svg>
             </button>
             {openHowIStarted && (
-              <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">{t('section.howIStarted.text1')}</p>
-                <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">{t('section.howIStarted.text2')}</p>
-                <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">{t('section.howIStarted.text3')}</p>
-                <br />
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">{t('section.howIStarted.text4')}</p>
+              <div className="px-4 pb-4 border-t border-stone-700">
+                <div className="text-stone-400 text-sm font-minecraft mb-4 mt-3 leading-relaxed">
+                  <div className="whitespace-pre-line">
+                    {t('section.howIStarted.text1')}
+
+                    {t('section.howIStarted.text2')}
+
+                    {t('section.howIStarted.text3')}
+
+                    {t('section.howIStarted.text4')}
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -210,12 +214,12 @@ export default function Home() {
         <div className="max-w-2xl mt-12 mb-4">
           <div className="border border-stone-700 rounded-md">
             <button
-              className="w-full flex justify-start items-center px-4 py-2 font-minecraft text-sm text-stone-200 focus:outline-none text-left"
+              className="w-full flex justify-between items-center px-4 py-3 font-minecraft text-sm text-stone-200 focus:outline-none text-left hover:bg-stone-800/30 transition-colors"
               onClick={() => setOpenUnconventional((prev) => !prev)}
             >
-              <span className="flex-1 text-left">{t('section.unconventional')}</span>
+              <span className="flex-1 text-left pr-4">{t('section.unconventional')}</span>
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${openUnconventional ? 'rotate-180' : ''}`}
+                className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${openUnconventional ? 'rotate-180' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -224,19 +228,18 @@ export default function Home() {
               </svg>
             </button>
             {openUnconventional && (
-              <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm mt-2">
-                  {t('section.unconventional.text1')}
-                </p>
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
-                  {t('section.unconventional.text2')}
-                </p>
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm">
-                  {t('section.unconventional.text3')}
-                </p>
-                <p className="px-4 pb-4 text-stone-400 font-minecraft text-sm -mb-6">
-                  {t('section.unconventional.text4')}
-                </p>
+              <div className="px-4 pb-4 border-t border-stone-700">
+                <div className="text-stone-400 text-sm font-minecraft mb-4 mt-3 leading-relaxed">
+                  <div className="whitespace-pre-line">
+                    {t('section.unconventional.text1')}
+
+                    {t('section.unconventional.text2')}
+
+                    {t('section.unconventional.text3')}
+
+                    {t('section.unconventional.text4')}
+                  </div>
+                </div>
               </div>
             )}
           </div>

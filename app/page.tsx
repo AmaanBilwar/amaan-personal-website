@@ -183,7 +183,14 @@ export default function Home() {
               onClick={() => setOpenHowIStarted((prev) => !prev)}
             >
               <span className="flex-1 text-left">{t('section.howIStarted')}</span>
-              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openHowIStarted ? t('action.close') : t('action.open')}</span>
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${openHowIStarted ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
             {openHowIStarted && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">
@@ -207,7 +214,14 @@ export default function Home() {
               onClick={() => setOpenUnconventional((prev) => !prev)}
             >
               <span className="flex-1 text-left">{t('section.unconventional')}</span>
-              <span className="text-xs font-minecraft hover:underline cursor-pointer ml-auto">{openUnconventional ? t('action.close') : t('action.open')}</span>
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${openUnconventional ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
             {openUnconventional && (
               <div className="px-4 pb-4 text-stone-400 font-minecraft text-[9px] leading-tight mb-6">

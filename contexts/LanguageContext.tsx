@@ -82,7 +82,7 @@ const translations: Record<Language, Record<string, string>> = {
         'section.howIStarted.text1': 'I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.',
         'section.howIStarted.text2': 'Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn\'t fancy, but it solved a real problem and that\'s when it clicked for me, I could use tech to actually help people.',
         'section.howIStarted.text3': 'I\'ve always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it\'s robots, web apps, and tools that help others learn, create, or solve problems.',
-        'section.howIStarted.text4': 'Since then, I\'ve done freelance work, internships, launched side projects, and shared everything I\'ve learned online. I\'ve always wanted to invent and create things that matter.',
+        'section.howIStarted.text4': 'Since then, I\'ve done freelance work, internships, launched side projects, and shared everything I\'ve learned online. I\'ve always wanted to build and create things that matter.',
 
         'section.unconventional': 'The Unconventional Ways I Get Things Done',
         'section.unconventional.text1': 'I\'ve always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. Growing up, I was an art kid at heart, but I found myself equally drawn to coding and engineering—blending creativity with technology in everything I do.',

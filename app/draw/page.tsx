@@ -183,7 +183,7 @@ export default function DrawPage() {
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
+        <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4" style={{ marginLeft: '1px' }}>
             <div className="w-full max-w-full md:max-w-3xl mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
                 {/* Page Title */}
                 <div className="mb-3 md:mb-4 ml-4 md:ml-8">

@@ -237,6 +237,26 @@ export default function DrawPage() {
                             </div>
                         </div>
 
+                        
+
+                        {/* Portfolio Link */}
+                        <div className="mt-4 w-full">
+                            <a
+                                href="https://nicholaschen243.wixsite.com/nicholas-chen"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block text-stone-400 text-sm font-minecraft hover:text-white transition-colors underline underline-offset-2 hover:scale-105 transition-transform duration-200"
+                            >
+                                {t('draw.portfolioLink')}
+                            </a>
+                        </div>
+
+                        {/* Fun Fact */}
+                        <div className="mt-6 w-full">
+                            <p className="text-stone-500 text-xs font-minecraft mb-2">
+                                <span className="text-stone-400">{t('draw.funFact')}</span> {t('draw.funFactText')}
+                            </p>
+                        </div>
                         {/* Language Toggle Button */}
                         <div className="mt-8 md:mt-4 mb-0 w-full">
                             <div className="flex items-center gap-3 p-3 bg-white/5 border border-stone-600 rounded-lg hover:bg-white/10 transition-colors w-fit">
@@ -262,25 +282,6 @@ export default function DrawPage() {
                                     </span>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Portfolio Link */}
-                        <div className="mt-4 w-full">
-                            <a
-                                href="https://nicholaschen243.wixsite.com/nicholas-chen"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block text-stone-400 text-sm font-minecraft hover:text-white transition-colors underline underline-offset-2 hover:scale-105 transition-transform duration-200"
-                            >
-                                {t('draw.portfolioLink')}
-                            </a>
-                        </div>
-
-                        {/* Fun Fact */}
-                        <div className="mt-6 w-full">
-                            <p className="text-stone-500 text-xs font-minecraft mb-2">
-                                <span className="text-stone-400">{t('draw.funFact')}</span> {t('draw.funFactText')}
-                            </p>
                         </div>
                     </div>
                 </div>

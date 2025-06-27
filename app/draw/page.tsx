@@ -185,7 +185,14 @@ export default function DrawPage() {
     return (
         <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4">
             <div className="w-full max-w-full md:max-w-3xl mx-auto space-y-4 md:space-y-6 mb-10 md:mb-16 pt-24 md:pt-16">
-                <div className="bg-[#1a1a1a] text-white p-3 md:p-8 pb-8 md:pb-16 -mb-6md:mb-10">
+                {/* Page Title */}
+                <div className="mb-6 md:mb-8 ml-4 md:ml-8">
+                    <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft">
+                        Draw
+                    </h1>
+                </div>
+
+                <div className="bg-[#1a1a1a] text-white p-3 md:p-8 pb-8 md:pb-16 -mb-6 md:mb-10">
                     <div className="w-full md:max-w-4xl mx-auto">
                         <div className="mb-8 w-full md:max-w-6xl mx-auto">
                             <div className="px-4 py-2 md:p-4 border border-stone-500 rounded-lg h-[6.5rem] md:h-[6.5rem] w-full">
@@ -258,7 +265,7 @@ export default function DrawPage() {
                         </div>
 
                         {/* Portfolio Link */}
-                        <div className="mt-6 w-full">
+                        <div className="mt-4 w-full">
                             <a
                                 href="https://nicholaschen243.wixsite.com/nicholas-chen"
                                 target="_blank"
@@ -267,6 +274,13 @@ export default function DrawPage() {
                             >
                                 View my art portfolio here
                             </a>
+                        </div>
+
+                        {/* Fun Fact */}
+                        <div className="mt-6 w-full">
+                            <p className="text-stone-500 text-xs font-minecraft mb-2">
+                                <span className="text-stone-400">Fun fact:</span> I originally planned to pursue visual arts, but in grade 10, I realized it wasn't the right fit. That’s when I discovered my passion and talent for programming.
+                            </p>
                         </div>
                     </div>
                 </div>

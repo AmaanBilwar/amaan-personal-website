@@ -256,6 +256,18 @@ export default function DrawPage() {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Portfolio Link */}
+                        <div className="mt-6 w-full">
+                            <a
+                                href="https://nicholaschen243.wixsite.com/nicholas-chen"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block text-stone-400 text-sm font-minecraft hover:text-white transition-colors underline underline-offset-2 hover:scale-105 transition-transform duration-200"
+                            >
+                                View my art portfolio here
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

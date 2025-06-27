@@ -70,7 +70,34 @@ export default function Home() {
           <p className="text-stone-400">
             {t('hero.location')} <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">toronto</a>.
           </p>
-          <p>{t('hero.building')}</p>
+          <p>
+            {(() => {
+              const text = t('hero.building');
+              const dayMatch = text.match(/(\d+)\s*(?:days|天)/i);
+              if (dayMatch) {
+                const days = parseInt(dayMatch[1]);
+                const years = (days / 365.25).toFixed(1);
+                const beforeDays = text.substring(0, text.indexOf(dayMatch[0]));
+                const afterDays = text.substring(text.indexOf(dayMatch[0]) + dayMatch[0].length);
+
+                return (
+                  <>
+                    {beforeDays}
+                    <span className="relative group">
+                      <span className="cursor-pointer underline underline-offset-2">
+                        {dayMatch[0]}
+                      </span>
+                      <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
+                        {years} years
+                      </span>
+                    </span>
+                    {afterDays}
+                  </>
+                );
+              }
+              return text;
+            })()}
+          </p>
         </div>
         <div>
           <p className="mb-2 text-stone-300">{t('hero.achievements')}</p>

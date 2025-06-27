@@ -145,7 +145,7 @@ const translations: Record<Language, Record<string, string>> = {
         'projects.diffDigest': 'website that turns git diffs into release notes',
         'projects.sqlParser': 'parser that can query flat JSON objects',
         'projects.whiteboard': 'app to brainstorm, create and share ideas',
-        'projects.dependabot': 'app with 200+ users for checking and updating dependencies in repositories',
+        'projects.dependabot': 'app with 200+ users that\'s easier to use than github\'s dependabot',
 
         // Excited section  
         'excited.title': 'I\'m excited about...',

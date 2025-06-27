@@ -41,13 +41,11 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="flex items-center">
-          <nav className="flex gap-2 md:gap-6 items-center mx-auto ">
-            <Link href="/blogs" className="font-minecraft uppercase tracking-widest text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.blogs')}</Link>
-            <Link href="/draw" className="font-minecraft uppercase tracking-widest text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.draw')}</Link>
-            <a href="mailto:nicholas.chen243@gmail.com" className="font-minecraft uppercase tracking-widest text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.contact')}</a>
-            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.linkedin')}</a>
-            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.github')}</a>
-            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">Twitter/X</a>
+          <nav className="flex gap-3 md:gap-8 items-center mx-auto ">
+            <a href="mailto:nicholas.chen243@gmail.com" className="font-minecraft uppercase tracking-widest text-xs md:text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.contact')}</a>
+            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-xs md:text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.linkedin')}</a>
+            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-xs md:text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">{t('nav.github')}</a>
+            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-xs md:text-sm text-stone-500 hover:text-white underline-offset-4 transition-colors hover:underline hover:scale-110 transition-transform duration-200">Twitter/X</a>
           </nav>
         </nav>
       </div>

@@ -79,16 +79,16 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Sections
         'section.howIStarted': 'How I Started',
-        'section.howIStarted.text1': 'I started coding the summer after 8th grade mostly out of curiosity. I wanted to understand how the apps I used every day actually worked, so I started building my own.',
-        'section.howIStarted.text2': 'Early on, I built a simple app to help my immigrant parents convert their chinese money to canadian dollars. It wasn\'t fancy, but it solved a real problem and that\'s when it clicked for me, I could use tech to actually help people.',
-        'section.howIStarted.text3': 'I\'ve always been the kind of person who wants to build things. As a kid, it was LEGO and cardboard contraptions. Now it\'s robots, web apps, and tools that help others learn, create, or solve problems.',
-        'section.howIStarted.text4': 'Since then, I\'ve done freelance work, internships, launched side projects, and shared everything I\'ve learned online. I\'ve always wanted to build and create things that matter.',
+        'section.howIStarted.text1': 'i started coding the summer after 8th grade mostly out of curiosity. i wanted to understand how the apps i used every day actually worked, so i started building my own.',
+        'section.howIStarted.text2': 'early on, i built a simple app to help my immigrant parents convert their chinese money to canadian dollars. it wasn\'t fancy, but it solved a real problem and that\'s when it clicked for me, i could use tech to actually help people.',
+        'section.howIStarted.text3': 'i\'ve always been the kind of person who wants to build things. as a kid, it was lego and cardboard contraptions. now it\'s robots, web apps, and tools that help others learn, create, or solve problems.',
+        'section.howIStarted.text4': 'since then, i\'ve done freelance work, internships, launched side projects, and shared everything i\'ve learned online. i\'ve always wanted to build and create things that matter.',
 
         'section.unconventional': 'The Unconventional Ways I Get Things Done',
-        'section.unconventional.text1': 'I\'ve always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. Growing up, I was an art kid at heart, but I found myself equally drawn to coding and engineering—blending creativity with technology in everything I do.',
-        'section.unconventional.text2': 'I started by intentionally building my presence on social media platforms, sharing my projects and insights publicly rather than relying on traditional networking. This unconventional approach directly led to my first internships, secured by leveraging platforms like X (Twitter) to showcase my work and connect with industry professionals.',
-        'section.unconventional.text3': 'Beyond internships, I love experimenting with new ways to reach people, whether that\'s through viral posts, creative side projects, or simply being open about my process and failures.',
-        'section.unconventional.text4': 'I believe that being visible, authentic, and a little bit bold online can open doors that traditional paths might never reveal.',
+        'section.unconventional.text1': 'i\'ve always approached things unconventionally, and this mindset has consistently led me to many unique opportunities. growing up, i was an art kid at heart, but i found myself equally drawn to coding and engineering—blending creativity with technology in everything i do.',
+        'section.unconventional.text2': 'i started by intentionally building my presence on social media platforms, sharing my projects and insights publicly rather than relying on traditional networking. this unconventional approach directly led to my first internships, secured by leveraging platforms like x (twitter) to showcase my work and connect with industry professionals.',
+        'section.unconventional.text3': 'beyond internships, i love experimenting with new ways to reach people, whether that\'s through viral posts, creative side projects, or simply being open about my process and failures. ',
+        'section.unconventional.text4': 'i believe that being visible, authentic, and a little bit bold online can open doors that traditional paths might never reveal.',
 
         // Actions
         'action.open': 'OPEN',

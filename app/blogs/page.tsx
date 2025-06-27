@@ -177,7 +177,7 @@ basically, you should never be complacent and change is good for you (especially
                 <div className="bg-[#1a1a1a] text-white p-3 md:p-8 pb-8 md:pb-16 -mb-6 md:mb-10">
                     <div className="w-full md:max-w-4xl mx-auto">
                         <div className="mb-8 w-full">
-                            <p className="text-stone-300 text-sm font-minecraft mb-6">
+                            <p className="text-stone-400 text-sm font-minecraft mb-6">
                                 {t('blogs.description')}
                             </p>
                         </div>

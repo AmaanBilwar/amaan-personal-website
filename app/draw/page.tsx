@@ -188,7 +188,7 @@ export default function DrawPage() {
                 {/* Page Title */}
                 <div className="mb-3 md:mb-4 ml-4 md:ml-8">
                     <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft">
-                        Draw
+                        {t('draw.pageTitle')}
                     </h1>
                 </div>
 
@@ -272,14 +272,14 @@ export default function DrawPage() {
                                 rel="noopener noreferrer"
                                 className="inline-block text-stone-400 text-sm font-minecraft hover:text-white transition-colors underline underline-offset-2 hover:scale-105 transition-transform duration-200"
                             >
-                                View my art portfolio here
+                                {t('draw.portfolioLink')}
                             </a>
                         </div>
 
                         {/* Fun Fact */}
                         <div className="mt-6 w-full">
                             <p className="text-stone-500 text-xs font-minecraft mb-2">
-                                <span className="text-stone-400">Fun fact:</span> I originally planned to pursue visual arts, but in grade 10, I realized it wasn't the right fit. That’s when I discovered my passion and talent for programming.
+                                <span className="text-stone-400">{t('draw.funFact')}</span> {t('draw.funFactText')}
                             </p>
                         </div>
                     </div>

@@ -106,6 +106,10 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Draw page
         'draw.title': 'Draw Anything!',
+        'draw.pageTitle': 'Draw',
+        'draw.portfolioLink': 'View my art portfolio here',
+        'draw.funFact': 'Fun fact:',
+        'draw.funFactText': 'I originally planned to pursue visual arts, but in grade 10, I realized it wasn\'t the right fit. That\'s when I discovered my passion and talent for programming.',
         'draw.story1': 'Ever since I was a kid, drawing and making art has been a huge part of my life.',
         'draw.story2': 'For over 13 years, it\'s been a constant source of inspiration and expression.',
         'draw.story3': 'This blend of creativity and problem-solving is actually why Systems Design Engineering really appealed to me.',
@@ -220,6 +224,10 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Draw page
         'draw.title': '画任何东西！',
+        'draw.pageTitle': '绘画',
+        'draw.portfolioLink': '在这里查看我的艺术作品集',
+        'draw.funFact': '有趣的事实：',
+        'draw.funFactText': '我原本计划学习视觉艺术，但在10年级时，我意识到这不适合我。那时我发现了我对编程的热情和天赋。',
         'draw.story1': '从小时候起，绘画和制作艺术就是我生活的重要组成部分。',
         'draw.story2': '13年多来，它一直是我灵感和表达的恒定源泉。',
         'draw.story3': '这种创造力和解决问题的融合实际上是系统设计工程真正吸引我的原因。',

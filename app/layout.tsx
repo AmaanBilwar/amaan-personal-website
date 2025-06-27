@@ -8,6 +8,7 @@ import Header from '@/components/header';
 import Link from 'next/link';
 import Footer from '@/components/footer/footer';
 import { usePathname } from 'next/navigation';
+import Script from 'next/script';
 import Head from 'next/head';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import LanguageToggle from '@/components/LanguageToggle';
@@ -35,26 +36,29 @@ export default function RootLayout({
     <LanguageProvider>
       <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable} font-minecraft`}>
         <Head>
-          {/* Google Analytics Script */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-J6HJSY8DQ4"
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'G-J6HJSY8DQ4');
-                `,
-            }}
-          />
         </Head>
         <body
           className={`bg-[#1a1a1a] min-h-screen antialiased font-minecraft`}
         >
-          
+          {/* Google Analytics Script */}
+          <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-J6HJSY8DQ4"
+          />
+          <Script
+            id="google-analytics-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-J6HJSY8DQ4', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
           {/* Navigation buttons */}
           <NavigationButtons />
           <LanguageToggle />

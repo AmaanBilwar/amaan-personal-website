@@ -210,9 +210,12 @@ export default function SearchBar() {
       }
     } catch (error) {
       console.error('Search error:', error);
+      const errorMessage = language === 'zh'
+        ? '抱歉，我处理时遇到了问题。你能再试一次吗？'
+        : 'Sorry, I had trouble processing that. Could you try again?';
       setMessages(prev => [
         ...prev,
-        { role: 'assistant', content: 'Sorry, I had trouble processing that. Could you try again?' }
+        { role: 'assistant', content: errorMessage }
       ]);
     } finally {
       setIsLoading(false);

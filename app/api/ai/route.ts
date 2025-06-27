@@ -22,8 +22,8 @@ export async function POST(request: Request) {
 
     // Add language instruction based on the language setting
     const languageInstruction = language === 'zh'
-      ? "\n\nIMPORTANT: Please respond in Chinese (中文). The user has set their language preference to Chinese."
-      : "\n\nIMPORTANT: Please respond in English. The user has set their language preference to English.";
+      ? "\n\nIMPORTANT: The user has switched their language preference to Chinese (中文). You MUST respond in Chinese regardless of what language was used in previous messages. Even if the conversation started in English, respond in Chinese from now on."
+      : "\n\nIMPORTANT: The user has set their language preference to English. You MUST respond in English regardless of what language was used in previous messages. Even if the conversation started in Chinese, respond in English from now on.";
 
     const geminiBody = {
       contents: [

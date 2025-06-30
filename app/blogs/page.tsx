@@ -162,6 +162,83 @@ basically, you should never be complacent and change is good for you (especially
 
 基本上，你永远不应该自满，改变对你有好处（特别是如果你年轻）。你应该永远想要更多。`
             },
+            {
+                title: "everyone should work a fast food job at least once in their life",
+                titleZh: "每个人一生中至少应该做一次快餐工作",
+                url: "https://medium.com/@nicholas.chen243/everyone-should-work-a-fast-food-job-at-least-once-in-their-life",
+                description: "Lessons learned from working at Dairy Queen and why fast food jobs teach valuable life skills",
+                descriptionZh: "从在Dairy Queen工作中学到的经验教训，以及为什么快餐工作能教授宝贵的生活技能",
+                fullContent: `when you look at the news or on the internet, you often see big names such as huang, bezos and musk who have founded and become CEOs at extremely successful companies like Tesla, SpaceX, Amazon, and NVIDIA.
+
+a lot of these founders and CEOs didn't just start building these massive products from day one. they started off working as a cook or crew member at some fast food restaurant.
+
+i've noticed that many people tend to overlook these type of jobs and don't actually realize how important the skills you learn from doing them at such a young age teaches you.
+
+as a student, i can also speak from personal experience from working at these fast food restaurants. i knew from seeing my parents that making money wasn't super easy.
+
+throughout my childhood and teenage years i would constantly be reminded that i shouldn't end up like the fast food people serving our food in the mcdonald's or tim horton's fast food place whenever my mother took my brother and i for a meal. this is kinda ironic when i realize in a few months i would be working at one despite what my parents say. this was a different case though because i knew i would never stay here forever.
+
+having money seemed so awesome to me. the ability to buy anything whenever you wanted without having to ask my parents felt incredible. this sparked me to work harder and try getting a job early on.
+
+for a whole year i tried looking for work, but no one would take me. then, one day i walked into dairy queen and saw someone from my high school working there and asked him for a job. he said he would give my resume to the manager and the next day i got the job!
+
+my time working at dairy queen was very interesting. i dealt with angry, unreasonable customers, bad co-workers and people walking in and stealing cake and ice cream at 12am in the summer.
+
+working there for a few months taught me patience, responsibility and a lot of skills that couldn't be learned in a school setting.
+
+the skills i've developed from working late nights and dealing with annoying customers still carries with me today when i'm interviewing for technical roles in software engineering.
+
+although i didn't make a lot of money (14.50 CAD/hr), the experience was definitely worth it a lot in the long run.
+
+looking back, i still can't believe i was getting paid like a slave working 6–7 hour shifts with no break. i sacrificed a lot of my summers working while my friends were enjoying the nice weather and no school. i would sometimes be asked if i wanted to join them to watch a movie, go to the park or hang out in dt toronto. pretty much every time i had no choice, but to say no due to work and then it eventually led to less and less invites and me just repeating the cycle of work, eat, sleep and take extracurricular classes everyday.
+
+the summers of grade 10 and 11 were crucial and i learned a lot of real life lessons in the span of just those 4 months.
+
+fast forward to now like 2–3 years later and a lot of my classmates and people around me struggle to figure out or do things that seem like common sense to me when it comes to work related topics. all those of years of working and looking for jobs taught me a few specific things such as always giving a cover letter in a job app, or always sending a thank you email after doing an interview or call with a recruiter or manager. i thought this was common sense, but i guess not.
+
+another thing i wanted to note was that working at a fast food restaurant also taught me to value money much more. working there for long hours and taking home a pay check of something less than 300 dollars makes you feel something.
+
+i often see a lot of young adults and teenagers gamble and buy expensive clothing irl and online. it's become so bad nowadays -> everything has become so normalized. everyone knows it's not smart to waste your money, but they still do it anyways.
+
+as a result of my parent's teaching and my own personal observations of the world, growing up, i always tried saving money and it's paid off well.
+
+looking at my life now, i'm making a lot more money than before being in a technical field after so many years of grinding school and an year of engineering at waterloo, but the skills that i've developed from working at dairy queen still remain and have helped me get where i am now.`,
+                fullContentZh: `当你看新闻或在互联网上时，你经常会看到黄仁勋、贝佐斯和马斯克等大名鼎鼎的人，他们创立并成为了特斯拉、SpaceX、亚马逊和英伟达等极其成功公司的CEO。
+
+这些创始人和CEO中的很多人并不是从第一天就开始构建这些庞大的产品。他们是从在某家快餐店当厨师或员工开始的。
+
+我注意到很多人往往忽视这类工作，实际上没有意识到在如此年轻的时候从事这些工作所学到的技能有多么重要。
+
+作为一名学生，我也可以从在这些快餐店工作的个人经历中发言。从看到我的父母那里，我知道赚钱并不是特别容易。
+
+在我的童年和青少年时期，每当我的母亲带我和弟弟去麦当劳或Tim Hortons快餐店吃饭时，我会不断被提醒不应该最终像那些为我们提供食物的快餐工作人员一样。当我意识到几个月后我会在其中一家工作时，这有点讽刺，尽管我父母这样说。但这是一个不同的情况，因为我知道我永远不会永远待在这里。
+
+拥有钱对我来说似乎太棒了。能够在想要的时候买任何东西而不必问我的父母，这感觉太不可思议了。这激发了我更努力工作并尝试早点找到工作。
+
+整整一年我都在找工作，但没有人会要我。然后，有一天我走进Dairy Queen，看到我高中的一个同学在那里工作，就问他要一份工作。他说他会把我的简历给经理，第二天我就得到了这份工作！
+
+我在Dairy Queen工作的时间非常有趣。我处理过愤怒、不讲理的顾客、糟糕的同事，以及在夏天凌晨12点走进来偷蛋糕和冰淇淋的人。
+
+在那里工作几个月教会了我耐心、责任感和许多在学校环境中学不到的技能。
+
+我从深夜工作和处理烦人顾客中培养的技能至今仍伴随着我，当我面试软件工程技术职位时。
+
+虽然我赚的钱不多（14.50加元/小时），但从长远来看，这种经历绝对是非常值得的。
+
+回顾过去，我仍然不敢相信我像奴隶一样工作6-7小时轮班而没有休息就能得到报酬。我牺牲了很多夏天工作，而我的朋友们在享受好天气和没有学校的时光。有时我会被问是否想和他们一起看电影、去公园或在多伦多市中心闲逛。几乎每次我都别无选择，只能说不，因为工作，然后最终导致邀请越来越少，我只是重复工作、吃饭、睡觉和每天上课外班的循环。
+
+10年级和11年级的夏天是关键的，我在短短4个月内学到了很多现实生活的教训。
+
+快进到现在大约2-3年后，我的很多同学和周围的人在工作相关话题上难以理解或做一些对我来说似乎是常识的事情。所有那些年的工作和找工作教会了我一些具体的事情，比如在求职申请中总是提供求职信，或者在与招聘人员或经理面试或通话后总是发送感谢邮件。我以为这是常识，但我想不是。
+
+我想指出的另一件事是，在快餐店工作也教会了我更加珍惜金钱。在那里长时间工作并带回家不到300美元的薪水会让你有所感触。
+
+我经常看到很多年轻成年人和青少年在现实生活和网上赌博和购买昂贵的衣服。现在变得如此糟糕 -> 一切都变得如此正常化。每个人都知道浪费钱是不明智的，但他们仍然这样做。
+
+由于我父母的教导和我自己对世界的个人观察，在成长过程中，我总是试图存钱，这已经很好地回报了我。
+
+看看我现在的生活，经过这么多年的学校磨练和在滑铁卢的一年工程学习后，我在技术领域赚的钱比以前多得多，但我从在Dairy Queen工作中培养的技能仍然存在，并帮助我达到了现在的位置。`
+            },
 
         ];
 

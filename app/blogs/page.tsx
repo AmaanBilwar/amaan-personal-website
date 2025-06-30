@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import BlogInteractions from '@/components/blog-interactions';
 
 export default function BlogsPage() {
     const { t, language, setLanguage } = useLanguage();
@@ -218,6 +219,11 @@ basically, you should never be complacent and change is good for you (especially
                                                         <p>{language === 'zh' && blog.descriptionZh ? blog.descriptionZh : blog.description}</p>
                                                     )}
                                                 </div>
+                                                <BlogInteractions
+                                                    blogId={`blog-${index}`}
+                                                    blogTitle={language === 'zh' && blog.titleZh ? blog.titleZh : blog.title}
+                                                    blogUrl={blog.url}
+                                                />
                                             </div>
                                         )}
                                     </div>

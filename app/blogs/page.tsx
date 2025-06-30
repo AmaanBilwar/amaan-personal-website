@@ -25,7 +25,7 @@ export default function BlogsPage() {
         fullContentZh?: string;
     }> = [
             {
-                title: "How My Grandpa (Lao Ye) Shaped Me Into The Man I Am Today",
+                title: "how my grandpa (lao ye) shaped me into the man i am today",
                 titleZh: "我的爷爷（老爷）如何塑造了今天的我",
                 url: "https://medium.com/@nicholas.chen243/how-my-grandpa-lao-ye-shaped-me-into-the-man-i-am-today-b595fc74bbc0",
                 description: "A personal reflection on family influence and life lessons",
@@ -74,7 +74,7 @@ one day, i want to be able to buy him a mechanical engineering warehouse/factory
 有一天，我想能够为他买一个机械工程仓库/工厂，让他可以在那里胡闹并建造他想要的任何东西（也是为了阻止他试图把我们整个房子改造成一个工厂）。`
             },
             {
-                title: "You Should Always Want More",
+                title: "you should always want more",
                 titleZh: "你应该永远想要更多",
                 url: "https://medium.com/@nicholas.chen243/you-should-always-want-more-6383767c6c72",
                 description: "On ambition, growth, and never settling for mediocrity",

@@ -251,6 +251,42 @@ looking at my life now, i'm making a lot more money than before being in a techn
 
 看看我现在的生活，经过这么多年的学校磨练和在滑铁卢的一年工程学习后，我在技术领域赚的钱比以前多得多，但我从在Dairy Queen工作中培养的技能仍然存在，并帮助我达到了现在的位置。`
             },
+            {
+                title: "my 1a experience in syde at the university of waterloo",
+                titleZh: "我在滑铁卢大学SYDE的第一年经历",
+                author: "Nicholas Chen",
+                publishDate: "Jun 30, 2025",
+                readTime: "3 min read",
+                url: "https://medium.com/@nicholas.chen243/my-first-year-experience-in-syde-at-uw",
+                description: "A reflection on completing first term in Systems Design Engineering at University of Waterloo",
+                descriptionZh: "对在滑铁卢大学完成系统设计工程第一学期的反思",
+                fullContent: `this is probably the 100th blog you've seen from a university student talking about their first year experience, but i'll keep it simple and honest. i recently finished 1a in systems design engineering (syde) at the university of waterloo, and this is a reflection on how it went.
+
+the term started with adjusting to the course load and environment. our schedule included syde 111 (calculus), syde 113 (linear algebra), syde 121 (intro to c++), syde 161 (intro to design), syde 181 (statics), and syde 101 + 101l (communication). each course had its own learning curve, but i found the most challenging to be calculus and statics, mostly because of the abstract thinking and problem-solving required.
+
+since i had experience with c++ before coming to university, syde 121 felt more like a review than something entirely new. it was still useful to reinforce good coding practices and pick up a few things i had missed before, but overall it was one of the lighter courses for me. syde 101 focused on communication and writing, which balanced the technical load. syde 161 introduced the design process and included group work that gave us a glimpse into what future project courses might be like.
+
+keeping a consistent routine was important. lectures, labs, and tutorials made up about 25 to 30 hours each week. the workload could feel heavy at times, especially during midterms, but spreading things out and keeping up with material helped a lot. i also learned to rely on office hours, friends, and online resources when i got stuck.
+
+one of the things that stood out was the cohort model. since syde is a small program, we all had the same classes together. it made it easier to connect with people, form study groups, and share resources. that community aspect helped a lot with the transition to university life.
+
+in the background, there was also the process of preparing for our first co-op term. throughout the term, i worked on building my resume, exploring job postings, and learning how to navigate waterlooworks. it was a new experience, but having access to workshops and peer feedback made it less intimidating. balancing co-op prep with classes added some pressure, but it felt rewarding to take steps toward real-world experience so early in the program.
+
+overall, 1a taught me how to manage time better, ask questions early, and balance work with rest. it wasn't perfect, but i feel like i've built a good foundation. i'm looking forward to 1b, gaining more technical experience, and starting my first co-op term soon after.`,
+                fullContentZh: `这可能是你看到的第100篇关于大学生谈论他们第一年经历的博客，但我会保持简单和诚实。我最近在滑铁卢大学完成了系统设计工程(SYDE)的1A学期，这是对这段经历的反思。
+
+学期开始时需要适应课程负担和环境。我们的课程表包括SYDE 111（微积分）、SYDE 113（线性代数）、SYDE 121（C++入门）、SYDE 161（设计入门）、SYDE 181（静力学）和SYDE 101 + 101L（沟通）。每门课程都有自己的学习曲线，但我发现最具挑战性的是微积分和静力学，主要是因为需要抽象思维和解决问题的能力。
+
+由于我在上大学之前就有C++经验，SYDE 121对我来说更像是复习而不是全新的内容。强化良好的编程实践和学习一些我之前遗漏的东西仍然很有用，但总的来说这是我较轻松的课程之一。SYDE 101专注于沟通和写作，这平衡了技术负担。SYDE 161介绍了设计过程，包括小组作业，让我们初步了解了未来项目课程可能的样子。
+
+保持一致的日常安排很重要。讲座、实验和辅导每周大约占用25到30个小时。工作量有时会感觉很重，特别是在期中考试期间，但分散安排和跟上材料帮助很大。我也学会了在遇到困难时依靠办公时间、朋友和在线资源。
+
+其中一个突出的特点是群组模式。由于SYDE是一个小专业，我们都一起上相同的课程。这使得与人联系、组建学习小组和分享资源变得更容易。这种社区方面对适应大学生活帮助很大。
+
+在后台，还有准备我们第一个实习学期的过程。整个学期中，我致力于建立我的简历，探索工作职位，并学习如何使用WaterlooWorks。这是一个新的体验，但能够参加研讨会和获得同伴反馈使它不那么令人生畏。平衡实习准备和课程增加了一些压力，但在程序早期采取步骤获得现实世界的经验感觉很有回报。
+
+总的来说，1A教会了我如何更好地管理时间，及早提问，平衡工作和休息。虽然不完美，但我觉得我已经建立了良好的基础。我期待着1B，获得更多技术经验，并很快开始我的第一个实习学期。`
+            },
 
         ];
 

@@ -76,7 +76,7 @@ export default function Home() {
 
               torontoParts.forEach((part, index) => {
                 // Handle new york city in each part
-                const nycParts = part.split('new york city');
+                const nycParts = part.split('nyc');
                 nycParts.forEach((nycPart, nycIndex) => {
                   result.push(nycPart);
                   if (nycIndex < nycParts.length - 1) {
@@ -88,7 +88,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110"
                       >
-                        new york city
+                        nyc
                       </a>
                     );
                   }

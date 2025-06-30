@@ -56,7 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.greeting': "Hey, I'm ",
         'hero.name.full': 'Nicholas!',
         'hero.name.short': 'Nic!',
-        'hero.location': "I'm 19, based in toronto and new york city.",
+        'hero.location': "I'm 19, based in toronto and nyc.",
         'hero.building': "I've been building things for 3673 days.",
         'hero.achievements': 'A few of my achievements...',
         'hero.achievement1': '30k followers on social media (x, instagram, tiktok, youtube) and over 10m views',

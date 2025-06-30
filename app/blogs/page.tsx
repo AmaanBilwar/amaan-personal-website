@@ -19,6 +19,9 @@ export default function BlogsPage() {
         title: string;
         url: string;
         description: string;
+        author: string;
+        publishDate: string;
+        readTime: string;
         fullContent?: string;
         titleZh?: string;
         descriptionZh?: string;
@@ -27,6 +30,9 @@ export default function BlogsPage() {
             {
                 title: "how my grandpa (lao ye) shaped me into the man i am today",
                 titleZh: "我的爷爷（老爷）如何塑造了今天的我",
+                author: "Nicholas Chen",
+                publishDate: "Mar 15, 2025",
+                readTime: "6 min read",
                 url: "https://medium.com/@nicholas.chen243/how-my-grandpa-lao-ye-shaped-me-into-the-man-i-am-today-b595fc74bbc0",
                 description: "A personal reflection on family influence and life lessons",
                 descriptionZh: "对家庭影响和人生教训的个人反思",
@@ -76,6 +82,9 @@ one day, i want to be able to buy him a mechanical engineering warehouse/factory
             {
                 title: "you should always want more",
                 titleZh: "你应该永远想要更多",
+                author: "Nicholas Chen",
+                publishDate: "May 2, 2025",
+                readTime: "8 min read",
                 url: "https://medium.com/@nicholas.chen243/you-should-always-want-more-6383767c6c72",
                 description: "On ambition, growth, and never settling for mediocrity",
                 descriptionZh: "关于野心、成长和永不满足于平庸",
@@ -165,6 +174,9 @@ basically, you should never be complacent and change is good for you (especially
             {
                 title: "everyone should work a fast food job at least once in their life",
                 titleZh: "每个人一生中至少应该做一次快餐工作",
+                author: "Nicholas Chen",
+                publishDate: "Jun 16, 2025",
+                readTime: "4 min read",
                 url: "https://medium.com/@nicholas.chen243/everyone-should-work-a-fast-food-job-at-least-once-in-their-life",
                 description: "Lessons learned from working at Dairy Queen and why fast food jobs teach valuable life skills",
                 descriptionZh: "从在Dairy Queen工作中学到的经验教训，以及为什么快餐工作能教授宝贵的生活技能",
@@ -284,7 +296,16 @@ looking at my life now, i'm making a lot more money than before being in a techn
                                         </button>
                                         {isExpanded && (
                                             <div className="px-4 pb-4 border-t border-stone-700">
-                                                <div className="text-stone-400 text-sm font-minecraft mb-4 mt-3 leading-relaxed">
+                                                {/* Author, Date, and Read Time */}
+                                                <div className="text-stone-500 text-xs font-minecraft mb-4 mt-3 flex items-center gap-2">
+                                                    <span>{blog.author}</span>
+                                                    <span>·</span>
+                                                    <span>{blog.publishDate}</span>
+                                                    <span>·</span>
+                                                    <span>{blog.readTime}</span>
+                                                </div>
+
+                                                <div className="text-stone-400 text-sm font-minecraft mb-4 leading-relaxed">
                                                     {blog.fullContent || blog.fullContentZh ? (
                                                         <div className="whitespace-pre-line">
                                                             {language === 'zh' && blog.fullContentZh

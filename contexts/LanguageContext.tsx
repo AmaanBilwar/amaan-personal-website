@@ -56,7 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.greeting': "Hey, I'm ",
         'hero.name.full': 'Nicholas!',
         'hero.name.short': 'Nic!',
-        'hero.location': "I'm 19, from ",
+        'hero.location': "I'm 19, based in toronto and new york city.",
         'hero.building': "I've been building things for 3673 days.",
         'hero.achievements': 'A few of my achievements...',
         'hero.achievement1': '30k followers on social media (x, instagram, tiktok, youtube) and over 10m views',
@@ -156,6 +156,8 @@ const translations: Record<Language, Record<string, string>> = {
         'projects.sqlParser': 'parser that can query flat JSON objects',
         'projects.whiteboard': 'app to brainstorm, create and share ideas',
         'projects.dependabot': 'app with 200+ users that\'s easier to use than github\'s dependabot',
+        'projects.fernando': 'posture checker robot that won 2nd place at utra hacks',
+        'projects.basketbin': 'machine that sorts trash automatically using computer vision',
 
         // Excited section  
         'excited.title': 'I\'m excited about...',
@@ -180,7 +182,7 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.greeting': '嗨，我是',
         'hero.name.full': 'Nicholas!',
         'hero.name.short': 'Nic!',
-        'hero.location': '我19岁，来自',
+        'hero.location': '我19岁，活跃于多伦多和纽约市。',
         'hero.building': '我已经构建了3673天。',
         'hero.achievements': '我的一些成就...',
         'hero.achievement1': '在社交媒体上有3万粉丝（x、instagram、tiktok、youtube），超过1千万观看量',
@@ -280,6 +282,8 @@ const translations: Record<Language, Record<string, string>> = {
         'projects.sqlParser': '可以查询扁平JSON对象的解析器',
         'projects.whiteboard': '用于头脑风暴、创建和分享想法的应用',
         'projects.dependabot': '拥有200+用户的应用，用于检查和更新存储库中的依赖项',
+        'projects.fernando': '在utra黑客马拉松获得第二名的姿势检查机器人',
+        'projects.basketbin': '使用计算机视觉自动分拣垃圾的机器',
 
         // Excited section
         'excited.title': '我对以下事情感到兴奋...',

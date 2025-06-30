@@ -68,7 +68,49 @@ export default function Home() {
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
           <p className="text-stone-400">
-            {t('hero.location')} <a href="https://www.destinationtoronto.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">toronto</a>.
+            {(() => {
+              const text = t('hero.location');
+              // Split by toronto first
+              const torontoParts = text.split('toronto');
+              const result: (string | React.ReactElement)[] = [];
+
+              torontoParts.forEach((part, index) => {
+                // Handle new york city in each part
+                const nycParts = part.split('new york city');
+                nycParts.forEach((nycPart, nycIndex) => {
+                  result.push(nycPart);
+                  if (nycIndex < nycParts.length - 1) {
+                    result.push(
+                      <a
+                        key={`nyc-${index}-${nycIndex}`}
+                        href="https://www.nyctourism.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110"
+                      >
+                        new york city
+                      </a>
+                    );
+                  }
+                });
+
+                if (index < torontoParts.length - 1) {
+                  result.push(
+                    <a
+                      key={`toronto-${index}`}
+                      href="https://www.destinationtoronto.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110"
+                    >
+                      toronto
+                    </a>
+                  );
+                }
+              });
+
+              return result;
+            })()}
           </p>
           <p>
             {(() => {
@@ -143,6 +185,12 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - {t('projects.dependabot')}
+                </li>
+                <li>
+                  <a href="https://github.com/enxilium/posture-checker-robot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">fernando</a> - {t('projects.fernando')}
+                </li>
+                <li>
+                  <a href="https://github.com/DerrickHa/ht6" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">basketbin</a> - {t('projects.basketbin')}
                 </li>
               </ul>
             </div>

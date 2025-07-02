@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import DrawingChatbot from '@/components/drawing-chatbot';
 
 export default function DrawPage() {
     const { t, language, setLanguage } = useLanguage();
@@ -237,10 +238,13 @@ export default function DrawPage() {
                             </div>
                         </div>
 
-                        
+
+
+                        {/* AI Drawing Assistant */}
+                        <DrawingChatbot canvasRef={canvasRef} />
 
                         {/* Portfolio Link */}
-                        <div className="mt-4 w-full">
+                        <div className="mt-6 w-full">
                             <a
                                 href="https://nicholaschen243.wixsite.com/nicholas-chen"
                                 target="_blank"

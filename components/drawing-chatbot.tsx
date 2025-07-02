@@ -18,6 +18,7 @@ export default function DrawingChatbot({ canvasRef }: DrawingChatbotProps) {
     const { t, language } = useLanguage();
     const [messages, setMessages] = useState<Message[]>([]);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
+    const [inputMessage, setInputMessage] = useState('');
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     // Auto scroll to bottom when new messages arrive
@@ -38,8 +39,8 @@ export default function DrawingChatbot({ canvasRef }: DrawingChatbotProps) {
         setMessages([welcomeMessage]);
     }, [language]);
 
-    const analyzeDrawing = async () => {
-        if (!canvasRef.current) return;
+    const sendMessage = async (prompt: string) => {
+        if (!canvasRef.current || !prompt.trim()) return;
 
         setIsAnalyzing(true);
 
@@ -47,7 +48,7 @@ export default function DrawingChatbot({ canvasRef }: DrawingChatbotProps) {
         const userMessage: Message = {
             id: Date.now().toString(),
             type: 'user',
-            content: language === 'zh' ? '猜猜我画的什么？' : 'Guess my drawing!',
+            content: prompt,
             timestamp: new Date()
         };
         setMessages(prev => [...prev, userMessage]);
@@ -95,7 +96,8 @@ export default function DrawingChatbot({ canvasRef }: DrawingChatbotProps) {
                 },
                 body: JSON.stringify({
                     imageData,
-                    language
+                    language,
+                    customPrompt: prompt
                 }),
             });
 
@@ -140,6 +142,26 @@ export default function DrawingChatbot({ canvasRef }: DrawingChatbotProps) {
         setMessages([welcomeMessage]);
     };
 
+    const analyzeDrawing = () => {
+        const defaultPrompt = language === 'zh' ? '猜猜我画的什么？' : 'Guess my drawing!';
+        sendMessage(defaultPrompt);
+    };
+
+    const handleInputSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (inputMessage.trim()) {
+            sendMessage(inputMessage);
+            setInputMessage('');
+        }
+    };
+
+    const handleKeyPress = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleInputSubmit(e);
+        }
+    };
+
     return (
         <div className="w-full mt-6">
             {/* Header */}
@@ -181,24 +203,47 @@ export default function DrawingChatbot({ canvasRef }: DrawingChatbotProps) {
                     <div ref={messagesEndRef} />
                 </div>
 
-                {/* Actions */}
-                <div className="p-4 border-t border-stone-500 flex gap-2">
-                    <button
-                        onClick={analyzeDrawing}
-                        disabled={isAnalyzing}
-                        className="flex-1 bg-[#3a3a3a] hover:bg-[#444444] hover:scale-105 disabled:bg-[#2a2a2a] disabled:hover:scale-100 text-white py-3 px-4 rounded text-sm font-minecraft transition-all duration-200"
-                    >
-                        {isAnalyzing
-                            ? (language === 'zh' ? '分析中...' : 'Analyzing...')
-                            : (language === 'zh' ? '猜猜我画的什么' : 'Guess My Drawing')
-                        }
-                    </button>
-                    <button
-                        onClick={clearChat}
-                        className="bg-[#333333] hover:bg-[#3a3a3a] hover:scale-105 text-white py-3 px-4 rounded text-sm font-minecraft transition-all duration-200"
-                    >
-                        {language === 'zh' ? '清除聊天' : 'Clear Chat'}
-                    </button>
+                {/* Input and Actions */}
+                <div className="p-4 border-t border-stone-500 space-y-3">
+                    {/* Text Input */}
+                    <form onSubmit={handleInputSubmit} className="flex gap-2">
+                        <input
+                            type="text"
+                            value={inputMessage}
+                            onChange={(e) => setInputMessage(e.target.value)}
+                            onKeyPress={handleKeyPress}
+                            placeholder={language === 'zh' ? '问我关于你的画...' : 'Ask me about your drawing...'}
+                            disabled={isAnalyzing}
+                            className="flex-1 bg-[#333333] text-white placeholder-stone-400 px-3 py-2 rounded text-sm border border-stone-600 focus:border-stone-400 focus:outline-none disabled:opacity-50"
+                        />
+                        <button
+                            type="submit"
+                            disabled={isAnalyzing || !inputMessage.trim()}
+                            className="bg-[#3a3a3a] hover:bg-[#444444] hover:scale-105 disabled:bg-[#2a2a2a] disabled:hover:scale-100 text-white py-2 px-4 rounded text-sm font-minecraft transition-all duration-200"
+                        >
+                            {language === 'zh' ? '发送' : 'Send'}
+                        </button>
+                    </form>
+
+                    {/* Quick Actions */}
+                    <div className="flex gap-2">
+                        <button
+                            onClick={analyzeDrawing}
+                            disabled={isAnalyzing}
+                            className="flex-1 bg-[#3a3a3a] hover:bg-[#444444] hover:scale-105 disabled:bg-[#2a2a2a] disabled:hover:scale-100 text-white py-2 px-4 rounded text-sm font-minecraft transition-all duration-200"
+                        >
+                            {isAnalyzing
+                                ? (language === 'zh' ? '分析中...' : 'Analyzing...')
+                                : (language === 'zh' ? '猜猜我画的什么' : 'Guess My Drawing')
+                            }
+                        </button>
+                        <button
+                            onClick={clearChat}
+                            className="bg-[#333333] hover:bg-[#3a3a3a] hover:scale-105 text-white py-2 px-4 rounded text-sm font-minecraft transition-all duration-200"
+                        >
+                            {language === 'zh' ? '清除聊天' : 'Clear Chat'}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

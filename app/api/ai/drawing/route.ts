@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { imageData, language } = body;
+        const { imageData, language, customPrompt } = body;
 
         if (!imageData) {
             return NextResponse.json({ error: 'Image data is required' }, { status: 400 });
@@ -17,9 +17,19 @@ export async function POST(request: Request) {
         // Remove the data:image/png;base64, prefix if present
         const base64Image = imageData.replace(/^data:image\/[a-z]+;base64,/, '');
 
-        const languageInstruction = language === 'zh'
-            ? "请用中文回答。分析这张图画并猜测画的是什么。提供3个最有可能的猜测，用简洁有趣的方式描述。如果图画看起来很简单或不完整，可以鼓励用户继续画或给出友善的建议。"
-            : "Analyze this drawing and guess what it might be. Provide up to 3 possible guesses in a fun and engaging way. If the drawing seems simple or incomplete, feel free to encourage the user to keep drawing or give friendly suggestions.";
+        const baseInstruction = language === 'zh'
+            ? "请用中文回答。分析这张图画。"
+            : "Analyze this drawing.";
+
+        const specificInstruction = customPrompt
+            ? (language === 'zh'
+                ? `用户的问题：${customPrompt}`
+                : `User's question: ${customPrompt}`)
+            : (language === 'zh'
+                ? "猜测画的是什么。提供3个最有可能的猜测，用简洁有趣的方式描述。如果图画看起来很简单或不完整，可以鼓励用户继续画或给出友善的建议。"
+                : "Guess what it might be. Provide up to 3 possible guesses in a fun and engaging way. If the drawing seems simple or incomplete, feel free to encourage the user to keep drawing or give friendly suggestions.");
+
+        const languageInstruction = `${baseInstruction} ${specificInstruction}`;
 
         const geminiEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
 

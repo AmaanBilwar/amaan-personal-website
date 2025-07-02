@@ -152,7 +152,7 @@ export default function DrawingChatbot({ canvasRef }: DrawingChatbotProps) {
             {/* Chat Window */}
             <div className="bg-transparent border border-stone-500 rounded-lg w-full h-64 flex flex-col">
                 {/* Messages */}
-                <div className="flex-1 p-4 overflow-y-auto space-y-3">
+                <div className="flex-1 p-4 overflow-y-auto space-y-3 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     {messages.map((message) => (
                         <div
                             key={message.id}

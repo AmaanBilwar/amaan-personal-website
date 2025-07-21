@@ -278,7 +278,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Projects section
         'projects.title': '我正在进行的几个项目...',
-        'projects.diffDigest': '将git差异转换为发布说明的网站，拥有100名用户',
+        'projects.diffDigest': '将git差异转换为发布说明的网站，拥有100+名用户',
         'projects.sqlParser': '可以查询扁平JSON对象的解析器',
         'projects.whiteboard': '用于头脑风暴、创建和分享想法的应用',
         'projects.dependabot': '拥有200+用户的应用，用于检查和更新存储库中的依赖项',

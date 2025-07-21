@@ -147,7 +147,7 @@ export default function Home() {
               {t('hero.current1').split('systems design engineering')[0]}<a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a>{t('hero.current1').split('university of waterloo')[0].split('systems design engineering')[1]}<a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">university of waterloo</a>
             </li>
             <li>
-              {t('hero.current2').split('textql')[0]}<a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a>{t('hero.current2').split('nyc')[1]}
+              {t('hero.current2').split('textql')[0]}<img src="/textql.jpg" alt="TextQL" className="inline w-4 h-4 mr-1" /><a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a>{t('hero.current2').split('nyc')[1]}
             </li>
             <li>
               {t('hero.current3')}
@@ -185,11 +185,21 @@ export default function Home() {
             <div>
               <p className="mb-2 text-stone-300">{t('previously.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>
-                  {t('previously.item1').split('ownr')[0]}<a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>{t('previously.item1').split('ownr')[1]}
+                <li className="flex items-center gap-2">
+                  <span>
+                    {t('previously.item1').split('ownr')[0]}
+                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="inline w-4 h-4 mr-1" />
+                    <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>
+                    {t('previously.item1').split('ownr')[1]}
+                  </span>
                 </li>
-                <li>
-                  {t('previously.item2').split('rbc')[0]}<a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>{t('previously.item2').split('rbc')[1]}
+                <li className="flex items-center gap-2">
+                  <span>
+                    {t('previously.item2').split('rbc')[0]}
+                    <img src="/rbc.jpeg" alt="RBC" className="inline w-4 h-4 mr-1" />
+                    <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>
+                    {t('previously.item2').split('rbc')[1]}
+                  </span>
                 </li>
 
 

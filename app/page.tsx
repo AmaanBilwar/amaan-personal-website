@@ -183,21 +183,17 @@ export default function Home() {
             <div>
               <p className="mb-2 text-stone-300">{t('previously.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li className="flex items-center gap-2">
-                  <span>
-                    {t('previously.item1').split('ownr')[0]}
-                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="inline w-4 h-4 mr-1" />
-                    <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>
-                    {t('previously.item1').split('ownr')[1]}
-                  </span>
+                <li>
+                  {t('previously.item1').split('ownr')[0]}
+                  <img src="/ownrco_logo.jpeg" alt="Ownr" className="inline w-4 h-4 mr-1" />
+                  <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">ownr</a>
+                  {t('previously.item1').split('ownr')[1]}
                 </li>
-                <li className="flex items-center gap-2">
-                  <span>
-                    {t('previously.item2').split('rbc')[0]}
-                    <img src="/rbc.jpeg" alt="RBC" className="inline w-4 h-4 mr-1" />
-                    <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>
-                    {t('previously.item2').split('rbc')[1]}
-                  </span>
+                <li>
+                  {t('previously.item2').split('rbc')[0]}
+                  <img src="/rbc.jpeg" alt="RBC" className="inline w-4 h-4 mr-1" />
+                  <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>
+                  {t('previously.item2').split('rbc')[1]}
                 </li>
 
 

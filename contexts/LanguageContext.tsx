@@ -171,7 +171,7 @@ const translations: Record<Language, Record<string, string>> = {
         'previously.item1': 'was a software engineer intern at ownr, building tools for entrepreneurs worldwide',
         'previously.item2': 'was a software engineer intern at rbc, working on machine learning models',
         'previously.item3': 'was a ux design intern at meta hash capital, focusing on user experience in fintech',
-        'previously.item4': 'was a ux design intern at voluntrack, designing tools for their volunteering platform',
+        'previously.item4': 'was a software engineer at voluntrack, designing tools for their volunteering platform',
 
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',
@@ -297,7 +297,7 @@ const translations: Record<Language, Record<string, string>> = {
         'previously.item1': '在ownr担任软件工程师实习生，为全球企业家构建工具',
         'previously.item2': '在rbc担任软件工程师实习生，从事机器学习模型工作',
         'previously.item3': '在meta hash capital担任用户体验设计实习生，专注于金融科技的用户体验',
-        'previously.item4': '在voluntrack担任用户体验设计实习生，为他们的志愿服务平台设计工具',
+        'previously.item4': '在voluntrack担任软件工程师，为他们的志愿服务平台设计工具',
 
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',

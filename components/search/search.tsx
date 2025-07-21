@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import SamplePrompts from './sample-prompts';
 import ChatMessage from './chat-message';
 import localFont from 'next/font/local';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -223,18 +222,12 @@ export default function SearchBar() {
     }
   };
 
-  const handlePromptClick = (prompt: string) => {
-    setQuery(prompt);
-    const input = formRef.current?.querySelector('input');
-    if (input) {
-      input.focus();
-    }
-  };
+
 
   return (
     <div className={`px-0 ${minecraft.variable} font-minecraft`}>
       <h2 className="text-lg text-stone-300 mb-4 mt-8 font-minecraft">{t('search.title')}</h2>
-      <SamplePrompts onPromptClick={handlePromptClick} />
+
 
       {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
       {(messages.length > 0 || pendingAI || typedAI) && (

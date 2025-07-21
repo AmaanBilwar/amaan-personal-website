@@ -9,9 +9,7 @@ export default function Home() {
   const { t, language, setLanguage } = useLanguage();
 
   // Accordion state for each section
-  const [openHowIStarted, setOpenHowIStarted] = useState(false);
   const [openFuture, setOpenFuture] = useState(false);
-  const [openUnconventional, setOpenUnconventional] = useState(false);
 
   // Typewriter effect state
   const [displayText, setDisplayText] = useState('');
@@ -141,14 +139,7 @@ export default function Home() {
             })()}
           </p>
         </div>
-        <div>
-          <p className="mb-2 text-stone-300">{t('hero.achievements')}</p>
-          <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-            <li>{t('hero.achievement1')}</li>
-            <li>{t('hero.achievement2').split('UTRA Hacks')[0]}<a href="https://hackathon.utra.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">UTRA Hacks</a>{t('hero.achievement2').split('UTRA Hacks')[1]}</li>
-            <li>{t('hero.achievement3')}</li>
-          </ul>
-        </div>
+
         <div>
           <p className="mb-4 text-stone-300">{t('hero.currently')}</p>
           <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
@@ -161,13 +152,11 @@ export default function Home() {
             <li>
               {t('hero.current3')}
             </li>
-            <li>
-              {t('hero.current4')}
-            </li>
+
           </ul>
         </div>
 
-        <p className="max-w-2xl mb-2 mt-20 text-sm text-stone-300">{t('moneyMaking.text')}</p>
+
 
         <div className="h-auto min-h-[150px] md:min-h-[120px]">
           <div className="mt-8 space-y-6">
@@ -180,9 +169,7 @@ export default function Home() {
                 <li>
                   <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - {t('projects.sqlParser')}
                 </li>
-                <li>
-                  <a href="https://whiteboard-app-iota.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">whiteboard</a> - {t('projects.whiteboard')}
-                </li>
+
                 <li>
                   <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - {t('projects.dependabot')}
                 </li>
@@ -194,15 +181,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div>
-              <p className="mb-2 text-stone-300">{t('excited.title')}</p>
-              <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
-                <li>{t('excited.item1')}</li>
-                <li>{t('excited.item2')}</li>
-                <li>{t('excited.item3')}</li>
-                <li>{t('excited.item4')}</li>
-              </ul>
-            </div>
+
             <div>
               <p className="mb-2 text-stone-300">{t('previously.title')}</p>
               <ul className="list-disc list-inside text-sm text-stone-400 space-y-1">
@@ -212,86 +191,14 @@ export default function Home() {
                 <li>
                   {t('previously.item2').split('rbc')[0]}<a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">rbc</a>{t('previously.item2').split('rbc')[1]}
                 </li>
-                <li>
-                  {t('previously.item3').split('meta hash capital')[0]}<a href="https://www.metahashtechnology.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">meta hash capital</a>{t('previously.item3').split('meta hash capital')[1]}
-                </li>
-                <li>
-                  {t('previously.item4').split('voluntrack')[0]}<a href="https://voluntracks.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">voluntrack</a>{t('previously.item4').split('voluntrack')[1]}
-                </li>
+
+
               </ul>
             </div>
 
           </div>
         </div>
-        {/* How I Started Section */}
-        <div className="max-w-2xl mt-12 mb-4">
-          <div className="border border-stone-700 rounded-md">
-            <button
-              className="w-full flex justify-between items-center px-4 py-3 font-minecraft text-sm text-stone-200 focus:outline-none text-left hover:bg-stone-800/30 transition-colors"
-              onClick={() => setOpenHowIStarted((prev) => !prev)}
-            >
-              <span className="flex-1 text-left pr-4">{t('section.howIStarted')}</span>
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${openHowIStarted ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {openHowIStarted && (
-              <div className="px-4 pb-4 border-t border-stone-700">
-                <div className="text-stone-400 text-sm font-minecraft mb-4 mt-3 leading-relaxed">
-                  <div className="whitespace-pre-line">
-                    {t('section.howIStarted.text1')}
 
-                    {t('section.howIStarted.text2')}
-
-                    {t('section.howIStarted.text3')}
-
-                    {t('section.howIStarted.text4')}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Unconventional Way Section */}
-        <div className="max-w-2xl mt-12 mb-4">
-          <div className="border border-stone-700 rounded-md">
-            <button
-              className="w-full flex justify-between items-center px-4 py-3 font-minecraft text-sm text-stone-200 focus:outline-none text-left hover:bg-stone-800/30 transition-colors"
-              onClick={() => setOpenUnconventional((prev) => !prev)}
-            >
-              <span className="flex-1 text-left pr-4">{t('section.unconventional')}</span>
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${openUnconventional ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {openUnconventional && (
-              <div className="px-4 pb-4 border-t border-stone-700">
-                <div className="text-stone-400 text-sm font-minecraft mb-4 mt-3 leading-relaxed">
-                  <div className="whitespace-pre-line">
-                    {t('section.unconventional.text1')}
-
-                    {t('section.unconventional.text2')}
-
-                    {t('section.unconventional.text3')}
-
-                    {t('section.unconventional.text4')}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
 
         <SearchBar />
 

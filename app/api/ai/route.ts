@@ -30,7 +30,7 @@ export async function POST(request: Request) {
         {
           role: "user",
           parts: [
-            { text: userContext + languageInstruction + "\nCurrent question: " + query }
+            { text:  + languageInstruction + "\nCurrent question: " + query }
           ]
         }
       ]
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: 'Failed to generate AI response', details: String(error) },
         { status: 500 }
-      );
+      );userContext
     }
   }
 } 

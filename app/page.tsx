@@ -149,9 +149,7 @@ export default function Home() {
             <li>
               {t('hero.current2').split('textql')[0]}<img src="/textql.jpg" alt="TextQL" className="inline w-4 h-4 mr-1" /><a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a>{t('hero.current2').split('nyc')[1]}
             </li>
-            <li>
-              {t('hero.current3')}
-            </li>
+
 
           </ul>
         </div>

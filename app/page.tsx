@@ -65,7 +65,7 @@ export default function Home() {
           <span className="animate-pulse">|</span>
         </h1>
         <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
-          <p className="text-stone-400">
+          <p className="text-sm text-stone-400">
             {(() => {
               const text = t('hero.location');
               // Split by toronto first
@@ -110,7 +110,7 @@ export default function Home() {
               return result;
             })()}
           </p>
-          <p>
+          <p className="text-sm text-stone-400">
             {(() => {
               const text = t('hero.building');
               const dayMatch = text.match(/(\d+)\s*(?:days|天)/i);

@@ -9,9 +9,9 @@ import Link from 'next/link';
 import Footer from '@/components/footer/footer';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
-import Head from 'next/head';
+
 import { LanguageProvider } from '@/contexts/LanguageContext';
-import LanguageToggle from '@/components/LanguageToggle';
+
 import NavigationButtons from '@/components/NavigationButtons';
 
 const jetbrainsMono = JetBrains_Mono({
@@ -35,8 +35,7 @@ export default function RootLayout({
   return (
     <LanguageProvider>
       <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable} font-minecraft`}>
-        <Head>
-        </Head>
+
         <body
           className={`bg-[#1a1a1a] min-h-screen antialiased font-minecraft`}
         >
@@ -61,7 +60,7 @@ export default function RootLayout({
           />
           {/* Navigation buttons */}
           <NavigationButtons />
-          <LanguageToggle />
+
           <Header />
           {children}
           <Footer />

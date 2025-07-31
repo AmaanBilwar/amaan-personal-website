@@ -230,7 +230,7 @@ export default function Home() {
 
         {/* Links to blogs and art */}
         <section className="mt-10 mb-20 font-minecraft">
-          <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-4">
+          <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-8">
             {t('links.blogPrompt')} {' '}
             <a
               href="https://substack.com/home/post/p-168775395"

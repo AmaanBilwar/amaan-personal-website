@@ -56,8 +56,8 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.greeting': "Hey, I'm ",
         'hero.name.full': 'Nicholas!',
         'hero.name.short': 'Nic!',
-        'hero.location': "I'm 19, based in toronto and nyc.",
-        'hero.building': "I've been building things for 3673 days.",
+        'hero.location': "i'm 19, based in toronto and nyc.",
+        'hero.building': "i've been building things for 3673 days.",
         'hero.achievements': 'A few of my achievements...',
         'hero.achievement1': '30k followers on social media (x, instagram, tiktok, youtube) and over 10m views',
         'hero.achievement2': 'won 2nd place at UTRA Hacks, the largest robotics hackathon in canada',
@@ -121,7 +121,7 @@ const translations: Record<Language, Record<string, string>> = {
         'draw.story9': 'It\'s a piece of my journey, inviting you to doodle, design, and create something alongside me!',
 
         // Contact
-        'contact.text': 'I\'d love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by email, or connect with me on linkedin.',
+        'contact.text': 'i\'d love to hear from you! want to hire me? or simply wanna chat? feel free to reach out by email, or connect with me on linkedin.',
 
         // Links
         'links.blogPrompt': 'want to read my thoughts ->',

@@ -123,6 +123,12 @@ const translations: Record<Language, Record<string, string>> = {
         // Contact
         'contact.text': 'I\'d love to hear from you! Want to hire me? or simply wanna chat? Feel free to reach out by email, or connect with me on linkedin.',
 
+        // Links
+        'links.blogPrompt': 'want to read my thoughts?',
+        'links.blogLink': 'check out my blogs here',
+        'links.artPrompt': 'interested in my creative work?',
+        'links.artLink': 'check out my art here',
+
         // Navigation
         'nav.home': 'Home',
         'nav.draw': 'Draw',
@@ -248,6 +254,12 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Contact
         'contact.text': '我很想听到你的声音！想雇用我？还是只是想聊天？随时通过电子邮件联系我，或在linkedin上与我联系。',
+
+        // Links
+        'links.blogPrompt': '想要阅读我的想法吗？',
+        'links.blogLink': '在这里查看我的博客',
+        'links.artPrompt': '对我的创意作品感兴趣吗？',
+        'links.artLink': '在这里查看我的艺术作品',
 
         // Navigation
         'nav.home': '首页',

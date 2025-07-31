@@ -12,7 +12,7 @@ import Script from 'next/script';
 
 import { LanguageProvider } from '@/contexts/LanguageContext';
 
-import NavigationButtons from '@/components/NavigationButtons';
+
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -58,8 +58,7 @@ export default function RootLayout({
               `,
             }}
           />
-          {/* Navigation buttons */}
-          <NavigationButtons />
+
 
           <Header />
           {children}

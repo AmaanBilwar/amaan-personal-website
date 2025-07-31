@@ -226,20 +226,46 @@ export default function Home() {
             </a>
             {t('contact.text').split('linkedin')[1]}
           </p>
-          <div className="flex items-center gap-2 justify-start mt-6 max-w-2xl">
-            {/* Left Arrow */}
-            <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-            <a href="https://www.sydeb.me/" target="_blank" rel="noopener noreferrer" className="group">
-              <img src="/white.svg" alt="White SVG Pattern" className="w-6 h-6 opacity-60 group-hover:scale-125 group-hover:opacity-100 transition-all duration-200" />
-            </a>
-            {/* Right Arrow */}
-            <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-          </div>
         </section>
+
+        {/* Links to blogs and art */}
+        <section className="mt-10 mb-20 font-minecraft">
+          <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-4">
+            {t('links.blogPrompt')} {' '}
+            <a
+              href="https://substack.com/home/post/p-168775395"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
+            >
+              {t('links.blogLink')}
+            </a>
+          </p>
+          <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
+            {t('links.artPrompt')} {' '}
+            <a
+              href="/draw"
+              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
+            >
+              {t('links.artLink')}
+            </a>
+          </p>
+        </section>
+
+        {/* Navigation arrows */}
+        <div className="flex items-center gap-2 justify-start mt-10 mb-10 max-w-2xl">
+          {/* Left Arrow */}
+          <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </a>
+          <a href="https://www.sydeb.me/" target="_blank" rel="noopener noreferrer" className="group">
+            <img src="/white.svg" alt="White SVG Pattern" className="w-6 h-6 opacity-60 group-hover:scale-125 group-hover:opacity-100 transition-all duration-200" />
+          </a>
+          {/* Right Arrow */}
+          <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </a>
+        </div>
 
 
       </div>

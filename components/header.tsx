@@ -41,7 +41,7 @@ export default function Header() {
         </div>
 
         {/* Navigation - Show all links */}
-        <nav className="flex items-center flex-1 ml-2">
+        <nav className="flex items-center flex-1 ml-0.5">
           <div className="flex gap-1.5 md:gap-4 items-center">
             <a href="mailto:nicholas.chen243@gmail.com" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors hover:scale-110 transition-transform duration-200">{t('nav.contact')}</a>
             <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors hover:scale-110 transition-transform duration-200">{t('nav.linkedin')}</a>

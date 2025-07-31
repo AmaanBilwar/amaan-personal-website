@@ -238,6 +238,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
+              <img src="/substack.png" alt="Substack" className="inline w-4 h-4 mr-1" />
               {t('links.blogLink')}
             </a>
           </p>
@@ -247,6 +248,7 @@ export default function Home() {
               href="/draw"
               className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
             >
+              <img src="/artlogo.png" alt="Art" className="inline w-4 h-4 mr-1" />
               {t('links.artLink')}
             </a>
           </p>

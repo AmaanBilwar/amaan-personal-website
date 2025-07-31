@@ -6,7 +6,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/header';
 import Link from 'next/link';
-import Footer from '@/components/footer/footer';
+
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 
@@ -63,7 +63,7 @@ export default function RootLayout({
 
           <Header />
           {children}
-          <Footer />
+
         </body>
       </html>
     </LanguageProvider>

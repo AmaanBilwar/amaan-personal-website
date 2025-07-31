@@ -14,7 +14,7 @@ export default function NavigationButtons() {
             {pathname !== '/draw' && (
                 <Link
                     href="/draw"
-                    className="fixed bottom-6 right-6 px-5 py-3 bg-[#232323] border border-stone-500 text-white rounded-full flex items-center justify-center text-base shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2 hover:scale-110 transition-transform duration-200"
+                    className="fixed bottom-6 right-6 px-5 py-3 bg-[#232323] border border-stone-500 text-white rounded-full flex items-center justify-center text-[9px] md:text-sm font-minecraft uppercase tracking-widest shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2 hover:scale-110 transition-transform duration-200"
                     title={t('nav.draw.title')}
                 >
                     <span>{t('nav.draw')}</span>
@@ -26,7 +26,7 @@ export default function NavigationButtons() {
                 href="https://substack.com/home/post/p-168775395"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="fixed bottom-6 left-6 px-5 py-3 bg-[#232323] border border-stone-500 text-white rounded-full flex items-center justify-center text-base shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2 hover:scale-110 transition-transform duration-200"
+                className="fixed bottom-6 left-6 px-5 py-3 bg-[#232323] border border-stone-500 text-white rounded-full flex items-center justify-center text-[9px] md:text-sm font-minecraft uppercase tracking-widest shadow-lg opacity-90 hover:opacity-100 transition-all duration-300 z-50 gap-2 hover:scale-110 transition-transform duration-200"
                 title={t('nav.blogs.title')}
             >
                 <span>{t('nav.blogs')}</span>

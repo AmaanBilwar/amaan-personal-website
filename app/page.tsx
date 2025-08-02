@@ -235,7 +235,7 @@ export default function Home() {
           <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-2">
             {t('links.blogPrompt')} {' '}
             <a
-              href="https://substack.com/home/post/p-168775395"
+              href="https://nicholaschen1.substack.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110 group"

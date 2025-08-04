@@ -213,8 +213,9 @@ export default function Home() {
             {t('contact.text').split('email')[0]}
             <a
               href="mailto:nicholas.chen243@gmail.com"
-              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
+              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110 group"
             >
+              <img src="/gmail.jpg" alt="Gmail" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />
               email
             </a>
             {t('contact.text').split('linkedin')[0].split('email')[1]}
@@ -222,8 +223,9 @@ export default function Home() {
               href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110"
+              className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110 group"
             >
+              <img src="/linkedin2.png" alt="LinkedIn" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />
               linkedin
             </a>
             {t('contact.text').split('linkedin')[1]}

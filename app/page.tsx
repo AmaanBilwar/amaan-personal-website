@@ -62,7 +62,7 @@ export default function Home() {
           {displayText}
           <span className="animate-pulse">|</span>
         </h1>
-        <div className="list-disc list-inside text-xs text-stone-400 space-y-1">
+        <div className="text-xs text-stone-400 space-y-1">
           <p className="text-sm text-stone-400">
             {(() => {
               const text = t('hero.location');
@@ -142,10 +142,10 @@ export default function Home() {
           <p className="mb-4 text-stone-300">{t('hero.currently')}</p>
           <ul className="text-sm text-stone-400 space-y-1">
             <li>
-              > {t('hero.current1').split('systems design engineering')[0]}<a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a>{t('hero.current1').split('university of waterloo')[0].split('systems design engineering')[1]}<a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110 group"><img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />university of waterloo</a>
+              {'>'} {t('hero.current1').split('systems design engineering')[0]}<a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">systems design engineering</a>{t('hero.current1').split('university of waterloo')[0].split('systems design engineering')[1]}<a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110 group"><img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />university of waterloo</a>
             </li>
             <li>
-              > {t('hero.current2').split('textql')[0]}<a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110 group"><img src="/textql.jpg" alt="TextQL" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a>{t('hero.current2').split('nyc')[1]}
+              {'>'} {t('hero.current2').split('textql')[0]}<a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110 group"><img src="/textql.jpg" alt="TextQL" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">nyc</a>{t('hero.current2').split('nyc')[1]}
             </li>
 
 
@@ -160,7 +160,7 @@ export default function Home() {
               <p className="mb-2 text-stone-300">{t('previously.title')}</p>
               <ul className="text-sm text-stone-400 space-y-1">
                 <li>
-                  > {t('previously.item1').split('ownr')[0]}
+                  {'>'} {t('previously.item1').split('ownr')[0]}
                   <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110 group">
                     <img src="/ownrco_logo.jpeg" alt="Ownr" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />
                     ownr
@@ -168,7 +168,7 @@ export default function Home() {
                   {t('previously.item1').split('ownr')[1]}
                 </li>
                 <li>
-                  > {t('previously.item2').split('rbc')[0]}
+                  {'>'} {t('previously.item2').split('rbc')[0]}
                   <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110 group">
                     <img src="/rbc.jpeg" alt="RBC" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />
                     rbc
@@ -184,20 +184,20 @@ export default function Home() {
               <p className="mb-2 text-stone-300">{t('projects.title')}</p>
               <ul className="text-sm text-stone-400 space-y-1">
                 <li>
-                  > <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - {t('projects.diffDigest')}
+                  {'>'} <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - {t('projects.diffDigest')}
                 </li>
                 <li>
-                  > <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - {t('projects.sqlParser')}
+                  {'>'} <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - {t('projects.sqlParser')}
                 </li>
 
                 <li>
-                  > <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - {t('projects.dependabot')}
+                  {'>'} <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - {t('projects.dependabot')}
                 </li>
                 <li>
-                  > <a href="https://github.com/enxilium/posture-checker-robot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">fernando</a> - {t('projects.fernando')}
+                  {'>'} <a href="https://github.com/enxilium/posture-checker-robot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">fernando</a> - {t('projects.fernando')}
                 </li>
                 <li>
-                  > <a href="https://github.com/DerrickHa/ht6" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">basketbin</a> - {t('projects.basketbin')}
+                  {'>'} <a href="https://github.com/DerrickHa/ht6" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">basketbin</a> - {t('projects.basketbin')}
                 </li>
               </ul>
             </div>

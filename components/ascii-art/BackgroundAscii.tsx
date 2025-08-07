@@ -68,7 +68,7 @@ const BackgroundAscii: React.FC = () => {
     return (
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
             <pre
-                className="absolute top-0 -right-32 w-full h-full font-mono text-xs leading-tight whitespace-pre opacity-20 text-stone-400 select-none transform scale-100 origin-top-right"
+                className="absolute top-0 left-1/2 transform -translate-x-1/2 md:left-auto md:translate-x-0 md:-right-32 w-full h-full font-mono text-xs leading-tight whitespace-pre opacity-20 text-stone-400 select-none scale-75 md:scale-100 origin-top md:origin-top-right"
                 style={{
                     fontFamily: 'monospace',
                     letterSpacing: '0',

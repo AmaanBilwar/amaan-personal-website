@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[85%] lg:w-[80%] xl:w-[70%]">
-      <div className="bg-black/10 backdrop-blur-md border border-white/20 rounded-full px-3 md:px-8 py-2 md:py-3 flex items-center gap-2 md:gap-6 max-w-full">
+      <div className="bg-gray-400/12 backdrop-blur-md border border-white/20 rounded-full px-3 md:px-8 py-2 md:py-3 flex items-center gap-2 md:gap-6 max-w-full">
         {/* Logo */}
         <div className="relative group flex-shrink-0">
           <Link

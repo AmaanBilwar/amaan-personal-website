@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 const StaticFlowers = () => {
     const [isAtBottom, setIsAtBottom] = useState(false);
+    const [showWaveAnimation, setShowWaveAnimation] = useState(false);
 
     const handleScroll = useCallback(() => {
         const scrollTop = window.pageYOffset;
@@ -21,9 +22,19 @@ const StaticFlowers = () => {
             setIsAtBottom(false);
         }
 
+        // Check if we're at the very bottom (within 5px) for wave animation
+        const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+        const atVeryBottom = distanceFromBottom <= 5;
+
+        if (atVeryBottom && !showWaveAnimation) {
+            setShowWaveAnimation(true);
+            // Reset wave animation after it completes (3 seconds)
+            setTimeout(() => setShowWaveAnimation(false), 3000);
+        }
+
         // Debug logging
-        console.log('Scroll %:', Math.round(scrollPercentage * 100), 'isAtBottom:', isAtBottom);
-    }, [isAtBottom]);
+        console.log('Scroll %:', Math.round(scrollPercentage * 100), 'isAtBottom:', isAtBottom, 'waveAnimation:', showWaveAnimation);
+    }, [isAtBottom, showWaveAnimation]);
 
     useEffect(() => {
         // Throttle scroll events to reduce glitchiness
@@ -54,11 +65,15 @@ const StaticFlowers = () => {
                         key={i}
                         src="/Allium.webp"
                         alt="Purple flower"
-                        className="object-contain"
+                        className={`object-contain transition-transform duration-300 ${showWaveAnimation ? 'animate-bounce' : ''
+                            }`}
                         style={{
                             width: '28px',
                             height: '32px',
-                            filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                            filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))',
+                            animationDelay: showWaveAnimation ? `${i * 0.1}s` : '0s',
+                            animationDuration: showWaveAnimation ? '0.6s' : '0s',
+                            animationIterationCount: showWaveAnimation ? '3' : '0'
                         }}
                     />
                 ))}

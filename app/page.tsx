@@ -4,6 +4,7 @@ import BackgroundAscii from '@/components/ascii-art/BackgroundAscii';
 import ScrollBottomAnimation from '@/components/ScrollBottomAnimation';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CustomScrollAnimatedSvg from '@/components/animated/CustomScrollAnimatedSvg';
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
@@ -277,11 +278,11 @@ export default function Home() {
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </a>
           </div>
-
-
-
-
         </div>
+        {/* Animated Drawing Sections */}
+        <div className="mt-20 mb-32 space-y-16">
+        </div>
+
       </main>
     </>
   );

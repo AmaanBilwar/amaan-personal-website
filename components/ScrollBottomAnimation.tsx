@@ -61,8 +61,8 @@ const ScrollBottomAnimation = () => {
             // Calculate how close to the bottom we are
             const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
 
-            // Show animation if we're within 50px of the bottom (more generous)
-            const shouldShow = distanceFromBottom <= 50;
+            // Show animation if we're within 200px of the bottom (much more generous)
+            const shouldShow = distanceFromBottom <= 200;
 
             if (shouldShow && !isVisible) {
                 setIsVisible(true);
@@ -87,7 +87,7 @@ const ScrollBottomAnimation = () => {
     if (!isVisible) return null;
 
     return (
-        <div className={`fixed bottom-0 left-0 w-full h-32 pointer-events-none z-50 transition-all duration-300 ${isAnimating ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        <div className={`fixed bottom-0 left-0 w-full h-48 pointer-events-none z-50 transition-all duration-300 ${isAnimating ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
             {/* Animated flower garden */}
             <div className="relative w-full h-full overflow-hidden">
@@ -96,46 +96,27 @@ const ScrollBottomAnimation = () => {
 
                 {/* Beautiful Allium Flowers Across the Screen! 🌸✨ */}
 
-                {/* Main row of flowers */}
-                {renderFlowerImage(flowerConfigs[0], 0, { x: 80, y: 15 }, 0, isAnimating)}
-                {renderFlowerImage(flowerConfigs[1], 1, { x: 160, y: 20 }, 0.2, isAnimating)}
-                {renderFlowerImage(flowerConfigs[2], 2, { x: 240, y: 15 }, 0.4, isAnimating)}
-                {renderFlowerImage(flowerConfigs[3], 3, { x: 320, y: 18 }, 0.6, isAnimating)}
-                {renderFlowerImage(flowerConfigs[4], 4, { x: 400, y: 22 }, 0.8, isAnimating)}
-                {renderFlowerImage(flowerConfigs[5], 5, { x: 480, y: 15 }, 1.0, isAnimating)}
-                {renderFlowerImage(flowerConfigs[6], 6, { x: 560, y: 20 }, 1.2, isAnimating)}
-                {renderFlowerImage(flowerConfigs[0], 7, { x: 640, y: 15 }, 1.4, isAnimating)}
-                {renderFlowerImage(flowerConfigs[1], 8, { x: 720, y: 18 }, 1.6, isAnimating)}
-                {renderFlowerImage(flowerConfigs[2], 9, { x: 800, y: 22 }, 1.8, isAnimating)}
-                {renderFlowerImage(flowerConfigs[3], 10, { x: 880, y: 15 }, 2.0, isAnimating)}
-                {renderFlowerImage(flowerConfigs[4], 11, { x: 960, y: 20 }, 2.2, isAnimating)}
-                {renderFlowerImage(flowerConfigs[5], 12, { x: 1040, y: 15 }, 2.4, isAnimating)}
-                {renderFlowerImage(flowerConfigs[6], 13, { x: 1120, y: 18 }, 2.6, isAnimating)}
-                {renderFlowerImage(flowerConfigs[0], 14, { x: 1200, y: 22 }, 2.8, isAnimating)}
-                {renderFlowerImage(flowerConfigs[1], 15, { x: 1280, y: 15 }, 3.0, isAnimating)}
-                {renderFlowerImage(flowerConfigs[2], 16, { x: 1360, y: 20 }, 3.2, isAnimating)}
-                {renderFlowerImage(flowerConfigs[3], 17, { x: 1440, y: 15 }, 3.4, isAnimating)}
+                {/* Main row of flowers - all same size */}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 0, { x: 80, y: 35 }, 0, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 1, { x: 160, y: 35 }, 0.2, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 2, { x: 240, y: 35 }, 0.4, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 3, { x: 320, y: 35 }, 0.6, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 4, { x: 400, y: 35 }, 0.8, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 5, { x: 480, y: 35 }, 1.0, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 6, { x: 560, y: 35 }, 1.2, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 7, { x: 640, y: 35 }, 1.4, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 8, { x: 720, y: 35 }, 1.6, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 9, { x: 800, y: 35 }, 1.8, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 10, { x: 880, y: 35 }, 2.0, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 11, { x: 960, y: 35 }, 2.2, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 12, { x: 1040, y: 35 }, 2.4, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 13, { x: 1120, y: 35 }, 2.6, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 14, { x: 1200, y: 35 }, 2.8, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 15, { x: 1280, y: 35 }, 3.0, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 16, { x: 1360, y: 35 }, 3.2, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 17, { x: 1440, y: 35 }, 3.4, isAnimating)}
 
-                {/* Secondary scattered flowers */}
-                {renderFlowerImage({ ...flowerConfigs[5], scale: 0.6 }, 18, { x: 40, y: 8 }, 0.1, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[0], scale: 0.7 }, 19, { x: 120, y: 5 }, 0.3, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[2], scale: 0.6 }, 20, { x: 200, y: 10 }, 0.5, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[1], scale: 0.8 }, 21, { x: 280, y: 3 }, 0.7, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[3], scale: 0.6 }, 22, { x: 360, y: 8 }, 0.9, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[4], scale: 0.7 }, 23, { x: 440, y: 5 }, 1.1, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[6], scale: 0.6 }, 24, { x: 520, y: 10 }, 1.3, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[0], scale: 0.8 }, 25, { x: 600, y: 3 }, 1.5, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[2], scale: 0.6 }, 26, { x: 680, y: 8 }, 1.7, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[1], scale: 0.7 }, 27, { x: 760, y: 5 }, 1.9, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[3], scale: 0.6 }, 28, { x: 840, y: 10 }, 2.1, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[4], scale: 0.8 }, 29, { x: 920, y: 3 }, 2.3, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[5], scale: 0.6 }, 30, { x: 1000, y: 8 }, 2.5, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[6], scale: 0.7 }, 31, { x: 1080, y: 5 }, 2.7, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[0], scale: 0.6 }, 32, { x: 1160, y: 10 }, 2.9, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[1], scale: 0.8 }, 33, { x: 1240, y: 3 }, 3.1, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[2], scale: 0.6 }, 34, { x: 1320, y: 8 }, 3.3, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[3], scale: 0.7 }, 35, { x: 1400, y: 5 }, 3.5, isAnimating)}
-                {renderFlowerImage({ ...flowerConfigs[4], scale: 0.6 }, 36, { x: 1480, y: 10 }, 3.7, isAnimating)}
+
 
                 {/* Floating flower particles */}
                 <div className={`absolute inset-0 transition-all duration-1000 ${isAnimating ? 'opacity-100' : 'opacity-0'}`}>
@@ -145,7 +126,7 @@ const ScrollBottomAnimation = () => {
                             className="absolute animate-bounce opacity-20"
                             style={{
                                 left: `${10 + (i * 12)}%`,
-                                bottom: `${20 + (i % 3) * 15}px`,
+                                bottom: `${50 + (i % 3) * 20}px`,
                                 animationDelay: `${i * 0.5}s`,
                                 animationDuration: '6s',
                             }}

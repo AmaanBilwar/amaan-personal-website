@@ -4,7 +4,6 @@ import BackgroundAscii from '@/components/ascii-art/BackgroundAscii';
 import ScrollBottomAnimation from '@/components/ScrollBottomAnimation';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import CustomScrollAnimatedSvg from '@/components/animated/CustomScrollAnimatedSvg';
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
@@ -61,9 +60,9 @@ export default function Home() {
     <>
       <BackgroundAscii />
       <ScrollBottomAnimation />
-      <main className="flex min-h-screen flex-col items-center p-6 md:p-24 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
+      <main className="flex min-h-screen flex-col items-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
         {/* Hero Section */}
-        <div className="max-w-3xl w-full space-y-4 md:space-y-4 mb-10 md:mb-16 pt-24 md:pt-16 mx-auto md:mx-0 md:ml-16">
+        <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-12 md:pt-8 mx-auto md:mx-0 md:ml-16">
           <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft min-h-[3.5rem]">
             {displayText}
             <span className="animate-pulse">|</span>
@@ -160,8 +159,8 @@ export default function Home() {
 
 
 
-          <div className="h-auto min-h-[150px] md:min-h-[120px]">
-            <div className="mt-8 space-y-6">
+          <div className="h-auto min-h-[80px] md:min-h-[60px]">
+            <div className="mt-4 space-y-3">
               <div>
                 <p className="mb-2 text-stone-300">{t('previously.title')}</p>
                 <ul className="text-sm text-stone-400 space-y-1">
@@ -214,7 +213,7 @@ export default function Home() {
 
           <SearchBar />
 
-          <section className="mt-10 -mb-6 font-minecraft">
+          <section className="mt-6 -mb-4 font-minecraft">
             <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
               {t('contact.text').split('email')[0]}
               <a
@@ -239,7 +238,7 @@ export default function Home() {
           </section>
 
           {/* Links to blogs and art */}
-          <section className="mt-10 mb-20 font-minecraft mb-10">
+          <section className="mt-6 mb-8 font-minecraft">
             <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-2">
               {t('links.blogPrompt')} {' '}
               <a
@@ -265,7 +264,7 @@ export default function Home() {
           </section>
 
           {/* Navigation arrows */}
-          <div className="flex items-center gap-2 justify-start mt-20 mb-10 max-w-2xl">
+          <div className="flex items-center gap-2 justify-start mt-8 mb-6 max-w-2xl">
             {/* Left Arrow */}
             <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -280,7 +279,7 @@ export default function Home() {
           </div>
         </div>
         {/* Animated Drawing Sections */}
-        <div className="mt-20 mb-32 space-y-16">
+        <div className="mt-8 mb-12 space-y-8">
         </div>
 
       </main>

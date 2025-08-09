@@ -1,7 +1,7 @@
 'use client';
 import SearchBar from '@/components/search/search';
 import BackgroundAscii from '@/components/ascii-art/BackgroundAscii';
-import ScrollBottomAnimation from '@/components/ScrollBottomAnimation';
+import StaticFlowers from '@/components/ScrollBottomAnimation';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import dynamic from 'next/dynamic';
@@ -81,7 +81,6 @@ export default function Home() {
   return (
     <>
       <BackgroundAscii />
-      <ScrollBottomAnimation />
       <main className="flex min-h-screen flex-col items-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
         {/* Hero Section */}
         <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
@@ -299,6 +298,9 @@ export default function Home() {
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </a>
           </div>
+
+          {/* Static Flowers - at the very bottom */}
+          <StaticFlowers />
         </div>
         {/* Animated Drawing Sections */}
         <div className="mt-8 mb-12 space-y-8">

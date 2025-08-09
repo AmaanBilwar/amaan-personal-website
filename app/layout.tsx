@@ -5,7 +5,6 @@ import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/header';
-import Link from 'next/link';
 
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';

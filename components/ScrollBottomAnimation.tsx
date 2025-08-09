@@ -12,8 +12,11 @@ const StaticFlowers = () => {
         // Calculate scroll percentage
         const scrollPercentage = scrollTop / (documentHeight - windowHeight);
 
-        // Use a more generous threshold and add some hysteresis to prevent flickering
-        const threshold = 0.3; // Trigger at 30% down
+        // Check if we're on mobile
+        const isMobile = window.innerWidth <= 768;
+
+        // Use different thresholds for mobile vs desktop
+        const threshold = isMobile ? 0.7 : 0.3; // Mobile: 70% down, Desktop: 30% down
         const hysteresis = 0.02; // 2% buffer zone (smaller for faster response)
 
         if (!isAtBottom && scrollPercentage > threshold) {

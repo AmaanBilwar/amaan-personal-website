@@ -275,7 +275,9 @@ export default function Home() {
             <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
               {t('links.artPrompt')} {' '}
               <a
-                href="/draw"
+                href="https://nicholaschen243.wixsite.com/nicholas-chen"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-stone-400 underline hover:text-stone-100 font-minecraft inline-block transform transition-transform duration-200 hover:scale-110 group"
               >
                 <img src="/artlogo.png" alt="Art" className="inline w-4 h-4 mr-1 group-hover:scale-110 transition-transform duration-200" />

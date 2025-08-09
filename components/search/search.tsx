@@ -266,7 +266,7 @@ export default function SearchBar() {
           <input
             type="text"
             placeholder={t('search.placeholder')}
-            className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-transparent text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
+            className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-[#1a1a1a] text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />

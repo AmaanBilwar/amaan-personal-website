@@ -95,7 +95,7 @@ const ScrollBottomAnimation = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent opacity-80" />
 
                 {/* Beautiful Allium Flowers Across the Screen! 🌸✨ */}
-                
+
                 {/* Main row of flowers */}
                 {renderFlowerImage(flowerConfigs[0], 0, { x: 80, y: 15 }, 0, isAnimating)}
                 {renderFlowerImage(flowerConfigs[1], 1, { x: 160, y: 20 }, 0.2, isAnimating)}

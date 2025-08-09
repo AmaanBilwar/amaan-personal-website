@@ -72,10 +72,7 @@ body {
     /* ... other dark theme variables ... */
   }
 
-  /* Ensure header uses the same background */
-  header {
-    background-color: hsl(var(--background)) !important;
-  }
+
 
   * {
     @apply border-border;

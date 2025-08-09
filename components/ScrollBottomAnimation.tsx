@@ -1,24 +1,50 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const StaticFlowers = () => {
     const [isAtBottom, setIsAtBottom] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollHeight = document.documentElement.scrollHeight;
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const clientHeight = window.innerHeight;
+    const handleScroll = useCallback(() => {
+        const scrollTop = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
 
-            // Check if we're near the bottom (within 100px)
-            const nearBottom = scrollHeight - (scrollTop + clientHeight) <= 100;
-            setIsAtBottom(nearBottom);
+        // Calculate scroll percentage
+        const scrollPercentage = scrollTop / (documentHeight - windowHeight);
+
+        // Use a more generous threshold and add some hysteresis to prevent flickering
+        const threshold = 0.3; // Trigger at 30% down
+        const hysteresis = 0.02; // 2% buffer zone (smaller for faster response)
+
+        if (!isAtBottom && scrollPercentage > threshold) {
+            setIsAtBottom(true);
+        } else if (isAtBottom && scrollPercentage < (threshold - hysteresis)) {
+            setIsAtBottom(false);
+        }
+
+        // Debug logging
+        console.log('Scroll %:', Math.round(scrollPercentage * 100), 'isAtBottom:', isAtBottom);
+    }, [isAtBottom]);
+
+    useEffect(() => {
+        // Throttle scroll events to reduce glitchiness
+        let ticking = false;
+        const throttledScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('scroll', throttledScroll, { passive: true });
         handleScroll(); // Check initial position
 
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        return () => {
+            window.removeEventListener('scroll', throttledScroll);
+        };
+    }, [handleScroll]);
 
     return (
         <div className={`${isAtBottom ? 'fixed bottom-0 left-0 w-full flex justify-center' : 'relative w-full max-w-2xl flex justify-start mx-auto -ml-3'} items-center pb-4 pointer-events-none z-50`}>

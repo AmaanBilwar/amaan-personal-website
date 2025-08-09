@@ -4,6 +4,7 @@ import BackgroundAscii from '@/components/ascii-art/BackgroundAscii';
 import ScrollBottomAnimation from '@/components/ScrollBottomAnimation';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import dynamic from 'next/dynamic';
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
@@ -11,16 +12,25 @@ export default function Home() {
   // Accordion state for each section
   const [openFuture, setOpenFuture] = useState(false);
 
-  // Typewriter effect state
-  const [displayText, setDisplayText] = useState('');
-  const [phase, setPhase] = useState<'typingFull' | 'backspacingFull' | 'typingShort' | 'backspacingShort'>('typingFull');
-  const [charIndex, setCharIndex] = useState(0);
+  // Hydration safety
+  const [mounted, setMounted] = useState(false);
 
+  // Typewriter effect state
   const baseText = t('hero.greeting');
   const fullName = t('hero.name.full');
   const shortName = t('hero.name.short');
 
+  const [displayText, setDisplayText] = useState(baseText); // Initialize with base text to prevent hydration mismatch
+  const [phase, setPhase] = useState<'typingFull' | 'backspacingFull' | 'typingShort' | 'backspacingShort'>('typingFull');
+  const [charIndex, setCharIndex] = useState(0);
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return; // Only run animation after component mounts
+
     let timeout: NodeJS.Timeout | undefined;
     if (phase === 'typingFull') {
       if (charIndex <= fullName.length) {
@@ -54,7 +64,19 @@ export default function Home() {
       }
     }
     return () => clearTimeout(timeout);
-  }, [phase, charIndex]);
+  }, [mounted, phase, charIndex, baseText, fullName, shortName]);
+
+  if (!mounted) {
+    return (
+      <main className="flex min-h-screen flex-col items-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
+        <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-12 md:pt-8 mx-auto md:mx-0 md:ml-16">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft min-h-[3.5rem]">
+            {baseText}
+          </h1>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <>
@@ -65,7 +87,7 @@ export default function Home() {
         <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-12 md:pt-8 mx-auto md:mx-0 md:ml-16">
           <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft min-h-[3.5rem]">
             {displayText}
-            <span className="animate-pulse">|</span>
+            {mounted && <span className="animate-pulse">|</span>}
           </h1>
           <div className="text-xs text-stone-400 space-y-1">
             <p className="text-sm text-stone-400">

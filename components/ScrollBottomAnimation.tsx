@@ -22,8 +22,8 @@ const renderFlowerImage = (config: typeof flowerConfigs[0], index: number, posit
             style={{
                 left: `${position.x}px`,
                 bottom: `${position.y}px`,
-                transform: `scale(${config.scale})`,
-                opacity: config.opacity,
+                transform: `scale(1.0)`, // Force consistent scale for all flowers
+                opacity: 1.0, // Force consistent opacity for all flowers
                 animationDelay: `${baseDelay}s`,
                 transformOrigin: 'bottom center'
             }}
@@ -31,8 +31,14 @@ const renderFlowerImage = (config: typeof flowerConfigs[0], index: number, posit
             <img
                 src="/Allium.webp"
                 alt="Purple flower"
-                className="w-12 h-12 object-contain"
+                className="object-contain"
                 style={{
+                    width: '48px',
+                    height: '48px',
+                    minWidth: '48px',
+                    minHeight: '48px',
+                    maxWidth: '48px',
+                    maxHeight: '48px',
                     filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
                 }}
             />
@@ -43,8 +49,15 @@ const renderFlowerImage = (config: typeof flowerConfigs[0], index: number, posit
 const ScrollBottomAnimation = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (!mounted) return;
+
         const handleScroll = () => {
             // Get scroll position using multiple methods for compatibility
             const scrollHeight = Math.max(
@@ -82,9 +95,9 @@ const ScrollBottomAnimation = () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleScroll);
         };
-    }, [isVisible]);
+    }, [mounted, isVisible]);
 
-    if (!isVisible) return null;
+    if (!mounted || !isVisible) return null;
 
     return (
         <div className={`fixed bottom-0 left-0 w-full h-48 pointer-events-none z-50 transition-all duration-300 ${isAnimating ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -96,25 +109,37 @@ const ScrollBottomAnimation = () => {
 
                 {/* Beautiful Allium Flowers Across the Screen! 🌸✨ */}
 
-                {/* Main row of flowers - all same size */}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 0, { x: 80, y: 35 }, 0, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 1, { x: 160, y: 35 }, 0.2, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 2, { x: 240, y: 35 }, 0.4, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 3, { x: 320, y: 35 }, 0.6, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 4, { x: 400, y: 35 }, 0.8, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 5, { x: 480, y: 35 }, 1.0, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 6, { x: 560, y: 35 }, 1.2, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 7, { x: 640, y: 35 }, 1.4, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 8, { x: 720, y: 35 }, 1.6, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 9, { x: 800, y: 35 }, 1.8, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 10, { x: 880, y: 35 }, 2.0, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 11, { x: 960, y: 35 }, 2.2, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 12, { x: 1040, y: 35 }, 2.4, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 13, { x: 1120, y: 35 }, 2.6, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 14, { x: 1200, y: 35 }, 2.8, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 15, { x: 1280, y: 35 }, 3.0, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 16, { x: 1360, y: 35 }, 3.2, isAnimating)}
-                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 17, { x: 1440, y: 35 }, 3.4, isAnimating)}
+                {/* Main row of flowers - all same size filling entire bottom */}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 0, { x: 40, y: 35 }, 0, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 1, { x: 110, y: 35 }, 0.1, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 2, { x: 180, y: 35 }, 0.2, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 3, { x: 250, y: 35 }, 0.3, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 4, { x: 320, y: 35 }, 0.4, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 5, { x: 390, y: 35 }, 0.5, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 6, { x: 460, y: 35 }, 0.6, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 7, { x: 530, y: 35 }, 0.7, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 8, { x: 600, y: 35 }, 0.8, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 9, { x: 670, y: 35 }, 0.9, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 10, { x: 740, y: 35 }, 1.0, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 11, { x: 810, y: 35 }, 1.1, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 12, { x: 880, y: 35 }, 1.2, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 13, { x: 950, y: 35 }, 1.3, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 14, { x: 1020, y: 35 }, 1.4, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 15, { x: 1090, y: 35 }, 1.5, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 16, { x: 1160, y: 35 }, 1.6, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 17, { x: 1230, y: 35 }, 1.7, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 18, { x: 1300, y: 35 }, 1.8, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 19, { x: 1370, y: 35 }, 1.9, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 20, { x: 1440, y: 35 }, 2.0, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 21, { x: 1510, y: 35 }, 2.1, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 22, { x: 1580, y: 35 }, 2.2, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 23, { x: 1650, y: 35 }, 2.3, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 24, { x: 1720, y: 35 }, 2.4, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 25, { x: 1790, y: 35 }, 2.5, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 26, { x: 1860, y: 35 }, 2.6, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 27, { x: 1930, y: 35 }, 2.7, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 28, { x: 2000, y: 35 }, 2.8, isAnimating)}
+                {renderFlowerImage({ scale: 1.0, opacity: 1.0 }, 29, { x: 2070, y: 35 }, 2.9, isAnimating)}
 
 
 
@@ -134,8 +159,14 @@ const ScrollBottomAnimation = () => {
                             <img
                                 src="/Allium.webp"
                                 alt="Small flower"
-                                className="w-4 h-4 object-contain"
+                                className="object-contain"
                                 style={{
+                                    width: '16px',
+                                    height: '16px',
+                                    minWidth: '16px',
+                                    minHeight: '16px',
+                                    maxWidth: '16px',
+                                    maxHeight: '16px',
                                     filter: 'blur(1px) brightness(1.2)'
                                 }}
                             />

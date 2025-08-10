@@ -234,7 +234,7 @@ export default function Home() {
 
           <SearchBar />
 
-          <section className="mt-6 -mb-4 font-minecraft">
+          <section className="mt-2 -mb-4 font-minecraft">
             <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
               {t('contact.text').split('email')[0]}
               <a
@@ -259,7 +259,7 @@ export default function Home() {
           </section>
 
           {/* Links to blogs and art */}
-          <section className="mt-6 mb-8 font-minecraft">
+          <section className="mt-1 mb-8 font-minecraft">
             <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-2">
               {t('links.blogPrompt')} {' '}
               <a

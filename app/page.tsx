@@ -287,7 +287,7 @@ export default function Home() {
           </section>
 
           {/* Navigation arrows */}
-          <div className="flex items-center gap-2 justify-start mt-8 mb-6 max-w-2xl">
+          <div className="flex items-center gap-2 justify-start mt-24 mb-6 max-w-2xl">
             {/* Left Arrow */}
             <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-all duration-200 group/arrow hover:scale-125 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>

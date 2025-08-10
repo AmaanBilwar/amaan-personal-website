@@ -231,7 +231,7 @@ export default function SearchBar() {
 
       {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
       {(messages.length > 0 || pendingAI || typedAI) && (
-        <div className="max-w-2xl w-full mt-8 mb-6">
+        <div className="max-w-2xl w-full mt-8 mb-12">
           <div className="flex flex-col max-h-[600px] overflow-y-auto border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative font-minecraft">
             {/* Overlay for AI typing, allows scroll/select but blocks input */}
             {(pendingAI || typedAI) && (
@@ -261,7 +261,7 @@ export default function SearchBar() {
         </div>
       )}
 
-      <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20">
+      <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20 mb-12">
         <div className="max-w-2xl flex items-stretch gap-1 w-full">
           <input
             type="text"

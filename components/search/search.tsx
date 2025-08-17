@@ -271,21 +271,21 @@ export default function SearchBar() {
             onChange={(e) => setQuery(e.target.value)}
           />
           {isLoading || !!pendingAI || !!typedAI ? (
-            <div className="h-full px-4 py-4 text-sm bg-white/10 text-white rounded-md flex items-center gap-2 flex-shrink-0 font-minecraft select-none cursor-default min-w-[110px] justify-center">
+            <div className="h-full px-4 py-4 text-sm bg-stone-700 text-white rounded-md flex items-center gap-2 flex-shrink-0 font-minecraft select-none cursor-default min-w-[110px] justify-center">
               <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent inline-block"></span>
               <span>{!!pendingAI || !!typedAI ? t('search.responding') : t('search.thinking')}</span>
             </div>
           ) : (
             <button
               type="submit"
-              className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
+              className="h-full px-4 py-4 text-sm bg-stone-700 hover:bg-stone-600 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
             >
               {t('action.send')}
             </button>
           )}
           <button
             type="button"
-            className="h-full px-4 py-4 text-sm bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
+            className="h-full px-4 py-4 text-sm bg-stone-700 hover:bg-stone-600 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
             onClick={() => {
               if (isLoading || pendingAI || typedAI) {
                 stoppedRef.current = true;

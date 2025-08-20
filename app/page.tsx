@@ -1,6 +1,5 @@
 'use client';
 import SearchBar from '@/components/search/search';
-import BackgroundAscii from '@/components/ascii-art/BackgroundAscii';
 import StaticFlowers from '@/components/ScrollBottomAnimation';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -80,7 +79,6 @@ export default function Home() {
 
   return (
     <>
-      <BackgroundAscii />
       <main className="flex min-h-screen flex-col items-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
         {/* Hero Section */}
         <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">

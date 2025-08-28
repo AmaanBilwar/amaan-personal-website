@@ -134,13 +134,13 @@ export default function SearchBar() {
     return () => chatDiv.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to bottom only when a new AI message is added and user is near bottom
+  // Scroll to bottom when new messages are added and user is near bottom
   useEffect(() => {
     if (!shouldAutoScroll) return;
     if (messages.length === 0) return;
-    const lastMsg = messages[messages.length - 1];
-    if (lastMsg.role === 'assistant') {
-      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const chatDiv = chatContainerRef.current;
+    if (chatDiv) {
+      chatDiv.scrollTop = chatDiv.scrollHeight;
     }
   }, [messages, shouldAutoScroll]);
 
@@ -251,6 +251,7 @@ export default function SearchBar() {
                 {typedAI && (
                   <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
                 )}
+                <div ref={messagesEndRef} />
               </div>
             </div>
           )}

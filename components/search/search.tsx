@@ -41,6 +41,7 @@ export default function SearchBar() {
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
   const stoppedRef = useRef(false);
   const [loadingSymbol, setLoadingSymbol] = useState('*');
+  const [loadingText, setLoadingText] = useState('Orchestrating');
 
   useEffect(() => {
     if (!isLoading && !pendingAI && !typedAI) return;
@@ -50,15 +51,32 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading, pendingAI, typedAI]);
 
-  // Symbol morphing animation
+  // Fun loading text animation
   useEffect(() => {
     if (!isLoading && !pendingAI && !typedAI) return;
-    const symbols = ['*'];
+    const thinkingTexts = [
+      'Pondering', 'Contemplating', 'Ruminating', 'Cogitating', 'Mulling over',
+      'Brainstorming', 'Processing', 'Computing', 'Deliberating', 'Reflecting',
+      'Calculating', 'Analyzing', 'Synthesizing', 'Percolating', 'Marinating',
+      'Digesting', 'Churning', 'Stewing', 'Brewing thoughts', 'Mind-melding',
+      'Brain-storming', 'Neural firing', 'Synapses snapping', 'Neurons dancing'
+    ];
+    const respondingTexts = [
+      'Tomfoolering', 'Shenanigans', 'Crafting', 'Conjuring', 'Concocting',
+      'Fabricating', 'Orchestrating', 'Brewing', 'Assembling', 'Materializing',
+      'Bamboozling', 'Jiggery-pokery', 'Hullabaloo', 'Rigmarole', 'Balderdash',
+      'Flibbertigibbet', 'Discombobulating', 'Hornswoggling', 'Poppycock', 'Fiddle-faddle',
+      'Kerfuffle-ing', 'Brouhaha-ing', 'Hullaballoo', 'Gobbledygook', 'Lollygagging',
+      'Dilly-dallying', 'Wishy-washing', 'Flip-flopping', 'Zig-zagging', 'Topsy-turvy-ing'
+    ];
+
+    const texts = (!!pendingAI || !!typedAI) ? respondingTexts : thinkingTexts;
     let index = 0;
+
     const interval = setInterval(() => {
-      setLoadingSymbol(symbols[index % symbols.length]);
+      setLoadingText(texts[index % texts.length]);
       index++;
-    }, 400);
+    }, 600);
     return () => clearInterval(interval);
   }, [isLoading, pendingAI, typedAI]);
 
@@ -285,7 +303,25 @@ export default function SearchBar() {
                   <span className="animate-spin inline-block">
                     {loadingSymbol}
                   </span>
-                  <span>{!!pendingAI || !!typedAI ? 'Responding' : 'Thinking'}</span>
+                  <span
+                    className="relative inline-block"
+                    style={{
+                      background: 'linear-gradient(90deg, #a8a29e 0%, #ffffff 50%, #a8a29e 100%)',
+                      backgroundSize: '200% 100%',
+                      animation: 'shimmerText 2s ease-in-out infinite',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text'
+                    }}
+                  >
+                    {loadingText}
+                  </span>
+                  <style jsx>{`
+                    @keyframes shimmerText {
+                      0% { background-position: -200% 0; }
+                      100% { background-position: 200% 0; }
+                    }
+                  `}</style>
                   <span className="animate-pulse">.</span>
                   <span className="animate-pulse" style={{ animationDelay: '0.3s' }}>.</span>
                   <span className="animate-pulse" style={{ animationDelay: '0.6s' }}>.</span>

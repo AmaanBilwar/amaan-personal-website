@@ -93,9 +93,7 @@ const translations: Record<Language, Record<string, string>> = {
         // Actions
         'action.open': 'OPEN',
         'action.close': 'CLOSE',
-        'action.clear': 'Clear',
         'action.download': 'Download',
-        'action.send': 'Send',
         'action.stop': 'Stop',
 
         // Search
@@ -225,9 +223,7 @@ const translations: Record<Language, Record<string, string>> = {
         // Actions
         'action.open': '打开',
         'action.close': '关闭',
-        'action.clear': '清除',
         'action.download': '下载',
-        'action.send': '发送',
         'action.stop': '停止',
 
         // Search

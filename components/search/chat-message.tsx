@@ -19,14 +19,18 @@ function linkify(text: string) {
 
 export default function ChatMessage({ role, content }: ChatMessageProps) {
     return (
-        <div className={`flex pl-4 pr-4 py-4 items-center font-minecraft ${role === 'assistant' ? 'bg-white/5' : ''}`}>
-            <div className="flex-1 flex items-center">
-                {role === 'assistant' ? (
-                    <p className="text-sm text-stone-300 whitespace-pre-line font-minecraft" dangerouslySetInnerHTML={{ __html: linkify(content) }} />
-                ) : (
-                    <p className="text-sm text-stone-300 whitespace-pre-line font-bold font-minecraft">{content}</p>
-                )}
-            </div>
+        <div className="px-4 py-3 font-mono text-sm bg-[#1a1a1a]">
+            {role === 'assistant' ? (
+                <div className="flex items-start gap-1">
+                    <span className="text-stone-400 font-mono text-sm select-none w-3 text-center">●</span>
+                    <p className="text-stone-300 whitespace-pre-wrap font-mono leading-relaxed flex-1 text-xs" dangerouslySetInnerHTML={{ __html: linkify(content) }} />
+                </div>
+            ) : (
+                <div className="flex items-center gap-1">
+                    <span className="text-stone-400 font-mono text-sm select-none w-3 text-center">{'>'}</span>
+                    <p className="text-stone-300 whitespace-pre-wrap font-mono leading-relaxed text-xs">{content}</p>
+                </div>
+            )}
         </div>
     );
 }

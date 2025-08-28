@@ -40,14 +40,45 @@ export default function SearchBar() {
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
   const stoppedRef = useRef(false);
+  const [loadingSymbol, setLoadingSymbol] = useState('*');
+  const [loadingText, setLoadingText] = useState('Orchestrating');
 
   useEffect(() => {
-    if (!isLoading) return;
+    if (!isLoading && !pendingAI && !typedAI) return;
     const interval = setInterval(() => {
       setDotCount((prev) => (prev % 3) + 1);
     }, 500);
     return () => clearInterval(interval);
-  }, [isLoading]);
+  }, [isLoading, pendingAI, typedAI]);
+
+  // Fun loading text animation
+  useEffect(() => {
+    if (!isLoading && !pendingAI && !typedAI) return;
+    const thinkingTexts = [
+      'Pondering', 'Contemplating', 'Ruminating', 'Cogitating', 'Mulling over',
+      'Brainstorming', 'Processing', 'Computing', 'Deliberating', 'Reflecting',
+      'Calculating', 'Analyzing', 'Synthesizing', 'Percolating', 'Marinating',
+      'Digesting', 'Churning', 'Stewing', 'Brewing thoughts', 'Mind-melding',
+      'Brain-storming', 'Neural firing', 'Synapses snapping', 'Neurons dancing'
+    ];
+    const respondingTexts = [
+      'Tomfoolering', 'Shenanigans', 'Crafting', 'Conjuring', 'Concocting',
+      'Fabricating', 'Orchestrating', 'Brewing', 'Assembling', 'Materializing',
+      'Bamboozling', 'Jiggery-pokery', 'Hullabaloo', 'Rigmarole', 'Balderdash',
+      'Flibbertigibbet', 'Discombobulating', 'Hornswoggling', 'Poppycock', 'Fiddle-faddle',
+      'Kerfuffle-ing', 'Brouhaha-ing', 'Hullaballoo', 'Gobbledygook', 'Lollygagging',
+      'Dilly-dallying', 'Wishy-washing', 'Flip-flopping', 'Zig-zagging', 'Topsy-turvy-ing'
+    ];
+
+    const texts = (!!pendingAI || !!typedAI) ? respondingTexts : thinkingTexts;
+    let index = 0;
+
+    const interval = setInterval(() => {
+      setLoadingText(texts[index % texts.length]);
+      index++;
+    }, 600);
+    return () => clearInterval(interval);
+  }, [isLoading, pendingAI, typedAI]);
 
   // Hydrate all state from localStorage on mount (client only)
   useEffect(() => {
@@ -134,13 +165,13 @@ export default function SearchBar() {
     return () => chatDiv.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to bottom only when a new AI message is added and user is near bottom
+  // Scroll to bottom when new messages are added and user is near bottom
   useEffect(() => {
     if (!shouldAutoScroll) return;
     if (messages.length === 0) return;
-    const lastMsg = messages[messages.length - 1];
-    if (lastMsg.role === 'assistant') {
-      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const chatDiv = chatContainerRef.current;
+    if (chatDiv) {
+      chatDiv.scrollTop = chatDiv.scrollHeight;
     }
   }, [messages, shouldAutoScroll]);
 
@@ -229,82 +260,77 @@ export default function SearchBar() {
       <h2 className="text-lg text-stone-300 mb-4 mt-4 font-minecraft">{t('search.title')}</h2>
 
 
-      {/* Only show chat history area if there are messages, pendingAI, or typedAI */}
-      {(messages.length > 0 || pendingAI || typedAI) && (
-        <div className="max-w-2xl w-full mt-8 mb-6">
-          <div className="flex flex-col max-h-[600px] overflow-y-auto border border-white/30 rounded-lg bg-[#1a1a1a] overflow-hidden relative font-minecraft">
-            {/* Overlay for AI typing, allows scroll/select but blocks input */}
-            {(pendingAI || typedAI) && (
+      {/* Combined terminal interface */}
+      <div className="max-w-2xl w-full mt-4 mb-6">
+        <div className="flex flex-col border border-stone-700 rounded-lg bg-[#1a1a1a] overflow-hidden font-mono">
+          {/* Chat history */}
+          {(messages.length > 0 || pendingAI || typedAI) && (
+            <div className="flex flex-col max-h-[200px] overflow-y-auto">
               <div
-                className="absolute inset-0 z-10 bg-transparent pointer-events-none"
-                aria-hidden="true"
+                className="flex-1 overflow-y-auto ai-chat-scroll"
+                ref={chatContainerRef}
+                style={{ scrollbarGutter: 'stable' }}
+              >
+                {messages.map((message, index) => (
+                  <ChatMessage
+                    key={index}
+                    role={message.role}
+                    content={message.content}
+                  />
+                ))}
+                {/* Typing animation for AI */}
+                {typedAI && (
+                  <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+            </div>
+          )}
+
+          {/* Input area - always visible at bottom */}
+          <form ref={formRef} onSubmit={handleSubmit} className="">
+            <div className="flex items-center gap-1 px-4 py-3">
+              <span className="text-stone-300 font-mono text-sm w-3">{'>'}</span>
+              <input
+                type="text"
+                placeholder={t('search.placeholder')}
+                className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-mono text-xs"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
               />
-            )}
-            <div
-              className="maflex-1 overflow-y-auto ai-chat-scroll"
-              ref={chatContainerRef}
-              style={{ scrollbarGutter: 'stable' }}
-            >
-              {messages.map((message, index) => (
-                <ChatMessage
-                  key={index}
-                  role={message.role}
-                  content={message.content}
-                />
-              ))}
-              {/* Typing animation for AI */}
-              {typedAI && (
-                <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
+              {(isLoading || !!pendingAI || !!typedAI) && (
+                <div className="flex items-center gap-1 text-xs text-stone-400 font-mono">
+                  <span className="animate-spin inline-block">
+                    {loadingSymbol}
+                  </span>
+                  <span
+                    className="relative inline-block"
+                    style={{
+                      background: 'linear-gradient(90deg, #a8a29e 0%, #ffffff 50%, #a8a29e 100%)',
+                      backgroundSize: '200% 100%',
+                      animation: 'shimmerText 2s ease-in-out infinite',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text'
+                    }}
+                  >
+                    {loadingText}
+                  </span>
+                  <style jsx>{`
+                    @keyframes shimmerText {
+                      0% { background-position: -200% 0; }
+                      100% { background-position: 200% 0; }
+                    }
+                  `}</style>
+                  <span className="animate-pulse">.</span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.3s' }}>.</span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.6s' }}>.</span>
+                </div>
               )}
             </div>
-          </div>
+          </form>
         </div>
-      )}
-
-      <form ref={formRef} onSubmit={handleSubmit} className="p-0 relative z-20 mb-6">
-        <div className="max-w-2xl flex items-stretch gap-1 w-full">
-          <input
-            type="text"
-            placeholder={t('search.placeholder')}
-            className="flex-grow min-w-0 pl-4 pr-4 py-2 px-2 rounded-lg border border-white/30 bg-[#1a1a1a] text-white placeholder-stone-400 focus:outline-none focus:ring-0 focus:border-white/60 transition-all font-minecraft"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          {isLoading || !!pendingAI || !!typedAI ? (
-            <div className="h-full px-4 py-4 text-sm bg-stone-700 text-white rounded-md flex items-center gap-2 flex-shrink-0 font-minecraft select-none cursor-default min-w-[110px] justify-center">
-              <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent inline-block"></span>
-              <span>{!!pendingAI || !!typedAI ? t('search.responding') : t('search.thinking')}</span>
-            </div>
-          ) : (
-            <button
-              type="submit"
-              className="h-full px-4 py-4 text-sm bg-stone-700 hover:bg-stone-600 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
-            >
-              {t('action.send')}
-            </button>
-          )}
-          <button
-            type="button"
-            className="h-full px-4 py-4 text-sm bg-stone-700 hover:bg-stone-600 text-white rounded-md transition-colors flex items-center gap-2 flex-shrink-0 hover:scale-110 transition-transform duration-200 font-minecraft"
-            onClick={() => {
-              if (isLoading || pendingAI || typedAI) {
-                stoppedRef.current = true;
-                if (typingTimeout.current) clearTimeout(typingTimeout.current);
-                setPendingAI(null);
-                setTypedAI('');
-                setIsLoading(false);
-                localStorage.removeItem('chat-pendingAI');
-                localStorage.removeItem('chat-typedAI');
-              } else {
-                setMessages([]);
-                localStorage.removeItem('chat-messages');
-              }
-            }}
-          >
-            {isLoading || pendingAI || typedAI ? t('action.stop') : t('action.clear')}
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }

@@ -262,7 +262,7 @@ export default function SearchBar() {
               <input
                 type="text"
                 placeholder={t('search.placeholder')}
-                className="flex-grow bg-transparent text-[#cccccc] placeholder-gray-500 focus:outline-none font-mono text-[11px]"
+                className="flex-grow bg-transparent text-[#cccccc] placeholder-gray-500 focus:outline-none font-mono text-xs"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />

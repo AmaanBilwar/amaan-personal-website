@@ -19,16 +19,16 @@ function linkify(text: string) {
 
 export default function ChatMessage({ role, content }: ChatMessageProps) {
     return (
-        <div className="px-6 py-3 font-mono text-sm bg-[#1a1a1a]">
+        <div className="px-4 py-3 font-mono text-sm bg-[#1a1a1a]">
             {role === 'assistant' ? (
                 <div className="flex items-start gap-2">
                     <span className="text-gray-400 font-mono text-sm select-none">●</span>
-                    <p className="text-gray-200 whitespace-pre-wrap font-mono leading-relaxed flex-1" dangerouslySetInnerHTML={{ __html: linkify(content) }} />
+                    <p className="text-gray-200 whitespace-pre-wrap font-mono leading-relaxed flex-1 text-xs" dangerouslySetInnerHTML={{ __html: linkify(content) }} />
                 </div>
             ) : (
                 <div className="flex items-center gap-2">
                     <span className="text-gray-500 font-mono text-sm select-none">{'>'}</span>
-                    <p className="text-gray-200 whitespace-pre-wrap font-mono leading-relaxed">{content}</p>
+                    <p className="text-gray-200 whitespace-pre-wrap font-mono leading-relaxed text-xs">{content}</p>
                 </div>
             )}
         </div>

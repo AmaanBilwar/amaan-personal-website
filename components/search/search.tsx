@@ -40,14 +40,27 @@ export default function SearchBar() {
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
   const stoppedRef = useRef(false);
+  const [loadingSymbol, setLoadingSymbol] = useState('*');
 
   useEffect(() => {
-    if (!isLoading) return;
+    if (!isLoading && !pendingAI && !typedAI) return;
     const interval = setInterval(() => {
       setDotCount((prev) => (prev % 3) + 1);
     }, 500);
     return () => clearInterval(interval);
-  }, [isLoading]);
+  }, [isLoading, pendingAI, typedAI]);
+
+  // Symbol morphing animation
+  useEffect(() => {
+    if (!isLoading && !pendingAI && !typedAI) return;
+    const symbols = ['*'];
+    let index = 0;
+    const interval = setInterval(() => {
+      setLoadingSymbol(symbols[index % symbols.length]);
+      index++;
+    }, 400);
+    return () => clearInterval(interval);
+  }, [isLoading, pendingAI, typedAI]);
 
   // Hydrate all state from localStorage on mount (client only)
   useEffect(() => {
@@ -230,7 +243,7 @@ export default function SearchBar() {
 
 
       {/* Combined terminal interface */}
-      <div className="max-w-2xl w-full mt-8 mb-6">
+      <div className="max-w-2xl w-full mt-4 mb-6">
         <div className="flex flex-col border border-stone-700 rounded-lg bg-[#1a1a1a] overflow-hidden font-mono">
           {/* Chat history */}
           {(messages.length > 0 || pendingAI || typedAI) && (
@@ -268,9 +281,14 @@ export default function SearchBar() {
                 onChange={(e) => setQuery(e.target.value)}
               />
               {(isLoading || !!pendingAI || !!typedAI) && (
-                <div className="flex items-center gap-2 text-[11px] text-[#cccccc]">
-                  <span className="h-3 w-3 animate-spin rounded-full border border-white border-t-transparent"></span>
-                  <span>{!!pendingAI || !!typedAI ? t('search.responding') : t('search.thinking')}</span>
+                <div className="flex items-center gap-1 text-xs text-stone-400 font-mono">
+                  <span className="animate-spin inline-block">
+                    {loadingSymbol}
+                  </span>
+                  <span>{!!pendingAI || !!typedAI ? 'Responding' : 'Thinking'}</span>
+                  <span className="animate-pulse">.</span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.3s' }}>.</span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.6s' }}>.</span>
                 </div>
               )}
             </div>

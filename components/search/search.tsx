@@ -220,7 +220,7 @@ export default function SearchBar() {
     if (trimmed === '?') {
       const shortcutsMessage = `Available shortcuts:
 • clear - clear chat history
-• ctrl/cmd + V - paste clipboard content`;
+• ctrl/cmd + v - paste clipboard content`;
       setMessages(prev => [
         ...prev,
         { role: 'user', content: '?' },

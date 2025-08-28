@@ -315,7 +315,7 @@ export default function SearchBar() {
               <span className="text-stone-300 font-mono text-sm w-3">{'>'}</span>
               <input
                 type="text"
-                placeholder={`${t('search.placeholder')} (type ? for shortcuts)`}
+                placeholder={t('search.placeholder')}
                 className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-mono text-xs"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -352,6 +352,7 @@ export default function SearchBar() {
             </div>
           </form>
         </div>
+        <p className="text-stone-500 text-xs mt-2 font-mono">Type "?" for shortcuts</p>
       </div>
     </div>
   );

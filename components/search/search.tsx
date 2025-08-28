@@ -208,6 +208,28 @@ export default function SearchBar() {
     const trimmed = query.trim();
     if (!trimmed) return;
 
+    // Check for clear command
+    if (trimmed.toLowerCase() === 'clear') {
+      setMessages([]);
+      setQuery('');
+      localStorage.removeItem('chat-messages');
+      return;
+    }
+
+    // Check for shortcuts command
+    if (trimmed === '?') {
+      const shortcutsMessage = `Available shortcuts:
+• clear - clear chat history
+• ctrl/cmd + V - paste clipboard content`;
+      setMessages(prev => [
+        ...prev,
+        { role: 'user', content: '?' },
+        { role: 'assistant', content: shortcutsMessage }
+      ]);
+      setQuery('');
+      return;
+    }
+
     stoppedRef.current = false;
     // Interrupt current AI response if any
     if (pendingAI || typedAI) {
@@ -293,7 +315,7 @@ export default function SearchBar() {
               <span className="text-stone-300 font-mono text-sm w-3">{'>'}</span>
               <input
                 type="text"
-                placeholder={t('search.placeholder')}
+                placeholder={`${t('search.placeholder')} (type ? for shortcuts)`}
                 className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-mono text-xs"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}

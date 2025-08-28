@@ -34,6 +34,9 @@ export default function RootLayout({
   return (
     <LanguageProvider>
       <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable} font-minecraft`}>
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        </head>
 
         <body
           className={`bg-[#1a1a1a] min-h-screen antialiased font-minecraft`}

@@ -234,7 +234,7 @@ export default function SearchBar() {
         <div className="flex flex-col border border-stone-700 rounded-lg bg-[#1a1a1a] overflow-hidden font-mono">
           {/* Chat history */}
           {(messages.length > 0 || pendingAI || typedAI) && (
-            <div className="flex flex-col max-h-[600px] overflow-y-auto">
+            <div className="flex flex-col max-h-[200px] overflow-y-auto">
               <div
                 className="flex-1 overflow-y-auto ai-chat-scroll"
                 ref={chatContainerRef}
@@ -257,12 +257,12 @@ export default function SearchBar() {
 
           {/* Input area - always visible at bottom */}
           <form ref={formRef} onSubmit={handleSubmit} className="">
-            <div className="flex items-center gap-2 px-4 py-3">
-              \              <span className="text-stone-400 font-mono text-[9px]">{'>'}</span>
+            <div className="flex items-center gap-1 px-4 py-3">
+              <span className="text-stone-300 font-mono text-sm w-3">{'>'}</span>
               <input
                 type="text"
                 placeholder={t('search.placeholder')}
-                className="flex-grow bg-transparent text-[#cccccc] placeholder-gray-500 focus:outline-none font-mono text-xs"
+                className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-mono text-xs"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />

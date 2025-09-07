@@ -52,9 +52,10 @@ export default function SearchBar() {
     return () => clearInterval(interval);
   }, [isLoading, pendingAI, typedAI]);
 
-  // Fun loading text animation
+  // Fun loading text animation - pick a random text when loading starts
   useEffect(() => {
-    if (!isLoading && !pendingAI && !typedAI) return;
+    if (!isLoading && !pendingAI) return;
+    
     const thinkingTexts = [
       'Pondering', 'Contemplating', 'Ruminating', 'Cogitating', 'Mulling over',
       'Brainstorming', 'Processing', 'Computing', 'Deliberating', 'Reflecting',
@@ -71,15 +72,10 @@ export default function SearchBar() {
       'Dilly-dallying', 'Wishy-washing', 'Flip-flopping', 'Zig-zagging', 'Topsy-turvy-ing'
     ];
 
-    const texts = (!!pendingAI || !!typedAI) ? respondingTexts : thinkingTexts;
-    let index = 0;
-
-    const interval = setInterval(() => {
-      setLoadingText(texts[index % texts.length]);
-      index++;
-    }, 600);
-    return () => clearInterval(interval);
-  }, [isLoading, pendingAI, typedAI]);
+    const texts = !!pendingAI ? respondingTexts : thinkingTexts;
+    const randomText = texts[Math.floor(Math.random() * texts.length)];
+    setLoadingText(randomText);
+  }, [isLoading, pendingAI]);
 
   // Hydrate all state from localStorage on mount (client only)
   useEffect(() => {

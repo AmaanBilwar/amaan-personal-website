@@ -101,6 +101,7 @@ const translations: Record<Language, Record<string, string>> = {
         'search.placeholder': 'Ask me anything',
         'search.thinking': 'Thinking',
         'search.responding': 'Responding',
+        'search.shortcuts': 'Type "?" for shortcuts',
 
         // Draw page
         'draw.title': 'Draw Anything!',
@@ -231,6 +232,7 @@ const translations: Record<Language, Record<string, string>> = {
         'search.placeholder': '问我任何问题',
         'search.thinking': '思考中',
         'search.responding': '回应中',
+        'search.shortcuts': '输入"？"查看快捷方式',
 
         // Draw page
         'draw.title': '画任何东西！',

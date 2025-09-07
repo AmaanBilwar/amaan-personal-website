@@ -372,7 +372,7 @@ export default function SearchBar() {
             </div>
           </form>
         </div>
-        <p className="text-stone-500 text-xs mt-2 font-mono">Type "?" for shortcuts</p>
+        <p className="text-stone-500 text-xs mt-2 font-mono">{t('search.shortcuts')}</p>
       </div>
     </div>
   );

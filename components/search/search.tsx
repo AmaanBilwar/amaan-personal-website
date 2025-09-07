@@ -42,6 +42,7 @@ export default function SearchBar() {
   const stoppedRef = useRef(false);
   const [loadingSymbol, setLoadingSymbol] = useState('*');
   const [loadingText, setLoadingText] = useState('Orchestrating');
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (!isLoading && !pendingAI && !typedAI) return;
@@ -168,12 +169,12 @@ export default function SearchBar() {
   // Scroll to bottom when new messages are added and user is near bottom
   useEffect(() => {
     if (!shouldAutoScroll) return;
-    if (messages.length === 0) return;
+    if (messages.length === 0 && !typedAI) return;
     const chatDiv = chatContainerRef.current;
     if (chatDiv) {
       chatDiv.scrollTop = chatDiv.scrollHeight;
     }
-  }, [messages, shouldAutoScroll]);
+  }, [messages, typedAI, shouldAutoScroll]);
 
   // Persist messages to localStorage
   useEffect(() => {
@@ -202,6 +203,19 @@ export default function SearchBar() {
       }
     } catch { }
   }, [typedAI]);
+
+  // Auto-resize textarea
+  const adjustTextareaHeight = () => {
+    const textarea = inputRef.current;
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${Math.min(textarea.scrollHeight, 120)}px`;
+    }
+  };
+
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, [query]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -258,6 +272,7 @@ export default function SearchBar() {
         const aiData = await aiResult.json();
         // Filter out personal website mentions and type out the response
         if (stoppedRef.current) return;
+        setShouldAutoScroll(true); // Ensure auto-scroll is enabled for AI response
         setPendingAI(filterPersonalWebsite(aiData.response));
       }
     } catch (error) {
@@ -311,14 +326,23 @@ export default function SearchBar() {
 
           {/* Input area - always visible at bottom */}
           <form ref={formRef} onSubmit={handleSubmit} className="">
-            <div className="flex items-center gap-1 px-4 py-3">
-              <span className="text-stone-300 font-mono text-sm w-3">{'>'}</span>
-              <input
-                type="text"
+            <div className="flex items-start gap-1 px-4 py-3">
+              <span className="text-stone-300 font-mono text-sm w-3 ">{'>'}</span>
+              <textarea
+                ref={inputRef}
                 placeholder={t('search.placeholder')}
-                className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-mono text-xs"
+                className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-mono text-xs resize-none overflow-hidden min-h-[20px] max-h-[120px] leading-5 py-0"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    if (formRef.current) {
+                      formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+                    }
+                  }
+                }}
+                rows={1}
               />
               {(isLoading || !!pendingAI || !!typedAI) && (
                 <div className="flex items-center gap-1 text-xs text-stone-400 font-mono">
@@ -338,7 +362,7 @@ export default function SearchBar() {
                   >
                     {loadingText}
                   </span>
-                  <style jsx>{`
+                  <style>{`
                     @keyframes shimmerText {
                       0% { background-position: -200% 0; }
                       100% { background-position: 200% 0; }

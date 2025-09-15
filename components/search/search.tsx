@@ -292,7 +292,7 @@ export default function SearchBar() {
     <div className={`px-0 ${minecraft.variable} font-minecraft`}>
       {/* Phrases block quote */}
       <div className="mb-6 mt-4">
-        <blockquote className="border-l-4 border-stone-600 pl-4 py-2 bg-stone-800 rounded-r-lg mr-24">
+        <blockquote className="border-l-2 sm:border-l-4 border-stone-600 pl-4 py-2 bg-stone-800 rounded-r-lg sm:mr-24">
           <p className="text-stone-400 text-sm mb-1">{t('phrases.phrase1')}</p>
           <p className="text-stone-400 text-sm">{t('phrases.phrase2')}</p>
         </blockquote>

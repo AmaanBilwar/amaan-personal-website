@@ -55,7 +55,7 @@ export default function SearchBar() {
   // Fun loading text animation - pick a random text when loading starts
   useEffect(() => {
     if (!isLoading && !pendingAI) return;
-    
+
     const thinkingTexts = [
       'Pondering', 'Contemplating', 'Ruminating', 'Cogitating', 'Mulling over',
       'Brainstorming', 'Processing', 'Computing', 'Deliberating', 'Reflecting',
@@ -290,6 +290,14 @@ export default function SearchBar() {
 
   return (
     <div className={`px-0 ${minecraft.variable} font-minecraft`}>
+      {/* Phrases block quote */}
+      <div className="mb-6 mt-4">
+        <blockquote className="border-l-4 border-stone-600 pl-4 py-2 bg-stone-900/30 rounded-r">
+          <p className="text-stone-400 text-sm mb-1">{t('phrases.phrase1')}</p>
+          <p className="text-stone-400 text-sm">{t('phrases.phrase2')}</p>
+        </blockquote>
+      </div>
+
       <h2 className="text-lg text-stone-300 mb-4 mt-4 font-minecraft">{t('search.title')}</h2>
 
 

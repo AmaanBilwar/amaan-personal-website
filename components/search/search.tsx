@@ -219,22 +219,22 @@ export default function SearchBar() {
     if (!trimmed) return;
 
     // Check for clear command
-    if (trimmed.toLowerCase() === 'clear') {
+    if (trimmed.toLowerCase() === '/clear') {
       setMessages([]);
       setQuery('');
       localStorage.removeItem('chat-messages');
       return;
     }
 
-    // Check for shortcuts command
-    if (trimmed === '?') {
-      const shortcutsMessage = `Available shortcuts:
-• clear - clear chat history
-• ctrl/cmd + v - paste clipboard content`;
+    // Check for help command
+    if (trimmed === '/help') {
+      const helpMessage = `Available commands:
+• /clear - clear chat history
+• /help - show this help message`;
       setMessages(prev => [
         ...prev,
-        { role: 'user', content: '?' },
-        { role: 'assistant', content: shortcutsMessage }
+        { role: 'user', content: '/help' },
+        { role: 'assistant', content: helpMessage }
       ]);
       setQuery('');
       return;
@@ -330,11 +330,11 @@ export default function SearchBar() {
           {/* Input area - always visible at bottom */}
           <form ref={formRef} onSubmit={handleSubmit} className="">
             <div className="flex items-start gap-1 px-4 py-3">
-              <span className="text-stone-300 font-mono text-sm w-3 ">{'>'}</span>
+              <span className="text-stone-300 text-sm w-3 font-minecraft">{'>'}</span>
               <textarea
                 ref={inputRef}
                 placeholder={t('search.placeholder')}
-                className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-mono text-xs resize-none overflow-hidden min-h-[20px] max-h-[120px] leading-5 py-0"
+                className="flex-grow bg-transparent text-white placeholder-stone-400 focus:outline-none font-minecraft text-xs resize-none overflow-hidden min-h-[20px] max-h-[120px] leading-5 py-0"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={(e) => {
@@ -348,7 +348,7 @@ export default function SearchBar() {
                 rows={1}
               />
               {(isLoading || !!pendingAI || !!typedAI) && (
-                <div className="flex items-center gap-1 text-xs text-stone-400 font-mono">
+                <div className="flex items-center gap-1 text-xs text-stone-400 font-minecraft">
                   <span className="animate-spin inline-block">
                     {loadingSymbol}
                   </span>
@@ -379,7 +379,7 @@ export default function SearchBar() {
             </div>
           </form>
         </div>
-        <p className="text-stone-500 text-xs mt-2 font-mono">{t('search.shortcuts')}</p>
+        <p className="text-stone-500 text-xs mt-2 font-minecraft">Type /help for commands</p>
       </div>
     </div>
   );

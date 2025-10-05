@@ -97,7 +97,6 @@ const translations: Record<Language, Record<string, string>> = {
         'action.stop': 'Stop',
 
         'phrases.phrase1': 'i just ⌘ + C and ⌘ + V things',
-        'phrases.phrase2': 'ever since i was young i wanted to transform unstructured data into actionable business insights',
 
         // Search
         'search.title': 'What else do you want to know about me?',
@@ -233,7 +232,6 @@ const translations: Record<Language, Record<string, string>> = {
         // Phrases
         'phrases.title': '我喜欢的短语',
         'phrases.phrase1': '我只是 ⌘ + C 和 ⌘ + V 东西',
-        'phrases.phrase2': '从小时候起我就想将非结构化数据转化为可操作的业务洞察',
 
         // Search
         'search.title': '你还想了解我什么？',

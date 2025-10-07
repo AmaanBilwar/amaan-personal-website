@@ -348,9 +348,6 @@ export default function SearchBar() {
               />
               {(isLoading || !!pendingAI || !!typedAI) && (
                 <div className="flex items-center gap-1 text-xs text-stone-400 font-minecraft mt-0.5">
-                  <span className="animate-spin inline-block">
-                    *
-                  </span>
                   <span
                     className="relative inline-block"
                     style={{

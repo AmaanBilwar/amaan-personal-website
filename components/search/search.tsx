@@ -40,7 +40,6 @@ export default function SearchBar() {
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);
   const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
   const stoppedRef = useRef(false);
-  const [loadingSymbol, setLoadingSymbol] = useState('*');
   const [loadingText, setLoadingText] = useState('Orchestrating');
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -329,7 +328,7 @@ export default function SearchBar() {
 
           {/* Input area - always visible at bottom */}
           <form ref={formRef} onSubmit={handleSubmit} className="">
-            <div className="flex items-start gap-1 px-4 py-3 bg-stone-700/60">
+            <div className="flex items-center gap-1 px-4 py-3 bg-stone-700/60">
               <span className="text-stone-300 text-sm w-3 font-minecraft">{'>'}</span>
               <textarea
                 ref={inputRef}
@@ -348,9 +347,9 @@ export default function SearchBar() {
                 rows={1}
               />
               {(isLoading || !!pendingAI || !!typedAI) && (
-                <div className="flex items-center gap-1 text-xs text-stone-400 font-minecraft">
+                <div className="flex items-center gap-1 text-xs text-stone-400 font-minecraft mt-0.5">
                   <span className="animate-spin inline-block">
-                    {loadingSymbol}
+                    *
                   </span>
                   <span
                     className="relative inline-block"

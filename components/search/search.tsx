@@ -329,7 +329,7 @@ export default function SearchBar() {
 
           {/* Input area - always visible at bottom */}
           <form ref={formRef} onSubmit={handleSubmit} className="">
-            <div className="flex items-start gap-1 px-4 py-3 bg-stone-800/50">
+            <div className="flex items-start gap-1 px-4 py-3 bg-stone-700/60">
               <span className="text-stone-300 text-sm w-3 font-minecraft">{'>'}</span>
               <textarea
                 ref={inputRef}

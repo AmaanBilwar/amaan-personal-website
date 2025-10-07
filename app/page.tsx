@@ -208,12 +208,17 @@ export default function Home() {
                 <p className="mb-2 text-stone-300">{t('projects.title')}</p>
                 <ul className="text-sm text-stone-400 space-y-1">
                   <li>
+                    {'>'} <a href="https://github.com/nicholaschen09/trading-engine" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">trading engine</a> - {t('projects.tradingEngine')}
+                  </li>
+                  <li>
+                    {'>'} <a href="https://github.com/nicholaschen09/facial-recognition-neural-network" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">facial recognition model</a> - {t('projects.facialRecognition')}
+                  </li>
+                  <li>
                     {'>'} <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">diff digest</a> - {t('projects.diffDigest')}
                   </li>
                   <li>
                     {'>'} <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">sql query parser</a> - {t('projects.sqlParser')}
                   </li>
-
                   <li>
                     {'>'} <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">dependabot</a> - {t('projects.dependabot')}
                   </li>
@@ -222,6 +227,9 @@ export default function Home() {
                   </li>
                   <li>
                     {'>'} <a href="https://github.com/DerrickHa/ht6" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">basketbin</a> - {t('projects.basketbin')}
+                  </li>
+                  <li>
+                    {'>'} <a href="https://github.com/nicholaschen09/summary-discord-bot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors inline-block transform transition-transform duration-200 hover:scale-110">discord summary bot</a> - {t('projects.neoDiscordBot')}
                   </li>
                 </ul>
               </div>

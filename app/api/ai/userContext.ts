@@ -171,7 +171,37 @@ Work Experience:
    - Technologies: MATLAB, Simulink, Python, C++, Embedded Systems
 
 Notable Projects:
-1. Diff Digest (May 2025)
+1. Neo Discord Bot
+   - <a href="https://github.com/nicholaschen09/summary-discord-bot" target="_blank" rel="noopener noreferrer"><u>Neo Discord Bot</u></a>
+   - Discord bot that summarizes messages for users
+   - Implements intelligent message parsing and natural language processing
+   - Built with Discord.js and Python for backend processing
+   - Uses OpenAI API for generating concise summaries
+   - Handles multiple servers and user contexts simultaneously
+   - Features customizable summary preferences and notification settings
+   - Technologies: Discord.js, Python, OpenAI API, Node.js
+
+2. Trading Engine
+   - <a href="https://github.com/nicholaschen09/trading-engine" target="_blank" rel="noopener noreferrer"><u>Trading Engine</u></a>
+   - High-frequency, low-latency trading engine for prediction markets
+   - Implemented order matching algorithm with sub-millisecond latency
+   - Built with high-performance C++ for speed optimization
+   - Features real-time market data processing and order book management
+   - Includes risk management and position tracking systems
+   - Supports multiple trading strategies and automated execution
+   - Technologies: C++, WebSocket, Redis, PostgreSQL
+
+3. Facial Recognition Neural Network
+   - <a href="https://github.com/nicholaschen09/facial-recognition-neural-network" target="_blank" rel="noopener noreferrer"><u>Facial Recognition Neural Network</u></a>
+   - Deep learning CNN-based model for face identification and verification
+   - Implemented facial feature detection and extraction algorithms
+   - Built custom convolutional neural network architecture
+   - Achieved 96% accuracy on face verification tasks
+   - Features real-time face detection and recognition capabilities
+   - Includes data augmentation and preprocessing pipeline
+   - Technologies: Python, TensorFlow, OpenCV, Keras, NumPy
+
+4. Diff Digest (May 2025)
    - Developed real-time pipeline for processing GitHub PR diffs
    - Implemented OpenAI integration for intelligent diff summarization
    - Built Redis caching system handling 1,000+ summaries
@@ -179,7 +209,7 @@ Notable Projects:
    - Implemented real-time updates using WebSocket
    - Technologies: Next.js, Tailwind CSS, Redis, OpenAI API, WebSocket
 
-2. Customer Feedback ETL Pipeline (Apr 2025)
+5. Customer Feedback ETL Pipeline (Apr 2025)
    - Designed and implemented end-to-end ETL pipeline
    - Processed 900+ feedback entries with 92% accuracy
    - Developed data cleaning and validation procedures
@@ -187,7 +217,7 @@ Notable Projects:
    - Created automated reporting system
    - Technologies: Python, PostgreSQL, Pandas, Apache Airflow
 
-3. Fernando - 2nd Place @ UTRA Hacks (Jan 2025)
+6. Fernando - 2nd Place @ UTRA Hacks (Jan 2025)
    - <a href="https://github.com/enxilium/posture-checker-robot" target="_blank" rel="noopener noreferrer"><u>Fernando</u></a>
    - Built posture-checking robot with OpenCV and Python for real-time posture detection
    - Implemented computer vision algorithms to track user's spine alignment and shoulder position
@@ -415,6 +445,27 @@ Programming Expertise:
   - Swift
 
 Projects & Technical Work:
+- Neo Discord Bot:
+  - Message summarization bot
+  - Natural language processing
+  - Multi-server support
+  - Real-time processing
+  - <a href="https://github.com/nicholaschen09/summary-discord-bot" target="_blank" rel="noopener noreferrer"><u>Neo Discord Bot</u></a>
+
+- Trading Engine:
+  - High-frequency trading system
+  - Sub-millisecond latency
+  - Order matching algorithms
+  - Risk management
+  - <a href="https://github.com/nicholaschen09/trading-engine" target="_blank" rel="noopener noreferrer"><u>Trading Engine</u></a>
+
+- Facial Recognition Neural Network:
+  - CNN-based face detection
+  - 96% accuracy achieved
+  - Real-time recognition
+  - Custom architecture
+  - <a href="https://github.com/nicholaschen09/facial-recognition-neural-network" target="_blank" rel="noopener noreferrer"><u>Facial Recognition NN</u></a>
+
 - Basketbin:
   - Interactive trash bin
   - Sensor integration

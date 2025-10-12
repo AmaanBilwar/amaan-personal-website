@@ -32,7 +32,7 @@ export default function Header() {
             <img
               src="/ghcat.png"
               alt="Nicholas Chen"
-              className="h-7 md:h-9 w-auto rounded-sm transition-transform duration-200 group-hover:scale-125"
+              className="h-7 md:h-9 w-auto rounded-sm"
             />
           </Link>
           <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">

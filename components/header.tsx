@@ -25,7 +25,7 @@ export default function Header() {
             href="/"
             className={`flex items-center transition-all duration-200 p-1 rounded-full ${pathname === '/'
               ? 'opacity-100'
-              : 'hover:opacity-80 hover:bg-stone-800 hover:scale-110'
+              : 'hover:opacity-80 hover:bg-stone-800'
               }`}
             aria-label={t('nav.home')}
           >
@@ -43,10 +43,10 @@ export default function Header() {
         {/* Navigation - Show all links */}
         <nav className="flex items-center flex-1 justify-center">
           <div className="flex gap-2 md:gap-6 lg:gap-8 xl:gap-10 items-center">
-            <a href="mailto:nicholas.chen243@gmail.com" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors hover:scale-110 transition-transform duration-200">{t('nav.contact')}</a>
-            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors hover:scale-110 transition-transform duration-200">{t('nav.linkedin')}</a>
-            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors hover:scale-110 transition-transform duration-200">{t('nav.github')}</a>
-            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors hover:scale-110 transition-transform duration-200">Twitter/X</a>
+            <a href="mailto:nicholas.chen243@gmail.com" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.contact')}</a>
+            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.linkedin')}</a>
+            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.github')}</a>
+            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">Twitter/X</a>
           </div>
         </nav>
 

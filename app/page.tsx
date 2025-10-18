@@ -221,9 +221,6 @@ export default function Home() {
                 <p className="mb-2 text-stone-300">{t('projects.title')}</p>
                 <ul className="text-sm text-stone-400 space-y-1">
                   <li>
-                    {'>'} <a href="https://github.com/nicholaschen09/trading-engine" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">trading engine</a> - {t('projects.tradingEngine')}
-                  </li>
-                  <li>
                     {'>'} <a href="https://github.com/nicholaschen09/facial-recognition-neural-network" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">facial recognition model</a> - {t('projects.facialRecognition')}
                   </li>
                   <li>

@@ -160,7 +160,6 @@ const translations: Record<Language, Record<string, string>> = {
         // Projects section
         'projects.title': 'A few projects I\'m working on...',
         'projects.neoDiscordBot': 'discord bot that summarizes messages for you',
-        'projects.tradingEngine': 'high-frequency, low-latency trading engine for prediction markets',
         'projects.facialRecognition': 'deep learning CNN model for face identification and verification',
         'projects.diffDigest': 'tool that turns git diffs into release notes with 5000+ website visits',
         'projects.sqlParser': 'parser that can query flat JSON objects',
@@ -298,7 +297,6 @@ const translations: Record<Language, Record<string, string>> = {
         // Projects section
         'projects.title': '我正在进行的几个项目...',
         'projects.neoDiscordBot': 'Discord机器人，为您总结消息',
-        'projects.tradingEngine': '用于预测市场的高频、低延迟交易引擎',
         'projects.facialRecognition': '用于人脸识别和验证的深度学习CNN模型',
         'projects.diffDigest': '将git差异转换为发布说明的工具，拥有5000+次网站访问',
         'projects.sqlParser': '可以查询扁平JSON对象的解析器',

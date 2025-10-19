@@ -96,7 +96,7 @@ const translations: Record<Language, Record<string, string>> = {
         'action.download': 'Download',
         'action.stop': 'Stop',
 
-        'phrases.phrase1': 'i just ⌘ + C and ⌘ + V things',
+        'phrases.phrase1': 'i just like to ⌘ + C and ⌘ + V things',
 
         // Search
         'search.title': 'What else do you want to know about me?',
@@ -159,6 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Projects section
         'projects.title': 'A few projects I\'m working on...',
+        'projects.tiktokPredictor': 'ML model that predicts tiktok view counts',
         'projects.neoDiscordBot': 'discord bot that summarizes messages for you',
         'projects.facialRecognition': 'deep learning CNN model for face identification and verification',
         'projects.diffDigest': 'tool that turns git diffs into release notes with 5000+ website visits',
@@ -233,7 +234,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Phrases
         'phrases.title': '我喜欢的短语',
-        'phrases.phrase1': '我只是 ⌘ + C 和 ⌘ + V 东西',
+        'phrases.phrase1': '我只是喜欢 ⌘ + C 和 ⌘ + V 东西',
 
         // Search
         'search.title': '你还想了解我什么？',
@@ -296,6 +297,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Projects section
         'projects.title': '我正在进行的几个项目...',
+        'projects.tiktokPredictor': '预测TikTok观看量的ML模型',
         'projects.neoDiscordBot': 'Discord机器人，为您总结消息',
         'projects.facialRecognition': '用于人脸识别和验证的深度学习CNN模型',
         'projects.diffDigest': '将git差异转换为发布说明的工具，拥有5000+次网站访问',

@@ -1,15 +1,11 @@
 'use client';
 import SearchBar from '@/components/search/search';
-import StaticFlowers from '@/components/ScrollBottomAnimation';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import dynamic from 'next/dynamic';
 
 export default function Home() {
-  const { t, language, setLanguage } = useLanguage();
+  const { t } = useLanguage();
 
-  // Accordion state for each section
-  const [openFuture, setOpenFuture] = useState(false);
 
   // Hydration safety
   const [mounted, setMounted] = useState(false);
@@ -320,8 +316,6 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Static Flowers - at the very bottom */}
-          <StaticFlowers />
         </div>
         {/* Animated Drawing Sections */}
         <div className="mt-8 mb-12 space-y-8">

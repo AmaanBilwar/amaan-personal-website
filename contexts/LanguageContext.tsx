@@ -63,7 +63,7 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.achievement2': 'won 2nd place at UTRA Hacks, the largest robotics hackathon in canada',
         'hero.achievement3': 'designed award winning book covers for authors',
         'hero.currently': "I'm currently...",
-        'hero.current1': 'studying systems design engineering at the university of waterloo',
+        'hero.current1': 'studying syde (engineering) at the university of waterloo',
         'hero.current2': 'working at textql as a software engineer intern in nyc building ai agents for data',
         'hero.current3': 'building projects to help others create and invent new things',
         'hero.current4': 'sharing my journey in tech and creativity online with everyone to see',

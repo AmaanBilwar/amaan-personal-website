@@ -162,17 +162,14 @@ export default function Home() {
             <p className="mb-4 text-stone-300">{t('hero.currently')}</p>
             <ul className="text-sm text-stone-400 space-y-1">
               <li>
-                {'>'} {t('hero.current1').split('systems design engineering')[0]}
-                <span className="relative group">
+                {'>'} studying <span className="relative group inline">
                   <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
                     syde
                   </a>
                   <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
                     systems design engineering
                   </span>
-                </span>
-                {t('hero.current1').split('university of waterloo')[0].split('systems design engineering')[1]}
-                <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group">
+                </span> (engineering) at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group">
                   <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="inline w-4 h-4 mr-1" />
                   university of waterloo
                 </a>

@@ -162,17 +162,40 @@ export default function Home() {
             <p className="mb-4 text-stone-300">{t('hero.currently')}</p>
             <ul className="text-sm text-stone-400 space-y-1">
               <li>
-                {'>'} studying <span className="relative group inline">
-                  <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
-                    syde
-                  </a>
-                  <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
-                    systems design engineering
-                  </span>
-                </span> (engineering) at the <a href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group">
-                  <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="inline w-4 h-4 mr-1" />
-                  university of waterloo
-                </a>
+                {(() => {
+                  const text = t('hero.current1');
+                  // Split by 'syde' or '系统设计工程' depending on language
+                  const parts = text.split(/(syde|系统设计工程)/i);
+
+                  return parts.map((part, index) => {
+                    if (part.toLowerCase() === 'syde' || part === '系统设计工程') {
+                      return (
+                        <span key={index} className="relative group inline">
+                          <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
+                            {part}
+                          </a>
+                          <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
+                            systems design engineering
+                          </span>
+                        </span>
+                      );
+                    } else if (part.includes('university of waterloo') || part.includes('滑铁卢大学')) {
+                      const uwParts = part.split(/(university of waterloo|滑铁卢大学)/i);
+                      return uwParts.map((uwPart, uwIndex) => {
+                        if (uwPart.toLowerCase() === 'university of waterloo' || uwPart === '滑铁卢大学') {
+                          return (
+                            <a key={`${index}-${uwIndex}`} href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group">
+                              <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="inline w-4 h-4 mr-1" />
+                              {uwPart}
+                            </a>
+                          );
+                        }
+                        return <span key={`${index}-${uwIndex}`}>{uwPart}</span>;
+                      });
+                    }
+                    return <span key={index}>{part}</span>;
+                  });
+                })()}
               </li>
               <li>
                 {'>'} {t('hero.current2').split('textql')[0]}<a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group"><img src="/textql.jpg" alt="TextQL" className="inline w-4 h-4 mr-1" />textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">nyc</a>{t('hero.current2').split('nyc')[1]}
@@ -295,6 +318,9 @@ export default function Home() {
                 <img src="/artlogo.png" alt="Art" className="inline w-4 h-4 mr-1" />
                 {t('links.artLink')}
               </a>
+            </p>
+            <p className="max-w-2xl text-sm text-stone-400 font-minecraft mt-2">
+              {t('info.favouriteShow')}
             </p>
           </section>
 

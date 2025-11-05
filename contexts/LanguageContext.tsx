@@ -56,14 +56,14 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.greeting': "Hey, I'm ",
         'hero.name.full': 'Nicholas!',
         'hero.name.short': 'Nic!',
-        'hero.location': "i'm based in toronto and nyc.",
-        'hero.building': "i've been building things for 3673 days.",
+        'hero.location': "> i'm based in toronto and nyc.",
+        'hero.building': "> i've been building things for 3673 days.",
         'hero.achievements': 'A few of my achievements...',
         'hero.achievement1': '30k followers on social media (x, instagram, tiktok, youtube) and over 10m views',
         'hero.achievement2': 'won 2nd place at UTRA Hacks, the largest robotics hackathon in canada',
         'hero.achievement3': 'designed award winning book covers for authors',
         'hero.currently': "I'm currently...",
-        'hero.current1': 'studying syde (engineering) at the university of waterloo',
+        'hero.current1': '> studying syde (engineering) at the university of waterloo',
         'hero.current2': 'working at textql as a software engineer intern in nyc building ai agents for data',
         'hero.current3': 'building projects to help others create and invent new things',
         'hero.current4': 'sharing my journey in tech and creativity online with everyone to see',
@@ -122,12 +122,12 @@ const translations: Record<Language, Record<string, string>> = {
         'draw.story9': 'It\'s a piece of my journey, inviting you to doodle, design, and create something alongside me!',
 
         // Contact
-        'contact.text': 'i\'d love to hear from you! want to hire me? or simply wanna chat? feel free to reach out by email, or connect with me on linkedin.',
+        'contact.text': '> i\'d love to hear from you! want to hire me? or simply wanna chat? feel free to reach out by email, or connect with me on linkedin.',
 
         // Links
-        'links.blogPrompt': 'want to read my thoughts ->',
+        'links.blogPrompt': '> want to read my thoughts ->',
         'links.blogLink': 'blogs',
-        'links.artPrompt': 'interested in my creative work ->',
+        'links.artPrompt': '> interested in my creative work ->',
         'links.artLink': 'art',
 
         // Navigation
@@ -186,6 +186,9 @@ const translations: Record<Language, Record<string, string>> = {
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',
         'footer.by': 'BY NICHOLAS®',
+
+        // Additional info
+        'info.favouriteShow': '> favourite show -> one punch man',
     },
     zh: {
         // Hero section
@@ -199,7 +202,7 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.achievement2': '在加拿大最大的机器人黑客马拉松UTRA Hacks中获得第二名',
         'hero.achievement3': '为作者设计了获奖书籍封面',
         'hero.currently': '我目前在...',
-        'hero.current1': '在滑铁卢大学学习系统设计工程',
+        'hero.current1': '> 在滑铁卢大学学习系统设计工程',
         'hero.current2': '作为软件工程师实习生加入纽约的textql，构建数据AI代理',
         'hero.current3': '构建项目帮助他人创造和发明新事物',
         'hero.current4': '在网上与大家分享我在技术和创意方面的旅程',
@@ -324,5 +327,8 @@ const translations: Record<Language, Record<string, string>> = {
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',
         'footer.by': '设计：NICHOLAS®',
+
+        // Additional info
+        'info.favouriteShow': '> 最喜欢的节目 -> 一拳超人',
     },
 }; 

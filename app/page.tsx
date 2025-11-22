@@ -298,12 +298,12 @@ export default function Home() {
             <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-2">
               {t('links.blogPrompt')} {' '}
               <a
-                href="https://nicholaschen1.substack.com/"
+                href="https://x.com/nicholaschen__/status/1992051772614181211?s=20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-stone-400 underline hover:text-stone-100 font-minecraft group"
               >
-                <img src="/substack.png" alt="Substack" className="inline w-4 h-4 mr-1" />
+                <img src="/twitter.jpg" alt="Twitter" className="inline w-5 h-5 mr-1" />
                 {t('links.blogLink')}
               </a>
             </p>

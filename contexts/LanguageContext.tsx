@@ -122,7 +122,7 @@ const translations: Record<Language, Record<string, string>> = {
         'draw.story9': 'It\'s a piece of my journey, inviting you to doodle, design, and create something alongside me!',
 
         // Contact
-        'contact.text': '> i\'d love to hear from you! want to hire me? or simply wanna chat? feel free to reach out by email, or connect with me on linkedin.',
+        'contact.text': '> i\'d love to hear from you! want to hire me? or simply wanna chat? feel free to reach out by email, or connect with me on linkedin. also check out my github!',
 
         // Links
         'links.blogPrompt': '> want to read my thoughts ->',
@@ -263,7 +263,7 @@ const translations: Record<Language, Record<string, string>> = {
         'draw.story9': '这是我旅程的一部分，邀请你与我一起涂鸦、设计和创造！',
 
         // Contact
-        'contact.text': '我很想听到你的声音！想雇用我？还是只是想聊天？随时通过电子邮件联系我，或在linkedin上与我联系。',
+        'contact.text': '我很想听到你的声音！想雇用我？还是只是想聊天？随时通过电子邮件联系我，或在linkedin上与我联系。也可以查看我的github！',
 
         // Links
         'links.blogPrompt': '想要阅读我的想法 ->',

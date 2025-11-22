@@ -289,7 +289,17 @@ export default function Home() {
                 <img src="/linkedin2.png" alt="LinkedIn" className="inline w-4 h-4 mr-1" />
                 linkedin
               </a>
-              {t('contact.text').split('linkedin')[1]}
+              {t('contact.text').split('github')[0].split('linkedin')[1]}
+              <a
+                href="https://github.com/nicholaschen09"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-400 underline hover:text-stone-100 font-minecraft group"
+              >
+                <img src="/githubv2.png" alt="GitHub" className="inline w-4 h-4 mr-1" />
+                github
+              </a>
+              {t('contact.text').split('github')[1]}
             </p>
           </section>
 

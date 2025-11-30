@@ -261,6 +261,21 @@ export default function Home() {
                     {'>'} <a href="https://github.com/nicholaschen09/summary-discord-bot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">discord summary bot</a> - {t('projects.neoDiscordBot')}
                   </li>
                 </ul>
+                <p className="text-sm text-stone-400 mt-3">
+                  {'>'} {t('projects.languagesTitle')}:{' '}
+                  <a href="https://go.dev/doc/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
+                    <img src="/golang.png" alt="Golang" className="inline w-4 h-4 mr-1" />
+                    {t('projects.golang')}
+                  </a>,{' '}
+                  <a href="https://docs.python.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
+                    <img src="/python.png" alt="Python" className="inline w-4 h-4 mr-1" />
+                    {t('projects.python')}
+                  </a> {t('projects.and')}{' '}
+                  <a href="https://www.typescriptlang.org/docs/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
+                    <img src="/typescript-logo.png" alt="TypeScript" className="inline w-4 h-4 mr-1" />
+                    {t('projects.typescript')}
+                  </a>
+                </p>
               </div>
 
             </div>

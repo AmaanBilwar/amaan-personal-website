@@ -96,7 +96,7 @@ const translations: Record<Language, Record<string, string>> = {
         'action.download': 'Download',
         'action.stop': 'Stop',
 
-        'phrases.phrase1': 'i just like to ⌘ + C and ⌘ + V things',
+        'phrases.phrase1': 'i like to just ⌘ + C and ⌘ + V things',
 
         // Search
         'search.title': 'What else do you want to know about me?',
@@ -159,6 +159,11 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Projects section
         'projects.title': 'A few projects I\'m working on...',
+        'projects.languagesTitle': 'programming languages i\'ve worked with',
+        'projects.golang': 'golang',
+        'projects.python': 'python',
+        'projects.typescript': 'typescript',
+        'projects.and': 'and',
         'projects.tiktokPredictor': 'ML model that predicts tiktok view counts',
         'projects.neoDiscordBot': 'discord bot that summarizes messages for you',
         'projects.facialRecognition': 'deep learning CNN model for face identification and verification',
@@ -300,6 +305,11 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Projects section
         'projects.title': '我正在进行的几个项目...',
+        'projects.languagesTitle': '我使用过的编程语言',
+        'projects.golang': 'golang',
+        'projects.python': 'python',
+        'projects.typescript': 'typescript',
+        'projects.and': '和',
         'projects.tiktokPredictor': '预测TikTok观看量的ML模型',
         'projects.neoDiscordBot': 'Discord机器人，为您总结消息',
         'projects.facialRecognition': '用于人脸识别和验证的深度学习CNN模型',

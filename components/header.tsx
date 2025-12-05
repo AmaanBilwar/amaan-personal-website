@@ -43,16 +43,16 @@ export default function Header() {
         {/* Navigation - Show all links */}
         <nav className="flex items-center flex-1 justify-center">
           <div className="flex gap-2 md:gap-6 lg:gap-8 xl:gap-10 items-center">
-            <a href="mailto:nicholas.chen243@gmail.com" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.contact')}</a>
-            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.linkedin')}</a>
-            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.github')}</a>
-            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="font-minecraft uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">Twitter/X</a>
+            <a href="mailto:nicholas.chen243@gmail.com" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.contact')}</a>
+            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.linkedin')}</a>
+            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.github')}</a>
+            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">Twitter/X</a>
           </div>
         </nav>
 
         {/* Language Toggle */}
         <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
-          <span className={`text-[9px] md:text-xs font-minecraft transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
+          <span className={`text-[9px] md:text-xs transition-colors duration-200 ${language === 'en' ? 'text-white' : 'text-stone-500'}`}>
             EN
           </span>
           <button
@@ -67,7 +67,7 @@ export default function Header() {
                 }`}
             />
           </button>
-          <span className={`text-[9px] md:text-xs font-minecraft transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
+          <span className={`text-[9px] md:text-xs transition-colors duration-200 ${language === 'zh' ? 'text-white' : 'text-stone-500'}`}>
             中文
           </span>
         </div>

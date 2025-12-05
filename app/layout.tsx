@@ -33,7 +33,7 @@ export default function RootLayout({
   const pathname = usePathname();
   return (
     <LanguageProvider>
-      <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable} font-minecraft`}>
+      <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable}`}>
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -46,7 +46,7 @@ export default function RootLayout({
         </head>
 
         <body
-          className={`bg-[#1a1a1a] min-h-screen antialiased font-minecraft`}
+          className={`bg-[#1a1a1a] min-h-screen antialiased`}
         >
           {/* Google Analytics Script */}
           <Script

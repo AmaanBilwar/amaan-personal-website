@@ -65,7 +65,7 @@ export default function Home() {
     return (
       <main className="flex min-h-screen flex-col items-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
         <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
-          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 min-h-[3.5rem]">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl font-light text-white mb-4 min-h-[3.5rem]">
             {baseText}
           </h1>
         </div>
@@ -78,7 +78,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
         {/* Hero Section */}
         <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
-          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 min-h-[3.5rem]">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl font-light text-white mb-4 min-h-[3.5rem]">
             {displayText}
             {mounted && <span className="animate-pulse">|</span>}
           </h1>

@@ -79,7 +79,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-minecraft;
     font-feature-settings: "tnum" on, "lnum" on;
   }
 

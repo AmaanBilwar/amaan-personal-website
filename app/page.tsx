@@ -65,7 +65,7 @@ export default function Home() {
     return (
       <main className="flex min-h-screen flex-col items-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
         <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
-          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft min-h-[3.5rem]">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 min-h-[3.5rem]">
             {baseText}
           </h1>
         </div>
@@ -78,7 +78,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
         {/* Hero Section */}
         <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
-          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 font-minecraft min-h-[3.5rem]">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-4 min-h-[3.5rem]">
             {displayText}
             {mounted && <span className="animate-pulse">|</span>}
           </h1>
@@ -284,12 +284,12 @@ export default function Home() {
 
           <SearchBar />
 
-          <section className="mt-2 -mb-4 font-minecraft">
-            <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
+          <section className="mt-2 -mb-4">
+            <p className="max-w-2xl text-sm text-stone-400">
               {t('contact.text').split('email')[0]}
               <a
                 href="mailto:nicholas.chen243@gmail.com"
-                className="text-stone-400 underline hover:text-stone-100 font-minecraft group"
+                className="text-stone-400 underline hover:text-stone-100 group"
               >
                 <img src="/gmail.jpg" alt="Gmail" className="inline w-4 h-4 mr-1" />
                 email
@@ -299,7 +299,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 font-minecraft group"
+                className="text-stone-400 underline hover:text-stone-100 group"
               >
                 <img src="/linkedin2.png" alt="LinkedIn" className="inline w-4 h-4 mr-1" />
                 linkedin
@@ -309,7 +309,7 @@ export default function Home() {
                 href="https://github.com/nicholaschen09"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 font-minecraft group"
+                className="text-stone-400 underline hover:text-stone-100 group"
               >
                 <img src="/githubv2.png" alt="GitHub" className="inline w-4 h-4 mr-1" />
                 github
@@ -319,32 +319,32 @@ export default function Home() {
           </section>
 
           {/* Links to blogs and art */}
-          <section className="mt-1 mb-8 font-minecraft">
-            <p className="max-w-2xl text-sm text-stone-400 font-minecraft mb-2">
+          <section className="mt-1 mb-8">
+            <p className="max-w-2xl text-sm text-stone-400 mb-2">
               {t('links.blogPrompt')} {' '}
               <a
                 href="https://x.com/nicholaschen__/status/1992051772614181211?s=20"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 font-minecraft group"
+                className="text-stone-400 underline hover:text-stone-100 group"
               >
                 <img src="/twitter.jpg" alt="Twitter" className="inline w-5 h-5 mr-1" />
                 {t('links.blogLink')}
               </a>
             </p>
-            <p className="max-w-2xl text-sm text-stone-400 font-minecraft">
+            <p className="max-w-2xl text-sm text-stone-400">
               {t('links.artPrompt')} {' '}
               <a
                 href="https://nicholaschen243.wixsite.com/nicholas-chen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 font-minecraft group"
+                className="text-stone-400 underline hover:text-stone-100 group"
               >
                 <img src="/artlogo.png" alt="Art" className="inline w-4 h-4 mr-1" />
                 {t('links.artLink')}
               </a>
             </p>
-            <p className="max-w-2xl text-sm text-stone-400 font-minecraft mt-2">
+            <p className="max-w-2xl text-sm text-stone-400 mt-2">
               {t('info.favouriteShow')}
             </p>
           </section>

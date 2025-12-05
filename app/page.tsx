@@ -17,46 +17,50 @@ export default function Home() {
           <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
             {t('hero.currently')}
           </p>
-          <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-3">
-            <li className="flex items-center gap-3">
-              <img
-                src="/uwaterloo_logo.jpeg"
-                alt="University of Waterloo"
-                className="w-8 h-8"
-              />
+          <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-1">
+            <li>
+              <a
+                href="https://uwaterloo.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+              >
+                <img
+                  src="/uwaterloo_logo.jpeg"
+                  alt="University of Waterloo"
+                  className="w-8 h-8"
+                />
                 <div className="leading-tight text-xs md:text-sm">
                   <div className="text-stone-100 font-medium">
-                  SYDE
+                    SYDE
+                  </div>
+                  <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                    UWaterloo
+                  </div>
                 </div>
-                <a
-                  href="https://uwaterloo.ca/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                    className="hover:text-stone-100 transition-colors"
-                >
-                  UWaterloo
-                </a>
-              </div>
+              </a>
             </li>
-            <li className="flex items-center gap-3">
-              <img
-                src="/textql.jpg"
-                alt="TextQL"
-                className="w-8 h-8"
-              />
+            <li>
+              <a
+                href="https://textql.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+              >
+                <img
+                  src="/textql.jpg"
+                  alt="TextQL"
+                  className="w-8 h-8"
+                />
                 <div className="leading-tight text-xs md:text-sm">
                   <div className="text-stone-100 font-medium">
-                  Engineering
+                    Engineering
+                  </div>
+                  <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                    TextQL
+                  </div>
                 </div>
-                <a
-                  href="https://textql.com/"
-                  target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-stone-100 transition-colors"
-                >
-                  TextQL
-                </a>
-              </div>
+              </a>
             </li>
           </ul>
         </div>
@@ -69,46 +73,50 @@ export default function Home() {
               <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
                 {t('previously.title')}
               </p>
-              <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-3">
-                <li className="flex items-center gap-3">
-                  <img
-                    src="/ownrco_logo.jpeg"
-                    alt="Ownr"
-                    className="w-8 h-8"
-                  />
+              <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-1">
+                <li>
+                  <a
+                    href="https://www.ownr.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                  >
+                    <img
+                      src="/ownrco_logo.jpeg"
+                      alt="Ownr"
+                      className="w-8 h-8"
+                    />
                     <div className="leading-tight text-xs md:text-sm">
                       <div className="text-stone-100 font-medium">
-                      {t('previously.role1')}
+                        {t('previously.role1')}
+                      </div>
+                      <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('previously.item1')}
+                      </div>
                     </div>
-                    <a
-                      href="https://www.ownr.co/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-stone-100 transition-colors"
-                    >
-                      {t('previously.item1')}
-                    </a>
-                  </div>
+                  </a>
                 </li>
-                <li className="flex items-center gap-3">
-                  <img
-                    src="/rbc.jpeg"
-                    alt="RBC"
-                    className="w-8 h-8"
-                  />
+                <li>
+                  <a
+                    href="https://www.rbc.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                  >
+                    <img
+                      src="/rbc.jpeg"
+                      alt="RBC"
+                      className="w-8 h-8"
+                    />
                     <div className="leading-tight text-xs md:text-sm">
                       <div className="text-stone-100 font-medium">
-                      {t('previously.role2')}
+                        {t('previously.role2')}
+                      </div>
+                      <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('previously.item2')}
+                      </div>
                     </div>
-                    <a
-                      href="https://www.rbc.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-stone-100 transition-colors"
-                    >
-                      {t('previously.item2')}
-                    </a>
-                  </div>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -123,7 +131,7 @@ export default function Home() {
                     href="https://tiktokviewpredictor.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-stone-100 transition-colors"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
                     tiktok view predictor
                   </a>
@@ -133,7 +141,7 @@ export default function Home() {
                     href="https://diff-digest-appp.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-stone-100 transition-colors"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
                     diff digest
                   </a>
@@ -143,7 +151,7 @@ export default function Home() {
                     href="https://sql-query-parser.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-stone-100 transition-colors"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
                     sql query parser
                   </a>
@@ -153,7 +161,7 @@ export default function Home() {
                     href="https://github.com/enxilium/posture-checker-robot"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-stone-100 transition-colors"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
                     fernando
                   </a>
@@ -163,23 +171,69 @@ export default function Home() {
                     href="https://github.com/DerrickHa/ht6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-stone-100 transition-colors"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
                     basketbin
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://github.com/nicholaschen09/facial-recognition-neural-network"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    facial recognition
+                  </a>
+                </li>
               </ul>
+              {/* Neighbours navigation under Projects */}
+              <div className="mt-4 flex items-center gap-2 text-xs text-stone-400">
+                {/* Left Arrow */}
+                <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"
+                  >
+                    <path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+                <a href="https://www.sydeb.me/" target="_blank" rel="noopener noreferrer" className="group">
+                  <img
+                    src="/white.svg"
+                    alt="White SVG Pattern"
+                    className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                  />
+                </a>
+                {/* Right Arrow */}
+                <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"
+                  >
+                    <path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
           </div>
         </div>
 
         {/* Footer nav with social icons and right-aligned navigation/language */}
-        <div className="mt-16 flex flex-wrap items-center gap-4 text-xs text-stone-400 max-w-2xl">
+        <div className="mt-16 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-2xl">
           {/* Social media icons */}
           <a
             href="mailto:nicholas.chen243@gmail.com"
-            className="opacity-60 hover:opacity-100 transition-opacity"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
             aria-label="Email"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -190,7 +244,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
             target="_blank"
             rel="noopener noreferrer"
-            className="opacity-60 hover:opacity-100 transition-opacity"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
             aria-label="LinkedIn"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -201,7 +255,7 @@ export default function Home() {
             href="https://github.com/nicholaschen09"
             target="_blank"
             rel="noopener noreferrer"
-            className="opacity-60 hover:opacity-100 transition-opacity"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
             aria-label="GitHub"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -212,34 +266,22 @@ export default function Home() {
             href="https://x.com/nicholaschen__"
             target="_blank"
             rel="noopener noreferrer"
-            className="opacity-60 hover:opacity-100 transition-opacity"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
             aria-label="X (Twitter)"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </a>
-          <div className="ml-auto flex flex-col items-end -mt-6">
-            {/* Navigation arrows */}
-            <div className="flex items-center gap-2 mb-2">
-              {/* Left Arrow */}
-              <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-              <a href="https://www.sydeb.me/" target="_blank" rel="noopener noreferrer" className="group">
-                <img src="/white.svg" alt="White SVG Pattern" className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity duration-200" />
-              </a>
-              {/* Right Arrow */}
-              <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-            </div>
+          <div className="ml-auto flex items-center">
             {/* Language switcher */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`text-[10px] tracking-[0.18em] uppercase ${language === 'en' ? 'text-white' : 'text-stone-500 hover:text-stone-300'
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'en'
+                  ? 'bg-stone-800/80 text-white'
+                  : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
                   }`}
               >
                 EN
@@ -248,7 +290,9 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setLanguage('zh')}
-                className={`text-[10px] tracking-[0.18em] uppercase ${language === 'zh' ? 'text-white' : 'text-stone-500 hover:text-stone-300'
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'zh'
+                  ? 'bg-stone-800/80 text-white'
+                  : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
                   }`}
               >
                 中文

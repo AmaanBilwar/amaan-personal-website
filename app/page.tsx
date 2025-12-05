@@ -261,9 +261,12 @@ export default function Home() {
                     {'>'} <a href="https://github.com/nicholaschen09/summary-discord-bot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">discord summary bot</a> - {t('projects.neoDiscordBot')}
                   </li>
                 </ul>
-                <p className="text-sm text-stone-400 mt-3">
-                  {'>'} {t('projects.languagesTitle')}:{' '}
-                  <a href="https://go.dev/doc/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
+              </div>
+
+              <div className="mb-6">
+                <p className="mb-2 text-stone-300">{t('projects.languagesSectionTitle')}</p>
+                <p className="text-sm text-stone-400">
+                  {'>'} <a href="https://go.dev/doc/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
                     <img src="/golang.png" alt="Golang" className="inline w-4 h-4 mr-1" />
                     {t('projects.golang')}
                   </a>,{' '}
@@ -281,11 +284,10 @@ export default function Home() {
             </div>
           </div>
 
-
-          <SearchBar />
-
-          <section className="mt-2 -mb-4">
-            <p className="max-w-2xl text-sm text-stone-400">
+          <div className="mt-8 space-y-3">
+            <p className="text-stone-300">{t('contact.title')}</p>
+            <section>
+              <p className="max-w-2xl text-sm text-stone-400">
               {t('contact.text').split('email')[0]}
               <a
                 href="mailto:nicholas.chen243@gmail.com"
@@ -348,6 +350,7 @@ export default function Home() {
               {t('info.favouriteShow')}
             </p>
           </section>
+          </div>
 
           {/* Navigation arrows */}
           <div className="flex items-center gap-2 justify-start mt-24 mb-6 max-w-2xl">

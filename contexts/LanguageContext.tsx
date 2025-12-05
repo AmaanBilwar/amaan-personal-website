@@ -122,6 +122,7 @@ const translations: Record<Language, Record<string, string>> = {
         'draw.story9': 'It\'s a piece of my journey, inviting you to doodle, design, and create something alongside me!',
 
         // Contact
+        'contact.title': 'A few ways to connect...',
         'contact.text': '> i\'d love to hear from you! want to hire me? or simply wanna chat? feel free to reach out by email, or connect with me on linkedin. also check out my github!',
 
         // Links
@@ -159,6 +160,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Projects section
         'projects.title': 'A few projects I\'m working on...',
+        'projects.languagesSectionTitle': 'A few programming languages I\'ve worked with...',
         'projects.languagesTitle': 'programming languages i\'ve worked with',
         'projects.golang': 'golang',
         'projects.python': 'python',
@@ -268,6 +270,7 @@ const translations: Record<Language, Record<string, string>> = {
         'draw.story9': '这是我旅程的一部分，邀请你与我一起涂鸦、设计和创造！',
 
         // Contact
+        'contact.title': '联系方式...',
         'contact.text': '我很想听到你的声音！想雇用我？还是只是想聊天？随时通过电子邮件联系我，或在linkedin上与我联系。也可以查看我的github！',
 
         // Links
@@ -305,6 +308,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Projects section
         'projects.title': '我正在进行的几个项目...',
+        'projects.languagesSectionTitle': '我使用过的几种编程语言...',
         'projects.languagesTitle': '我使用过的编程语言',
         'projects.golang': 'golang',
         'projects.python': 'python',

@@ -22,7 +22,7 @@ export default function Home() {
                 <img
                   src="/uwaterloo_logo.jpeg"
                   alt="University of Waterloo"
-                  className="w-8 h-8 rounded-md"
+                  className="w-8 h-8"
                 />
                 <div className="leading-tight">
                   <div className="text-stone-100 font-medium">
@@ -42,7 +42,7 @@ export default function Home() {
                 <img
                   src="/textql.jpg"
                   alt="TextQL"
-                  className="w-8 h-8 rounded-md"
+                  className="w-8 h-8"
                 />
                 <div className="leading-tight">
                   <div className="text-stone-100 font-medium">
@@ -74,7 +74,7 @@ export default function Home() {
                     <img
                       src="/ownrco_logo.jpeg"
                       alt="Ownr"
-                      className="w-8 h-8 rounded-md"
+                      className="w-8 h-8"
                     />
                     <div className="leading-tight">
                       <div className="text-stone-100 font-medium">
@@ -94,7 +94,7 @@ export default function Home() {
                     <img
                       src="/rbc.jpeg"
                       alt="RBC"
-                      className="w-8 h-8 rounded-md"
+                      className="w-8 h-8"
                     />
                     <div className="leading-tight">
                       <div className="text-stone-100 font-medium">

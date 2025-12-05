@@ -7,17 +7,17 @@ export default function Home() {
   return (
     <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden relative z-10">
       {/* Hero Section */}
-      <div className="max-w-2xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-white mb-4 min-h-[3.5rem]">
+      <div className="max-w-2xl w-full space-y-1 md:space-y-2 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white mb-2 min-h-[3.5rem]">
           hi im nic
         </h1>
         {/* location / building lines removed */}
 
         <div>
-          <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
+          <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
             {t('hero.currently')}
           </p>
-          <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-1">
+          <ul className="text-xs md:text-sm text-stone-400 space-y-1">
             <li>
               <a
                 href="https://uwaterloo.ca/"
@@ -70,10 +70,10 @@ export default function Home() {
         <div className="h-auto min-h-[80px] md:min-h-[60px]">
           <div className="mt-4 space-y-3">
             <div>
-              <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
+              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
                 {t('previously.title')}
               </p>
-              <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-1">
+              <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
                   <a
                     href="https://www.ownr.co/"
@@ -122,10 +122,10 @@ export default function Home() {
             </div>
 
             <div>
-              <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
+              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
                 {t('projects.title')}
               </p>
-              <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-1">
+              <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
                   <a
                     href="https://tiktokviewpredictor.vercel.app/"
@@ -210,7 +210,7 @@ export default function Home() {
                   />
                 </a>
                 {/* Right Arrow */}
-                <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.jordankhatri.me/" target="_blank" rel="noopener noreferrer">
                   <svg
                     width="18"
                     height="18"

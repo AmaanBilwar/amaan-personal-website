@@ -24,15 +24,15 @@ export default function Home() {
                 alt="University of Waterloo"
                 className="w-8 h-8"
               />
-              <div className="leading-tight">
-                <div className="text-stone-100 font-medium">
+                <div className="leading-tight text-xs md:text-sm">
+                  <div className="text-stone-100 font-medium">
                   SYDE
                 </div>
                 <a
                   href="https://uwaterloo.ca/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-stone-100 transition-colors"
+                    className="hover:text-stone-100 transition-colors"
                 >
                   UWaterloo
                 </a>
@@ -44,15 +44,15 @@ export default function Home() {
                 alt="TextQL"
                 className="w-8 h-8"
               />
-              <div className="leading-tight">
-                <div className="text-stone-100 font-medium">
+                <div className="leading-tight text-xs md:text-sm">
+                  <div className="text-stone-100 font-medium">
                   Engineering
                 </div>
                 <a
                   href="https://textql.com/"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-stone-100 transition-colors"
+                    rel="noopener noreferrer"
+                    className="hover:text-stone-100 transition-colors"
                 >
                   TextQL
                 </a>
@@ -76,15 +76,15 @@ export default function Home() {
                     alt="Ownr"
                     className="w-8 h-8"
                   />
-                  <div className="leading-tight">
-                    <div className="text-stone-100 font-medium">
+                    <div className="leading-tight text-xs md:text-sm">
+                      <div className="text-stone-100 font-medium">
                       {t('previously.role1')}
                     </div>
                     <a
                       href="https://www.ownr.co/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-stone-100 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-100 transition-colors"
                     >
                       {t('previously.item1')}
                     </a>
@@ -96,8 +96,8 @@ export default function Home() {
                     alt="RBC"
                     className="w-8 h-8"
                   />
-                  <div className="leading-tight">
-                    <div className="text-stone-100 font-medium">
+                    <div className="leading-tight text-xs md:text-sm">
+                      <div className="text-stone-100 font-medium">
                       {t('previously.role2')}
                     </div>
                     <a

@@ -5,9 +5,9 @@ export default function Home() {
   const { t, language, setLanguage } = useLanguage();
 
   return (
-    <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden md:ml-10 -mt-4 relative z-10">
+    <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden relative z-10">
         {/* Hero Section */}
-        <div className="max-w-2xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
+        <div className="max-w-2xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-white mb-4 min-h-[3.5rem]">
             hi im nic
           </h1>
@@ -174,8 +174,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Footer nav buttons (moved from header) */}
-          <div className="mt-10 flex flex-wrap items-center gap-4 text-xs text-stone-400 max-w-2xl">
+          {/* Footer nav with social icons and right-aligned navigation/language */}
+          <div className="mt-16 flex flex-wrap items-center gap-4 text-xs text-stone-400 max-w-2xl">
+            {/* Social media icons */}
             <a
               href="mailto:nicholas.chen243@gmail.com"
               className="opacity-60 hover:opacity-100 transition-opacity"
@@ -214,12 +215,28 @@ export default function Home() {
               className="opacity-60 hover:opacity-100 transition-opacity"
               aria-label="X (Twitter)"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
-            <div className="ml-auto flex items-center gap-2">
-              <button
+            <div className="ml-auto flex flex-col items-end gap-2">
+              {/* Navigation arrows */}
+              <div className="flex items-center gap-2">
+                {/* Left Arrow */}
+                <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+                <a href="https://www.sydeb.me/" target="_blank" rel="noopener noreferrer" className="group">
+                  <img src="/white.svg" alt="White SVG Pattern" className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity duration-200" />
+                </a>
+                {/* Right Arrow */}
+                <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+              </div>
+              {/* Language switcher */}
+              <div className="flex items-center gap-2">
+                <button
                 type="button"
                 onClick={() => setLanguage('en')}
                 className={`text-[10px] tracking-[0.18em] uppercase ${
@@ -238,24 +255,9 @@ export default function Home() {
               >
                 中文
               </button>
+              </div>
             </div>
           </div>
-
-          {/* Navigation arrows */}
-          <div className="flex items-center gap-2 justify-start mt-24 mb-6 max-w-2xl">
-            {/* Left Arrow */}
-            <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-            <a href="https://www.sydeb.me/" target="_blank" rel="noopener noreferrer" className="group">
-              <img src="/white.svg" alt="White SVG Pattern" className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity duration-200" />
-            </a>
-            {/* Right Arrow */}
-            <a href="https://www.brandonling.me/" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"><path d="M6 3L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-          </div>
-
         </div>
         {/* Animated Drawing Sections */}
         <div className="mt-8 mb-12 space-y-8">

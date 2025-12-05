@@ -56,19 +56,62 @@ export default function SearchBar() {
     if (!isLoading && !pendingAI) return;
 
     const thinkingTexts = [
-      'Pondering', 'Contemplating', 'Ruminating', 'Cogitating', 'Mulling over',
-      'Brainstorming', 'Processing', 'Computing', 'Deliberating', 'Reflecting',
-      'Calculating', 'Analyzing', 'Synthesizing', 'Percolating', 'Marinating',
-      'Digesting', 'Churning', 'Stewing', 'Brewing thoughts', 'Mind-melding',
-      'Brain-storming', 'Neural firing', 'Synapses snapping', 'Neurons dancing'
+      'Pondering',
+      'Contemplating',
+      'Ruminating',
+      'Cogitating',
+      'Mulling over',
+      'Brainstorming',
+      'Processing',
+      'Computing',
+      'Deliberating',
+      'Reflecting',
+      'Calculating',
+      'Analyzing',
+      'Synthesizing',
+      'Percolating',
+      'Marinating',
+      'Digesting',
+      'Churning',
+      'Stewing',
+      'Brewing thoughts',
+      'Mind-melding',
+      'Brain-storming',
+      'Neural firing',
+      'Synapses snapping',
+      'Neurons dancing',
     ];
     const respondingTexts = [
-      'Tomfoolering', 'Shenanigans', 'Crafting', 'Conjuring', 'Concocting',
-      'Fabricating', 'Orchestrating', 'Brewing', 'Assembling', 'Materializing',
-      'Bamboozling', 'Jiggery-pokery', 'Hullabaloo', 'Rigmarole', 'Balderdash',
-      'Flibbertigibbet', 'Discombobulating', 'Hornswoggling', 'Poppycock', 'Fiddle-faddle',
-      'Kerfuffle-ing', 'Brouhaha-ing', 'Hullaballoo', 'Gobbledygook', 'Lollygagging',
-      'Dilly-dallying', 'Wishy-washing', 'Flip-flopping', 'Zig-zagging', 'Topsy-turvy-ing'
+      'Tomfoolering',
+      'Shenanigans',
+      'Crafting',
+      'Conjuring',
+      'Concocting',
+      'Fabricating',
+      'Orchestrating',
+      'Brewing',
+      'Assembling',
+      'Materializing',
+      'Bamboozling',
+      'Jiggery-pokery',
+      'Hullabaloo',
+      'Rigmarole',
+      'Balderdash',
+      'Flibbertigibbet',
+      'Discombobulating',
+      'Hornswoggling',
+      'Poppycock',
+      'Fiddle-faddle',
+      'Kerfuffle-ing',
+      'Brouhaha-ing',
+      'Hullaballoo',
+      'Gobbledygook',
+      'Lollygagging',
+      'Dilly-dallying',
+      'Wishy-washing',
+      'Flip-flopping',
+      'Zig-zagging',
+      'Topsy-turvy-ing',
     ];
 
     const texts = !!pendingAI ? respondingTexts : thinkingTexts;
@@ -85,7 +128,7 @@ export default function SearchBar() {
       if (pending) setPendingAI(pending);
       const typed = localStorage.getItem('chat-typedAI');
       if (typed) setTypedAI(typed);
-    } catch { }
+    } catch {}
     setRehydrated(true);
   }, []);
 
@@ -102,10 +145,7 @@ export default function SearchBar() {
           idx++;
           setTimeout(typeChar, 20);
         } else {
-          setMessages(prev => [
-            ...prev,
-            { role: 'assistant', content: pendingAI }
-          ]);
+          setMessages((prev) => [...prev, { role: 'assistant', content: pendingAI }]);
           setPendingAI(null);
           setTypedAI('');
           localStorage.removeItem('chat-pendingAI');
@@ -131,10 +171,7 @@ export default function SearchBar() {
         idx++;
         typingTimeout.current = setTimeout(typeChar, 20);
       } else {
-        setMessages(prev => [
-          ...prev,
-          { role: 'assistant', content: pendingAI }
-        ]);
+        setMessages((prev) => [...prev, { role: 'assistant', content: pendingAI }]);
         setPendingAI(null);
         setTypedAI('');
         localStorage.removeItem('chat-pendingAI');
@@ -175,7 +212,7 @@ export default function SearchBar() {
   useEffect(() => {
     try {
       localStorage.setItem('chat-messages', JSON.stringify(messages));
-    } catch { }
+    } catch {}
   }, [messages]);
 
   // Persist pendingAI and typedAI to localStorage
@@ -186,7 +223,7 @@ export default function SearchBar() {
       } else {
         localStorage.removeItem('chat-pendingAI');
       }
-    } catch { }
+    } catch {}
   }, [pendingAI]);
 
   useEffect(() => {
@@ -196,7 +233,7 @@ export default function SearchBar() {
       } else {
         localStorage.removeItem('chat-typedAI');
       }
-    } catch { }
+    } catch {}
   }, [typedAI]);
 
   // Auto-resize textarea
@@ -230,10 +267,10 @@ export default function SearchBar() {
       const helpMessage = `Available commands:
 • /clear - clear chat history
 • /help - show this help message`;
-      setMessages(prev => [
+      setMessages((prev) => [
         ...prev,
         { role: 'user', content: '/help' },
-        { role: 'assistant', content: helpMessage }
+        { role: 'assistant', content: helpMessage },
       ]);
       setQuery('');
       return;
@@ -250,7 +287,7 @@ export default function SearchBar() {
     }
 
     // Add user message
-    setMessages(prev => [...prev, { role: 'user', content: trimmed }]);
+    setMessages((prev) => [...prev, { role: 'user', content: trimmed }]);
     setQuery('');
     setIsLoading(true);
 
@@ -272,20 +309,16 @@ export default function SearchBar() {
       }
     } catch (error) {
       console.error('Search error:', error);
-      const errorMessage = language === 'zh'
-        ? '抱歉，我处理时遇到了问题。你能再试一次吗？'
-        : 'Sorry, I had trouble processing that. Could you try again?';
-      setMessages(prev => [
-        ...prev,
-        { role: 'assistant', content: errorMessage }
-      ]);
+      const errorMessage =
+        language === 'zh'
+          ? '抱歉，我处理时遇到了问题。你能再试一次吗？'
+          : 'Sorry, I had trouble processing that. Could you try again?';
+      setMessages((prev) => [...prev, { role: 'assistant', content: errorMessage }]);
     } finally {
       setIsLoading(false);
       setDotCount(1);
     }
   };
-
-
 
   return (
     <div className={`px-0 ${minecraft.variable} font-minecraft`}>
@@ -297,7 +330,6 @@ export default function SearchBar() {
       </div>
 
       <h2 className="text-lg text-stone-300 mb-4 mt-4 font-minecraft">{t('search.title')}</h2>
-
 
       {/* Combined terminal interface */}
       <div className="max-w-2xl w-full mt-4 mb-6">
@@ -311,15 +343,14 @@ export default function SearchBar() {
                 style={{ scrollbarGutter: 'stable' }}
               >
                 {messages.map((message, index) => (
-                  <ChatMessage
-                    key={index}
-                    role={message.role}
-                    content={message.content}
-                  />
+                  <ChatMessage key={index} role={message.role} content={message.content} />
                 ))}
                 {/* Typing animation for AI */}
                 {typedAI && (
-                  <ChatMessage role="assistant" content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')} />
+                  <ChatMessage
+                    role="assistant"
+                    content={typedAI + (typedAI.length < (pendingAI?.length || 0) ? '|' : '')}
+                  />
                 )}
                 <div ref={messagesEndRef} />
               </div>
@@ -340,7 +371,9 @@ export default function SearchBar() {
                   if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
                     if (formRef.current) {
-                      formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+                      formRef.current.dispatchEvent(
+                        new Event('submit', { cancelable: true, bubbles: true }),
+                      );
                     }
                   }
                 }}
@@ -356,7 +389,7 @@ export default function SearchBar() {
                       animation: 'shimmerText 2s ease-in-out infinite',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
+                      backgroundClip: 'text',
                     }}
                   >
                     {loadingText}
@@ -368,8 +401,12 @@ export default function SearchBar() {
                     }
                   `}</style>
                   <span className="animate-pulse">.</span>
-                  <span className="animate-pulse" style={{ animationDelay: '0.3s' }}>.</span>
-                  <span className="animate-pulse" style={{ animationDelay: '0.6s' }}>.</span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.3s' }}>
+                    .
+                  </span>
+                  <span className="animate-pulse" style={{ animationDelay: '0.6s' }}>
+                    .
+                  </span>
                 </div>
               )}
             </div>

@@ -31,16 +31,12 @@ const Carousel = ({ images, autoplayInterval = 3000 }: CarouselProps) => {
   }, [currentIndex, autoplayInterval]);
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     setTranslateX(0);
   };
 
   const goToPrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
     setTranslateX(0);
   };
 
@@ -128,17 +124,12 @@ const Carousel = ({ images, autoplayInterval = 3000 }: CarouselProps) => {
                     ? `translateX(${translateX}px)`
                     : index === (currentIndex + 1) % images.length
                       ? `translateX(calc(100% + ${translateX}px))`
-                      : index ===
-                          (currentIndex - 1 + images.length) % images.length
+                      : index === (currentIndex - 1 + images.length) % images.length
                         ? `translateX(calc(-100% + ${translateX}px))`
                         : 'translateX(100%)',
               }}
             >
-              <img
-                src={image}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+              <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
@@ -150,9 +141,7 @@ const Carousel = ({ images, autoplayInterval = 3000 }: CarouselProps) => {
           <button
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? 'bg-white scale-125 opacity-100'
-                : 'bg-white/50 opacity-70'
+              index === currentIndex ? 'bg-white scale-125 opacity-100' : 'bg-white/50 opacity-70'
             }`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
@@ -173,12 +162,7 @@ const Carousel = ({ images, autoplayInterval = 3000 }: CarouselProps) => {
           stroke="currentColor"
           className="w-5 h-5"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       <button
@@ -193,12 +177,7 @@ const Carousel = ({ images, autoplayInterval = 3000 }: CarouselProps) => {
           stroke="currentColor"
           className="w-5 h-5"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
     </div>

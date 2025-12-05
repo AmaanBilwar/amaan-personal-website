@@ -6,10 +6,7 @@ interface FullScreenCarousel {
   autoplayInterval?: number;
 }
 
-const FullScreenCarousel = ({
-  images,
-  autoplayInterval = 3000,
-}: FullScreenCarousel) => {
+const FullScreenCarousel = ({ images, autoplayInterval = 3000 }: FullScreenCarousel) => {
   return (
     <div className="relative h-full w-full bg-black overflow-hidden">
       <div className="h-full w-full">

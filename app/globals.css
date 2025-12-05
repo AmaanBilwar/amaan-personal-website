@@ -70,8 +70,6 @@ body {
     /* ... other dark theme variables ... */
   }
 
-
-
   * {
     @apply border-border;
   }
@@ -83,9 +81,17 @@ body {
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
     font-weight: 500;
-    font-feature-settings: "tnum" on, "lnum" on;
+    font-feature-settings:
+      'tnum' on,
+      'lnum' on;
   }
 
   h1 {

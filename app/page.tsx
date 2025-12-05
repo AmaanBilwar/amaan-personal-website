@@ -8,9 +8,16 @@ export default function Home() {
     <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden relative z-10">
       {/* Hero Section */}
       <div className="max-w-2xl w-full space-y-1 md:space-y-2 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white mb-2 min-h-[3.5rem]">
-          {t('home.title')}
-        </h1>
+        <div className="flex items-center justify-between mb-2">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white min-h-[3.5rem]">
+            {t('home.title')}
+          </h1>
+          <img
+            src="/ghcat.png"
+            alt="GitHub Cat"
+            className="w-8 h-8 md:w-10 md:h-10 opacity-80"
+          />
+        </div>
         {/* location / building lines removed */}
 
         <div>

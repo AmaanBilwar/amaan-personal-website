@@ -5,7 +5,6 @@ import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
-import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 
 import { LanguageProvider } from '@/contexts/LanguageContext';
@@ -23,7 +22,6 @@ const minecraft = localFont({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
   return (
     <LanguageProvider>
       <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable}`}>
@@ -71,5 +69,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </LanguageProvider>
   );
 }
-
-import './globals.css';

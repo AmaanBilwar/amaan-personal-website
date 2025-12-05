@@ -64,7 +64,9 @@ export default function Home() {
           <div className="h-auto min-h-[80px] md:min-h-[60px]">
             <div className="mt-4 space-y-3">
               <div>
-                <p className="mb-2 text-stone-300">{t('previously.title')}</p>
+                <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
+                  {t('previously.title')}
+                </p>
                 <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-3">
                   <li className="flex items-center gap-3">
                     <img
@@ -110,7 +112,9 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="mb-2 text-stone-300">{t('projects.title')}</p>
+                <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
+                  {t('projects.title')}
+                </p>
                 <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-1">
                   <li>
                     <a

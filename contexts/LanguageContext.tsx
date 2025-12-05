@@ -184,7 +184,7 @@ const translations: Record<Language, Record<string, string>> = {
         'excited.item4': 'engineering projects that make me say, "whoa, that\'s so cool!"',
 
         // Previously section
-        'previously.title': 'Previously...',
+        'previously.title': 'Previously',
         'previously.role1': 'Engineering',
         'previously.role2': 'Engineering',
         'previously.item1': 'Ownr',

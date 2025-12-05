@@ -9,7 +9,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="max-w-2xl w-full space-y-1 md:space-y-2 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white mb-2 min-h-[3.5rem]">
-          hi im nic
+          {t('home.title')}
         </h1>
         {/* location / building lines removed */}
 
@@ -54,7 +54,7 @@ export default function Home() {
                 />
                 <div className="leading-tight text-xs md:text-sm">
                   <div className="text-stone-100 font-medium">
-                    Engineering
+                    {t('current.role2')}
                   </div>
                   <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
                     TextQL
@@ -133,7 +133,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    tiktok view predictor
+                    {t('projects.label.tiktok')}
                   </a>
                 </li>
                 <li>
@@ -143,7 +143,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    diff digest
+                    {t('projects.label.diffDigest')}
                   </a>
                 </li>
                 <li>
@@ -153,7 +153,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    sql query parser
+                    {t('projects.label.sqlParser')}
                   </a>
                 </li>
                 <li>
@@ -163,7 +163,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    fernando
+                    {t('projects.label.fernando')}
                   </a>
                 </li>
                 <li>
@@ -173,7 +173,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    basketbin
+                    {t('projects.label.basketbin')}
                   </a>
                 </li>
                 <li>
@@ -183,7 +183,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    facial recognition
+                    {t('projects.label.facialRecognition')}
                   </a>
                 </li>
               </ul>

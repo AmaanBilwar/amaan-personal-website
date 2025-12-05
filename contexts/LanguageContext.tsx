@@ -176,6 +176,17 @@ const translations: Record<Language, Record<string, string>> = {
         'projects.fernando': 'posture checker robot that won 2nd place at utra hacks',
         'projects.basketbin': 'machine that sorts trash automatically using computer vision',
 
+        // Projects list labels (home page)
+        'projects.label.tiktok': 'tiktok view predictor',
+        'projects.label.diffDigest': 'diff digest',
+        'projects.label.sqlParser': 'sql query parser',
+        'projects.label.fernando': 'fernando',
+        'projects.label.basketbin': 'basketbin',
+        'projects.label.facialRecognition': 'facial recognition',
+
+        // Home hero title
+        'home.title': 'hi im nic',
+
         // Excited section  
         'excited.title': 'I\'m excited about...',
         'excited.item1': 'building ai agents that surprise and delight people everywhere',
@@ -189,6 +200,9 @@ const translations: Record<Language, Record<string, string>> = {
         'previously.role2': 'Engineering',
         'previously.item1': 'Ownr',
         'previously.item2': 'RBC',
+
+        // Current roles (compact labels)
+        'current.role2': 'Engineering',
 
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',
@@ -324,6 +338,17 @@ const translations: Record<Language, Record<string, string>> = {
         'projects.fernando': '在utra黑客马拉松获得第二名的姿势检查机器人',
         'projects.basketbin': '使用计算机视觉自动分拣垃圾的机器',
 
+        // Projects list labels (home page) — keep English names in both languages
+        'projects.label.tiktok': 'tiktok view predictor',
+        'projects.label.diffDigest': 'diff digest',
+        'projects.label.sqlParser': 'sql query parser',
+        'projects.label.fernando': 'fernando',
+        'projects.label.basketbin': 'basketbin',
+        'projects.label.facialRecognition': 'facial recognition',
+
+        // Home hero title
+        'home.title': '嗨，我是 nic',
+
         // Excited section
         'excited.title': '我对以下事情感到兴奋...',
         'excited.item1': '构建能在各处给人惊喜和快乐的AI代理',
@@ -337,6 +362,9 @@ const translations: Record<Language, Record<string, string>> = {
         'previously.role2': '工程',
         'previously.item1': 'ownr',
         'previously.item2': 'rbc',
+
+        // Current roles (compact labels)
+        'current.role2': '工程',
 
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',

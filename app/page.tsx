@@ -27,7 +27,7 @@ export default function Home() {
           <ul className="text-xs md:text-sm text-stone-400 space-y-1">
             <li>
               <a
-                href="https://uwaterloo.ca/"
+                href="https://uwaterloo.ca/systems-design-engineering/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
@@ -304,11 +304,10 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
-                  language === 'en'
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'en'
                     ? 'bg-stone-800/80 text-white'
                     : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
-                }`}
+                  }`}
               >
                 EN
               </button>
@@ -316,11 +315,10 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setLanguage('zh')}
-                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
-                  language === 'zh'
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'zh'
                     ? 'bg-stone-800/80 text-white'
                     : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
-                }`}
+                  }`}
               >
                 中文
               </button>

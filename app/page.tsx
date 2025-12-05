@@ -1,207 +1,61 @@
 'use client';
-import SearchBar from '@/components/search/search';
-import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
-  const { t } = useLanguage();
-
-
-  // Hydration safety
-  const [mounted, setMounted] = useState(false);
-
-  // Typewriter effect state
-  const baseText = t('hero.greeting');
-  const fullName = t('hero.name.full');
-  const shortName = t('hero.name.short');
-
-  const [displayText, setDisplayText] = useState(baseText); // Initialize with base text to prevent hydration mismatch
-  const [phase, setPhase] = useState<'typingFull' | 'backspacingFull' | 'typingShort' | 'backspacingShort'>('typingFull');
-  const [charIndex, setCharIndex] = useState(0);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return; // Only run animation after component mounts
-
-    let timeout: NodeJS.Timeout | undefined;
-    if (phase === 'typingFull') {
-      if (charIndex <= fullName.length) {
-        setDisplayText(baseText + fullName.slice(0, charIndex));
-        timeout = setTimeout(() => setCharIndex(charIndex + 1), 120);
-      } else {
-        timeout = setTimeout(() => setPhase('backspacingFull'), 1000);
-      }
-    } else if (phase === 'backspacingFull') {
-      if (charIndex > 0) {
-        setDisplayText(baseText + fullName.slice(0, charIndex - 1));
-        timeout = setTimeout(() => setCharIndex(charIndex - 1), 80);
-      } else {
-        setPhase('typingShort');
-        setCharIndex(0);
-      }
-    } else if (phase === 'typingShort') {
-      if (charIndex <= shortName.length) {
-        setDisplayText(baseText + shortName.slice(0, charIndex));
-        timeout = setTimeout(() => setCharIndex(charIndex + 1), 120);
-      } else {
-        timeout = setTimeout(() => setPhase('backspacingShort'), 1000);
-      }
-    } else if (phase === 'backspacingShort') {
-      if (charIndex > 0) {
-        setDisplayText(baseText + shortName.slice(0, charIndex - 1));
-        timeout = setTimeout(() => setCharIndex(charIndex - 1), 80);
-      } else {
-        setPhase('typingFull');
-        setCharIndex(0);
-      }
-    }
-    return () => clearTimeout(timeout);
-  }, [mounted, phase, charIndex, baseText, fullName, shortName]);
-
-  if (!mounted) {
-    return (
-      <main className="flex min-h-screen flex-col items-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
-        <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
-          <h1 className="text-3xl sm:text-3xl md:text-5xl font-light text-white mb-4 min-h-[3.5rem]">
-            {baseText}
-          </h1>
-        </div>
-      </main>
-    );
-  }
+  const { t, language, setLanguage } = useLanguage();
 
   return (
-    <>
-      <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-12 overflow-x-hidden md:ml-10 -mt-4 relative z-10">
+    <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden md:ml-10 -mt-4 relative z-10">
         {/* Hero Section */}
-        <div className="max-w-3xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
-          <h1 className="text-3xl sm:text-3xl md:text-5xl font-light text-white mb-4 min-h-[3.5rem]">
-            {displayText}
-            {mounted && <span className="animate-pulse">|</span>}
+        <div className="max-w-2xl w-full space-y-3 md:space-y-3 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto md:mx-0 md:ml-16">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-white mb-4 min-h-[3.5rem]">
+            hi im nic
           </h1>
-          <div className="text-xs text-stone-400 space-y-1">
-            <p className="text-sm text-stone-400">
-              {(() => {
-                const text = t('hero.location');
-                // Split by toronto first
-                const torontoParts = text.split('toronto');
-                const result: (string | React.ReactElement)[] = [];
-
-                torontoParts.forEach((part, index) => {
-                  // Handle new york city in each part
-                  const nycParts = part.split('nyc');
-                  nycParts.forEach((nycPart, nycIndex) => {
-                    result.push(nycPart);
-                    if (nycIndex < nycParts.length - 1) {
-                      result.push(
-                        <a
-                          key={`nyc-${index}-${nycIndex}`}
-                          href="https://www.nyctourism.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="underline hover:text-stone-100 transition-colors"
-                        >
-                          nyc
-                        </a>
-                      );
-                    }
-                  });
-
-                  if (index < torontoParts.length - 1) {
-                    result.push(
-                      <a
-                        key={`toronto-${index}`}
-                        href="https://www.destinationtoronto.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline hover:text-stone-100 transition-colors"
-                      >
-                        toronto
-                      </a>
-                    );
-                  }
-                });
-
-                return result;
-              })()}
-            </p>
-            <p className="text-sm text-stone-400">
-              {(() => {
-                const text = t('hero.building');
-                const dayMatch = text.match(/(\d+)\s*(?:days|天)/i);
-                if (dayMatch) {
-                  const days = parseInt(dayMatch[1]);
-                  const years = (days / 365.25).toFixed(1);
-                  const beforeDays = text.substring(0, text.indexOf(dayMatch[0]));
-                  const afterDays = text.substring(text.indexOf(dayMatch[0]) + dayMatch[0].length);
-
-                  return (
-                    <>
-                      {beforeDays}
-                      <span className="relative group">
-                        <span className="cursor-pointer underline underline-offset-2 hover:text-stone-100 transition-colors">
-                          {dayMatch[0]}
-                        </span>
-                        <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
-                          {years} years
-                        </span>
-                      </span>
-                      {afterDays}
-                    </>
-                  );
-                }
-                return text;
-              })()}
-            </p>
-          </div>
+          {/* location / building lines removed */}
 
           <div>
-            <p className="mb-4 text-stone-300">{t('hero.currently')}</p>
-            <ul className="text-sm text-stone-400 space-y-1">
-              <li>
-                {(() => {
-                  const text = t('hero.current1');
-                  // Split by 'syde' or '系统设计工程' depending on language
-                  const parts = text.split(/(syde|系统设计工程)/i);
-
-                  return parts.map((part, index) => {
-                    if (part.toLowerCase() === 'syde' || part === '系统设计工程') {
-                      return (
-                        <span key={index} className="relative group inline">
-                          <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
-                            {part}
-                          </a>
-                          <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs rounded bg-stone-800 text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
-                            systems design engineering
-                          </span>
-                        </span>
-                      );
-                    } else if (part.includes('university of waterloo') || part.includes('滑铁卢大学')) {
-                      const uwParts = part.split(/(university of waterloo|滑铁卢大学)/i);
-                      return uwParts.map((uwPart, uwIndex) => {
-                        if (uwPart.toLowerCase() === 'university of waterloo' || uwPart === '滑铁卢大学') {
-                          return (
-                            <a key={`${index}-${uwIndex}`} href="https://uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group">
-                              <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="inline w-4 h-4 mr-1" />
-                              {uwPart}
-                            </a>
-                          );
-                        }
-                        return <span key={`${index}-${uwIndex}`}>{uwPart}</span>;
-                      });
-                    }
-                    return <span key={index}>{part}</span>;
-                  });
-                })()}
+            <p className="mb-2 text-stone-300">{t('hero.currently')}</p>
+            <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-3">
+              <li className="flex items-center gap-3">
+                <img
+                  src="/uwaterloo_logo.jpeg"
+                  alt="University of Waterloo"
+                  className="w-8 h-8 rounded-md"
+                />
+                <div className="leading-tight">
+                  <div className="text-stone-100 font-medium">
+                    SYDE
+                  </div>
+                  <a
+                    href="https://uwaterloo.ca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-stone-100 transition-colors"
+                  >
+                    UWaterloo
+                  </a>
+                </div>
               </li>
-              <li>
-                {'>'} {t('hero.current2').split('textql')[0]}<a href="https://textql.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group"><img src="/textql.jpg" alt="TextQL" className="inline w-4 h-4 mr-1" />textql</a>{t('hero.current2').split('nyc')[0].split('textql')[1]}<a href="https://visitnyc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">nyc</a>{t('hero.current2').split('nyc')[1]}
+              <li className="flex items-center gap-3">
+                <img
+                  src="/textql.jpg"
+                  alt="TextQL"
+                  className="w-8 h-8 rounded-md"
+                />
+                <div className="leading-tight">
+                  <div className="text-stone-100 font-medium">
+                    Engineering
+                  </div>
+                  <a
+                    href="https://textql.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-stone-100 transition-colors"
+                  >
+                    TextQL
+                  </a>
+                </div>
               </li>
-
-
             </ul>
           </div>
 
@@ -211,145 +65,174 @@ export default function Home() {
             <div className="mt-4 space-y-3">
               <div>
                 <p className="mb-2 text-stone-300">{t('previously.title')}</p>
-                <ul className="text-sm text-stone-400 space-y-1">
-                  <li>
-                    {'>'} {t('previously.item1').split('ownr')[0]}
-                    <a href="https://www.ownr.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group">
-                      <img src="/ownrco_logo.jpeg" alt="Ownr" className="inline w-4 h-4 mr-1" />
-                      ownr
-                    </a>
-                    {t('previously.item1').split('ownr')[1]}
+                <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-3">
+                  <li className="flex items-center gap-3">
+                    <img
+                      src="/ownrco_logo.jpeg"
+                      alt="Ownr"
+                      className="w-8 h-8 rounded-md"
+                    />
+                    <div className="leading-tight">
+                      <div className="text-stone-100 font-medium">
+                        {t('previously.role1')}
+                      </div>
+                      <a
+                        href="https://www.ownr.co/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-100 transition-colors"
+                      >
+                        {t('previously.item1')}
+                      </a>
+                    </div>
                   </li>
-                  <li>
-                    {'>'} {t('previously.item2').split('rbc')[0]}
-                    <a href="https://www.rbc.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors group">
-                      <img src="/rbc.jpeg" alt="RBC" className="inline w-4 h-4 mr-1" />
-                      rbc
-                    </a>
-                    {t('previously.item2').split('rbc')[1]}
+                  <li className="flex items-center gap-3">
+                    <img
+                      src="/rbc.jpeg"
+                      alt="RBC"
+                      className="w-8 h-8 rounded-md"
+                    />
+                    <div className="leading-tight">
+                      <div className="text-stone-100 font-medium">
+                        {t('previously.role2')}
+                      </div>
+                      <a
+                        href="https://www.rbc.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-100 transition-colors"
+                      >
+                        {t('previously.item2')}
+                      </a>
+                    </div>
                   </li>
-
-
                 </ul>
               </div>
 
               <div>
                 <p className="mb-2 text-stone-300">{t('projects.title')}</p>
-                <ul className="text-sm text-stone-400 space-y-1">
+                <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-1">
                   <li>
-                    {'>'} <a href="https://tiktokviewpredictor.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">tiktok view predictor</a> - {t('projects.tiktokPredictor')}
+                    <a
+                      href="https://tiktokviewpredictor.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-100 transition-colors"
+                    >
+                      tiktok view predictor
+                    </a>
                   </li>
                   <li>
-                    {'>'} <a href="https://github.com/nicholaschen09/facial-recognition-neural-network" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">facial recognition model</a> - {t('projects.facialRecognition')}
+                    <a
+                      href="https://diff-digest-appp.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-100 transition-colors"
+                    >
+                      diff digest
+                    </a>
                   </li>
                   <li>
-                    {'>'} <a href="https://diff-digest-appp.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">diff digest</a> - {t('projects.diffDigest')}
+                    <a
+                      href="https://sql-query-parser.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-100 transition-colors"
+                    >
+                      sql query parser
+                    </a>
                   </li>
                   <li>
-                    {'>'} <a href="https://sql-query-parser.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">sql query parser</a> - {t('projects.sqlParser')}
+                    <a
+                      href="https://github.com/enxilium/posture-checker-robot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-100 transition-colors"
+                    >
+                      fernando
+                    </a>
                   </li>
                   <li>
-                    {'>'} <a href="https://dependabot-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">dependabot</a> - {t('projects.dependabot')}
-                  </li>
-                  <li>
-                    {'>'} <a href="https://github.com/enxilium/posture-checker-robot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">fernando</a> - {t('projects.fernando')}
-                  </li>
-                  <li>
-                    {'>'} <a href="https://github.com/DerrickHa/ht6" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">basketbin</a> - {t('projects.basketbin')}
-                  </li>
-                  <li>
-                    {'>'} <a href="https://github.com/nicholaschen09/summary-discord-bot" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">discord summary bot</a> - {t('projects.neoDiscordBot')}
+                    <a
+                      href="https://github.com/DerrickHa/ht6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-100 transition-colors"
+                    >
+                      basketbin
+                    </a>
                   </li>
                 </ul>
-              </div>
-
-              <div className="mb-6">
-                <p className="mb-2 text-stone-300">{t('projects.languagesSectionTitle')}</p>
-                <p className="text-sm text-stone-400">
-                  {'>'} <a href="https://go.dev/doc/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
-                    <img src="/golang.png" alt="Golang" className="inline w-4 h-4 mr-1" />
-                    {t('projects.golang')}
-                  </a>,{' '}
-                  <a href="https://docs.python.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
-                    <img src="/python.png" alt="Python" className="inline w-4 h-4 mr-1" />
-                    {t('projects.python')}
-                  </a> {t('projects.and')}{' '}
-                  <a href="https://www.typescriptlang.org/docs/" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-100 transition-colors">
-                    <img src="/typescript-logo.png" alt="TypeScript" className="inline w-4 h-4 mr-1" />
-                    {t('projects.typescript')}
-                  </a>
-                </p>
               </div>
 
             </div>
           </div>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-stone-300">{t('contact.title')}</p>
-            <section>
-              <p className="max-w-2xl text-sm text-stone-400">
-              {t('contact.text').split('email')[0]}
-              <a
-                href="mailto:nicholas.chen243@gmail.com"
-                className="text-stone-400 underline hover:text-stone-100 group"
+          {/* Footer nav buttons (moved from header) */}
+          <div className="mt-10 flex flex-wrap items-center gap-4 text-xs text-stone-400 max-w-2xl">
+            <a
+              href="mailto:nicholas.chen243@gmail.com"
+              className="opacity-60 hover:opacity-100 transition-opacity"
+              aria-label="Email"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 hover:opacity-100 transition-opacity"
+              aria-label="LinkedIn"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/nicholaschen09"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 hover:opacity-100 transition-opacity"
+              aria-label="GitHub"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21C9.5 20.77 9.5 20.14 9.5 19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26C14.5 19.6 14.5 20.68 14.5 21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.48 17.52 2 12 2Z"/>
+              </svg>
+            </a>
+            <a
+              href="https://x.com/nicholaschen__"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 hover:opacity-100 transition-opacity"
+              aria-label="X (Twitter)"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <div className="ml-auto flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`text-[10px] tracking-[0.18em] uppercase ${
+                  language === 'en' ? 'text-white' : 'text-stone-500 hover:text-stone-300'
+                }`}
               >
-                <img src="/gmail.jpg" alt="Gmail" className="inline w-4 h-4 mr-1" />
-                email
-              </a>
-              {t('contact.text').split('linkedin')[0].split('email')[1]}
-              <a
-                href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 group"
+                EN
+              </button>
+              <span className="text-stone-600">/</span>
+              <button
+                type="button"
+                onClick={() => setLanguage('zh')}
+                className={`text-[10px] tracking-[0.18em] uppercase ${
+                  language === 'zh' ? 'text-white' : 'text-stone-500 hover:text-stone-300'
+                }`}
               >
-                <img src="/linkedin2.png" alt="LinkedIn" className="inline w-4 h-4 mr-1" />
-                linkedin
-              </a>
-              {t('contact.text').split('github')[0].split('linkedin')[1]}
-              <a
-                href="https://github.com/nicholaschen09"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 group"
-              >
-                <img src="/githubv2.png" alt="GitHub" className="inline w-4 h-4 mr-1" />
-                github
-              </a>
-              {t('contact.text').split('github')[1]}
-            </p>
-          </section>
-
-          {/* Links to blogs and art */}
-          <section className="mt-1 mb-8">
-            <p className="max-w-2xl text-sm text-stone-400 mb-2">
-              {t('links.blogPrompt')} {' '}
-              <a
-                href="https://x.com/nicholaschen__/status/1992051772614181211?s=20"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 group"
-              >
-                <img src="/twitter.jpg" alt="Twitter" className="inline w-5 h-5 mr-1" />
-                {t('links.blogLink')}
-              </a>
-            </p>
-            <p className="max-w-2xl text-sm text-stone-400">
-              {t('links.artPrompt')} {' '}
-              <a
-                href="https://nicholaschen243.wixsite.com/nicholas-chen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-400 underline hover:text-stone-100 group"
-              >
-                <img src="/artlogo.png" alt="Art" className="inline w-4 h-4 mr-1" />
-                {t('links.artLink')}
-              </a>
-            </p>
-            <p className="max-w-2xl text-sm text-stone-400 mt-2">
-              {t('info.favouriteShow')}
-            </p>
-          </section>
+                中文
+              </button>
+            </div>
           </div>
 
           {/* Navigation arrows */}
@@ -373,6 +256,5 @@ export default function Home() {
         </div>
 
       </main>
-    </>
   );
 }

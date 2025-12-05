@@ -56,13 +56,13 @@ const translations: Record<Language, Record<string, string>> = {
         'hero.greeting': "Hey, I'm ",
         'hero.name.full': 'Nicholas!',
         'hero.name.short': 'Nic!',
-        'hero.location': "> i'm based in toronto and nyc",
-        'hero.building': "> i've been building things for 3673 days",
+        'hero.location': "",
+        'hero.building': "",
         'hero.achievements': 'A few of my achievements...',
         'hero.achievement1': '30k followers on social media (x, instagram, tiktok, youtube) and over 10m views',
         'hero.achievement2': 'won 2nd place at UTRA Hacks, the largest robotics hackathon in canada',
         'hero.achievement3': 'designed award winning book covers for authors',
-        'hero.currently': "I'm currently...",
+        'hero.currently': "Currently..",
         'hero.current1': '> studying syde (engineering) at the university of waterloo',
         'hero.current2': 'working at textql as a software engineer intern in nyc building ai agents for data',
         'hero.current3': 'building projects to help others create and invent new things',
@@ -159,7 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
         'moneyMaking.text': 'I\'ve done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour\'s driveways, internships, freelance work in design and coding as well as brand deals from social media.',
 
         // Projects section
-        'projects.title': 'A few projects I\'m working on...',
+        'projects.title': 'Projects',
         'projects.languagesSectionTitle': 'A few programming languages I\'ve worked with...',
         'projects.languagesTitle': 'programming languages i\'ve worked with',
         'projects.golang': 'golang',
@@ -184,11 +184,11 @@ const translations: Record<Language, Record<string, string>> = {
         'excited.item4': 'engineering projects that make me say, "whoa, that\'s so cool!"',
 
         // Previously section
-        'previously.title': 'Previously I...',
-        'previously.item1': 'was a software engineer intern at ownr, building tools for entrepreneurs worldwide',
-        'previously.item2': 'was a software engineer intern at rbc, working on machine learning models',
-        'previously.item3': 'was a ux design intern at meta hash capital, focusing on user experience in fintech',
-        'previously.item4': 'was a software engineer at voluntrack, designing tools for their volunteering platform',
+        'previously.title': 'Previously...',
+        'previously.role1': 'Engineering',
+        'previously.role2': 'Engineering',
+        'previously.item1': 'Ownr',
+        'previously.item2': 'RBC',
 
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',
@@ -332,11 +332,11 @@ const translations: Record<Language, Record<string, string>> = {
         'excited.item4': '进行让我说"哇，太酷了！"的工程项目',
 
         // Previously section
-        'previously.title': '以前我...',
-        'previously.item1': '在ownr担任软件工程师实习生，为全球企业家构建工具',
-        'previously.item2': '在rbc担任软件工程师实习生，从事机器学习模型工作',
-        'previously.item3': '在meta hash capital担任用户体验设计实习生，专注于金融科技的用户体验',
-        'previously.item4': '在voluntrack担任软件工程师，为他们的志愿服务平台设计工具',
+        'previously.title': '之前经历...',
+        'previously.role1': '工程',
+        'previously.role2': '工程',
+        'previously.item1': 'ownr',
+        'previously.item2': 'rbc',
 
         // Footer
         'footer.copyright': '© 2025 NICHOLAS CHEN',

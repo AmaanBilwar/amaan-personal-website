@@ -17,7 +17,7 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-full md:max-w-3xl">
+    <header className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-full md:max-w-2xl font-['Inter']">
       <div className="bg-gray-400/12 backdrop-blur-md border border-white/20 rounded-3xl px-3 md:px-8 py-2 md:py-3 flex items-center gap-2 md:gap-6 max-w-full">
         {/* Logo */}
         <div className="relative group flex-shrink-0">
@@ -43,10 +43,10 @@ export default function Header() {
         {/* Navigation - Show all links */}
         <nav className="flex items-center flex-1 justify-center">
           <div className="flex gap-2 md:gap-6 lg:gap-8 xl:gap-10 items-center">
-            <a href="mailto:nicholas.chen243@gmail.com" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.contact')}</a>
-            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.linkedin')}</a>
-            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">{t('nav.github')}</a>
-            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors">Twitter/X</a>
+            <a href="mailto:nicholas.chen243@gmail.com" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors font-medium">{t('nav.contact')}</a>
+            <a href="https://www.linkedin.com/in/nicholas-chen-85886726a/" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors font-medium">{t('nav.linkedin')}</a>
+            <a href="https://github.com/nicholaschen09" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors font-medium">{t('nav.github')}</a>
+            <a href="https://x.com/nicholaschen__" target="_blank" rel="noopener noreferrer" className="uppercase tracking-widest text-[9px] md:text-xs text-stone-400 hover:text-white transition-colors font-medium">Twitter/X</a>
           </div>
         </nav>
 

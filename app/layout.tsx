@@ -4,7 +4,6 @@ import type React from 'react';
 import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import Header from '@/components/header';
 
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
@@ -67,9 +66,6 @@ export default function RootLayout({
               `,
             }}
           />
-
-
-          <Header />
           {children}
 
         </body>

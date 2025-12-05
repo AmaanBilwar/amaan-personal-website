@@ -305,8 +305,8 @@ export default function Home() {
                 type="button"
                 onClick={() => setLanguage('en')}
                 className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'en'
-                    ? 'bg-stone-800/80 text-white'
-                    : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
+                  ? 'bg-stone-800/80 text-white'
+                  : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
                   }`}
               >
                 EN
@@ -316,8 +316,8 @@ export default function Home() {
                 type="button"
                 onClick={() => setLanguage('zh')}
                 className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'zh'
-                    ? 'bg-stone-800/80 text-white'
-                    : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
+                  ? 'bg-stone-800/80 text-white'
+                  : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
                   }`}
               >
                 中文

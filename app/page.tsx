@@ -14,7 +14,9 @@ export default function Home() {
           {/* location / building lines removed */}
 
           <div>
-            <p className="mb-2 text-stone-300">{t('hero.currently')}</p>
+            <p className="mb-2 text-stone-100 text-sm md:text-base font-medium">
+              {t('hero.currently')}
+            </p>
             <ul className="text-[0.95rem] md:text-base text-stone-400 space-y-3">
               <li className="flex items-center gap-3">
                 <img

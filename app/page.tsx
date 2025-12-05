@@ -219,9 +219,9 @@ export default function Home() {
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
-            <div className="ml-auto flex flex-col items-end gap-2">
+            <div className="ml-auto flex flex-col items-end -mt-6">
               {/* Navigation arrows */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 mb-2">
                 {/* Left Arrow */}
                 <a href="https://about.ceruleanechoes.com/" target="_blank" rel="noopener noreferrer">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"><path d="M12 15L6 9L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>

@@ -167,6 +167,16 @@ export default function Home() {
                     {t('projects.label.facialRecognition')}
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://llm-benchmarking-kappa.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('projects.label.agentSearchEvals')}
+                  </a>
+                </li>
               </ul>
               {/* Neighbours navigation under Projects */}
               <div className="mt-4 flex items-center gap-2 text-xs text-stone-400">

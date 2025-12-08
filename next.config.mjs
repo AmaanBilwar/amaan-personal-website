@@ -1,7 +1,6 @@
-// Defensive shim: if the Node environment exposes a broken `localStorage`,
-// replace it with a no-op implementation so calls like `localStorage.getItem`
-// never crash SSR.
-if (typeof globalThis !== 'undefined' && typeof globalThis.localStorage !== 'undefined') {
+// Defensive shim: if `localStorage` is missing or broken (common in SSR),
+// provide a no-op implementation so accessors never crash server code.
+if (typeof globalThis !== 'undefined') {
   const ls = globalThis.localStorage;
   if (!ls || typeof ls.getItem !== 'function') {
     globalThis.localStorage = {

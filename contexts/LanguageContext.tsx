@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'zh';
 
@@ -25,7 +25,29 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = window.localStorage.getItem('language');
+        if (saved === 'en' || saved === 'zh') {
+          return saved;
+        }
+      } catch {
+        // ignore storage read errors and fall back to default
+      }
+    }
+    return 'en';
+  });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        window.localStorage.setItem('language', language);
+      } catch {
+        // ignore storage write errors to avoid crashing the UI
+      }
+    }
+  }, [language]);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);

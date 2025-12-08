@@ -1,3 +1,22 @@
+// Defensive shim: if the Node environment exposes a broken `localStorage`,
+// replace it with a no-op implementation so calls like `localStorage.getItem`
+// never crash SSR.
+if (typeof globalThis !== 'undefined' && typeof globalThis.localStorage !== 'undefined') {
+  const ls = globalThis.localStorage;
+  if (!ls || typeof ls.getItem !== 'function') {
+    globalThis.localStorage = {
+      getItem: () => null,
+      setItem: () => {},
+      removeItem: () => {},
+      clear: () => {},
+      key: () => null,
+      get length() {
+        return 0;
+      },
+    };
+  }
+}
+
 let userConfig = undefined;
 try {
   userConfig = await import('./v0-user-next.config');

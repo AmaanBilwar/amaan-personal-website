@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'zh';
 
@@ -27,16 +27,8 @@ interface LanguageProviderProps {
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [language, setLanguage] = useState<Language>('en');
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'zh')) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
-
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
   };
 
   const t = (key: string): string => {
@@ -400,8 +392,8 @@ const translations: Record<Language, Record<string, string>> = {
     'previously.title': '之前经历...',
     'previously.role1': '工程',
     'previously.role2': '工程',
-    'previously.item1': 'ownr',
-    'previously.item2': 'rbc',
+    'previously.item1': 'Ownr',
+    'previously.item2': 'RBC',
 
     // Current roles (compact labels)
     'current.role2': '工程',

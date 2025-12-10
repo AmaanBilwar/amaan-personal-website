@@ -25,19 +25,23 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<Language>(() => {
+  // Default to English during SSR to avoid hydration mismatch; load saved preference after mount.
+  const [language, setLanguage] = useState<Language>('en');
+
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       try {
         const saved = window.localStorage.getItem('language');
-        if (saved === 'en' || saved === 'zh') {
-          return saved;
+        if ((saved === 'en' || saved === 'zh') && saved !== language) {
+          setLanguage(saved);
         }
       } catch {
         // ignore storage read errors and fall back to default
       }
     }
-    return 'en';
-  });
+    // run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -224,6 +228,7 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.label.basketbin': 'basketbin',
     'projects.label.facialRecognition': 'facial recognition',
     'projects.label.agentSearchEvals': 'agent search evals',
+    'projects.label.vectorDb': 'self healing vector db',
 
     // Home hero title
     'home.title': 'hi im nic',
@@ -399,6 +404,7 @@ const translations: Record<Language, Record<string, string>> = {
         'projects.label.basketbin': 'basketbin',
         'projects.label.facialRecognition': 'facial recognition',
         'projects.label.agentSearchEvals': 'agent search evals',
+        'projects.label.vectorDb': 'self healing vector db',
 
     // Home hero title
     'home.title': '嗨，我是 nic',

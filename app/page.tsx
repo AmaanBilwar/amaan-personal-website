@@ -195,6 +195,7 @@ export default function Home() {
                   href="https://about.ceruleanechoes.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="group flex h-6 w-6 items-center justify-center rounded bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
                 >
                   <svg
                     width="18"
@@ -202,7 +203,7 @@ export default function Home() {
                     viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"
+                    className="opacity-60 transition-opacity duration-200 group-hover:opacity-100"
                   >
                     <path
                       d="M12 15L6 9L12 3"
@@ -217,23 +218,28 @@ export default function Home() {
                   href="https://www.sydeb.me/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group"
+                  className="group flex h-6 w-6 items-center justify-center rounded bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
                 >
                   <img
                     src="/white.svg"
                     alt="White SVG Pattern"
-                    className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                    className="w-6 h-6 opacity-60 transition-opacity duration-200 group-hover:opacity-100"
                   />
                 </a>
                 {/* Right Arrow */}
-                <a href="https://www.jordankhatri.me/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.jordankhatri.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-6 w-6 items-center justify-center rounded bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+                >
                   <svg
                     width="18"
                     height="18"
                     viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="opacity-60 transition-opacity duration-200 hover:opacity-100 cursor-pointer"
+                    className="opacity-60 transition-opacity duration-200 group-hover:opacity-100"
                   >
                     <path
                       d="M6 3L12 9L6 15"
@@ -250,7 +256,7 @@ export default function Home() {
         </div>
 
         {/* Footer nav with social icons and right-aligned navigation/language */}
-        <div className="mt-16 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-2xl">
+        <div className="mt-10 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-2xl">
           {/* Social media icons */}
           <a
             href="mailto:nicholas.chen243@gmail.com"

@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function OntologyTextToSqlBlog() {
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
-      <article className="max-w-2xl mx-auto">
+      <article className="max-w-xl mx-auto">
         {/* Back link */}
         <Link
           href="/"

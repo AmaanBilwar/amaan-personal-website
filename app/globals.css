@@ -110,9 +110,6 @@ body {
     @apply text-xl font-bold tracking-tight;
   }
 
-  p {
-    @apply text-base leading-7;
-  }
 
   .text-balance {
     text-wrap: balance;

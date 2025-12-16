@@ -34,7 +34,7 @@ export default function OntologyTextToSqlBlog() {
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
-        <div className="space-y-6 text-[11px] md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
+        <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
               what is an ontology?

@@ -30,8 +30,8 @@ export default function GitBlog() {
         <p className="text-stone-500 text-sm mb-6">December 16, 2025</p>
 
         {/* Cover image */}
-        {/* <img src="/blog/cover.png" alt="Cover" className="w-full mb-6" /> */}
-        {/* <hr className="border-stone-700 mb-8" /> */}
+        <img src="/blogs/git/git-copy.png" alt="Git" className="w-full mb-6" />
+        <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
@@ -128,6 +128,16 @@ export default function GitBlog() {
           <section className="border-t border-stone-700 pt-6 mt-8">
             <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">references</h3>
             <ul className="space-y-2 text-stone-400 text-sm">
+              <li>
+                <a
+                  href="https://git-scm.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  git-scm.com
+                </a>
+              </li>
               <li>
                 <a
                   href="https://git-scm.com/book/en/v2"

@@ -30,7 +30,7 @@ export default function OntologyTextToSqlBlog() {
         <p className="text-stone-500 text-sm mb-6">November 21, 2025</p>
 
         {/* Cover image */}
-        <img src="/blog/ontology.png" alt="TextQL Ontology Interface" className="w-full mb-6" />
+        <img src="/blogs/ontology/ontology.png" alt="TextQL Ontology Interface" className="w-full mb-6" />
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
@@ -56,7 +56,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
             <figure className="mt-6">
               <img
-                src="/blog/map.jpeg"
+                src="/blogs/ontology/map.jpeg"
                 alt="A map showing how concepts connect in an ontology"
                 className="w-full"
               />
@@ -122,7 +122,7 @@ export default function OntologyTextToSqlBlog() {
             </ul>
             <figure className="mt-6">
               <img
-                src="/blog/graphs.jpeg"
+                src="/blogs/ontology/graphs.jpeg"
                 alt="Graphs showing the comparison between ontology vs non-ontology sql queries"
                 className="w-full"
               />
@@ -156,7 +156,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
             <figure className="mt-6">
               <img
-                src="/blog/adding-objects.jpeg"
+                src="/blogs/ontology/adding-objects.jpeg"
                 alt="Creating an object or link in ontology"
                 className="w-full"
               />
@@ -201,7 +201,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
             <figure className="mt-6">
               <img
-                src="/blog/attrs.jpeg"
+                src="/blogs/ontology/attrs.jpeg"
                 alt="Creating attributes and editing object properties"
                 className="w-full"
               />
@@ -266,7 +266,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
             <figure className="mt-6">
               <img
-                src="/blog/chat.png"
+                src="/blogs/ontology/chat.png"
                 alt="Querying a test database with Ana using the text-to-sql feature"
                 className="w-full"
               />
@@ -333,7 +333,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
             <figure className="mt-6">
               <img
-                src="/blog/sources.png"
+                src="/blogs/ontology/sources.png"
                 alt="Different tools comparing ontologies vs other methods"
                 className="w-full"
               />

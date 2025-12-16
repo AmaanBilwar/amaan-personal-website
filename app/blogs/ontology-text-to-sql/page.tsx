@@ -34,9 +34,9 @@ export default function OntologyTextToSqlBlog() {
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
-        <div className="space-y-6 text-sm md:text-base leading-relaxed">
+        <div className="space-y-6 text-[11px] md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
-            <h2 className="text-lg md:text-xl font-medium text-stone-100 mb-3">
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
               what is an ontology?
             </h2>
             <p>
@@ -78,7 +78,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h3 className="text-base md:text-lg font-medium text-stone-200 mb-3">
+            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
               a simple example
             </h3>
             <p>
@@ -95,7 +95,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-medium text-stone-100 mb-3">
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
               why ontologies matter for text-to-sql
             </h2>
             <p>
@@ -147,7 +147,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-medium text-stone-100 mb-3">
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
               building an ontology from scratch
             </h2>
             <p>
@@ -212,7 +212,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h3 className="text-base md:text-lg font-medium text-stone-200 mb-3">
+            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
               when is an ontology "good enough"?
             </h3>
             <p>
@@ -237,7 +237,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-medium text-stone-100 mb-3">
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
               how text-to-sql engines use ontologies
             </h2>
             <p>
@@ -280,7 +280,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h3 className="text-base md:text-lg font-medium text-stone-200 mb-3">
+            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
               handling ambiguity
             </h3>
             <p>
@@ -299,7 +299,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-medium text-stone-100 mb-3">
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
               ontologies vs other approaches
             </h2>
             <p>
@@ -347,7 +347,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-medium text-stone-100 mb-3">
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
               the future for ontologies
             </h2>
             <p>
@@ -385,7 +385,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">
-            <h3 className="text-base font-medium text-stone-200 mb-3">references</h3>
+            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">references</h3>
             <ul className="space-y-2 text-stone-400 text-sm">
               <li>
                 <a

@@ -76,7 +76,7 @@ body {
 
   html,
   body {
-    @apply overflow-hidden h-screen;
+    @apply min-h-screen overflow-y-auto;
   }
 
   body {

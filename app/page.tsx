@@ -188,7 +188,23 @@ export default function Home() {
                   </a>
                 </li>
               </ul>
-              {/* Neighbours navigation under Projects */}
+            </div>
+
+            <div>
+              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
+                {t('nav.blogs')}
+              </p>
+              <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                <li>
+                  <a
+                    href="/blogs/ontology-text-to-sql"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    why use an ontology for text-to-sql?
+                  </a>
+                </li>
+              </ul>
+              {/* Neighbours navigation under Blogs */}
               <div className="mt-4 flex items-center gap-2 text-xs text-stone-400">
                 {/* Left Arrow */}
                 <a

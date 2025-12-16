@@ -25,7 +25,7 @@ export default function OntologyTextToSqlBlog() {
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-          why use an ontology for text-to-sql?
+          why ontology for text-to-sql?
         </h1>
         <p className="text-stone-500 text-sm mb-6">Nicholas Chen · November 21, 2025 · 10 min read</p>
 

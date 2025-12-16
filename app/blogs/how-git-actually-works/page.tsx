@@ -34,7 +34,7 @@ export default function GitBlog() {
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
-        <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
+        {/* <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <p>
               most developers use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we panic. this post breaks down how git actually works so you can stop being afraid of it.
@@ -75,7 +75,7 @@ export default function GitBlog() {
               branches are just pointers
             </h2>
             <p>
-              here's the thing that changed how i think about git: a branch is just a pointer to a commit. that's it. when you create a new branch, git creates a tiny file (41 bytes) containing the hash of a commit. 
+              here's the thing that changed how i think about git: a branch is just a pointer to a commit. that's it. when you create a new branch, git creates a tiny file (41 bytes) containing the hash of a commit.
             </p>
             <p className="mt-4">
               HEAD is a special pointer that tells git which branch you're currently on. when you checkout a branch, you're just moving HEAD to point to that branch.
@@ -150,9 +150,8 @@ export default function GitBlog() {
               </li>
             </ul>
           </section>
-        </div>
+        </div> */}
       </article>
     </main>
   );
 }
-

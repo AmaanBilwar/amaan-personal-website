@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-export default function NewPostBlog() {
+export default function GitBlog() {
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
       <article className="max-w-xl mx-auto">
@@ -25,7 +25,7 @@ export default function NewPostBlog() {
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-          blog post title here
+          how git actually works
         </h1>
         <p className="text-stone-500 text-sm mb-6">December 16, 2025</p>
 

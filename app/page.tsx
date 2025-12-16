@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden relative z-10">
       {/* Hero Section */}
-      <div className="max-w-xl w-full space-y-1 md:space-y-2 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
+      <div className="max-w-lg w-full space-y-1 md:space-y-2 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
         <div className="flex items-start justify-between mb-0">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white">
             {getDisplayName()}
@@ -249,9 +249,17 @@ export default function Home() {
                     href="/blogs/ontology-text-to-sql"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    why use an ontology for text-to-sql?
+                    why ontology for text-to-sql?
                   </a>
                 </li>
+                {/* <li>
+                  <a
+                    href="/blogs/how-git-actually-works"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    how git actually works
+                  </a>
+                </li> */}
               </ul>
               {/* Neighbours navigation under Blogs */}
               <div className="mt-4 flex items-center gap-2 text-xs text-stone-400">
@@ -321,7 +329,7 @@ export default function Home() {
         </div>
 
         {/* Footer nav with social icons and right-aligned navigation/language */}
-        <div className="mt-10 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-xl">
+        <div className="mt-10 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-lg">
           {/* Social media icons */}
           <a
             href="mailto:nicholas.chen243@gmail.com"

@@ -138,6 +138,16 @@ export default function GitBlog() {
                   git-scm.com
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.atlassian.com/git/tutorials/what-is-git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  atlassian.com/git/tutorials/what-is-git
+                </a>
+              </li>
             </ul>
           </section>
         </div>

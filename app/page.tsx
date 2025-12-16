@@ -1,8 +1,53 @@
 'use client';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
+  const [isHovering, setIsHovering] = useState(false);
+  const [typedChars, setTypedChars] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const extraChars = 'holas';
+
+  useEffect(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    
+    if (isHovering) {
+      intervalRef.current = setInterval(() => {
+        setTypedChars((prev) => {
+          if (prev >= extraChars.length) {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 80);
+    } else {
+      intervalRef.current = setInterval(() => {
+        setTypedChars((prev) => {
+          if (prev <= 0) {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 60);
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isHovering]);
+
+  const getDisplayName = () => {
+    if (typedChars > 0 || isHovering) {
+      if (language === 'zh') {
+        return '嗨，我是 nic' + extraChars.slice(0, typedChars);
+      }
+      return 'hi im nic' + extraChars.slice(0, typedChars);
+    }
+    return t('home.title');
+  };
 
   return (
     <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden relative z-10">
@@ -10,9 +55,19 @@ export default function Home() {
       <div className="max-w-xl w-full space-y-1 md:space-y-2 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
         <div className="flex items-center justify-between mb-2">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white min-h-[3.5rem]">
-            {t('home.title')}
+            {getDisplayName()}
           </h1>
-          <img src="/ghcat.png" alt="GitHub Cat" className="w-8 h-8 md:w-10 md:h-10 opacity-80" />
+          <div
+            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-md hover:bg-stone-800/80 transition-colors cursor-pointer"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
+            <img
+              src="/ghcat.png"
+              alt="GitHub Cat"
+              className="w-8 h-8 md:w-10 md:h-10 opacity-80"
+            />
+          </div>
         </div>
         {/* location / building lines removed */}
 

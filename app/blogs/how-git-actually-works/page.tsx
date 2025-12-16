@@ -138,26 +138,6 @@ export default function GitBlog() {
                   git-scm.com
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://git-scm.com/book/en/v2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-stone-200 transition-colors underline"
-                >
-                  pro git book
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://git-scm.com/docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-stone-200 transition-colors underline"
-                >
-                  git documentation
-                </a>
-              </li>
             </ul>
           </section>
         </div>

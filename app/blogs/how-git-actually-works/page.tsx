@@ -56,6 +56,12 @@ export default function GitBlog() {
             <p className="mt-4">
               a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.
             </p>
+            <p className="mt-4">
+              here's a concrete example: let's say you have three files (app.js, styles.css, README.md) and you make a commit. git stores all three files. then you edit app.js and commit again. the new commit contains a new version of app.js, but styles.css and README.md are just pointers to the previous versions. this is why git is so efficient even though it stores "everything."
+            </p>
+            <p className="mt-4">
+              each commit has a unique SHA-1 hash (like 7c35b51) that identifies it. think of this as the commit's address. commits also store metadata: author, timestamp, commit message, and most importantly, the hash of the parent commit(s). this parent pointer is what creates the chain of history.
+            </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               the three trees
@@ -64,15 +70,21 @@ export default function GitBlog() {
               git manages three "trees" (collections of files):
             </p>
             <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>• <span className="text-stone-200">working directory</span> — the files you actually see and edit</li>
-              <li>• <span className="text-stone-200">staging area (index)</span> — a preview of your next commit</li>
-              <li>• <span className="text-stone-200">repository (HEAD)</span> — your last commit</li>
+              <li>• <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">working directory</code> — the files you actually see and edit</li>
+              <li>• <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">staging area (index)</code> — a preview of your next commit</li>
+              <li>• <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">repository (HEAD)</code> — your last commit</li>
             </ul>
             <p className="mt-4">
-              when you run git add, you're copying files from your working directory to the staging area. when you run git commit, you're taking the staging area and making it a permanent snapshot.
+              when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git add</code>, you're copying files from your working directory to the staging area. when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git commit</code>, you're taking the staging area and making it a permanent snapshot.
+            </p>
+            <p className="mt-4">
+              let's walk through an example. you edit app.js in your working directory. at this point, git status would show it as "modified". you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git add app.js</code> — now the file is in the staging area and git status shows it as "changes to be committed". finally, you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git commit -m "fix bug"</code> and the staged changes become a permanent commit in the repository.
+            </p>
+            <p className="mt-4">
+              the staging area is what makes git powerful. you can modify 10 files but only stage and commit 3 of them. this lets you create clean, logical commits even when you've made many unrelated changes.
             </p>
 
-            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
+            <h3 className="text-base md:text-lg font-semibold text-stone-200 mb-3 mt-6">
               branches and HEAD are just pointers
             </h3>
             <p>
@@ -80,6 +92,15 @@ export default function GitBlog() {
             </p>
             <p className="mt-4">
               HEAD is a special pointer that tells git which branch you're currently on. when you checkout a branch, you're just moving HEAD to point to that branch.
+            </p>
+            <p className="mt-4">
+              imagine you have this commit history: <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">A ← B ← C</code>. your main branch points to commit C. when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git branch feature</code>, git just creates a new pointer called "feature" that also points to commit C. nothing else changes. no files are copied, no commits are duplicated.
+            </p>
+            <p className="mt-4">
+              when you make a new commit on the feature branch, only the feature pointer moves forward: <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">A ← B ← C ← D</code>. main still points to C, feature points to D. this is why branching in git is so cheap — it's literally just creating a 41-byte file.
+            </p>
+            <p className="mt-4">
+              HEAD is like a "you are here" marker. if you're on the main branch, HEAD points to main. if you're on feature, HEAD points to feature. when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git checkout feature</code>, you're just moving HEAD from main to feature, and git updates your working directory to match the commit that feature points to.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
@@ -184,10 +205,19 @@ export default function GitBlog() {
               both merge and rebase integrate changes from one branch into another, but they do it differently:
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">merge</span> creates a new commit that has two parents, preserving the full history of both branches. your git history shows exactly what happened and when.
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">merge</code> creates a new commit that has two parents, preserving the full history of both branches. your git history shows exactly what happened and when.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">rebase</span> replays your commits on top of another branch, rewriting history to make it look like you started from a different point. cleaner history, but you're changing commit hashes.
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">rebase</code> replays your commits on top of another branch, rewriting history to make it look like you started from a different point. cleaner history, but you're changing commit hashes.
+            </p>
+            <p className="mt-4">
+              let's see this with an example. say you have: main with commits A-B-C, and feature with commits A-B-D-E. if you merge feature into main, you get: A-B-C-F (where F is a merge commit with both C and E as parents). the history shows that feature was developed in parallel and merged in.
+            </p>
+            <p className="mt-4">
+              if instead you rebase feature onto main (<code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git checkout feature && git rebase main</code>), git takes commits D and E and replays them on top of C. you end up with: A-B-C-D'-E' (D' and E' are new commits with different hashes). the history looks linear, as if you always worked off the latest main.
+            </p>
+            <p className="mt-4">
+              golden rule: never rebase commits that you've pushed to a shared repository. rebasing rewrites history, which causes problems for anyone else who has those commits. merge is safe for shared branches, rebase is great for cleaning up local work before pushing.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
@@ -210,16 +240,31 @@ export default function GitBlog() {
               these three commands are often confused, but they serve different purposes:
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git reset</span> moves the branch pointer. use --soft to keep your changes staged, --mixed to unstage them, or --hard to discard everything. it rewrites history, so be careful with commits you've already pushed.
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset</code> moves the branch pointer. use --soft to keep your changes staged, --mixed to unstage them, or --hard to discard everything. it rewrites history, so be careful with commits you've already pushed.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git checkout</span> switches branches or restores files. when you checkout a branch, you're moving HEAD to point to it. when you checkout a file, you're replacing it with a version from another commit.
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git checkout</code> switches branches or restores files. when you checkout a branch, you're moving HEAD to point to it. when you checkout a file, you're replacing it with a version from another commit.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git revert</span> creates a new commit that undoes changes from a previous commit. unlike reset, it doesn't rewrite history, making it safe for shared branches.
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git revert</code> creates a new commit that undoes changes from a previous commit. unlike reset, it doesn't rewrite history, making it safe for shared branches.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git clean</span> removes untracked files from your working directory. use -n first to see what would be deleted, then -f to actually do it.
+              let's say you have commits A-B-C-D and you're on D. here's what happens with each command:
+            </p>
+            <p className="mt-4">
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset --soft B</code>: moves your branch pointer to B, but keeps C and D's changes in your staging area. useful if you want to redo commits differently.
+            </p>
+            <p className="mt-4">
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset --mixed B</code> (default): moves pointer to B and unstages the changes. C and D's changes are still in your working directory but not staged.
+            </p>
+            <p className="mt-4">
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset --hard B</code>: moves pointer to B and discards all changes from C and D completely. dangerous! but you can still recover with reflog.
+            </p>
+            <p className="mt-4">
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git revert D</code>: creates a new commit E that undoes D's changes. history becomes A-B-C-D-E. this is safe for shared branches because you're not rewriting history.
+            </p>
+            <p className="mt-4">
+              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git clean</code> removes untracked files from your working directory. use -n first to see what would be deleted, then -f to actually do it.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">

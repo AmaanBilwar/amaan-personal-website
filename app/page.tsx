@@ -252,6 +252,14 @@ export default function Home() {
                     why use an ontology for text-to-sql?
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/blogs/new-post"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    blog post title here
+                  </a>
+                </li>
               </ul>
               {/* Neighbours navigation under Blogs */}
               <div className="mt-4 flex items-center gap-2 text-xs text-stone-400">

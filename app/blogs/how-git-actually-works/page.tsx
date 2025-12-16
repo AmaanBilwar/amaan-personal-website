@@ -34,7 +34,7 @@ export default function GitBlog() {
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
-        {/* <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
+        <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <p>
               most developers use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we panic. this post breaks down how git actually works so you can stop being afraid of it.
@@ -150,7 +150,7 @@ export default function GitBlog() {
               </li>
             </ul>
           </section>
-        </div> */}
+        </div>
       </article>
     </main>
   );

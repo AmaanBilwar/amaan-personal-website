@@ -37,7 +37,7 @@ export default function GitBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <p>
-              most engineers(including me) use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we panic. i wanted to write this blog to learn about the git commands i don't know and understand how each of them work under the hood. this post breaks down how git actually and how you can use it to your advantage.
+              most engineers (including me) use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we panic. i wanted to write this blog to learn about the git commands i don't know and understand how each of them work under the hood. this post breaks down how git actually and how you can use it to your advantage.
             </p>
           </section>
 

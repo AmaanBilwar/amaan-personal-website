@@ -224,10 +224,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
             <p className="mt-4">you know your ontology is "good enough" when:</p>
             <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>
-                • new analysts can answer common questions without asking senior team members for
-                help
-              </li>
+              <li>• new analysts can answer common questions without asking for help</li>
               <li>• the same metrics stop appearing with different values in different reports</li>
               <li>
                 • people start asking "is this in the ontology?" before writing custom queries

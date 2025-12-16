@@ -27,7 +27,7 @@ export default function OntologyTextToSqlBlog() {
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
           why ontology for text-to-sql?
         </h1>
-        <p className="text-stone-500 text-sm mb-6">Nicholas Chen · November 21, 2025 · 10 min read</p>
+        <p className="text-stone-500 text-sm mb-6">nicholas chen · november 21, 2025 · 10 min read</p>
 
         {/* Cover image */}
         <img src="/blogs/ontology/ontology.png" alt="TextQL Ontology Interface" className="w-full mb-6" />

@@ -36,51 +36,93 @@ export default function GitBlog() {
         {/* Content */}
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
+            <p>
+              most developers use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we panic. this post breaks down how git actually works so you can stop being afraid of it.
+            </p>
+          </section>
+
+          <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              section title
+              git is just a graph of snapshots
             </h2>
             <p>
-              paragraph text goes here. this is where you write the main content of your blog post.
+              at its core, git is a directed acyclic graph (DAG) of snapshots. every time you make a commit, git takes a snapshot of all your files and stores a reference to that snapshot. each commit points to its parent commit, creating a chain of history.
             </p>
             <p className="mt-4">
-              another paragraph with more content.
+              a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.
             </p>
-          </section>
-
-          <section>
-            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-              subsection title
-            </h3>
-            <p>
-              subsection content goes here.
-            </p>
-            <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>• bullet point one</li>
-              <li>• bullet point two</li>
-              <li>• bullet point three</li>
-            </ul>
           </section>
 
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              another section
+              the three trees
             </h2>
             <p>
-              more content for this section.
+              git manages three "trees" (collections of files):
             </p>
-            {/* Image example */}
-            {/* 
-            <figure className="mt-6">
-              <img
-                src="/blog/image.png"
-                alt="Description"
-                className="w-full"
-              />
-              <figcaption className="text-stone-500 text-xs mt-2 italic">
-                image caption here
-              </figcaption>
-            </figure>
-            */}
+            <ul className="mt-3 ml-4 space-y-1 text-stone-400">
+              <li>• <span className="text-stone-200">working directory</span> — the files you actually see and edit</li>
+              <li>• <span className="text-stone-200">staging area (index)</span> — a preview of your next commit</li>
+              <li>• <span className="text-stone-200">repository (HEAD)</span> — your last commit</li>
+            </ul>
+            <p className="mt-4">
+              when you run git add, you're copying files from your working directory to the staging area. when you run git commit, you're taking the staging area and making it a permanent snapshot.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+              branches are just pointers
+            </h2>
+            <p>
+              here's the thing that changed how i think about git: a branch is just a pointer to a commit. that's it. when you create a new branch, git creates a tiny file (41 bytes) containing the hash of a commit. 
+            </p>
+            <p className="mt-4">
+              HEAD is a special pointer that tells git which branch you're currently on. when you checkout a branch, you're just moving HEAD to point to that branch.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+              merging vs rebasing
+            </h2>
+            <p>
+              both merge and rebase integrate changes from one branch into another, but they do it differently:
+            </p>
+            <p className="mt-4">
+              <span className="text-stone-200">merge</span> creates a new commit that has two parents, preserving the full history of both branches. your git history shows exactly what happened and when.
+            </p>
+            <p className="mt-4">
+              <span className="text-stone-200">rebase</span> replays your commits on top of another branch, rewriting history to make it look like you started from a different point. cleaner history, but you're changing commit hashes.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+              the reflog saves everything
+            </h2>
+            <p>
+              here's a secret: git almost never deletes anything. even if you think you've lost commits, they're probably still there. the reflog keeps a record of every time HEAD moved — every checkout, commit, rebase, and reset.
+            </p>
+            <p className="mt-4">
+              run git reflog and you'll see a history of everywhere HEAD has been. you can recover "lost" commits by checking out their hash directly.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+              commands that finally make sense
+            </h2>
+            <p>
+              once you understand the model, commands become intuitive:
+            </p>
+            <ul className="mt-3 ml-4 space-y-1 text-stone-400">
+              <li>• <span className="text-stone-200">git reset --soft</span> — move HEAD, keep staging and working directory</li>
+              <li>• <span className="text-stone-200">git reset --mixed</span> — move HEAD, reset staging, keep working directory</li>
+              <li>• <span className="text-stone-200">git reset --hard</span> — move HEAD, reset everything</li>
+              <li>• <span className="text-stone-200">git checkout</span> — move HEAD and update working directory</li>
+              <li>• <span className="text-stone-200">git stash</span> — save working directory changes to a temporary commit</li>
+            </ul>
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">
@@ -88,12 +130,22 @@ export default function GitBlog() {
             <ul className="space-y-2 text-stone-400 text-sm">
               <li>
                 <a
-                  href="https://example.com"
+                  href="https://git-scm.com/book/en/v2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  example.com - reference title
+                  pro git book
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://git-scm.com/docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  git documentation
                 </a>
               </li>
             </ul>

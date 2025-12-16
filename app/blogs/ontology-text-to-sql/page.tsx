@@ -30,7 +30,8 @@ export default function OntologyTextToSqlBlog() {
         <p className="text-stone-500 text-sm mb-6">November 21, 2025</p>
 
         {/* Cover image */}
-        <img src="/blog/ontology.png" alt="TextQL Ontology Interface" className="w-full mb-8" />
+        <img src="/blog/ontology.png" alt="TextQL Ontology Interface" className="w-full mb-6" />
+        <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
         <div className="space-y-6 text-sm md:text-base leading-relaxed">
@@ -383,7 +384,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
           </section>
 
-          <section className="border-t border-stone-800 pt-6 mt-8">
+          <section className="border-t border-stone-700 pt-6 mt-8">
             <h3 className="text-base font-medium text-stone-200 mb-3">references</h3>
             <ul className="space-y-2 text-stone-400 text-sm">
               <li>

@@ -53,12 +53,12 @@ export default function Home() {
     <main className="flex h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden relative z-10">
       {/* Hero Section */}
       <div className="max-w-xl w-full space-y-1 md:space-y-2 mb-6 md:mb-8 pt-24 md:pt-32 mx-auto">
-        <div className="flex items-center justify-between mb-2">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white min-h-[3.5rem]">
+        <div className="flex items-start justify-between mb-0">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white">
             {getDisplayName()}
           </h1>
           <div
-            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-md hover:bg-stone-800/80 transition-colors cursor-pointer"
+            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-md hover:bg-stone-800/80 transition-colors cursor-pointer -mt-3"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >

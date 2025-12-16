@@ -27,7 +27,7 @@ export default function GitBlog() {
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
           how git actually works
         </h1>
-        <p className="text-stone-500 text-sm mb-6">December 16, 2025</p>
+        <p className="text-stone-500 text-sm mb-6">Nicholas Chen · December 16, 2025 · 5 min read</p>
 
         {/* Cover image */}
         <img src="/blogs/git/git-copy.png" alt="Git" className="w-full mb-6" />

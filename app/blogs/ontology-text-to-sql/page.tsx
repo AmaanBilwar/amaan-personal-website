@@ -30,11 +30,7 @@ export default function OntologyTextToSqlBlog() {
         <p className="text-stone-500 text-sm mb-6">November 21, 2025</p>
 
         {/* Cover image */}
-        <img
-          src="/blog/ontology.png"
-          alt="TextQL Ontology Interface"
-          className="w-full mb-8"
-        />
+        <img src="/blog/ontology.png" alt="TextQL Ontology Interface" className="w-full mb-8" />
 
         {/* Content */}
         <div className="space-y-6 text-sm md:text-base leading-relaxed">
@@ -74,9 +70,9 @@ export default function OntologyTextToSqlBlog() {
               that basically connect each of these objects based on how they are related. these
               relationships work through joins - when entities share common fields that can be
               matched together, creating connections like one-to-many or many-to-many. for metrics,
-              these are defined across multiple objects and can be done through a calculation of some
-              sort. lastly, there are business rules that just define how your business operates and
-              the meaning of specific terms or phrases.
+              these are defined across multiple objects and can be done through a calculation of
+              some sort. lastly, there are business rules that just define how your business
+              operates and the meaning of specific terms or phrases.
             </p>
           </section>
 
@@ -135,16 +131,16 @@ export default function OntologyTextToSqlBlog() {
             </figure>
             <p className="mt-4">
               this means consistency across the organization, faster query generation, easier
-              maintenance, lower barrier to entry, governance and security. essentially, the ontology
-              becomes a semantic layer that translates between how humans think about the business
-              and how data is actually stored in tables. it captures institutional knowledge about
-              the data that would otherwise live in documentation, tribal knowledge, or the heads of
-              senior analysts.
+              maintenance, lower barrier to entry, governance and security. essentially, the
+              ontology becomes a semantic layer that translates between how humans think about the
+              business and how data is actually stored in tables. it captures institutional
+              knowledge about the data that would otherwise live in documentation, tribal knowledge,
+              or the heads of senior analysts.
             </p>
             <p className="mt-4">
-              ontologies can also improve performance. a well-designed ontology might define a metric
-              using a pre-aggregated table instead of scanning raw data. it might know to use an
-              indexed column for joins. it captures optimization knowledge that would otherwise
+              ontologies can also improve performance. a well-designed ontology might define a
+              metric using a pre-aggregated table instead of scanning raw data. it might know to use
+              an indexed column for joins. it captures optimization knowledge that would otherwise
               require manual query tuning.
             </p>
           </section>
@@ -168,11 +164,11 @@ export default function OntologyTextToSqlBlog() {
               </figcaption>
             </figure>
             <p className="mt-4">
-              when building an ontology, you begin with your core entities - the things your business
-              literally cannot function without. for an e-commerce company, that's customers, orders,
-              and products. for a saas company, it's users, subscriptions, and usage events. identify
-              maybe 3-5 critical entities and define them thoroughly: their attributes, their primary
-              keys, and the most important relationships between them.
+              when building an ontology, you begin with your core entities - the things your
+              business literally cannot function without. for an e-commerce company, that's
+              customers, orders, and products. for a saas company, it's users, subscriptions, and
+              usage events. identify maybe 3-5 critical entities and define them thoroughly: their
+              attributes, their primary keys, and the most important relationships between them.
             </p>
             <p className="mt-4">
               when choosing a primary key, pick a stable identifier that doesn't change over time,
@@ -189,10 +185,11 @@ export default function OntologyTextToSqlBlog() {
               upfront.
             </p>
             <p className="mt-4">
-              then add the metrics that people ask about every single day. "what's our revenue?" "how
-              many active users do we have?" "what's our conversion rate?" these are the questions
-              that get asked in every morning meeting. define these once in the ontology with the
-              correct business logic, and suddenly dozens of repeated queries become obsolete.
+              then add the metrics that people ask about every single day. "what's our revenue?"
+              "how many active users do we have?" "what's our conversion rate?" these are the
+              questions that get asked in every morning meeting. define these once in the ontology
+              with the correct business logic, and suddenly dozens of repeated queries become
+              obsolete.
             </p>
             <p className="mt-4">
               the key is to prove value quickly. if you spend six months building a comprehensive
@@ -220,15 +217,20 @@ export default function OntologyTextToSqlBlog() {
             <p>
               an ontology is never complete. there will always be edge cases, niche metrics, and
               one-off analyses that don't fit neatly into your defined entities and relationships.
-              the goal isn't perfection - it's coverage of the common cases. if your ontology handles
-              80% of the questions people ask, that's a massive win. the remaining 20% can still be
-              handled with custom sql or ad-hoc analysis.
+              the goal isn't perfection - it's coverage of the common cases. if your ontology
+              handles 80% of the questions people ask, that's a massive win. the remaining 20% can
+              still be handled with custom sql or ad-hoc analysis.
             </p>
             <p className="mt-4">you know your ontology is "good enough" when:</p>
             <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>• new analysts can answer common questions without asking senior team members for help</li>
+              <li>
+                • new analysts can answer common questions without asking senior team members for
+                help
+              </li>
               <li>• the same metrics stop appearing with different values in different reports</li>
-              <li>• people start asking "is this in the ontology?" before writing custom queries</li>
+              <li>
+                • people start asking "is this in the ontology?" before writing custom queries
+              </li>
               <li>• you're spending more time using the ontology than building it</li>
             </ul>
           </section>
@@ -238,13 +240,13 @@ export default function OntologyTextToSqlBlog() {
               how text-to-sql engines use ontologies
             </h2>
             <p>
-              when you ask "show me revenue by customer segment," the text-to-sql engine goes through
-              several steps using the ontology.
+              when you ask "show me revenue by customer segment," the text-to-sql engine goes
+              through several steps using the ontology.
             </p>
             <p className="mt-4">
               first, it identifies the entities and metrics you're asking about. "revenue" maps to a
-              defined metric in the ontology. "customer segment" maps to an attribute of the customer
-              entity.
+              defined metric in the ontology. "customer segment" maps to an attribute of the
+              customer entity.
             </p>
             <p className="mt-4">
               next, it looks up the metric definition. the ontology says revenue is calculated as
@@ -259,10 +261,10 @@ export default function OntologyTextToSqlBlog() {
             </p>
             <p className="mt-4">
               finally, it applies any business rules. maybe the ontology specifies that revenue
-              calculations should exclude refunds, or that only orders from the last 12 months count.
-              these rules get automatically incorporated into the generated sql. the result is a
-              query that would take a human analyst 10 minutes to write (and possibly get wrong),
-              generated correctly in seconds.
+              calculations should exclude refunds, or that only orders from the last 12 months
+              count. these rules get automatically incorporated into the generated sql. the result
+              is a query that would take a human analyst 10 minutes to write (and possibly get
+              wrong), generated correctly in seconds.
             </p>
             <figure className="mt-6">
               <img
@@ -281,17 +283,17 @@ export default function OntologyTextToSqlBlog() {
               handling ambiguity
             </h3>
             <p>
-              ambiguous questions are where ontologies really shine. if you ask "show me sales," that
-              could mean the sales team (entity), sales transactions (orders entity), sales revenue
-              (metric), or sales count (different metric). without an ontology, the system has to
-              guess. with an ontology, it can recognize that "sales" is ambiguous, check which
-              interpretation makes sense in context, ask for clarification if needed ("did you mean
-              sales revenue or number of sales?"), and use the most common interpretation based on
-              usage patterns.
+              ambiguous questions are where ontologies really shine. if you ask "show me sales,"
+              that could mean the sales team (entity), sales transactions (orders entity), sales
+              revenue (metric), or sales count (different metric). without an ontology, the system
+              has to guess. with an ontology, it can recognize that "sales" is ambiguous, check
+              which interpretation makes sense in context, ask for clarification if needed ("did you
+              mean sales revenue or number of sales?"), and use the most common interpretation based
+              on usage patterns.
             </p>
             <p className="mt-4">
-              the ontology also helps with synonyms. "customers," "clients," "accounts," and "buyers"
-              might all map to the same customer entity.
+              the ontology also helps with synonyms. "customers," "clients," "accounts," and
+              "buyers" might all map to the same customer entity.
             </p>
           </section>
 
@@ -302,9 +304,9 @@ export default function OntologyTextToSqlBlog() {
             <p>
               <span className="text-stone-100 font-medium">dbt models:</span> dbt models and
               ontologies solve different problems. dbt transforms raw data into clean tables. an
-              ontology sits on top of those tables and defines what they mean: which table represents
-              customers, how customers relate to orders, and how to optimize queries. you can use
-              both together: dbt produces tables, ontologies produce understanding.
+              ontology sits on top of those tables and defines what they mean: which table
+              represents customers, how customers relate to orders, and how to optimize queries. you
+              can use both together: dbt produces tables, ontologies produce understanding.
             </p>
             <p className="mt-4">
               <span className="text-stone-100 font-medium">bi semantic layers:</span> tools like
@@ -312,9 +314,9 @@ export default function OntologyTextToSqlBlog() {
               sources with relationships. these serve similar purposes to ontologies - they define
               metrics, relationships, and business logic. the difference is scope and flexibility.
               traditional bi semantic layers are tightly coupled to their visualization tools. the
-              definitions you create in looker only work in looker. if you want to use the same logic
-              in python, or in a different bi tool, or in an automated pipeline, you're out of luck.
-              an ontology is tool-agnostic. it's a central definition layer that can power
+              definitions you create in looker only work in looker. if you want to use the same
+              logic in python, or in a different bi tool, or in an automated pipeline, you're out of
+              luck. an ontology is tool-agnostic. it's a central definition layer that can power
               text-to-sql queries, bi tools, python analysis, automated reports, and custom
               applications. you define "active customers" once, and it works everywhere.
             </p>
@@ -323,11 +325,11 @@ export default function OntologyTextToSqlBlog() {
               and stored procedures can encapsulate business logic, so why do you need an ontology?
               first, discoverability. if you have 500 views in your database, how do you know which
               one to use? an ontology provides a structured catalog with relationships and
-              documentation. second, relationships. a view gives you a table, but it doesn't tell you
-              how that table relates to other tables. an ontology explicitly defines these
-              connections, enabling automatic join generation. third, natural language. you can't ask
-              a view "show me revenue by customer segment" in plain english. you need to know the
-              view exists, what it's called, and how to query it. an ontology enables natural
+              documentation. second, relationships. a view gives you a table, but it doesn't tell
+              you how that table relates to other tables. an ontology explicitly defines these
+              connections, enabling automatic join generation. third, natural language. you can't
+              ask a view "show me revenue by customer segment" in plain english. you need to know
+              the view exists, what it's called, and how to query it. an ontology enables natural
               language interfaces. views are a technical solution for code reuse. ontologies are a
               semantic solution for shared understanding.
             </p>
@@ -376,8 +378,8 @@ export default function OntologyTextToSqlBlog() {
               tool needs custom integration. with an ontology, complexity scales linearly. new data
               sources get mapped to existing entities. new analysts learn the ontology once. new
               tools integrate with the ontology layer. the future of data isn't less complex - it's
-              more complex but better organized. ontologies are how we manage that complexity without
-              drowning in it.
+              more complex but better organized. ontologies are how we manage that complexity
+              without drowning in it.
             </p>
           </section>
 
@@ -438,9 +440,7 @@ export default function OntologyTextToSqlBlog() {
             </p>
           </section>
         </div>
-
       </article>
     </main>
   );
 }
-

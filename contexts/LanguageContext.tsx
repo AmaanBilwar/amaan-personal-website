@@ -396,15 +396,15 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.fernando': '在utra黑客马拉松获得第二名的姿势检查机器人',
     'projects.basketbin': '使用计算机视觉自动分拣垃圾的机器',
 
-        // Projects list labels (home page) — keep English names in both languages
-        'projects.label.tiktok': 'tiktok view predictor',
-        'projects.label.diffDigest': 'diff digest',
-        'projects.label.sqlParser': 'sql query parser',
-        'projects.label.fernando': 'fernando',
-        'projects.label.basketbin': 'basketbin',
-        'projects.label.facialRecognition': 'facial recognition',
-        'projects.label.agentSearchEvals': 'agent search evals',
-        'projects.label.vectorDb': 'self healing vector db',
+    // Projects list labels (home page) — keep English names in both languages
+    'projects.label.tiktok': 'tiktok view predictor',
+    'projects.label.diffDigest': 'diff digest',
+    'projects.label.sqlParser': 'sql query parser',
+    'projects.label.fernando': 'fernando',
+    'projects.label.basketbin': 'basketbin',
+    'projects.label.facialRecognition': 'facial recognition',
+    'projects.label.agentSearchEvals': 'agent search evals',
+    'projects.label.vectorDb': 'self healing vector db',
 
     // Home hero title
     'home.title': '嗨，我是 nic',

@@ -12,11 +12,7 @@ export default function Home() {
           <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white min-h-[3.5rem]">
             {t('home.title')}
           </h1>
-          <img
-            src="/ghcat.png"
-            alt="GitHub Cat"
-            className="w-8 h-8 md:w-10 md:h-10 opacity-80"
-          />
+          <img src="/ghcat.png" alt="GitHub Cat" className="w-8 h-8 md:w-10 md:h-10 opacity-80" />
         </div>
         {/* location / building lines removed */}
 
@@ -117,16 +113,16 @@ export default function Home() {
                     {t('projects.label.tiktok')}
                   </a>
                 </li>
-            <li>
-              <a
-                href="https://github.com/tinytinyexperiments/vector-db"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-              >
-                {t('projects.label.vectorDb')}
-              </a>
-            </li>
+                <li>
+                  <a
+                    href="https://github.com/tinytinyexperiments/vector-db"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('projects.label.vectorDb')}
+                  </a>
+                </li>
                 <li>
                   <a
                     href="https://diff-digest-appp.vercel.app/"
@@ -191,9 +187,7 @@ export default function Home() {
             </div>
 
             <div>
-              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
-                {t('nav.blogs')}
-              </p>
+              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
               <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
                   <a
@@ -346,10 +340,11 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'en'
-                  ? 'bg-stone-800/80 text-white'
-                  : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
-                  }`}
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
+                  language === 'en'
+                    ? 'bg-stone-800/80 text-white'
+                    : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
+                }`}
               >
                 EN
               </button>
@@ -357,10 +352,11 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setLanguage('zh')}
-                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${language === 'zh'
-                  ? 'bg-stone-800/80 text-white'
-                  : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
-                  }`}
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
+                  language === 'zh'
+                    ? 'bg-stone-800/80 text-white'
+                    : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
+                }`}
               >
                 中文
               </button>

@@ -49,6 +49,13 @@ export default function GitBlog() {
             <p>
               at its core, git is a directed acyclic graph (DAG) of snapshots. every time you make a commit, git takes a snapshot of all your files and stores a reference to that snapshot. each commit points to its parent commit, creating a chain of history.
             </p>
+            <figure className="mt-6">
+              <img
+                src="/blogs/git/git-chart.png"
+                alt="Git snapshot diagram"
+                className="w-full"
+              />
+            </figure>
             <p className="mt-4">
               a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.
             </p>
@@ -84,7 +91,7 @@ export default function GitBlog() {
               branches and HEAD are just pointers
             </h3>
             <p>
-              here's the thing that changed how i think about git: a branch is just a pointer to a commit. that's it. when you create a new branch, git creates a tiny file (41 bytes) containing the hash of a commit.
+              here's the thing that changed how i think about git: a branch is just a pointer to a commit. that's it. when you create a new branch, git creates a tiny file (41 bytes) containing the hash of a commit. 
             </p>
             <p className="mt-4">
               HEAD is a special pointer that tells git which branch you're currently on. when you checkout a branch, you're just moving HEAD to point to that branch.

@@ -135,17 +135,17 @@ export default function GitBlog() {
               refs and the reflog
             </h3>
             <p>
-              refs are pointers to commits. branches are refs (stored in <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/refs/heads/</code>), tags are refs (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/refs/tags/</code>), and HEAD is a special ref that points to your current branch.
+              refs are pointers to commits. branches and tags are refs stored in <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/refs/</code>. HEAD is a special ref pointing to your current branch.
             </p>
             <p className="mt-4">
-              the reflog is a safety net that records every time a ref moves. even if you delete a branch or <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">reset --hard</code>, the reflog remembers where you were. you can use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reflog</code> to see the history and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reset HEAD@&#123;n&#125;</code> to go back to any previous state.
+              the reflog records every ref movement, acting as a safety net. even after a <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">reset --hard</code> or deleted branch, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reflog</code> lets you find and recover lost states using <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reset HEAD@&#123;n&#125;</code>.
             </p>
           </section>
 
           {/* Part 2: Day-to-Day Git */}
           <section>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              day-to-day git
+              everyday git
             </h2>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">

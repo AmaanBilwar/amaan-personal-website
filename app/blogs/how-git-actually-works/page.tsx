@@ -445,6 +445,19 @@ export default function GitBlog() {
             <p>
               set up aliases in your git config to save time. some popular ones: <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config --global alias.co checkout</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config --global alias.br branch</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config --global alias.st status</code>. create custom aliases for commands you use frequently.
             </p>
+
+            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
+              skip-worktree for local config
+            </h3>
+            <p>
+              sometimes you need to modify a tracked file locally but never commit those changes. maybe it's a config file with local database credentials or API keys. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.gitignore</code> doesn't help here because the file is already tracked.
+            </p>
+            <p className="mt-4">
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git update-index --skip-worktree &lt;file&gt;</code> tells git to pretend your local version of a file hasn't changed, even when it has. git will ignore your modifications and won't include them in commits or show them in <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code>.
+            </p>
+            <p className="mt-4">
+              to undo it later, use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git update-index --no-skip-worktree &lt;file&gt;</code>. to see which files have skip-worktree set, run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git ls-files -v | grep ^S</code>.
+            </p>
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">

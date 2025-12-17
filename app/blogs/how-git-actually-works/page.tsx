@@ -99,9 +99,9 @@ export default function GitBlog() {
               git manages three "trees" (collections of files):
             </p>
             <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>• <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">working directory</code> — the files you actually see and edit</li>
-              <li>• <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">staging area (index)</code> — a preview of your next commit</li>
-              <li>• <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">repository (HEAD)</code> — your last commit</li>
+              <li>• <span className="text-stone-200">working directory</span> — the files you actually see and edit</li>
+              <li>• <span className="text-stone-200">staging area (index)</span> — a preview of your next commit</li>
+              <li>• <span className="text-stone-200">repository (HEAD)</span> — your last commit</li>
             </ul>
             <p className="mt-4">
               when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code>, you're copying files from your working directory to the staging area. when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code>, you're taking the staging area and making it a permanent snapshot.

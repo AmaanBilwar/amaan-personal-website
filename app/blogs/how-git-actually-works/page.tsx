@@ -149,16 +149,16 @@ export default function GitBlog() {
             </h2>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
-              setting up
+              setting up your repository
             </h3>
             <p>
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git init</code> creates a new git repository in your current directory. it sets up the <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git</code> folder with all the necessary structure.
             </p>
             <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git clone</code> copies an existing repository from a remote source. it downloads the entire history and checks out the default branch.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git clone &lt;repo&gt;</code> copies an existing repository from a remote source. it downloads the entire history and checks out the default branch.
             </p>
             <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config</code> sets configuration options at the local, global, or system level. use it to set your name, email, editor, and other preferences.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config</code> sets configuration options at the local, global, or system level. you'll usually need to set your name and email to commit.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">

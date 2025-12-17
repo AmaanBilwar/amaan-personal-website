@@ -120,6 +120,17 @@ export default function GitBlog() {
               making a commit moves only the current branch's pointer forward. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git checkout</code> moves HEAD and updates your working directory to match the commit that HEAD points to.
             </p>
 
+            <figure className="mt-6">
+              <img 
+                src="/blogs/git/branches.png" 
+                alt="Git branches vs HEAD" 
+                className="w-full border border-stone-800"
+              />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+                HEAD points to the current branch, which points to the latest commit. when HEAD moves (via checkout), your working directory updates.
+              </figcaption>
+            </figure>
+
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               refs and the reflog
             </h3>

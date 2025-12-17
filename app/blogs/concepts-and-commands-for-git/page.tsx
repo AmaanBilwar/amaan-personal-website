@@ -155,7 +155,7 @@ export default function GitBlog() {
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git init</code> creates a new git repository in your current directory. it sets up the <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git</code> folder with all the necessary structure.
             </p>
             <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git clone &lt;repo&gt;</code> copies an existing repository from a remote source. it downloads the entire history and checks out the default branch.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git clone &lt;repo&gt;</code> copies an existing repository from a remote source. it downloads the entire history and checks out the default branch. you can usually copy the repository link in github and paste it in when you run that command in your terminal.
             </p>
             <p className="mt-4">
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config</code> sets configuration options at the local, global, or system level. you'll usually need to set your name and email to commit.

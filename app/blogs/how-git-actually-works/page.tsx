@@ -37,7 +37,7 @@ export default function GitBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <p>
-              most developers (including me) use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we google and hope for the best.
+              most developers (including me) use git every day without really understanding what's happening under the hood. we memorize commands like <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code>, and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git push</code>, but when something goes wrong, we google and hope for the best.
             </p>
             <p className="mt-4">
               first, a clarification: <em>git</em> and <em>github</em> are NOT the same. git is a distributed version control system that runs locally on your machine. <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-stone-200 underline hover:text-white">github</a> is a hosting platform that stores git repositories online and adds collaboration features like pull requests and issues. git works entirely offline; github requires an internet connection. you can use git with <a href="https://gitlab.com" target="_blank" rel="noopener noreferrer" className="text-stone-200 underline hover:text-white">gitlab</a>, <a href="https://bitbucket.org" target="_blank" rel="noopener noreferrer" className="text-stone-200 underline hover:text-white">bitbucket</a>, or purely local repositories.
@@ -66,10 +66,10 @@ export default function GitBlog() {
               a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.
             </p>
             <p className="mt-4">
-              here's a concrete example: let's say you have three files (app.js, styles.css, README.md) and you make a commit. git stores all three files. then you edit app.js and commit again. the new commit contains a new version of app.js, but styles.css and README.md are just pointers to the previous versions. this is why git is so efficient even though it stores "everything."
+              here's a concrete example: let's say you have three files (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">styles.css</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">README.md</code>) and you make a commit. git stores all three files. then you edit <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code> and commit again. the new commit contains a new version of <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code>, but <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">styles.css</code> and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">README.md</code> are just pointers to the previous versions. this is why git is so efficient even though it stores "everything."
             </p>
             <p className="mt-4">
-              each commit has a unique SHA-1 hash (like 7c35b51) that identifies it. think of this as the commit's address. commits also store metadata: author, timestamp, commit message, and most importantly, the hash of the parent commit(s). this parent pointer is what creates the chain of history.
+              each commit has a unique SHA-1 hash (like <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">7c35b51</code>) that identifies it. think of this as the commit's address. commits also store metadata: author, timestamp, commit message, and most importantly, the hash of the parent commit(s). this parent pointer is what creates the chain of history.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
@@ -79,15 +79,15 @@ export default function GitBlog() {
               git manages three "trees" (collections of files):
             </p>
             <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>• <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">working directory</code> — the files you actually see and edit</li>
-              <li>• <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">staging area (index)</code> — a preview of your next commit</li>
-              <li>• <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">repository (HEAD)</code> — your last commit</li>
+              <li>• <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">working directory</code> — the files you actually see and edit</li>
+              <li>• <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">staging area (index)</code> — a preview of your next commit</li>
+              <li>• <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">repository (HEAD)</code> — your last commit</li>
             </ul>
             <p className="mt-4">
-              when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git add</code>, you're copying files from your working directory to the staging area. when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git commit</code>, you're taking the staging area and making it a permanent snapshot.
+              when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code>, you're copying files from your working directory to the staging area. when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code>, you're taking the staging area and making it a permanent snapshot.
             </p>
             <p className="mt-4">
-              let's walk through an example. you edit app.js in your working directory. at this point, git status would show it as "modified". you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git add app.js</code> — now the file is in the staging area and git status shows it as "changes to be committed". finally, you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git commit -m "fix bug"</code> and the staged changes become a permanent commit in the repository.
+              let's walk through an example. you edit <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code> in your working directory. at this point, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code> would show it as "modified". you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add app.js</code> — now the file is in the staging area and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code> shows it as "changes to be committed". finally, you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit -m "fix bug"</code> and the staged changes become a permanent commit in the repository.
             </p>
             <p className="mt-4">
               the staging area is what makes git powerful. you can modify 10 files but only stage and commit 3 of them. this lets you create clean, logical commits even when you've made many unrelated changes.
@@ -103,23 +103,23 @@ export default function GitBlog() {
               HEAD is a special pointer that tells git which branch you're currently on. when you checkout a branch, you're just moving HEAD to point to that branch.
             </p>
             <p className="mt-4">
-              imagine you have this commit history: <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">A ← B ← C</code>. your main branch points to commit C. when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git branch feature</code>, git just creates a new pointer called "feature" that also points to commit C. nothing else changes. no files are copied, no commits are duplicated.
+              imagine you have this commit history: <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">A ← B ← C</code>. your main branch points to commit C. when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git branch feature</code>, git just creates a new pointer called "feature" that also points to commit C. nothing else changes. no files are copied, no commits are duplicated.
             </p>
             <p className="mt-4">
-              when you make a new commit on the feature branch, only the feature pointer moves forward: <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">A ← B ← C ← D</code>. main still points to C, feature points to D. this is why branching in git is so cheap — it's literally just creating a 41-byte file.
+              when you make a new commit on the feature branch, only the feature pointer moves forward: <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">A ← B ← C ← D</code>. main still points to C, feature points to D. this is why branching in git is so cheap — it's literally just creating a 41-byte file.
             </p>
             <p className="mt-4">
-              HEAD is like a "you are here" marker. if you're on the main branch, HEAD points to main. if you're on feature, HEAD points to feature. when you run <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git checkout feature</code>, you're just moving HEAD from main to feature, and git updates your working directory to match the commit that feature points to.
+              HEAD is like a "you are here" marker. if you're on the main branch, HEAD points to main. if you're on feature, HEAD points to feature. when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git checkout feature</code>, you're just moving HEAD from main to feature, and git updates your working directory to match the commit that feature points to.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               refs and the reflog
             </h3>
             <p>
-              refs are pointers to commits. branches are refs (stored in .git/refs/heads/), tags are refs (.git/refs/tags/), and HEAD is a special ref that points to your current branch.
+              refs are pointers to commits. branches are refs (stored in <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/refs/heads/</code>), tags are refs (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/refs/tags/</code>), and HEAD is a special ref that points to your current branch.
             </p>
             <p className="mt-4">
-              the reflog is a safety net that records every time a ref moves. even if you delete a branch or reset --hard, the reflog remembers where you were. you can use git reflog to see the history and git reset HEAD@&#123;n&#125; to go back to any previous state.
+              the reflog is a safety net that records every time a ref moves. even if you delete a branch or <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">reset --hard</code>, the reflog remembers where you were. you can use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reflog</code> to see the history and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reset HEAD@&#123;n&#125;</code> to go back to any previous state.
             </p>
           </section>
 
@@ -133,71 +133,71 @@ export default function GitBlog() {
               setting up
             </h3>
             <p>
-              <span className="text-stone-200">git init</span> creates a new git repository in your current directory. it sets up the .git folder with all the necessary structure.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git init</code> creates a new git repository in your current directory. it sets up the <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git</code> folder with all the necessary structure.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git clone</span> copies an existing repository from a remote source. it downloads the entire history and checks out the default branch.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git clone</code> copies an existing repository from a remote source. it downloads the entire history and checks out the default branch.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git config</span> sets configuration options at the local, global, or system level. use it to set your name, email, editor, and other preferences.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config</code> sets configuration options at the local, global, or system level. use it to set your name, email, editor, and other preferences.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               saving changes
             </h3>
             <p>
-              <span className="text-stone-200">git add</span> stages changes for the next commit. you can add specific files, patterns, or use -A to add everything.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code> stages changes for the next commit. you can add specific files, patterns, or use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-A</code> to add everything.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git commit</span> creates a snapshot of your staged changes. use -m for a quick message or leave it off to open your editor for a detailed commit message.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code> creates a snapshot of your staged changes. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-m</code> for a quick message or leave it off to open your editor for a detailed commit message.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git stash</span> temporarily saves your work without committing. useful when you need to switch branches but aren't ready to commit.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git stash</code> temporarily saves your work without committing. useful when you need to switch branches but aren't ready to commit.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">.gitignore</span> tells git which files to ignore. list patterns for build artifacts, dependencies, and sensitive files that shouldn't be tracked.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.gitignore</code> tells git which files to ignore. list patterns for build artifacts, dependencies, and sensitive files that shouldn't be tracked.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               inspecting what's happening
             </h3>
             <p>
-              <span className="text-stone-200">git status</span> shows which files are modified, staged, or untracked.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code> shows which files are modified, staged, or untracked.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git diff</span> shows unstaged changes. use --staged to see what you're about to commit, or compare branches and commits.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git diff</code> shows unstaged changes. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--staged</code> to see what you're about to commit, or compare branches and commits.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git log</span> shows commit history. add --graph --oneline --all for a visual representation of your branch structure.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git log</code> shows commit history. add <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--graph --oneline --all</code> for a visual representation of your branch structure.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               working with branches
             </h3>
             <p>
-              <span className="text-stone-200">git branch</span> lists, creates, or deletes branches. branches are just pointers to commits, so creating them is cheap and fast.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git branch</code> lists, creates, or deletes branches. branches are just pointers to commits, so creating them is cheap and fast.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git checkout</span> switches between branches or restores files. git switch is a newer, more focused alternative for switching branches.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git checkout</code> switches between branches or restores files. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git switch</code> is a newer, more focused alternative for switching branches.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git merge</span> combines changes from different branches. it creates a merge commit that has multiple parents.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git merge</code> combines changes from different branches. it creates a merge commit that has multiple parents.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               syncing with remotes
             </h3>
             <p>
-              <span className="text-stone-200">git remote</span> manages connections to remote repositories. you can add, remove, and rename remotes to control where you push and pull from.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git remote</code> manages connections to remote repositories. you can add, remove, and rename remotes to control where you push and pull from.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git fetch</span> downloads objects and refs from a remote repository without merging. it updates your remote-tracking branches.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git fetch</code> downloads objects and refs from a remote repository without merging. it updates your remote-tracking branches.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git push</span> uploads your local commits to a remote repository. use -u to set up tracking for new branches.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git push</code> uploads your local commits to a remote repository. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-u</code> to set up tracking for new branches.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git pull</span> is fetch plus merge. it downloads changes and immediately tries to merge them into your current branch.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git pull</code> is fetch plus merge. it downloads changes and immediately tries to merge them into your current branch.
             </p>
           </section>
 
@@ -214,16 +214,16 @@ export default function GitBlog() {
               both merge and rebase integrate changes from one branch into another, but they do it differently:
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">merge</code> creates a new commit that has two parents, preserving the full history of both branches. your git history shows exactly what happened and when.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">merge</code> creates a new commit that has two parents, preserving the full history of both branches. your git history shows exactly what happened and when.
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">rebase</code> replays your commits on top of another branch, rewriting history to make it look like you started from a different point. cleaner history, but you're changing commit hashes.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">rebase</code> replays your commits on top of another branch, rewriting history to make it look like you started from a different point. cleaner history, but you're changing commit hashes.
             </p>
             <p className="mt-4">
               let's see this with an example. say you have: main with commits A-B-C, and feature with commits A-B-D-E. if you merge feature into main, you get: A-B-C-F (where F is a merge commit with both C and E as parents). the history shows that feature was developed in parallel and merged in.
             </p>
             <p className="mt-4">
-              if instead you rebase feature onto main (<code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git checkout feature && git rebase main</code>), git takes commits D and E and replays them on top of C. you end up with: A-B-C-D'-E' (D' and E' are new commits with different hashes). the history looks linear, as if you always worked off the latest main.
+              if instead you rebase feature onto main (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git checkout feature && git rebase main</code>), git takes commits D and E and replays them on top of C. you end up with: A-B-C-D'-E' (D' and E' are new commits with different hashes). the history looks linear, as if you always worked off the latest main.
             </p>
             <p className="mt-4">
               golden rule: never rebase commits that you've pushed to a shared repository. rebasing rewrites history, which causes problems for anyone else who has those commits. merge is safe for shared branches, rebase is great for cleaning up local work before pushing.
@@ -236,10 +236,10 @@ export default function GitBlog() {
               conflicts happen when git can't automatically merge changes. both branches modified the same lines in the same file, and git doesn't know which version to keep.
             </p>
             <p className="mt-4">
-              when you hit a conflict, git marks the conflicting sections in the file. you edit the file to resolve the conflict, stage it with git add, then complete the merge with git commit.
+              when you hit a conflict, git marks the conflicting sections in the file. you edit the file to resolve the conflict, stage it with <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code>, then complete the merge with <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code>.
             </p>
             <p className="mt-4">
-              git supports different merge strategies. the default recursive strategy handles most cases well. use -X ours or -X theirs to automatically prefer one side's changes when conflicts arise.
+              git supports different merge strategies. the default recursive strategy handles most cases well. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-X ours</code> or <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-X theirs</code> to automatically prefer one side's changes when conflicts arise.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
@@ -249,31 +249,31 @@ export default function GitBlog() {
               these three commands are often confused, but they serve different purposes:
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset</code> moves the branch pointer. use --soft to keep your changes staged, --mixed to unstage them, or --hard to discard everything. it rewrites history, so be careful with commits you've already pushed.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reset</code> moves the branch pointer. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--soft</code> to keep your changes staged, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--mixed</code> to unstage them, or <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--hard</code> to discard everything. it rewrites history, so be careful with commits you've already pushed.
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git checkout</code> switches branches or restores files. when you checkout a branch, you're moving HEAD to point to it. when you checkout a file, you're replacing it with a version from another commit.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git checkout</code> switches branches or restores files. when you checkout a branch, you're moving HEAD to point to it. when you checkout a file, you're replacing it with a version from another commit.
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git revert</code> creates a new commit that undoes changes from a previous commit. unlike reset, it doesn't rewrite history, making it safe for shared branches.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git revert</code> creates a new commit that undoes changes from a previous commit. unlike reset, it doesn't rewrite history, making it safe for shared branches.
             </p>
             <p className="mt-4">
               let's say you have commits A-B-C-D and you're on D. here's what happens with each command:
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset --soft B</code>: moves your branch pointer to B, but keeps C and D's changes in your staging area. useful if you want to redo commits differently.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reset --soft B</code>: moves your branch pointer to B, but keeps C and D's changes in your staging area. useful if you want to redo commits differently.
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset --mixed B</code> (default): moves pointer to B and unstages the changes. C and D's changes are still in your working directory but not staged.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reset --mixed B</code> (default): moves pointer to B and unstages the changes. C and D's changes are still in your working directory but not staged.
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git reset --hard B</code>: moves pointer to B and discards all changes from C and D completely. dangerous! but you can still recover with reflog.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reset --hard B</code>: moves pointer to B and discards all changes from C and D completely. dangerous! but you can still recover with reflog.
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git revert D</code>: creates a new commit E that undoes D's changes. history becomes A-B-C-D-E. this is safe for shared branches because you're not rewriting history.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git revert D</code>: creates a new commit E that undoes D's changes. history becomes A-B-C-D-E. this is safe for shared branches because you're not rewriting history.
             </p>
             <p className="mt-4">
-              <code className="px-1.5 py-0.5 bg-stone-800/50 rounded text-stone-200">git clean</code> removes untracked files from your working directory. use -n first to see what would be deleted, then -f to actually do it.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git clean</code> removes untracked files from your working directory. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-n</code> first to see what would be deleted, then <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-f</code> to actually do it.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
@@ -283,7 +283,7 @@ export default function GitBlog() {
               cherry pick lets you copy a specific commit from one branch to another. instead of merging an entire branch, you can pick individual commits you want.
             </p>
             <p className="mt-4">
-              this is useful when you made a bug fix on the wrong branch, or when you need one feature from a branch but not the others. git cherry-pick &lt;commit-hash&gt; applies that commit to your current branch.
+              this is useful when you made a bug fix on the wrong branch, or when you need one feature from a branch but not the others. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git cherry-pick &lt;commit-hash&gt;</code> applies that commit to your current branch.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
@@ -293,7 +293,7 @@ export default function GitBlog() {
               here's a secret: git almost never deletes anything. even if you think you've lost commits, they're probably still there. the reflog keeps a record of every time HEAD moved — every checkout, commit, rebase, and reset.
             </p>
             <p className="mt-4">
-              run git reflog and you'll see a history of everywhere HEAD has been. you can recover "lost" commits by checking out their hash directly.
+              run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git reflog</code> and you'll see a history of everywhere HEAD has been. you can recover "lost" commits by checking out their hash directly.
             </p>
           </section>
 
@@ -307,23 +307,23 @@ export default function GitBlog() {
               advanced git log
             </h3>
             <p>
-              git log is much more powerful than most people realize. you can visualize your branch structure with --graph --oneline, see what changed in each commit with -p, or filter by author, date, or even content.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git log</code> is much more powerful than most people realize. you can visualize your branch structure with <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--graph --oneline</code>, see what changed in each commit with <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-p</code>, or filter by author, date, or even content.
             </p>
             <p className="mt-4">
-              some useful options: git log --graph --oneline --all shows your entire commit graph in a compact format. git log -S "function_name" finds commits that added or removed that string. git log --author="name" filters by author.
+              some useful options: <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git log --graph --oneline --all</code> shows your entire commit graph in a compact format. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git log -S "function_name"</code> finds commits that added or removed that string. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git log --author="name"</code> filters by author.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               git archaeology
             </h3>
             <p>
-              <span className="text-stone-200">git blame</span> shows who last modified each line of a file and when. despite the name, it's for understanding history, not assigning blame.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git blame</code> shows who last modified each line of a file and when. despite the name, it's for understanding history, not assigning blame.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git show</span> displays information about git objects. most commonly, it shows the changes introduced by a commit. git show &lt;commit-hash&gt; displays the commit message and diff in one view.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git show</code> displays information about git objects. most commonly, it shows the changes introduced by a commit. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git show &lt;commit-hash&gt;</code> displays the commit message and diff in one view.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">gitk</span> is a graphical history viewer that ships with git. it shows your commit graph visually, making it easier to understand complex branch structures. run gitk --all to see all branches.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">gitk</code> is a graphical history viewer that ships with git. it shows your commit graph visually, making it easier to understand complex branch structures. run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">gitk --all</code> to see all branches.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
@@ -333,14 +333,14 @@ export default function GitBlog() {
               hooks are scripts that run automatically at certain points in git's workflow. pre-commit hooks can lint your code before allowing a commit. pre-push hooks can run tests before pushing. post-merge hooks can install dependencies after pulling.
             </p>
             <p className="mt-4">
-              they live in .git/hooks/ and can be written in any scripting language. hooks are local to your repository by default, but tools like husky can help you share them across a team.
+              they live in <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/hooks/</code> and can be written in any scripting language. hooks are local to your repository by default, but tools like husky can help you share them across a team.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               tagging releases
             </h3>
             <p>
-              <span className="text-stone-200">git tag</span> marks specific points in history as important. tags are commonly used for releases. unlike branches, tags don't move. use annotated tags (git tag -a v1.0 -m "version 1.0") for releases as they store more metadata.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git tag</code> marks specific points in history as important. tags are commonly used for releases. unlike branches, tags don't move. use annotated tags (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git tag -a v1.0 -m "version 1.0"</code>) for releases as they store more metadata.
             </p>
           </section>
 
@@ -354,30 +354,30 @@ export default function GitBlog() {
               submodules vs subtrees
             </h3>
             <p>
-              <span className="text-stone-200">git submodules</span> let you include one git repository inside another. they're useful for shared libraries or when you need to track a dependency at a specific version. each submodule is a separate repository with its own history. the downside? submodules can be finicky. you need to remember to update them separately, and cloning requires --recurse-submodules.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git submodule</code> lets you include one git repository inside another. they're useful for shared libraries or when you need to track a dependency at a specific version. each submodule is a separate repository with its own history. the downside? submodules can be finicky. you need to remember to update them separately, and cloning requires <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--recurse-submodules</code>.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git subtree</span> is an alternative that copies another repository into a subdirectory of your project. unlike submodules, the external project's files are actually part of your repository, making it simpler for collaborators. you can push and pull changes to the subtree repository while keeping everything in a single clone.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git subtree</code> is an alternative that copies another repository into a subdirectory of your project. unlike submodules, the external project's files are actually part of your repository, making it simpler for collaborators. you can push and pull changes to the subtree repository while keeping everything in a single clone.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               handling large files
             </h3>
             <p>
-              git was designed for the linux kernel, so it handles large repositories well, but there are limits. repositories with thousands of large files or years of history can slow down. partial clones (--filter=blob:none) let you clone without all the files, and shallow clones (--depth=1) skip most of the history.
+              git was designed for the linux kernel, so it handles large repositories well, but there are limits. repositories with thousands of large files or years of history can slow down. partial clones (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--filter=blob:none</code>) let you clone without all the files, and shallow clones (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--depth=1</code>) skip most of the history.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git lfs</span> (large file storage) is an extension that stores large files outside your repository. instead of the actual file, git tracks a small pointer. the real files live on a separate server and are downloaded only when needed. lfs is essential for repositories with large images, videos, datasets, or compiled binaries.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git lfs</code> (large file storage) is an extension that stores large files outside your repository. instead of the actual file, git tracks a small pointer. the real files live on a separate server and are downloaded only when needed. lfs is essential for repositories with large images, videos, datasets, or compiled binaries.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               repository maintenance
             </h3>
             <p>
-              <span className="text-stone-200">git gc</span> stands for garbage collection. over time, git accumulates loose objects and redundant data. git gc compresses these objects into packfiles and removes unreachable commits that are past the grace period. git usually runs gc automatically, but you can run it manually with git gc --aggressive for a deeper clean.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git gc</code> stands for garbage collection. over time, git accumulates loose objects and redundant data. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git gc</code> compresses these objects into packfiles and removes unreachable commits that are past the grace period. git usually runs gc automatically, but you can run it manually with <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git gc --aggressive</code> for a deeper clean.
             </p>
             <p className="mt-4">
-              <span className="text-stone-200">git prune</span> removes objects that are no longer reachable from any ref. normally, git keeps "dangling" commits around in case you need to recover them. git prune deletes these, freeing up disk space. be careful: once pruned, those commits are gone for good.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git prune</code> removes objects that are no longer reachable from any ref. normally, git keeps "dangling" commits around in case you need to recover them. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git prune</code> deletes these, freeing up disk space. be careful: once pruned, those commits are gone for good.
             </p>
           </section>
 
@@ -426,24 +426,24 @@ export default function GitBlog() {
               git bash (windows)
             </h3>
             <p>
-              git bash is a terminal emulator for windows that provides a bash shell and common unix tools. it's packaged with git for windows and makes the command-line git experience consistent across platforms. beyond git commands, it includes tools like ssh, grep, and awk, making it a full unix-like environment on windows.
+              git bash is a terminal emulator for windows that provides a bash shell and common unix tools. it's packaged with git for windows and makes the command-line git experience consistent across platforms. beyond git commands, it includes tools like <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">ssh</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">grep</code>, and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">awk</code>, making it a full unix-like environment on windows.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               storing dotfiles with git
             </h3>
             <p>
-              dotfiles (like .bashrc, .vimrc, .gitconfig) are configuration files that live in your home directory. many developers use git to track them. the simplest approach is creating a dotfiles repository and symlinking files to your home directory.
+              dotfiles (like <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.bashrc</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.vimrc</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.gitconfig</code>) are configuration files that live in your home directory. many developers use git to track them. the simplest approach is creating a dotfiles repository and symlinking files to your home directory.
             </p>
             <p className="mt-4">
-              a clever alternative: make your home directory itself a git repository with a specially-named worktree. this lets you track files in place without moving them. just add everything else to .gitignore and only commit what you want.
+              a clever alternative: make your home directory itself a git repository with a specially-named worktree. this lets you track files in place without moving them. just add everything else to <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.gitignore</code> and only commit what you want.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               useful aliases
             </h3>
             <p>
-              set up aliases in your git config to save time. some popular ones: git config --global alias.co checkout, git config --global alias.br branch, git config --global alias.st status. create custom aliases for commands you use frequently.
+              set up aliases in your git config to save time. some popular ones: <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config --global alias.co checkout</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config --global alias.br branch</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config --global alias.st status</code>. create custom aliases for commands you use frequently.
             </p>
           </section>
 

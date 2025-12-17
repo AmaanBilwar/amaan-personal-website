@@ -145,7 +145,7 @@ export default function GitBlog() {
           {/* Part 2: Day-to-Day Git */}
           <section>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              everyday git
+              everyday git commands
             </h2>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">

@@ -40,7 +40,7 @@ export default function GitBlog() {
               most developers (including me) use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we google and hope for the best.
             </p>
             <p className="mt-4">
-              first, a clarification: <em>git</em> and <em>github</em> are NOT the same. git is a distributed version control system that runs locally on your machine. github is a hosting platform that stores git repositories online and adds collaboration features like pull requests and issues. git works entirely offline; github requires an internet connection. you can use git with gitlab, bitbucket, or purely local repositories.
+              first, a clarification: <em>git</em> and <em>github</em> are NOT the same. git is a distributed version control system that runs locally on your machine. <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-stone-200 underline hover:text-white">github</a> is a hosting platform that stores git repositories online and adds collaboration features like pull requests and issues. git works entirely offline; github requires an internet connection. you can use git with <a href="https://gitlab.com" target="_blank" rel="noopener noreferrer" className="text-stone-200 underline hover:text-white">gitlab</a>, <a href="https://bitbucket.org" target="_blank" rel="noopener noreferrer" className="text-stone-200 underline hover:text-white">bitbucket</a>, or purely local repositories.
             </p>
           </section>
 

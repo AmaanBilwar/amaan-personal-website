@@ -50,10 +50,23 @@ export default function GitBlog() {
               understanding git's mental model
             </h2>
             <p>
-              at its core, git is a directed acyclic graph (DAG) of snapshots. let's break that down: "directed" means the connections between commits only go one way, where each commit points to its parent (the commit that came before it), not the other way around. "acyclic" means there are no loops, so you can never follow the parent pointers and end up back where you started. this structure is what makes git's history reliable and traceable.
+              git is a directed acyclic graph (DAG) of snapshots. let's break that down: "directed" means the connections between commits only go one way, where each commit points to its parent (the commit that came before it), not the other way around. "acyclic" means there are no loops, so you can never follow the parent pointers and end up back where you started. this structure is what makes git's history reliable and traceable.
             </p>
+            <figure className="mt-6">
+              <img
+                src="/blogs/git/dag.png"
+                alt="Directed Acyclic Graph diagram"
+                className="w-full"
+              />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+                an out-tree (left) vs a directed acyclic graph (right). in git, commits form a DAG where nodes can have multiple parents.
+              </figcaption>
+            </figure>
             <p className="mt-4">
               every time you make a commit, git takes a snapshot of all your files and stores a reference to that snapshot. each commit points to its parent commit, creating a chain of history. when you branch and merge, commits can have multiple parents (merge commits) or be the parent of multiple commits (branch points), but the graph never loops back on itself.
+            </p>
+            <p className="mt-4">
+              a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.
             </p>
             <figure className="mt-6">
               <img
@@ -61,10 +74,10 @@ export default function GitBlog() {
                 alt="Git snapshot diagram"
                 className="w-full"
               />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+                how git creates snapshots: changes flow from working directory to staging area to commits.
+              </figcaption>
             </figure>
-            <p className="mt-4">
-              a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.
-            </p>
             <p className="mt-4">
               here's a concrete example: let's say you have three files (<code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">styles.css</code>, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">README.md</code>) and you make a commit. git stores all three files. then you edit <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code> and commit again. the new commit contains a new version of <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code>, but <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">styles.css</code> and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">README.md</code> are just pointers to the previous versions. this is why git is so efficient even though it stores "everything."
             </p>
@@ -481,6 +494,16 @@ export default function GitBlog() {
                   className="hover:text-stone-200 transition-colors underline"
                 >
                   atlassian.com/git/tutorials/what-is-git
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.pyblog.xyz/graph-theory-introduction"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  pyblog.xyz/graph-theory-introduction
                 </a>
               </li>
             </ul>

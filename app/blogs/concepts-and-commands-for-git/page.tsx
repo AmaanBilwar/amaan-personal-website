@@ -25,7 +25,7 @@ export default function GitBlog() {
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-          how git actually works
+          concepts and commands for git
         </h1>
         <p className="text-stone-500 text-sm mb-6">nicholas chen · december 16, 2025 · 15 min read</p>
 

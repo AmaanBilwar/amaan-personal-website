@@ -79,11 +79,18 @@ export default function GitBlog() {
               </figcaption>
             </figure>
             <p className="mt-4">
-              let's say you have three files and commit. then you edit one file and commit again. the new commit stores the changed file but just points to the unchanged files from before. this is why git is efficient despite storing full snapshots.
+              let's say you have three files and commit. then you edit one file and commit again. the new commit stores the changed file but just points to the unchanged files from before. this is why git is efficient despite storing full snapshots. each commit has a unique SHA-1 hash that identifies it. the full hash is 40 characters, but git typically shows a shortened version (like <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">7c35b51</code>) since it's usually unique enough. think of this as the commit's address. commits also store metadata: author, timestamp, commit message, and most importantly, the hash of the parent commit(s). this parent pointer is what creates the chain of history.
             </p>
-            <p className="mt-4">
-              each commit has a unique SHA-1 hash (like <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">7c35b51</code>) that identifies it. think of this as the commit's address. commits also store metadata: author, timestamp, commit message, and most importantly, the hash of the parent commit(s). this parent pointer is what creates the chain of history.
-            </p>
+            <figure className="mt-6">
+              <img
+                src="/blogs/git/commit-hash.png"
+                alt="GitHub commit showing shortened hash"
+                className="w-full"
+              />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+                a commit on github showing the shortened hash (c198e06) on the right.
+              </figcaption>
+            </figure>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               the three trees

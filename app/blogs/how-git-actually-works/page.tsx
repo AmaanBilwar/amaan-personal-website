@@ -37,7 +37,7 @@ export default function GitBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <p>
-              most developers (including me) use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we panic. i wanted to write this blog to learn about the git commands i don't know and understand how each of these work under the hood. this post breaks down how git actually works so you can stop being afraid of it.
+              most developers (including me) use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we google and hope for the best. i wanted to write this blog to learn about the git commands i don't know and understand how each of these work under the hood. this post breaks down how git actually works so you can stop being afraid of it.
             </p>
             <p className="mt-4">
               first, a clarification: <em>git</em> and <em>github</em> are NOT the same. git is a distributed version control system that runs locally on your machine. github is a hosting platform that stores git repositories online and adds collaboration features like pull requests and issues. git works entirely offline; github requires an internet connection. you can use git with gitlab, bitbucket, or purely local repositories.

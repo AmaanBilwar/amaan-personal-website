@@ -107,10 +107,7 @@ export default function GitBlog() {
               when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code>, you're copying files from your working directory to the staging area. when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code>, you're taking the staging area and making it a permanent snapshot.
             </p>
             <p className="mt-4">
-              let's walk through an example. you edit <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">app.js</code> in your working directory. at this point, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code> would show it as "modified". you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add app.js</code> — now the file is in the staging area and <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code> shows it as "changes to be committed". finally, you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit -m "fix bug"</code> and the staged changes become a permanent commit in the repository.
-            </p>
-            <p className="mt-4">
-              the staging area is what makes git powerful. you can modify 10 files but only stage and commit 3 of them. this lets you create clean, logical commits even when you've made many unrelated changes.
+              the staging area is what makes git powerful. you can choose to modify 10 files but only stage and commit 3 of them. this lets you create clean, logical commits even when you've made many unrelated changes.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-200 mb-3 mt-6">
@@ -166,7 +163,7 @@ export default function GitBlog() {
               saving changes
             </h3>
             <p>
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code> stages changes for the next commit. you can add specific files, patterns, or use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-A</code> to add everything.
+              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code> stages changes for the next commit. you can add specific files or patterns. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add .</code> stages everything in the current directory and below, while <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add -A</code> stages everything in the entire repository.
             </p>
             <p className="mt-4">
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code> creates a snapshot of your staged changes. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-m</code> for a quick message or leave it off to open your editor for a detailed commit message.

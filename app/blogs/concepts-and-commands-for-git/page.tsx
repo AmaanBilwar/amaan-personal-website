@@ -160,7 +160,16 @@ export default function GitBlog() {
             <p className="mt-4">
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git config</code> sets configuration options at the local, global, or system level. you'll usually need to set your name and email to commit.
             </p>
-
+            <figure className="mt-6">
+              <img
+                src="/blogs/git/git-clone.png"
+                alt="cloning a repository in github"
+                className="w-full"
+              />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+              cloning a repository in github using the GUI.     
+              </figcaption>
+            </figure>
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               saving changes
             </h3>

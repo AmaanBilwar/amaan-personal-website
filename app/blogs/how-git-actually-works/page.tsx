@@ -111,22 +111,13 @@ export default function GitBlog() {
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-200 mb-3 mt-6">
-              branches and HEAD are just pointers
+              branches vs HEAD
             </h3>
             <p>
-              here's the thing that changed how i think about git: a branch is just a pointer to a commit. that's it. when you create a new branch, git creates a tiny file (41 bytes) containing the hash of a commit. 
+              a git branch is merely a lightweight pointer to a commit. HEAD is a special pointer indicating your current branch and position. when you create a branch, git just makes a new pointer to an existing commit, making branching very cheap.
             </p>
             <p className="mt-4">
-              HEAD is a special pointer that tells git which branch you're currently on. when you checkout a branch, you're just moving HEAD to point to that branch.
-            </p>
-            <p className="mt-4">
-              imagine you have this commit history: <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">A ← B ← C</code>. your main branch points to commit C. when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git branch feature</code>, git just creates a new pointer called "feature" that also points to commit C. nothing else changes. no files are copied, no commits are duplicated.
-            </p>
-            <p className="mt-4">
-              when you make a new commit on the feature branch, only the feature pointer moves forward: <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">A ← B ← C ← D</code>. main still points to C, feature points to D. this is why branching in git is so cheap — it's literally just creating a 41-byte file.
-            </p>
-            <p className="mt-4">
-              HEAD is like a "you are here" marker. if you're on the main branch, HEAD points to main. if you're on feature, HEAD points to feature. when you run <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git checkout feature</code>, you're just moving HEAD from main to feature, and git updates your working directory to match the commit that feature points to.
+              making a commit moves only the current branch's pointer forward. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git checkout</code> moves HEAD and updates your working directory to match the commit that HEAD points to.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">

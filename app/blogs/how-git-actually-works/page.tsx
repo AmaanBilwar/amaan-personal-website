@@ -50,7 +50,7 @@ export default function GitBlog() {
               understanding git's mental model
             </h2>
             <p>
-              git is a directed acyclic graph (DAG) of snapshots. let's break that down: "directed" means the connections between commits only go one way, where each commit points to its parent (the commit that came before it), not the other way around. "acyclic" means there are no loops, so you can never follow the parent pointers and end up back where you started. this structure is what makes git's history reliable and traceable.
+              git is a directed acyclic graph (DAG) of snapshots. let's break that down: "directed" means the connections between commits only go one way, where each commit points to its parent (the commit that came before it), not the other way around. "acyclic" means there are no loops, so you can never follow the parent pointers and end up back where you started. this structure is what makes git's history reliable and traceable, and why it's become the most widely used version control system in the world.
             </p>
             <figure className="mt-6">
               <img

@@ -66,7 +66,7 @@ export default function GitBlog() {
               every time you make a commit, git takes a snapshot of all your files and stores a reference to that snapshot. each commit points to its parent commit, creating a chain of history. when you branch and merge, commits can have multiple parents (merge commits) or be the parent of multiple commits (branch points), but the graph never loops back on itself.
             </p>
             <p className="mt-4">
-              <em className="text-stone-200">note:</em> a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.
+              <em>note: a commit is not a diff. it's a complete snapshot of your entire project at that moment in time. git is smart about storage though — if a file hasn't changed, it just stores a pointer to the previous version.</em>
             </p>
             <figure className="mt-6">
               <img

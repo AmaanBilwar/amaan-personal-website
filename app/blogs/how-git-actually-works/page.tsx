@@ -51,7 +51,7 @@ export default function GitBlog() {
             </p>
             <figure className="mt-6">
               <img
-                src="/blogs/git/git-chart.png"
+                src="/blogs/git/git-diagram.png"
                 alt="Git snapshot diagram"
                 className="w-full"
               />

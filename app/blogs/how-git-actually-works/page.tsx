@@ -39,6 +39,9 @@ export default function GitBlog() {
             <p>
               most developers (including me) use git every day without really understanding what's happening under the hood. we memorize commands like git add, git commit, and git push, but when something goes wrong, we panic. i wanted to write this blog to learn about the git commands i don't know and understand how each of these work under the hood. this post breaks down how git actually works so you can stop being afraid of it.
             </p>
+            <p className="mt-4">
+              first, a clarification: <em>git</em> and <em>github</em> are NOT the same. git is a distributed version control system that runs locally on your machine. github is a hosting platform that stores git repositories online and adds collaboration features like pull requests and issues. git works entirely offline; github requires an internet connection. you can use git with gitlab, bitbucket, or purely local repositories.
+            </p>
           </section>
 
           {/* Part 1: Mental Model */}
@@ -47,7 +50,10 @@ export default function GitBlog() {
               understanding git's mental model
             </h2>
             <p>
-              at its core, git is a directed acyclic graph (DAG) of snapshots. every time you make a commit, git takes a snapshot of all your files and stores a reference to that snapshot. each commit points to its parent commit, creating a chain of history.
+              at its core, git is a directed acyclic graph (DAG) of snapshots. let's break that down: "directed" means the connections between commits only go one way, where each commit points to its parent (the commit that came before it), not the other way around. "acyclic" means there are no loops, so you can never follow the parent pointers and end up back where you started. this structure is what makes git's history reliable and traceable.
+            </p>
+            <p className="mt-4">
+              every time you make a commit, git takes a snapshot of all your files and stores a reference to that snapshot. each commit points to its parent commit, creating a chain of history. when you branch and merge, commits can have multiple parents (merge commits) or be the parent of multiple commits (branch points), but the graph never loops back on itself.
             </p>
             <figure className="mt-6">
               <img

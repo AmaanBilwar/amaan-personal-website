@@ -46,10 +46,6 @@ export default function GitBlog() {
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
               understanding git's mental model
             </h2>
-
-            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
-              snapshots, not diffs
-            </h3>
             <p>
               at its core, git is a directed acyclic graph (DAG) of snapshots. every time you make a commit, git takes a snapshot of all your files and stores a reference to that snapshot. each commit points to its parent commit, creating a chain of history.
             </p>

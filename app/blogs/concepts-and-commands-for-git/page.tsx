@@ -352,6 +352,16 @@ export default function GitBlog() {
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
+              git bisect
+            </h3>
+            <p>
+              when you discover a bug but don't know when it was introduced, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git bisect</code> is a lifesaver. instead of manually checking every commit, it uses binary search to find the culprit efficiently.
+            </p>
+            <p className="mt-4">
+              you start by telling git a "bad" commit (where the bug exists) and a "good" commit (where it didn't). git then checks out a commit halfway between them. you test your code and tell git if it's <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git bisect good</code> or <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git bisect bad</code>. git repeats this process, halving the search space each time, until it pinpoints the exact commit that broke everything.
+            </p>
+
+            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               git hooks
             </h3>
             <p>

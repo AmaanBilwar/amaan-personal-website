@@ -174,29 +174,26 @@ export default function GitBlog() {
               saving changes
             </h3>
             <p>
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code> stages changes for the next commit. you can add specific files or patterns. <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add .</code> stages everything in the current directory and below, while <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add -A</code> stages everything in the entire repository.
+              when you're ready to capture your work, the process starts with the staging area. you use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git add</code> to select specific changes for the next snapshot. this command creates "blob" objects (compressed file contents) in the <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/objects</code> database and updates the index file. once staged, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code> permanently records that snapshot, creating a "tree" object for the directory structure and a "commit" object pointing to it, while advancing your current branch pointer.
             </p>
             <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git commit</code> creates a snapshot of your staged changes. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">-m</code> for a quick message or leave it off to open your editor for a detailed commit message.
+              sometimes you need to switch contexts but aren't ready to commit; <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git stash</code> is perfect for this, temporarily saving your work by creating commit objects referenced by <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.git/refs/stash</code> without moving your branch pointer.
             </p>
             <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git stash</code> temporarily saves your work without committing. useful when you need to switch branches but aren't ready to commit.
-            </p>
-            <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.gitignore</code> tells git which files to ignore. list patterns for build artifacts, dependencies, and sensitive files that shouldn't be tracked.
+              finally, to keep your repository clean, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">.gitignore</code> prevents build artifacts and sensitive files from being tracked. git parses this file during directory traversal to silently skip specified paths.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">
               inspecting what's happening
             </h3>
             <p>
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code> shows which files are modified, staged, or untracked.
+              to understand the current state of your repository, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git status</code> is your primary dashboard. it compares three states—your HEAD commit, the index, and your working directory (using `lstat` calls)—to tell you exactly what's modified, staged, or untracked.
             </p>
             <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git diff</code> shows unstaged changes. use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--staged</code> to see what you're about to commit, or compare branches and commits.
+              for a deeper look at <em>what</em> actually changed, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git diff</code> runs a difference algorithm (like myers) to calculate line-by-line deltas between files. you can see unstaged changes by default, or use <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--staged</code> to review what you're about to commit.
             </p>
             <p className="mt-4">
-              <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git log</code> shows commit history. add <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--graph --oneline --all</code> for a visual representation of your branch structure.
+              looking backwards, <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">git log</code> traverses the commit graph (DAG) by following parent pointers, revealing the history of your project. adding flags like <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">--graph --oneline --all</code> provides a visual map of your branch structure.
             </p>
 
             <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-3 mt-6">

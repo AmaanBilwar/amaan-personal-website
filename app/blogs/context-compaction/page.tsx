@@ -35,7 +35,7 @@ export default function ContextCompactionBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <p>
-              language models have a fundamental limitation: they can only process a fixed amount of text at once. this context window determines how much conversation history, code, or documents the model can "see" when generating a response. as we push ai systems to handle longer conversations and more complex tasks, we hit this wall constantly. context compaction is the technique that helps us break through it.
+              large language models have a fundamental limitation: they can only process a fixed amount of text at once. this context window determines how much conversation history, code, or documents the model can "see" when generating a response. as we push ai systems to handle longer conversations and more complex tasks, we hit this wall constantly. context compaction is the technique that helps us break through it.
             </p>
           </section>
           <section>

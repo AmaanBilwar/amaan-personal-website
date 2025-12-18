@@ -253,6 +253,14 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/blogs/context-compaction"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    context compaction
+                  </a>
+                </li>
+                <li>
                 <a
                     href="/blogs/concepts-and-commands-for-git"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"

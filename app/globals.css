@@ -110,7 +110,6 @@ body {
     @apply text-xl font-bold tracking-tight;
   }
 
-
   .text-balance {
     text-wrap: balance;
   }

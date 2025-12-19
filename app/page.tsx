@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    
+
     if (isHovering) {
       intervalRef.current = setInterval(() => {
         setTypedChars((prev) => {
@@ -62,11 +62,7 @@ export default function Home() {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <img
-              src="/ghcat.png"
-              alt="GitHub Cat"
-              className="w-8 h-8 md:w-10 md:h-10 opacity-80"
-            />
+            <img src="/ghcat.png" alt="GitHub Cat" className="w-8 h-8 md:w-10 md:h-10 opacity-80" />
           </div>
         </div>
         {/* location / building lines removed */}
@@ -261,10 +257,12 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                <a
+                  <a
                     href="/blogs/concepts-and-commands-for-git"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >concepts and commands for git                  </a>
+                  >
+                    concepts and commands for git{' '}
+                  </a>
                 </li>
               </ul>
               {/* Neighbours navigation under Blogs */}

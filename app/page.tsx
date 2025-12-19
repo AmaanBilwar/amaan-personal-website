@@ -92,22 +92,6 @@ export default function Home() {
                 </div>
               </a>
             </li>
-            <li>
-              <a
-                href="https://textql.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
-              >
-                <img src="/textql.jpg" alt="TextQL" className="w-8 h-8" />
-                <div className="leading-tight text-xs md:text-sm">
-                  <div className="text-stone-100 font-medium">{t('current.role2')}</div>
-                  <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                    TextQL
-                  </div>
-                </div>
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -118,6 +102,22 @@ export default function Home() {
                 {t('previously.title')}
               </p>
               <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                <li>
+                  <a
+                    href="https://textql.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                  >
+                    <img src="/textql.jpg" alt="TextQL" className="w-8 h-8" />
+                    <div className="leading-tight text-xs md:text-sm">
+                      <div className="text-stone-100 font-medium">{t('current.role2')}</div>
+                      <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        TextQL
+                      </div>
+                    </div>
+                  </a>
+                </li>
                 <li>
                   <a
                     href="https://www.ownr.co/"

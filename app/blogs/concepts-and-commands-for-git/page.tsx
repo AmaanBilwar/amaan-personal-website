@@ -313,6 +313,17 @@ export default function GitBlog() {
               structure and a "commit" object pointing to it, while advancing your current branch
               pointer.
             </p>
+            <figure className="mt-6">
+              <img
+                src="/blogs/git/staged-change.png"
+                alt="Git staging process"
+                className="w-full h-72 object-cover"
+              />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+                the flow of changes through git's three trees: working directory, staging area, and
+                repository.
+              </figcaption>
+            </figure>
             <p className="mt-4">
               sometimes you need to switch contexts but aren't ready to commit;{' '}
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">

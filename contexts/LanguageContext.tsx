@@ -228,7 +228,6 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.label.basketbin': 'basketbin',
     'projects.label.facialRecognition': 'facial recognition',
     'projects.label.agentSearchEvals': 'agent search evals',
-    'projects.label.vectorDb': 'self healing vector db',
 
     // Home hero title
     'home.title': 'hi im nic',
@@ -404,7 +403,6 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.label.basketbin': 'basketbin',
     'projects.label.facialRecognition': 'facial recognition',
     'projects.label.agentSearchEvals': 'agent search evals',
-    'projects.label.vectorDb': 'self healing vector db',
 
     // Home hero title
     'home.title': '嗨，我是 nic',

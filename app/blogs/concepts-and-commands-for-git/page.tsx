@@ -9,7 +9,7 @@ export default function GitBlog() {
         {/* Back link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-100 hover:bg-stone-800/80 transition-colors mb-8 text-sm px-2 py-1 -ml-2 rounded-md"
+          className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-100 hover:bg-stone-800/80 transition-colors mb-4 text-sm px-2 py-1 -ml-2 rounded-md"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path

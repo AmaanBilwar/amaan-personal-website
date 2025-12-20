@@ -353,10 +353,20 @@ export default function GitBlog() {
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">
                 git status
               </code>{' '}
-              is your primary dashboard. it compares three states—your HEAD commit, the index, and
+              is your primary dashboard. this will be your best friend in the terminal. when you run this command, it compares three states—your HEAD commit, the index, and
               your working directory (using `lstat` calls)—to tell you exactly what's modified,
               staged, or untracked.
             </p>
+            <figure className="mt-6">
+              <img
+                src="/blogs/git/git-status.png"
+                alt="Git status output"
+                className="h-64 w-full object-cover object-top"
+              />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+                running git status in the terminal to see the state of the repository.
+              </figcaption>
+            </figure>
             <p className="mt-4">
               for a deeper look at <em>what</em> actually changed,{' '}
               <code className="px-1 py-px bg-stone-800/50 rounded text-stone-200 text-[0.85em]">

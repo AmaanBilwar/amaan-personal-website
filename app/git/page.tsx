@@ -28,7 +28,7 @@ export default function GitBlog() {
           git commands
         </h1>
         <p className="text-stone-500 text-sm mb-6">
-          nicholas chen · december 16, 2025 · 3 min read
+          nicholas chen · december 16, 2025 · 4 min read
         </p>
 
         {/* Cover image */}
@@ -90,6 +90,10 @@ export default function GitBlog() {
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git config --global alias.co checkout</code>
                 <p className="mt-1 text-stone-400">create a shortcut: type 'git co' instead of 'git checkout'.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git config --global core.editor "code --wait"</code>
+                <p className="mt-1 text-stone-400">set vs code as default editor for commit messages.</p>
               </div>
             </div>
           </section>
@@ -190,6 +194,10 @@ export default function GitBlog() {
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git merge &lt;branch&gt;</code>
                 <p className="mt-1 text-stone-400">combine history of another branch into current.</p>
               </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git merge --abort</code>
+                <p className="mt-1 text-stone-400">cancel a merge in progress and return to pre-merge state.</p>
+              </div>
                <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git tag &lt;name&gt;</code>
                 <p className="mt-1 text-stone-400">mark the current commit with a tag.</p>
@@ -224,6 +232,10 @@ export default function GitBlog() {
                 <p className="mt-1 text-stone-400">download changes from remote but don't merge.</p>
               </div>
               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git fetch --prune</code>
+                <p className="mt-1 text-stone-400">delete local refs to remote branches that were deleted.</p>
+              </div>
+              <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git pull</code>
                 <p className="mt-1 text-stone-400">fetch + merge (update current branch).</p>
               </div>
@@ -234,6 +246,10 @@ export default function GitBlog() {
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git push -u origin &lt;branch&gt;</code>
                 <p className="mt-1 text-stone-400">push and set upstream tracking.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git push --force-with-lease</code>
+                <p className="mt-1 text-stone-400">safer force push; fails if someone else pushed.</p>
               </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git push --tags</code>
@@ -268,6 +284,10 @@ export default function GitBlog() {
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git diff --staged</code>
                 <p className="mt-1 text-stone-400">show staged changes (what will be committed).</p>
               </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git diff --word-diff</code>
+                <p className="mt-1 text-stone-400">highlight changed words instead of whole lines.</p>
+              </div>
                <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git show &lt;hash&gt;</code>
                 <p className="mt-1 text-stone-400">show changes and metadata for a specific commit.</p>
@@ -275,6 +295,10 @@ export default function GitBlog() {
                <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git blame &lt;file&gt;</code>
                 <p className="mt-1 text-stone-400">show who modified each line of a file.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git blame -L 10,20 &lt;file&gt;</code>
+                <p className="mt-1 text-stone-400">blame only lines 10 through 20.</p>
               </div>
                <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git grep "text"</code>
@@ -338,6 +362,14 @@ export default function GitBlog() {
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git stash pop</code>
                 <p className="mt-1 text-stone-400">reapply stashed changes and remove from stash list.</p>
               </div>
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git stash list</code>
+                <p className="mt-1 text-stone-400">list all stashed changesets.</p>
+              </div>
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git stash -u</code>
+                <p className="mt-1 text-stone-400">stash including untracked files.</p>
+              </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git bisect start</code>
                 <p className="mt-1 text-stone-400">start binary search to find the commit that introduced a bug.</p>
@@ -357,6 +389,10 @@ export default function GitBlog() {
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git submodule update --init</code>
                  <p className="mt-1 text-stone-400">fetch and update submodule dependencies.</p>
+              </div>
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git rerere</code>
+                 <p className="mt-1 text-stone-400">reuse recorded resolution of conflicted merges.</p>
               </div>
             </div>
           </section>
@@ -382,6 +418,10 @@ export default function GitBlog() {
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git archive -o project.zip HEAD</code>
                  <p className="mt-1 text-stone-400">export the current branch to a zip file.</p>
+               </div>
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git rev-parse HEAD</code>
+                 <p className="mt-1 text-stone-400">output the full SHA-1 hash of the current commit.</p>
                </div>
              </div>
           </section>

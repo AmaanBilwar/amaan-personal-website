@@ -40,8 +40,17 @@ export default function GitBlog() {
           
           <section>
             <p>
-               git is a distributed version control system (local). github is a hosting platform (online).
-               most of us memorize commands without understanding the graph model underneath.
+              through various work experiences and side projects, i've picked up a lot of git
+              commands that have saved my life more than once. i wanted to create a central place to
+              store all these commands for easy reference.
+            </p>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+              mental model
+            </h2>
+            <p>
+              git is a distributed version control system (local). github is a hosting platform
+              (online). most of us memorize commands without understanding the graph model
+              underneath.
             </p>
           </section>
 

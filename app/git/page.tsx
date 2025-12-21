@@ -25,10 +25,10 @@ export default function GitBlog() {
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-          concepts and commands for git
+          git commands
         </h1>
         <p className="text-stone-500 text-sm mb-6">
-          nicholas chen · december 16, 2025 · 5 min read
+          nicholas chen · december 16, 2025 · 2 min read
         </p>
 
         {/* Cover image */}

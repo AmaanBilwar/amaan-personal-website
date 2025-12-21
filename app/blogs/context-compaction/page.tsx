@@ -23,7 +23,7 @@ export default function ContextCompactionBlog() {
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">context compaction</h1>
         <p className="text-stone-500 text-sm mb-6">
-          nicholas chen · december 16, 2025 · 8 min read
+          nicholas chen · december 21, 2025 · 8 min read
         </p>
         <img
           src="/blogs/context/too-much-context.png"

@@ -57,46 +57,93 @@ export default function GitBlog() {
               if a file hasn't changed, it stores a pointer to the previous version.
             </p>
 
-
              <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-2 mt-6">the three trees</h3>
              <ul className="space-y-2 list-disc list-inside text-stone-400">
                <li><span className="text-stone-200">working directory</span>: files you see/edit.</li>
                <li><span className="text-stone-200">staging area (index)</span>: changes ready for commit.</li>
                <li><span className="text-stone-200">HEAD</span>: pointer to the last commit.</li>
              </ul>
-
           </section>
 
-          {/* Essential Commands */}
-          <section>
+          {/* Setup & Config */}
+           <section>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              essential commands
+              setup & config
             </h2>
-            
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git config --global user.name "name"</code>
+                <p className="mt-1 text-stone-400">set your username for commits.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git config --global user.email "email"</code>
+                <p className="mt-1 text-stone-400">set your email for commits.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git config --global color.ui auto</code>
+                <p className="mt-1 text-stone-400">enable helpful color output.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git config --list</code>
+                <p className="mt-1 text-stone-400">show all configuration settings.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Getting & Creating Projects */}
+           <section>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+              getting & creating projects
+            </h2>
             <div className="grid grid-cols-1 gap-4">
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git init</code>
-                <p className="mt-1 text-stone-400">initialize a new repo.</p>
+                <p className="mt-1 text-stone-400">initialize a new repo in current directory.</p>
               </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git clone &lt;url&gt;</code>
-                <p className="mt-1 text-stone-400">download a repo and its history.</p>
+                <p className="mt-1 text-stone-400">download a repo and its entire history.</p>
               </div>
+            </div>
+          </section>
+
+          {/* Basic Snapshotting */}
+          <section>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+              basic snapshotting
+            </h2>
+            <div className="grid grid-cols-1 gap-4">
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git status</code>
                 <p className="mt-1 text-stone-400">show modified, staged, and untracked files.</p>
               </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git add &lt;file&gt;</code>
-                <p className="mt-1 text-stone-400">move changes to staging area.</p>
+                <p className="mt-1 text-stone-400">stage a specific file for the next commit.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git add .</code>
+                <p className="mt-1 text-stone-400">stage all changes in current directory.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git add -p</code>
+                <p className="mt-1 text-stone-400">interactively choose chunks of code to stage.</p>
               </div>
                <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git commit -m "msg"</code>
                 <p className="mt-1 text-stone-400">save staged changes as a new snapshot.</p>
               </div>
                <div>
-                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git log --oneline --graph</code>
-                <p className="mt-1 text-stone-400">visualize commit history graph.</p>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git commit -am "msg"</code>
+                <p className="mt-1 text-stone-400">stage tracked files and commit in one step.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git rm &lt;file&gt;</code>
+                <p className="mt-1 text-stone-400">remove a file from working tree and index.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git mv &lt;old&gt; &lt;new&gt;</code>
+                <p className="mt-1 text-stone-400">move or rename a file.</p>
               </div>
             </div>
           </section>
@@ -104,20 +151,53 @@ export default function GitBlog() {
           {/* Branching & Merging */}
            <section>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              branching & syncing
+              branching & merging
             </h2>
             <div className="grid grid-cols-1 gap-4">
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git branch</code>
+                <p className="mt-1 text-stone-400">list all local branches.</p>
+              </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git branch &lt;name&gt;</code>
                 <p className="mt-1 text-stone-400">create a new branch (pointer).</p>
               </div>
               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git branch -d &lt;name&gt;</code>
+                <p className="mt-1 text-stone-400">delete a merged branch safely.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git branch -D &lt;name&gt;</code>
+                <p className="mt-1 text-stone-400">force delete a branch (even if unmerged).</p>
+              </div>
+              <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git switch &lt;name&gt;</code>
-                 <p className="mt-1 text-stone-400">switch to a branch (safer than checkout).</p>
+                 <p className="mt-1 text-stone-400">switch to a branch.</p>
+              </div>
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git switch -c &lt;name&gt;</code>
+                 <p className="mt-1 text-stone-400">create and switch to a new branch.</p>
               </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git merge &lt;branch&gt;</code>
                 <p className="mt-1 text-stone-400">combine history of another branch into current.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git tag &lt;name&gt;</code>
+                <p className="mt-1 text-stone-400">mark the current commit with a tag.</p>
+              </div>
+            </div>
+          </section>
+
+           {/* Sharing & Updating */}
+           <section>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+              sharing & updating
+            </h2>
+            <div className="grid grid-cols-1 gap-4">
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git remote add origin &lt;url&gt;</code>
+                <p className="mt-1 text-stone-400">connect local repo to a remote one.</p>
               </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git fetch</code>
@@ -125,10 +205,54 @@ export default function GitBlog() {
               </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git pull</code>
-                <p className="mt-1 text-stone-400">fetch + merge.</p>
+                <p className="mt-1 text-stone-400">fetch + merge (update current branch).</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git push</code>
+                <p className="mt-1 text-stone-400">upload local commits to remote.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git push -u origin &lt;branch&gt;</code>
+                <p className="mt-1 text-stone-400">push and set upstream tracking.</p>
               </div>
             </div>
+          </section>
 
+           {/* Inspection & Comparison */}
+           <section>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+              inspection & comparison
+            </h2>
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git log</code>
+                <p className="mt-1 text-stone-400">show commit history.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git log --oneline --graph</code>
+                <p className="mt-1 text-stone-400">visualize commit history graph compactly.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git diff</code>
+                <p className="mt-1 text-stone-400">show unstaged changes.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git diff --staged</code>
+                <p className="mt-1 text-stone-400">show staged changes (what will be committed).</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git show &lt;hash&gt;</code>
+                <p className="mt-1 text-stone-400">show changes and metadata for a specific commit.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git blame &lt;file&gt;</code>
+                <p className="mt-1 text-stone-400">show who modified each line of a file.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git grep "text"</code>
+                <p className="mt-1 text-stone-400">search for text inside tracked files.</p>
+              </div>
+            </div>
           </section>
 
           {/* Undo & Fix */}
@@ -139,62 +263,83 @@ export default function GitBlog() {
              <div className="grid grid-cols-1 gap-4">
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git reset --soft HEAD~1</code>
-                 <p className="mt-1 text-stone-400">undo commit but keep changes staged.</p>
+                 <p className="mt-1 text-stone-400">undo last commit but keep changes staged.</p>
                </div>
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git reset --hard HEAD~1</code>
-                 <p className="mt-1 text-stone-400">undo commit and destroy changes (dangerous).</p>
+                 <p className="mt-1 text-stone-400">undo last commit and discard all changes (dangerous).</p>
                </div>
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git revert &lt;hash&gt;</code>
-                 <p className="mt-1 text-stone-400">create new commit that inverses changes (safe for public).</p>
+                 <p className="mt-1 text-stone-400">create new commit that reverses a previous one.</p>
                </div>
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git restore &lt;file&gt;</code>
                  <p className="mt-1 text-stone-400">discard local changes in a file.</p>
                </div>
                <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git restore --staged &lt;file&gt;</code>
+                 <p className="mt-1 text-stone-400">unstage a file (keep changes in working directory).</p>
+               </div>
+               <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git commit --amend</code>
-                 <p className="mt-1 text-stone-400">add staged changes to previous commit / rewrite message.</p>
+                 <p className="mt-1 text-stone-400">add staged changes to previous commit / edit message.</p>
                </div>
              </div>
           </section>
 
-           {/* Power Tools / Extended */}
+           {/* Advanced & Power Tools */}
           <section>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              power tools
+              advanced & power tools
             </h2>
             <div className="space-y-4">
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git rebase -i HEAD~3</code>
-                <p className="mt-1 text-stone-400">rewrite history: squash, edit, reorder, or drop commits.</p>
+                <p className="mt-1 text-stone-400">interactively rewrite history: squash, fixup, reorder, or drop.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git rebase &lt;branch&gt;</code>
+                <p className="mt-1 text-stone-400">reapply commits on top of another base tip.</p>
+              </div>
+              <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git stash</code>
+                <p className="mt-1 text-stone-400">temporarily shelve dirty changes.</p>
               </div>
               <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git stash pop</code>
-                <p className="mt-1 text-stone-400">temporarily shelve changes to switch contexts.</p>
+                <p className="mt-1 text-stone-400">reapply stashed changes and remove from stash list.</p>
               </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git bisect start</code>
-                <p className="mt-1 text-stone-400">binary search to find the commit that introduced a bug.</p>
+                <p className="mt-1 text-stone-400">start binary search to find the commit that introduced a bug.</p>
               </div>
               <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git cherry-pick &lt;hash&gt;</code>
-                 <p className="mt-1 text-stone-400">apply a specific commit from another branch.</p>
+                 <p className="mt-1 text-stone-400">apply the changes from a specific commit.</p>
               </div>
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git reflog</code>
-                 <p className="mt-1 text-stone-400">log of all reference updates. recover "lost" commits.</p>
-              </div>
-              <div>
-                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git clean -fd</code>
-                 <p className="mt-1 text-stone-400">remove all untracked files and directories.</p>
-              </div>
-               <div>
-                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded text-xs">git blame &lt;file&gt;</code>
-                 <p className="mt-1 text-stone-400">show author/commit for every line of a file.</p>
+                 <p className="mt-1 text-stone-400">show a log of all reference movements (recover lost commits).</p>
               </div>
             </div>
+          </section>
+
+           {/* Administration */}
+           <section>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+              administration
+            </h2>
+             <div className="grid grid-cols-1 gap-4">
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git clean -fd</code>
+                 <p className="mt-1 text-stone-400">remove all untracked files and directories.</p>
+               </div>
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git gc</code>
+                 <p className="mt-1 text-stone-400">cleanup unnecessary files and optimize local repo.</p>
+               </div>
+             </div>
           </section>
 
           {/* References */}

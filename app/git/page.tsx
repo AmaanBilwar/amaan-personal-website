@@ -51,7 +51,7 @@ export default function GitBlog() {
               git is a distributed version control system (local). github is a hosting platform
               (online). most of us memorize commands without understanding the graph model
               underneath.
-            </p>
+            </p>      
           </section>
 
           {/* Core Concepts */}
@@ -134,6 +134,10 @@ export default function GitBlog() {
               basic snapshotting
             </h2>
             <div className="grid grid-cols-1 gap-4">
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git commit --amend --no-edit</code>
+                <p className="mt-1 text-stone-400">add staged changes to last commit without changing message.</p>
+              </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git status</code>
                 <p className="mt-1 text-stone-400">show modified, staged, and untracked files.</p>
@@ -175,6 +179,18 @@ export default function GitBlog() {
               branching & merging
             </h2>
             <div className="grid grid-cols-1 gap-4">
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git switch -</code>
+                <p className="mt-1 text-stone-400">quickly switch back to the previous branch.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git branch --merged</code>
+                <p className="mt-1 text-stone-400">list branches already merged into current.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git merge-base A B</code>
+                <p className="mt-1 text-stone-400">find the common ancestor of two branches.</p>
+              </div>
               <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git branch</code>
                 <p className="mt-1 text-stone-400">list all local branches.</p>
@@ -224,6 +240,14 @@ export default function GitBlog() {
               sharing & updating
             </h2>
             <div className="grid grid-cols-1 gap-4">
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git remote rename &lt;old&gt; &lt;new&gt;</code>
+                <p className="mt-1 text-stone-400">rename a remote connection.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git push origin :&lt;branch&gt;</code>
+                <p className="mt-1 text-stone-400">delete a remote branch.</p>
+              </div>
                <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git remote -v</code>
                 <p className="mt-1 text-stone-400">list all remote repositories.</p>
@@ -274,6 +298,18 @@ export default function GitBlog() {
             </h2>
             <div className="grid grid-cols-1 gap-4">
               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git log -S "text"</code>
+                <p className="mt-1 text-stone-400">search history for the first occurrence of a string.</p>
+              </div>
+               <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git log --author="name"</code>
+                <p className="mt-1 text-stone-400">filter commit history by author.</p>
+              </div>
+              <div>
+                <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git log --since="2.weeks"</code>
+                <p className="mt-1 text-stone-400">show commits from a specific timeframe.</p>
+              </div>
+              <div>
                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git log</code>
                 <p className="mt-1 text-stone-400">show commit history.</p>
               </div>
@@ -322,6 +358,14 @@ export default function GitBlog() {
               undo & fix
             </h2>
              <div className="grid grid-cols-1 gap-4">
+               <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git checkout &lt;hash&gt; -- &lt;file&gt;</code>
+                 <p className="mt-1 text-stone-400">restore a file to a specific past version.</p>
+               </div>
+                <div>
+                 <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git update-ref -d HEAD</code>
+                 <p className="mt-1 text-stone-400">effectively "un-initialize" the first commit of a repo.</p>
+               </div>
                <div>
                  <code className="text-stone-200 bg-stone-800/50 px-1 rounded">git reset --soft HEAD~1</code>
                  <p className="mt-1 text-stone-400">undo last commit but keep changes staged.</p>

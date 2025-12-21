@@ -28,7 +28,7 @@ export default function GitBlog() {
           git commands
         </h1>
         <p className="text-stone-500 text-sm mb-6">
-          nicholas chen · december 16, 2025 · 4 min read
+          nicholas chen · december 21, 2025 · 4 min read
         </p>
 
         {/* Cover image */}

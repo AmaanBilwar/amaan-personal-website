@@ -167,16 +167,16 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Links
     'links.blogPrompt': '> want to read my thoughts ->',
-    'links.blogLink': 'blogs',
+    'links.blogLink': 'writing',
     'links.artPrompt': '> interested in my creative work ->',
     'links.artLink': 'art',
 
     // Navigation
     'nav.home': 'Home',
     'nav.draw': 'Draw',
-    'nav.blogs': 'Blogs',
+    'nav.blogs': 'Writing',
     'nav.draw.title': 'Draw something!',
-    'nav.blogs.title': 'Read my blogs!',
+    'nav.blogs.title': 'Read my writing!',
     'nav.contact': 'Contact',
     'nav.linkedin': 'LinkedIn',
     'nav.github': 'GitHub',
@@ -186,7 +186,7 @@ const translations: Record<Language, Record<string, string>> = {
     'language.label': 'Language:',
 
     // Blogs page
-    'blogs.pageTitle': 'Blogs',
+    'blogs.pageTitle': 'Writing',
     'blogs.description':
       'A collection of my thoughts, experiences, and reflections on life, growth, and learning.',
     'blogs.note': 'Note:',
@@ -228,7 +228,6 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.label.basketbin': 'basketbin',
     'projects.label.facialRecognition': 'facial recognition',
     'projects.label.agentSearchEvals': 'agent search evals',
-    'projects.label.vectorDb': 'self healing vector db',
 
     // Home hero title
     'home.title': 'hi im nic',
@@ -346,16 +345,16 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Links
     'links.blogPrompt': '想要阅读我的想法 ->',
-    'links.blogLink': '博客',
+    'links.blogLink': '写作',
     'links.artPrompt': '对我的创意作品感兴趣 ->',
     'links.artLink': '艺术',
 
     // Navigation
     'nav.home': '首页',
     'nav.draw': '绘画',
-    'nav.blogs': '博客',
+    'nav.blogs': '写作',
     'nav.draw.title': '画点什么！',
-    'nav.blogs.title': '阅读我的博客！',
+    'nav.blogs.title': '阅读我的写作！',
     'nav.contact': '联系',
     'nav.linkedin': 'LinkedIn',
     'nav.github': 'GitHub',
@@ -365,7 +364,7 @@ const translations: Record<Language, Record<string, string>> = {
     'language.label': '语言：',
 
     // Blogs page
-    'blogs.pageTitle': '博客',
+    'blogs.pageTitle': '写作',
     'blogs.description': '我的想法、经历和对生活、成长及学习的反思集合。',
     'blogs.note': '注：',
     'blogs.noteText': '这些文章最初发布在Medium上，反映了我的个人想法和经历。',
@@ -404,7 +403,6 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.label.basketbin': 'basketbin',
     'projects.label.facialRecognition': 'facial recognition',
     'projects.label.agentSearchEvals': 'agent search evals',
-    'projects.label.vectorDb': 'self healing vector db',
 
     // Home hero title
     'home.title': '嗨，我是 nic',

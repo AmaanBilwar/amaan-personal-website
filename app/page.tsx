@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    
+
     if (isHovering) {
       intervalRef.current = setInterval(() => {
         setTypedChars((prev) => {
@@ -62,11 +62,7 @@ export default function Home() {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <img
-              src="/ghcat.png"
-              alt="GitHub Cat"
-              className="w-8 h-8 md:w-10 md:h-10 opacity-80"
-            />
+            <img src="/ghcat.png" alt="GitHub Cat" className="w-8 h-8 md:w-10 md:h-10 opacity-80" />
           </div>
         </div>
         {/* location / building lines removed */}
@@ -245,12 +241,20 @@ export default function Home() {
                 </li>
                 {/* <li>
                   <a
-                    href="/blogs/how-git-actually-works"
+                    href="/blogs/context-compaction"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    how git actually works
+                    context compaction
                   </a>
                 </li> */}
+                <li>
+                  <a
+                    href="/git"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    git commands
+                  </a>
+                </li>
               </ul>
               {/* Neighbours navigation under Blogs */}
               <div className="mt-4 flex items-center gap-2 text-xs text-stone-400">

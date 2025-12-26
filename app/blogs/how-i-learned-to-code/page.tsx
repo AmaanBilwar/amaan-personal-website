@@ -64,7 +64,18 @@ export default function SoftwareEngineeringLearningBlog() {
                   voluntrack
                 </a>
               </li>
-              <li>• built my first gpt wrapper during an online hackathon with friends </li>
+              <li>
+                • built my first{' '}
+                <a
+                  href="https://github.com/nicholaschen09/PsychAI-main-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  gpt wrapper
+                </a>{' '}
+                during an online hackathon with friends{' '}
+              </li>
               <li>• made a student registration and mobile calculator app using kotlin </li>
               <li>
                 • landed first software engineering internship at{' '}
@@ -117,6 +128,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 as a software engineer intern for the winter
               </li>
+              <li>• worked in a production codebase developing internal tools for the team </li>
               <li>
                 • made an{' '}
                 <a

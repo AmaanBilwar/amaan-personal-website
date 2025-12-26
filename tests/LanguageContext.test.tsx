@@ -15,7 +15,7 @@ describe('LanguageContext', () => {
 
   it('should change language', () => {
     const { result } = renderHook(() => useLanguage(), { wrapper });
-    
+
     act(() => {
       result.current.setLanguage('zh');
     });

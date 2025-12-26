@@ -19,6 +19,6 @@ describe('Home Page', () => {
   it('renders the current role', () => {
     render(<Home />, { wrapper });
     // This key "hero.currently" translates to "Currently" in English
-    expect(screen.getByText("Currently")).toBeInTheDocument();
+    expect(screen.getByText('Currently')).toBeInTheDocument();
   });
 });

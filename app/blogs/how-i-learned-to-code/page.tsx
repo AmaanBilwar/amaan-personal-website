@@ -129,7 +129,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 as a software engineer intern for the winter
               </li>
               <li>• worked in a production codebase developing internal tools for the team </li>
-              <li>• learned typescript, next.js, vite and react </li>
+              <li>• learned typescript, next.js, vite and react and used postman a lot</li>
 
               <li>
                 • made an{' '}

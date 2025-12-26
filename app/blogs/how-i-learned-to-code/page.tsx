@@ -169,6 +169,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>
+              <li>• had to learn matlab for one of my uni courses during school</li>
+
             </ul>
           </section>
 

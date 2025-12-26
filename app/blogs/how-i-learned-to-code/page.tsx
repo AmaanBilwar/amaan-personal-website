@@ -105,7 +105,6 @@ export default function SoftwareEngineeringLearningBlog() {
 
               <li>
                 • built sql query parser with typescript and sveltekit for parsing flat json
-                datasets
               </li>
               <li>
                 • implemented custom sql parser supporting where, limit, and logical operators in

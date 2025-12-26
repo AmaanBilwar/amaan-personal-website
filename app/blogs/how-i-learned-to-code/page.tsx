@@ -90,52 +90,19 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>• learned intro to programming in c++ and built projects for school</li>
               <li>• joined engineering design teams to learn how to code in organizations</li>
-
-              <li>• built machine learning forecasting models using python, numpy, and pandas</li>
               <li>
-                • created interactive data visualizations with plotly for non-technical stakeholders
-              </li>
-              <li>
-                • achieved 95% better resource allocation by predicting customer banking patterns
-              </li>
-              <li>• reduced support team work times by 30% through accurate forecasting</li>
-              <li>
-                • identified $50,000+ in potential annual cost savings through data-driven insights
-              </li>
-              <li>
-                • got promoted to{' '}
+                • joined{' '}
                 <a
-                  href="https://www.rbc.com/"
+                  href="https://www.ownr.co/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  RBC
-                </a>
-                x - Ownr internship in winter 2025
+                  ownr
+                </a>{' '}
+                as a software engineer intern for the winter
               </li>
-              <li>
-                • scaled full-stack web apps with react, nest.js, typescript, and graphql for 200k+
-                users
-              </li>
-              <li>
-                • optimized postgresql queries reducing response time by 30% across 200k+ entries
-              </li>
-              <li>
-                • achieved 99.9% uptime by writing 40+ unit and integration tests with jest and
-                puppeteer
-              </li>
-              <li>
-                • improved deployment speed by 40% with ci/cd pipelines using github actions and
-                docker
-              </li>
-              <li>
-                • increased system throughput by 25% using redis caching and rabbitmq message
-                queuing
-              </li>
-              <li>
-                • deployed scalable services across 6+ kubernetes pods saving $15,000+ annually
-              </li>
+
               <li>
                 • built sql query parser with typescript and sveltekit for parsing flat json
                 datasets

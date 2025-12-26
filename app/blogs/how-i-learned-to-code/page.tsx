@@ -164,6 +164,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 using python for fun at 2am
               </li>
+              <li>• used golang for the first time and built an image processor</li>
               <li>• tried learning haskell for the first time</li>
               <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>

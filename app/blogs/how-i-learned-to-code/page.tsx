@@ -179,7 +179,18 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 with typescript and svelte for parsing flat json
               </li>
-              <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
+              <li>
+                • created{' '}
+                <a
+                  href="https://github.com/nicholaschen09/diff-digest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  diff digest tool
+                </a>{' '}
+                for fetching github pr diffs for ai summarization
+              </li>
               <li>
                 • landed a software engineering internship at{' '}
                 <a

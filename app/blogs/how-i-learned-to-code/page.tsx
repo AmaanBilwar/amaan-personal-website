@@ -345,6 +345,19 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>• learned how to use the terminal better than before</li>
               <li>• worked at a startup and used a lot of go, python, typescript and svelte</li>
+              <li>
+                • worked on the{' '}
+                <a
+                  href="https://app.textql.com/ontology"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  ontology
+                </a>{' '}
+                a lot at textql
+              </li>
+
               <li>• did a lot of agentic and applied ai work</li>
               <li>
                 • learned rust for the first time and build some{' '}

@@ -91,6 +91,8 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>• built an ML model on jupyter notebook using python, numpy and pandas</li>
               <li>• learned a lot of what i needed from geeks for geeks and w3schools </li>
+              <li>• built some random projects with javascript, html and css for the first time </li>
+
               <li>
                 • built the first version of my{' '}
                 <a

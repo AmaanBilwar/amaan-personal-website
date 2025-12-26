@@ -88,7 +88,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 for systems design engineering
               </li>
-              <li>• learned intro to programming and data structures and algorithms in c++</li>
+              <li>• learned intro to programming in c++ and built projects for school</li>
               <li>• joined engineering design teams to learn how to code in organizations</li>
 
               <li>• built machine learning forecasting models using python, numpy, and pandas</li>

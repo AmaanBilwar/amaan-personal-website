@@ -255,6 +255,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 twice{' '}
               </li>
               <li>• coworker told me to start using iterm2 and i fell in love</li>
+              <li>• learned how to use the terminal better than before</li>
 
             </ul>
           </section>

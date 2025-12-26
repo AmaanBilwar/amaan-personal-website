@@ -91,7 +91,9 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>• built an ML model on jupyter notebook using python, numpy and pandas</li>
               <li>• learned a lot of what i needed from geeks for geeks and w3schools </li>
-              <li>• built some random projects with javascript, html and css for the first time </li>
+              <li>
+                • built some random projects with javascript, html and css for the first time{' '}
+              </li>
 
               <li>
                 • built the first version of my{' '}
@@ -139,7 +141,6 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• hopped on twitter where i learned a lot and met other cool cs students</li>
               <li>• started to take leetcode more serious and watched a ton of neetcode on yt</li>
 
-
               <li>
                 • made an{' '}
                 <a
@@ -170,7 +171,6 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>
               <li>• had to learn matlab for one of my uni courses during school</li>
-
             </ul>
           </section>
 

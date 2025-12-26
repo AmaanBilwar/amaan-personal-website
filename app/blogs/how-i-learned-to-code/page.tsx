@@ -192,7 +192,18 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• messed around with postgres, sql and the debugger for the first time</li>
               <li>• got more familiar with the terminal and ai and used stack overflow still</li>
               <li>• took data structures and algorithms in c++ during second semester of uni</li>
-              <li>• hopped on twitter where i learned a lot and met other cool cs students</li>
+              <li>
+                • hopped on{' '}
+                <a
+                  href="https://twitter.com/nicholaschen09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  twitter
+                </a>{' '}
+                where i learned a lot and met other cool cs students
+              </li>
               <li>• started to take leetcode more serious and watched a ton of neetcode on yt</li>
 
               <li>
@@ -219,7 +230,17 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 using python for fun at 2am
               </li>
-              <li>• used golang for the first time and built an image processor</li>
+              <li>
+                • used golang for the first time and built an{' '}
+                <a
+                  href="https://github.com/nicholaschen09/image-processor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  image processor
+                </a>
+              </li>
               <li>
                 • made this{' '}
                 <a

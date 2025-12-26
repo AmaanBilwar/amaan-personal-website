@@ -167,7 +167,18 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>• used golang for the first time and built an image processor</li>
               <li>• tried learning haskell for the first time</li>
-              <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
+              <li>
+                • built{' '}
+                <a
+                  href="https://github.com/nicholaschen09/sql-query-parser"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  sql query parser
+                </a>{' '}
+                with typescript and svelte for parsing flat json
+              </li>
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>
                 • landed a software engineering internship at{' '}

@@ -171,9 +171,30 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>
               <li>• had to learn matlab for one of my uni courses during school</li>
-              <li>• built a url shortener using golang and tailwind css hosted on railway</li>
-              <li>• made a mini worse version of figma because i was bored one day</li>
-
+              <li>
+                • built a{' '}
+                <a
+                  href="https://github.com/nicholaschen09/url-shortener"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  url shortener
+                </a>{' '}
+                using golang and tailwind css hosted on railway
+              </li>
+              <li>
+                • made a{' '}
+                <a
+                  href="https://github.com/nicholaschen09/whiteboard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  mini worse version of figma
+                </a>{' '}
+                because i was bored one day
+              </li>
             </ul>
           </section>
 

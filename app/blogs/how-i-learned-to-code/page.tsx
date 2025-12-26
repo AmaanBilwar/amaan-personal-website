@@ -131,6 +131,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• worked in a production codebase developing internal tools for the team </li>
               <li>• learned typescript, next.js, vite and react and used postman a lot</li>
               <li>• messed around with postgres, sql and the debugger for the first time</li>
+              <li>• got more familiar with the terminal and ai and used stack overflow still</li>
+
               <li>
                 • made an{' '}
                 <a

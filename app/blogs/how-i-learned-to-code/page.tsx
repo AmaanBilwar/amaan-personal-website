@@ -257,6 +257,9 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• coworker told me to start using iterm2 and i fell in love</li>
               <li>• learned how to use the terminal better than before</li>
               <li>• worked at a startup and used a lot of go, python, typescript and svelte</li>
+              <li>• did a lot of agentic and applied ai work</li>
+
+
 
             </ul>
           </section>

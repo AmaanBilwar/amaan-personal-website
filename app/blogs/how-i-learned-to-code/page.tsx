@@ -242,6 +242,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 because i was bored one day
               </li>
+              <li>• did many takehomes and coding assignments to learn system design </li>
+
               <li>
                 • redesigned my entire{' '}
                 <a

@@ -38,13 +38,12 @@ export default function SoftwareEngineeringLearningBlog() {
           <section>
             <ul className="space-y-3 text-stone-300">
               <li>
-                • started learning programming in high school with introduction to programming
-                courses
+                • learned the basics of c++ from my computer science teacher in high school
               </li>
               <li>
-                • got accepted to university of waterloo for systems design engineering with
-                president's scholarship
+                • joined my school's programming club and learned from better programmers
               </li>
+              <li>• got accepted to university of waterloo for systems design engineering</li>
               <li>
                 • learned data structures and algorithms, engineering design, and human factors in
                 design
@@ -141,9 +140,7 @@ export default function SoftwareEngineeringLearningBlog() {
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">
-            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-              references
-            </h3>
+            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">references</h3>
             <ul className="space-y-2 text-stone-400 text-sm">
               <li>
                 <a

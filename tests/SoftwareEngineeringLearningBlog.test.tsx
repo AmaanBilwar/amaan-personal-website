@@ -22,9 +22,7 @@ describe('Software Engineering Learning Blog Page', () => {
       ),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
-        "• got accepted to university of waterloo for systems design engineering with president's scholarship",
-      ),
+      screen.getByText('• got accepted to university of waterloo for systems design engineering'),
     ).toBeInTheDocument();
   });
 });

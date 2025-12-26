@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import GitBlog from '../app/git/page';
+import GitBlog from '../app/blogs/git/page';
 import { describe, it, expect } from 'vitest';
 
 // No context needed for this static page

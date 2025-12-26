@@ -103,6 +103,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 for systems design engineering
               </li>
               <li>• learned intro to programming in c++ and built projects for school</li>
+              <li>• started to solve leetcode problems on a more regular basis</li>
               <li>• joined engineering design teams to learn how to code in organizations</li>
               <li>
                 • joined{' '}

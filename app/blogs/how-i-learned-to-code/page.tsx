@@ -167,6 +167,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 using python for fun at 2am
               </li>
               <li>• used golang for the first time and built an image processor</li>
+              <li>• made this facial recognition software for fun in python and typescript</li>
+
               <li>• tried learning haskell for the first time</li>
               <li>
                 • built{' '}

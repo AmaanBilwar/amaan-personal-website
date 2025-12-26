@@ -63,13 +63,25 @@ export default function SoftwareEngineeringLearningBlog() {
                   voluntrack
                 </a>
               </li>
-              <li>• went to the university of waterloo for systems design engineering</li>
+              <li>• landed first software engineering internship at RBC in summer 2024</li>
+              <li>• learned how to use jupyter notebook and built an ML model using python, numpy and pandas</li>
+              <li>
+                • went to the{' '}
+                <a
+                  href="https://uwaterloo.ca/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  university of waterloo
+                </a>{' '}
+                for systems design engineering
+              </li>
               <li>• learned intro to programming and data structures and algorithms in c++</li>
               <li>
-                • joined engineering design teams like UWAFT (university of waterloo alternative
-                fuels team)
+                • joined engineering design teams to learn how to code in organizations
               </li>
-              <li>• landed first software engineering internship at RBC in summer 2024</li>
+            
               <li>• built machine learning forecasting models using python, numpy, and pandas</li>
               <li>
                 • created interactive data visualizations with plotly for non-technical stakeholders

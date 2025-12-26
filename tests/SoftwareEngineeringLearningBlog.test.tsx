@@ -21,8 +21,6 @@ describe('Software Engineering Learning Blog Page', () => {
         '• learned the basics of c++ from my computer science teacher in high school',
       ),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText('• went to the university of waterloo for systems design engineering'),
-    ).toBeInTheDocument();
+    expect(screen.getAllByRole('link', { name: 'university of waterloo' })).toHaveLength(2);
   });
 });

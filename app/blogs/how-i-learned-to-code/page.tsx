@@ -120,32 +120,6 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>
-              <li>
-                • building ai agents for querying petabytes of structured data with natural language
-              </li>
-              <li>
-                • developed scalable backend services in go and python handling 50k+ requests/day
-              </li>
-              <li>• created interactive ui in svelte and react with typescript and vite</li>
-              <li>
-                • used posthog to boost user activation by 25%, cloudflare for security, supabase
-                for auth
-              </li>
-              <li>• redesigned ontology in haskell and go for complex data models</li>
-              <li>• converted ai agent into slack bot enabling 500+ users to query insights</li>
-              <li>
-                • improved streamlit dashboards and sandbox environments for rapid prototyping
-              </li>
-              <li>• implemented stripe billing infrastructure for subscriptions and invoicing</li>
-              <li>
-                • continuously learning new technologies: golang, rust, kubernetes, langchain, rag
-              </li>
-              <li>
-                • building projects with modern stack: next.js, tailwind, vercel, aws, cloudflare
-              </li>
-              <li>
-                • still learning every day - from high school basics to enterprise-scale systems
-              </li>
             </ul>
           </section>
 

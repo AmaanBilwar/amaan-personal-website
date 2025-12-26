@@ -242,6 +242,18 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 because i was bored one day
               </li>
+              <li>
+                • redesigned my entire{' '}
+                <a
+                  href="https://nicholaschen.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  personal website
+                </a>{' '}
+                twice{' '}
+              </li>
             </ul>
           </section>
 

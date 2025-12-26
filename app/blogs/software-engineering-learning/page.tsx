@@ -39,6 +39,8 @@ export default function SoftwareEngineeringLearningBlog() {
             <ul className="space-y-3 text-stone-300">
               <li>• learned the basics of c++ from my computer science teacher in high school</li>
               <li>• joined my school's programming club and learned from better programmers</li>
+              <li>• tried out competitive programming and did the ccc twice in c++ </li>
+
               <li>
                 • joined a group of other students and learned a lot building{' '}
                 <a

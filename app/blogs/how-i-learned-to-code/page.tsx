@@ -167,7 +167,18 @@ export default function SoftwareEngineeringLearningBlog() {
                 using python for fun at 2am
               </li>
               <li>• used golang for the first time and built an image processor</li>
-              <li>• made this facial recognition software for fun in python and typescript</li>
+              <li>
+                • made this{' '}
+                <a
+                  href="https://github.com/nicholaschen09/facial-recognition-neural-network"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  facial recognition
+                </a>{' '}
+                software for fun in python and typescript
+              </li>
 
               <li>• tried learning haskell for the first time</li>
               <li>

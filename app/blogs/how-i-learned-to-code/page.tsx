@@ -254,6 +254,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 twice{' '}
               </li>
+              <li>• coworker told me to start using iterm2 and i fell in love</li>
+
             </ul>
           </section>
 

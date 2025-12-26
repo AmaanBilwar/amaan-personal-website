@@ -292,11 +292,31 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>• coworker told me to start using iterm2 and i fell in love</li>
               <li>• used a lot of claude code, codex and cursor when programming</li>
-              <li>• worked on the textql healthcare landing page</li>
+              <li>
+                • worked on the{' '}
+                <a
+                  href="https://textql.com/healthcare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  textql healthcare landing page
+                </a>
+              </li>
               <li>• learned how to use the terminal better than before</li>
               <li>• worked at a startup and used a lot of go, python, typescript and svelte</li>
               <li>• did a lot of agentic and applied ai work</li>
-              <li>• learned rust for the first time and build some random things</li>
+              <li>
+                • learned rust for the first time and build some{' '}
+                <a
+                  href="https://github.com/tinytinyexperiments/visuals"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  random things
+                </a>
+              </li>
               <li>
                 • participated in a{' '}
                 <a
@@ -309,7 +329,18 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 challenge with friend
               </li>
-              <li>• did some benchmarking with web search apis for the first time</li>
+              <li>
+                • did some{' '}
+                <a
+                  href="https://github.com/nicholaschen09/llm-benchmarking"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  benchmarking
+                </a>{' '}
+                with web search apis for the first time
+              </li>
             </ul>
             <p className="mt-6 text-stone-400 italic text-sm">note: i am updating this everyday</p>
           </section>

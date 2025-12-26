@@ -134,7 +134,7 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• messed around with postgres, sql and the debugger for the first time</li>
               <li>• got more familiar with the terminal and ai and used stack overflow still</li>
               <li>• took data structures and algorithms in c++ during second semester of uni</li>
-
+              <li>• hopped on twitter where i learned a lot and met other cool cs students</li>
               <li>• started to take leetcode more serious and watched a ton of neetcode on yt</li>
 
 
@@ -162,6 +162,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 using python for fun at 2am
               </li>
+              <li>• tried learning haskell for the first time</li>
               <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>

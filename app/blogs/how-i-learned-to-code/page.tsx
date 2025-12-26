@@ -117,8 +117,30 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 as a software engineer intern for the winter
               </li>
-              <li>• made an etl pipeline that processed customer feedback</li>
-              <li>• built a discord summarizer bot using python for fun at 2am</li>
+              <li>
+                • made an{' '}
+                <a
+                  href="https://github.com/nicholaschen09/customer-feedback-etl-pipeline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  etl pipeline
+                </a>{' '}
+                that processed customer feedback
+              </li>
+              <li>
+                • built a{' '}
+                <a
+                  href="https://github.com/nicholaschen09/summary-discord-bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  discord summarizer bot
+                </a>{' '}
+                using python for fun at 2am
+              </li>
               <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>

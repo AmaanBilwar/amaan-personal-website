@@ -90,7 +90,27 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 during an online hackathon with friends{' '}
               </li>
-              <li>• made a student registration and mobile calculator app using kotlin </li>
+              <li>
+                • made a{' '}
+                <a
+                  href="https://github.com/nicholaschen09/StudentRegistration"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  student registration
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://github.com/nicholaschen09/MobileCalculatorApp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  mobile calculator app
+                </a>{' '}
+                using kotlin{' '}
+              </li>
               <li>
                 • landed first software engineering internship at{' '}
                 <a

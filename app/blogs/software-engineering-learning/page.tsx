@@ -39,7 +39,18 @@ export default function SoftwareEngineeringLearningBlog() {
             <ul className="space-y-3 text-stone-300">
               <li>• learned the basics of c++ from my computer science teacher in high school</li>
               <li>• joined my school's programming club and learned from better programmers</li>
-              <li>• tried out competitive programming and did the ccc twice in c++ </li>
+              <li>
+                • tried out competitive programming and did the{' '}
+                <a
+                  href="https://cemc.uwaterloo.ca/contests/ccc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  ccc
+                </a>{' '}
+                twice in c++{' '}
+              </li>
 
               <li>
                 • joined a group of other students and learned a lot building{' '}
@@ -53,9 +64,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>
               </li>
               <li>• went to the university of waterloo for systems design engineering</li>
-              <li>
-                • learned intro to programming and data structures and algorithms in c++
-              </li>
+              <li>• learned intro to programming and data structures and algorithms in c++</li>
               <li>
                 • joined engineering design teams like UWAFT (university of waterloo alternative
                 fuels team)

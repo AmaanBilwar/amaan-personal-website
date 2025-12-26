@@ -64,7 +64,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>
               </li>
               <li>• landed first software engineering internship at RBC in summer 2024</li>
-              <li>• learned how to use jupyter notebook and built an ML model using python, numpy and pandas</li>
+              <li>• built an ML model on jupyter notebook using python, numpy and pandas</li>
               <li>
                 • went to the{' '}
                 <a

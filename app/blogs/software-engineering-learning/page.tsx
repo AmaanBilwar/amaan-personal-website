@@ -40,7 +40,7 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• learned the basics of c++ from my computer science teacher in high school</li>
               <li>• joined my school's programming club and learned from better programmers</li>
               <li>
-                • joined a group of other student and learned a lot building{' '}
+                • joined a group of other students and learned a lot building{' '}
                 <a
                   href="https://github.com/VolunTrack"
                   target="_blank"
@@ -50,10 +50,9 @@ export default function SoftwareEngineeringLearningBlog() {
                   voluntrack
                 </a>
               </li>
-              <li>• got accepted to university of waterloo for systems design engineering</li>
+              <li>• went to the university of waterloo for systems design engineering</li>
               <li>
-                • learned data structures and algorithms, engineering design, and human factors in
-                design
+                • learned intro to programming and data structures and algorithms in c++
               </li>
               <li>
                 • joined engineering design teams like UWAFT (university of waterloo alternative

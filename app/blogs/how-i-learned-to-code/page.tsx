@@ -172,7 +172,7 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• landed software engineering internship at textql in fall 2025</li>
               <li>• had to learn matlab for one of my uni courses during school</li>
               <li>• built a url shortener using golang and tailwind css hosted on railway</li>
-              <li>• made a mini worse verison of figma because i was bored one day</li>
+              <li>• made a mini worse version of figma because i was bored one day</li>
 
             </ul>
           </section>

@@ -171,6 +171,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>
               <li>• had to learn matlab for one of my uni courses during school</li>
+              <li>• built a url shortener using golang and tailwind css hosted on railway</li>
+
             </ul>
           </section>
 

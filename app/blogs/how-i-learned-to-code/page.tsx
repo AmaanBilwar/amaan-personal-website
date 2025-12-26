@@ -37,7 +37,7 @@ export default function SoftwareEngineeringLearningBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <ul className="space-y-3 text-stone-300">
-              <li>• learned the basics of c++ from my computer science teacher in high school</li>
+              <li>• built a hangman game in java </li>
               <li>• learned the basics of c++ from my computer science teacher in high school</li>
               <li>• joined my school's programming club and learned from better programmers</li>
               <li>
@@ -64,6 +64,8 @@ export default function SoftwareEngineeringLearningBlog() {
                   voluntrack
                 </a>
               </li>
+              <li>• built my first gpt wrapper during an online hackathon with friends </li>
+              <li>• made a student registration and mobile calculator app using kotlin </li>
               <li>
                 • landed first software engineering internship at{' '}
                 <a

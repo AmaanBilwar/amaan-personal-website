@@ -39,7 +39,17 @@ export default function SoftwareEngineeringLearningBlog() {
             <ul className="space-y-3 text-stone-300">
               <li>• learned the basics of c++ from my computer science teacher in high school</li>
               <li>• joined my school's programming club and learned from better programmers</li>
-              <li>• got accepted to university of waterloo for systems design engineering</li>
+              <li>
+                • joined a group of other student and learned a lot building{' '}
+                <a
+                  href="https://github.com/VolunTrack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  voluntrack
+                </a>
+              </li>
               <li>• got accepted to university of waterloo for systems design engineering</li>
               <li>
                 • learned data structures and algorithms, engineering design, and human factors in

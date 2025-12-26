@@ -18,7 +18,7 @@ describe('Software Engineering Learning Blog Page', () => {
     render(<SoftwareEngineeringLearningBlog />);
     expect(
       screen.getByText(
-        '• started learning programming in high school with introduction to programming courses',
+        '• learned the basics of c++ from my computer science teacher in high school',
       ),
     ).toBeInTheDocument();
     expect(

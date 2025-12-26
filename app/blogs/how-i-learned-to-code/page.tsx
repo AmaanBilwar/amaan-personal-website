@@ -124,7 +124,26 @@ export default function SoftwareEngineeringLearningBlog() {
                 in summer 2024
               </li>
               <li>• built an ML model on jupyter notebook using python, numpy and pandas</li>
-              <li>• learned a lot of what i needed from geeks for geeks and w3schools </li>
+              <li>
+                • learned a lot of what i needed from{' '}
+                <a
+                  href="https://www.geeksforgeeks.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  geeks for geeks
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://www.w3schools.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  w3schools
+                </a>{' '}
+              </li>
               <li>
                 • built some random projects with javascript, html and css for the first time{' '}
               </li>

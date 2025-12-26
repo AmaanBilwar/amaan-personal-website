@@ -38,6 +38,7 @@ export default function SoftwareEngineeringLearningBlog() {
           <section>
             <ul className="space-y-3 text-stone-300">
               <li>• learned the basics of c++ from my computer science teacher in high school</li>
+              <li>• learned the basics of c++ from my computer science teacher in high school</li>
               <li>• joined my school's programming club and learned from better programmers</li>
               <li>
                 • tried out competitive programming and did the{' '}
@@ -103,9 +104,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 as a software engineer intern for the winter
               </li>
 
-              <li>
-                • built sql query parser with typescript and sveltekit for parsing flat json
-              </li>
+              <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
               <li>
                 • implemented custom sql parser supporting where, limit, and logical operators in
                 browser

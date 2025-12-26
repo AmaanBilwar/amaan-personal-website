@@ -37,7 +37,21 @@ export default function SoftwareEngineeringLearningBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <ul className="space-y-3 text-stone-300">
-              <li>• built a hangman game in java </li>
+              <p className="mb-4 text-stone-400 italic text-sm">
+                small learnings that taught me to code from start (top) to end (bottom)
+              </p>
+              <li>
+                • built a{' '}
+                <a
+                  href="https://github.com/nicholaschen09/HangmanGame"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  hangman game
+                </a>{' '}
+                in java{' '}
+              </li>
               <li>• learned the basics of c++ from my computer science teacher in high school</li>
               <li>• joined my school's programming club and learned from better programmers</li>
               <li>
@@ -263,13 +277,21 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• worked at a startup and used a lot of go, python, typescript and svelte</li>
               <li>• did a lot of agentic and applied ai work</li>
               <li>• learned rust for the first time and build some random things</li>
-              <li>• participated in a mercor ML model challenge with friend</li>
+              <li>
+                • participated in a{' '}
+                <a
+                  href="https://github.com/nicholaschen09/mercor-challenge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  mercor ML model
+                </a>{' '}
+                challenge with friend
+              </li>
               <li>• did some benchmarking with web search apis for the first time</li>
-
-
-
-
             </ul>
+            <p className="mt-6 text-stone-400 italic text-sm">note: i am updating this everyday</p>
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">

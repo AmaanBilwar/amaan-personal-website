@@ -79,7 +79,17 @@ export default function SoftwareEngineeringLearningBlog() {
                 in summer 2024
               </li>
               <li>• built an ML model on jupyter notebook using python, numpy and pandas</li>
-              <li>• built the first version of my personal website</li>
+              <li>
+                • built the first version of my{' '}
+                <a
+                  href="https://github.com/nicholaschen09/personalWebsite"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  personal website
+                </a>
+              </li>
               <li>
                 • went to the{' '}
                 <a

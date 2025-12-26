@@ -79,6 +79,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 in summer 2024
               </li>
               <li>• built an ML model on jupyter notebook using python, numpy and pandas</li>
+              <li>• built the first version of my personal website</li>
               <li>
                 • went to the{' '}
                 <a
@@ -107,24 +108,7 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
 
               <li>• built sql query parser with typescript and sveltekit for parsing flat json</li>
-              <li>
-                • implemented custom sql parser supporting where, limit, and logical operators in
-                browser
-              </li>
-              <li>• created diff digest tool fetching 500+ github pr diffs for ai summarization</li>
-              <li>
-                • optimized openai prompts reducing token usage by 30% while improving summary
-                quality
-              </li>
-              <li>• cached 1000+ summaries and 200+ user sessions in redis for fast pagination</li>
-              <li>• built fernando - posture checking robot that won 2nd place at utra hacks</li>
-              <li>• used opencv for 95% accurate posture analysis and arduino for servo control</li>
-              <li>
-                • programmed vision in python and motor control in c++ for real-time adjustments
-              </li>
-              <li>
-                • developed analytics website with next.js and terraform tracking 100+ sessions
-              </li>
+              <li>• created diff digest tool for fetching github pr diffs for ai summarization</li>
               <li>• landed software engineering internship at textql in fall 2025</li>
               <li>
                 • building ai agents for querying petabytes of structured data with natural language

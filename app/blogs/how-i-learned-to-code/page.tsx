@@ -258,6 +258,10 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• learned how to use the terminal better than before</li>
               <li>• worked at a startup and used a lot of go, python, typescript and svelte</li>
               <li>• did a lot of agentic and applied ai work</li>
+              <li>• learned rust for the first time and build some random things</li>
+              <li>• participated in a mercor ML model challenge with friend</li>
+              <li>• did some benchmarking with web search apis for the first time</li>
+
 
 
 

@@ -63,7 +63,18 @@ export default function SoftwareEngineeringLearningBlog() {
                   voluntrack
                 </a>
               </li>
-              <li>• landed first software engineering internship at RBC in summer 2024</li>
+              <li>
+                • landed first software engineering internship at{' '}
+                <a
+                  href="https://www.rbc.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  RBC
+                </a>{' '}
+                in summer 2024
+              </li>
               <li>• built an ML model on jupyter notebook using python, numpy and pandas</li>
               <li>
                 • went to the{' '}
@@ -78,10 +89,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 for systems design engineering
               </li>
               <li>• learned intro to programming and data structures and algorithms in c++</li>
-              <li>
-                • joined engineering design teams to learn how to code in organizations
-              </li>
-            
+              <li>• joined engineering design teams to learn how to code in organizations</li>
+
               <li>• built machine learning forecasting models using python, numpy, and pandas</li>
               <li>
                 • created interactive data visualizations with plotly for non-technical stakeholders
@@ -93,7 +102,18 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>
                 • identified $50,000+ in potential annual cost savings through data-driven insights
               </li>
-              <li>• got promoted to RBCx - Ownr internship in winter 2025</li>
+              <li>
+                • got promoted to{' '}
+                <a
+                  href="https://www.rbc.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  RBC
+                </a>
+                x - Ownr internship in winter 2025
+              </li>
               <li>
                 • scaled full-stack web apps with react, nest.js, typescript, and graphql for 200k+
                 users

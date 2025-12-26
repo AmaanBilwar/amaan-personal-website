@@ -133,6 +133,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• learned typescript, next.js, vite and react and used postman a lot</li>
               <li>• messed around with postgres, sql and the debugger for the first time</li>
               <li>• got more familiar with the terminal and ai and used stack overflow still</li>
+              <li>• took data structures and algorithms in c++ during second semester of uni</li>
+
               <li>• started to take leetcode more serious and watched a ton of neetcode on yt</li>
 
 

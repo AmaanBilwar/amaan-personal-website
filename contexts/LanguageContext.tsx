@@ -265,7 +265,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item51': '• worked on the ontology a lot at textql',
     'blog.coding.item52': '• did a lot of agentic and applied ai work',
     'blog.coding.item53': '• learned even more git commands including git bisect',
-    'blog.coding.item54': '• learned rust for the first time and build some random things',
+    'blog.coding.item54': '• learned rust for the first time and built some random things',
     'blog.coding.item55': '• participated in a mercor ML model challenge with friend',
     'blog.coding.item56': '• did some benchmarking with web search apis for the first time',
     'blog.coding.item57': '• started learning some system design for programming',

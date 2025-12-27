@@ -168,12 +168,31 @@ export default function SoftwareEngineeringLearningBlog() {
                   t('blog.coding.item8')
                 )}
               </li>
-              <li>{t('blog.coding.item9')}</li>
               <li>
-                {t('blog.coding.item10').includes('geeks for geeks') ||
-                t('blog.coding.item10').includes('w3schools') ? (
+                {t('blog.coding.item9').includes("valentine's day website") ||
+                t('blog.coding.item9').includes('情人节网站') ? (
                   <>
-                    {t('blog.coding.item10').split(/geeks for geeks|w3schools/)[0]}
+                    {t('blog.coding.item9').split(/valentine's day website|情人节网站/)[0]}
+                    <a
+                      href="https://github.com/nicholaschen09/valentine"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-200 transition-colors underline"
+                    >
+                      {language === 'zh' ? '情人节网站' : "valentine's day website"}
+                    </a>
+                    {t('blog.coding.item9').split(/valentine's day website|情人节网站/)[1]}
+                  </>
+                ) : (
+                  t('blog.coding.item9')
+                )}
+              </li>
+              <li>{t('blog.coding.item10')}</li>
+              <li>
+                {t('blog.coding.item11').includes('geeks for geeks') ||
+                t('blog.coding.item11').includes('w3schools') ? (
+                  <>
+                    {t('blog.coding.item11').split(/geeks for geeks|w3schools/)[0]}
                     <a
                       href="https://www.geeksforgeeks.org/"
                       target="_blank"
@@ -182,8 +201,8 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'geeks for geeks' : 'geeks for geeks'}
                     </a>
-                    {t('blog.coding.item10').includes('and') ||
-                    t('blog.coding.item10').includes('和') ? (
+                    {t('blog.coding.item11').includes('and') ||
+                    t('blog.coding.item11').includes('和') ? (
                       <>
                         {language === 'zh' ? ' 和 ' : ' and '}
                         <a
@@ -194,25 +213,25 @@ export default function SoftwareEngineeringLearningBlog() {
                         >
                           w3schools
                         </a>
-                        {t('blog.coding.item10').split(/w3schools/)[1]}
+                        {t('blog.coding.item11').split(/w3schools/)[1]}
                       </>
                     ) : (
-                      t('blog.coding.item10').split(/geeks for geeks/)[1]
+                      t('blog.coding.item11').split(/geeks for geeks/)[1]
                     )}
                   </>
                 ) : (
-                  t('blog.coding.item10')
+                  t('blog.coding.item11')
                 )}
               </li>
-              <li>{t('blog.coding.item11')}</li>
               <li>{t('blog.coding.item12')}</li>
               <li>{t('blog.coding.item13')}</li>
               <li>{t('blog.coding.item14')}</li>
+              <li>{t('blog.coding.item15')}</li>
               <li>
-                {t('blog.coding.item15').includes('personal website') ||
-                t('blog.coding.item15').includes('个人网站') ? (
+                {t('blog.coding.item16').includes('personal website') ||
+                t('blog.coding.item16').includes('个人网站') ? (
                   <>
-                    {t('blog.coding.item15').split(/personal website|个人网站/)[0]}
+                    {t('blog.coding.item16').split(/personal website|个人网站/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/personalWebsite"
                       target="_blank"
@@ -221,17 +240,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '个人网站' : 'personal website'}
                     </a>
-                    {t('blog.coding.item15').split(/personal website|个人网站/)[1]}
+                    {t('blog.coding.item16').split(/personal website|个人网站/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item15')
+                  t('blog.coding.item16')
                 )}
               </li>
               <li>
-                {t('blog.coding.item16').includes('university of waterloo') ||
-                t('blog.coding.item16').includes('滑铁卢大学') ? (
+                {t('blog.coding.item17').includes('university of waterloo') ||
+                t('blog.coding.item17').includes('滑铁卢大学') ? (
                   <>
-                    {t('blog.coding.item16').split(/university of waterloo|滑铁卢大学/)[0]}
+                    {t('blog.coding.item17').split(/university of waterloo|滑铁卢大学/)[0]}
                     <a
                       href="https://uwaterloo.ca/"
                       target="_blank"
@@ -240,20 +259,20 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '滑铁卢大学' : 'university of waterloo'}
                     </a>
-                    {t('blog.coding.item16').split(/university of waterloo|滑铁卢大学/)[1]}
+                    {t('blog.coding.item17').split(/university of waterloo|滑铁卢大学/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item16')
+                  t('blog.coding.item17')
                 )}
               </li>
-              <li>{t('blog.coding.item17')}</li>
               <li>{t('blog.coding.item18')}</li>
               <li>{t('blog.coding.item19')}</li>
               <li>{t('blog.coding.item20')}</li>
+              <li>{t('blog.coding.item21')}</li>
               <li>
-                {t('blog.coding.item21').includes('ownr') ? (
+                {t('blog.coding.item22').includes('ownr') ? (
                   <>
-                    {t('blog.coding.item21').split('ownr')[0]}
+                    {t('blog.coding.item22').split('ownr')[0]}
                     <a
                       href="https://www.ownr.co/"
                       target="_blank"
@@ -262,18 +281,18 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       ownr
                     </a>
-                    {t('blog.coding.item21').split('ownr')[1]}
+                    {t('blog.coding.item22').split('ownr')[1]}
                   </>
                 ) : (
-                  t('blog.coding.item21')
+                  t('blog.coding.item22')
                 )}
               </li>
-              <li>{t('blog.coding.item22')}</li>
               <li>{t('blog.coding.item23')}</li>
+              <li>{t('blog.coding.item24')}</li>
               <li>
-                {t('blog.coding.item24').includes('dependabot') ? (
+                {t('blog.coding.item25').includes('dependabot') ? (
                   <>
-                    {t('blog.coding.item24').split('dependabot')[0]}
+                    {t('blog.coding.item25').split('dependabot')[0]}
                     <a
                       href="https://github.com/qimcis/dependabot"
                       target="_blank"
@@ -282,17 +301,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       dependabot
                     </a>
-                    {t('blog.coding.item24').split('dependabot')[1]}
+                    {t('blog.coding.item25').split('dependabot')[1]}
                   </>
                 ) : (
-                  t('blog.coding.item24')
+                  t('blog.coding.item25')
                 )}
               </li>
               <li>
-                {t('blog.coding.item25').includes('trash sorter') ||
-                t('blog.coding.item25').includes('垃圾分拣器') ? (
+                {t('blog.coding.item26').includes('trash sorter') ||
+                t('blog.coding.item26').includes('垃圾分拣器') ? (
                   <>
-                    {t('blog.coding.item25').split(/trash sorter|垃圾分拣器/)[0]}
+                    {t('blog.coding.item26').split(/trash sorter|垃圾分拣器/)[0]}
                     <a
                       href="https://github.com/DerrickHa/ht6"
                       target="_blank"
@@ -301,21 +320,21 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '垃圾分拣器' : 'trash sorter'}
                     </a>
-                    {t('blog.coding.item25').split(/trash sorter|垃圾分拣器/)[1]}
+                    {t('blog.coding.item26').split(/trash sorter|垃圾分拣器/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item25')
+                  t('blog.coding.item26')
                 )}
               </li>
-              <li>{t('blog.coding.item26')}</li>
               <li>{t('blog.coding.item27')}</li>
               <li>{t('blog.coding.item28')}</li>
               <li>{t('blog.coding.item29')}</li>
+              <li>{t('blog.coding.item30')}</li>
               <li>
-                {t('blog.coding.item30').includes('posture checking robot') ||
-                t('blog.coding.item30').includes('姿势检查机器人') ? (
+                {t('blog.coding.item31').includes('posture checking robot') ||
+                t('blog.coding.item31').includes('姿势检查机器人') ? (
                   <>
-                    {t('blog.coding.item30').split(/posture checking robot|姿势检查机器人/)[0]}
+                    {t('blog.coding.item31').split(/posture checking robot|姿势检查机器人/)[0]}
                     <a
                       href="https://github.com/enxilium/posture-checker-robot"
                       target="_blank"
@@ -324,18 +343,18 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '姿势检查机器人' : 'posture checking robot'}
                     </a>
-                    {t('blog.coding.item30').split(/posture checking robot|姿势检查机器人/)[1]}
+                    {t('blog.coding.item31').split(/posture checking robot|姿势检查机器人/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item30')
+                  t('blog.coding.item31')
                 )}
               </li>
-              <li>{t('blog.coding.item31')}</li>
+              <li>{t('blog.coding.item32')}</li>
               <li>
-                {t('blog.coding.item32').includes('twitter') ||
-                t('blog.coding.item32').includes('twitter') ? (
+                {t('blog.coding.item33').includes('twitter') ||
+                t('blog.coding.item33').includes('twitter') ? (
                   <>
-                    {t('blog.coding.item32').split(/twitter/)[0]}
+                    {t('blog.coding.item33').split(/twitter/)[0]}
                     <a
                       href="https://twitter.com/nicholaschen09"
                       target="_blank"
@@ -344,18 +363,18 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       twitter
                     </a>
-                    {t('blog.coding.item32').split(/twitter/)[1]}
+                    {t('blog.coding.item33').split(/twitter/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item32')
+                  t('blog.coding.item33')
                 )}
               </li>
-              <li>{t('blog.coding.item33')}</li>
+              <li>{t('blog.coding.item34')}</li>
               <li>
-                {t('blog.coding.item34').includes('etl pipeline') ||
-                t('blog.coding.item34').includes('etl 流水线') ? (
+                {t('blog.coding.item35').includes('etl pipeline') ||
+                t('blog.coding.item35').includes('etl 流水线') ? (
                   <>
-                    {t('blog.coding.item34').split(/etl pipeline|etl 流水线/)[0]}
+                    {t('blog.coding.item35').split(/etl pipeline|etl 流水线/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/customer-feedback-etl-pipeline"
                       target="_blank"
@@ -364,17 +383,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'etl 流水线' : 'etl pipeline'}
                     </a>
-                    {t('blog.coding.item34').split(/etl pipeline|etl 流水线/)[1]}
+                    {t('blog.coding.item35').split(/etl pipeline|etl 流水线/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item34')
+                  t('blog.coding.item35')
                 )}
               </li>
               <li>
-                {t('blog.coding.item35').includes('discord summarizer bot') ||
-                t('blog.coding.item35').includes('discord 摘要机器人') ? (
+                {t('blog.coding.item36').includes('discord summarizer bot') ||
+                t('blog.coding.item36').includes('discord 摘要机器人') ? (
                   <>
-                    {t('blog.coding.item35').split(/discord summarizer bot|discord 摘要机器人/)[0]}
+                    {t('blog.coding.item36').split(/discord summarizer bot|discord 摘要机器人/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/summary-discord-bot"
                       target="_blank"
@@ -383,17 +402,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'discord 摘要机器人' : 'discord summarizer bot'}
                     </a>
-                    {t('blog.coding.item35').split(/discord summarizer bot|discord 摘要机器人/)[1]}
+                    {t('blog.coding.item36').split(/discord summarizer bot|discord 摘要机器人/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item35')
+                  t('blog.coding.item36')
                 )}
               </li>
               <li>
-                {t('blog.coding.item36').includes('image processor') ||
-                t('blog.coding.item36').includes('图像处理器') ? (
+                {t('blog.coding.item37').includes('image processor') ||
+                t('blog.coding.item37').includes('图像处理器') ? (
                   <>
-                    {t('blog.coding.item36').split(/image processor|图像处理器/)[0]}
+                    {t('blog.coding.item37').split(/image processor|图像处理器/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/image-processor"
                       target="_blank"
@@ -402,17 +421,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '图像处理器' : 'image processor'}
                     </a>
-                    {t('blog.coding.item36').split(/image processor|图像处理器/)[1]}
+                    {t('blog.coding.item37').split(/image processor|图像处理器/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item36')
+                  t('blog.coding.item37')
                 )}
               </li>
               <li>
-                {t('blog.coding.item37').includes('facial recognition') ||
-                t('blog.coding.item37').includes('面部识别') ? (
+                {t('blog.coding.item38').includes('facial recognition') ||
+                t('blog.coding.item38').includes('面部识别') ? (
                   <>
-                    {t('blog.coding.item37').split(/facial recognition|面部识别/)[0]}
+                    {t('blog.coding.item38').split(/facial recognition|面部识别/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/facial-recognition-neural-network"
                       target="_blank"
@@ -421,18 +440,18 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '面部识别' : 'facial recognition'}
                     </a>
-                    {t('blog.coding.item37').split(/facial recognition|面部识别/)[1]}
+                    {t('blog.coding.item38').split(/facial recognition|面部识别/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item37')
+                  t('blog.coding.item38')
                 )}
               </li>
-              <li>{t('blog.coding.item38')}</li>
+              <li>{t('blog.coding.item39')}</li>
               <li>
-                {t('blog.coding.item39').includes('sql query parser') ||
-                t('blog.coding.item39').includes('sql 查询解析器') ? (
+                {t('blog.coding.item40').includes('sql query parser') ||
+                t('blog.coding.item40').includes('sql 查询解析器') ? (
                   <>
-                    {t('blog.coding.item39').split(/sql query parser|sql 查询解析器/)[0]}
+                    {t('blog.coding.item40').split(/sql query parser|sql 查询解析器/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/sql-query-parser"
                       target="_blank"
@@ -441,17 +460,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'sql 查询解析器' : 'sql query parser'}
                     </a>
-                    {t('blog.coding.item39').split(/sql query parser|sql 查询解析器/)[1]}
+                    {t('blog.coding.item40').split(/sql query parser|sql 查询解析器/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item39')
+                  t('blog.coding.item40')
                 )}
               </li>
               <li>
-                {t('blog.coding.item40').includes('diff digest tool') ||
-                t('blog.coding.item40').includes('diff digest 工具') ? (
+                {t('blog.coding.item41').includes('diff digest tool') ||
+                t('blog.coding.item41').includes('diff digest 工具') ? (
                   <>
-                    {t('blog.coding.item40').split(/diff digest tool|diff digest 工具/)[0]}
+                    {t('blog.coding.item41').split(/diff digest tool|diff digest 工具/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/diff-digest"
                       target="_blank"
@@ -460,16 +479,16 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'diff digest 工具' : 'diff digest tool'}
                     </a>
-                    {t('blog.coding.item40').split(/diff digest tool|diff digest 工具/)[1]}
+                    {t('blog.coding.item41').split(/diff digest tool|diff digest 工具/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item40')
+                  t('blog.coding.item41')
                 )}
               </li>
               <li>
-                {t('blog.coding.item41').includes('textql') ? (
+                {t('blog.coding.item42').includes('textql') ? (
                   <>
-                    {t('blog.coding.item41').split('textql')[0]}
+                    {t('blog.coding.item42').split('textql')[0]}
                     <a
                       href="https://textql.com/"
                       target="_blank"
@@ -478,18 +497,18 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       textql
                     </a>
-                    {t('blog.coding.item41').split('textql')[1]}
+                    {t('blog.coding.item42').split('textql')[1]}
                   </>
                 ) : (
-                  t('blog.coding.item41')
+                  t('blog.coding.item42')
                 )}
               </li>
-              <li>{t('blog.coding.item42')}</li>
+              <li>{t('blog.coding.item43')}</li>
               <li>
-                {t('blog.coding.item43').includes('url shortener') ||
-                t('blog.coding.item43').includes('url 缩短器') ? (
+                {t('blog.coding.item44').includes('url shortener') ||
+                t('blog.coding.item44').includes('url 缩短器') ? (
                   <>
-                    {t('blog.coding.item43').split(/url shortener|url 缩短器/)[0]}
+                    {t('blog.coding.item44').split(/url shortener|url 缩短器/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/url-shortener"
                       target="_blank"
@@ -498,16 +517,16 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'url 缩短器' : 'url shortener'}
                     </a>
-                    {t('blog.coding.item43').split(/url shortener|url 缩短器/)[1]}
+                    {t('blog.coding.item44').split(/url shortener|url 缩短器/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item43')
+                  t('blog.coding.item44')
                 )}
               </li>
               <li>
-                {t('blog.coding.item44').includes('figma') ? (
+                {t('blog.coding.item45').includes('figma') ? (
                   <>
-                    {t('blog.coding.item44').split('figma')[0]}
+                    {t('blog.coding.item45').split('figma')[0]}
                     <a
                       href="https://github.com/nicholaschen09/whiteboard"
                       target="_blank"
@@ -516,18 +535,18 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'figma' : 'figma'}
                     </a>
-                    {t('blog.coding.item44').split('figma')[1]}
+                    {t('blog.coding.item45').split('figma')[1]}
                   </>
                 ) : (
-                  t('blog.coding.item44')
+                  t('blog.coding.item45')
                 )}
               </li>
-              <li>{t('blog.coding.item45')}</li>
+              <li>{t('blog.coding.item46')}</li>
               <li>
-                {t('blog.coding.item46').includes('personal website') ||
-                t('blog.coding.item46').includes('个人网站') ? (
+                {t('blog.coding.item47').includes('personal website') ||
+                t('blog.coding.item47').includes('个人网站') ? (
                   <>
-                    {t('blog.coding.item46').split(/personal website|个人网站/)[0]}
+                    {t('blog.coding.item47').split(/personal website|个人网站/)[0]}
                     <a
                       href="https://nicholaschen.me/"
                       target="_blank"
@@ -536,19 +555,19 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '个人网站' : 'personal website'}
                     </a>
-                    {t('blog.coding.item46').split(/personal website|个人网站/)[1]}
+                    {t('blog.coding.item47').split(/personal website|个人网站/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item46')
+                  t('blog.coding.item47')
                 )}
               </li>
-              <li>{t('blog.coding.item47')}</li>
               <li>{t('blog.coding.item48')}</li>
+              <li>{t('blog.coding.item49')}</li>
               <li>
-                {t('blog.coding.item49').includes('textql healthcare') ||
-                t('blog.coding.item49').includes('textql 医疗保健') ? (
+                {t('blog.coding.item50').includes('textql healthcare') ||
+                t('blog.coding.item50').includes('textql 医疗保健') ? (
                   <>
-                    {t('blog.coding.item49').split(/textql healthcare|textql 医疗保健/)[0]}
+                    {t('blog.coding.item50').split(/textql healthcare|textql 医疗保健/)[0]}
                     <a
                       href="https://textql.com/healthcare"
                       target="_blank"
@@ -559,19 +578,19 @@ export default function SoftwareEngineeringLearningBlog() {
                         ? 'textql 医疗保健登录页面'
                         : 'textql healthcare landing page'}
                     </a>
-                    {t('blog.coding.item49').split(/textql healthcare|textql 医疗保健/)[1]}
+                    {t('blog.coding.item50').split(/textql healthcare|textql 医疗保健/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item49')
+                  t('blog.coding.item50')
                 )}
               </li>
-              <li>{t('blog.coding.item50')}</li>
               <li>{t('blog.coding.item51')}</li>
+              <li>{t('blog.coding.item52')}</li>
               <li>
-                {t('blog.coding.item52').includes('ontology') ||
-                t('blog.coding.item52').includes('本体') ? (
+                {t('blog.coding.item53').includes('ontology') ||
+                t('blog.coding.item53').includes('本体') ? (
                   <>
-                    {t('blog.coding.item52').split(/ontology|本体/)[0]}
+                    {t('blog.coding.item53').split(/ontology|本体/)[0]}
                     <a
                       href="https://app.textql.com/ontology"
                       target="_blank"
@@ -580,20 +599,20 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '本体' : 'ontology'}
                     </a>
-                    {t('blog.coding.item52').split(/ontology|本体/)[1]}
+                    {t('blog.coding.item53').split(/ontology|本体/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item52')
+                  t('blog.coding.item53')
                 )}
               </li>
-              <li>{t('blog.coding.item53')}</li>
               <li>{t('blog.coding.item54')}</li>
               <li>{t('blog.coding.item55')}</li>
+              <li>{t('blog.coding.item56')}</li>
               <li>
-                {t('blog.coding.item56').includes('random things') ||
-                t('blog.coding.item56').includes('随机东西') ? (
+                {t('blog.coding.item57').includes('random things') ||
+                t('blog.coding.item57').includes('随机东西') ? (
                   <>
-                    {t('blog.coding.item56').split(/random things|随机东西/)[0]}
+                    {t('blog.coding.item57').split(/random things|随机东西/)[0]}
                     <a
                       href="https://github.com/tinytinyexperiments/visuals"
                       target="_blank"
@@ -602,17 +621,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '随机东西' : 'random things'}
                     </a>
-                    {t('blog.coding.item56').split(/random things|随机东西/)[1]}
+                    {t('blog.coding.item57').split(/random things|随机东西/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item56')
+                  t('blog.coding.item57')
                 )}
               </li>
               <li>
-                {t('blog.coding.item57').includes('mercor ML model') ||
-                t('blog.coding.item57').includes('mercor ML 模型') ? (
+                {t('blog.coding.item58').includes('mercor ML model') ||
+                t('blog.coding.item58').includes('mercor ML 模型') ? (
                   <>
-                    {t('blog.coding.item57').split(/mercor ML model|mercor ML 模型/)[0]}
+                    {t('blog.coding.item58').split(/mercor ML model|mercor ML 模型/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/mercor-challenge"
                       target="_blank"
@@ -621,17 +640,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'mercor ML 模型' : 'mercor ML model'}
                     </a>
-                    {t('blog.coding.item57').split(/mercor ML model|mercor ML 模型/)[1]}
+                    {t('blog.coding.item58').split(/mercor ML model|mercor ML 模型/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item57')
+                  t('blog.coding.item58')
                 )}
               </li>
               <li>
-                {t('blog.coding.item58').includes('benchmarking') ||
-                t('blog.coding.item58').includes('基准测试') ? (
+                {t('blog.coding.item59').includes('benchmarking') ||
+                t('blog.coding.item59').includes('基准测试') ? (
                   <>
-                    {t('blog.coding.item58').split(/benchmarking|基准测试/)[0]}
+                    {t('blog.coding.item59').split(/benchmarking|基准测试/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/llm-benchmarking"
                       target="_blank"
@@ -640,17 +659,36 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '基准测试' : 'benchmarking'}
                     </a>
-                    {t('blog.coding.item58').split(/benchmarking|基准测试/)[1]}
+                    {t('blog.coding.item59').split(/benchmarking|基准测试/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item58')
+                  t('blog.coding.item59')
                 )}
               </li>
               <li>
-                {t('blog.coding.item59').includes('system design') ||
-                t('blog.coding.item59').includes('系统设计') ? (
+                {t('blog.coding.item60').includes('link route checker script') ||
+                t('blog.coding.item60').includes('链接路由检查脚本') ? (
                   <>
-                    {t('blog.coding.item59').split(/system design|系统设计/)[0]}
+                    {t('blog.coding.item60').split(/link route checker script|链接路由检查脚本/)[0]}
+                    <a
+                      href="http://github.com/nicholaschen09/link-health-scanner"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-200 transition-colors underline"
+                    >
+                      {language === 'zh' ? '链接路由检查脚本' : 'link route checker script'}
+                    </a>
+                    {t('blog.coding.item60').split(/link route checker script|链接路由检查脚本/)[1]}
+                  </>
+                ) : (
+                  t('blog.coding.item60')
+                )}
+              </li>
+              <li>
+                {t('blog.coding.item61').includes('system design') ||
+                t('blog.coding.item61').includes('系统设计') ? (
+                  <>
+                    {t('blog.coding.item61').split(/system design|系统设计/)[0]}
                     <a
                       href="https://www.karanpratapsingh.com/courses/system-design"
                       target="_blank"
@@ -659,12 +697,13 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '系统设计' : 'system design'}
                     </a>
-                    {t('blog.coding.item59').split(/system design|系统设计/)[1]}
+                    {t('blog.coding.item61').split(/system design|系统设计/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item59')
+                  t('blog.coding.item61')
                 )}
               </li>
+              
             </ul>
             <p className="mt-6 text-stone-400 italic text-sm">{t('blog.coding.note')}</p>
           </section>

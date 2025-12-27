@@ -188,6 +188,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 as a software engineer intern for the winter
               </li>
+              <li>• learned a lot of git commands including git cherry-pick</li>
               <li>
                 • built a{' '}
                 <a
@@ -230,6 +231,7 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
 
               <li>• took data structures and algorithms in c++ during second semester of uni</li>
+
               <li>
                 • hopped on{' '}
                 <a
@@ -393,6 +395,7 @@ export default function SoftwareEngineeringLearningBlog() {
                 a lot at textql
               </li>
               <li>• did a lot of agentic and applied ai work</li>
+              <li>• learned even more git commands including git bisect</li>
               <li>
                 • learned rust for the first time and build some{' '}
                 <a

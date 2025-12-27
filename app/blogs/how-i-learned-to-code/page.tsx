@@ -66,7 +66,6 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 twice in c++{' '}
               </li>
-
               <li>
                 • joined a group of other students and learned a lot building{' '}
                 <a
@@ -147,7 +146,9 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>
                 • built some random projects with javascript, html and css for the first time{' '}
               </li>
-
+              <li>• built another gpt wrapper at jamhacks</li>
+              <li>• built a study buddy tool with friends at hack the valley</li>
+              <li>• built a music boombox thing at uoft hacks</li>
               <li>
                 • built the first version of my{' '}
                 <a
@@ -187,6 +188,30 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 as a software engineer intern for the winter
               </li>
+              <li>
+                • built a{' '}
+                <a
+                  href="https://github.com/qimcis/dependabot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  dependabot
+                </a>{' '}
+                clone with a friend during my free time
+              </li>
+              <li>
+                • built a{' '}
+                <a
+                  href="https://github.com/DerrickHa/ht6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  trash sorter
+                </a>{' '}
+                at hack the 6ix with rbc friends
+              </li>
               <li>• worked in a production codebase developing internal tools for the team </li>
               <li>• learned typescript, next.js, vite and react and used postman a lot</li>
               <li>• messed around with postgres, sql and the debugger for the first time</li>
@@ -205,7 +230,6 @@ export default function SoftwareEngineeringLearningBlog() {
                 where i learned a lot and met other cool cs students
               </li>
               <li>• started to take leetcode more serious and watched a ton of neetcode on yt</li>
-
               <li>
                 • made an{' '}
                 <a
@@ -253,7 +277,6 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 software for fun in python and typescript
               </li>
-
               <li>• tried learning haskell for the first time</li>
               <li>
                 • built{' '}
@@ -317,7 +340,6 @@ export default function SoftwareEngineeringLearningBlog() {
                 because i was bored one day
               </li>
               <li>• did many takehomes and coding assignments to learn system design </li>
-
               <li>
                 • redesigned my entire{' '}
                 <a
@@ -357,7 +379,6 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 a lot at textql
               </li>
-
               <li>• did a lot of agentic and applied ai work</li>
               <li>
                 • learned rust for the first time and build some{' '}

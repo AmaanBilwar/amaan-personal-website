@@ -116,7 +116,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item7').includes('student registration') || t('blog.coding.item7').includes('移动计算器') ? (
+                {t('blog.coding.item7').includes('student registration') ||
+                t('blog.coding.item7').includes('移动计算器') ? (
                   <>
                     {t('blog.coding.item7').split(/student registration|学生注册|移动计算器/)[0]}
                     <a
@@ -127,7 +128,8 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '学生注册' : 'student registration'}
                     </a>
-                    {t('blog.coding.item7').includes('and') || t('blog.coding.item7').includes('和') ? (
+                    {t('blog.coding.item7').includes('and') ||
+                    t('blog.coding.item7').includes('和') ? (
                       <>
                         {language === 'zh' ? ' 和 ' : ' and '}
                         <a
@@ -168,7 +170,8 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>{t('blog.coding.item9')}</li>
               <li>
-                {t('blog.coding.item10').includes('geeks for geeks') || t('blog.coding.item10').includes('w3schools') ? (
+                {t('blog.coding.item10').includes('geeks for geeks') ||
+                t('blog.coding.item10').includes('w3schools') ? (
                   <>
                     {t('blog.coding.item10').split(/geeks for geeks|w3schools/)[0]}
                     <a
@@ -179,7 +182,8 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'geeks for geeks' : 'geeks for geeks'}
                     </a>
-                    {t('blog.coding.item10').includes('and') || t('blog.coding.item10').includes('和') ? (
+                    {t('blog.coding.item10').includes('and') ||
+                    t('blog.coding.item10').includes('和') ? (
                       <>
                         {language === 'zh' ? ' 和 ' : ' and '}
                         <a
@@ -205,7 +209,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>{t('blog.coding.item13')}</li>
               <li>{t('blog.coding.item14')}</li>
               <li>
-                {t('blog.coding.item15').includes('personal website') || t('blog.coding.item15').includes('个人网站') ? (
+                {t('blog.coding.item15').includes('personal website') ||
+                t('blog.coding.item15').includes('个人网站') ? (
                   <>
                     {t('blog.coding.item15').split(/personal website|个人网站/)[0]}
                     <a
@@ -223,7 +228,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item16').includes('university of waterloo') || t('blog.coding.item16').includes('滑铁卢大学') ? (
+                {t('blog.coding.item16').includes('university of waterloo') ||
+                t('blog.coding.item16').includes('滑铁卢大学') ? (
                   <>
                     {t('blog.coding.item16').split(/university of waterloo|滑铁卢大学/)[0]}
                     <a
@@ -282,7 +288,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item24').includes('trash sorter') || t('blog.coding.item24').includes('垃圾分拣器') ? (
+                {t('blog.coding.item24').includes('trash sorter') ||
+                t('blog.coding.item24').includes('垃圾分拣器') ? (
                   <>
                     {t('blog.coding.item24').split(/trash sorter|垃圾分拣器/)[0]}
                     <a
@@ -304,7 +311,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>{t('blog.coding.item27')}</li>
               <li>{t('blog.coding.item28')}</li>
               <li>
-                {t('blog.coding.item29').includes('posture checking robot') || t('blog.coding.item29').includes('姿势检查机器人') ? (
+                {t('blog.coding.item29').includes('posture checking robot') ||
+                t('blog.coding.item29').includes('姿势检查机器人') ? (
                   <>
                     {t('blog.coding.item29').split(/posture checking robot|姿势检查机器人/)[0]}
                     <a
@@ -323,7 +331,8 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>{t('blog.coding.item30')}</li>
               <li>
-                {t('blog.coding.item31').includes('twitter') || t('blog.coding.item31').includes('twitter') ? (
+                {t('blog.coding.item31').includes('twitter') ||
+                t('blog.coding.item31').includes('twitter') ? (
                   <>
                     {t('blog.coding.item31').split(/twitter/)[0]}
                     <a
@@ -342,7 +351,8 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>{t('blog.coding.item32')}</li>
               <li>
-                {t('blog.coding.item33').includes('etl pipeline') || t('blog.coding.item33').includes('etl 流水线') ? (
+                {t('blog.coding.item33').includes('etl pipeline') ||
+                t('blog.coding.item33').includes('etl 流水线') ? (
                   <>
                     {t('blog.coding.item33').split(/etl pipeline|etl 流水线/)[0]}
                     <a
@@ -360,7 +370,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item34').includes('discord summarizer bot') || t('blog.coding.item34').includes('discord 摘要机器人') ? (
+                {t('blog.coding.item34').includes('discord summarizer bot') ||
+                t('blog.coding.item34').includes('discord 摘要机器人') ? (
                   <>
                     {t('blog.coding.item34').split(/discord summarizer bot|discord 摘要机器人/)[0]}
                     <a
@@ -378,7 +389,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item35').includes('image processor') || t('blog.coding.item35').includes('图像处理器') ? (
+                {t('blog.coding.item35').includes('image processor') ||
+                t('blog.coding.item35').includes('图像处理器') ? (
                   <>
                     {t('blog.coding.item35').split(/image processor|图像处理器/)[0]}
                     <a
@@ -396,7 +408,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item36').includes('facial recognition') || t('blog.coding.item36').includes('面部识别') ? (
+                {t('blog.coding.item36').includes('facial recognition') ||
+                t('blog.coding.item36').includes('面部识别') ? (
                   <>
                     {t('blog.coding.item36').split(/facial recognition|面部识别/)[0]}
                     <a
@@ -415,7 +428,8 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>{t('blog.coding.item37')}</li>
               <li>
-                {t('blog.coding.item38').includes('sql query parser') || t('blog.coding.item38').includes('sql 查询解析器') ? (
+                {t('blog.coding.item38').includes('sql query parser') ||
+                t('blog.coding.item38').includes('sql 查询解析器') ? (
                   <>
                     {t('blog.coding.item38').split(/sql query parser|sql 查询解析器/)[0]}
                     <a
@@ -433,7 +447,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item39').includes('diff digest tool') || t('blog.coding.item39').includes('diff digest 工具') ? (
+                {t('blog.coding.item39').includes('diff digest tool') ||
+                t('blog.coding.item39').includes('diff digest 工具') ? (
                   <>
                     {t('blog.coding.item39').split(/diff digest tool|diff digest 工具/)[0]}
                     <a
@@ -470,7 +485,8 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>{t('blog.coding.item41')}</li>
               <li>
-                {t('blog.coding.item42').includes('url shortener') || t('blog.coding.item42').includes('url 缩短器') ? (
+                {t('blog.coding.item42').includes('url shortener') ||
+                t('blog.coding.item42').includes('url 缩短器') ? (
                   <>
                     {t('blog.coding.item42').split(/url shortener|url 缩短器/)[0]}
                     <a
@@ -507,7 +523,8 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>{t('blog.coding.item44')}</li>
               <li>
-                {t('blog.coding.item45').includes('personal website') || t('blog.coding.item45').includes('个人网站') ? (
+                {t('blog.coding.item45').includes('personal website') ||
+                t('blog.coding.item45').includes('个人网站') ? (
                   <>
                     {t('blog.coding.item45').split(/personal website|个人网站/)[0]}
                     <a
@@ -527,7 +544,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>{t('blog.coding.item46')}</li>
               <li>{t('blog.coding.item47')}</li>
               <li>
-                {t('blog.coding.item48').includes('textql healthcare') || t('blog.coding.item48').includes('textql 医疗保健') ? (
+                {t('blog.coding.item48').includes('textql healthcare') ||
+                t('blog.coding.item48').includes('textql 医疗保健') ? (
                   <>
                     {t('blog.coding.item48').split(/textql healthcare|textql 医疗保健/)[0]}
                     <a
@@ -536,7 +554,9 @@ export default function SoftwareEngineeringLearningBlog() {
                       rel="noopener noreferrer"
                       className="hover:text-stone-200 transition-colors underline"
                     >
-                      {language === 'zh' ? 'textql 医疗保健登录页面' : 'textql healthcare landing page'}
+                      {language === 'zh'
+                        ? 'textql 医疗保健登录页面'
+                        : 'textql healthcare landing page'}
                     </a>
                     {t('blog.coding.item48').split(/textql healthcare|textql 医疗保健/)[1]}
                   </>
@@ -547,7 +567,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>{t('blog.coding.item49')}</li>
               <li>{t('blog.coding.item50')}</li>
               <li>
-                {t('blog.coding.item51').includes('ontology') || t('blog.coding.item51').includes('本体') ? (
+                {t('blog.coding.item51').includes('ontology') ||
+                t('blog.coding.item51').includes('本体') ? (
                   <>
                     {t('blog.coding.item51').split(/ontology|本体/)[0]}
                     <a
@@ -567,7 +588,8 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>{t('blog.coding.item52')}</li>
               <li>{t('blog.coding.item53')}</li>
               <li>
-                {t('blog.coding.item54').includes('random things') || t('blog.coding.item54').includes('随机东西') ? (
+                {t('blog.coding.item54').includes('random things') ||
+                t('blog.coding.item54').includes('随机东西') ? (
                   <>
                     {t('blog.coding.item54').split(/random things|随机东西/)[0]}
                     <a
@@ -585,7 +607,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item55').includes('mercor ML model') || t('blog.coding.item55').includes('mercor ML 模型') ? (
+                {t('blog.coding.item55').includes('mercor ML model') ||
+                t('blog.coding.item55').includes('mercor ML 模型') ? (
                   <>
                     {t('blog.coding.item55').split(/mercor ML model|mercor ML 模型/)[0]}
                     <a
@@ -603,7 +626,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>
-                {t('blog.coding.item56').includes('benchmarking') || t('blog.coding.item56').includes('基准测试') ? (
+                {t('blog.coding.item56').includes('benchmarking') ||
+                t('blog.coding.item56').includes('基准测试') ? (
                   <>
                     {t('blog.coding.item56').split(/benchmarking|基准测试/)[0]}
                     <a

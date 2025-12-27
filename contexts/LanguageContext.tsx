@@ -201,8 +201,10 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.date': 'nicholas chen · december 26, 2025 · 5 min read',
     'blog.coding.intro': 'small learnings that taught me to code from start (top) to end (bottom)',
     'blog.coding.item1': '• built a hangman game in java',
-    'blog.coding.item2': '• learned the basics of c++ from my computer science teacher in high school',
-    'blog.coding.item3': '• joined my school\'s programming club and learned from better programmers',
+    'blog.coding.item2':
+      '• learned the basics of c++ from my computer science teacher in high school',
+    'blog.coding.item3':
+      "• joined my school's programming club and learned from better programmers",
     'blog.coding.item4': '• tried out competitive programming and did the ccc twice in c++',
     'blog.coding.item5': '• joined a group of other students and learned a lot building voluntrack',
     'blog.coding.item6': '• built my first gpt wrapper during an online hackathon with friends',
@@ -210,7 +212,8 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item8': '• landed first software engineering internship at RBC in summer 2024',
     'blog.coding.item9': '• built an ML model on jupyter notebook using python, numpy and pandas',
     'blog.coding.item10': '• learned a lot of what i needed from geeks for geeks and w3schools',
-    'blog.coding.item11': '• built some random projects with javascript, html and css for the first time',
+    'blog.coding.item11':
+      '• built some random projects with javascript, html and css for the first time',
     'blog.coding.item12': '• built another gpt wrapper at jamhacks',
     'blog.coding.item13': '• built a study buddy tool with friends at hack the valley',
     'blog.coding.item14': '• built a music boombox thing at uoft hacks',
@@ -224,21 +227,29 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item22': '• learned a lot of git commands including git cherry-pick',
     'blog.coding.item23': '• built a dependabot clone with a friend during my free time',
     'blog.coding.item24': '• built a trash sorter at hack the 6ix with rbc friends',
-    'blog.coding.item25': '• worked in a production codebase developing internal tools for the team',
+    'blog.coding.item25':
+      '• worked in a production codebase developing internal tools for the team',
     'blog.coding.item26': '• learned typescript, next.js, vite and react and used postman a lot',
     'blog.coding.item27': '• messed around with postgres, sql and the debugger for the first time',
-    'blog.coding.item28': '• got more familiar with the terminal and ai and used stack overflow still',
+    'blog.coding.item28':
+      '• got more familiar with the terminal and ai and used stack overflow still',
     'blog.coding.item29': '• won 2nd place by building a posture checking robot at utra hacks',
-    'blog.coding.item30': '• took data structures and algorithms in c++ during second semester of uni',
-    'blog.coding.item31': '• hopped on twitter where i learned a lot and met other cool cs students',
-    'blog.coding.item32': '• started to take leetcode more serious and watched a ton of neetcode on yt',
+    'blog.coding.item30':
+      '• took data structures and algorithms in c++ during second semester of uni',
+    'blog.coding.item31':
+      '• hopped on twitter where i learned a lot and met other cool cs students',
+    'blog.coding.item32':
+      '• started to take leetcode more serious and watched a ton of neetcode on yt',
     'blog.coding.item33': '• made an etl pipeline that processed customer feedback',
     'blog.coding.item34': '• built a discord summarizer bot using python for fun at 2am',
     'blog.coding.item35': '• used golang for the first time and built an image processor',
-    'blog.coding.item36': '• made this facial recognition software for fun in python and typescript',
+    'blog.coding.item36':
+      '• made this facial recognition software for fun in python and typescript',
     'blog.coding.item37': '• tried learning haskell for the first time',
-    'blog.coding.item38': '• built sql query parser with typescript and svelte for parsing flat json',
-    'blog.coding.item39': '• created diff digest tool for fetching github pr diffs for ai summarization',
+    'blog.coding.item38':
+      '• built sql query parser with typescript and svelte for parsing flat json',
+    'blog.coding.item39':
+      '• created diff digest tool for fetching github pr diffs for ai summarization',
     'blog.coding.item40': '• landed a software engineering internship at textql for the fall',
     'blog.coding.item41': '• had to learn matlab for one of my uni courses during school',
     'blog.coding.item42': '• built a url shortener using golang and tailwind css hosted on railway',
@@ -249,7 +260,8 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item47': '• used a lot of claude code, codex and cursor when programming',
     'blog.coding.item48': '• worked on the textql healthcare landing page',
     'blog.coding.item49': '• learned how to use the terminal better than before',
-    'blog.coding.item50': '• worked at a startup and used a lot of go, python, typescript and svelte',
+    'blog.coding.item50':
+      '• worked at a startup and used a lot of go, python, typescript and svelte',
     'blog.coding.item51': '• worked on the ontology a lot at textql',
     'blog.coding.item52': '• did a lot of agentic and applied ai work',
     'blog.coding.item53': '• learned even more git commands including git bisect',
@@ -274,7 +286,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.ontology.whatIsP1':
       'you may have heard of the term "ontology" before, either used by palantir folks or others, but it\'s something that among many people are not familiar with and was something i also learned a few months ago when i started working at textql. more recently, i actually had the chance to work on the ontology and explore more about how it works with our product and how to make it easier for customers to use. there are many different types of ontologies but in this article i want to focus on the one that formally defines data and why we use it for text-to-sql queries.',
     'blog.ontology.whatIsP2':
-      'the google definition of an ontology is: a set of concepts and categories in a subject area or domain that shows their properties and the relations between them. if that doesn\'t make sense basically a fancy word for making a map of everything and how they connect to each other.',
+      "the google definition of an ontology is: a set of concepts and categories in a subject area or domain that shows their properties and the relations between them. if that doesn't make sense basically a fancy word for making a map of everything and how they connect to each other.",
     'blog.ontology.mapAlt': 'A map showing how concepts connect in an ontology',
     'blog.ontology.whatIsP3':
       'an ontology consists of entities, attributes, relationships, metrics and business rules. each of these are crucial for building a well-structured ontology. an entity is essentially an object that you can think of as a "thing" that your business cares about. while not required, entities often have a primary key that prevents double-counting and enables proper aggregation. each of these objects hold attributes which are like characteristics that describe the object. then there\'s relationships that basically connect each of these objects based on how they are related. these relationships work through joins - when entities share common fields that can be matched together, creating connections like one-to-many or many-to-many. for metrics, these are defined across multiple objects and can be done through a calculation of some sort. lastly, there are business rules that just define how your business operates and the meaning of specific terms or phrases.',
@@ -283,14 +295,15 @@ const translations: Record<Language, Record<string, string>> = {
       'here\'s a simple example using customers. a customer is someone who buys from your business. they have basic information like their name, email, and when they signed up. customers connect to other things in your business through joins: they place orders, contact support, and sometimes refer friends. you can measure things about customers like how much they\'ve spent total or how often they buy. finally, you set rules that define what certain terms mean, like "active customer" means someone who bought something in the last 90 days, or "vip customer" means someone who has spent over $5,000. all these pieces work together to give you a complete picture of what a customer means to your business through an ontology object.',
     'blog.ontology.whyMatterTitle': 'why ontologies matter for text-to-sql',
     'blog.ontology.whyMatterP1':
-      'if you\'re curious as to why this is useful for text-to-sql queries, there are many upsides to having an ontology when queries many databases especially when they are enterprise size.',
+      "if you're curious as to why this is useful for text-to-sql queries, there are many upsides to having an ontology when queries many databases especially when they are enterprise size.",
     'blog.ontology.whyMatterP2':
       'when data analysts are writing complex queries these queries must be defined through the use of joins and company specific business logic. this wastes a lot of time as a lot of SQL is repeated and overcomplicated. with an ontology layer, you can abstract away this complexity by defining business entities, relationships, and metrics once. instead of every analyst needing to remember that "active customers" means users who made a purchase in the last 90 days and requires joining the users table with the orders table filtered by date, the ontology captures this definition centrally. this means when someone asks "show me revenue by active customer segment," the system already knows important information such as:',
     'blog.ontology.whyMatterLi1': 'which tables to join',
     'blog.ontology.whyMatterLi2': 'what filters to apply',
     'blog.ontology.whyMatterLi3': 'how to calculate the metric correctly',
     'blog.ontology.whyMatterLi4': 'what the proper grain of analysis should be',
-    'blog.ontology.graphsAlt': 'Graphs showing the comparison between ontology vs non-ontology sql queries',
+    'blog.ontology.graphsAlt':
+      'Graphs showing the comparison between ontology vs non-ontology sql queries',
     'blog.ontology.whyMatterP3':
       'this means consistency across the organization, faster query generation, easier maintenance, lower barrier to entry, governance and security. essentially, the ontology becomes a semantic layer that translates between how humans think about the business and how data is actually stored in tables. it captures institutional knowledge about the data that would otherwise live in documentation, tribal knowledge, or the heads of senior analysts.',
     'blog.ontology.whyMatterP4':
@@ -300,9 +313,9 @@ const translations: Record<Language, Record<string, string>> = {
       'now that you understand the basics of what an ontology is and why large organizations may want to use one, learning how to build an ontology is just as important.',
     'blog.ontology.addingObjectsAlt': 'Creating an object or link in ontology',
     'blog.ontology.buildingP2':
-      'when building an ontology, you begin with your core entities - the things your business literally cannot function without. for an e-commerce company, that\'s customers, orders, and products. for a saas company, it\'s users, subscriptions, and usage events. identify maybe 3-5 critical entities and define them thoroughly: their attributes, their primary keys, and the most important relationships between them.',
+      "when building an ontology, you begin with your core entities - the things your business literally cannot function without. for an e-commerce company, that's customers, orders, and products. for a saas company, it's users, subscriptions, and usage events. identify maybe 3-5 critical entities and define them thoroughly: their attributes, their primary keys, and the most important relationships between them.",
     'blog.ontology.buildingP3':
-      'when choosing a primary key, pick a stable identifier that doesn\'t change over time, usually an id field like customer_id rather than something like email that might change. this determines the grain of your entity and prevents double-counting when you aggregate metrics. without a proper primary key, you risk counting the same customer twice or splitting their history across multiple identities.',
+      "when choosing a primary key, pick a stable identifier that doesn't change over time, usually an id field like customer_id rather than something like email that might change. this determines the grain of your entity and prevents double-counting when you aggregate metrics. without a proper primary key, you risk counting the same customer twice or splitting their history across multiple identities.",
     'blog.ontology.buildingP4':
       'for relationships, focus on connections that represent real business flows and answer common questions. if people frequently ask "show me revenue by customer segment," you need a clear path from orders to customers. start with the relationships that enable your most important analyses rather than trying to map every possible connection upfront.',
     'blog.ontology.buildingP5':
@@ -312,19 +325,22 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.ontology.attrsAlt': 'Creating attributes and editing object properties',
     'blog.ontology.goodEnoughTitle': 'when is an ontology "good enough"?',
     'blog.ontology.goodEnoughP1':
-      'an ontology is never complete. there will always be edge cases, niche metrics, and one-off analyses that don\'t fit neatly into your defined entities and relationships. the goal isn\'t perfection - it\'s coverage of the common cases. if your ontology handles 80% of the questions people ask, that\'s a massive win. the remaining 20% can still be handled with custom sql or ad-hoc analysis.',
+      "an ontology is never complete. there will always be edge cases, niche metrics, and one-off analyses that don't fit neatly into your defined entities and relationships. the goal isn't perfection - it's coverage of the common cases. if your ontology handles 80% of the questions people ask, that's a massive win. the remaining 20% can still be handled with custom sql or ad-hoc analysis.",
     'blog.ontology.goodEnoughP2': 'you know your ontology is "good enough" when:',
-    'blog.ontology.goodEnoughLi1': 'new analysts can answer common questions without asking for help',
-    'blog.ontology.goodEnoughLi2': 'the same metrics stop appearing with different values in different reports',
-    'blog.ontology.goodEnoughLi3': 'people start asking "is this in the ontology?" before writing custom queries',
-    'blog.ontology.goodEnoughLi4': 'you\'re spending more time using the ontology than building it',
+    'blog.ontology.goodEnoughLi1':
+      'new analysts can answer common questions without asking for help',
+    'blog.ontology.goodEnoughLi2':
+      'the same metrics stop appearing with different values in different reports',
+    'blog.ontology.goodEnoughLi3':
+      'people start asking "is this in the ontology?" before writing custom queries',
+    'blog.ontology.goodEnoughLi4': "you're spending more time using the ontology than building it",
     'blog.ontology.howEnginesTitle': 'how text-to-sql engines use ontologies',
     'blog.ontology.howEnginesP1':
       'when you ask "show me revenue by customer segment," the text-to-sql engine goes through several steps using the ontology.',
     'blog.ontology.howEnginesP2':
       'first, it identifies the entities and metrics you\'re asking about. "revenue" maps to a defined metric in the ontology. "customer segment" maps to an attribute of the customer entity.',
     'blog.ontology.howEnginesP3':
-      'next, it looks up the metric definition. the ontology says revenue is calculated as sum(orders.total_amount) where orders.status = \'completed\'. it also knows that revenue is associated with the orders entity.',
+      "next, it looks up the metric definition. the ontology says revenue is calculated as sum(orders.total_amount) where orders.status = 'completed'. it also knows that revenue is associated with the orders entity.",
     'blog.ontology.howEnginesP4':
       'then it determines the necessary joins. you asked for revenue by customer segment, so the engine needs to connect orders to customers. the ontology defines this relationship: orders.customer_id = customers.id. it knows this is a many-to-one relationship (many orders per customer).',
     'blog.ontology.howEnginesP5':
@@ -344,7 +360,7 @@ const translations: Record<Language, Record<string, string>> = {
       'tools like looker and tableau have their own semantic layers. looker has lookml, tableau has data sources with relationships. these serve similar purposes to ontologies - they define metrics, relationships, and business logic. the difference is scope and flexibility. traditional bi semantic layers are tightly coupled to their visualization tools. the definitions you create in looker only work in looker. if you want to use the same logic in python, or in a different bi tool, or in an automated pipeline, you\'re out of luck. an ontology is tool-agnostic. it\'s a central definition layer that can power text-to-sql queries, bi tools, python analysis, automated reports, and custom applications. you define "active customers" once, and it works everywhere.',
     'blog.ontology.vsOther.viewsTitle': 'views and stored procedures:',
     'blog.ontology.vsOther.viewsText':
-      'views and stored procedures can encapsulate business logic, so why do you need an ontology? first, discoverability. if you have 500 views in your database, how do you know which one to use? an ontology provides a structured catalog with relationships and documentation. second, relationships. a view gives you a table, but it doesn\'t tell you how that table relates to other tables. an ontology explicitly defines these connections, enabling automatic join generation. third, natural language. you can\'t ask a view "show me revenue by customer segment" in plain english. you need to know the view exists, what it\'s called, and how to query it. an ontology enables natural language interfaces. views are a technical solution for code reuse. ontologies are a semantic solution for shared understanding.',
+      "views and stored procedures can encapsulate business logic, so why do you need an ontology? first, discoverability. if you have 500 views in your database, how do you know which one to use? an ontology provides a structured catalog with relationships and documentation. second, relationships. a view gives you a table, but it doesn't tell you how that table relates to other tables. an ontology explicitly defines these connections, enabling automatic join generation. third, natural language. you can't ask a view \"show me revenue by customer segment\" in plain english. you need to know the view exists, what it's called, and how to query it. an ontology enables natural language interfaces. views are a technical solution for code reuse. ontologies are a semantic solution for shared understanding.",
     'blog.ontology.sourcesAlt': 'Different tools comparing ontologies vs other methods',
     'blog.ontology.futureTitle': 'the future for ontologies',
     'blog.ontology.futureP1':
@@ -352,7 +368,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.ontology.futureP2':
       'imagine an ontology that evolves based on how people use it. when analysts repeatedly write similar custom queries, the system suggests adding those patterns to the ontology. when a metric definition gets manually overridden frequently, the system flags it for review. this is already starting to happen. systems can track which entities are queried together frequently and suggest adding explicit relationships. they can identify common calculated fields and propose promoting them to official metrics.',
     'blog.ontology.futureP3':
-      'as data landscapes grow more complex - more sources, more tables, more tools, more users - the need for ontologies increases exponentially. without an ontology, complexity scales badly. every new data source requires everyone to learn new table structures. every new analyst needs to be trained on all the business logic. every new tool needs custom integration. with an ontology, complexity scales linearly. new data sources get mapped to existing entities. new analysts learn the ontology once. new tools integrate with the ontology layer. the future of data isn\'t less complex - it\'s more complex but better organized. ontologies are how we manage that complexity without drowning in it.',
+      "as data landscapes grow more complex - more sources, more tables, more tools, more users - the need for ontologies increases exponentially. without an ontology, complexity scales badly. every new data source requires everyone to learn new table structures. every new analyst needs to be trained on all the business logic. every new tool needs custom integration. with an ontology, complexity scales linearly. new data sources get mapped to existing entities. new analysts learn the ontology once. new tools integrate with the ontology layer. the future of data isn't less complex - it's more complex but better organized. ontologies are how we manage that complexity without drowning in it.",
     'blog.ontology.referencesTitle': 'references',
     'blog.ontology.references.builtin': 'builtin.com/data-science/ontology',
     'blog.ontology.references.palantir': 'blog.palantir.com - ontology finding meaning in data',
@@ -711,7 +727,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.ontology.howEnginesP2':
       '首先，它识别你询问的实体和指标。"收入"映射到本体中定义的指标。"客户细分"映射到客户实体的属性。',
     'blog.ontology.howEnginesP3':
-      '接下来，它查找指标定义。本体说收入计算为sum(orders.total_amount)，其中orders.status = \'completed\'。它也知道收入与订单实体相关联。',
+      "接下来，它查找指标定义。本体说收入计算为sum(orders.total_amount)，其中orders.status = 'completed'。它也知道收入与订单实体相关联。",
     'blog.ontology.howEnginesP4':
       '然后它确定必要的连接。你要求按客户细分的收入，因此引擎需要将订单连接到客户。本体定义了这个关系：orders.customer_id = customers.id。它知道这是一对多关系（每个客户多个订单）。',
     'blog.ontology.howEnginesP5':

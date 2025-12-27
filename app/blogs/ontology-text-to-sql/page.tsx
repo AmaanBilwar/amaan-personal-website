@@ -171,15 +171,21 @@ export default function OntologyTextToSqlBlog() {
               {t('blog.ontology.vsOtherTitle')}
             </h2>
             <p>
-              <span className="text-stone-100 font-medium">{t('blog.ontology.vsOther.dbtTitle')}</span>{' '}
+              <span className="text-stone-100 font-medium">
+                {t('blog.ontology.vsOther.dbtTitle')}
+              </span>{' '}
               {t('blog.ontology.vsOther.dbtText')}
             </p>
             <p className="mt-4">
-              <span className="text-stone-100 font-medium">{t('blog.ontology.vsOther.biTitle')}</span>{' '}
+              <span className="text-stone-100 font-medium">
+                {t('blog.ontology.vsOther.biTitle')}
+              </span>{' '}
               {t('blog.ontology.vsOther.biText')}
             </p>
             <p className="mt-4">
-              <span className="text-stone-100 font-medium">{t('blog.ontology.vsOther.viewsTitle')}</span>{' '}
+              <span className="text-stone-100 font-medium">
+                {t('blog.ontology.vsOther.viewsTitle')}
+              </span>{' '}
               {t('blog.ontology.vsOther.viewsText')}
             </p>
             <figure className="mt-6">

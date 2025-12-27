@@ -617,12 +617,12 @@ export default function GitBlog() {
             <ul className="space-y-2 text-stone-400 text-sm">
               <li>
                 <a href="https://git-scm.com/doc" className="hover:text-stone-200 underline">
-                  {t('blog.git.references.docs')}
+                  official git docs
                 </a>
               </li>
               <li>
                 <a href="https://dangitgit.com/" className="hover:text-stone-200 underline">
-                  {t('blog.git.references.dangit')}
+                  dangit, git!
                 </a>
               </li>
             </ul>

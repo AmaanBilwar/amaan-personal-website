@@ -221,7 +221,7 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  {t('blog.ontology.references.builtin')}
+                  builtin.com/data-science/ontology
                 </a>
               </li>
               <li>
@@ -231,7 +231,7 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  {t('blog.ontology.references.palantir')}
+                  blog.palantir.com - ontology finding meaning in data
                 </a>
               </li>
               <li>
@@ -241,7 +241,7 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  {t('blog.ontology.references.palantirDocs')}
+                  palantir.com/docs/foundry/ontology/overview
                 </a>
               </li>
               <li>
@@ -251,7 +251,7 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  {t('blog.ontology.references.textql')}
+                  docs.textql.com - ontology overview
                 </a>
               </li>
             </ul>

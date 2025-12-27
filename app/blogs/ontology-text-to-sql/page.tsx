@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function OntologyTextToSqlBlog() {
+  const { language, setLanguage, t } = useLanguage();
+
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
       <article className="max-w-lg mx-auto">
@@ -20,16 +23,14 @@ export default function OntologyTextToSqlBlog() {
               strokeLinejoin="round"
             />
           </svg>
-          back
+          {t('blog.back')}
         </Link>
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-          why ontology for text-to-sql?
+          {t('blog.ontology.title')}
         </h1>
-        <p className="text-stone-500 text-sm mb-6">
-          nicholas chen · november 21, 2025 · 10 min read
-        </p>
+        <p className="text-stone-500 text-sm mb-6">{t('blog.ontology.date')}</p>
 
         {/* Cover image */}
         <img
@@ -43,352 +44,169 @@ export default function OntologyTextToSqlBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              what is an ontology?
+              {t('blog.ontology.whatIsTitle')}
             </h2>
-            <p>
-              you may have heard of the term "ontology" before, either used by palantir folks or
-              others, but it's something that among many people are not familiar with and was
-              something i also learned a few months ago when i started working at textql. more
-              recently, i actually had the chance to work on the ontology and explore more about how
-              it works with our product and how to make it easier for customers to use. there are
-              many different types of ontologies but in this article i want to focus on the one that
-              formally defines data and why we use it for text-to-sql queries.
-            </p>
-            <p className="mt-4">
-              the google definition of an ontology is: a set of concepts and categories in a subject
-              area or domain that shows their properties and the relations between them. if that
-              doesn't make sense basically a fancy word for making a map of everything and how they
-              connect to each other.
-            </p>
+            <p>{t('blog.ontology.whatIsP1')}</p>
+            <p className="mt-4">{t('blog.ontology.whatIsP2')}</p>
             <figure className="mt-6">
               <img
                 src="/blogs/ontology/map.jpeg"
-                alt="A map showing how concepts connect in an ontology"
+                alt={t('blog.ontology.mapAlt')}
                 className="w-full"
               />
             </figure>
-            <p className="mt-4">
-              an ontology consists of entities, attributes, relationships, metrics and business
-              rules. each of these are crucial for building a well-structured ontology. an entity is
-              essentially an object that you can think of as a "thing" that your business cares
-              about. while not required, entities often have a primary key that prevents
-              double-counting and enables proper aggregation. each of these objects hold attributes
-              which are like characteristics that describe the object. then there's relationships
-              that basically connect each of these objects based on how they are related. these
-              relationships work through joins - when entities share common fields that can be
-              matched together, creating connections like one-to-many or many-to-many. for metrics,
-              these are defined across multiple objects and can be done through a calculation of
-              some sort. lastly, there are business rules that just define how your business
-              operates and the meaning of specific terms or phrases.
-            </p>
+            <p className="mt-4">{t('blog.ontology.whatIsP3')}</p>
           </section>
 
           <section>
             <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-              a simple example
+              {t('blog.ontology.simpleExampleTitle')}
             </h3>
-            <p>
-              here's a simple example using customers. a customer is someone who buys from your
-              business. they have basic information like their name, email, and when they signed up.
-              customers connect to other things in your business through joins: they place orders,
-              contact support, and sometimes refer friends. you can measure things about customers
-              like how much they've spent total or how often they buy. finally, you set rules that
-              define what certain terms mean, like "active customer" means someone who bought
-              something in the last 90 days, or "vip customer" means someone who has spent over
-              $5,000. all these pieces work together to give you a complete picture of what a
-              customer means to your business through an ontology object.
-            </p>
+            <p>{t('blog.ontology.simpleExampleP1')}</p>
           </section>
 
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              why ontologies matter for text-to-sql
+              {t('blog.ontology.whyMatterTitle')}
             </h2>
-            <p>
-              if you're curious as to why this is useful for text-to-sql queries, there are many
-              upsides to having an ontology when queries many databases especially when they are
-              enterprise size.
-            </p>
-            <p className="mt-4">
-              when data analysts are writing complex queries these queries must be defined through
-              the use of joins and company specific business logic. this wastes a lot of time as a
-              lot of SQL is repeated and overcomplicated. with an ontology layer, you can abstract
-              away this complexity by defining business entities, relationships, and metrics once.
-              instead of every analyst needing to remember that "active customers" means users who
-              made a purchase in the last 90 days and requires joining the users table with the
-              orders table filtered by date, the ontology captures this definition centrally. this
-              means when someone asks "show me revenue by active customer segment," the system
-              already knows important information such as:
-            </p>
+            <p>{t('blog.ontology.whyMatterP1')}</p>
+            <p className="mt-4">{t('blog.ontology.whyMatterP2')}</p>
             <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>• which tables to join</li>
-              <li>• what filters to apply</li>
-              <li>• how to calculate the metric correctly</li>
-              <li>• what the proper grain of analysis should be</li>
+              <li>• {t('blog.ontology.whyMatterLi1')}</li>
+              <li>• {t('blog.ontology.whyMatterLi2')}</li>
+              <li>• {t('blog.ontology.whyMatterLi3')}</li>
+              <li>• {t('blog.ontology.whyMatterLi4')}</li>
             </ul>
             <figure className="mt-6">
               <img
                 src="/blogs/ontology/graphs.jpeg"
-                alt="Graphs showing the comparison between ontology vs non-ontology sql queries"
+                alt={t('blog.ontology.graphsAlt')}
                 className="w-full"
               />
               <figcaption className="text-stone-500 text-xs mt-2 italic">
-                graphs showing the comparison between ontology vs non-ontology sql queries
+                {t('blog.ontology.graphsAlt')}
               </figcaption>
             </figure>
-            <p className="mt-4">
-              this means consistency across the organization, faster query generation, easier
-              maintenance, lower barrier to entry, governance and security. essentially, the
-              ontology becomes a semantic layer that translates between how humans think about the
-              business and how data is actually stored in tables. it captures institutional
-              knowledge about the data that would otherwise live in documentation, tribal knowledge,
-              or the heads of senior analysts.
-            </p>
-            <p className="mt-4">
-              ontologies can also improve performance. a well-designed ontology might define a
-              metric using a pre-aggregated table instead of scanning raw data. it might know to use
-              an indexed column for joins. it captures optimization knowledge that would otherwise
-              require manual query tuning.
-            </p>
+            <p className="mt-4">{t('blog.ontology.whyMatterP3')}</p>
+            <p className="mt-4">{t('blog.ontology.whyMatterP4')}</p>
           </section>
 
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              building an ontology from scratch
+              {t('blog.ontology.buildingTitle')}
             </h2>
-            <p>
-              now that you understand the basics of what an ontology is and why large organizations
-              may want to use one, learning how to build an ontology is just as important.
-            </p>
+            <p>{t('blog.ontology.buildingP1')}</p>
             <figure className="mt-6">
               <img
                 src="/blogs/ontology/adding-objects.jpeg"
-                alt="Creating an object or link in ontology"
+                alt={t('blog.ontology.addingObjectsAlt')}
                 className="w-full"
               />
               <figcaption className="text-stone-500 text-xs mt-2 italic">
-                creating an object or link in ontology
+                {t('blog.ontology.addingObjectsAlt')}
               </figcaption>
             </figure>
-            <p className="mt-4">
-              when building an ontology, you begin with your core entities - the things your
-              business literally cannot function without. for an e-commerce company, that's
-              customers, orders, and products. for a saas company, it's users, subscriptions, and
-              usage events. identify maybe 3-5 critical entities and define them thoroughly: their
-              attributes, their primary keys, and the most important relationships between them.
-            </p>
-            <p className="mt-4">
-              when choosing a primary key, pick a stable identifier that doesn't change over time,
-              usually an id field like customer_id rather than something like email that might
-              change. this determines the grain of your entity and prevents double-counting when you
-              aggregate metrics. without a proper primary key, you risk counting the same customer
-              twice or splitting their history across multiple identities.
-            </p>
-            <p className="mt-4">
-              for relationships, focus on connections that represent real business flows and answer
-              common questions. if people frequently ask "show me revenue by customer segment," you
-              need a clear path from orders to customers. start with the relationships that enable
-              your most important analyses rather than trying to map every possible connection
-              upfront.
-            </p>
-            <p className="mt-4">
-              then add the metrics that people ask about every single day. "what's our revenue?"
-              "how many active users do we have?" "what's our conversion rate?" these are the
-              questions that get asked in every morning meeting. define these once in the ontology
-              with the correct business logic, and suddenly dozens of repeated queries become
-              obsolete.
-            </p>
-            <p className="mt-4">
-              the key is to prove value quickly. if you spend six months building a comprehensive
-              ontology before anyone can use it, you'll lose organizational buy-in. but if you can
-              show that three weeks of work eliminated the confusion around "active customers" and
-              made that metric consistent across all reports, suddenly people want more entities in
-              the ontology.
-            </p>
+            <p className="mt-4">{t('blog.ontology.buildingP2')}</p>
+            <p className="mt-4">{t('blog.ontology.buildingP3')}</p>
+            <p className="mt-4">{t('blog.ontology.buildingP4')}</p>
+            <p className="mt-4">{t('blog.ontology.buildingP5')}</p>
+            <p className="mt-4">{t('blog.ontology.buildingP6')}</p>
             <figure className="mt-6">
               <img
                 src="/blogs/ontology/attrs.jpeg"
-                alt="Creating attributes and editing object properties"
+                alt={t('blog.ontology.attrsAlt')}
                 className="w-full"
               />
               <figcaption className="text-stone-500 text-xs mt-2 italic">
-                creating attributes and editing object properties
+                {t('blog.ontology.attrsAlt')}
               </figcaption>
             </figure>
           </section>
 
           <section>
             <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-              when is an ontology "good enough"?
+              {t('blog.ontology.goodEnoughTitle')}
             </h3>
-            <p>
-              an ontology is never complete. there will always be edge cases, niche metrics, and
-              one-off analyses that don't fit neatly into your defined entities and relationships.
-              the goal isn't perfection - it's coverage of the common cases. if your ontology
-              handles 80% of the questions people ask, that's a massive win. the remaining 20% can
-              still be handled with custom sql or ad-hoc analysis.
-            </p>
-            <p className="mt-4">you know your ontology is "good enough" when:</p>
+            <p>{t('blog.ontology.goodEnoughP1')}</p>
+            <p className="mt-4">{t('blog.ontology.goodEnoughP2')}</p>
             <ul className="mt-3 ml-4 space-y-1 text-stone-400">
-              <li>• new analysts can answer common questions without asking for help</li>
-              <li>• the same metrics stop appearing with different values in different reports</li>
-              <li>
-                • people start asking "is this in the ontology?" before writing custom queries
-              </li>
-              <li>• you're spending more time using the ontology than building it</li>
+              <li>• {t('blog.ontology.goodEnoughLi1')}</li>
+              <li>• {t('blog.ontology.goodEnoughLi2')}</li>
+              <li>• {t('blog.ontology.goodEnoughLi3')}</li>
+              <li>• {t('blog.ontology.goodEnoughLi4')}</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              how text-to-sql engines use ontologies
+              {t('blog.ontology.howEnginesTitle')}
             </h2>
-            <p>
-              when you ask "show me revenue by customer segment," the text-to-sql engine goes
-              through several steps using the ontology.
-            </p>
-            <p className="mt-4">
-              first, it identifies the entities and metrics you're asking about. "revenue" maps to a
-              defined metric in the ontology. "customer segment" maps to an attribute of the
-              customer entity.
-            </p>
-            <p className="mt-4">
-              next, it looks up the metric definition. the ontology says revenue is calculated as
-              sum(orders.total_amount) where orders.status = 'completed'. it also knows that revenue
-              is associated with the orders entity.
-            </p>
-            <p className="mt-4">
-              then it determines the necessary joins. you asked for revenue by customer segment, so
-              the engine needs to connect orders to customers. the ontology defines this
-              relationship: orders.customer_id = customers.id. it knows this is a many-to-one
-              relationship (many orders per customer).
-            </p>
-            <p className="mt-4">
-              finally, it applies any business rules. maybe the ontology specifies that revenue
-              calculations should exclude refunds, or that only orders from the last 12 months
-              count. these rules get automatically incorporated into the generated sql. the result
-              is a query that would take a human analyst 10 minutes to write (and possibly get
-              wrong), generated correctly in seconds.
-            </p>
+            <p>{t('blog.ontology.howEnginesP1')}</p>
+            <p className="mt-4">{t('blog.ontology.howEnginesP2')}</p>
+            <p className="mt-4">{t('blog.ontology.howEnginesP3')}</p>
+            <p className="mt-4">{t('blog.ontology.howEnginesP4')}</p>
+            <p className="mt-4">{t('blog.ontology.howEnginesP5')}</p>
             <figure className="mt-6">
               <img
                 src="/blogs/ontology/chat.png"
-                alt="Querying a test database with Ana using the text-to-sql feature"
+                alt={t('blog.ontology.chatAlt')}
                 className="w-full"
               />
               <figcaption className="text-stone-500 text-xs mt-2 italic">
-                me querying a test database with ana using the text-to-sql feature
+                {t('blog.ontology.chatAlt')}
               </figcaption>
             </figure>
           </section>
 
           <section>
             <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-              handling ambiguity
+              {t('blog.ontology.ambiguityTitle')}
             </h3>
-            <p>
-              ambiguous questions are where ontologies really shine. if you ask "show me sales,"
-              that could mean the sales team (entity), sales transactions (orders entity), sales
-              revenue (metric), or sales count (different metric). without an ontology, the system
-              has to guess. with an ontology, it can recognize that "sales" is ambiguous, check
-              which interpretation makes sense in context, ask for clarification if needed ("did you
-              mean sales revenue or number of sales?"), and use the most common interpretation based
-              on usage patterns.
-            </p>
-            <p className="mt-4">
-              the ontology also helps with synonyms. "customers," "clients," "accounts," and
-              "buyers" might all map to the same customer entity.
-            </p>
+            <p>{t('blog.ontology.ambiguityP1')}</p>
+            <p className="mt-4">{t('blog.ontology.ambiguityP2')}</p>
           </section>
 
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              ontologies vs other approaches
+              {t('blog.ontology.vsOtherTitle')}
             </h2>
             <p>
-              <span className="text-stone-100 font-medium">dbt models:</span> dbt models and
-              ontologies solve different problems. dbt transforms raw data into clean tables. an
-              ontology sits on top of those tables and defines what they mean: which table
-              represents customers, how customers relate to orders, and how to optimize queries. you
-              can use both together: dbt produces tables, ontologies produce understanding.
+              <span className="text-stone-100 font-medium">{t('blog.ontology.vsOther.dbtTitle')}</span>{' '}
+              {t('blog.ontology.vsOther.dbtText')}
             </p>
             <p className="mt-4">
-              <span className="text-stone-100 font-medium">bi semantic layers:</span> tools like
-              looker and tableau have their own semantic layers. looker has lookml, tableau has data
-              sources with relationships. these serve similar purposes to ontologies - they define
-              metrics, relationships, and business logic. the difference is scope and flexibility.
-              traditional bi semantic layers are tightly coupled to their visualization tools. the
-              definitions you create in looker only work in looker. if you want to use the same
-              logic in python, or in a different bi tool, or in an automated pipeline, you're out of
-              luck. an ontology is tool-agnostic. it's a central definition layer that can power
-              text-to-sql queries, bi tools, python analysis, automated reports, and custom
-              applications. you define "active customers" once, and it works everywhere.
+              <span className="text-stone-100 font-medium">{t('blog.ontology.vsOther.biTitle')}</span>{' '}
+              {t('blog.ontology.vsOther.biText')}
             </p>
             <p className="mt-4">
-              <span className="text-stone-100 font-medium">views and stored procedures:</span> views
-              and stored procedures can encapsulate business logic, so why do you need an ontology?
-              first, discoverability. if you have 500 views in your database, how do you know which
-              one to use? an ontology provides a structured catalog with relationships and
-              documentation. second, relationships. a view gives you a table, but it doesn't tell
-              you how that table relates to other tables. an ontology explicitly defines these
-              connections, enabling automatic join generation. third, natural language. you can't
-              ask a view "show me revenue by customer segment" in plain english. you need to know
-              the view exists, what it's called, and how to query it. an ontology enables natural
-              language interfaces. views are a technical solution for code reuse. ontologies are a
-              semantic solution for shared understanding.
+              <span className="text-stone-100 font-medium">{t('blog.ontology.vsOther.viewsTitle')}</span>{' '}
+              {t('blog.ontology.vsOther.viewsText')}
             </p>
             <figure className="mt-6">
               <img
                 src="/blogs/ontology/sources.png"
-                alt="Different tools comparing ontologies vs other methods"
+                alt={t('blog.ontology.sourcesAlt')}
                 className="w-full"
               />
               <figcaption className="text-stone-500 text-xs mt-2 italic">
-                different tools comparing ontologies vs other methods
+                {t('blog.ontology.sourcesAlt')}
               </figcaption>
             </figure>
           </section>
 
           <section>
             <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
-              the future for ontologies
+              {t('blog.ontology.futureTitle')}
             </h2>
-            <p>
-              with the rise of llms, ontologies are actually going to be more valuable than ever. ai
-              models are great at understanding natural language but terrible at knowing your
-              specific business logic. gpt-5 doesn't know that your company defines "active
-              customers" as 90-day activity, or that revenue should exclude certain transaction
-              types, or that the customer table joins to orders via a specific foreign key. the
-              ontology provides this context. it's the bridge between the llm's language
-              understanding and your company's data reality. the llm handles the "what is the user
-              asking?" part, the ontology handles the "how do we actually calculate that?" part. as
-              llm models get better, ontologies become the key differentiator in how efficient and
-              accurate users can query their large databases.
-            </p>
-            <p className="mt-4">
-              imagine an ontology that evolves based on how people use it. when analysts repeatedly
-              write similar custom queries, the system suggests adding those patterns to the
-              ontology. when a metric definition gets manually overridden frequently, the system
-              flags it for review. this is already starting to happen. systems can track which
-              entities are queried together frequently and suggest adding explicit relationships.
-              they can identify common calculated fields and propose promoting them to official
-              metrics.
-            </p>
-            <p className="mt-4">
-              as data landscapes grow more complex - more sources, more tables, more tools, more
-              users - the need for ontologies increases exponentially. without an ontology,
-              complexity scales badly. every new data source requires everyone to learn new table
-              structures. every new analyst needs to be trained on all the business logic. every new
-              tool needs custom integration. with an ontology, complexity scales linearly. new data
-              sources get mapped to existing entities. new analysts learn the ontology once. new
-              tools integrate with the ontology layer. the future of data isn't less complex - it's
-              more complex but better organized. ontologies are how we manage that complexity
-              without drowning in it.
-            </p>
+            <p>{t('blog.ontology.futureP1')}</p>
+            <p className="mt-4">{t('blog.ontology.futureP2')}</p>
+            <p className="mt-4">{t('blog.ontology.futureP3')}</p>
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">
-            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">references</h3>
+            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
+              {t('blog.ontology.referencesTitle')}
+            </h3>
             <ul className="space-y-2 text-stone-400 text-sm">
               <li>
                 <a
@@ -397,7 +215,7 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  builtin.com/data-science/ontology
+                  {t('blog.ontology.references.builtin')}
                 </a>
               </li>
               <li>
@@ -407,7 +225,7 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  blog.palantir.com - ontology finding meaning in data
+                  {t('blog.ontology.references.palantir')}
                 </a>
               </li>
               <li>
@@ -417,7 +235,7 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  palantir.com/docs/foundry/ontology/overview
+                  {t('blog.ontology.references.palantirDocs')}
                 </a>
               </li>
               <li>
@@ -427,12 +245,12 @@ export default function OntologyTextToSqlBlog() {
                   rel="noopener noreferrer"
                   className="hover:text-stone-200 transition-colors underline"
                 >
-                  docs.textql.com - ontology overview
+                  {t('blog.ontology.references.textql')}
                 </a>
               </li>
             </ul>
             <p className="mt-4 text-stone-500 text-xs italic">
-              note: all images in the original article were generated or taken from{' '}
+              {t('blog.ontology.note')}{' '}
               <a
                 href="https://textql.com"
                 target="_blank"
@@ -443,6 +261,105 @@ export default function OntologyTextToSqlBlog() {
               </a>
             </p>
           </section>
+        </div>
+
+        {/* Footer nav with social icons and right-aligned navigation/language */}
+        <div className="mt-10 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-lg">
+          {/* Social media icons */}
+          <a
+            href="mailto:nicholas.chen243@gmail.com"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+            aria-label="Email"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z" />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/nicholaschen09"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+            aria-label="GitHub"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21C9.5 20.77 9.5 20.14 9.5 19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26C14.5 19.6 14.5 20.68 14.5 21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.48 17.52 2 12 2Z" />
+            </svg>
+          </a>
+          <a
+            href="https://x.com/nicholaschen__"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+            aria-label="X (Twitter)"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <div className="ml-auto flex items-center">
+            {/* Language switcher */}
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
+                  language === 'en'
+                    ? 'bg-stone-800/80 text-white'
+                    : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
+                }`}
+              >
+                EN
+              </button>
+              <span className="text-stone-600">/</span>
+              <button
+                type="button"
+                onClick={() => setLanguage('zh')}
+                className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
+                  language === 'zh'
+                    ? 'bg-stone-800/80 text-white'
+                    : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
+                }`}
+              >
+                中文
+              </button>
+            </div>
+          </div>
         </div>
       </article>
     </main>

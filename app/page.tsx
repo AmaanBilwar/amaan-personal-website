@@ -236,7 +236,7 @@ export default function Home() {
                     href="/blogs/ontology-text-to-sql"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    why ontology for text-to-sql?
+                    {t('blog.ontology.title')}
                   </a>
                 </li>
 
@@ -245,7 +245,7 @@ export default function Home() {
                     href="/blogs/git"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    git commands
+                    {t('blog.git.title')}
                   </a>
                 </li>
 
@@ -254,7 +254,7 @@ export default function Home() {
                     href="/blogs/how-i-learned-to-code"
                     className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                   >
-                    how i learned to code
+                    {t('blog.coding.title')}
                   </a>
                 </li>
               </ul>
@@ -326,7 +326,7 @@ export default function Home() {
         </div>
 
         {/* Footer nav with social icons and right-aligned navigation/language */}
-        <div className="mt-10 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-lg">
+        <div className="mt-20 flex flex-wrap items-center gap-3 text-xs text-stone-400 max-w-lg">
           {/* Social media icons */}
           <a
             href="mailto:nicholas.chen243@gmail.com"

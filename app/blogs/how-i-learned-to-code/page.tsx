@@ -431,6 +431,8 @@ export default function SoftwareEngineeringLearningBlog() {
                 </a>{' '}
                 with web search apis for the first time
               </li>
+              <li>• started learning some system design for programming</li>
+
             </ul>
             <p className="mt-6 text-stone-400 italic text-sm">note: i am updating this everyday</p>
           </section>

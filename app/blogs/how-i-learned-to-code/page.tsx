@@ -216,6 +216,19 @@ export default function SoftwareEngineeringLearningBlog() {
               <li>• learned typescript, next.js, vite and react and used postman a lot</li>
               <li>• messed around with postgres, sql and the debugger for the first time</li>
               <li>• got more familiar with the terminal and ai and used stack overflow still</li>
+              <li>
+                • won 2nd place by building a{' '}
+                <a
+                  href="https://github.com/enxilium/posture-checker-robot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  posture checking robot
+                </a>{' '}
+                at utra hacks
+              </li>
+
               <li>• took data structures and algorithms in c++ during second semester of uni</li>
               <li>
                 • hopped on{' '}

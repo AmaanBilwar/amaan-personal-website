@@ -269,10 +269,11 @@ export default function SoftwareEngineeringLearningBlog() {
                 )}
               </li>
               <li>{t('blog.coding.item22')}</li>
+              <li>{t('blog.coding.item23')}</li>
               <li>
-                {t('blog.coding.item23').includes('dependabot') ? (
+                {t('blog.coding.item24').includes('dependabot') ? (
                   <>
-                    {t('blog.coding.item23').split('dependabot')[0]}
+                    {t('blog.coding.item24').split('dependabot')[0]}
                     <a
                       href="https://github.com/qimcis/dependabot"
                       target="_blank"
@@ -281,17 +282,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       dependabot
                     </a>
-                    {t('blog.coding.item23').split('dependabot')[1]}
+                    {t('blog.coding.item24').split('dependabot')[1]}
                   </>
                 ) : (
-                  t('blog.coding.item23')
+                  t('blog.coding.item24')
                 )}
               </li>
               <li>
-                {t('blog.coding.item24').includes('trash sorter') ||
-                t('blog.coding.item24').includes('垃圾分拣器') ? (
+                {t('blog.coding.item25').includes('trash sorter') ||
+                t('blog.coding.item25').includes('垃圾分拣器') ? (
                   <>
-                    {t('blog.coding.item24').split(/trash sorter|垃圾分拣器/)[0]}
+                    {t('blog.coding.item25').split(/trash sorter|垃圾分拣器/)[0]}
                     <a
                       href="https://github.com/DerrickHa/ht6"
                       target="_blank"
@@ -300,15 +301,15 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '垃圾分拣器' : 'trash sorter'}
                     </a>
-                    {t('blog.coding.item24').split(/trash sorter|垃圾分拣器/)[1]}
+                    {t('blog.coding.item25').split(/trash sorter|垃圾分拣器/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item24')
+                  t('blog.coding.item25')
                 )}
               </li>
-              <li>{t('blog.coding.item25')}</li>
               <li>{t('blog.coding.item26')}</li>
               <li>{t('blog.coding.item27')}</li>
+              <li>{t('blog.coding.item28')}</li>
               <li>{t('blog.coding.item28')}</li>
               <li>
                 {t('blog.coding.item29').includes('posture checking robot') ||
@@ -587,11 +588,13 @@ export default function SoftwareEngineeringLearningBlog() {
               </li>
               <li>{t('blog.coding.item52')}</li>
               <li>{t('blog.coding.item53')}</li>
+              <li>{t('blog.coding.item54')}</li>
+              <li>{t('blog.coding.item55')}</li>
               <li>
-                {t('blog.coding.item54').includes('random things') ||
-                t('blog.coding.item54').includes('随机东西') ? (
+                {t('blog.coding.item56').includes('random things') ||
+                t('blog.coding.item56').includes('随机东西') ? (
                   <>
-                    {t('blog.coding.item54').split(/random things|随机东西/)[0]}
+                    {t('blog.coding.item56').split(/random things|随机东西/)[0]}
                     <a
                       href="https://github.com/tinytinyexperiments/visuals"
                       target="_blank"
@@ -600,17 +603,17 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '随机东西' : 'random things'}
                     </a>
-                    {t('blog.coding.item54').split(/random things|随机东西/)[1]}
+                    {t('blog.coding.item56').split(/random things|随机东西/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item54')
+                  t('blog.coding.item56')
                 )}
               </li>
               <li>
-                {t('blog.coding.item55').includes('mercor ML model') ||
-                t('blog.coding.item55').includes('mercor ML 模型') ? (
+                {t('blog.coding.item57').includes('mercor ML model') ||
+                t('blog.coding.item57').includes('mercor ML 模型') ? (
                   <>
-                    {t('blog.coding.item55').split(/mercor ML model|mercor ML 模型/)[0]}
+                    {t('blog.coding.item57').split(/mercor ML model|mercor ML 模型/)[0]}
                     <a
                       href="https://github.com/nicholaschen09/mercor-challenge"
                       target="_blank"
@@ -619,15 +622,15 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? 'mercor ML 模型' : 'mercor ML model'}
                     </a>
-                    {t('blog.coding.item55').split(/mercor ML model|mercor ML 模型/)[1]}
+                    {t('blog.coding.item57').split(/mercor ML model|mercor ML 模型/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item55')
+                  t('blog.coding.item57')
                 )}
               </li>
               <li>
-                {t('blog.coding.item56').includes('benchmarking') ||
-                t('blog.coding.item56').includes('基准测试') ? (
+                {t('blog.coding.item58').includes('benchmarking') ||
+                t('blog.coding.item58').includes('基准测试') ? (
                   <>
                     {t('blog.coding.item56').split(/benchmarking|基准测试/)[0]}
                     <a
@@ -638,13 +641,13 @@ export default function SoftwareEngineeringLearningBlog() {
                     >
                       {language === 'zh' ? '基准测试' : 'benchmarking'}
                     </a>
-                    {t('blog.coding.item56').split(/benchmarking|基准测试/)[1]}
+                    {t('blog.coding.item58').split(/benchmarking|基准测试/)[1]}
                   </>
                 ) : (
-                  t('blog.coding.item56')
+                  t('blog.coding.item58')
                 )}
               </li>
-              <li>{t('blog.coding.item57')}</li>
+              <li>{t('blog.coding.item59')}</li>
             </ul>
             <p className="mt-6 text-stone-400 italic text-sm">{t('blog.coding.note')}</p>
           </section>

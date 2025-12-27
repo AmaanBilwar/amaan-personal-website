@@ -259,7 +259,7 @@ export default function Home() {
                 </li>
               </ul>
               {/* Neighbours navigation under Blogs */}
-              <div className="mt-4 flex items-center gap-2 text-xs text-stone-400">
+              <div className="mt-4 mb-4 flex items-center gap-2 text-xs text-stone-400">
                 {/* Left Arrow */}
                 <a
                   href="https://about.ceruleanechoes.com/"

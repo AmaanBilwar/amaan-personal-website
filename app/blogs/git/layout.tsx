@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'git commands | Nicholas Chen',
   description: 'A guide to git commands and workflows',
+  metadataBase: new URL('https://nicholaschen.me'),
+  alternates: {
+    canonical: '/blogs/git',
+  },
   openGraph: {
     title: 'git commands',
     description: 'A guide to git commands and workflows',
@@ -22,6 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nicholaschen__',
+    creator: '@nicholaschen__',
     title: 'git commands',
     description: 'A guide to git commands and workflows',
     images: ['https://nicholaschen.me/blogs/git/git-copy.png'],

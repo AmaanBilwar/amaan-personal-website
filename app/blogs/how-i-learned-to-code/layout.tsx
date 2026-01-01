@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'how i learned to code',
     description: 'Small learnings that taught me to code',
-    url: 'https://nicholaschen.com/blogs/how-i-learned-to-code',
+    url: 'https://nicholaschen.me/blogs/how-i-learned-to-code',
     siteName: 'Nicholas Chen',
     images: [
       {
-        url: 'https://nicholaschen.com/blogs/code/iterm2.png',
+        url: 'https://nicholaschen.me/blogs/code/iterm2.png',
         width: 1200,
         height: 630,
         alt: 'How I Learned to Code',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     site: '@nicholaschen__',
     title: 'how i learned to code',
     description: 'Small learnings that taught me to code',
-    images: ['https://nicholaschen.com/blogs/code/iterm2.png'],
+    images: ['https://nicholaschen.me/blogs/code/iterm2.png'],
   },
 };
 

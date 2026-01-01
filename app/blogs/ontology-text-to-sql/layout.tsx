@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'why ontology for text-to-sql?',
     description: 'Why ontology is crucial for text-to-SQL systems',
-    url: 'https://nicholaschen.com/blogs/ontology-text-to-sql',
+    url: 'https://nicholaschen.me/blogs/ontology-text-to-sql',
     siteName: 'Nicholas Chen',
     images: [
       {
-        url: 'https://nicholaschen.com/blogs/ontology/ontology.png',
+        url: 'https://nicholaschen.me/blogs/ontology/ontology.png',
         width: 1200,
         height: 630,
         alt: 'TextQL Ontology Interface',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     site: '@nicholaschen__',
     title: 'why ontology for text-to-sql?',
     description: 'Why ontology is crucial for text-to-SQL systems',
-    images: ['https://nicholaschen.com/blogs/ontology/ontology.png'],
+    images: ['https://nicholaschen.me/blogs/ontology/ontology.png'],
   },
 };
 

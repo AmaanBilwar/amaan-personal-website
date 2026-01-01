@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'git commands',
     description: 'A guide to git commands and workflows',
-    url: 'https://nicholaschen.com/blogs/git',
+    url: 'https://nicholaschen.me/blogs/git',
     siteName: 'Nicholas Chen',
     images: [
       {
-        url: 'https://nicholaschen.com/blogs/git/git-copy.png',
+        url: 'https://nicholaschen.me/blogs/git/git-copy.png',
         width: 1200,
         height: 630,
         alt: 'Git',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     site: '@nicholaschen__',
     title: 'git commands',
     description: 'A guide to git commands and workflows',
-    images: ['https://nicholaschen.com/blogs/git/git-copy.png'],
+    images: ['https://nicholaschen.me/blogs/git/git-copy.png'],
   },
 };
 

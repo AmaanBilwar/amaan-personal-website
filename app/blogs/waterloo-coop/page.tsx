@@ -174,6 +174,25 @@ export default function WaterlooCoopBlog() {
                   interviews, 1 offer
                 </figcaption>
               </figure>
+
+              <p>
+                fast forward to just a year later and i've learned to find jobs through other ways,
+                one of them by posting on twitter and building in public. going on twitter in january
+                of 2025 was the best thing i could've done to prepare me for the next recruiting
+                season. during this time i also tried to do more hackathons, build more side projects
+                and show them on twitter and linkedin. most waterloo students eventually adapt to this
+                and begin finding opportunities on their own. you will see that most hackathons are
+                filled with waterloo students as well as other competitions in general. everyone cold
+                emails founders, posts on twitter and reaches out through linkedin. one thing i have
+                noticed probably due to the co-op program is that waterloo students develop or tend to
+                have high agency because that's the only way one can stand out in a crowd of talent.
+              </p>
+
+              <p>
+                this is also something i've learned throughout being in the program and after
+                interviewing with many companies now in my third co-op search i've gotten much better
+                at interviewing and my technical skills have improved quite a bit since last year.
+              </p>
             </div>
           </section>
         </div>

@@ -10,7 +10,7 @@ export default function WaterlooCoopBlog() {
 
   useEffect(() => {
     // Update document title for client-side
-    document.title = "my thoughts on waterloo's co-op program | Nicholas Chen";
+    document.title = `${t('blog.waterlooCoop.title')} | Nicholas Chen`;
   }, [t, language]);
 
   return (
@@ -35,7 +35,7 @@ export default function WaterlooCoopBlog() {
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-          my thoughts on waterloo's co-op program
+          {t('blog.waterlooCoop.title')}
         </h1>
         <p className="text-stone-500 text-sm mb-6">{t('blog.waterlooCoop.date')}</p>
 
@@ -43,7 +43,7 @@ export default function WaterlooCoopBlog() {
         <figure>
           <img
             src="/blogs/waterloo-coop/waterloostats.png"
-            alt="Waterloo Co-op"
+            alt={t('blog.waterlooCoop.title')}
             className="w-full mb-6"
           />
         </figure>
@@ -51,192 +51,95 @@ export default function WaterlooCoopBlog() {
 
         {/* Content */}
         <div className="space-y-4 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
-          <p className="text-stone-400 italic">
-            note: this is my experience from the engineering faculty co-op so content in this blog
-            may differ from the other faculties including math, science, etc..
-          </p>
+          <p className="text-stone-400 italic">{t('blog.waterlooCoop.note')}</p>
 
-          <p>
-            since studying at the university of waterloo, the most common thing i hear being talked
-            about on campus is the school's co-op program. back in high school when i was still
-            deciding between universities, the only school i really wanted to go to was waterloo for
-            the sole reason that they had their own co-op program. i had heard many great things
-            about the opportunities offered, the different countries you could work in and how all
-            the students in every graduating class would always have jobs lined up because of the 2+
-            years of work experience that gave them that extra advantage. now after being the co-op
-            program now for a bit longer than a year i want to give my thoughts on it and how it has
-            changed me and helped me at the same time.
-          </p>
+          <p>{t('blog.waterlooCoop.intro')}</p>
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              exploring cities, careers, and chaotic living
+              {t('blog.waterlooCoop.exploringTitle')}
             </h2>
 
             <div className="space-y-4">
-              <p>
-                during your time in waterloo engineering you will experience a ton of things and one
-                of those will be doing 6 co-ops in 5 years every 4 months that get you 2 years of
-                real work experience. this experience is extremely valuable because not a lot of
-                students get to work in real work environments where they are challenged and treated
-                like adults at such a young age. due to the fact that waterloo does a 4 month study
-                term and 4 month co-op term that rotate between the two, it allows you to explore
-                different career paths, live in different cities and also jump between startups and
-                larger companies.
-              </p>
+              <p>{t('blog.waterlooCoop.exploringP1')}</p>
 
               <figure>
                 <img
                   src="/blogs/waterloo-coop/nyc1.JPG"
-                  alt="New York City"
+                  alt={t('blog.waterlooCoop.exploringImg1Alt')}
                   className="w-full max-h-64 object-cover object-bottom my-4"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  the view of upper east side close to sunset time
+                  {t('blog.waterlooCoop.exploringImg1Caption')}
                 </figcaption>
               </figure>
 
-              <p>
-                many students i've seen have been able to travel to san francisco, new york, seattle
-                and more. many jobs, especially in tech can be found frequently in those places.
-                landing a co-op job there gives you a chance to leave your hometown to work, eat,
-                sleep and explore a new city on your own for 4 months. you will also go through the
-                thrill of finding housing, trying to make new friends and live frugal but it's all a
-                good learning experience at the end of the day. also from personally having done
-                this for my most recent co-op term, i had a lot of fun, learned a lot and it was
-                definitely a term i won't ever forget.
-              </p>
+              <p>{t('blog.waterlooCoop.exploringP2')}</p>
 
               <figure>
                 <img
                   src="/blogs/waterloo-coop/room.JPG"
-                  alt="Living space"
+                  alt={t('blog.waterlooCoop.exploringImg2Alt')}
                   className="w-full max-h-64 object-cover my-4"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  the house i was living in during my time in new york
+                  {t('blog.waterlooCoop.exploringImg2Caption')}
                 </figcaption>
               </figure>
 
-              <p>
-                due to the fact that co-op is every 4 months it's quite often that you see students
-                jump company from company and this is where you learn the most about what you enjoy
-                doing and the type of companies you truly want to work for. a lot of things become
-                more clear the more you work in diverse environments and that eventually helps you
-                choose the perfect place after graduating.
-              </p>
+              <p>{t('blog.waterlooCoop.exploringP3')}</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              learning how to get a job
+              {t('blog.waterlooCoop.learningTitle')}
             </h2>
 
             <div className="space-y-4">
-              <p>
-                the nature of waterloo's co-op is already very competitive and when you are
-                surrounded by top talent all fighting for the same few jobs it takes a bit of agency
-                and some hard work to get a good job nowadays.
-              </p>
+              <p>{t('blog.waterlooCoop.learningP1')}</p>
 
-              <p>
-                one special part about waterloo's co-op program is the network of alumni that give
-                back internship opportunities to new students through the co-op portal. companies
-                like tesla, snowflake, bloomberg and more all post job postings directly through the
-                site. many fast growing startups will also be seen and chances are either the
-                founders or engineers used to study at waterloo.
-              </p>
+              <p>{t('blog.waterlooCoop.learningP2')}</p>
 
-              <p>
-                recruiting for my very first job back in the fall of 2024 was pretty stressful
-                because although i was able to return back to an old company the feeling of me going
-                back didn't feel good. i ended up applying to every job that i saw externally and
-                through the school's portal. i sent cover letters for every single one and even
-                tried to personalize my resume for each specific job posting. this became very
-                tiring and i eventually stopped doing that. although i landed a few interviews, i
-                wasn't so good at interviewing and my technical skills weren't too strong. i think i
-                ended up with around 14 interviews total by the end of the term but i only had one
-                offer of which i declined. i ended up joining a startup that was acquired by the
-                company i had worked at the summer previously. i didn't get a job i truly wanted,
-                but i learned a lot during the 4 months through job searching, interviewing and
-                learning to stand out.
-              </p>
+              <p>{t('blog.waterlooCoop.learningP3')}</p>
 
               <figure>
                 <img
                   src="/blogs/waterloo-coop/sankey.png"
-                  alt="Recruiting process"
+                  alt={t('blog.waterlooCoop.learningImgAlt')}
                   className="w-full max-h-[500px] my-4"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  this was my 1a term stats for recruiting fall 2024: 570 applications, 14
-                  interviews, 1 offer
+                  {t('blog.waterlooCoop.learningImgCaption')}
                 </figcaption>
               </figure>
 
-              <p>
-                fast forward to just a year later and i've learned to find jobs through other ways,
-                one of them by posting on twitter and building in public. going on twitter in
-                january of 2025 was the best thing i could've done to prepare me for the next
-                recruiting season. during this time i also tried to do more hackathons, build more
-                side projects and show them on twitter and linkedin. most waterloo students
-                eventually adapt to this and begin finding opportunities on their own. you will see
-                that most hackathons are filled with waterloo students as well as other competitions
-                in general. everyone cold emails founders, posts on twitter and reaches out through
-                linkedin. one thing i have noticed probably due to the co-op program is that
-                waterloo students develop or tend to have high agency because that's the only way
-                one can stand out in a crowd of talent.
-              </p>
+              <p>{t('blog.waterlooCoop.learningP4')}</p>
 
-              <p>
-                this is also something i've learned throughout being in the program and after
-                interviewing with many companies now in my third co-op search i've gotten much
-                better at interviewing and my technical skills have improved quite a bit since last
-                year.
-              </p>
+              <p>{t('blog.waterlooCoop.learningP5')}</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              commitment issues
+              {t('blog.waterlooCoop.commitmentTitle')}
             </h2>
 
             <div className="space-y-4">
-              <p>
-                something i have noticed particularly only in waterloo students is that a lot of
-                them including myself have commitment issues and i believe it stems from always
-                looking for a job.
-              </p>
+              <p>{t('blog.waterlooCoop.commitmentP1')}</p>
 
-              <p>
-                in engineering (stream 4) you are forced into recruiting within the first week of
-                university so while everyone else at other universities is partying, side questing
-                and making friends, you have to lock in and find a job. now since each term is only
-                4 months long the recruiting cycle comes back every 4 months and sometimes
-                recruiters will post job postings even up to 10 months in advance so most people are
-                recruiting all year round. even during the current co-op term you are already
-                thinking about the next. this is something i talked to with a friend and he
-                mentioned it as well on how most of us can't stay loyal to a company because of the
-                fact we are constantly thinking about the next thing in our career.
-              </p>
+              <p>{t('blog.waterlooCoop.commitmentP2')}</p>
 
-              <p>
-                on top of that because there are 6 terms and everyone at school constantly reminds
-                us to try new things it's hard to go back and a lot of people including me all agree
-                on the fact that we would never do a co-op at the same company twice due to lack of
-                gaining more experience.
-              </p>
+              <p>{t('blog.waterlooCoop.commitmentP3')}</p>
 
               <figure>
                 <img
                   src="/blogs/waterloo-coop/learning-graph.png"
-                  alt="Learning curve over time"
+                  alt={t('blog.waterlooCoop.commitmentImgAlt')}
                   className="w-full my-4"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  graph to show amount of learning happening over time at a company
+                  {t('blog.waterlooCoop.commitmentImgCaption')}
                 </figcaption>
               </figure>
             </div>
@@ -244,32 +147,16 @@ export default function WaterlooCoopBlog() {
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              salaries and total compensation
+              {t('blog.waterlooCoop.salariesTitle')}
             </h2>
 
             <div className="space-y-4">
-              <p>
-                money is also a concern for a lot of us because that's why everyone is here.
-                everyone heard about how the co-op program earnings basically shave off all your
-                tuition money so university is basically free.
-              </p>
+              <p>{t('blog.waterlooCoop.salariesP1')}</p>
+
+              <p>{t('blog.waterlooCoop.salariesP2')}</p>
 
               <p>
-                total compensation (tc) is usually the base pay + housing stipend + relocation. in
-                canada, you're looking at anywhere from $25 to $50 cad/hour. big banks and local
-                startups usually sit on the lower end, while companies like shopify or amazon
-                (toronto) pay towards the top. the real jump happens when you "cali or bust," a term
-                coined by waterloo students when someone must go to california for a co-op. us
-                internships pay in usd, and the conversion alone makes you feel rich. big tech in sf
-                or nyc usually pays $50 to $90 usd/hour. once you add a $3k–$5k monthly housing
-                stipend, your effective monthly tc can easily hit $10k–$15k usd. it's honestly
-                life-changing money for someone in their twenties.
-              </p>
-
-              <p>
-                i think this is also something that was developed from my parents and the people
-                around me but making a lot of money seemed to matter and as a result i spent a lot
-                of time on{' '}
+                {t('blog.waterlooCoop.salariesP3')}{' '}
                 <a
                   href="https://levels.fyi"
                   target="_blank"
@@ -283,11 +170,11 @@ export default function WaterlooCoopBlog() {
               <figure>
                 <img
                   src="/blogs/waterloo-coop/levels.png"
-                  alt="levels.fyi salary data"
+                  alt={t('blog.waterlooCoop.salariesImgAlt')}
                   className="w-full my-4"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  levels.fyi salary data for software engineer intern positions at ramp in new york
+                  {t('blog.waterlooCoop.salariesImgCaption')}
                 </figcaption>
               </figure>
             </div>
@@ -295,39 +182,22 @@ export default function WaterlooCoopBlog() {
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              status symbols and the prestige ladder
+              {t('blog.waterlooCoop.prestigeTitle')}
             </h2>
 
             <div className="space-y-4">
-              <p>
-                the obsession with prestige at waterloo is inescapable and creates a rigid hierarchy
-                where a student's professional worth is tied to the brand on their linkedin profile.
-                from the first semester, the "cali or bust" mentality dominates the culture. landing
-                a role at google, meta, or a quant firm like jane street grants a student
-                significant social capital, while other placements are often viewed as falling
-                behind. on one side of this divide is the "cushy" big tech path, defined by
-                substantial signing bonuses, gourmet amenities, and a work-life balance that allows
-                for career progression based on corporate brand recognition.
-              </p>
+              <p>{t('blog.waterlooCoop.prestigeP1')}</p>
 
-              <p>
-                alternatively, some students pursue "high agency" within the startup ecosystem,
-                often adopting a 996 schedule working 9am to 9pm six days a week. prioritizing the
-                rapid shipment of impactful features over personal time. this dichotomy creates a
-                toxic environment of constant comparison where students "subtle flex" their total
-                compensation and occasionally gate keep interview materials. ultimately, the culture
-                often prioritizes the perceived aura of a position and its benefits package over the
-                actual work itself.
-              </p>
+              <p>{t('blog.waterlooCoop.prestigeP2')}</p>
 
               <figure>
                 <img
                   src="/blogs/waterloo-coop/mango.png"
-                  alt="Tech company logos"
+                  alt={t('blog.waterlooCoop.prestigeImgAlt')}
                   className="w-full my-4"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  major tech companies that waterloo students aspire to work for (MANGO)
+                  {t('blog.waterlooCoop.prestigeImgCaption')}
                 </figcaption>
               </figure>
             </div>
@@ -335,90 +205,49 @@ export default function WaterlooCoopBlog() {
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              miscellaneous things
+              {t('blog.waterlooCoop.miscTitle')}
             </h2>
 
             <div className="space-y-4">
               <div>
                 <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
-                  unemployment & alternatives
+                  {t('blog.waterlooCoop.miscUnemploymentTitle')}
                 </h3>
-                <p>
-                  not everyone gets a job every term, especially with how the market is right now.
-                  if you don't end up getting one, there's we accelerate, which is basically a
-                  project-based backup for first years to get some credits and skills so the term
-                  isn't a total waste. a lot of people also pour their time into design teams.
-                  honestly, spending a term grinding on waterloo rocketry or formula sae can
-                  sometimes teach you more than a corporate internship would anyway, and it looks
-                  great on a resume.
-                </p>
+                <p>{t('blog.waterlooCoop.miscUnemployment')}</p>
               </div>
 
               <div>
                 <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
-                  evals & ratings
+                  {t('blog.waterlooCoop.miscEvalsTitle')}
                 </h3>
-                <p>
-                  at the end of every term, your boss gives you a rating—anything from satisfactory
-                  to outstanding. it's kind of stressful because these ratings stay on your co-op
-                  record forever. future employers see them when you apply through waterlooworks, so
-                  you're always performing to make sure you don't end up with a "marginal" that
-                  ruins your next search. also because so many waterloo students are tryhard the
-                  average rating is an excellent which is the second highest just under outstanding
-                  due to the fact that the employer must write an entire paragraph explaining why
-                  the intern should get that rating.
-                </p>
+                <p>{t('blog.waterlooCoop.miscEvals')}</p>
               </div>
 
               <div>
                 <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
-                  pd courses
+                  {t('blog.waterlooCoop.miscPDTitle')}
                 </h3>
-                <p>
-                  everyone at waterloo hates pd courses. they're these mandatory online modules you
-                  have to do while you're working full-time. it's usually stuff like "how to write
-                  an email" or "workplace ethics." they feel like a massive chore when you just want
-                  to focus on your job, but you have to pass them to get that co-op designation on
-                  your degree.
-                </p>
+                <p>{t('blog.waterlooCoop.miscPD')}</p>
               </div>
 
               <div>
                 <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
-                  visas and the border
+                  {t('blog.waterlooCoop.miscVisasTitle')}
                 </h3>
-                <p>
-                  if you land a job in the us, you have to deal with the whole j-1 visa mess or if
-                  you're canadian maybe even a TN. it's a lot of paperwork, sevis fees, and waiting
-                  for ds-2019 forms to arrive in the mail. you basically become a part-time
-                  immigration lawyer for a month. then there's the stress of crossing the border and
-                  hoping the officer doesn't have a bad day. it's a lot of "legal border stuff" just
-                  to go work in the states for four months, but the hassle is definitely worth it
-                  for the experience.
-                </p>
+                <p>{t('blog.waterlooCoop.miscVisas')}</p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">conclusion</h2>
+            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+              {t('blog.waterlooCoop.conclusionTitle')}
+            </h2>
 
             <div className="space-y-4">
-              <p>
-                overall, the waterloo co-op program is a trade-off. you get a massive head start on
-                your career, financial independence, and the chance to live in new cities every four
-                months. it forces you to grow up fast and learn how to navigate the professional
-                world before you even graduate.
-              </p>
+              <p>{t('blog.waterlooCoop.conclusionP1')}</p>
 
-              <p>
-                however, the system also creates a lot of pressure. the constant cycle of recruiting
-                and the obsession with prestige can make it feel like you are always behind. it is
-                easy to focus only on the money and the brand names instead of the actual learning.
-                the program is not perfect, but the experience is unique. even with the toxic
-                comparison and the stress of the job search, the technical skills and agency you
-                develop make the process worth it.
-              </p>
+              <p>{t('blog.waterlooCoop.conclusionP2')}</p>
             </div>
           </section>
         </div>

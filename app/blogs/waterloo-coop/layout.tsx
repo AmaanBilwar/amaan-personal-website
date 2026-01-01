@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "my thoughts on waterloo's co-op program",
+    description:
+      'Reflections on studying at the University of Waterloo and the co-op program experience',
     images: ['https://nicholaschen.me/blogs/waterloo-coop/1b-sankey.png'],
   },
 };

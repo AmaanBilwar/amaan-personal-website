@@ -272,7 +272,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item59': '• did some benchmarking with web search apis for the first time',
     'blog.coding.item60': '• made a link route checker script',
     'blog.coding.item61': '• started learning some system design for programming',
-    'blog.coding.item9': '• tried to make an interactive valentine\'s day website',
+    'blog.coding.item9': "• tried to make an interactive valentine's day website",
     'blog.coding.note': 'note: i am updating this everyday',
     'blog.coding.referencesTitle': 'references',
     'blog.ontology.title': 'why ontology for text-to-sql?',

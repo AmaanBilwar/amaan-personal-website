@@ -244,6 +244,38 @@ export default function WaterlooCoopBlog() {
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+              salaries and total compensation
+            </h2>
+
+            <div className="space-y-4">
+              <p>
+                money is also a concern for a lot of us because that's why everyone is here. everyone
+                heard about how the co-op program earnings basically shave off all your tuition money
+                so university is basically free.
+              </p>
+
+              <p>
+                total compensation (tc) is usually the base pay + housing stipend + relocation. in
+                canada, you're looking at anywhere from $25 to $50 cad/hour. big banks and local
+                startups usually sit on the lower end, while companies like shopify or amazon
+                (toronto) pay towards the top. the real jump happens when you "cali or bust," a term
+                coined by waterloo students when someone must go to california for a coop. us
+                internships pay in usd, and the conversion alone makes you feel rich. big tech in sf
+                or nyc usually pays $50 to $90 usd/hour. once you add a $3k–$5k monthly housing
+                stipend, your effective monthly tc can easily hit $10k–$15k usd. it's honestly
+                life-changing money for someone in their twenties.
+              </p>
+
+              <p>
+                i think this is also something that was developed from my parents and the people
+                around me but making a lot of money seemed to matter and as a result i spent a lot of
+                time on levels.fyi
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
               miscellaneous things
             </h2>
 

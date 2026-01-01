@@ -37,7 +37,7 @@ export default function WaterlooCoopBlog() {
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
           my thoughts on waterloo's co-op program
         </h1>
-        <p className="text-stone-500 text-sm mb-6">nicholas chen · {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+        <p className="text-stone-500 text-sm mb-6">{t('blog.waterlooCoop.date')}</p>
 
         {/* Cover image */}
         <img src="/blogs/waterloo-coop/1b-sankey.png" alt="Waterloo Co-op" className="w-full mb-6" />

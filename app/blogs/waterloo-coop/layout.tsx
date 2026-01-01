@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'my thoughts on the waterloo co-op program | Nicholas Chen',
+  title: "my thoughts on waterloo's co-op program | Nicholas Chen",
   description: 'Reflections on studying at the University of Waterloo and the co-op program experience',
   openGraph: {
-    title: 'my thoughts on the waterloo co-op program',
+    title: "my thoughts on waterloo's co-op program",
     description: 'Reflections on studying at the University of Waterloo and the co-op program experience',
     type: 'article',
-    images: ['https://nicholaschen.me/blogs/waterloo-coop/employment.png'],
+    images: ['https://nicholaschen.me/blogs/waterloo-coop/1b-sankey.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'my thoughts on the waterloo co-op program',
-    images: ['https://nicholaschen.me/blogs/waterloo-coop/employment.png'],
+    title: "my thoughts on waterloo's co-op program",
+    images: ['https://nicholaschen.me/blogs/waterloo-coop/1b-sankey.png'],
   },
 };
 

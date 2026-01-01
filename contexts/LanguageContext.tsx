@@ -277,6 +277,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.referencesTitle': 'references',
     'blog.ontology.title': 'why ontology for text-to-sql?',
     'blog.ontology.date': 'nicholas chen · november 21, 2025 · 10 min read',
+    'blog.waterlooCoop.title': "my thoughts on waterloo's co-op program",
 
     // Git blog content
     'blog.git.intro':
@@ -668,6 +669,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.date': 'nicholas chen · 2025年12月26日 · 5分钟阅读',
     'blog.ontology.title': '为什么文本到SQL需要本体？',
     'blog.ontology.date': 'nicholas chen · 2025年11月21日 · 10分钟阅读',
+    'blog.waterlooCoop.title': '我对滑铁卢合作项目的思考',
 
     // Git blog content
     'blog.git.intro':

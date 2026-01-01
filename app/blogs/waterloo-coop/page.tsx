@@ -10,7 +10,7 @@ export default function WaterlooCoopBlog() {
 
   useEffect(() => {
     // Update document title for client-side
-    document.title = 'my thoughts on the waterloo co-op program | Nicholas Chen';
+    document.title = "my thoughts on waterloo's co-op program | Nicholas Chen";
   }, [t, language]);
 
   return (
@@ -35,12 +35,12 @@ export default function WaterlooCoopBlog() {
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-          my thoughts on the waterloo co-op program
+          my thoughts on waterloo's co-op program
         </h1>
         <p className="text-stone-500 text-sm mb-6">nicholas chen · {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
 
         {/* Cover image */}
-        <img src="/blogs/waterloo-coop/employment.png" alt="Waterloo Co-op" className="w-full mb-6" />
+        <img src="/blogs/waterloo-coop/1b-sankey.png" alt="Waterloo Co-op" className="w-full mb-6" />
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}

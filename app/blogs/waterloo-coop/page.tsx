@@ -259,7 +259,7 @@ export default function WaterlooCoopBlog() {
                 canada, you're looking at anywhere from $25 to $50 cad/hour. big banks and local
                 startups usually sit on the lower end, while companies like shopify or amazon
                 (toronto) pay towards the top. the real jump happens when you "cali or bust," a term
-                coined by waterloo students when someone must go to california for a coop. us
+                coined by waterloo students when someone must go to california for a co-op. us
                 internships pay in usd, and the conversion alone makes you feel rich. big tech in sf
                 or nyc usually pays $50 to $90 usd/hour. once you add a $3k–$5k monthly housing
                 stipend, your effective monthly tc can easily hit $10k–$15k usd. it's honestly
@@ -360,7 +360,7 @@ export default function WaterlooCoopBlog() {
                 </h3>
                 <p>
                   at the end of every term, your boss gives you a rating—anything from satisfactory
-                  to outstanding. it's kind of stressful because these ratings stay on your coop
+                  to outstanding. it's kind of stressful because these ratings stay on your co-op
                   record forever. future employers see them when you apply through waterlooworks, so
                   you're always performing to make sure you don't end up with a "marginal" that
                   ruins your next search. also because so many waterloo students are tryhard the
@@ -378,7 +378,7 @@ export default function WaterlooCoopBlog() {
                   everyone at waterloo hates pd courses. they're these mandatory online modules you
                   have to do while you're working full-time. it's usually stuff like "how to write
                   an email" or "workplace ethics." they feel like a massive chore when you just want
-                  to focus on your job, but you have to pass them to get that coop designation on
+                  to focus on your job, but you have to pass them to get that co-op designation on
                   your degree.
                 </p>
               </div>

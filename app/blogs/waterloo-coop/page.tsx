@@ -269,7 +269,15 @@ export default function WaterlooCoopBlog() {
               <p>
                 i think this is also something that was developed from my parents and the people
                 around me but making a lot of money seemed to matter and as a result i spent a lot of
-                time on levels.fyi
+                time on{' '}
+                <a
+                  href="https://levels.fyi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stone-200 hover:text-white underline"
+                >
+                  levels.fyi
+                </a>
               </p>
 
               <figure>

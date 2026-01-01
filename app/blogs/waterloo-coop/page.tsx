@@ -63,9 +63,13 @@ export default function WaterlooCoopBlog() {
                 during your time in waterloo engineering you will experience a ton of things and one of those will be doing 6 co-ops in 5 years every 4 months that get you 2 years of real work experience. this experience is extremely valuable because not a lot of students get to work in real work environments where they are challenged and treated like adults at such a young age. due to the fact that waterloo does a 4 month study term and 4 month co-op term that rotate between the two, it allows you to explore different career paths, live in different cities and also jump between startups and larger companies.
               </p>
 
+              <img src="/blogs/waterloo-coop/nyc1.JPG" alt="New York City" className="w-full max-h-64 object-cover object-bottom my-6" />
+
               <p>
                 many students i've seen have been able to travel to san francisco, new york, seattle and more. many jobs, especially in tech can be found frequently in those places. landing a co-op job there gives you a chance to leave your hometown to work, eat, sleep and explore a new city on your own for 4 months. you will also go through the thrill of finding housing, trying to make new friends and live frugal but it's all a good learning experience at the end of the day. also from personally having done this for my most recent co-op term, i had a lot of fun, learned a lot and it was definitely a term i won't ever forget.
               </p>
+
+              <img src="/blogs/waterloo-coop/room.JPG" alt="Living space" className="w-full max-h-64 object-cover my-6" />
 
               <p>
                 due to the fact that co-op is every 4 months its quite often that you see students jump company from company and this is where you learn the most about what you enjoy doing and the type of companies you truly want to work for. a lot of things become more clear the more you work in diverse environments and that eventually helps you choose the perfect place after graduating.

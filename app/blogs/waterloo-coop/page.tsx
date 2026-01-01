@@ -401,25 +401,23 @@ export default function WaterlooCoopBlog() {
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              conclusion
-            </h2>
+            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">conclusion</h2>
 
             <div className="space-y-4">
               <p>
                 overall, the waterloo co-op program is a trade-off. you get a massive head start on
                 your career, financial independence, and the chance to live in new cities every four
-                months. it forces you to grow up fast and learn how to navigate the professional world
-                before you even graduate.
+                months. it forces you to grow up fast and learn how to navigate the professional
+                world before you even graduate.
               </p>
 
               <p>
                 however, the system also creates a lot of pressure. the constant cycle of recruiting
-                and the obsession with prestige can make it feel like you are always behind. it is easy
-                to focus only on the money and the brand names instead of the actual learning. the
-                program is not perfect, but the experience is unique. even with the toxic comparison
-                and the stress of the job search, the technical skills and agency you develop make the
-                process worth it.
+                and the obsession with prestige can make it feel like you are always behind. it is
+                easy to focus only on the money and the brand names instead of the actual learning.
+                the program is not perfect, but the experience is unique. even with the toxic
+                comparison and the stress of the job search, the technical skills and agency you
+                develop make the process worth it.
               </p>
             </div>
           </section>

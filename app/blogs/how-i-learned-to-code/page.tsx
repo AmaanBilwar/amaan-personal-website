@@ -710,7 +710,6 @@ export default function SoftwareEngineeringLearningBlog() {
                   t('blog.coding.item61')
                 )}
               </li>
-              
             </ul>
             <p className="mt-6 text-stone-400 italic text-sm">{t('blog.coding.note')}</p>
           </section>

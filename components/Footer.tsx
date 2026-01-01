@@ -10,7 +10,9 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className={`${className} flex flex-wrap items-center justify-between gap-3 text-xs text-stone-400 max-w-lg w-full`}>
+    <div
+      className={`${className} flex flex-wrap items-center justify-between gap-3 text-xs text-stone-400 max-w-lg w-full`}
+    >
       {/* Social media icons */}
       <div className="flex items-center gap-3">
         <a

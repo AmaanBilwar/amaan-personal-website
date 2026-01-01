@@ -272,11 +272,13 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item59': '• did some benchmarking with web search apis for the first time',
     'blog.coding.item60': '• made a link route checker script',
     'blog.coding.item61': '• started learning some system design for programming',
-    'blog.coding.item9': '• tried to make an interactive valentine\'s day website',
+    'blog.coding.item9': "• tried to make an interactive valentine's day website",
     'blog.coding.note': 'note: i am updating this everyday',
     'blog.coding.referencesTitle': 'references',
     'blog.ontology.title': 'why ontology for text-to-sql?',
     'blog.ontology.date': 'nicholas chen · november 21, 2025 · 10 min read',
+    'blog.waterlooCoop.title': "my thoughts on waterloo's co-op program",
+    'blog.waterlooCoop.date': 'nicholas chen · January 1, 2026 · 2 min read',
 
     // Git blog content
     'blog.git.intro':
@@ -668,6 +670,8 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.date': 'nicholas chen · 2025年12月26日 · 5分钟阅读',
     'blog.ontology.title': '为什么文本到SQL需要本体？',
     'blog.ontology.date': 'nicholas chen · 2025年11月21日 · 10分钟阅读',
+    'blog.waterlooCoop.title': '我对滑铁卢合作项目的思考',
+    'blog.waterlooCoop.date': 'nicholas chen · 2026年1月1日 · 2分钟阅读',
 
     // Git blog content
     'blog.git.intro':

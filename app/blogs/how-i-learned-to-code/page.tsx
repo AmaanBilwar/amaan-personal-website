@@ -1,11 +1,48 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Footer from '@/components/Footer';
 
 export default function SoftwareEngineeringLearningBlog() {
   const { language, setLanguage, t } = useLanguage();
+
+  useEffect(() => {
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://nicholaschen.com';
+    const pageUrl = `${baseUrl}/blogs/how-i-learned-to-code`;
+    const imageUrl = `${baseUrl}/blogs/code/iterm2.png`;
+    const title = `${t('blog.coding.title')} | Nicholas Chen`;
+    const description = "Small learnings that taught me to code";
+
+    // Update document title
+    document.title = title;
+
+    // Function to set or update meta tag
+    const setMetaTag = (property: string, content: string, isProperty = false) => {
+      const attribute = isProperty ? 'property' : 'name';
+      let element = document.querySelector(`meta[${attribute}="${property}"]`) as HTMLMetaElement;
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, property);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
+
+    // Set meta tags
+    setMetaTag('description', description);
+    setMetaTag('og:title', t('blog.coding.title'), true);
+    setMetaTag('og:description', description, true);
+    setMetaTag('og:image', imageUrl, true);
+    setMetaTag('og:url', pageUrl, true);
+    setMetaTag('og:type', 'article', true);
+    setMetaTag('twitter:card', 'summary_large_image');
+    setMetaTag('twitter:site', '@nicholaschen__');
+    setMetaTag('twitter:title', t('blog.coding.title'));
+    setMetaTag('twitter:description', description);
+    setMetaTag('twitter:image', imageUrl);
+  }, [t, language]);
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">

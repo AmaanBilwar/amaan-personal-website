@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import type React from 'react';
 import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -7,7 +6,7 @@ import './globals.css';
 
 import Script from 'next/script';
 
-import { LanguageProvider } from '@/contexts/LanguageContext';
+import ClientProviders from '@/components/ClientProviders';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -21,29 +20,28 @@ const minecraft = localFont({
   variable: '--font-minecraft',
 });
 
+export const metadata: Metadata = {
+  metadataBase: new URL('https://nicholaschen.me'),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', type: 'image/x-icon' },
+    ],
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <LanguageProvider>
-      <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable}`}>
-        <head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-          />
-          <link rel="icon" href="/favicon.ico" sizes="any" />
-          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-            link[rel="icon"] {
-              border-radius: 4px;
-            }
-          `,
-            }}
-          />
-        </head>
+    <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable}`}>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+      </head>
 
-        <body className={`bg-[#1a1a1a] min-h-screen antialiased`}>
+      <body className={`bg-[#1a1a1a] min-h-screen antialiased`}>
+        <ClientProviders>
           {/* Google Analytics Script */}
           <Script
             strategy="afterInteractive"
@@ -64,8 +62,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}
           />
           {children}
-        </body>
-      </html>
-    </LanguageProvider>
+        </ClientProviders>
+      </body>
+    </html>
   );
 }

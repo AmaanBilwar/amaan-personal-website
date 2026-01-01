@@ -177,21 +177,23 @@ export default function WaterlooCoopBlog() {
 
               <p>
                 fast forward to just a year later and i've learned to find jobs through other ways,
-                one of them by posting on twitter and building in public. going on twitter in january
-                of 2025 was the best thing i could've done to prepare me for the next recruiting
-                season. during this time i also tried to do more hackathons, build more side projects
-                and show them on twitter and linkedin. most waterloo students eventually adapt to this
-                and begin finding opportunities on their own. you will see that most hackathons are
-                filled with waterloo students as well as other competitions in general. everyone cold
-                emails founders, posts on twitter and reaches out through linkedin. one thing i have
-                noticed probably due to the co-op program is that waterloo students develop or tend to
-                have high agency because that's the only way one can stand out in a crowd of talent.
+                one of them by posting on twitter and building in public. going on twitter in
+                january of 2025 was the best thing i could've done to prepare me for the next
+                recruiting season. during this time i also tried to do more hackathons, build more
+                side projects and show them on twitter and linkedin. most waterloo students
+                eventually adapt to this and begin finding opportunities on their own. you will see
+                that most hackathons are filled with waterloo students as well as other competitions
+                in general. everyone cold emails founders, posts on twitter and reaches out through
+                linkedin. one thing i have noticed probably due to the co-op program is that
+                waterloo students develop or tend to have high agency because that's the only way
+                one can stand out in a crowd of talent.
               </p>
 
               <p>
                 this is also something i've learned throughout being in the program and after
-                interviewing with many companies now in my third co-op search i've gotten much better
-                at interviewing and my technical skills have improved quite a bit since last year.
+                interviewing with many companies now in my third co-op search i've gotten much
+                better at interviewing and my technical skills have improved quite a bit since last
+                year.
               </p>
             </div>
           </section>
@@ -203,27 +205,27 @@ export default function WaterlooCoopBlog() {
 
             <div className="space-y-4">
               <p>
-                something i have noticed particularly only in waterloo students is that a lot of them
-                including myself have commitment issues and i believe it stems from always looking for a
-                job.
+                something i have noticed particularly only in waterloo students is that a lot of
+                them including myself have commitment issues and i believe it stems from always
+                looking for a job.
               </p>
 
               <p>
                 in engineering (stream 4) you are forced into recruiting within the first week of
-                university so while everyone else at other universities is partying, side questing and
-                making friends, you have to lock in and find a job. now since each term is only 4
-                months long the recruiting cycle comes back every 4 months and sometimes recruiters
-                will post job postings even up to 10 months in advance so most people are recruiting
-                all year round. even during the current co-op term you are already thinking about the
-                next. this is something i talked to with a friend and he mentioned it as well on how
-                most of us can't stay loyal to a company because of the fact we are constantly
-                thinking about the next thing in our career.
+                university so while everyone else at other universities is partying, side questing
+                and making friends, you have to lock in and find a job. now since each term is only
+                4 months long the recruiting cycle comes back every 4 months and sometimes
+                recruiters will post job postings even up to 10 months in advance so most people are
+                recruiting all year round. even during the current co-op term you are already
+                thinking about the next. this is something i talked to with a friend and he
+                mentioned it as well on how most of us can't stay loyal to a company because of the
+                fact we are constantly thinking about the next thing in our career.
               </p>
 
               <p>
-                on top of that because there are 6 terms and everyone at school constantly reminds us
-                to try new things it's hard to go back and a lot of people including me all agree on
-                the fact that we would never do a co-op at the same company twice due to lack of
+                on top of that because there are 6 terms and everyone at school constantly reminds
+                us to try new things it's hard to go back and a lot of people including me all agree
+                on the fact that we would never do a co-op at the same company twice due to lack of
                 gaining more experience.
               </p>
 
@@ -251,12 +253,13 @@ export default function WaterlooCoopBlog() {
                   unemployment & alternatives
                 </h3>
                 <p>
-                  not everyone gets a job every term, especially with how the market is right now. if
-                  you don't end up getting one, there's we accelerate, which is basically a
-                  project-based backup for first years to get some credits and skills so the term isn't
-                  a total waste. a lot of people also pour their time into design teams. honestly,
-                  spending a term grinding on waterloo rocketry or formula sae can sometimes teach you
-                  more than a corporate internship would anyway, and it looks great on a resume.
+                  not everyone gets a job every term, especially with how the market is right now.
+                  if you don't end up getting one, there's we accelerate, which is basically a
+                  project-based backup for first years to get some credits and skills so the term
+                  isn't a total waste. a lot of people also pour their time into design teams.
+                  honestly, spending a term grinding on waterloo rocketry or formula sae can
+                  sometimes teach you more than a corporate internship would anyway, and it looks
+                  great on a resume.
                 </p>
               </div>
 
@@ -265,14 +268,14 @@ export default function WaterlooCoopBlog() {
                   evals & ratings
                 </h3>
                 <p>
-                  at the end of every term, your boss gives you a rating—anything from satisfactory to
-                  outstanding. it's kind of stressful because these ratings stay on your coop record
-                  forever. future employers see them when you apply through waterlooworks, so you're
-                  always performing to make sure you don't end up with a "marginal" that ruins your
-                  next search. also because so many waterloo students are tryhard the average rating is
-                  an excellent which is the second highest just under outstanding due to the fact that
-                  the employer must write an entire paragraph explaining why the intern should get that
-                  rating.
+                  at the end of every term, your boss gives you a rating—anything from satisfactory
+                  to outstanding. it's kind of stressful because these ratings stay on your coop
+                  record forever. future employers see them when you apply through waterlooworks, so
+                  you're always performing to make sure you don't end up with a "marginal" that
+                  ruins your next search. also because so many waterloo students are tryhard the
+                  average rating is an excellent which is the second highest just under outstanding
+                  due to the fact that the employer must write an entire paragraph explaining why
+                  the intern should get that rating.
                 </p>
               </div>
 
@@ -281,10 +284,11 @@ export default function WaterlooCoopBlog() {
                   pd courses
                 </h3>
                 <p>
-                  everyone at waterloo hates pd courses. they're these mandatory online modules you have
-                  to do while you're working full-time. it's usually stuff like "how to write an email"
-                  or "workplace ethics." they feel like a massive chore when you just want to focus on
-                  your job, but you have to pass them to get that coop designation on your degree.
+                  everyone at waterloo hates pd courses. they're these mandatory online modules you
+                  have to do while you're working full-time. it's usually stuff like "how to write
+                  an email" or "workplace ethics." they feel like a massive chore when you just want
+                  to focus on your job, but you have to pass them to get that coop designation on
+                  your degree.
                 </p>
               </div>
 
@@ -294,11 +298,12 @@ export default function WaterlooCoopBlog() {
                 </h3>
                 <p>
                   if you land a job in the us, you have to deal with the whole j-1 visa mess or if
-                  you're canadian maybe even a TN. it's a lot of paperwork, sevis fees, and waiting for
-                  ds-2019 forms to arrive in the mail. you basically become a part-time immigration
-                  lawyer for a month. then there's the stress of crossing the border and hoping the
-                  officer doesn't have a bad day. it's a lot of "legal border stuff" just to go work in
-                  the states for four months, but the hassle is definitely worth it for the experience.
+                  you're canadian maybe even a TN. it's a lot of paperwork, sevis fees, and waiting
+                  for ds-2019 forms to arrive in the mail. you basically become a part-time
+                  immigration lawyer for a month. then there's the stress of crossing the border and
+                  hoping the officer doesn't have a bad day. it's a lot of "legal border stuff" just
+                  to go work in the states for four months, but the hassle is definitely worth it
+                  for the experience.
                 </p>
               </div>
             </div>

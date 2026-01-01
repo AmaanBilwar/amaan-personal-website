@@ -45,13 +45,33 @@ export default function WaterlooCoopBlog() {
 
         {/* Content */}
         <div className="space-y-6 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
-          <p>
-            since studying at the university of waterloo, the most common thing i hear being talked about on campus is the school's co-op program.
+          <p className="text-stone-400 italic">
+            note: this is my experience from the engineering faculty co-op so content in this blog may differ from the other faculties including math, science, etc..
           </p>
 
           <p>
-            back in high school when i was still deciding between universities, the only school i really wanted to go to was waterloo for the sole reason that they had their own co-op program. i heard many great things about the opportunities it gives, the different countries you could work in and how so many graduating students already had jobs lined up because of the 2+ years of work experience that gave them that extra advantage.
+            since studying at the university of waterloo, the most common thing i hear being talked about on campus is the school's co-op program. back in high school when i was still deciding between universities, the only school i really wanted to go to was waterloo for the sole reason that they had their own co-op program. i had heard many great things about the opportunities offered, the different countries you could work in and how all the students in every graduating class would always have jobs lined up because of the 2+ years of work experience that gave them that extra advantage. now after being the co-op program now for a bit longer than a year i want to give my thoughts on it and how it has changed me and helped me at the same time.
           </p>
+
+          <section>
+            <h2 className="text-base md:text-lg font-medium text-white mb-4 mt-8">
+              exploring cities, careers, and chaotic living
+            </h2>
+
+            <div className="space-y-4">
+              <p>
+                during your time in waterloo engineering you will experience a ton of things and one of those will be doing 6 co-ops in 5 years every 4 months that get you 2 years of real work experience. this experience is extremely valuable because not a lot of students get to work in real work environments where they are challenged and treated like adults at such a young age. due to the fact that waterloo does a 4 month study term and 4 month co-op term that rotate between the two, it allows you to explore different career paths, live in different cities and also jump between startups and larger companies.
+              </p>
+
+              <p>
+                many students i've seen have been able to travel to san francisco, new york, seattle and more. many jobs, especially in tech can be found frequently in those places. landing a co-op job there gives you a chance to leave your hometown to work, eat, sleep and explore a new city on your own for 4 months. you will also go through the thrill of finding housing, trying to make new friends and live frugal but it's all a good learning experience at the end of the day. also from personally having done this for my most recent co-op term, i had a lot of fun, learned a lot and it was definitely a term i won't ever forget.
+              </p>
+
+              <p>
+                due to the fact that co-op is every 4 months its quite often that you see students jump company from company and this is where you learn the most about what you enjoy doing and the type of companies you truly want to work for. a lot of things become more clear the more you work in diverse environments and that eventually helps you choose the perfect place after graduating.
+              </p>
+            </div>
+          </section>
         </div>
 
         <Footer className="mt-10" />

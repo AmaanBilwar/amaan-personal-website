@@ -171,7 +171,7 @@ export default function WaterlooCoopBlog() {
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
                   this was my 1a term stats for recruiting fall 2024: 570 applications, 14
-                  interviews, 1 offer.
+                  interviews, 1 offer
                 </figcaption>
               </figure>
             </div>

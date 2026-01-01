@@ -242,7 +242,7 @@ export default function WaterlooCoopBlog() {
 
           <section>
             <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
-              Miscellaneous Things
+              miscellaneous things
             </h2>
 
             <div className="space-y-4">

@@ -195,6 +195,50 @@ export default function WaterlooCoopBlog() {
               </p>
             </div>
           </section>
+
+          <section>
+            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+              commitment issues
+            </h2>
+
+            <div className="space-y-4">
+              <p>
+                something i have noticed particularly only in waterloo students is that a lot of them
+                including myself have commitment issues and i believe it stems from always looking for a
+                job.
+              </p>
+
+              <p>
+                in engineering (stream 4) you are forced into recruiting within the first week of
+                university so while everyone else at other universities is partying, side questing and
+                making friends, you have to lock in and find a job. now since each term is only 4
+                months long the recruiting cycle comes back every 4 months and sometimes recruiters
+                will post job postings even up to 10 months in advance so most people are recruiting
+                all year round. even during the current co-op term you are already thinking about the
+                next. this is something i talked to with a friend and he mentioned it as well on how
+                most of us can't stay loyal to a company because of the fact we are constantly
+                thinking about the next thing in our career.
+              </p>
+
+              <p>
+                on top of that because there are 6 terms and everyone at school constantly reminds us
+                to try new things it's hard to go back and a lot of people including me all agree on
+                the fact that we would never do a co-op at the same company twice due to lack of
+                gaining more experience.
+              </p>
+
+              <figure>
+                <img
+                  src="/blogs/waterloo-coop/learning-graph.png"
+                  alt="Learning curve over time"
+                  className="w-full my-4"
+                />
+                <figcaption className="text-stone-500 text-xs mt-2 italic">
+                  graph to show amount of learning happening over time at a company
+                </figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
 
         <Footer className="mt-10" />

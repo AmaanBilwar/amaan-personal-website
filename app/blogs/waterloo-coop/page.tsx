@@ -239,6 +239,70 @@ export default function WaterlooCoopBlog() {
               </figure>
             </div>
           </section>
+
+          <section>
+            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+              Miscellaneous Things
+            </h2>
+
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
+                  unemployment & alternatives
+                </h3>
+                <p>
+                  not everyone gets a job every term, especially with how the market is right now. if
+                  you don't end up getting one, there's we accelerate, which is basically a
+                  project-based backup for first years to get some credits and skills so the term isn't
+                  a total waste. a lot of people also pour their time into design teams. honestly,
+                  spending a term grinding on waterloo rocketry or formula sae can sometimes teach you
+                  more than a corporate internship would anyway, and it looks great on a resume.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
+                  evals & ratings
+                </h3>
+                <p>
+                  at the end of every term, your boss gives you a rating—anything from satisfactory to
+                  outstanding. it's kind of stressful because these ratings stay on your coop record
+                  forever. future employers see them when you apply through waterlooworks, so you're
+                  always performing to make sure you don't end up with a "marginal" that ruins your
+                  next search. also because so many waterloo students are tryhard the average rating is
+                  an excellent which is the second highest just under outstanding due to the fact that
+                  the employer must write an entire paragraph explaining why the intern should get that
+                  rating.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
+                  pd courses
+                </h3>
+                <p>
+                  everyone at waterloo hates pd courses. they're these mandatory online modules you have
+                  to do while you're working full-time. it's usually stuff like "how to write an email"
+                  or "workplace ethics." they feel like a massive chore when you just want to focus on
+                  your job, but you have to pass them to get that coop designation on your degree.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-2 mt-4">
+                  visas and the border
+                </h3>
+                <p>
+                  if you land a job in the us, you have to deal with the whole j-1 visa mess or if
+                  you're canadian maybe even a TN. it's a lot of paperwork, sevis fees, and waiting for
+                  ds-2019 forms to arrive in the mail. you basically become a part-time immigration
+                  lawyer for a month. then there's the stress of crossing the border and hoping the
+                  officer doesn't have a bad day. it's a lot of "legal border stuff" just to go work in
+                  the states for four months, but the hassle is definitely worth it for the experience.
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
 
         <Footer className="mt-10" />

@@ -271,6 +271,17 @@ export default function WaterlooCoopBlog() {
                 around me but making a lot of money seemed to matter and as a result i spent a lot of
                 time on levels.fyi
               </p>
+
+              <figure>
+                <img
+                  src="/blogs/waterloo-coop/levels.png"
+                  alt="levels.fyi salary data"
+                  className="w-full my-4"
+                />
+                <figcaption className="text-stone-500 text-xs mt-2 italic">
+                  levels.fyi salary data for software engineer intern positions at ramp in new york
+                </figcaption>
+              </figure>
             </div>
           </section>
 

@@ -329,16 +329,16 @@ const translations: Record<Language, Record<string, string>> = {
       'levels.fyi salary data for software engineer intern positions at ramp in new york',
     'blog.waterlooCoop.prestigeTitle': 'status symbols and the prestige ladder',
     'blog.waterlooCoop.prestigeP1':
-      "the obsession with prestige at waterloo is inescapable and creates a rigid hierarchy where a student's professional worth is tied to the brand on their linkedin profile. from the first semester, the \"cali or bust\" mentality dominates the culture. landing a role at google, meta, or a quant firm like jane street grants a student significant social capital, while other placements are often viewed as falling behind. on one side of this divide is the \"cushy\" big tech path, defined by substantial signing bonuses, gourmet amenities, and a work-life balance that allows for career progression based on corporate brand recognition.",
+      "the obsession with prestige at waterloo is everywhere and creates a strict ranking where a student's value is tied to the company name on their linkedin profile. from the first semester, the \"cali or bust\" mentality takes over the culture. landing a role at google, meta, or a quant firm like jane street makes a student highly respected, while other jobs are often seen as not as good. on one side of this split is the \"comfortable\" big tech path, defined by big signing bonuses, nice perks, and a work-life balance that lets you move up in your career because of the company name.",
     'blog.waterlooCoop.prestigeP2':
-      'alternatively, some students pursue "high agency" within the startup ecosystem, often adopting a 996 schedule working 9am to 9pm six days a week. prioritizing the rapid shipment of impactful features over personal time. this dichotomy creates a toxic environment of constant comparison where students "subtle flex" their total compensation and occasionally gate keep interview materials. ultimately, the culture often prioritizes the perceived aura of a position and its benefits package over the actual work itself.',
+      'on the other hand, some students go for "more control" within the startup world, often working a 996 schedule from 9am to 9pm six days a week. they focus on quickly building important features over personal time. this split creates a bad environment where everyone compares themselves and students "quietly show off" their total compensation and sometimes keep interview materials secret. in the end, the culture often cares more about how a job looks and its benefits than the actual work itself.',
     'blog.waterlooCoop.prestigeImgAlt': 'Tech company logos',
     'blog.waterlooCoop.prestigeImgCaption':
       'major tech companies that waterloo students aspire to work for (MANGO)',
     'blog.waterlooCoop.miscTitle': 'miscellaneous things',
     'blog.waterlooCoop.miscUnemploymentTitle': 'unemployment & alternatives',
     'blog.waterlooCoop.miscUnemployment':
-      "not everyone gets a job every term, especially with how the market is right now. if you don't end up getting one, there's we accelerate, which is basically a project-based backup for first years to get some credits and skills so the term isn't a total waste. a lot of people also pour their time into design teams. honestly, spending a term grinding on waterloo rocketry or formula sae can sometimes teach you more than a corporate internship would anyway, and it looks great on a resume.",
+      "not everyone gets a job every term, especially with how the market is right now. if you don't end up getting one, there's we accelerate, which is basically a project-based backup for first years to get some credits and skills so the term isn't a total waste. a lot of people also pour their time into design teams. honestly, spending a term working hard on waterloo rocketry or formula sae can sometimes teach you more than a corporate internship would anyway, and it looks great on a resume.",
     'blog.waterlooCoop.miscEvalsTitle': 'evals & ratings',
     'blog.waterlooCoop.miscEvals':
       "at the end of every term, your boss gives you a rating—anything from satisfactory to outstanding. it's kind of stressful because these ratings stay on your co-op record forever. future employers see them when you apply through waterlooworks, so you're always performing to make sure you don't end up with a \"marginal\" that ruins your next search. also because so many waterloo students are tryhard the average rating is an excellent which is the second highest just under outstanding due to the fact that the employer must write an entire paragraph explaining why the intern should get that rating.",
@@ -350,9 +350,9 @@ const translations: Record<Language, Record<string, string>> = {
       "if you land a job in the us, you have to deal with the whole j-1 visa mess or if you're canadian maybe even a TN. it's a lot of paperwork, sevis fees, and waiting for ds-2019 forms to arrive in the mail. you basically become a part-time immigration lawyer for a month. then there's the stress of crossing the border and hoping the officer doesn't have a bad day. it's a lot of \"legal border stuff\" just to go work in the states for four months, but the hassle is definitely worth it for the experience.",
     'blog.waterlooCoop.conclusionTitle': 'conclusion',
     'blog.waterlooCoop.conclusionP1':
-      'overall, the waterloo co-op program is a trade-off. you get a massive head start on your career, financial independence, and the chance to live in new cities every four months. it forces you to grow up fast and learn how to navigate the professional world before you even graduate.',
+      'overall, the waterloo co-op program is a trade-off. you get a massive head start on your career, financial independence, and the chance to live in new cities every four months. it forces you to grow up fast and learn how to work in the professional world before you even graduate.',
     'blog.waterlooCoop.conclusionP2':
-      'however, the system also creates a lot of pressure. the constant cycle of recruiting and the obsession with prestige can make it feel like you are always behind. it is easy to focus only on the money and the brand names instead of the actual learning. the program is not perfect, but the experience is unique. even with the toxic comparison and the stress of the job search, the technical skills and agency you develop make the process worth it.',
+      'however, the system also creates a lot of pressure. the constant cycle of recruiting and the obsession with prestige can make it feel like you are always behind. it is easy to focus only on the money and the brand names instead of the actual learning. the program is not perfect, but the experience is unique. even with the constant comparison and the stress of the job search, the technical skills and ability to take action you develop make the process worth it.',
 
     // Git blog content
     'blog.git.intro':
@@ -794,15 +794,15 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.waterlooCoop.salariesImgCaption': 'levels.fyi纽约ramp软件工程师实习生职位薪资数据',
     'blog.waterlooCoop.prestigeTitle': '地位象征和声望阶梯',
     'blog.waterlooCoop.prestigeP1':
-      '在滑铁卢，对声望的痴迷是不可避免的，并创造了一个僵化的等级制度，学生的职业价值与他们领英个人资料上的品牌联系在一起。从第一学期开始，"加州或破产"的心态主导了文化。在谷歌、Meta或像Jane Street这样的量化公司获得职位为学生提供了重要的社会资本，而其他职位通常被视为落后。这种分歧的一边是"舒适"的大科技道路，定义为大量的签约奖金、美食设施和允许基于企业品牌认可的职业发展的工作与生活平衡。',
+      '在滑铁卢，对声望的痴迷无处不在，并创造了一个严格的排名，学生的价值与他们领英个人资料上的公司名称联系在一起。从第一学期开始，"加州或破产"的心态就主导了文化。在谷歌、Meta或像Jane Street这样的量化公司获得职位让学生受到高度尊重，而其他工作通常被视为不够好。这种分裂的一边是"舒适"的大科技道路，定义为大额签约奖金、不错的福利，以及因为公司名称而让你在职业生涯中晋升的工作与生活平衡。',
     'blog.waterlooCoop.prestigeP2':
-      '或者，一些学生在初创生态系统中追求"高主动性"，通常采用996时间表，从早上9点到晚上9点，每周工作6天。优先考虑快速交付有影响力的功能而不是个人时间。这种二分法创造了一个不断比较的有毒环境，学生"微妙地炫耀"他们的总薪酬，偶尔会保留面试材料。最终，文化往往优先考虑职位的感知光环及其福利包，而不是实际工作本身。',
+      '另一方面，一些学生在初创世界中追求"更多控制权"，通常从早上9点到晚上9点，每周工作6天的996时间表。他们专注于快速构建重要功能，而不是个人时间。这种分裂创造了一个糟糕的环境，每个人都相互比较，学生"悄悄地炫耀"他们的总薪酬，有时会保守面试材料的秘密。最终，文化往往更关心工作看起来如何及其福利，而不是实际工作本身。',
     'blog.waterlooCoop.prestigeImgAlt': '科技公司标志',
     'blog.waterlooCoop.prestigeImgCaption': '滑铁卢学生渴望工作的主要科技公司（MANGO）',
     'blog.waterlooCoop.miscTitle': '杂项',
     'blog.waterlooCoop.miscUnemploymentTitle': '失业和替代方案',
     'blog.waterlooCoop.miscUnemployment':
-      '不是每个人每个学期都能找到工作，特别是考虑到现在的市场情况。如果你最终没有找到工作，有WE Accelerate，这基本上是为一年级学生提供的基于项目的备份，以获得一些学分和技能，这样学期就不会完全浪费。很多人也把时间投入到设计团队中。老实说，花一个学期在滑铁卢火箭或Formula SAE上磨练有时可以教给你比企业实习更多的东西，而且它在简历上看起来很棒。',
+      '不是每个人每个学期都能找到工作，特别是考虑到现在的市场情况。如果你最终没有找到工作，有WE Accelerate，这基本上是为一年级学生提供的基于项目的备份，以获得一些学分和技能，这样学期就不会完全浪费。很多人也把时间投入到设计团队中。老实说，花一个学期在滑铁卢火箭或Formula SAE上努力工作有时可以教给你比企业实习更多的东西，而且它在简历上看起来很棒。',
     'blog.waterlooCoop.miscEvalsTitle': '评估和评级',
     'blog.waterlooCoop.miscEvals':
       '在每个学期结束时，你的老板会给你一个评级——从满意到优秀。这有点压力，因为这些评级会永远留在你的合作记录上。未来的雇主在通过WaterlooWorks申请时会看到它们，所以你总是表现良好，以确保你不会以"边缘"结束，这会毁掉你的下一次搜索。也因为这么多滑铁卢学生都很努力，平均评级是优秀，这是仅次于优秀的第二高，因为雇主必须写一整段来解释为什么实习生应该获得该评级。',
@@ -814,9 +814,9 @@ const translations: Record<Language, Record<string, string>> = {
       '如果你在美国找到工作，你必须处理整个J-1签证混乱，或者如果你是加拿大人，甚至可能是TN。这需要大量的文书工作、SEVIS费用，以及等待DS-2019表格通过邮件到达。你基本上会成为一个月的兼职移民律师。然后还有过境的压力，希望官员不会心情不好。为了去美国工作四个月，这需要很多"法律边境事务"，但为了这种经历，麻烦绝对是值得的。',
     'blog.waterlooCoop.conclusionTitle': '结论',
     'blog.waterlooCoop.conclusionP1':
-      '总的来说，滑铁卢合作项目是一个权衡。你在职业生涯中获得巨大的先机、财务独立，以及每四个月在新城市生活的机会。它迫使你快速成长，在你甚至毕业之前就学会如何驾驭职业世界。',
+      '总的来说，滑铁卢合作项目是一个权衡。你在职业生涯中获得巨大的先机、财务独立，以及每四个月在新城市生活的机会。它迫使你快速成长，在你甚至毕业之前就学会如何在职业世界中工作。',
     'blog.waterlooCoop.conclusionP2':
-      '然而，该系统也产生了很大的压力。不断的招聘周期和对声望的痴迷会让你感觉总是落后。很容易只关注金钱和品牌名称，而不是实际的学习。这个项目并不完美，但经历是独特的。即使有有毒的比较和求职的压力，你发展的技术技能和主动性使这个过程值得。',
+      '然而，该系统也产生了很大的压力。不断的招聘周期和对声望的痴迷会让你感觉总是落后。很容易只关注金钱和品牌名称，而不是实际的学习。这个项目并不完美，但经历是独特的。即使有不断的比较和求职的压力，你发展的技术技能和采取行动的能力使这个过程值得。',
 
     // Git blog content
     'blog.git.intro':

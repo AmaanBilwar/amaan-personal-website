@@ -42,7 +42,7 @@ export default function WaterlooCoopBlog() {
         {/* Cover image */}
         <figure>
           <img
-            src="/blogs/waterloo-coop/1b-sankey.png"
+            src="/blogs/waterloo-coop/waterloostats.png"
             alt="Waterloo Co-op"
             className="w-full mb-6"
           />

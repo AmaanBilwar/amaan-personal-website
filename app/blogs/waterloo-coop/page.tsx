@@ -249,9 +249,9 @@ export default function WaterlooCoopBlog() {
 
             <div className="space-y-4">
               <p>
-                money is also a concern for a lot of us because that's why everyone is here. everyone
-                heard about how the co-op program earnings basically shave off all your tuition money
-                so university is basically free.
+                money is also a concern for a lot of us because that's why everyone is here.
+                everyone heard about how the co-op program earnings basically shave off all your
+                tuition money so university is basically free.
               </p>
 
               <p>
@@ -268,8 +268,8 @@ export default function WaterlooCoopBlog() {
 
               <p>
                 i think this is also something that was developed from my parents and the people
-                around me but making a lot of money seemed to matter and as a result i spent a lot of
-                time on{' '}
+                around me but making a lot of money seemed to matter and as a result i spent a lot
+                of time on{' '}
                 <a
                   href="https://levels.fyi"
                   target="_blank"
@@ -288,6 +288,46 @@ export default function WaterlooCoopBlog() {
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
                   levels.fyi salary data for software engineer intern positions at ramp in new york
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+              status symbols and the prestige ladder
+            </h2>
+
+            <div className="space-y-4">
+              <p>
+                the obsession with prestige at waterloo is inescapable and creates a rigid hierarchy
+                where a student's professional worth is tied to the brand on their linkedin profile.
+                from the first semester, the "cali or bust" mentality dominates the culture. landing
+                a role at google, meta, or a quant firm like jane street grants a student
+                significant social capital, while other placements are often viewed as falling
+                behind. on one side of this divide is the "cushy" big tech path, defined by
+                substantial signing bonuses, gourmet amenities, and a work-life balance that allows
+                for career progression based on corporate brand recognition.
+              </p>
+
+              <p>
+                alternatively, some students pursue "high agency" within the startup ecosystem,
+                often adopting a 996 schedule working 9am to 9pm six days a week. prioritizing the
+                rapid shipment of impactful features over personal time. this dichotomy creates a
+                toxic environment of constant comparison where students "subtle flex" their total
+                compensation and occasionally gate keep interview materials. ultimately, the culture
+                often prioritizes the perceived aura of a position and its benefits package over the
+                actual work itself.
+              </p>
+
+              <figure>
+                <img
+                  src="/blogs/waterloo-coop/mango.png"
+                  alt="Tech company logos"
+                  className="w-full my-4"
+                />
+                <figcaption className="text-stone-500 text-xs mt-2 italic">
+                  major tech companies that waterloo students aspire to work for
                 </figcaption>
               </figure>
             </div>

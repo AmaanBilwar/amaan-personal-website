@@ -119,7 +119,7 @@ export default function WaterlooCoopBlog() {
               </figure>
 
               <p>
-                due to the fact that co-op is every 4 months its quite often that you see students
+                due to the fact that co-op is every 4 months it's quite often that you see students
                 jump company from company and this is where you learn the most about what you enjoy
                 doing and the type of companies you truly want to work for. a lot of things become
                 more clear the more you work in diverse environments and that eventually helps you

@@ -76,6 +76,28 @@ export default function WaterlooCoopBlog() {
               </p>
             </div>
           </section>
+
+          <section>
+            <h2 className="text-base md:text-lg font-medium text-white mb-4 mt-8">
+              learning how to get a job
+            </h2>
+
+            <div className="space-y-4">
+              <p>
+                the nature of waterloo's co-op is already very competitive and when you are surrounded by top talent all fighting for the same few jobs it takes a bit of agency and some hard work to get a good job nowadays.
+              </p>
+
+              <p>
+                one special part about waterloo's co-op program is the network of alumni that give back internship opportunities to new students through the co-op portal. companies like tesla, snowflake, bloomberg and more all post job postings directly through the site. many fast growing startups will also be seen and chances are either the founders or engineers used to study at waterloo.
+              </p>
+
+              <p>
+                recruiting for my very first job back in the fall of 2024 was pretty stressful because although i was able to return back to an old company the feeling of me going back didn't feel good. i ended up applying to every job that i saw externally and through the school's portal. i sent cover letters for every single one and even tried to personalize my resume for each specific job posting. this became very tiring and i eventually stopped doing that. although i landed a few interviews, i wasn't so good at interviewing and my technical skills weren't too strong. i think i ended up with around 14 interviews total by the end of the term but i only had one offer of which i declined. i ended up joining a startup that was acquired by the company i had worked at the summer previously. i didn't get a job i truly wanted, but i learned a lot during the 4 months through job searching, interviewing and learning to stand out.
+              </p>
+
+              <img src="/blogs/waterloo-coop/sankey.png" alt="Recruiting process" className="w-full max-h-[500px] my-6" />
+            </div>
+          </section>
         </div>
 
         <Footer className="mt-10" />

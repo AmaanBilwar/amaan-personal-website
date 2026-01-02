@@ -280,18 +280,19 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.waterlooCoop.title': "my thoughts on waterloo's co-op program",
     'blog.waterlooCoop.date': 'nicholas chen · January 1, 2026 · 7 min read',
     'blog.waterlooCoop.note':
-      "note: this is my experience from the engineering faculty co-op so content in this blog may differ from the other faculties including math, science, etc..",
+      'note: this is my experience from the engineering faculty co-op so content in this blog may differ from the other faculties including math, science, etc..',
     'blog.waterlooCoop.intro':
       "since studying at the university of waterloo, the most common thing i hear being talked about on campus is the school's co-op program. back in high school when i was still deciding between universities, the only school i really wanted to go to was waterloo for the sole reason that they had their own co-op program. i had heard many great things about the opportunities offered, the different countries you could work in and how all the students in every graduating class would always have jobs lined up because of the 2+ years of work experience that gave them that extra advantage. now after being in the co-op program for a bit longer than a year i want to give my thoughts on it and how it has changed me and helped me at the same time.",
     'blog.waterlooCoop.exploringTitle': 'exploring cities, careers, and chaotic living',
     'blog.waterlooCoop.exploringP1':
-      "during your time in waterloo engineering you will experience a ton of things and one of those will be doing 6 co-ops in 5 years every 4 months that get you 2 years of real work experience. this experience is extremely valuable because not a lot of students get to work in real work environments where they are challenged and treated like adults at such a young age. due to the fact that waterloo does a 4 month study term and 4 month co-op term that rotate between the two, it allows you to explore different career paths, live in different cities and also jump between startups and larger companies.",
+      'during your time in waterloo engineering you will experience a ton of things and one of those will be doing 6 co-ops in 5 years every 4 months that get you 2 years of real work experience. this experience is extremely valuable because not a lot of students get to work in real work environments where they are challenged and treated like adults at such a young age. due to the fact that waterloo does a 4 month study term and 4 month co-op term that rotate between the two, it allows you to explore different career paths, live in different cities and also jump between startups and larger companies.',
     'blog.waterlooCoop.exploringImg1Alt': 'New York City',
     'blog.waterlooCoop.exploringImg1Caption': 'the view of upper east side close to sunset time',
     'blog.waterlooCoop.exploringP2':
       "many students i've seen have been able to travel to san francisco, new york, seattle and more. many jobs, especially in tech can be found frequently in those places. landing a co-op job there gives you a chance to leave your hometown to work, eat, sleep and explore a new city on your own for 4 months. you will also go through the thrill of finding housing, trying to make new friends and live frugal but it's all a good learning experience at the end of the day. also from personally having done this for my most recent co-op term, i had a lot of fun, learned a lot and it was definitely a term i won't ever forget.",
     'blog.waterlooCoop.exploringImg2Alt': 'Living space',
-    'blog.waterlooCoop.exploringImg2Caption': 'the house i was living in during my time in new york',
+    'blog.waterlooCoop.exploringImg2Caption':
+      'the house i was living in during my time in new york',
     'blog.waterlooCoop.exploringP3':
       "due to the fact that co-op is every 4 months it's quite often that you see students jump company from company and this is where you learn the most about what you enjoy doing and the type of companies you truly want to work for. a lot of things become more clear the more you work in diverse environments and that eventually helps you choose the perfect place after graduating.",
     'blog.waterlooCoop.learningTitle': 'learning how to get a job',
@@ -312,24 +313,25 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.waterlooCoop.commitmentP1':
       'something i have noticed particularly only in waterloo students is that a lot of them including myself have commitment issues and i believe it stems from always looking for a job.',
     'blog.waterlooCoop.commitmentP2':
-      'in engineering (stream 4) you are forced into recruiting within the first week of university so while everyone else at other universities is partying, side questing and making friends, you have to lock in and find a job. now since each term is only 4 months long the recruiting cycle comes back every 4 months and sometimes recruiters will post job postings even up to 10 months in advance so most people are recruiting all year round. even during the current co-op term you are already thinking about the next. this is something i talked to with a friend and he mentioned it as well on how most of us can\'t stay loyal to a company because of the fact we are constantly thinking about the next thing in our career.',
+      "in engineering (stream 4) you are forced into recruiting within the first week of university so while everyone else at other universities is partying, side questing and making friends, you have to lock in and find a job. now since each term is only 4 months long the recruiting cycle comes back every 4 months and sometimes recruiters will post job postings even up to 10 months in advance so most people are recruiting all year round. even during the current co-op term you are already thinking about the next. this is something i talked to with a friend and he mentioned it as well on how most of us can't stay loyal to a company because of the fact we are constantly thinking about the next thing in our career.",
     'blog.waterlooCoop.commitmentP3':
       "on top of that because there are 6 terms and everyone at school constantly reminds us to try new things it's hard to go back and a lot of people including me all agree on the fact that we would never do a co-op at the same company twice due to lack of gaining more experience.",
     'blog.waterlooCoop.commitmentImgAlt': 'Learning curve over time',
-    'blog.waterlooCoop.commitmentImgCaption': 'graph to show amount of learning happening over time at a company',
+    'blog.waterlooCoop.commitmentImgCaption':
+      'graph to show amount of learning happening over time at a company',
     'blog.waterlooCoop.salariesTitle': 'salaries and total compensation',
     'blog.waterlooCoop.salariesP1':
       "money is also a concern for a lot of us because that's why everyone is here. everyone has heard about how the co-op program earnings basically shave off all your tuition money so university is basically free.",
     'blog.waterlooCoop.salariesP2':
       'total compensation (tc) is usually the base pay + housing stipend + relocation. in canada, you\'re looking at anywhere from $25 to $50 cad/hour. big banks and local startups usually sit on the lower end, while companies like shopify or amazon (toronto) pay towards the top. the real jump happens when you "cali or bust," a term coined by waterloo students when someone must go to california for a co-op. us internships pay in usd, and the conversion alone makes you feel rich. big tech in sf or nyc usually pays $50 to $90 usd/hour. once you add a $3k–$5k monthly housing stipend, your effective monthly tc can easily hit $10k–$15k usd. it\'s honestly life-changing money for someone in their twenties.',
     'blog.waterlooCoop.salariesP3':
-      "i think this is also something that was developed from my parents and the people around me but making a lot of money seemed to matter and as a result i spent a lot of time on",
+      'i think this is also something that was developed from my parents and the people around me but making a lot of money seemed to matter and as a result i spent a lot of time on',
     'blog.waterlooCoop.salariesImgAlt': 'levels.fyi salary data',
     'blog.waterlooCoop.salariesImgCaption':
       'levels.fyi salary data for software engineer intern positions at ramp in new york',
     'blog.waterlooCoop.prestigeTitle': 'status symbols and the prestige ladder',
     'blog.waterlooCoop.prestigeP1':
-      "the obsession with prestige at waterloo is everywhere and creates a strict ranking where a student's value is tied to the company name on their linkedin profile. from the first semester, the \"cali or bust\" mentality takes over the culture. landing a role at google, meta, or a quant firm like jane street makes a student highly respected, while other jobs are often seen as not as good. on one side of this split is the \"comfortable\" big tech path, defined by big signing bonuses, nice perks, and a work-life balance that lets you move up in your career because of the company name.",
+      'the obsession with prestige at waterloo is everywhere and creates a strict ranking where a student\'s value is tied to the company name on their linkedin profile. from the first semester, the "cali or bust" mentality takes over the culture. landing a role at google, meta, or a quant firm like jane street makes a student highly respected, while other jobs are often seen as not as good. on one side of this split is the "comfortable" big tech path, defined by big signing bonuses, nice perks, and a work-life balance that lets you move up in your career because of the company name.',
     'blog.waterlooCoop.prestigeP2':
       'on the other hand, some students go for "more control" within the startup world, often working a 996 schedule from 9am to 9pm six days a week. they focus on quickly building important features over personal time. this split creates an unhealthy environment where everyone compares themselves and students subtly compete by showing off their total compensation and sometimes keep interview materials secret. in the end, the culture often cares more about how a job looks and its benefits than the actual work itself.',
     'blog.waterlooCoop.prestigeImgAlt': 'Tech company logos',
@@ -344,7 +346,7 @@ const translations: Record<Language, Record<string, string>> = {
       "at the end of every term, your boss gives you a rating—anything from satisfactory to outstanding. it's kind of stressful because these ratings stay on your co-op record forever. future employers see them when you apply through waterlooworks, so you're always performing to make sure you don't end up with a \"marginal\" that ruins your next search. also because so many waterloo students are tryhards the average rating is an excellent which is the second highest just under outstanding due to the fact that the employer must write an entire paragraph explaining why the intern should get that rating.",
     'blog.waterlooCoop.miscPDTitle': 'pd courses',
     'blog.waterlooCoop.miscPD':
-      "everyone at waterloo hates pd courses. they're these mandatory online modules you have to do while you're working full-time. it's usually stuff like \"how to write an email\" or \"workplace ethics.\" they feel like a massive chore when you just want to focus on your job, but you have to pass them to get that co-op designation on your degree.",
+      'everyone at waterloo hates pd courses. they\'re these mandatory online modules you have to do while you\'re working full-time. it\'s usually stuff like "how to write an email" or "workplace ethics." they feel like a massive chore when you just want to focus on your job, but you have to pass them to get that co-op designation on your degree.',
     'blog.waterlooCoop.miscVisasTitle': 'visas and the border',
     'blog.waterlooCoop.miscVisas':
       "if you land a job in the us, you have to deal with the whole j-1 visa mess or if you're canadian maybe even a TN. it's a lot of paperwork, sevis fees, and waiting for ds-2019 forms to arrive in the mail. you basically become a part-time immigration lawyer for a month. then there's the stress of crossing the border and hoping the officer doesn't have a bad day. it's a lot of \"legal border stuff\" just to go work in the states for four months, but the hassle is definitely worth it for the experience.",
@@ -769,7 +771,8 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.waterlooCoop.learningP3':
       '在2024年秋天找我的第一份工作时，招聘过程非常紧张，因为虽然我能够回到一家旧公司，但回去的感觉并不好。我最终申请了我在外部和学校门户网站上看到的每一份工作。我为每一份工作都发送了求职信，甚至尝试为每个特定的职位发布个性化我的简历。这变得非常累人，我最终停止了这样做。虽然我获得了一些面试机会，但我在面试方面不太擅长，我的技术技能也不太强。我想我在学期结束时总共获得了大约14次面试，但我只有一个offer，我拒绝了。我最终加入了一家被我在前一个夏天工作过的公司收购的初创公司。我没有得到我真正想要的工作，但在这4个月里，我通过求职、面试和学习脱颖而出学到了很多东西。',
     'blog.waterlooCoop.learningImgAlt': '招聘过程',
-    'blog.waterlooCoop.learningImgCaption': '这是我1a学期2024年秋季招聘统计数据：570份申请，14次面试，1个offer',
+    'blog.waterlooCoop.learningImgCaption':
+      '这是我1a学期2024年秋季招聘统计数据：570份申请，14次面试，1个offer',
     'blog.waterlooCoop.learningP4':
       '快进到一年后，我学会了通过其他方式找工作，其中之一就是在推特上发帖和公开建设。在2025年1月上推特是我为下一个招聘季做准备能做的最好的事情。在这段时间里，我还尝试做更多的黑客马拉松，建立更多的副业项目，并在推特和领英上展示它们。大多数滑铁卢学生最终都会适应这一点，并开始自己寻找机会。你会看到大多数黑客马拉松都充满了滑铁卢学生，以及其他一般的比赛。每个人都给创始人发冷邮件，在推特上发帖，并通过领英联系。我注意到的一件事，可能是由于合作项目，滑铁卢学生发展或倾向于具有高度的主动性，因为这是一个人在人才群体中脱颖而出的唯一方式。',
     'blog.waterlooCoop.learningP5':

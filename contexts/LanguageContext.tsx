@@ -310,7 +310,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.waterlooCoop.learningP5':
       "this is also something i've learned throughout being in the program and after interviewing with many companies now in my third co-op search i've gotten much better at interviewing and my technical skills have improved quite a bit since last year.",
     'blog.waterlooCoop.employmentImgAlt': 'Employment statistics',
-    'blog.waterlooCoop.employmentImgCaption': 'employment statistics add for syde 1b',
+    'blog.waterlooCoop.employmentImgCaption': 'employment statistics for syde 1b',
     'blog.waterlooCoop.commitmentTitle': 'commitment issues',
     'blog.waterlooCoop.commitmentP1':
       'something i have noticed particularly only in waterloo students is that a lot of them including myself have commitment issues and i believe it stems from always looking for a job.',

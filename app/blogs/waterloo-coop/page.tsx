@@ -116,6 +116,17 @@ export default function WaterlooCoopBlog() {
 
               <p>{t('blog.waterlooCoop.learningP4')}</p>
 
+              <figure>
+                <img
+                  src="/blogs/waterloo-coop/employment.png"
+                  alt={t('blog.waterlooCoop.employmentImgAlt')}
+                  className="w-full my-4"
+                />
+                <figcaption className="text-stone-500 text-xs mt-2 italic">
+                  {t('blog.waterlooCoop.employmentImgCaption')}
+                </figcaption>
+              </figure>
+
               <p>{t('blog.waterlooCoop.learningP5')}</p>
             </div>
           </section>

@@ -309,6 +309,8 @@ const translations: Record<Language, Record<string, string>> = {
       "fast forward to just a year later and i've learned to find jobs through other ways, one of them by posting on twitter and building in public. going on twitter in january of 2025 was the best thing i could've done to prepare me for the next recruiting season. during this time i also tried to do more hackathons, build more side projects and show them on twitter and linkedin. most waterloo students eventually adapt to this and begin finding opportunities on their own. you will see that most hackathons are filled with waterloo students as well as other competitions in general. everyone cold emails founders, posts on twitter and reaches out through linkedin. one thing i have noticed probably due to the co-op program is that waterloo students develop or tend to have high agency because that's the only way one can stand out in a crowd of talent.",
     'blog.waterlooCoop.learningP5':
       "this is also something i've learned throughout being in the program and after interviewing with many companies now in my third co-op search i've gotten much better at interviewing and my technical skills have improved quite a bit since last year.",
+    'blog.waterlooCoop.employmentImgAlt': 'Employment statistics',
+    'blog.waterlooCoop.employmentImgCaption': 'employment statistics add for syde 1b',
     'blog.waterlooCoop.commitmentTitle': 'commitment issues',
     'blog.waterlooCoop.commitmentP1':
       'something i have noticed particularly only in waterloo students is that a lot of them including myself have commitment issues and i believe it stems from always looking for a job.',
@@ -777,6 +779,8 @@ const translations: Record<Language, Record<string, string>> = {
       '快进到一年后，我学会了通过其他方式找工作，其中之一就是在推特上发帖和公开建设。在2025年1月上推特是我为下一个招聘季做准备能做的最好的事情。在这段时间里，我还尝试做更多的黑客马拉松，建立更多的副业项目，并在推特和领英上展示它们。大多数滑铁卢学生最终都会适应这一点，并开始自己寻找机会。你会看到大多数黑客马拉松都充满了滑铁卢学生，以及其他一般的比赛。每个人都给创始人发冷邮件，在推特上发帖，并通过领英联系。我注意到的一件事，可能是由于合作项目，滑铁卢学生发展或倾向于具有高度的主动性，因为这是一个人在人才群体中脱颖而出的唯一方式。',
     'blog.waterlooCoop.learningP5':
       '这也是我在整个项目中以及在第三次合作搜索中与许多公司面试后学到的东西，我在面试方面变得好多了，我的技术技能也比去年有了相当大的提高。',
+    'blog.waterlooCoop.employmentImgAlt': '就业统计',
+    'blog.waterlooCoop.employmentImgCaption': 'syde 1b就业统计',
     'blog.waterlooCoop.commitmentTitle': '承诺问题',
     'blog.waterlooCoop.commitmentP1':
       '我特别注意到，只有滑铁卢学生，包括我自己在内的很多人都有承诺问题，我相信这源于总是在找工作。',

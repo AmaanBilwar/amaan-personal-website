@@ -371,7 +371,7 @@ const translations: Record<Language, Record<string, string>> = {
       'you may have heard of the term "ontology" before, either used by palantir folks or others, but it\'s something that among many people are not familiar with and was something i also learned a few months ago when i started working at textql. more recently, i actually had the chance to work on the ontology and explore more about how it works with our product and how to make it easier for customers to use. there are many different types of ontologies but in this article i want to focus on the one that formally defines data and why we use it for text-to-sql queries.',
     'blog.ontology.whatIsP2':
       "the google definition of an ontology is: a set of concepts and categories in a subject area or domain that shows their properties and the relations between them. if that doesn't make sense basically a fancy word for making a map of everything and how they connect to each other.",
-    'blog.ontology.mapAlt': 'A map showing how concepts connect in an ontology',
+    'blog.ontology.mapAlt': 'A map showing how objects connect in an ontology',
     'blog.ontology.whatIsP3':
       'an ontology consists of entities, attributes, relationships, metrics and business rules. each of these are crucial for building a well-structured ontology. an entity is essentially an object that you can think of as a "thing" that your business cares about. while not required, entities often have a primary key that prevents double-counting and enables proper aggregation. each of these objects hold attributes which are like characteristics that describe the object. then there\'s relationships that basically connect each of these objects based on how they are related. these relationships work through joins - when entities share common fields that can be matched together, creating connections like one-to-many or many-to-many. for metrics, these are defined across multiple objects and can be done through a calculation of some sort. lastly, there are business rules that just define how your business operates and the meaning of specific terms or phrases.',
     'blog.ontology.simpleExampleTitle': 'a simple example',
@@ -838,7 +838,7 @@ const translations: Record<Language, Record<string, string>> = {
       '你可能以前听说过"本体"这个词，可能是palantir的人或其他人在使用，但这是很多人不熟悉的东西，也是我几个月前开始在textql工作时学到的东西。最近，我实际上有机会在本体上工作，并探索更多关于它如何与我们的产品配合以及如何让客户更容易使用。本体有很多不同的类型，但在这篇文章中，我想专注于正式定义数据的那个，以及为什么我们将其用于文本到SQL查询。',
     'blog.ontology.whatIsP2':
       '谷歌对本体的定义是：在某个主题领域或领域中显示其属性及其之间关系的概念和类别集合。如果这没有意义，基本上就是制作一切及其如何相互连接的地图的华丽词汇。',
-    'blog.ontology.mapAlt': '显示本体中概念如何连接的地图',
+    'blog.ontology.mapAlt': '显示本体中对象如何连接的地图',
     'blog.ontology.whatIsP3':
       '本体由实体、属性、关系、指标和业务规则组成。这些对于构建结构良好的本体都至关重要。实体本质上是一个对象，你可以将其视为你的业务关心的"事物"。虽然不是必需的，但实体通常有一个主键，可以防止重复计算并实现适当的聚合。这些对象中的每一个都包含属性，这些属性就像描述对象的特征。然后有关系基本上根据这些对象如何相关来连接它们。这些关系通过连接工作——当实体共享可以匹配在一起的公共字段时，创建一对多或多对多的连接。对于指标，这些是在多个对象上定义的，可以通过某种计算来完成。最后，有业务规则只是定义你的业务如何运作以及特定术语或短语的含义。',
     'blog.ontology.simpleExampleTitle': '一个简单的例子',

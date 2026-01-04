@@ -61,6 +61,9 @@ export default function OntologyTextToSqlBlog() {
                 alt={t('blog.ontology.mapAlt')}
                 className="w-full"
               />
+              <figcaption className="text-stone-500 text-xs mt-2 italic">
+                {t('blog.ontology.mapAlt')}
+              </figcaption>
             </figure>
             <p className="mt-4">{t('blog.ontology.whatIsP3')}</p>
           </section>

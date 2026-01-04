@@ -627,6 +627,28 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.git.referencesTitle': 'references',
     'blog.git.references.docs': 'official git docs',
     'blog.git.references.dangit': 'dangit, git!',
+    'blog.grpc.title': 'what is gRPC?',
+    'blog.grpc.date': 'nicholas chen · january 4, 2026 · 6 min read',
+    'blog.grpc.intro':
+      "in modern software architecture, especially with microservices, the way services communicate is crucial. while rest has been the standard for a long time, grpc has emerged as a powerful alternative for many use cases. in this post, i'll explain what grpc is, how it works, and why you might want to use it.",
+    'blog.grpc.whatIsTitle': 'what is gRPC?',
+    'blog.grpc.whatIsText':
+      'grpc (google remote procedure call) is an open-source remote procedure call framework initially developed by google. it allows a client application to directly call a method on a server application on a different machine as if it were a local object, making it easier to create distributed applications and services. unlike rest, which is resource-oriented, grpc is action-oriented.',
+    'blog.grpc.howItWorksTitle': 'how it works',
+    'blog.grpc.howItWorksText':
+      'at a high level, grpc allows you to define a service, specifying the methods that can be called remotely with their parameters and return types. the server implements this interface and runs a grpc server to handle incoming calls. the client has a stub (referred to as just a client in some languages) that provides the same methods as the server. by default, grpc uses protocol buffers (protobuf) as its interface definition language (idl) and as its underlying message interchange format. in rest, you often use json. with protobuf, you define the structure of your data once in a .proto file. then, you use the protoc compiler to generate data access classes in your preferred programming language. this binary format is much lighter and faster to serialize/deserialize than json.',
+    'blog.grpc.whyGoodTitle': 'why is it good?',
+    'blog.grpc.whyGoodText':
+      'grpc uses http/2 as its transport protocol, which allows for features like multiplexing (sending multiple requests over a single connection), header compression, and binary framing. this makes grpc much more efficient than rest over http/1.1, reducing latency and bandwidth usage. with the .proto file serving as the contract, you can automatically generate client and server code in many languages (go, java, python, c++, node.js, etc.). this ensures that the client and server strictly adhere to the defined interface, reducing errors and saving development time. grpc also supports streaming natively. you can have server-side streaming, client-side streaming, or bidirectional streaming. this is perfect for real-time applications, large file transfers, or long-lived connections where data needs to be pushed continuously.',
+    'blog.grpc.grpcWithGoTitle': 'gRPC with go',
+    'blog.grpc.grpcWithGoText':
+      "grpc and go are a match made in heaven. since both are born out of google, the support for grpc in go is first-class. the go ecosystem embraces grpc for microservices due to go's concurrency model (goroutines) which handles the multiplexing nature of http/2 efficiently. to use grpc with go, you typically define your service in a .proto file and then use the protoc compiler with the protoc-gen-go and protoc-gen-go-grpc plugins. this generates two files: one for the message structs and one for the service interface. on the server side, you implement the generated interface and register it with a grpc.NewServer(). on the client side, you use grpc.Dial() to connect to the server and create a client stub to make calls. the generated code is idiomatic go, making it easy to integrate into existing go projects.",
+    'blog.grpc.vsRestTitle': 'gRPC vs REST',
+    'blog.grpc.vsRestText':
+      "rest is great for public apis where human readability (json) and browser support are important. it's flexible and widely understood. grpc, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it's also strongly typed, which helps in maintaining large systems.",
+    'blog.grpc.conclusionTitle': 'conclusion',
+    'blog.grpc.conclusionText':
+      'grpc is a robust framework that offers significant performance improvements and developer productivity benefits for the right use cases. if you are building a microservices architecture or need efficient communication between internal services, grpc is definitely worth considering.',
   },
   zh: {
     // Hero section

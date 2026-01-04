@@ -278,7 +278,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.ontology.title': 'why ontology for text-to-sql?',
     'blog.ontology.date': 'nicholas chen · november 21, 2025 · 10 min read',
     'blog.waterlooCoop.title': "my thoughts on waterloo's co-op program",
-    'blog.waterlooCoop.date': 'nicholas chen · January 1, 2026 · 7 min read',
+    'blog.waterlooCoop.date': 'nicholas chen · january 1, 2026 · 7 min read',
     'blog.waterlooCoop.note':
       'note: this is my experience from the engineering faculty co-op so content in this blog may differ from the other faculties including math, science, etc..',
     'blog.waterlooCoop.intro':

@@ -646,9 +646,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.vsRestTitle': 'gRPC vs REST',
     'blog.grpc.vsRestText':
       "rest is great for public apis where human readability (json) and browser support are important. it's flexible and widely understood. grpc, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it's also strongly typed, which helps in maintaining large systems.",
-    'blog.grpc.conclusionTitle': 'conclusion',
-    'blog.grpc.conclusionText':
-      'grpc is a robust framework that offers significant performance improvements and developer productivity benefits for the right use cases. if you are building a microservices architecture or need efficient communication between internal services, grpc is definitely worth considering.',
   },
   zh: {
     // Hero section
@@ -766,6 +763,8 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.back': '返回',
     'blog.git.title': 'git 命令',
     'blog.git.date': 'nicholas chen · 2025年12月21日 · 4分钟阅读',
+    'blog.grpc.title': '什么是 gRPC？',
+    'blog.grpc.date': 'nicholas chen · 2026年1月4日 · 6分钟阅读',
     'blog.coding.title': '我是如何学习编程的',
     'blog.coding.date': 'nicholas chen · 2025年12月26日 · 5分钟阅读',
     'blog.ontology.title': '为什么文本到SQL需要本体？',
@@ -1249,5 +1248,24 @@ const translations: Record<Language, Record<string, string>> = {
       '想象一个本体根据人们如何使用它而演变。当分析师反复写类似的自定义查询时，系统建议将那些模式添加到本体。当指标定义被手动覆盖频繁时，系统标记它审查。这已经在发生了。系统可以跟踪实体被查询一起频繁，并建议添加明确关系。他们可以识别常见计算字段，并提出将其提升为官方指标。',
     'blog.ontology.section9.text3':
       '随着数据景观变得更复杂 - 更多来源、更多表、更多工具、更多用户 - 对本体的需求指数增加。没有本体，复杂性规模不好。每个新数据源需要每个人学习新的表结构。每个新分析师需要被训练所有业务逻辑。每个新工具需要自定义集成。有了本体，复杂性线性规模。新数据源映射到现有实体。新分析师学习本体一次。新工具集成本体层。数据未来不是更复杂 - 它是更复杂但更好组织。本体是如何在不淹没在其中的情况下管理那种复杂性。',
+
+    // Blog gRPC content
+    'blog.grpc.intro':
+      '在现代软件架构中，特别是微服务，服务之间的通信方式至关重要。虽然 REST 长期以来一直是标准，但 gRPC 已成为许多用例的强大替代方案。在这篇文章中，我将解释什么是 gRPC，它是如何工作的，以及为什么你可能想要使用它。',
+    'blog.grpc.whatIsTitle': '什么是 gRPC？',
+    'blog.grpc.whatIsText':
+      'gRPC（Google 远程过程调用）是 Google 最初开发的开源远程过程调用框架。它允许客户端应用程序直接调用不同机器上的服务器应用程序的方法，就像它是本地对象一样，这使得创建分布式应用程序和服务变得更加容易。与面向资源的 REST 不同，gRPC 是面向动作的。',
+    'blog.grpc.howItWorksTitle': '它是如何工作的',
+    'blog.grpc.howItWorksText':
+      '在高层次上，gRPC 允许你定义服务，指定可以远程调用的方法及其参数和返回类型。服务器实现此接口并运行 gRPC 服务器来处理传入的调用。客户端有一个存根（在某些语言中简称为客户端），它提供与服务器相同的方法。默认情况下，gRPC 使用协议缓冲区（Protobuf）作为其接口定义语言（IDL）和底层消息交换格式。在 REST 中，你通常使用 JSON。使用 Protobuf，你在 .proto 文件中定义一次数据结构。然后，你使用 protoc 编译器在你喜欢的编程语言中生成数据访问类。这种二进制格式比 JSON 更轻便，序列化/反序列化速度更快。',
+    'blog.grpc.whyGoodTitle': '为什么它很好？',
+    'blog.grpc.whyGoodText':
+      'gRPC 使用 HTTP/2 作为其传输协议，这允许诸如多路复用（通过单个连接发送多个请求）、头部压缩和二进制分帧等功能。这使得 gRPC 比 HTTP/1.1 上的 REST 更高效，从而减少了延迟和带宽使用。使用 .proto 文件作为契约，你可以自动生成许多语言（Go、Java、Python、C++、Node.js 等）的客户端和服务器代码。这确保了客户端和服务器严格遵守定义的接口，减少了错误并节省了开发时间。gRPC 还原生支持流式传输。你可以进行服务器端流式传输、客户端流式传输或双向流式传输。这非常适合实时应用程序、大文件传输或需要持续推送数据的长连接。',
+    'blog.grpc.grpcWithGoTitle': 'gRPC 与 Go',
+    'blog.grpc.grpcWithGoText':
+      'gRPC 和 Go 是天作之合。由于两者都源自 Google，Go 对 gRPC 的支持是一流的。Go 生态系统拥抱 gRPC 用于微服务，因为 Go 的并发模型（goroutines）有效地处理了 HTTP/2 的多路复用特性。要在 Go 中使用 gRPC，你通常在 .proto 文件中定义你的服务，然后使用 protoc 编译器配合 protoc-gen-go 和 protoc-gen-go-grpc 插件。这会生成两个文件：一个用于消息结构体，另一个用于服务接口。在服务器端，你实现生成的接口并使用 grpc.NewServer() 注册它。在客户端，你使用 grpc.Dial() 连接到服务器并创建一个客户端存根来进行调用。生成的代码是惯用的 Go 代码，使其易于集成到现有的 Go 项目中。',
+    'blog.grpc.vsRestTitle': 'gRPC vs REST',
+    'blog.grpc.vsRestText':
+      'REST 非常适合公共 API，其中人类可读性（JSON）和浏览器支持很重要。它灵活且被广泛理解。另一方面，gRPC 在内部微服务通信中表现出色，其中低延迟和高吞吐量至关重要。它也是强类型的，这有助于维护大型系统。',
   },
 };

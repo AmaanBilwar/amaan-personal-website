@@ -77,13 +77,6 @@ export default function GrpcBlog() {
             </h2>
             <p>{t('blog.grpc.vsRestText')}</p>
           </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.grpc.conclusionTitle')}
-            </h2>
-            <p>{t('blog.grpc.conclusionText')}</p>
-          </section>
         </div>
 
         <Footer className="mt-10" />

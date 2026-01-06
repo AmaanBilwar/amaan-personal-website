@@ -33,11 +33,17 @@ export default function PersonalWebsiteBlog() {
         </Link>
 
         {/* Title */}
-        <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">{t('blog.website.title')}</h1>
+        <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
+          {t('blog.website.title')}
+        </h1>
         <p className="text-stone-500 text-sm mb-6">{t('blog.website.date')}</p>
 
         {/* Cover image */}
-        <img src="/blogs/personal-website/github-repo.png" alt="GitHub Repository" className="w-full mb-6" />
+        <img
+          src="/blogs/personal-website/github-repo.png"
+          alt="GitHub Repository"
+          className="w-full mb-6"
+        />
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}

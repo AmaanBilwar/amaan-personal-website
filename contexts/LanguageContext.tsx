@@ -653,13 +653,13 @@ const translations: Record<Language, Record<string, string>> = {
       "building a personal website is a rite of passage for any developer. it's a place to showcase your work, share your thoughts, and experiment with new technologies. in this post, i'll walk you through how i built this site.",
     'blog.website.techStackTitle': 'the tech stack',
     'blog.website.techStackText':
-      "i chose next.js for this project because of its excellent developer experience and performance. for styling, i used tailwind css, which allowed me to quickly iterate on the design without leaving my html. the site is written in typescript to ensure type safety and reduce bugs.",
+      'i chose next.js for this project because of its excellent developer experience and performance. for styling, i used tailwind css, which allowed me to quickly iterate on the design without leaving my html. the site is written in typescript to ensure type safety and reduce bugs.',
     'blog.website.designTitle': 'design philosophy',
     'blog.website.designText':
-      "i wanted a clean, minimal design that puts the focus on the content. i opted for a dark theme with high-contrast text to make it easy to read. the typography is a mix of inter for most of the site and monospace fonts for code and specific UI elements.",
+      'i wanted a clean, minimal design that puts the focus on the content. i opted for a dark theme with high-contrast text to make it easy to read. the typography is a mix of inter for most of the site and monospace fonts for code and specific UI elements.',
     'blog.website.processTitle': 'the building process',
     'blog.website.processText':
-      "the process involved a lot of iteration. i started with a simple layout and gradually added features like the multi-language support, the drawing canvas, and the blog section. i also focused on making the site fully responsive, ensuring it looks great on everything from small phones to large desktops.",
+      'the process involved a lot of iteration. i started with a simple layout and gradually added features like the multi-language support, the drawing canvas, and the blog section. i also focused on making the site fully responsive, ensuring it looks great on everything from small phones to large desktops.',
   },
   zh: {
     // Hero section

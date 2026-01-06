@@ -154,7 +154,7 @@ export default function Home() {
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
                 {t('projects.title')}
               </p>
-              <div className="max-h-32 overflow-y-auto pr-2 ai-chat-scroll">
+              <div className="max-h-32 overflow-y-auto overflow-x-hidden -mx-2 px-2 ai-chat-scroll">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                   <li>
                     <a
@@ -233,7 +233,7 @@ export default function Home() {
 
             <div>
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
-              <div className="max-h-32 overflow-y-auto pr-2 ai-chat-scroll">
+              <div className="max-h-32 overflow-y-auto overflow-x-hidden -mx-2 px-2 ai-chat-scroll">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                   <li>
                     <a

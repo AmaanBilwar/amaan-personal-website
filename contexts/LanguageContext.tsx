@@ -647,19 +647,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.vsRestTitle': 'gRPC vs REST',
     'blog.grpc.vsRestText':
       "rest is great for public apis where human readability (json) and browser support are important. it's flexible and widely understood. grpc, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it's also strongly typed, which helps in maintaining large systems.",
-    'blog.website.title': 'how i made my personal website',
-    'blog.website.date': 'nicholas chen · january 5, 2026 · 5 min read',
-    'blog.website.intro':
-      "building a personal website is a rite of passage for any developer. it's a place to showcase your work, share your thoughts, and experiment with new technologies. in this post, i'll walk you through how i built this site.",
-    'blog.website.techStackTitle': 'the tech stack',
-    'blog.website.techStackText':
-      'i chose next.js for this project because of its excellent developer experience and performance. for styling, i used tailwind css, which allowed me to quickly iterate on the design without leaving my html. the site is written in typescript to ensure type safety and reduce bugs.',
-    'blog.website.designTitle': 'design philosophy',
-    'blog.website.designText':
-      'i wanted a clean, minimal design that puts the focus on the content. i opted for a dark theme with high-contrast text to make it easy to read. the typography is a mix of inter for most of the site and monospace fonts for code and specific UI elements.',
-    'blog.website.processTitle': 'the building process',
-    'blog.website.processText':
-      'the process involved a lot of iteration. i started with a simple layout and gradually added features like the multi-language support, the drawing canvas, and the blog section. i also focused on making the site fully responsive, ensuring it looks great on everything from small phones to large desktops.',
   },
   zh: {
     // Hero section
@@ -775,8 +762,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Blog navigation
     'blog.back': '返回',
-    'blog.website.title': '我是如何制作个人网站的',
-    'blog.website.date': 'nicholas chen · 2026年1月5日 · 5分钟阅读',
     'blog.git.title': 'git 命令',
     'blog.git.date': 'nicholas chen · 2025年12月21日 · 4分钟阅读',
     'blog.grpc.title': '什么是 gRPC？',
@@ -1284,18 +1269,5 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.vsRestTitle': 'gRPC vs REST',
     'blog.grpc.vsRestText':
       'REST 非常适合公共 API，其中人类可读性（JSON）和浏览器支持很重要。它灵活且被广泛理解。另一方面，gRPC 在内部微服务通信中表现出色，其中低延迟和高吞吐量至关重要。它也是强类型的，这有助于维护大型系统。',
-    'blog.website.title': '我是如何制作个人网站的',
-    'blog.website.date': 'nicholas chen · 2026年1月5日 · 5分钟阅读',
-    'blog.website.intro':
-      '建立个人网站是每个开发者的必经之路。这是一个展示你的作品、分享你的想法以及尝试新技术的场所。在这篇文章中，我将带你了解我是如何构建这个网站的。',
-    'blog.website.techStackTitle': '技术栈',
-    'blog.website.techStackText':
-      '我选择 Next.js 进行这个项目，因为它具有出色的开发体验和性能。在样式方面，我使用了 Tailwind CSS，这让我能够在不离开 HTML 的情况下快速迭代设计。网站使用 TypeScript 编写，以确保类型安全并减少错误。',
-    'blog.website.designTitle': '设计理念',
-    'blog.website.designText':
-      '我想要一个简洁、极简的设计，将重点放在内容上。我选择了一个深色主题和高对比度文本，使其易于阅读。排版混合使用了 Inter（大部分网站）和等宽字体（代码和特定的 UI 元素）。',
-    'blog.website.processTitle': '构建过程',
-    'blog.website.processText':
-      '这个过程涉及大量的迭代。我从一个简单的布局开始，逐渐添加了多语言支持、绘图画布和博客部分等功能。我还专注于使网站具有完全的响应式设计，确保它从手机到大型桌面显示器看起来都很棒。',
   },
 };

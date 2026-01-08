@@ -5,7 +5,7 @@ import { describe, it, expect } from 'vitest';
 describe('gRPC Blog Page', () => {
   it('renders title', () => {
     render(<GrpcBlog />);
-    expect(screen.getByText('what is gRPC?')).toBeInTheDocument();
+    expect(screen.getByText('gRPC')).toBeInTheDocument();
   });
 
   it('renders back link', () => {

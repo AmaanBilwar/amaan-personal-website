@@ -632,7 +632,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.date': 'nicholas chen · january 4, 2026 · 6 min read',
     'blog.grpc.intro':
       "in modern software architecture, especially with microservices, the way services communicate is crucial. while rest has been the standard for a long time, grpc has emerged as a powerful alternative for many use cases. in this post, i'll explain what grpc is, how it works, and why you might want to use it.",
-    'blog.grpc.whatIsTitle': 'what is gRPC?',
+    'blog.grpc.whatIsTitle': 'gRPC?',
     'blog.grpc.whatIsText':
       'grpc (google remote procedure call) is an open-source remote procedure call framework initially developed by google. it allows a client application to directly call a method on a server application on a different machine as if it were a local object, making it easier to create distributed applications and services. unlike rest, which is resource-oriented, grpc is action-oriented.',
     'blog.grpc.howItWorksTitle': 'how it works',

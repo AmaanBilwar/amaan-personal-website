@@ -37,7 +37,7 @@ export default function GrpcBlog() {
         <p className="text-stone-500 text-sm mb-6">{t('blog.grpc.date')}</p>
 
         {/* Cover image */}
-        <img src="/blogs/grpc/grpc.png" alt="gRPC" className="w-full mb-6" />
+        <img src="/blogs/grpc/grpc_logo.png" alt="gRPC" className="w-full mb-6" />
         <hr className="border-stone-700 mb-8" />
 
         {/* Content */}
@@ -76,6 +76,29 @@ export default function GrpcBlog() {
               {t('blog.grpc.vsRestTitle')}
             </h2>
             <p>{t('blog.grpc.vsRestText')}</p>
+          </section>
+
+          <section className="border-t border-stone-700 pt-6 mt-8">
+            <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
+              {t('blog.grpc.referencesTitle')}
+            </h3>
+            <ul className="space-y-2 text-stone-400 text-sm">
+              <li>
+                <a href="https://grpc.io/docs/" className="hover:text-stone-200 underline">
+                  official gRPC docs
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/grpc/grpc-go" className="hover:text-stone-200 underline">
+                  gRPC go repository
+                </a>
+              </li>
+              <li>
+                <a href="https://protobuf.dev/" className="hover:text-stone-200 underline">
+                  protocol buffers documentation
+                </a>
+              </li>
+            </ul>
           </section>
         </div>
 

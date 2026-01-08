@@ -647,6 +647,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.vsRestTitle': 'gRPC vs REST',
     'blog.grpc.vsRestText':
       "rest is great for public apis where human readability (json) and browser support are important. it's flexible and widely understood. grpc, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it's also strongly typed, which helps in maintaining large systems.",
+    'blog.grpc.referencesTitle': 'references',
   },
   zh: {
     // Hero section
@@ -1269,5 +1270,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.vsRestTitle': 'gRPC vs REST',
     'blog.grpc.vsRestText':
       'REST 非常适合公共 API，其中人类可读性（JSON）和浏览器支持很重要。它灵活且被广泛理解。另一方面，gRPC 在内部微服务通信中表现出色，其中低延迟和高吞吐量至关重要。它也是强类型的，这有助于维护大型系统。',
+    'blog.grpc.referencesTitle': '参考',
   },
 };

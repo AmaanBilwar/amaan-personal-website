@@ -54,10 +54,22 @@ export default function GrpcBlog() {
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
               {t('blog.grpc.howItWorksTitle')}
             </h2>
-            <div className="whitespace-pre-wrap">{t('blog.grpc.howItWorksText')}</div>
+            <p className="mb-6">{t('blog.grpc.howItWorksText1')}</p>
 
-            <div className="mt-6">
-              <p className="text-stone-400 mb-2 italic">Example .proto file:</p>
+            <div className="mt-6 bg-white rounded-md p-4">
+              <img
+                src="/blogs/grpc/architecture-grpc.jpg"
+                alt="gRPC Architecture"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-stone-500 italic text-center text-xs mt-2">
+              gRPC architecture: client stub and server stub interaction
+            </p>
+
+            <p className="mt-6">{t('blog.grpc.howItWorksText2')}</p>
+
+            <div className="mt-8">
               <pre className="bg-stone-800/50 p-4 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700">
                 {`syntax = "proto3";
 
@@ -79,6 +91,9 @@ message HelloReply {
   string message = 1;
 }`}
               </pre>
+              <p className="text-stone-500 italic text-center text-xs mt-1">
+                example .proto service definition
+              </p>
             </div>
           </section>
 
@@ -86,7 +101,17 @@ message HelloReply {
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
               {t('blog.grpc.whyGoodTitle')}
             </h2>
-            <p>{t('blog.grpc.whyGoodText')}</p>
+            <p className="mb-6">{t('blog.grpc.whyGoodText')}</p>
+            <div className="my-6">
+              <img
+                src="/blogs/grpc/http2.png"
+                alt="HTTP 1.1 vs HTTP/2"
+                className="w-full rounded-md border border-stone-700"
+              />
+              <p className="text-stone-500 italic text-center text-xs mt-1">
+                http/1.1 vs http/2 multiplexing
+              </p>
+            </div>
           </section>
 
           <section>

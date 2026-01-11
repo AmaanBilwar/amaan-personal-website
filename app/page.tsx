@@ -154,120 +154,143 @@ export default function Home() {
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
                 {t('projects.title')}
               </p>
-              <ul className="text-xs md:text-sm text-stone-400 space-y-1">
-                <li>
-                  <a
-                    href="https://tiktokviewpredictor.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('projects.label.tiktok')}
-                  </a>
-                </li>
+              <div className="-mx-2 px-2">
+                <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                  <li>
+                    <a
+                      href="https://tiktokviewpredictor.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.tiktok')}
+                    </a>
+                  </li>
 
-                <li>
-                  <a
-                    href="https://diff-digest-appp.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('projects.label.diffDigest')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://sql-query-parser.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('projects.label.sqlParser')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/enxilium/posture-checker-robot"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('projects.label.fernando')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/DerrickHa/ht6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('projects.label.basketbin')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/nicholaschen09/facial-recognition-neural-network"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('projects.label.facialRecognition')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://llm-benchmarking-kappa.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('projects.label.agentSearchEvals')}
-                  </a>
-                </li>
-              </ul>
+                  <li>
+                    <a
+                      href="https://diff-digest-appp.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.diffDigest')}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://sql-query-parser.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.sqlParser')}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/enxilium/posture-checker-robot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.fernando')}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/DerrickHa/ht6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.basketbin')}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/nicholaschen09/facial-recognition-neural-network"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.facialRecognition')}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://llm-benchmarking-kappa.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.agentSearchEvals')}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/nicholaschen09/summary-discord-bot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.summaryDiscordBot')}
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             <div>
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
-              <ul className="text-xs md:text-sm text-stone-400 space-y-1">
-                <li>
-                  <a
-                    href="/blogs/ontology-text-to-sql"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('blog.ontology.title')}
-                  </a>
-                </li>
+              <div className="-mx-2 px-2">
+                <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                  <li>
+                    <a
+                      href="/blogs/grpc"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.grpc.title')}
+                    </a>
+                  </li>
 
-                <li>
-                  <a
-                    href="/blogs/git"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('blog.git.title')}
-                  </a>
-                </li>
+                  <li>
+                    <a
+                      href="/blogs/ontology-text-to-sql"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.ontology.title')}
+                    </a>
+                  </li>
 
-                <li>
-                  <a
-                    href="/blogs/how-i-learned-to-code"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('blog.coding.title')}
-                  </a>
-                </li>
+                  <li>
+                    <a
+                      href="/blogs/git"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.git.title')}
+                    </a>
+                  </li>
 
-                <li>
-                  <a
-                    href="/blogs/waterloo-coop"
-                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                  >
-                    {t('blog.waterlooCoop.title')}
-                  </a>
-                </li>
-              </ul>
+                  <li>
+                    <a
+                      href="/blogs/how-i-learned-to-code"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.coding.title')}
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/blogs/waterloo-coop"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.waterlooCoop.title')}
+                    </a>
+                  </li>
+                </ul>
+              </div>
               {/* Neighbours navigation under Blogs */}
               <div className="mt-4 mb-4 flex items-center gap-2 text-xs text-stone-400">
                 {/* Left Arrow */}

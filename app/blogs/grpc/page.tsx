@@ -97,13 +97,27 @@ message HelloReply {
             </div>
 
             <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              using the API
+            </h3>
+            <p className="mb-4">
+              starting from a .proto file, gRPC compiler plugins generate client- and server-side
+              code. the server implements the service methods and runs a gRPC server to handle
+              calls. the client uses a local stub object that implements the same methods, wrapping
+              parameters in protocol buffer messages and sending requests to the server.
+            </p>
+            <p className="mb-4">
+              gRPC APIs support both synchronous (blocking) and asynchronous (non-blocking) calls,
+              useful for different network operation scenarios.
+            </p>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
               service method types
             </h3>
             <p className="mb-4">gRPC lets you define four kinds of service methods:</p>
 
             <ul className="space-y-4 text-stone-300 list-disc list-inside ml-4">
               <li>
-                <strong className="text-white">Unary RPCs</strong>: single request, single
+                <strong className="text-white">unary RPCs</strong>: single request, single
                 response.
                 <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                   {`rpc GetUser(UserRequest) returns (UserResponse);`}
@@ -111,7 +125,7 @@ message HelloReply {
               </li>
 
               <li>
-                <strong className="text-white">Server streaming RPCs</strong>: client sends
+                <strong className="text-white">server streaming RPCs</strong>: client sends
                 request, receives stream of messages.
                 <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                   {`rpc ListItems(ListRequest) returns (stream ItemResponse);`}
@@ -119,7 +133,7 @@ message HelloReply {
               </li>
 
               <li>
-                <strong className="text-white">Client streaming RPCs</strong>: client sends stream
+                <strong className="text-white">client streaming RPCs</strong>: client sends stream
                 of messages, receives single response.
                 <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                   {`rpc UploadData(stream DataChunk) returns (UploadResponse);`}
@@ -127,13 +141,46 @@ message HelloReply {
               </li>
 
               <li>
-                <strong className="text-white">Bidirectional streaming RPCs</strong>: both sides
+                <strong className="text-white">bidirectional streaming RPCs</strong>: both sides
                 send streams of messages independently.
                 <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                   {`rpc Chat(stream MessageRequest) returns (stream MessageResponse);`}
                 </pre>
               </li>
             </ul>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              deadlines and timeouts
+            </h3>
+            <p className="mb-4">
+              clients can specify how long to wait for an RPC before it's terminated with
+              DEADLINE_EXCEEDED. servers can query timeout status and remaining time.
+            </p>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              RPC termination and cancellation
+            </h3>
+            <p className="mb-4">
+              client and server make independent determinations of call success, so their
+              conclusions may not match. either side can cancel an RPC at any time, which terminates
+              it immediately. changes made before cancellation are not rolled back.
+            </p>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              metadata
+            </h3>
+            <p className="mb-4">
+              metadata is key-value pairs containing information about an RPC call (e.g.,
+              authentication). keys are case-insensitive ASCII strings, must not start with grpc-
+              (reserved), and binary-valued keys end in -bin.
+            </p>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">channels</h3>
+            <p className="mb-4">
+              a gRPC channel provides a connection to a server on a specified host and port, used
+              when creating client stubs. clients can configure channel arguments to modify gRPC
+              behavior (e.g., message compression). channels have state (connected, idle).
+            </p>
           </section>
 
           <section>

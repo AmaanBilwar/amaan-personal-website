@@ -141,10 +141,66 @@ message HelloReply {
               {t('blog.grpc.whyGoodTitle')}
             </h2>
 
+            <p className="mb-6">
+              gRPC leverages HTTP/2's multiplexing, header compression, and binary framing for
+              better efficiency than REST/HTTP/1.1. The .proto contract enables automatic code
+              generation in multiple languages, ensuring type safety. Native streaming support
+              (server, client, or bidirectional) makes it ideal for real-time apps, large file
+              transfers, and long-lived connections.
+            </p>
+
             <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-2 mt-6">
               {t('blog.grpc.httpVsHttp2Title')}
             </h3>
-            <p className="mb-6 whitespace-pre-wrap">{t('blog.grpc.whyGoodText')}</p>
+            <p className="mb-6">
+              gRPC uses HTTP/2 as its transport protocol, which provides significant improvements
+              over HTTP/1.1. The following table compares the key features of both protocols.
+            </p>
+
+            <div className="my-6 overflow-x-auto">
+              <table className="w-full border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr className="border-b border-stone-700">
+                    <th className="text-left py-3 px-4 font-semibold text-white">feature</th>
+                    <th className="text-left py-3 px-4 font-semibold text-white">HTTP/1.1</th>
+                    <th className="text-left py-3 px-4 font-semibold text-white">HTTP/2</th>
+                  </tr>
+                </thead>
+                <tbody className="text-stone-300">
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">multiplexing</td>
+                    <td className="py-3 px-4">no (one request per connection)</td>
+                    <td className="py-3 px-4">yes (multiple requests over single connection)</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">header compression</td>
+                    <td className="py-3 px-4">no</td>
+                    <td className="py-3 px-4">yes (HPACK)</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">framing</td>
+                    <td className="py-3 px-4">text-based</td>
+                    <td className="py-3 px-4">binary framing</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">server push</td>
+                    <td className="py-3 px-4">no</td>
+                    <td className="py-3 px-4">yes</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">request prioritization</td>
+                    <td className="py-3 px-4">no</td>
+                    <td className="py-3 px-4">yes</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium text-stone-200">efficiency</td>
+                    <td className="py-3 px-4">higher latency, more bandwidth</td>
+                    <td className="py-3 px-4">lower latency, reduced bandwidth</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <div className="my-6">
               <img
                 src="/blogs/grpc/http2.png"
@@ -160,15 +216,54 @@ message HelloReply {
               {t('blog.grpc.rpcVsRestTitle')}
             </h3>
             <p className="mb-6 whitespace-pre-wrap">{t('blog.grpc.rpcVsRestText')}</p>
-            <div className="my-6">
-              <img
-                src="/blogs/grpc/rest_vs_rpc.png"
-                alt="REST vs RPC comparison"
-                className="w-full rounded-md border border-stone-700"
-              />
-              <p className="text-stone-500 italic text-center text-xs mt-1">
-                REST vs RPC architecture comparison
-              </p>
+
+            <div className="my-6 overflow-x-auto">
+              <table className="w-full border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr className="border-b border-stone-700">
+                    <th className="text-left py-3 px-4 font-semibold text-white">feature</th>
+                    <th className="text-left py-3 px-4 font-semibold text-white">gRPC</th>
+                    <th className="text-left py-3 px-4 font-semibold text-white">REST</th>
+                  </tr>
+                </thead>
+                <tbody className="text-stone-300">
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">transport</td>
+                    <td className="py-3 px-4">HTTP/2</td>
+                    <td className="py-3 px-4">HTTP/1.1</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">data format</td>
+                    <td className="py-3 px-4">protocol buffers (binary)</td>
+                    <td className="py-3 px-4">JSON (text)</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">streaming</td>
+                    <td className="py-3 px-4">native support</td>
+                    <td className="py-3 px-4">limited (SSE, WebSocket)</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">code generation</td>
+                    <td className="py-3 px-4">automatic from .proto</td>
+                    <td className="py-3 px-4">manual</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">type safety</td>
+                    <td className="py-3 px-4">enforced by contract</td>
+                    <td className="py-3 px-4">runtime validation</td>
+                  </tr>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-200">performance</td>
+                    <td className="py-3 px-4">high (multiplexing, compression)</td>
+                    <td className="py-3 px-4">lower latency, more bandwidth</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 font-medium text-stone-200">browser support</td>
+                    <td className="py-3 px-4">limited (gRPC-Web required)</td>
+                    <td className="py-3 px-4">native</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 

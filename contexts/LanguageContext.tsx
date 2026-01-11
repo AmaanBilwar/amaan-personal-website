@@ -629,7 +629,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.git.references.docs': 'official git docs',
     'blog.git.references.dangit': 'dangit, git!',
     'blog.grpc.title': 'gRPC',
-    'blog.grpc.date': 'nicholas chen · january 11, 2026 · 6 min read',
+    'blog.grpc.date': 'nicholas chen · january 11, 2026 · 9 min read',
     'blog.grpc.intro':
       "in modern software architecture, especially with microservices, the way services communicate is crucial. while rest has been the standard for a long time, grpc has emerged as a powerful alternative for many use cases. in this post, i'll explain what grpc is, how it works, and why you might want to use it.",
     'blog.grpc.whatIsTitle': 'gRPC?',

@@ -388,7 +388,7 @@ message User {
               {t('blog.grpc.grpcWithGoTitle')}
             </h2>
             <p className="mb-4">
-              gRPC and go are a match made in heaven. since both originated from google, gRPC
+              gRPC and go are super compatible with each other. since both originated from google, gRPC
               support in go is first-class. the go ecosystem embraces gRPC for microservices due to
               go's concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.
             </p>

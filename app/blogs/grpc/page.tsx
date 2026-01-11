@@ -54,7 +54,32 @@ export default function GrpcBlog() {
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
               {t('blog.grpc.howItWorksTitle')}
             </h2>
-            <p>{t('blog.grpc.howItWorksText')}</p>
+            <div className="whitespace-pre-wrap">{t('blog.grpc.howItWorksText')}</div>
+
+            <div className="mt-6">
+              <p className="text-stone-400 mb-2 italic">Example .proto file:</p>
+              <pre className="bg-stone-800/50 p-4 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700">
+                {`syntax = "proto3";
+
+package greeting;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}`}
+              </pre>
+            </div>
           </section>
 
           <section>

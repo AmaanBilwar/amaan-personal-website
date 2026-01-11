@@ -449,8 +449,8 @@ func main() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/grpc/grpc-go" className="hover:text-stone-200 underline">
-                  gRPC go repository
+                <a href="https://github.com/grpc" className="hover:text-stone-200 underline">
+                  gRPC github
                 </a>
               </li>
               <li>

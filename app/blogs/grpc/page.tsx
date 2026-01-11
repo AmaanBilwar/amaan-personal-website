@@ -95,6 +95,45 @@ message HelloReply {
                 example .proto service definition
               </p>
             </div>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              service method types
+            </h3>
+            <p className="mb-4">gRPC lets you define four kinds of service methods:</p>
+
+            <ul className="space-y-4 text-stone-300 list-disc list-inside ml-4">
+              <li>
+                <strong className="text-white">Unary RPCs</strong>: single request, single
+                response.
+                <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
+                  {`rpc GetUser(UserRequest) returns (UserResponse);`}
+                </pre>
+              </li>
+
+              <li>
+                <strong className="text-white">Server streaming RPCs</strong>: client sends
+                request, receives stream of messages.
+                <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
+                  {`rpc ListItems(ListRequest) returns (stream ItemResponse);`}
+                </pre>
+              </li>
+
+              <li>
+                <strong className="text-white">Client streaming RPCs</strong>: client sends stream
+                of messages, receives single response.
+                <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
+                  {`rpc UploadData(stream DataChunk) returns (UploadResponse);`}
+                </pre>
+              </li>
+
+              <li>
+                <strong className="text-white">Bidirectional streaming RPCs</strong>: both sides
+                send streams of messages independently.
+                <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
+                  {`rpc Chat(stream MessageRequest) returns (stream MessageResponse);`}
+                </pre>
+              </li>
+            </ul>
           </section>
 
           <section>
@@ -102,7 +141,7 @@ message HelloReply {
               {t('blog.grpc.whyGoodTitle')}
             </h2>
 
-            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-2 mt-6">
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-2 mt-6">
               {t('blog.grpc.httpVsHttp2Title')}
             </h3>
             <p className="mb-6 whitespace-pre-wrap">{t('blog.grpc.whyGoodText')}</p>
@@ -117,7 +156,7 @@ message HelloReply {
               </p>
             </div>
 
-            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-2 mt-8">
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-2 mt-8">
               {t('blog.grpc.rpcVsRestTitle')}
             </h3>
             <p className="mb-6 whitespace-pre-wrap">{t('blog.grpc.rpcVsRestText')}</p>

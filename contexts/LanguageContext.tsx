@@ -629,7 +629,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.git.references.docs': 'official git docs',
     'blog.git.references.dangit': 'dangit, git!',
     'blog.grpc.title': 'gRPC',
-    'blog.grpc.date': 'nicholas chen · january 4, 2026 · 6 min read',
+    'blog.grpc.date': 'nicholas chen · january 11, 2026 · 6 min read',
     'blog.grpc.intro':
       "in modern software architecture, especially with microservices, the way services communicate is crucial. while rest has been the standard for a long time, grpc has emerged as a powerful alternative for many use cases. in this post, i'll explain what grpc is, how it works, and why you might want to use it.",
     'blog.grpc.whatIsTitle': 'gRPC?',
@@ -646,7 +646,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.rpcVsRestText':
       'RPC focuses on actions (verbs) like "getUser", while REST focuses on resources (nouns) like "User". this makes gRPC feel more like calling a local function, simplifying distributed development.\n\nREST is great for public APIs where human readability (JSON) and browser support are important. it\'s flexible and widely understood. gRPC, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it\'s also strongly typed, which helps in maintaining large systems.',
     'blog.grpc.whyGoodText':
-      'gRPC leverages HTTP/2\'s multiplexing, header compression, and binary framing for better efficiency than REST/HTTP/1.1. The .proto contract enables automatic code generation in multiple languages, ensuring type safety. Native streaming support (server, client, or bidirectional) makes it ideal for real-time apps, large file transfers, and long-lived connections.',
+      "gRPC leverages HTTP/2's multiplexing, header compression, and binary framing for better efficiency than REST/HTTP/1.1. The .proto contract enables automatic code generation in multiple languages, ensuring type safety. Native streaming support (server, client, or bidirectional) makes it ideal for real-time apps, large file transfers, and long-lived connections.",
     'blog.grpc.httpVsHttp2Text':
       'gRPC uses HTTP/2 as its transport protocol, which provides significant improvements over HTTP/1.1. The following table compares the key features of both protocols.',
     'blog.grpc.architectureCaption': 'gRPC architecture: client stub and server stub interaction',
@@ -664,12 +664,14 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.serverStreamingRPCs': 'server streaming RPCs',
     'blog.grpc.serverStreamingRPCsDesc': 'client sends request, receives stream of messages.',
     'blog.grpc.clientStreamingRPCs': 'client streaming RPCs',
-    'blog.grpc.clientStreamingRPCsDesc': 'client sends stream of messages, receives single response.',
+    'blog.grpc.clientStreamingRPCsDesc':
+      'client sends stream of messages, receives single response.',
     'blog.grpc.bidirectionalStreamingRPCs': 'bidirectional streaming RPCs',
-    'blog.grpc.bidirectionalStreamingRPCsDesc': 'both sides send streams of messages independently.',
+    'blog.grpc.bidirectionalStreamingRPCsDesc':
+      'both sides send streams of messages independently.',
     'blog.grpc.deadlinesTitle': 'deadlines and timeouts',
     'blog.grpc.deadlinesText':
-      'clients can specify how long to wait for an RPC before it\'s terminated with DEADLINE_EXCEEDED. servers can query timeout status and remaining time.',
+      "clients can specify how long to wait for an RPC before it's terminated with DEADLINE_EXCEEDED. servers can query timeout status and remaining time.",
     'blog.grpc.rpcTerminationTitle': 'RPC termination and cancellation',
     'blog.grpc.rpcTerminationText':
       'client and server make independent determinations of call success, so their conclusions may not match. either side can cancel an RPC at any time, which terminates it immediately. changes made before cancellation are not rolled back.',
@@ -684,7 +686,7 @@ const translations: Record<Language, Record<string, string>> = {
       'gRPC uses a standardized error model with status codes. common status codes include OK, INVALID_ARGUMENT, NOT_FOUND, UNAVAILABLE, and DEADLINE_EXCEEDED. errors include both a status code and an optional error message, providing consistent error handling across languages.',
     'blog.grpc.securityTitle': 'security and authentication',
     'blog.grpc.securityText':
-      'gRPC supports TLS (transport layer security) for encrypted communication between client and server. mTLS (mutual TLS) provides mutual authentication where both sides verify each other\'s certificates. authentication credentials can also be passed via metadata, allowing for various authentication mechanisms including OAuth2, JWT tokens, and API keys.',
+      "gRPC supports TLS (transport layer security) for encrypted communication between client and server. mTLS (mutual TLS) provides mutual authentication where both sides verify each other's certificates. authentication credentials can also be passed via metadata, allowing for various authentication mechanisms including OAuth2, JWT tokens, and API keys.",
     'blog.grpc.http2Caption': 'http/1.1 vs http/2 multiplexing',
     'blog.grpc.protobufVsJsonTitle': 'protocol buffers vs JSON',
     'blog.grpc.protobufCaption': 'protocol buffers definition and serialized format (binary)',
@@ -724,7 +726,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.tableBrowserSupportNative': 'native',
     'blog.grpc.grpcWithGoTitle': 'gRPC with go',
     'blog.grpc.grpcWithGoText1':
-      'gRPC and go are super compatible with each other. since both originated from google, gRPC support in go is first-class. the go ecosystem embraces gRPC for microservices due to go\'s concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.',
+      "gRPC and go are super compatible with each other. since both originated from google, gRPC support in go is first-class. the go ecosystem embraces gRPC for microservices due to go's concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.",
     'blog.grpc.grpcWithGoText2':
       'while go has excellent gRPC support, gRPC itself supports many languages including java, python, c++, node.js, rust, ruby, php, and more. code generation ensures consistent behavior across all language implementations.',
     'blog.grpc.grpcWithGoText3':
@@ -739,7 +741,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.whenToUse2':
       'real-time systems like chat applications, gaming backends, and live data feeds',
     'blog.grpc.whenToUse3':
-      'mobile APIs that benefit from gRPC\'s binary format, reducing bandwidth usage and battery consumption',
+      "mobile APIs that benefit from gRPC's binary format, reducing bandwidth usage and battery consumption",
     'blog.grpc.whenToUse4':
       'streaming use cases such as file transfers, log aggregation, and real-time analytics',
     'blog.grpc.widelyUsedBy': 'gRPC is widely used by:',
@@ -1457,17 +1459,12 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.clientExampleCaption': 'go 中的 gRPC 客户端实现示例',
     'blog.grpc.whenToUseTitle': '何时使用 gRPC',
     'blog.grpc.whenToUseIntro': 'gRPC 非常适合：',
-    'blog.grpc.whenToUse1':
-      '需要高效、低延迟通信的微服务架构',
-    'blog.grpc.whenToUse2':
-      '实时系统，如聊天应用、游戏后端和实时数据源',
-    'blog.grpc.whenToUse3':
-      '受益于 gRPC 二进制格式的移动 API，减少带宽使用和电池消耗',
-    'blog.grpc.whenToUse4':
-      '流式用例，如文件传输、日志聚合和实时分析',
+    'blog.grpc.whenToUse1': '需要高效、低延迟通信的微服务架构',
+    'blog.grpc.whenToUse2': '实时系统，如聊天应用、游戏后端和实时数据源',
+    'blog.grpc.whenToUse3': '受益于 gRPC 二进制格式的移动 API，减少带宽使用和电池消耗',
+    'blog.grpc.whenToUse4': '流式用例，如文件传输、日志聚合和实时分析',
     'blog.grpc.widelyUsedBy': 'gRPC 被广泛使用于：',
-    'blog.grpc.widelyUsedBy1':
-      'google、netflix 和 square 等公司用于内部微服务通信',
+    'blog.grpc.widelyUsedBy1': 'google、netflix 和 square 等公司用于内部微服务通信',
     'blog.grpc.widelyUsedBy2': 'kubernetes 用于其 API',
     'blog.grpc.widelyUsedBy3': 'cloudflare 用于边缘计算',
     'blog.grpc.referencesTitle': '参考',

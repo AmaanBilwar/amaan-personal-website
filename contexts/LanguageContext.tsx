@@ -868,7 +868,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.git.title': 'git 命令',
     'blog.git.date': 'nicholas chen · 2025年12月21日 · 4分钟阅读',
     'blog.grpc.title': 'gRPC',
-    'blog.grpc.date': 'nicholas chen · 2026年1月4日 · 6分钟阅读',
+    'blog.grpc.date': 'nicholas chen · 2026年1月11日 · 9分钟阅读',
     'blog.coding.title': '我是如何学习编程的',
     'blog.coding.date': 'nicholas chen · 2025年12月26日 · 5分钟阅读',
     'blog.ontology.title': '为什么文本到SQL需要本体？',

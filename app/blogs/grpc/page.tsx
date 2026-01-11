@@ -318,13 +318,67 @@ message HelloReply {
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
               {t('blog.grpc.grpcWithGoTitle')}
             </h2>
-            <p>{t('blog.grpc.grpcWithGoText')}</p>
+            <p className="mb-4">
+              gRPC and go are a match made in heaven. since both originated from google, gRPC
+              support in go is first-class. the go ecosystem embraces gRPC for microservices due
+              to go's concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.
+            </p>
+            <p className="mb-4">
+              to use gRPC with go, define your service in a .proto file and use the protoc compiler
+              with protoc-gen-go and protoc-gen-go-grpc plugins. this generates message structs and
+              service interfaces. on the server, implement the generated interface and register it
+              with grpc.NewServer(). on the client, use grpc.Dial() to connect and create a client
+              stub. the generated code is idiomatic go.
+            </p>
+
             <div className="my-6">
               <img
                 src="/blogs/grpc/go.png"
                 alt="gRPC with Go"
                 className="w-full max-h-64 object-contain rounded-md border border-stone-700"
               />
+            </div>
+
+            <div className="mt-8">
+              <pre className="bg-stone-800/50 p-4 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700">
+                {`// Server implementation
+type server struct {
+    pb.UnimplementedGreeterServer
+}
+
+func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloReply, error) {
+    return &pb.HelloReply{Message: "Hello " + req.Name}, nil
+}
+
+func main() {
+    lis, _ := net.Listen("tcp", ":50051")
+    s := grpc.NewServer()
+    pb.RegisterGreeterServer(s, &server{})
+    s.Serve(lis)
+}`}
+              </pre>
+              <p className="text-stone-500 italic text-center text-xs mt-1">
+                example gRPC server implementation in go
+              </p>
+            </div>
+
+            <div className="mt-6">
+              <pre className="bg-stone-800/50 p-4 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700">
+                {`// Client implementation
+func main() {
+    conn, _ := grpc.Dial("localhost:50051", grpc.WithInsecure())
+    defer conn.Close()
+    
+    c := pb.NewGreeterClient(conn)
+    ctx := context.Background()
+    r, _ := c.SayHello(ctx, &pb.HelloRequest{Name: "world"})
+    
+    fmt.Println(r.Message)
+}`}
+              </pre>
+              <p className="text-stone-500 italic text-center text-xs mt-1">
+                example gRPC client implementation in go
+              </p>
             </div>
           </section>
 

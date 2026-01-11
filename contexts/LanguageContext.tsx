@@ -641,14 +641,15 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.howItWorksText2':
       'by default, gRPC uses protocol buffers (protobuf) as its interface definition language (IDL) and as its underlying message interchange format. in REST, you often use JSON. with protobuf, you define the structure of your data once in a .proto file. then, you use the protoc compiler to generate data access classes in your preferred programming language. this binary format is much lighter and faster to serialize/deserialize than JSON.',
     'blog.grpc.whyGoodTitle': 'why is it good?',
+    'blog.grpc.httpVsHttp2Title': 'HTTP/1.1 vs HTTP/2',
+    'blog.grpc.rpcVsRestTitle': 'RPC vs REST',
+    'blog.grpc.rpcVsRestText':
+      'RPC focuses on actions (verbs) like "getUser", while REST focuses on resources (nouns) like "User". this makes gRPC feel more like calling a local function, simplifying distributed development.\n\nREST is great for public APIs where human readability (JSON) and browser support are important. it\'s flexible and widely understood. gRPC, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it\'s also strongly typed, which helps in maintaining large systems.',
     'blog.grpc.whyGoodText':
-      'grpc uses http/2 as its transport protocol, which allows for features like multiplexing (sending multiple requests over a single connection), header compression, and binary framing. this makes grpc much more efficient than rest over http/1.1, reducing latency and bandwidth usage. with the .proto file serving as the contract, you can automatically generate client and server code in many languages (go, java, python, c++, node.js, etc.). this ensures that the client and server strictly adhere to the defined interface, reducing errors and saving development time. grpc also supports streaming natively. you can have server-side streaming, client-side streaming, or bidirectional streaming. this is perfect for real-time applications, large file transfers, or long-lived connections where data needs to be pushed continuously.',
+      'gRPC uses HTTP/2 as its transport protocol, which allows for features like multiplexing (sending multiple requests over a single connection), header compression, and binary framing. this makes gRPC much more efficient than REST over HTTP/1.1, reducing latency and bandwidth usage. while HTTP/2 is a major leap, the industry is already moving towards HTTP/3 to further improve performance over lossy networks. with the .proto file serving as the contract, you can automatically generate client and server code in many languages (Go, Java, Python, C++, Node.js, etc.). this ensures that the client and server strictly adhere to the defined interface, reducing errors and saving development time. gRPC also supports streaming natively. you can have server-side streaming, client-side streaming, or bidirectional streaming. this is perfect for real-time applications, large file transfers, or long-lived connections where data needs to be pushed continuously.',
     'blog.grpc.grpcWithGoTitle': 'gRPC with go',
     'blog.grpc.grpcWithGoText':
       "grpc and go are a match made in heaven. since both are born out of google, the support for grpc in go is first-class. the go ecosystem embraces grpc for microservices due to go's concurrency model (goroutines) which handles the multiplexing nature of http/2 efficiently. to use grpc with go, you typically define your service in a .proto file and then use the protoc compiler with the protoc-gen-go and protoc-gen-go-grpc plugins. this generates two files: one for the message structs and one for the service interface. on the server side, you implement the generated interface and register it with a grpc.NewServer(). on the client side, you use grpc.Dial() to connect to the server and create a client stub to make calls. the generated code is idiomatic go, making it easy to integrate into existing go projects.",
-    'blog.grpc.vsRestTitle': 'gRPC vs REST',
-    'blog.grpc.vsRestText':
-      "rest is great for public apis where human readability (json) and browser support are important. it's flexible and widely understood. grpc, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it's also strongly typed, which helps in maintaining large systems.",
     'blog.grpc.referencesTitle': 'references',
   },
   zh: {
@@ -1266,14 +1267,15 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.howItWorksText2':
       '默认情况下，gRPC 使用协议缓冲区（Protobuf）作为其接口定义语言（IDL）和底层消息交换格式。在 REST 中，你通常使用 JSON。使用 Protobuf，你在 .proto 文件中定义一次数据结构。然后，你使用 protoc 编译器在你喜欢的编程语言中生成数据访问类。这种二进制格式比 JSON 更轻便，序列化/反序列化速度更快。',
     'blog.grpc.whyGoodTitle': '为什么它很好？',
+    'blog.grpc.httpVsHttp2Title': 'HTTP/1.1 vs HTTP/2',
+    'blog.grpc.rpcVsRestTitle': 'RPC vs REST',
+    'blog.grpc.rpcVsRestText':
+      'RPC 专注于动作（动词），如“getUser”，而 REST 专注于资源（名词），如“User”。这使得 gRPC 感觉更像是调用本地函数，从而简化了分布式开发。\n\nREST 非常适合公共 API，其中人类可读性（JSON）和浏览器支持很重要。它灵活且被广泛理解。另一方面，gRPC 在内部微服务通信中表现出色，其中低延迟和高吞吐量至关重要。它也是强类型的，这有助于维护大型系统。',
     'blog.grpc.whyGoodText':
-      'gRPC 使用 HTTP/2 作为其传输协议，这允许诸如多路复用（通过单个连接发送多个请求）、头部压缩和二进制分帧等功能。这使得 gRPC 比 HTTP/1.1 上的 REST 更高效，从而减少了延迟和带宽使用。使用 .proto 文件作为契约，你可以自动生成许多语言（Go、Java、Python、C++、Node.js 等）的客户端和服务器代码。这确保了客户端和服务器严格遵守定义的接口，减少了错误并节省了开发时间。gRPC 还原生支持流式传输。你可以进行服务器端流式传输、客户端流式传输或双向流式传输。这非常适合实时应用程序、大文件传输或需要持续推送数据的长连接。',
+      'gRPC 使用 HTTP/2 作为其传输协议，这允许诸如多路复用（通过单个连接发送多个请求）、头部压缩和二进制分帧等功能。这使得 gRPC 比 HTTP/1.1 上的 REST 更高效，从而减少了延迟和带宽使用。虽然 HTTP/2 是一个重大飞跃，但行业已经在向 HTTP/3 迈进，以进一步提高在损耗网络上的性能。使用 .proto 文件作为契约，你可以自动生成许多语言（Go、Java、Python、C++、Node.js 等）的客户端和服务器代码。这确保了客户端和服务器严格遵守定义的接口，减少了错误并节省了开发时间。gRPC 还原生支持流式传输。你可以进行服务器端流式传输、客户端流式传输或双向流式传输。这非常适合实时应用程序、大文件传输或需要持续推送数据的长连接。',
     'blog.grpc.grpcWithGoTitle': 'gRPC 与 Go',
     'blog.grpc.grpcWithGoText':
       'gRPC 和 Go 是天作之合。由于两者都源自 Google，Go 对 gRPC 的支持是一流的。Go 生态系统拥抱 gRPC 用于微服务，因为 Go 的并发模型（goroutines）有效地处理了 HTTP/2 的多路复用特性。要在 Go 中使用 gRPC，你通常在 .proto 文件中定义你的服务，然后使用 protoc 编译器配合 protoc-gen-go 和 protoc-gen-go-grpc 插件。这会生成两个文件：一个用于消息结构体，另一个用于服务接口。在服务器端，你实现生成的接口并使用 grpc.NewServer() 注册它。在客户端，你使用 grpc.Dial() 连接到服务器并创建一个客户端存根来进行调用。生成的代码是惯用的 Go 代码，使其易于集成到现有的 Go 项目中。',
-    'blog.grpc.vsRestTitle': 'gRPC vs REST',
-    'blog.grpc.vsRestText':
-      'REST 非常适合公共 API，其中人类可读性（JSON）和浏览器支持很重要。它灵活且被广泛理解。另一方面，gRPC 在内部微服务通信中表现出色，其中低延迟和高吞吐量至关重要。它也是强类型的，这有助于维护大型系统。',
     'blog.grpc.referencesTitle': '参考',
   },
 };

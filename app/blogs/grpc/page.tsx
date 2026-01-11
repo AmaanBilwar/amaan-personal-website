@@ -101,7 +101,11 @@ message HelloReply {
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
               {t('blog.grpc.whyGoodTitle')}
             </h2>
-            <p className="mb-6">{t('blog.grpc.whyGoodText')}</p>
+
+            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-2 mt-6">
+              {t('blog.grpc.httpVsHttp2Title')}
+            </h3>
+            <p className="mb-6 whitespace-pre-wrap">{t('blog.grpc.whyGoodText')}</p>
             <div className="my-6">
               <img
                 src="/blogs/grpc/http2.png"
@@ -112,6 +116,21 @@ message HelloReply {
                 http/1.1 vs http/2 multiplexing
               </p>
             </div>
+
+            <h3 className="text-base md:text-lg font-semibold text-stone-100 mb-2 mt-8">
+              {t('blog.grpc.rpcVsRestTitle')}
+            </h3>
+            <p className="mb-6 whitespace-pre-wrap">{t('blog.grpc.rpcVsRestText')}</p>
+            <div className="my-6">
+              <img
+                src="/blogs/grpc/rest_vs_rpc.png"
+                alt="REST vs RPC comparison"
+                className="w-full rounded-md border border-stone-700"
+              />
+              <p className="text-stone-500 italic text-center text-xs mt-1">
+                REST vs RPC architecture comparison
+              </p>
+            </div>
           </section>
 
           <section>
@@ -119,13 +138,6 @@ message HelloReply {
               {t('blog.grpc.grpcWithGoTitle')}
             </h2>
             <p>{t('blog.grpc.grpcWithGoText')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.grpc.vsRestTitle')}
-            </h2>
-            <p>{t('blog.grpc.vsRestText')}</p>
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">
@@ -144,7 +156,7 @@ message HelloReply {
                 </a>
               </li>
               <li>
-                <a href="https://protobuf.dev/" className="hover:text-stone-200 underline">
+                <a href="https://protobuf.dev/overview/" className="hover:text-stone-200 underline">
                   protocol buffers documentation
                 </a>
               </li>
@@ -162,6 +174,14 @@ message HelloReply {
                   className="hover:text-stone-200 underline"
                 >
                   a brief introduction to gRPC (brevo)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://algodaily.com/lessons/rest-rpc-and-distributed-api-design"
+                  className="hover:text-stone-200 underline"
+                >
+                  REST, RPC and distributed API design (algodaily)
                 </a>
               </li>
             </ul>

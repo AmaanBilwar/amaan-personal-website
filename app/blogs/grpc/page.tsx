@@ -148,6 +148,22 @@ message HelloReply {
                   protocol buffers documentation
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://blog.cloudflare.com/fr-fr/http3-the-past-present-and-future/"
+                  className="hover:text-stone-200 underline"
+                >
+                  HTTP/3: the past, present and future (cloudflare)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://engineering.brevo.com/a-brief-introduction-to-grpc/"
+                  className="hover:text-stone-200 underline"
+                >
+                  a brief introduction to gRPC (brevo)
+                </a>
+              </li>
             </ul>
           </section>
         </div>

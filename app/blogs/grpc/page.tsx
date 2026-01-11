@@ -363,6 +363,9 @@ message HelloReply {
                 alt="gRPC with Go"
                 className="w-full max-h-64 object-contain rounded-md border border-stone-700"
               />
+              <p className="text-stone-500 italic text-center text-xs mt-1">
+                the go programming language
+              </p>
             </div>
 
             <div className="mt-8">

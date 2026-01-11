@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     title: 'gRPC',
     description: 'An introduction to gRPC and how it works',
     type: 'article',
-    images: ['https://nicholaschen.me/blogs/grpc/grpc.png'],
+    images: ['https://nicholaschen.me/blogs/grpc/grpc_logo.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'gRPC',
-    images: ['https://nicholaschen.me/blogs/grpc/grpc.png'],
+    images: ['https://nicholaschen.me/blogs/grpc/grpc_logo.png'],
   },
 };
 

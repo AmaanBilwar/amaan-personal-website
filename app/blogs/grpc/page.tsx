@@ -181,6 +181,27 @@ message HelloReply {
               when creating client stubs. clients can configure channel arguments to modify gRPC
               behavior (e.g., message compression). channels have state (connected, idle).
             </p>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              error handling
+            </h3>
+            <p className="mb-4">
+              gRPC uses a standardized error model with status codes. common status codes include
+              OK, INVALID_ARGUMENT, NOT_FOUND, UNAVAILABLE, and DEADLINE_EXCEEDED. errors include
+              both a status code and an optional error message, providing consistent error handling
+              across languages.
+            </p>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              security and authentication
+            </h3>
+            <p className="mb-4">
+              gRPC supports TLS (transport layer security) for encrypted communication between
+              client and server. mTLS (mutual TLS) provides mutual authentication where both sides
+              verify each other's certificates. authentication credentials can also be passed via
+              metadata, allowing for various authentication mechanisms including OAuth2, JWT tokens,
+              and API keys.
+            </p>
           </section>
 
           <section>
@@ -324,6 +345,11 @@ message HelloReply {
               to go's concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.
             </p>
             <p className="mb-4">
+              while go has excellent gRPC support, gRPC itself supports many languages including
+              java, python, c++, node.js, rust, ruby, php, and more. code generation ensures
+              consistent behavior across all language implementations.
+            </p>
+            <p className="mb-4">
               to use gRPC with go, define your service in a .proto file and use the protoc compiler
               with protoc-gen-go and protoc-gen-go-grpc plugins. this generates message structs and
               service interfaces. on the server, implement the generated interface and register it
@@ -380,6 +406,36 @@ func main() {
                 example gRPC client implementation in go
               </p>
             </div>
+          </section>
+
+          <section>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+              when to use gRPC
+            </h2>
+            <p className="mb-4">gRPC is ideal for:</p>
+            <ul className="space-y-2 text-stone-300 list-disc list-inside ml-4 mb-4">
+              <li>
+                microservices architectures where services need efficient, low-latency
+                communication
+              </li>
+              <li>
+                real-time systems like chat applications, gaming backends, and live data feeds
+              </li>
+              <li>
+                mobile APIs that benefit from gRPC's binary format, reducing bandwidth usage and
+                battery consumption
+              </li>
+              <li>
+                streaming use cases such as file transfers, log aggregation, and real-time
+                analytics
+              </li>
+            </ul>
+            <p className="mb-4">gRPC is widely used by:</p>
+            <ul className="space-y-2 text-stone-300 list-disc list-inside ml-4">
+              <li>companies like google, netflix, and square for internal microservices communication</li>
+              <li>kubernetes for its API</li>
+              <li>cloudflare for edge computing</li>
+            </ul>
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">

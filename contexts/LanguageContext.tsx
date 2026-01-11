@@ -646,10 +646,107 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.rpcVsRestText':
       'RPC focuses on actions (verbs) like "getUser", while REST focuses on resources (nouns) like "User". this makes gRPC feel more like calling a local function, simplifying distributed development.\n\nREST is great for public APIs where human readability (JSON) and browser support are important. it\'s flexible and widely understood. gRPC, on the other hand, excels in internal microservices communication where low latency and high throughput are critical. it\'s also strongly typed, which helps in maintaining large systems.',
     'blog.grpc.whyGoodText':
-      'while HTTP/2 is a major leap, the industry is already moving towards HTTP/3 to further improve performance over lossy networks.',
+      'gRPC leverages HTTP/2\'s multiplexing, header compression, and binary framing for better efficiency than REST/HTTP/1.1. The .proto contract enables automatic code generation in multiple languages, ensuring type safety. Native streaming support (server, client, or bidirectional) makes it ideal for real-time apps, large file transfers, and long-lived connections.',
+    'blog.grpc.httpVsHttp2Text':
+      'gRPC uses HTTP/2 as its transport protocol, which provides significant improvements over HTTP/1.1. The following table compares the key features of both protocols.',
+    'blog.grpc.architectureCaption': 'gRPC architecture: client stub and server stub interaction',
+    'blog.grpc.protoExampleCaption': 'example .proto service definition',
+    'blog.grpc.usingApiTitle': 'using the API',
+    'blog.grpc.usingApiText':
+      'starting from a .proto file, gRPC compiler plugins generate client- and server-side code. the server implements the service methods and runs a gRPC server to handle calls. the client uses a local stub object that implements the same methods, wrapping parameters in protocol buffer messages and sending requests to the server.',
+    'blog.grpc.usingApiText2':
+      'gRPC APIs support both synchronous (blocking) and asynchronous (non-blocking) calls, useful for different network operation scenarios.',
+    'blog.grpc.serviceMethodTypesTitle': 'service method types',
+    'blog.grpc.serviceMethodTypesIntro': 'gRPC lets you define four kinds of service methods:',
+    'blog.grpc.serviceMethodTypesCaption': 'gRPC service method types',
+    'blog.grpc.unaryRPCs': 'unary RPCs',
+    'blog.grpc.unaryRPCsDesc': 'single request, single response.',
+    'blog.grpc.serverStreamingRPCs': 'server streaming RPCs',
+    'blog.grpc.serverStreamingRPCsDesc': 'client sends request, receives stream of messages.',
+    'blog.grpc.clientStreamingRPCs': 'client streaming RPCs',
+    'blog.grpc.clientStreamingRPCsDesc': 'client sends stream of messages, receives single response.',
+    'blog.grpc.bidirectionalStreamingRPCs': 'bidirectional streaming RPCs',
+    'blog.grpc.bidirectionalStreamingRPCsDesc': 'both sides send streams of messages independently.',
+    'blog.grpc.deadlinesTitle': 'deadlines and timeouts',
+    'blog.grpc.deadlinesText':
+      'clients can specify how long to wait for an RPC before it\'s terminated with DEADLINE_EXCEEDED. servers can query timeout status and remaining time.',
+    'blog.grpc.rpcTerminationTitle': 'RPC termination and cancellation',
+    'blog.grpc.rpcTerminationText':
+      'client and server make independent determinations of call success, so their conclusions may not match. either side can cancel an RPC at any time, which terminates it immediately. changes made before cancellation are not rolled back.',
+    'blog.grpc.metadataTitle': 'metadata',
+    'blog.grpc.metadataText':
+      'metadata is key-value pairs containing information about an RPC call (e.g., authentication). keys are case-insensitive ASCII strings, must not start with grpc- (reserved), and binary-valued keys end in -bin.',
+    'blog.grpc.channelsTitle': 'channels',
+    'blog.grpc.channelsText':
+      'a gRPC channel provides a connection to a server on a specified host and port, used when creating client stubs. clients can configure channel arguments to modify gRPC behavior (e.g., message compression). channels have state (connected, idle).',
+    'blog.grpc.errorHandlingTitle': 'error handling',
+    'blog.grpc.errorHandlingText':
+      'gRPC uses a standardized error model with status codes. common status codes include OK, INVALID_ARGUMENT, NOT_FOUND, UNAVAILABLE, and DEADLINE_EXCEEDED. errors include both a status code and an optional error message, providing consistent error handling across languages.',
+    'blog.grpc.securityTitle': 'security and authentication',
+    'blog.grpc.securityText':
+      'gRPC supports TLS (transport layer security) for encrypted communication between client and server. mTLS (mutual TLS) provides mutual authentication where both sides verify each other\'s certificates. authentication credentials can also be passed via metadata, allowing for various authentication mechanisms including OAuth2, JWT tokens, and API keys.',
+    'blog.grpc.http2Caption': 'http/1.1 vs http/2 multiplexing',
+    'blog.grpc.protobufVsJsonTitle': 'protocol buffers vs JSON',
+    'blog.grpc.protobufCaption': 'protocol buffers definition and serialized format (binary)',
+    'blog.grpc.jsonCaption': 'JSON format (human-readable text)',
+    'blog.grpc.tableFeature': 'feature',
+    'blog.grpc.tableMultiplexing': 'multiplexing',
+    'blog.grpc.tableHeaderCompression': 'header compression',
+    'blog.grpc.tableFraming': 'framing',
+    'blog.grpc.tableServerPush': 'server push',
+    'blog.grpc.tableRequestPrioritization': 'request prioritization',
+    'blog.grpc.tableEfficiency': 'efficiency',
+    'blog.grpc.tableMultiplexingNo': 'no (one request per connection)',
+    'blog.grpc.tableMultiplexingYes': 'yes (multiple requests over single connection)',
+    'blog.grpc.tableHeaderCompressionYes': 'yes (HPACK)',
+    'blog.grpc.tableFramingText': 'text-based',
+    'blog.grpc.tableFramingBinary': 'binary framing',
+    'blog.grpc.tableEfficiencyHttp11': 'higher latency, more bandwidth',
+    'blog.grpc.tableEfficiencyHttp2': 'lower latency, reduced bandwidth',
+    'blog.grpc.tableTransport': 'transport',
+    'blog.grpc.tableDataFormat': 'data format',
+    'blog.grpc.tableStreaming': 'streaming',
+    'blog.grpc.tableCodeGeneration': 'code generation',
+    'blog.grpc.tableTypeSafety': 'type safety',
+    'blog.grpc.tablePerformance': 'performance',
+    'blog.grpc.tableBrowserSupport': 'browser support',
+    'blog.grpc.tableProtobufBinary': 'protocol buffers (binary)',
+    'blog.grpc.tableJsonText': 'JSON (text)',
+    'blog.grpc.tableStreamingNative': 'native support',
+    'blog.grpc.tableStreamingLimited': 'limited (SSE, WebSocket)',
+    'blog.grpc.tableCodeGenAuto': 'automatic from .proto',
+    'blog.grpc.tableCodeGenManual': 'manual',
+    'blog.grpc.tableTypeSafetyEnforced': 'enforced by contract',
+    'blog.grpc.tableTypeSafetyRuntime': 'runtime validation',
+    'blog.grpc.tablePerformanceHigh': 'high (multiplexing, compression)',
+    'blog.grpc.tablePerformanceLower': 'lower latency, more bandwidth',
+    'blog.grpc.tableBrowserSupportLimited': 'limited (gRPC-Web required)',
+    'blog.grpc.tableBrowserSupportNative': 'native',
     'blog.grpc.grpcWithGoTitle': 'gRPC with go',
-    'blog.grpc.grpcWithGoText':
-      "grpc and go are a match made in heaven. since both are born out of google, the support for grpc in go is first-class. the go ecosystem embraces grpc for microservices due to go's concurrency model (goroutines) which handles the multiplexing nature of http/2 efficiently. to use grpc with go, you typically define your service in a .proto file and then use the protoc compiler with the protoc-gen-go and protoc-gen-go-grpc plugins. this generates two files: one for the message structs and one for the service interface. on the server side, you implement the generated interface and register it with a grpc.NewServer(). on the client side, you use grpc.Dial() to connect to the server and create a client stub to make calls. the generated code is idiomatic go, making it easy to integrate into existing go projects.",
+    'blog.grpc.grpcWithGoText1':
+      'gRPC and go are super compatible with each other. since both originated from google, gRPC support in go is first-class. the go ecosystem embraces gRPC for microservices due to go\'s concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.',
+    'blog.grpc.grpcWithGoText2':
+      'while go has excellent gRPC support, gRPC itself supports many languages including java, python, c++, node.js, rust, ruby, php, and more. code generation ensures consistent behavior across all language implementations.',
+    'blog.grpc.grpcWithGoText3':
+      'to use gRPC with go, define your service in a .proto file and use the protoc compiler with protoc-gen-go and protoc-gen-go-grpc plugins. this generates message structs and service interfaces. on the server, implement the generated interface and register it with grpc.NewServer(). on the client, use grpc.Dial() to connect and create a client stub. the generated code is idiomatic go.',
+    'blog.grpc.goImageCaption': 'the go programming language',
+    'blog.grpc.serverExampleCaption': 'example gRPC server implementation in go',
+    'blog.grpc.clientExampleCaption': 'example gRPC client implementation in go',
+    'blog.grpc.whenToUseTitle': 'when to use gRPC',
+    'blog.grpc.whenToUseIntro': 'gRPC is ideal for:',
+    'blog.grpc.whenToUse1':
+      'microservices architectures where services need efficient, low-latency communication',
+    'blog.grpc.whenToUse2':
+      'real-time systems like chat applications, gaming backends, and live data feeds',
+    'blog.grpc.whenToUse3':
+      'mobile APIs that benefit from gRPC\'s binary format, reducing bandwidth usage and battery consumption',
+    'blog.grpc.whenToUse4':
+      'streaming use cases such as file transfers, log aggregation, and real-time analytics',
+    'blog.grpc.widelyUsedBy': 'gRPC is widely used by:',
+    'blog.grpc.widelyUsedBy1':
+      'companies like google, netflix, and square for internal microservices communication',
+    'blog.grpc.widelyUsedBy2': 'kubernetes for its API',
+    'blog.grpc.widelyUsedBy3': 'cloudflare for edge computing',
     'blog.grpc.referencesTitle': 'references',
   },
   zh: {
@@ -1272,10 +1369,107 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.rpcVsRestText':
       'RPC 专注于动作（动词），如“getUser”，而 REST 专注于资源（名词），如“User”。这使得 gRPC 感觉更像是调用本地函数，从而简化了分布式开发。\n\nREST 非常适合公共 API，其中人类可读性（JSON）和浏览器支持很重要。它灵活且被广泛理解。另一方面，gRPC 在内部微服务通信中表现出色，其中低延迟和高吞吐量至关重要。它也是强类型的，这有助于维护大型系统。',
     'blog.grpc.whyGoodText':
-      'gRPC 使用 HTTP/2 作为其传输协议，这允许诸如多路复用（通过单个连接发送多个请求）、头部压缩和二进制分帧等功能。这使得 gRPC 比 HTTP/1.1 上的 REST 更高效，从而减少了延迟和带宽使用。虽然 HTTP/2 是一个重大飞跃，但行业已经在向 HTTP/3 迈进，以进一步提高在损耗网络上的性能。使用 .proto 文件作为契约，你可以自动生成许多语言（Go、Java、Python、C++、Node.js 等）的客户端和服务器代码。这确保了客户端和服务器严格遵守定义的接口，减少了错误并节省了开发时间。gRPC 还原生支持流式传输。你可以进行服务器端流式传输、客户端流式传输或双向流式传输。这非常适合实时应用程序、大文件传输或需要持续推送数据的长连接。',
+      'gRPC 利用 HTTP/2 的多路复用、头部压缩和二进制分帧，比 REST/HTTP/1.1 更高效。.proto 契约支持多种语言的自动代码生成，确保类型安全。原生流式支持（服务器、客户端或双向）使其非常适合实时应用、大文件传输和长连接。',
+    'blog.grpc.httpVsHttp2Text':
+      'gRPC 使用 HTTP/2 作为其传输协议，它提供了比 HTTP/1.1 的显著改进。下表比较了两种协议的关键特性。',
+    'blog.grpc.architectureCaption': 'gRPC架构：客户端存根和服务器存根交互',
+    'blog.grpc.protoExampleCaption': '示例 .proto 服务定义',
+    'blog.grpc.usingApiTitle': '使用API',
+    'blog.grpc.usingApiText':
+      '从 .proto 文件开始，gRPC 编译器插件生成客户端和服务器端代码。服务器实现服务方法并运行 gRPC 服务器来处理调用。客户端使用一个本地存根对象，该对象实现相同的方法，将参数包装在协议缓冲区消息中并向服务器发送请求。',
+    'blog.grpc.usingApiText2':
+      'gRPC API 支持同步（阻塞）和异步（非阻塞）调用，适用于不同的网络操作场景。',
+    'blog.grpc.serviceMethodTypesTitle': '服务方法类型',
+    'blog.grpc.serviceMethodTypesIntro': 'gRPC 允许你定义四种服务方法：',
+    'blog.grpc.serviceMethodTypesCaption': 'gRPC 服务方法类型',
+    'blog.grpc.unaryRPCs': '一元RPC',
+    'blog.grpc.unaryRPCsDesc': '单个请求，单个响应。',
+    'blog.grpc.serverStreamingRPCs': '服务器流式RPC',
+    'blog.grpc.serverStreamingRPCsDesc': '客户端发送请求，接收消息流。',
+    'blog.grpc.clientStreamingRPCs': '客户端流式RPC',
+    'blog.grpc.clientStreamingRPCsDesc': '客户端发送消息流，接收单个响应。',
+    'blog.grpc.bidirectionalStreamingRPCs': '双向流式RPC',
+    'blog.grpc.bidirectionalStreamingRPCsDesc': '双方独立发送消息流。',
+    'blog.grpc.deadlinesTitle': '截止时间和超时',
+    'blog.grpc.deadlinesText':
+      '客户端可以指定在 RPC 被 DEADLINE_EXCEEDED 终止之前等待多长时间。服务器可以查询超时状态和剩余时间。',
+    'blog.grpc.rpcTerminationTitle': 'RPC终止和取消',
+    'blog.grpc.rpcTerminationText':
+      '客户端和服务器对调用成功进行独立判断，因此它们的结论可能不匹配。任何一方都可以随时取消 RPC，这会立即终止它。取消前所做的更改不会回滚。',
+    'blog.grpc.metadataTitle': '元数据',
+    'blog.grpc.metadataText':
+      '元数据是包含有关 RPC 调用信息的键值对（例如，身份验证）。键是大小写不敏感的 ASCII 字符串，不能以 grpc- 开头（保留），二进制值键以 -bin 结尾。',
+    'blog.grpc.channelsTitle': '通道',
+    'blog.grpc.channelsText':
+      'gRPC 通道提供到指定主机和端口上的服务器的连接，在创建客户端存根时使用。客户端可以配置通道参数以修改 gRPC 行为（例如，消息压缩）。通道具有状态（已连接、空闲）。',
+    'blog.grpc.errorHandlingTitle': '错误处理',
+    'blog.grpc.errorHandlingText':
+      'gRPC 使用带有状态代码的标准化错误模型。常见状态代码包括 OK、INVALID_ARGUMENT、NOT_FOUND、UNAVAILABLE 和 DEADLINE_EXCEEDED。错误包括状态代码和可选错误消息，提供跨语言的一致错误处理。',
+    'blog.grpc.securityTitle': '安全性和身份验证',
+    'blog.grpc.securityText':
+      'gRPC 支持 TLS（传输层安全性）以实现客户端和服务器之间的加密通信。mTLS（相互 TLS）提供相互身份验证，双方验证彼此的证书。身份验证凭据也可以通过元数据传递，允许包括 OAuth2、JWT 令牌和 API 密钥在内的各种身份验证机制。',
+    'blog.grpc.http2Caption': 'http/1.1 vs http/2 multiplexing',
+    'blog.grpc.protobufVsJsonTitle': 'protocol buffers vs JSON',
+    'blog.grpc.protobufCaption': 'protocol buffers definition and serialized format (binary)',
+    'blog.grpc.jsonCaption': 'JSON format (human-readable text)',
+    'blog.grpc.tableFeature': 'feature',
+    'blog.grpc.tableMultiplexing': 'multiplexing',
+    'blog.grpc.tableHeaderCompression': 'header compression',
+    'blog.grpc.tableFraming': 'framing',
+    'blog.grpc.tableServerPush': 'server push',
+    'blog.grpc.tableRequestPrioritization': 'request prioritization',
+    'blog.grpc.tableEfficiency': 'efficiency',
+    'blog.grpc.tableMultiplexingNo': 'no (one request per connection)',
+    'blog.grpc.tableMultiplexingYes': 'yes (multiple requests over single connection)',
+    'blog.grpc.tableHeaderCompressionYes': 'yes (HPACK)',
+    'blog.grpc.tableFramingText': 'text-based',
+    'blog.grpc.tableFramingBinary': 'binary framing',
+    'blog.grpc.tableEfficiencyHttp11': 'higher latency, more bandwidth',
+    'blog.grpc.tableEfficiencyHttp2': 'lower latency, reduced bandwidth',
+    'blog.grpc.tableTransport': 'transport',
+    'blog.grpc.tableDataFormat': 'data format',
+    'blog.grpc.tableStreaming': 'streaming',
+    'blog.grpc.tableCodeGeneration': 'code generation',
+    'blog.grpc.tableTypeSafety': 'type safety',
+    'blog.grpc.tablePerformance': 'performance',
+    'blog.grpc.tableBrowserSupport': 'browser support',
+    'blog.grpc.tableProtobufBinary': 'protocol buffers (binary)',
+    'blog.grpc.tableJsonText': 'JSON (text)',
+    'blog.grpc.tableStreamingNative': 'native support',
+    'blog.grpc.tableStreamingLimited': 'limited (SSE, WebSocket)',
+    'blog.grpc.tableCodeGenAuto': 'automatic from .proto',
+    'blog.grpc.tableCodeGenManual': 'manual',
+    'blog.grpc.tableTypeSafetyEnforced': 'enforced by contract',
+    'blog.grpc.tableTypeSafetyRuntime': 'runtime validation',
+    'blog.grpc.tablePerformanceHigh': 'high (multiplexing, compression)',
+    'blog.grpc.tablePerformanceLower': 'lower latency, more bandwidth',
+    'blog.grpc.tableBrowserSupportLimited': 'limited (gRPC-Web required)',
+    'blog.grpc.tableBrowserSupportNative': 'native',
     'blog.grpc.grpcWithGoTitle': 'gRPC 与 Go',
-    'blog.grpc.grpcWithGoText':
-      'gRPC 和 Go 是天作之合。由于两者都源自 Google，Go 对 gRPC 的支持是一流的。Go 生态系统拥抱 gRPC 用于微服务，因为 Go 的并发模型（goroutines）有效地处理了 HTTP/2 的多路复用特性。要在 Go 中使用 gRPC，你通常在 .proto 文件中定义你的服务，然后使用 protoc 编译器配合 protoc-gen-go 和 protoc-gen-go-grpc 插件。这会生成两个文件：一个用于消息结构体，另一个用于服务接口。在服务器端，你实现生成的接口并使用 grpc.NewServer() 注册它。在客户端，你使用 grpc.Dial() 连接到服务器并创建一个客户端存根来进行调用。生成的代码是惯用的 Go 代码，使其易于集成到现有的 Go 项目中。',
+    'blog.grpc.grpcWithGoText1':
+      'gRPC 和 go 彼此超级兼容。由于两者都源自 google，go 中的 gRPC 支持是一流的。go 生态系统拥抱 gRPC 用于微服务，因为 go 的并发模型（goroutines）能够高效处理 HTTP/2 多路复用。',
+    'blog.grpc.grpcWithGoText2':
+      '虽然 go 具有出色的 gRPC 支持，但 gRPC 本身支持许多语言，包括 java、python、c++、node.js、rust、ruby、php 等。代码生成确保所有语言实现的行为一致。',
+    'blog.grpc.grpcWithGoText3':
+      '要在 go 中使用 gRPC，请在 .proto 文件中定义服务，并使用 protoc 编译器配合 protoc-gen-go 和 protoc-gen-go-grpc 插件。这会生成消息结构体和服务接口。在服务器端，实现生成的接口并使用 grpc.NewServer() 注册它。在客户端，使用 grpc.Dial() 连接并创建客户端存根。生成的代码是惯用的 go 代码。',
+    'blog.grpc.goImageCaption': 'Go 编程语言',
+    'blog.grpc.serverExampleCaption': 'go 中的 gRPC 服务器实现示例',
+    'blog.grpc.clientExampleCaption': 'go 中的 gRPC 客户端实现示例',
+    'blog.grpc.whenToUseTitle': '何时使用 gRPC',
+    'blog.grpc.whenToUseIntro': 'gRPC 非常适合：',
+    'blog.grpc.whenToUse1':
+      '需要高效、低延迟通信的微服务架构',
+    'blog.grpc.whenToUse2':
+      '实时系统，如聊天应用、游戏后端和实时数据源',
+    'blog.grpc.whenToUse3':
+      '受益于 gRPC 二进制格式的移动 API，减少带宽使用和电池消耗',
+    'blog.grpc.whenToUse4':
+      '流式用例，如文件传输、日志聚合和实时分析',
+    'blog.grpc.widelyUsedBy': 'gRPC 被广泛使用于：',
+    'blog.grpc.widelyUsedBy1':
+      'google、netflix 和 square 等公司用于内部微服务通信',
+    'blog.grpc.widelyUsedBy2': 'kubernetes 用于其 API',
+    'blog.grpc.widelyUsedBy3': 'cloudflare 用于边缘计算',
     'blog.grpc.referencesTitle': '参考',
   },
 };

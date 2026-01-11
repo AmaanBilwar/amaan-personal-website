@@ -115,18 +115,28 @@ message HelloReply {
             </h3>
             <p className="mb-4">gRPC lets you define four kinds of service methods:</p>
 
+            <div className="my-6">
+              <img
+                src="/blogs/grpc/streaming.png"
+                alt="gRPC streaming types"
+                className="w-full rounded-md border border-stone-700"
+              />
+              <p className="text-stone-500 italic text-center text-xs mt-1">
+                gRPC service method types
+              </p>
+            </div>
+
             <ul className="space-y-4 text-stone-300 list-disc list-inside ml-4">
               <li>
-                <strong className="text-white">unary RPCs</strong>: single request, single
-                response.
+                <strong className="text-white">unary RPCs</strong>: single request, single response.
                 <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                   {`rpc GetUser(UserRequest) returns (UserResponse);`}
                 </pre>
               </li>
 
               <li>
-                <strong className="text-white">server streaming RPCs</strong>: client sends
-                request, receives stream of messages.
+                <strong className="text-white">server streaming RPCs</strong>: client sends request,
+                receives stream of messages.
                 <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                   {`rpc ListItems(ListRequest) returns (stream ItemResponse);`}
                 </pre>
@@ -175,7 +185,9 @@ message HelloReply {
               (reserved), and binary-valued keys end in -bin.
             </p>
 
-            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">channels</h3>
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
+              channels
+            </h3>
             <p className="mb-4">
               a gRPC channel provides a connection to a server on a specified host and port, used
               when creating client stubs. clients can configure channel arguments to modify gRPC
@@ -333,6 +345,42 @@ message HelloReply {
                 </tbody>
               </table>
             </div>
+
+            <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-2 mt-8">
+              protocol buffers vs JSON
+            </h3>
+
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col">
+                <pre className="bg-stone-800/50 p-4 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 h-[180px]">
+                  {`// Protocol Buffers (.proto)
+message User {
+  string name = 1;
+  int32 age = 2;
+  string email = 3;
+}
+
+// Serialized (binary, compact)`}
+                </pre>
+                <p className="text-stone-500 italic text-center text-xs mt-1">
+                  protocol buffers definition and serialized format (binary)
+                </p>
+              </div>
+
+              <div className="flex flex-col">
+                <pre className="bg-stone-800/50 p-4 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 h-[180px]">
+                  {`// JSON (text, human-readable)
+{
+  "name": "John Doe",
+  "age": 30,
+  "email": "john@example.com"
+}`}
+                </pre>
+                <p className="text-stone-500 italic text-center text-xs mt-1">
+                  JSON format (human-readable text)
+                </p>
+              </div>
+            </div>
           </section>
 
           <section>
@@ -341,8 +389,8 @@ message HelloReply {
             </h2>
             <p className="mb-4">
               gRPC and go are a match made in heaven. since both originated from google, gRPC
-              support in go is first-class. the go ecosystem embraces gRPC for microservices due
-              to go's concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.
+              support in go is first-class. the go ecosystem embraces gRPC for microservices due to
+              go's concurrency model (goroutines) which handles HTTP/2 multiplexing efficiently.
             </p>
             <p className="mb-4">
               while go has excellent gRPC support, gRPC itself supports many languages including
@@ -418,8 +466,7 @@ func main() {
             <p className="mb-4">gRPC is ideal for:</p>
             <ul className="space-y-2 text-stone-300 list-disc list-inside ml-4 mb-4">
               <li>
-                microservices architectures where services need efficient, low-latency
-                communication
+                microservices architectures where services need efficient, low-latency communication
               </li>
               <li>
                 real-time systems like chat applications, gaming backends, and live data feeds
@@ -429,13 +476,14 @@ func main() {
                 battery consumption
               </li>
               <li>
-                streaming use cases such as file transfers, log aggregation, and real-time
-                analytics
+                streaming use cases such as file transfers, log aggregation, and real-time analytics
               </li>
             </ul>
             <p className="mb-4">gRPC is widely used by:</p>
             <ul className="space-y-2 text-stone-300 list-disc list-inside ml-4">
-              <li>companies like google, netflix, and square for internal microservices communication</li>
+              <li>
+                companies like google, netflix, and square for internal microservices communication
+              </li>
               <li>kubernetes for its API</li>
               <li>cloudflare for edge computing</li>
             </ul>
@@ -483,6 +531,14 @@ func main() {
                   className="hover:text-stone-200 underline"
                 >
                   REST, RPC and distributed API design (algodaily)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tailcall.run/blog/what-is-grpc/"
+                  className="hover:text-stone-200 underline"
+                >
+                  gRPC decoded: the API protocol that's changing everything (tailcall)
                 </a>
               </li>
             </ul>

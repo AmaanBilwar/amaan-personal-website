@@ -319,6 +319,13 @@ message HelloReply {
               {t('blog.grpc.grpcWithGoTitle')}
             </h2>
             <p>{t('blog.grpc.grpcWithGoText')}</p>
+            <div className="my-6">
+              <img
+                src="/blogs/grpc/go.png"
+                alt="gRPC with Go"
+                className="w-full max-h-64 object-contain rounded-md border border-stone-700"
+              />
+            </div>
           </section>
 
           <section className="border-t border-stone-700 pt-6 mt-8">

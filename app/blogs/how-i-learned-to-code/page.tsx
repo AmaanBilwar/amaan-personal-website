@@ -710,6 +710,42 @@ export default function SoftwareEngineeringLearningBlog() {
                   t('blog.coding.item61')
                 )}
               </li>
+              <li>
+                {t('blog.coding.item62').includes('blog') ||
+                t('blog.coding.item62').includes('博客') ? (
+                  <>
+                    {t('blog.coding.item62').split(/blog|博客/)[0]}
+                    <Link
+                      href="/blogs/grpc"
+                      className="hover:text-stone-200 transition-colors underline"
+                    >
+                      {language === 'zh' ? '博客' : 'blog'}
+                    </Link>
+                    {t('blog.coding.item62').split(/blog|博客/)[1] || ''}
+                  </>
+                ) : (
+                  t('blog.coding.item62')
+                )}
+              </li>
+              <li>
+                {t('blog.coding.item63').includes('insforge') ||
+                t('blog.coding.item63').includes('InsForge') ? (
+                  <>
+                    {t('blog.coding.item63').split(/insforge|InsForge/)[0]}
+                    <a
+                      href="https://github.com/InsForge/InsForge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-stone-200 transition-colors underline"
+                    >
+                      {language === 'zh' ? 'insforge' : 'insforge'}
+                    </a>
+                    {t('blog.coding.item63').split(/insforge|InsForge/)[1] || ''}
+                  </>
+                ) : (
+                  t('blog.coding.item63')
+                )}
+              </li>
             </ul>
             <p className="mt-6 text-stone-400 italic text-sm">{t('blog.coding.note')}</p>
           </section>
@@ -737,6 +773,16 @@ export default function SoftwareEngineeringLearningBlog() {
                   className="hover:text-stone-200 transition-colors underline"
                 >
                   github.com/nicholaschen09
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://x.com/nicholaschen09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors underline"
+                >
+                  x.com/nicholaschen09
                 </a>
               </li>
             </ul>

@@ -78,15 +78,13 @@ export default function Home() {
                 href="https://uwaterloo.ca/systems-design-engineering/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
               >
-                <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="w-8 h-8" />
-                <div className="leading-tight text-xs md:text-sm">
-                  <div className="text-stone-100 font-medium">SYDE</div>
-                  <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                    UWaterloo
-                  </div>
-                </div>
+                <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="w-5 h-5" />
+                <span className="text-stone-100 font-medium">SYDE</span>
+                <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                  UWaterloo
+                </span>
               </a>
             </li>
           </ul>
@@ -104,15 +102,13 @@ export default function Home() {
                     href="https://textql.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                    className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
                   >
-                    <img src="/textql.jpg" alt="TextQL" className="w-8 h-8" />
-                    <div className="leading-tight text-xs md:text-sm">
-                      <div className="text-stone-100 font-medium">{t('current.role2')}</div>
-                      <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                        TextQL
-                      </div>
-                    </div>
+                    <img src="/textql.jpg" alt="TextQL" className="w-5 h-5" />
+                    <span className="text-stone-100 font-medium">{t('current.role2')}</span>
+                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                      TextQL
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -120,15 +116,13 @@ export default function Home() {
                     href="https://www.ownr.co/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                    className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
                   >
-                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="w-8 h-8" />
-                    <div className="leading-tight text-xs md:text-sm">
-                      <div className="text-stone-100 font-medium">{t('previously.role1')}</div>
-                      <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                        {t('previously.item1')}
-                      </div>
-                    </div>
+                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="w-5 h-5" />
+                    <span className="text-stone-100 font-medium">{t('previously.role1')}</span>
+                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                      {t('previously.item1')}
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -136,15 +130,13 @@ export default function Home() {
                     href="https://www.rbc.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                    className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
                   >
-                    <img src="/rbc.jpeg" alt="RBC" className="w-8 h-8" />
-                    <div className="leading-tight text-xs md:text-sm">
-                      <div className="text-stone-100 font-medium">{t('previously.role2')}</div>
-                      <div className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                        {t('previously.item2')}
-                      </div>
-                    </div>
+                    <img src="/rbc.jpeg" alt="RBC" className="w-5 h-5" />
+                    <span className="text-stone-100 font-medium">{t('previously.role2')}</span>
+                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                      {t('previously.item2')}
+                    </span>
                   </a>
                 </li>
               </ul>

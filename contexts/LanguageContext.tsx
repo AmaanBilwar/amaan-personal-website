@@ -81,7 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
       '30k followers on social media (x, instagram, tiktok, youtube) and over 10m views',
     'hero.achievement2': 'won 2nd place at UTRA Hacks, the largest robotics hackathon in canada',
     'hero.achievement3': 'designed award winning book covers for authors',
-    'hero.currently': 'Currently',
+    'hero.currently': 'currently',
     'hero.current1': '> studying syde (engineering) at the university of waterloo',
     'hero.current2':
       'working at textql as a software engineer intern in nyc building ai agents for data',
@@ -174,7 +174,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Home',
     'nav.draw': 'Draw',
-    'nav.blogs': 'Writing',
+    'nav.blogs': 'writing',
     'nav.draw.title': 'Draw something!',
     'nav.blogs.title': 'Read my writing!',
     'nav.contact': 'Contact',
@@ -471,7 +471,7 @@ const translations: Record<Language, Record<string, string>> = {
       "I've done pretty much everything you can think of that a teenager can do to make money: tutoring, working fast food jobs, selling things, shoveling the snow off neighbour's driveways, internships, freelance work in design and coding as well as brand deals from social media.",
 
     // Projects section
-    'projects.title': 'Projects',
+    'projects.title': 'projects',
     'projects.languagesSectionTitle': "A few programming languages I've worked with...",
     'projects.languagesTitle': "programming languages i've worked with",
     'projects.golang': 'golang',
@@ -511,14 +511,14 @@ const translations: Record<Language, Record<string, string>> = {
     'excited.item4': 'engineering projects that make me say, "whoa, that\'s so cool!"',
 
     // Previously section
-    'previously.title': 'Previously',
-    'previously.role1': 'Engineering',
-    'previously.role2': 'Engineering',
-    'previously.item1': 'Ownr',
-    'previously.item2': 'RBC',
+    'previously.title': 'previously',
+    'previously.role1': 'engineering',
+    'previously.role2': 'engineering',
+    'previously.item1': 'ownr',
+    'previously.item2': 'rbc',
 
     // Current roles (compact labels)
-    'current.role2': 'Engineering',
+    'current.role2': 'engineering',
 
     // Footer
     'footer.copyright': '© 2025 NICHOLAS CHEN',

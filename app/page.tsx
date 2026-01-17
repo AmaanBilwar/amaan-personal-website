@@ -80,10 +80,10 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
               >
-                <span className="text-stone-400 group-hover:text-stone-100 transition-colors">Engineering</span>
+                <span className="text-stone-400 group-hover:text-stone-100 transition-colors">engineering</span>
                 <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="w-5 h-5" />
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                  UWaterloo
+                  uwaterloo
                 </span>
               </a>
             </li>
@@ -107,7 +107,7 @@ export default function Home() {
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">{t('current.role2')}</span>
                     <img src="/textql.jpg" alt="TextQL" className="w-5 h-5" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      TextQL
+                      textql
                     </span>
                   </a>
                 </li>

@@ -80,8 +80,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
               >
+                <span className="text-stone-100 font-medium">Engineering</span>
                 <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="w-5 h-5" />
-                <span className="text-stone-100 font-medium">SYDE</span>
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                   UWaterloo
                 </span>
@@ -104,8 +104,8 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
                   >
-                    <img src="/textql.jpg" alt="TextQL" className="w-5 h-5" />
                     <span className="text-stone-100 font-medium">{t('current.role2')}</span>
+                    <img src="/textql.jpg" alt="TextQL" className="w-5 h-5" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       TextQL
                     </span>
@@ -118,8 +118,8 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
                   >
-                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="w-5 h-5" />
                     <span className="text-stone-100 font-medium">{t('previously.role1')}</span>
+                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="w-5 h-5" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.item1')}
                     </span>
@@ -132,8 +132,8 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
                   >
-                    <img src="/rbc.jpeg" alt="RBC" className="w-5 h-5" />
                     <span className="text-stone-100 font-medium">{t('previously.role2')}</span>
+                    <img src="/rbc.jpeg" alt="RBC" className="w-5 h-5" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.item2')}
                     </span>

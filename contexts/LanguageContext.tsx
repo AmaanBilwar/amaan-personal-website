@@ -367,9 +367,9 @@ const translations: Record<Language, Record<string, string>> = {
       'this winter, i had my very first real co-op experience as a software engineer intern at ownr. i made a lot of mistakes and learned a lot as well. looking back now just a year ago got me thinking about how far i\'ve come so i wanted to write about this experience because it taught me more about software engineering and the corporate life than i ever would\'ve learned.',
     'blog.firstInternship.howGotTitle': 'how i got this internship',
     'blog.firstInternship.howGotText1':
-      "last summer, i applied to rbc's summer tech labs program and ended up taking a return offer to work in rbc's ventures sector, where they host all the startups they've acquired over the past few years.",
+      "last summer, i applied to rbc's summer tech labs program for high schoolers who were interested in engineering and wanted to get ahead and start working before university and had a great time and made many friends. when the recruiting season came around for the first time in the first semester of waterloo, i eventually ended up taking a return offer to work in rbc's ventures sector, where all the startups that they've acquired over the past few years live.",
     'blog.firstInternship.howGotText2':
-      "one vivid memory from my first day: i met my manager and the entire team at 9:30am and immediately got to work. i set up my computer and started diving into the company codebase, feeling both excited and overwhelmed by what lay ahead.",
+      "a vivid memory i had from my first day was meeting my manager and the entire team at 9:30am and immediately getting to work. i set up my computer and started diving into the company codebase, feeling both excited and overwhelmed by what was to come.",
     'blog.firstInternship.mistakesTitle': 'mistakes i made',
     'blog.firstInternship.mistakesIntro':
       "i could go into more detail about my mistakes, but here are the key ones i made throughout my co-op term:",
@@ -1014,9 +1014,9 @@ const translations: Record<Language, Record<string, string>> = {
       '今年冬天，我在ownr获得了我的第一个真正的合作实习经验，作为软件工程师实习生，我犯了很多错误，也学到了很多。现在回顾仅仅一年前，让我思考自己走了多远，所以我想写下这段经历，因为它教会了我关于软件工程和企业生活的知识，这些是我永远不会学到的。',
     'blog.firstInternship.howGotTitle': '我是如何获得这次实习的？',
     'blog.firstInternship.howGotText1':
-      '所以去年夏天的一段时间，我申请了rbc的夏季科技实验室项目，最终接受了回到rbc的风险投资部门工作的返聘邀请，那里托管着他们过去几年收购的所有初创公司。',
+      '去年夏天，我申请了rbc的夏季科技实验室项目，这是一个面向对工程感兴趣并想在大学之前开始工作的高中生的项目，我度过了愉快的时光并交了许多朋友。当滑铁卢第一学期的招聘季节来临时，我最终接受了回到rbc风险投资部门工作的返聘邀请，那里是他们过去几年收购的所有初创公司的所在地。',
     'blog.firstInternship.howGotText2':
-      '我还记得的一个生动记忆是在工作的第一天，我在上午9:30见到了我的经理和整个团队，然后立即开始工作。我开始设置电脑并浏览公司代码库。',
+      '我第一天的一个生动记忆是在上午9:30见到我的经理和整个团队，然后立即开始工作。我设置了电脑并开始深入研究公司代码库，对即将到来的事情既兴奋又感到不知所措。',
     'blog.firstInternship.mistakesTitle': '我犯的错误',
     'blog.firstInternship.mistakesIntro':
       '我可以更详细地说明我的错误，但我不想这样做，所以这里是我在整个合作期间犯的一些错误：',

@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     title: 'reflecting on my first engineering internship',
     description: 'Reflections on my first co-op experience as a software engineer intern at Ownr',
     type: 'article',
-    images: ['https://nicholaschen.me/ownrco_logo.jpeg'],
+    images: ['https://nicholaschen.me/first-internship/ownr.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'reflecting on my first engineering internship',
-    images: ['https://nicholaschen.me/ownrco_logo.jpeg'],
+    images: ['https://nicholaschen.me/first-internship/ownr.png'],
   },
 };
 

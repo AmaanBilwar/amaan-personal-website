@@ -370,7 +370,7 @@ const translations: Record<Language, Record<string, string>> = {
       "last summer, i applied to rbc's summer tech labs program for high schoolers who were interested in engineering and wanted to get ahead and start working before university and had a great time and made many friends. when the recruiting season came around for the first time in the first semester of waterloo, i eventually ended up taking a return offer to work in rbc's ventures sector, where all the startups that they've acquired over the past few years live.",
     'blog.firstInternship.howGotText2':
       "a vivid memory i had from my first day was meeting my manager and the entire team at 9:30am and immediately getting to work. i set up my computer and started diving into the company codebase, feeling both excited and overwhelmed by what was to come.",
-    'blog.firstInternship.mistakesTitle': 'mistakes i made',
+    'blog.firstInternship.mistakesTitle': 'mistakes and lessons learned',
     'blog.firstInternship.mistakesIntro':
       "throughout my term i learned a lot from making many mistakes especially since this was my first real internship. here are some of the more important ones:",
     'blog.firstInternship.mistake1': 'asking too many "dumb" questions',
@@ -1021,7 +1021,7 @@ const translations: Record<Language, Record<string, string>> = {
       '去年夏天，我申请了rbc的夏季科技实验室项目，这是一个面向对工程感兴趣并想在大学之前开始工作的高中生的项目，我度过了愉快的时光并交了许多朋友。当滑铁卢第一学期的招聘季节来临时，我最终接受了回到rbc风险投资部门工作的返聘邀请，那里是他们过去几年收购的所有初创公司的所在地。',
     'blog.firstInternship.howGotText2':
       '我第一天的一个生动记忆是在上午9:30见到我的经理和整个团队，然后立即开始工作。我设置了电脑并开始深入研究公司代码库，对即将到来的事情既兴奋又感到不知所措。',
-    'blog.firstInternship.mistakesTitle': '我犯的错误',
+    'blog.firstInternship.mistakesTitle': '错误和经验教训',
     'blog.firstInternship.mistakesIntro':
       '在整个期间，我从犯了很多错误中学到了很多，特别是因为这是我的第一次真正的实习。以下是一些比较重要的错误：',
     'blog.firstInternship.mistake1': '问了太多"愚蠢"的问题',

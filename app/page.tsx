@@ -78,12 +78,12 @@ export default function Home() {
                 href="https://uwaterloo.ca/systems-design-engineering/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
               >
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                   engineering
                 </span>
-                <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="w-5 h-5" />
+                <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="w-4 h-4" />
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                   uwaterloo
                 </span>
@@ -104,12 +104,12 @@ export default function Home() {
                     href="https://textql.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                    className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                   >
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('current.role2')}
                     </span>
-                    <img src="/textql.jpg" alt="TextQL" className="w-5 h-5" />
+                    <img src="/textql.jpg" alt="TextQL" className="w-4 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       textql
                     </span>
@@ -120,12 +120,12 @@ export default function Home() {
                     href="https://www.ownr.co/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                    className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                   >
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.role1')}
                     </span>
-                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="w-5 h-5" />
+                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="w-4 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.item1')}
                     </span>
@@ -136,12 +136,12 @@ export default function Home() {
                     href="https://www.rbc.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 -mx-2 px-2 py-1 rounded-md transition-colors hover:bg-stone-800/80"
+                    className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                   >
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.role2')}
                     </span>
-                    <img src="/rbc.jpeg" alt="RBC" className="w-5 h-5" />
+                    <img src="/rbc.jpeg" alt="RBC" className="w-4 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.item2')}
                     </span>

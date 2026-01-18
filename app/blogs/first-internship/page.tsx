@@ -61,17 +61,18 @@ export default function FirstInternshipBlog() {
               {t('blog.firstInternship.mistakesTitle')}
             </h2>
             <p className="mb-4">{t('blog.firstInternship.mistakesIntro')}</p>
-            <ul className="space-y-2 list-disc list-inside text-stone-300">
+            <ul className="space-y-2 list-disc list-inside text-stone-300 mb-4">
               <li>{t('blog.firstInternship.mistake1')}</li>
               <li>{t('blog.firstInternship.mistake2')}</li>
               <li>{t('blog.firstInternship.mistake3')}</li>
               <li>{t('blog.firstInternship.mistake4')}</li>
             </ul>
+            <p className="mt-4">{t('blog.firstInternship.mistakesLearning')}</p>
+            <p className="mt-4">{t('blog.firstInternship.mistakesCoWorkers')}</p>
             <p className="mt-6 mb-4">{t('blog.firstInternship.goodTitle')}</p>
             <ul className="space-y-2 list-disc list-inside text-stone-300">
               <li>{t('blog.firstInternship.good1')}</li>
               <li>{t('blog.firstInternship.good2')}</li>
-              <li>{t('blog.firstInternship.good3')}</li>
             </ul>
             <p className="mt-4">{t('blog.firstInternship.aiEmphasis')}</p>
           </section>

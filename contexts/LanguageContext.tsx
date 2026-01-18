@@ -372,17 +372,20 @@ const translations: Record<Language, Record<string, string>> = {
       "a vivid memory i had from my first day was meeting my manager and the entire team at 9:30am and immediately getting to work. i set up my computer and started diving into the company codebase, feeling both excited and overwhelmed by what was to come.",
     'blog.firstInternship.mistakesTitle': 'mistakes i made',
     'blog.firstInternship.mistakesIntro':
-      "i could go into more detail about my mistakes, but here are the key ones i made throughout my co-op term:",
+      "throughout my term i learned a lot from making many mistakes especially since this was my first real internship. here are some of the more important ones:",
     'blog.firstInternship.mistake1': 'asking too many "dumb" questions',
-    'blog.firstInternship.mistake2': "not having as much agency as i should've",
-    'blog.firstInternship.mistake3': 'not being able to problem solve alone and struggle through hard problems',
+    'blog.firstInternship.mistake2': 'not having high agency',
+    'blog.firstInternship.mistake3': 'not taking time and trying to problem solve alone before asking for help',
     'blog.firstInternship.mistake4': 'not interacting with my other co-workers enough',
-    'blog.firstInternship.goodTitle': 'things i did well',
-    'blog.firstInternship.good1': 'tried to take on as many tasks as i could',
-    'blog.firstInternship.good2': 'connected with my manager and communicated with him frequently',
-    'blog.firstInternship.good3': 'learned how to code and debug without ai',
+    'blog.firstInternship.mistakesLearning':
+      "throughout the term, i learned a huge amount just from the mistakes i made, especially since this was my first real internship. one of the biggest hurdles was asking too many \"dumb\" questions and generally not having enough agency. whenever i hit a wall, my instinct was to immediately ask for help instead of taking the time to really struggle and problem solve alone. i realized later that asking for help too early wasn't just distracting for the team, but it was robbing me of the chance to actually figure it out myself.",
+    'blog.firstInternship.mistakesCoWorkers':
+      "i also really regretted not interacting with my co-workers enough. i was so focused on the work and trying to prove myself that i often isolated myself at my desk. i missed out on the social aspect like grabbing lunch or just chatting in the hallway which i now realize is huge. it made the term feel a lot more isolating than it needed to be, and i missed out on learning from their experiences outside of just the technical stuff.",
+    'blog.firstInternship.goodTitle': 'things i believe i did well:',
+    'blog.firstInternship.good1': 'connected with my manager and communicated with him frequently',
+    'blog.firstInternship.good2': 'learned how to code and debug without ai',
     'blog.firstInternship.aiEmphasis':
-      "this deserves special mention because, as someone born in 2006, i've grown up with ai tools. they've been part of my workflow since high school, so learning to code and debug without them felt like starting from scratch.",
+      "i want to highlight this specifically because growing up alongside ai tools has changed the way i do many things compared to my older friends and family. they have been a huge part of my workflow since high school, so learning to code and debug without them felt like i was going back in time and relearning everything all over again. i remember reading mdn web docs, stack overflow and even looking at documentation for some programming languages. me right now probably would've laughed because since then ai has became so good most of those websites and resources are considered ancient nowadays.",
     'blog.firstInternship.codingWithoutAiTitle': 'coding and debugging without ai',
     'blog.firstInternship.codingWithoutAiText1':
       'due to strict restrictions on my rbc laptop, i wasn\'t allowed to use external ai tools, youtube, or most documentation sites. the only ai tool available was copilot in vscode, which was far from ideal.',
@@ -1019,17 +1022,20 @@ const translations: Record<Language, Record<string, string>> = {
       '我第一天的一个生动记忆是在上午9:30见到我的经理和整个团队，然后立即开始工作。我设置了电脑并开始深入研究公司代码库，对即将到来的事情既兴奋又感到不知所措。',
     'blog.firstInternship.mistakesTitle': '我犯的错误',
     'blog.firstInternship.mistakesIntro':
-      '我可以更详细地说明我的错误，但我不想这样做，所以这里是我在整个合作期间犯的一些错误：',
+      '在整个期间，我从犯了很多错误中学到了很多，特别是因为这是我的第一次真正的实习。以下是一些比较重要的错误：',
     'blog.firstInternship.mistake1': '问了太多"愚蠢"的问题',
     'blog.firstInternship.mistake2': '没有足够的主动性',
-    'blog.firstInternship.mistake3': '无法独立解决问题并在困难问题中挣扎',
+    'blog.firstInternship.mistake3': '没有花时间独自尝试解决问题，在寻求帮助之前',
     'blog.firstInternship.mistake4': '与其他同事互动不够',
-    'blog.firstInternship.goodTitle': '我做得好的事情',
-    'blog.firstInternship.good1': '尝试承担尽可能多的任务',
-    'blog.firstInternship.good2': '与我的经理联系并与他进行了很多沟通',
-    'blog.firstInternship.good3': '学会了如何在没有ai的情况下编码和调试',
+    'blog.firstInternship.mistakesLearning':
+      '在整个期间，我从犯的错误中学到了很多，特别是因为这是我的第一次真正的实习。最大的障碍之一是问了太多"愚蠢"的问题，以及总的来说没有足够的主动性。每当我遇到障碍时，我的本能是立即寻求帮助，而不是花时间真正挣扎并独自解决问题。后来我意识到，过早寻求帮助不仅分散了团队的注意力，而且剥夺了我自己找出答案的机会。',
+    'blog.firstInternship.mistakesCoWorkers':
+      '我也真的很后悔没有与我的同事有足够的互动。我太专注于工作并试图证明自己，以至于我经常独自坐在办公桌前。我错过了社交方面，比如一起午餐或只是在走廊里聊天，我现在意识到这非常重要。这使这段时间感觉比我需要的更加孤立，我错过了从他们的经验中学习，而不仅仅是技术方面的东西。',
+    'blog.firstInternship.goodTitle': '我认为我做得好的事情：',
+    'blog.firstInternship.good1': '与我的经理联系并与他频繁沟通',
+    'blog.firstInternship.good2': '学会了如何在没有ai的情况下编码和调试',
     'blog.firstInternship.aiEmphasis':
-      '特别强调在没有ai的情况下编码和调试，因为请记住我是06年出生的，我在高中时就接触了ai，它一直陪伴着我。',
+      '我想特别强调这一点，因为与ai工具一起成长已经改变了我做很多事情的方式，与我的年长朋友和家人相比。从我高中开始，它们就一直是我工作流程的重要组成部分，所以学习在没有它们的情况下编码和调试感觉就像回到过去，重新学习一切。我记得阅读mdn web文档、stack overflow，甚至查看某些编程语言的文档。现在的我可能会笑，因为从那时起，ai变得如此好，以至于大多数那些网站和资源现在都被认为是古老的。',
     'blog.firstInternship.codingWithoutAiTitle': '在没有ai的情况下编码',
     'blog.firstInternship.codingWithoutAiText1':
       '在整个实习期间，由于我的rbc笔记本电脑的严格限制，我不被允许使用任何外部ai工具、youtube或大多数文档，团队唯一允许我们使用的ai工具是vscode中集成的copilot，但它很糟糕。',

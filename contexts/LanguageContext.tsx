@@ -385,7 +385,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.firstInternship.good1': 'connected with my manager and communicated with him frequently',
     'blog.firstInternship.good2': 'learned how to code and debug without ai',
     'blog.firstInternship.aiEmphasis':
-      "i want to highlight this specifically because growing up alongside ai tools has changed the way i do many things compared to my older friends and family. they have been a huge part of my workflow since high school, so learning to code and debug without them felt like i was going back in time and relearning everything all over again. i remember reading mdn web docs, stack overflow and even looking at documentation for some programming languages. me right now probably would've laughed because since then ai has became so good most of those websites and resources are considered ancient nowadays.",
+      "i want to highlight this specifically because growing up alongside ai tools has changed the way i do many things compared to my older friends and family. they have been a huge part of my workflow since high school, so learning to code and debug without them felt like i was going back in time and relearning everything all over again. i remember reading mdn web docs, stack overflow and even looking at documentation for some programming languages. me right now probably would've laughed because since then ai has become so good most of those websites and resources are considered ancient nowadays.",
     'blog.firstInternship.codingWithoutAiTitle': 'coding and debugging without ai',
     'blog.firstInternship.workExperienceTitle': 'working at ownr',
     'blog.firstInternship.codingWithoutAiText1':

@@ -69,6 +69,7 @@ export default function FirstInternshipBlog() {
             </ul>
             <p className="mt-4">{t('blog.firstInternship.mistakesLearning')}</p>
             <p className="mt-4">{t('blog.firstInternship.mistakesCoWorkers')}</p>
+            <img src="/blogs/first-internship/restapi.png" alt="REST API Concepts" className="w-full mb-4 mt-4" />
             <p className="mt-6 mb-4">{t('blog.firstInternship.goodTitle')}</p>
             <ul className="space-y-2 list-disc list-inside text-stone-300">
               <li>{t('blog.firstInternship.good1')}</li>
@@ -84,8 +85,11 @@ export default function FirstInternshipBlog() {
             <p>{t('blog.firstInternship.codingWithoutAiText1')}</p>
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText2')}</p>
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText3')}</p>
+            <img src="/blogs/first-internship/tools.jpg" alt="Development Tools" className="w-full mb-4 mt-4" />
             <p className="mt-4">{t('blog.firstInternship.debuggerText')}</p>
+            <img src="/blogs/first-internship/stack-overflow.png" alt="Stack Overflow" className="w-full mb-4 mt-4" />
             <p className="mt-6">{t('blog.firstInternship.environmentText')}</p>
+            <img src="/blogs/first-internship/work.png" alt="Office Space" className="w-full max-h-64 object-cover mb-4 mt-4" />
           </section>
 
           <section>

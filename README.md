@@ -3,4 +3,4 @@
 Welcome to my personal website!  
 This site serves as a central hub to showcase my projects, share my experiences, and provide ways to connect with me.
 
-<img width="639" height="857" alt="Screenshot 2026-01-01 at 1 20 04 PM" src="https://github.com/user-attachments/assets/7543d0df-703a-40e7-9d58-8abb00fa24dd" />
+<img width="621" height="835" alt="Screenshot 2026-01-18 at 4 00 57 PM" src="https://github.com/user-attachments/assets/0a8a3198-fe08-4834-8fdd-667ebb2fffe1" />

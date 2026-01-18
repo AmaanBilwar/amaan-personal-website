@@ -364,23 +364,24 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.firstInternship.title': 'reflecting on my first engineering internship',
     'blog.firstInternship.date': 'nicholas chen · august 5, 2025 · 12 min read',
     'blog.firstInternship.intro':
-      'this winter, i had my very first real co-op experience as a software engineer intern at ownr. i made a lot of mistakes and learned a lot as well. looking back now just a year ago got me thinking about how far i\'ve come so i wanted to write about this experience because it taught me more about software engineering and the corporate life than i ever would\'ve learned.',
+      "this winter, i had my very first real co-op experience as a software engineer intern at ownr. i made a lot of mistakes and learned a lot as well. looking back now just a year ago got me thinking about how far i've come so i wanted to write about this experience because it taught me more about software engineering and the corporate life than i ever would've learned.",
     'blog.firstInternship.howGotTitle': 'how i got this internship',
     'blog.firstInternship.howGotText1':
       "last summer, i applied to rbc's summer tech labs program for high schoolers who were interested in engineering and wanted to get ahead and start working before university and had a great time and made many friends. when the recruiting season came around for the first time in the first semester of waterloo, i eventually ended up taking a return offer to work in rbc's ventures sector, where all the startups that they've acquired over the past few years live.",
     'blog.firstInternship.howGotText2':
-      "a vivid memory i had from my first day was meeting my manager and the entire team at 9:30am and immediately getting to work. i set up my computer and started diving into the company codebase, feeling both excited and overwhelmed by what was to come.",
+      'a vivid memory i had from my first day was meeting my manager and the entire team at 9:30am and immediately getting to work. i set up my computer and started diving into the company codebase, feeling both excited and overwhelmed by what was to come.',
     'blog.firstInternship.mistakesTitle': 'mistakes and lessons learned',
     'blog.firstInternship.mistakesIntro':
-      "throughout my term i learned a lot from making many mistakes especially since this was my first real internship. here are some of the more important ones:",
+      'throughout my term i learned a lot from making many mistakes especially since this was my first real internship. here are some of the more important ones:',
     'blog.firstInternship.mistake1': 'asking too many "dumb" questions',
     'blog.firstInternship.mistake2': 'not having high agency',
-    'blog.firstInternship.mistake3': 'not taking time and trying to problem solve alone before asking for help',
+    'blog.firstInternship.mistake3':
+      'not taking time and trying to problem solve alone before asking for help',
     'blog.firstInternship.mistake4': 'not interacting with my other co-workers enough',
     'blog.firstInternship.mistakesLearning':
-      "throughout the term, i learned a huge amount just from the mistakes i made, especially since this was my first real internship. one of the biggest hurdles was asking too many \"dumb\" questions and generally not having enough agency. whenever i hit a wall, my instinct was to immediately ask for help instead of taking the time to really struggle and problem solve alone. i realized later that asking for help too early wasn't just distracting for the team, but it was robbing me of the chance to actually figure it out myself.",
+      'throughout the term, i learned a huge amount just from the mistakes i made, especially since this was my first real internship. one of the biggest hurdles was asking too many "dumb" questions and generally not having enough agency. whenever i hit a wall, my instinct was to immediately ask for help instead of taking the time to really struggle and problem solve alone. i realized later that asking for help too early wasn\'t just distracting for the team, but it was robbing me of the chance to actually figure it out myself.',
     'blog.firstInternship.mistakesCoWorkers':
-      "i also really regretted not interacting with my co-workers enough. i was so focused on the work and trying to prove myself that i often isolated myself at my desk. i missed out on the social aspect like grabbing lunch or just chatting in the hallway which i now realize is huge. it made the term feel a lot more isolating than it needed to be, and i missed out on learning from their experiences outside of just the technical stuff.",
+      'i also really regretted not interacting with my co-workers enough. i was so focused on the work and trying to prove myself that i often isolated myself at my desk. i missed out on the social aspect like grabbing lunch or just chatting in the hallway which i now realize is huge. it made the term feel a lot more isolating than it needed to be, and i missed out on learning from their experiences outside of just the technical stuff.',
     'blog.firstInternship.goodTitle': 'things i believe i did well:',
     'blog.firstInternship.good1': 'connected with my manager and communicated with him frequently',
     'blog.firstInternship.good2': 'learned how to code and debug without ai',
@@ -389,14 +390,14 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.firstInternship.codingWithoutAiTitle': 'coding and debugging without ai',
     'blog.firstInternship.workExperienceTitle': 'working at ownr',
     'blog.firstInternship.codingWithoutAiText1':
-      'due to strict restrictions on my rbc laptop, i wasn\'t allowed to use external ai tools, youtube, or most documentation sites. the only ai tool available was copilot in vscode, which was far from ideal.',
+      "due to strict restrictions on my rbc laptop, i wasn't allowed to use external ai tools, youtube, or most documentation sites. the only ai tool available was copilot in vscode, which was far from ideal.",
     'blog.firstInternship.codingWithoutAiText2':
-      'debugging with copilot was frustrating. i\'d ask it questions about the codebase or request it to index certain files, but it would return fabricated information or make things up entirely. after repeatedly trying to prompt it correctly, i often gave up and debugged manually instead. this forced me to learn new languages, frameworks and work manually which sounds funny because now ai can just do it. i remember console logging everything and using the debugger for the first time.',
+      "debugging with copilot was frustrating. i'd ask it questions about the codebase or request it to index certain files, but it would return fabricated information or make things up entirely. after repeatedly trying to prompt it correctly, i often gave up and debugged manually instead. this forced me to learn new languages, frameworks and work manually which sounds funny because now ai can just do it. i remember console logging everything and using the debugger for the first time.",
     'blog.firstInternship.codingWithoutAiText3':
-      'i primarily worked on internal tools for ownr\'s admin team, using nestjs, typescript, and express.js. i also learned how to work with postgres, redis, and got hands-on experience with docker and ci/cd pipelines.',
+      "i primarily worked on internal tools for ownr's admin team, using nestjs, typescript, and express.js. i also learned how to work with postgres, redis, and got hands-on experience with docker and ci/cd pipelines.",
     'blog.firstInternship.debuggerTitle': 'the debugger',
     'blog.firstInternship.debuggerText':
-      'the debugger was a game-changer. i remember debugging a tricky bug where data was being sent with the wrong type. the debugger allowed me to set breakpoints and step through the code, watching each input and output in the sidebar as i progressed. it was the first time i truly understood how powerful proper debugging tools could be. i found myself constantly on stack overflow trying to sus out which solutions were the correct fix for my specific errors since copilot couldn\'t help with these issues. i also spent two full weeks fixing and resolving dependencies across multiple repositories. those two weeks felt like an endless chase down stack overflow rabbit holes.',
+      "the debugger was a game-changer. i remember debugging a tricky bug where data was being sent with the wrong type. the debugger allowed me to set breakpoints and step through the code, watching each input and output in the sidebar as i progressed. it was the first time i truly understood how powerful proper debugging tools could be. i found myself constantly on stack overflow trying to sus out which solutions were the correct fix for my specific errors since copilot couldn't help with these issues. i also spent two full weeks fixing and resolving dependencies across multiple repositories. those two weeks felt like an endless chase down stack overflow rabbit holes.",
     'blog.firstInternship.environmentTitle': 'the work environment',
     'blog.firstInternship.environmentText':
       'aside from the work itself, i loved the environment. it had that sort of startup energy—fast-paced and dynamic. most of the team dressed casually, with rarely anyone in suits or formal wear. despite the relaxed dress code, everyone was incredibly professional. the office itself felt like something out of a corporate movie: a 30-floor building with elevators, key card access, meeting rooms everywhere, and large desks with dual monitors.',
@@ -410,7 +411,7 @@ const translations: Record<Language, Record<string, string>> = {
       "my manager was intentionally tough on me. he loved seeing me struggle because he knew that's where the deepest learning happens. he was one of the main reasons i learned so much, and i'm incredibly grateful for his mentorship and his belief in me. a manager can be the reason for a make or break internship so i'm glad i got a good one. over time, we bonded over conversations about internships, finding co-op jobs, and interview prep. he talked to me about leetcode and how it was a frequent topic when he was in university too. he was one of the best engineers i've ever met, and the entire team held him in high regard.",
     'blog.firstInternship.conclusionTitle': 'conclusion',
     'blog.firstInternship.conclusionText':
-      'overall, this internship was super fun and i learned a lot during the four months. still, i wish i had done more and pushed myself further. this experience taught me that growth happens when you step outside your comfort zone, and i\'m grateful for every mistake and lesson learned.',
+      "overall, this internship was super fun and i learned a lot during the four months. still, i wish i had done more and pushed myself further. this experience taught me that growth happens when you step outside your comfort zone, and i'm grateful for every mistake and lesson learned.",
 
     // Git blog content
     'blog.git.intro':

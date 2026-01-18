@@ -413,10 +413,10 @@ const translations: Record<Language, Record<string, string>> = {
       "my manager was tough on me and intentionally pushed me to struggle because he knew that's where the real learning happens. looking back, he was one of the main reasons i learned so much, and i'm incredibly grateful. over time, we bonded and talked about internships, finding co-op jobs, and interview prep. leetcode came up often, and he gave me valuable advice. he was one of the best engineers i've ever met, and our whole team respected him.",
     'blog.firstInternship.managerTitle': 'my manager',
     'blog.firstInternship.managerText':
-      "my manager was intentionally tough on me. he loved seeing me struggle because he knew that's where the deepest learning happens. he was one of the main reasons i learned so much, and i'm incredibly grateful for his mentorship. over time, we bonded over conversations about internships, finding co-op jobs, and interview prep. leetcode was a frequent topic, and his advice was invaluable. he was one of the best engineers i've ever met, and the entire team held him in high regard.",
+      "my manager was intentionally tough on me. he loved seeing me struggle because he knew that's where the deepest learning happens. he was one of the main reasons i learned so much, and i'm incredibly grateful for his mentorship and his belief in me. a manager can be the reason for a make or break internship so i'm glad i got a good one. over time, we bonded over conversations about internships, finding co-op jobs, and interview prep. he talked to me about leetcode and how it was a frequent topic when he was in university too. he was one of the best engineers i've ever met, and the entire team held him in high regard.",
     'blog.firstInternship.conclusionTitle': 'conclusion',
     'blog.firstInternship.conclusionText':
-      'it was a challenging journey, but i ended my co-op term with a good rating. still, i wish i had done more and pushed myself further. this experience taught me that growth happens when you step outside your comfort zone, and i\'m grateful for every mistake and lesson learned.',
+      'overall, this internship was super fun and i learned a lot during the four months. still, i wish i had done more and pushed myself further. this experience taught me that growth happens when you step outside your comfort zone, and i\'m grateful for every mistake and lesson learned.',
 
     // Git blog content
     'blog.git.intro':
@@ -1064,10 +1064,10 @@ const translations: Record<Language, Record<string, string>> = {
       '我的经理也对我非常严格，喜欢看到我挣扎，因为他知道那是我学习最多的地方。我觉得他是为什么我学到这么多的主要原因之一，所以我非常感激。在我在那里的整个时间里，我们之间建立了一些联系，谈论了实习和寻找合作工作以及面试准备。leetcode是一个常见的话题，他给了我一些非常有用的建议。他是我见过的最好的工程师之一。我们整个团队都喜欢他。',
     'blog.firstInternship.managerTitle': '我的经理',
     'blog.firstInternship.managerText':
-      '我的经理也对我非常严格，喜欢看到我挣扎，因为他知道那是我学习最多的地方。我觉得他是为什么我学到这么多的主要原因之一，所以我非常感激。在我在那里的整个时间里，我们之间建立了一些联系，谈论了实习和寻找合作工作以及面试准备。leetcode是一个常见的话题，他给了我一些非常有用的建议。他是我见过的最好的工程师之一。我们整个团队都喜欢他。',
+      '我的经理故意对我很严格。他喜欢看到我挣扎，因为他知道那是最深层次学习发生的地方。他是我学到这么多知识的主要原因之一，我非常感谢他的指导和对我的信任。经理可能决定实习的成败，所以我很高兴我遇到了一个好的。随着时间的推移，我们通过谈论实习、寻找合作工作和面试准备而建立了联系。他和我谈论了leetcode，以及这在他上大学时也是一个经常讨论的话题。他是我见过的最好的工程师之一，整个团队都对他非常尊敬。',
     'blog.firstInternship.conclusionTitle': '结论',
     'blog.firstInternship.conclusionText':
-      '我经历了一段艰难的旅程，虽然我在合作期结束时获得了相当不错的评分，但我希望我做得更多，做得更好。',
+      '总的来说，这次实习非常有趣，我在这四个月里学到了很多。尽管如此，我希望我做得更多，并进一步推动自己。这次经历教会我，成长发生在你走出舒适区的时候，我感谢每一个错误和学到的教训。',
 
     // Git blog content
     'blog.git.intro':

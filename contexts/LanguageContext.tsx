@@ -387,12 +387,13 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.firstInternship.aiEmphasis':
       "i want to highlight this specifically because growing up alongside ai tools has changed the way i do many things compared to my older friends and family. they have been a huge part of my workflow since high school, so learning to code and debug without them felt like i was going back in time and relearning everything all over again. i remember reading mdn web docs, stack overflow and even looking at documentation for some programming languages. me right now probably would've laughed because since then ai has became so good most of those websites and resources are considered ancient nowadays.",
     'blog.firstInternship.codingWithoutAiTitle': 'coding and debugging without ai',
+    'blog.firstInternship.workExperienceTitle': 'working at ownr',
     'blog.firstInternship.codingWithoutAiText1':
       'due to strict restrictions on my rbc laptop, i wasn\'t allowed to use external ai tools, youtube, or most documentation sites. the only ai tool available was copilot in vscode, which was far from ideal.',
     'blog.firstInternship.codingWithoutAiText2':
-      'debugging with copilot was frustrating. i\'d ask it questions about the codebase or request it to index certain files, but it would return fabricated information or make things up entirely. after repeatedly trying to prompt it correctly, i often gave up and debugged manually instead. this forced me to learn new languages and frameworks, and i used the vscode debugger for the first time.',
+      'debugging with copilot was frustrating. i\'d ask it questions about the codebase or request it to index certain files, but it would return fabricated information or make things up entirely. after repeatedly trying to prompt it correctly, i often gave up and debugged manually instead. this forced me to learn new languages, frameworks and work manually which sounds funny because now ai can just do it. i remember console logging everything and using the debugger for the first time.',
     'blog.firstInternship.codingWithoutAiText3':
-      'i primarily worked on internal tools for ownr\'s admin team, using nestjs, typescript, and express.js. i also learned about redis and caching, and got hands-on experience with docker and kubernetes.',
+      'i primarily worked on internal tools for ownr\'s admin team, using nestjs, typescript, and express.js. i also learned how to work with postgres, redis, and got hands-on experience with docker and ci/cd pipelines.',
     'blog.firstInternship.debuggerTitle': 'the vscode debugger',
     'blog.firstInternship.debuggerText':
       'the vscode debugger was a game-changer. i remember debugging a tricky bug where data was being sent with the wrong type. the debugger allowed me to set breakpoints and step through the code, watching each input and output in the sidebar as i progressed. it was the first time i truly understood how powerful proper debugging tools could be.',
@@ -401,10 +402,10 @@ const translations: Record<Language, Record<string, string>> = {
       'i mainly worked on internal tools at ownr for the admin team, using a tech stack of nestjs, typescript, and express.js. i learned about redis and caching and worked with docker and k8s.',
     'blog.firstInternship.stackOverflowTitle': 'stack overflow hell',
     'blog.firstInternship.stackOverflowText':
-      "i found myself constantly on stack overflow trying to figure out errors, but copilot couldn't help with these issues. i spent two full weeks fixing and resolving dependencies across multiple repositories. those two weeks felt like endless stack overflow rabbit holes.",
+      "i found myself constantly on stack overflow trying to sus out which solutions were the correct fix for my specific errors since copilot couldn't help with these issues. i also spent two full weeks fixing and resolving dependencies across multiple repositories. those two weeks felt like an endless chase down stack overflow rabbit holes.",
     'blog.firstInternship.environmentTitle': 'the work environment',
     'blog.firstInternship.environmentText':
-      'aside from the work itself, i loved the environment. it had that startup energy—fast-paced and dynamic. most of the team dressed casually, with rarely anyone in suits or formal wear. despite the relaxed dress code, everyone was incredibly professional. the office itself felt like something out of a corporate movie: a 30-floor building with elevators, key card access, meeting rooms everywhere, and large desks with dual monitors.',
+      'aside from the work itself, i loved the environment. it had that sort of startup energy—fast-paced and dynamic. most of the team dressed casually, with rarely anyone in suits or formal wear. despite the relaxed dress code, everyone was incredibly professional. the office itself felt like something out of a corporate movie: a 30-floor building with elevators, key card access, meeting rooms everywhere, and large desks with dual monitors.',
     'blog.firstInternship.reflectionsTitle': 'reflections',
     'blog.firstInternship.reflectionsText1':
       "there were many times when i asked questions that i could have answered myself, or when i was so focused on work that i didn't take breaks or eat lunch with my co-workers. this made the term feel slower and less engaging than it could have been.",
@@ -1037,12 +1038,13 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.firstInternship.aiEmphasis':
       '我想特别强调这一点，因为与ai工具一起成长已经改变了我做很多事情的方式，与我的年长朋友和家人相比。从我高中开始，它们就一直是我工作流程的重要组成部分，所以学习在没有它们的情况下编码和调试感觉就像回到过去，重新学习一切。我记得阅读mdn web文档、stack overflow，甚至查看某些编程语言的文档。现在的我可能会笑，因为从那时起，ai变得如此好，以至于大多数那些网站和资源现在都被认为是古老的。',
     'blog.firstInternship.codingWithoutAiTitle': '在没有ai的情况下编码',
+    'blog.firstInternship.workExperienceTitle': '在ownr工作',
     'blog.firstInternship.codingWithoutAiText1':
       '在整个实习期间，由于我的rbc笔记本电脑的严格限制，我不被允许使用任何外部ai工具、youtube或大多数文档，团队唯一允许我们使用的ai工具是vscode中集成的copilot，但它很糟糕。',
     'blog.firstInternship.codingWithoutAiText2':
-      '使用copilot调试是一场噩梦。我记得问它关于代码库的问题并要求它索引，这个愚蠢的东西最终返回了虚假信息，只是编造了关于代码的内容。我不得不多次提示它，有时提示太多，我最终放弃了，决定手动调试它。我肯定学会了很多新语言、框架以及如何第一次使用vscode调试器。',
+      '使用copilot调试很令人沮丧。我会问它关于代码库的问题或请求它索引某些文件，但它会返回虚假信息或完全编造内容。在反复尝试正确提示它之后，我经常放弃并手动调试。这迫使我学习新语言、框架并手动工作，这听起来很有趣，因为现在ai可以做到这些。我记得到处使用console.log并第一次使用调试器。',
     'blog.firstInternship.codingWithoutAiText3':
-      '我主要在ownr为管理团队开发内部工具，使用的技术栈包括nestjs、typescript和express.js。我学习了redis和缓存，并使用docker和k8s工作。',
+      '我主要在ownr为管理团队开发内部工具，使用的技术栈包括nestjs、typescript和express.js。我还学习了如何使用postgres、redis，并获得了使用docker和ci/cd管道的实践经验。',
     'blog.firstInternship.debuggerTitle': 'vscode调试器',
     'blog.firstInternship.debuggerText':
       'vscode调试器太好了。我记得必须解决某个bug，这是因为它发送的数据类型错误，我只是通过调试器发现这一点，它允许你设置断点并逐步执行代码，同时在你移动时在侧边栏中查看每个输入和输出。',
@@ -1051,10 +1053,10 @@ const translations: Record<Language, Record<string, string>> = {
       '我主要在ownr为管理团队开发内部工具，使用的技术栈包括nestjs、typescript和express.js。我学习了redis和缓存，并使用docker和k8s工作。',
     'blog.firstInternship.stackOverflowTitle': 'stack overflow地狱',
     'blog.firstInternship.stackOverflowText':
-      '我注意到的另一件事是我经常访问stack overflow来解决我遇到的许多错误，但出于某种原因，copilot无法帮助我。我花了两个星期专门修复和解决我们许多仓库中的依赖关系，这两个星期简直就是stack overflow地狱。',
+      '我发现自己经常在stack overflow上试图找出哪些解决方案是对我特定错误的正确修复，因为copilot无法帮助解决这些问题。我还花了两个完整星期修复和解决多个仓库中的依赖关系。那两个星期感觉就像在stack overflow的兔子洞里无休止地追逐。',
     'blog.firstInternship.environmentTitle': '工作环境',
     'blog.firstInternship.environmentText':
-      '除了我在那里做的实际工作，我喜欢这个环境，因为它让我想起了初创公司以及一切都相对快速。团队中的大多数人也穿着相当随意的衣服来上班。很少有人穿西装或连衣裙。不过每个人都非常专业，这让我想起了电影中的大企业氛围，那里的人进入30层电梯，用钥匙卡签入办公室，里面满是会议室和带有双显示器的大桌子。',
+      '除了工作本身，我喜欢这个环境。它有一种创业的能量——快速而充满活力。团队中的大多数人都穿着随意，很少有人穿西装或正装。尽管着装随意，但每个人都非常专业。办公室本身感觉就像企业电影中的场景：30层楼，有电梯，钥匙卡访问，到处都是会议室，还有带有双显示器的大桌子。',
     'blog.firstInternship.reflectionsTitle': '反思',
     'blog.firstInternship.reflectionsText1':
       '有很多次我提出的问题我自己都没有意识到可以解决，或者当我太专注于工作而没有在午餐时与其他同事交谈或一起吃饭。这使这段时间非常无聊和缓慢。似乎过得很慢。',

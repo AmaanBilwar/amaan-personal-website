@@ -79,20 +79,14 @@ export default function FirstInternshipBlog() {
 
           <section>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.firstInternship.codingWithoutAiTitle')}
+              {t('blog.firstInternship.workExperienceTitle')}
             </h2>
             <p>{t('blog.firstInternship.codingWithoutAiText1')}</p>
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText2')}</p>
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText3')}</p>
             <p className="mt-4">{t('blog.firstInternship.debuggerText')}</p>
             <p className="mt-4">{t('blog.firstInternship.stackOverflowText')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.firstInternship.environmentTitle')}
-            </h2>
-            <p>{t('blog.firstInternship.environmentText')}</p>
+            <p className="mt-6">{t('blog.firstInternship.environmentText')}</p>
           </section>
 
           <section>

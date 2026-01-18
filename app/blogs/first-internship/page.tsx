@@ -85,7 +85,6 @@ export default function FirstInternshipBlog() {
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText2')}</p>
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText3')}</p>
             <p className="mt-4">{t('blog.firstInternship.debuggerText')}</p>
-            <p className="mt-4">{t('blog.firstInternship.stackOverflowText')}</p>
             <p className="mt-6">{t('blog.firstInternship.environmentText')}</p>
           </section>
 

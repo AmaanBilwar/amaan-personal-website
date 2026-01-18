@@ -396,13 +396,7 @@ const translations: Record<Language, Record<string, string>> = {
       'i primarily worked on internal tools for ownr\'s admin team, using nestjs, typescript, and express.js. i also learned how to work with postgres, redis, and got hands-on experience with docker and ci/cd pipelines.',
     'blog.firstInternship.debuggerTitle': 'the vscode debugger',
     'blog.firstInternship.debuggerText':
-      'the vscode debugger was a game-changer. i remember debugging a tricky bug where data was being sent with the wrong type. the debugger allowed me to set breakpoints and step through the code, watching each input and output in the sidebar as i progressed. it was the first time i truly understood how powerful proper debugging tools could be.',
-    'blog.firstInternship.techStackTitle': 'the tech stack',
-    'blog.firstInternship.techStackText':
-      'i mainly worked on internal tools at ownr for the admin team, using a tech stack of nestjs, typescript, and express.js. i learned about redis and caching and worked with docker and k8s.',
-    'blog.firstInternship.stackOverflowTitle': 'stack overflow hell',
-    'blog.firstInternship.stackOverflowText':
-      "i found myself constantly on stack overflow trying to sus out which solutions were the correct fix for my specific errors since copilot couldn't help with these issues. i also spent two full weeks fixing and resolving dependencies across multiple repositories. those two weeks felt like an endless chase down stack overflow rabbit holes.",
+      'the vscode debugger was a game-changer. i remember debugging a tricky bug where data was being sent with the wrong type. the debugger allowed me to set breakpoints and step through the code, watching each input and output in the sidebar as i progressed. it was the first time i truly understood how powerful proper debugging tools could be. i found myself constantly on stack overflow trying to sus out which solutions were the correct fix for my specific errors since copilot couldn\'t help with these issues. i also spent two full weeks fixing and resolving dependencies across multiple repositories. those two weeks felt like an endless chase down stack overflow rabbit holes.',
     'blog.firstInternship.environmentTitle': 'the work environment',
     'blog.firstInternship.environmentText':
       'aside from the work itself, i loved the environment. it had that sort of startup energy—fast-paced and dynamic. most of the team dressed casually, with rarely anyone in suits or formal wear. despite the relaxed dress code, everyone was incredibly professional. the office itself felt like something out of a corporate movie: a 30-floor building with elevators, key card access, meeting rooms everywhere, and large desks with dual monitors.',
@@ -1047,7 +1041,7 @@ const translations: Record<Language, Record<string, string>> = {
       '我主要在ownr为管理团队开发内部工具，使用的技术栈包括nestjs、typescript和express.js。我还学习了如何使用postgres、redis，并获得了使用docker和ci/cd管道的实践经验。',
     'blog.firstInternship.debuggerTitle': 'vscode调试器',
     'blog.firstInternship.debuggerText':
-      'vscode调试器太好了。我记得必须解决某个bug，这是因为它发送的数据类型错误，我只是通过调试器发现这一点，它允许你设置断点并逐步执行代码，同时在你移动时在侧边栏中查看每个输入和输出。',
+      'vscode调试器是一个改变游戏规则的工具。我记得调试一个棘手的bug，数据以错误的类型发送。调试器允许我设置断点并逐步执行代码，在我前进时在侧边栏中查看每个输入和输出。这是我第一次真正理解了适当的调试工具可以有多么强大。我发现自己经常在stack overflow上试图找出哪些解决方案是对我特定错误的正确修复，因为copilot无法帮助解决这些问题。我还花了两个完整星期修复和解决多个仓库中的依赖关系。那两个星期感觉就像在stack overflow的兔子洞里无休止地追逐。',
     'blog.firstInternship.techStackTitle': '技术栈',
     'blog.firstInternship.techStackText':
       '我主要在ownr为管理团队开发内部工具，使用的技术栈包括nestjs、typescript和express.js。我学习了redis和缓存，并使用docker和k8s工作。',

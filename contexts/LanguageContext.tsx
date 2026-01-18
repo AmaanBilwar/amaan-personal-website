@@ -362,7 +362,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // First Internship blog content
     'blog.firstInternship.title': 'reflecting on my first engineering internship',
-    'blog.firstInternship.date': 'nicholas chen · august 5, 2025 · 12 min read',
+    'blog.firstInternship.date': 'nicholas chen · august 5, 2025 · 5 min read',
     'blog.firstInternship.intro':
       "this winter, i had my very first real co-op experience as a software engineer intern at ownr. i made a lot of mistakes and learned a lot as well. looking back now just a year ago got me thinking about how far i've come so i wanted to write about this experience because it taught me more about software engineering and the corporate life than i ever would've learned.",
     'blog.firstInternship.howGotTitle': 'how i got this internship',
@@ -1008,7 +1008,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // First Internship blog content (Chinese)
     'blog.firstInternship.title': '反思我的第一次工程实习',
-    'blog.firstInternship.date': 'nicholas chen · 2025年8月5日 · 12分钟阅读',
+    'blog.firstInternship.date': 'nicholas chen · 2025年8月5日 · 5分钟阅读',
     'blog.firstInternship.intro':
       '今年冬天，我在ownr获得了我的第一个真正的合作实习经验，作为软件工程师实习生，我犯了很多错误，也学到了很多。现在回顾仅仅一年前，让我思考自己走了多远，所以我想写下这段经历，因为它教会了我关于软件工程和企业生活的知识，这些是我永远不会学到的。',
     'blog.firstInternship.howGotTitle': '我是如何获得这次实习的？',

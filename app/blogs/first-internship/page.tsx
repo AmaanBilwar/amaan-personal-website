@@ -67,12 +67,7 @@ export default function FirstInternshipBlog() {
               <li>{t('blog.firstInternship.mistake3')}</li>
               <li>{t('blog.firstInternship.mistake4')}</li>
             </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.firstInternship.goodTitle')}
-            </h2>
+            <p className="mt-6 mb-4">{t('blog.firstInternship.goodTitle')}</p>
             <ul className="space-y-2 list-disc list-inside text-stone-300">
               <li>{t('blog.firstInternship.good1')}</li>
               <li>{t('blog.firstInternship.good2')}</li>
@@ -88,20 +83,8 @@ export default function FirstInternshipBlog() {
             <p>{t('blog.firstInternship.codingWithoutAiText1')}</p>
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText2')}</p>
             <p className="mt-4">{t('blog.firstInternship.codingWithoutAiText3')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.firstInternship.debuggerTitle')}
-            </h2>
-            <p>{t('blog.firstInternship.debuggerText')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.firstInternship.stackOverflowTitle')}
-            </h2>
-            <p>{t('blog.firstInternship.stackOverflowText')}</p>
+            <p className="mt-4">{t('blog.firstInternship.debuggerText')}</p>
+            <p className="mt-4">{t('blog.firstInternship.stackOverflowText')}</p>
           </section>
 
           <section>
@@ -116,20 +99,8 @@ export default function FirstInternshipBlog() {
               {t('blog.firstInternship.reflectionsTitle')}
             </h2>
             <p>{t('blog.firstInternship.reflectionsText1')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.firstInternship.managerTitle')}
-            </h2>
-            <p>{t('blog.firstInternship.managerText')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
-              {t('blog.firstInternship.conclusionTitle')}
-            </h2>
-            <p>{t('blog.firstInternship.conclusionText')}</p>
+            <p className="mt-4">{t('blog.firstInternship.managerText')}</p>
+            <p className="mt-4">{t('blog.firstInternship.conclusionText')}</p>
           </section>
         </div>
 

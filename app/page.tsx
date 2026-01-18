@@ -265,15 +265,6 @@ export default function Home() {
 
                   <li>
                     <a
-                      href="/blogs/git"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.git.title')}
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
                       href="/blogs/how-i-learned-to-code"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
@@ -287,6 +278,15 @@ export default function Home() {
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
                       {t('blog.waterlooCoop.title')}
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/blogs/first-internship"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.firstInternship.title')}
                     </a>
                   </li>
                 </ul>

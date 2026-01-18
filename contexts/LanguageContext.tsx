@@ -360,6 +360,59 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.waterlooCoop.conclusionP2':
       'however, the system also creates a lot of pressure. the constant cycle of recruiting and the obsession with prestige can make it feel like you are always behind. it is easy to focus only on the money and the brand names instead of the actual learning. the program is not perfect, but the experience is unique. even with the constant comparison and the stress of the job search, the technical skills and ability to take action you develop make the process worth it.',
 
+    // First Internship blog content
+    'blog.firstInternship.title': 'reflecting on my first engineering internship',
+    'blog.firstInternship.date': 'nicholas chen · august 5, 2025 · 12 min read',
+    'blog.firstInternship.intro':
+      "this winter, i had my very first real co-op experience as a software engineer intern at ownr. i made a lot of mistakes and learned a lot as well. looking back now just a year ago got me thinking about how far i've come so i wanted to write about this experience because it taught me more about software engineering and the corporate life than i ever would've learned.",
+    'blog.firstInternship.howGotTitle': 'how i got this internship',
+    'blog.firstInternship.howGotText1':
+      "last summer, i applied to rbc's summer tech labs program for high schoolers who were interested in engineering and wanted to get ahead and start working before university and had a great time and made many friends. when the recruiting season came around for the first time in the first semester of waterloo, i eventually ended up taking a return offer to work in rbc's ventures sector, where all the startups that they've acquired over the past few years live.",
+    'blog.firstInternship.howGotText2':
+      'a vivid memory i had from my first day was meeting my manager and the entire team at 9:30am and immediately getting to work. i set up my computer and started diving into the company codebase, feeling both excited and overwhelmed by what was to come.',
+    'blog.firstInternship.mistakesTitle': 'mistakes and lessons learned',
+    'blog.firstInternship.mistakesIntro':
+      'throughout my term i learned a lot from making many mistakes especially since this was my first real internship. here are some of the more important ones:',
+    'blog.firstInternship.mistake1': 'asking too many "dumb" questions',
+    'blog.firstInternship.mistake2': 'not having high agency',
+    'blog.firstInternship.mistake3':
+      'not taking time and trying to problem solve alone before asking for help',
+    'blog.firstInternship.mistake4': 'not interacting with my other co-workers enough',
+    'blog.firstInternship.mistakesLearning':
+      'throughout the term, i learned a huge amount just from the mistakes i made, especially since this was my first real internship. one of the biggest hurdles was asking too many "dumb" questions and generally not having enough agency. whenever i hit a wall, my instinct was to immediately ask for help instead of taking the time to really struggle and problem solve alone. i realized later that asking for help too early wasn\'t just distracting for the team, but it was robbing me of the chance to actually figure it out myself.',
+    'blog.firstInternship.mistakesCoWorkers':
+      'i also really regretted not interacting with my co-workers enough. i was so focused on the work and trying to prove myself that i often isolated myself at my desk. i missed out on the social aspect like grabbing lunch or just chatting in the hallway which i now realize is huge. it made the term feel a lot more isolating than it needed to be, and i missed out on learning from their experiences outside of just the technical stuff.',
+    'blog.firstInternship.goodTitle': 'things i believe i did well:',
+    'blog.firstInternship.good1': 'connected with my manager and communicated with him frequently',
+    'blog.firstInternship.good2': 'learned how to code and debug without ai',
+    'blog.firstInternship.aiEmphasis':
+      "i want to highlight this specifically because growing up alongside ai tools has changed the way i do many things compared to my older friends and family. they have been a huge part of my workflow since high school, so learning to code and debug without them felt like i was going back in time and relearning everything all over again. i remember reading mdn web docs, stack overflow and even looking at documentation for some programming languages. me right now probably would've laughed because since then ai has become so good most of those websites and resources are considered ancient nowadays.",
+    'blog.firstInternship.codingWithoutAiTitle': 'coding and debugging without ai',
+    'blog.firstInternship.workExperienceTitle': 'working at ownr',
+    'blog.firstInternship.codingWithoutAiText1':
+      "due to strict restrictions on my rbc laptop, i wasn't allowed to use external ai tools, youtube, or most documentation sites. the only ai tool available was copilot in vscode, which was far from ideal.",
+    'blog.firstInternship.codingWithoutAiText2':
+      "debugging with copilot was frustrating. i'd ask it questions about the codebase or request it to index certain files, but it would return fabricated information or make things up entirely. after repeatedly trying to prompt it correctly, i often gave up and debugged manually instead. this forced me to learn new languages, frameworks and work manually which sounds funny because now ai can just do it. i remember console logging everything and using the debugger for the first time.",
+    'blog.firstInternship.codingWithoutAiText3':
+      "i primarily worked on internal tools for ownr's admin team, using nestjs, typescript, and express.js. i also learned how to work with postgres, redis, and got hands-on experience with docker and ci/cd pipelines.",
+    'blog.firstInternship.debuggerTitle': 'the debugger',
+    'blog.firstInternship.debuggerText':
+      "the debugger was a game-changer. i remember debugging a tricky bug where data was being sent with the wrong type. the debugger allowed me to set breakpoints and step through the code, watching each input and output in the sidebar as i progressed. it was the first time i truly understood how powerful proper debugging tools could be. i found myself constantly on stack overflow trying to sus out which solutions were the correct fix for my specific errors since copilot couldn't help with these issues. i also spent two full weeks fixing and resolving dependencies across multiple repositories. those two weeks felt like an endless chase down stack overflow rabbit holes.",
+    'blog.firstInternship.environmentTitle': 'the work environment',
+    'blog.firstInternship.environmentText':
+      'aside from the work itself, i loved the environment. it had that sort of startup energy—fast-paced and dynamic. most of the team dressed casually, with rarely anyone in suits or formal wear. despite the relaxed dress code, everyone was incredibly professional. the office itself felt like something out of a corporate movie: a 30-floor building with elevators, key card access, meeting rooms everywhere, and large desks with dual monitors.',
+    'blog.firstInternship.reflectionsTitle': 'reflections',
+    'blog.firstInternship.reflectionsText1':
+      "there were many times when i asked questions that i could have answered myself, or when i was so focused on work that i didn't take breaks or eat lunch with my co-workers. this made the term feel slower and less engaging than it could have been.",
+    'blog.firstInternship.reflectionsText2':
+      "my manager was tough on me and intentionally pushed me to struggle because he knew that's where the real learning happens. looking back, he was one of the main reasons i learned so much, and i'm incredibly grateful. over time, we bonded and talked about internships, finding co-op jobs, and interview prep. leetcode came up often, and he gave me valuable advice. he was one of the best engineers i've ever met, and our whole team respected him.",
+    'blog.firstInternship.managerTitle': 'my manager',
+    'blog.firstInternship.managerText':
+      "my manager was intentionally tough on me. he loved seeing me struggle because he knew that's where the deepest learning happens. he was one of the main reasons i learned so much, and i'm incredibly grateful for his mentorship and his belief in me. a manager can be the reason for a make or break internship so i'm glad i got a good one. over time, we bonded over conversations about internships, finding co-op jobs, and interview prep. he talked to me about leetcode and how it was a frequent topic when he was in university too. he was one of the best engineers i've ever met, and the entire team held him in high regard.",
+    'blog.firstInternship.conclusionTitle': 'conclusion',
+    'blog.firstInternship.conclusionText':
+      "overall, this internship was super fun and i learned a lot during the four months. still, i wish i had done more and pushed myself further. this experience taught me that growth happens when you step outside your comfort zone, and i'm grateful for every mistake and lesson learned.",
+
     // Git blog content
     'blog.git.intro':
       "through various work experiences and side projects, i've picked up a lot of git commands that have saved my life more than once. i wanted to create a central place to store all these commands for easy reference.",
@@ -952,6 +1005,64 @@ const translations: Record<Language, Record<string, string>> = {
       '总的来说，滑铁卢合作项目是一个权衡。你在职业生涯中获得巨大的先机、财务独立，以及每四个月在新城市生活的机会。它迫使你快速成长，在你甚至毕业之前就学会如何在职业世界中工作。',
     'blog.waterlooCoop.conclusionP2':
       '然而，该系统也产生了很大的压力。不断的招聘周期和对声望的痴迷会让你感觉总是落后。很容易只关注金钱和品牌名称，而不是实际的学习。这个项目并不完美，但经历是独特的。即使有不断的比较和求职的压力，你发展的技术技能和采取行动的能力使这个过程值得。',
+
+    // First Internship blog content (Chinese)
+    'blog.firstInternship.title': '反思我的第一次工程实习',
+    'blog.firstInternship.date': 'nicholas chen · 2025年8月5日 · 12分钟阅读',
+    'blog.firstInternship.intro':
+      '今年冬天，我在ownr获得了我的第一个真正的合作实习经验，作为软件工程师实习生，我犯了很多错误，也学到了很多。现在回顾仅仅一年前，让我思考自己走了多远，所以我想写下这段经历，因为它教会了我关于软件工程和企业生活的知识，这些是我永远不会学到的。',
+    'blog.firstInternship.howGotTitle': '我是如何获得这次实习的？',
+    'blog.firstInternship.howGotText1':
+      '去年夏天，我申请了rbc的夏季科技实验室项目，这是一个面向对工程感兴趣并想在大学之前开始工作的高中生的项目，我度过了愉快的时光并交了许多朋友。当滑铁卢第一学期的招聘季节来临时，我最终接受了回到rbc风险投资部门工作的返聘邀请，那里是他们过去几年收购的所有初创公司的所在地。',
+    'blog.firstInternship.howGotText2':
+      '我第一天的一个生动记忆是在上午9:30见到我的经理和整个团队，然后立即开始工作。我设置了电脑并开始深入研究公司代码库，对即将到来的事情既兴奋又感到不知所措。',
+    'blog.firstInternship.mistakesTitle': '错误和经验教训',
+    'blog.firstInternship.mistakesIntro':
+      '在整个期间，我从犯了很多错误中学到了很多，特别是因为这是我的第一次真正的实习。以下是一些比较重要的错误：',
+    'blog.firstInternship.mistake1': '问了太多"愚蠢"的问题',
+    'blog.firstInternship.mistake2': '没有足够的主动性',
+    'blog.firstInternship.mistake3': '没有花时间独自尝试解决问题，在寻求帮助之前',
+    'blog.firstInternship.mistake4': '与其他同事互动不够',
+    'blog.firstInternship.mistakesLearning':
+      '在整个期间，我从犯的错误中学到了很多，特别是因为这是我的第一次真正的实习。最大的障碍之一是问了太多"愚蠢"的问题，以及总的来说没有足够的主动性。每当我遇到障碍时，我的本能是立即寻求帮助，而不是花时间真正挣扎并独自解决问题。后来我意识到，过早寻求帮助不仅分散了团队的注意力，而且剥夺了我自己找出答案的机会。',
+    'blog.firstInternship.mistakesCoWorkers':
+      '我也真的很后悔没有与我的同事有足够的互动。我太专注于工作并试图证明自己，以至于我经常独自坐在办公桌前。我错过了社交方面，比如一起午餐或只是在走廊里聊天，我现在意识到这非常重要。这使这段时间感觉比我需要的更加孤立，我错过了从他们的经验中学习，而不仅仅是技术方面的东西。',
+    'blog.firstInternship.goodTitle': '我认为我做得好的事情：',
+    'blog.firstInternship.good1': '与我的经理联系并与他频繁沟通',
+    'blog.firstInternship.good2': '学会了如何在没有ai的情况下编码和调试',
+    'blog.firstInternship.aiEmphasis':
+      '我想特别强调这一点，因为与ai工具一起成长已经改变了我做很多事情的方式，与我的年长朋友和家人相比。从我高中开始，它们就一直是我工作流程的重要组成部分，所以学习在没有它们的情况下编码和调试感觉就像回到过去，重新学习一切。我记得阅读mdn web文档、stack overflow，甚至查看某些编程语言的文档。现在的我可能会笑，因为从那时起，ai变得如此好，以至于大多数那些网站和资源现在都被认为是古老的。',
+    'blog.firstInternship.codingWithoutAiTitle': '在没有ai的情况下编码',
+    'blog.firstInternship.workExperienceTitle': '在ownr工作',
+    'blog.firstInternship.codingWithoutAiText1':
+      '在整个实习期间，由于我的rbc笔记本电脑的严格限制，我不被允许使用任何外部ai工具、youtube或大多数文档，团队唯一允许我们使用的ai工具是vscode中集成的copilot，但它很糟糕。',
+    'blog.firstInternship.codingWithoutAiText2':
+      '使用copilot调试很令人沮丧。我会问它关于代码库的问题或请求它索引某些文件，但它会返回虚假信息或完全编造内容。在反复尝试正确提示它之后，我经常放弃并手动调试。这迫使我学习新语言、框架并手动工作，这听起来很有趣，因为现在ai可以做到这些。我记得到处使用console.log并第一次使用调试器。',
+    'blog.firstInternship.codingWithoutAiText3':
+      '我主要在ownr为管理团队开发内部工具，使用的技术栈包括nestjs、typescript和express.js。我还学习了如何使用postgres、redis，并获得了使用docker和ci/cd管道的实践经验。',
+    'blog.firstInternship.debuggerTitle': '调试器',
+    'blog.firstInternship.debuggerText':
+      'vscode调试器是一个改变游戏规则的工具。我记得调试一个棘手的bug，数据以错误的类型发送。调试器允许我设置断点并逐步执行代码，在我前进时在侧边栏中查看每个输入和输出。这是我第一次真正理解了适当的调试工具可以有多么强大。我发现自己经常在stack overflow上试图找出哪些解决方案是对我特定错误的正确修复，因为copilot无法帮助解决这些问题。我还花了两个完整星期修复和解决多个仓库中的依赖关系。那两个星期感觉就像在stack overflow的兔子洞里无休止地追逐。',
+    'blog.firstInternship.techStackTitle': '技术栈',
+    'blog.firstInternship.techStackText':
+      '我主要在ownr为管理团队开发内部工具，使用的技术栈包括nestjs、typescript和express.js。我学习了redis和缓存，并使用docker和k8s工作。',
+    'blog.firstInternship.stackOverflowTitle': 'stack overflow地狱',
+    'blog.firstInternship.stackOverflowText':
+      '我发现自己经常在stack overflow上试图找出哪些解决方案是对我特定错误的正确修复，因为copilot无法帮助解决这些问题。我还花了两个完整星期修复和解决多个仓库中的依赖关系。那两个星期感觉就像在stack overflow的兔子洞里无休止地追逐。',
+    'blog.firstInternship.environmentTitle': '工作环境',
+    'blog.firstInternship.environmentText':
+      '除了工作本身，我喜欢这个环境。它有一种创业的能量——快速而充满活力。团队中的大多数人都穿着随意，很少有人穿西装或正装。尽管着装随意，但每个人都非常专业。办公室本身感觉就像企业电影中的场景：30层楼，有电梯，钥匙卡访问，到处都是会议室，还有带有双显示器的大桌子。',
+    'blog.firstInternship.reflectionsTitle': '反思',
+    'blog.firstInternship.reflectionsText1':
+      '有很多次我提出的问题我自己都没有意识到可以解决，或者当我太专注于工作而没有在午餐时与其他同事交谈或一起吃饭。这使这段时间非常无聊和缓慢。似乎过得很慢。',
+    'blog.firstInternship.reflectionsText2':
+      '我的经理也对我非常严格，喜欢看到我挣扎，因为他知道那是我学习最多的地方。我觉得他是为什么我学到这么多的主要原因之一，所以我非常感激。在我在那里的整个时间里，我们之间建立了一些联系，谈论了实习和寻找合作工作以及面试准备。leetcode是一个常见的话题，他给了我一些非常有用的建议。他是我见过的最好的工程师之一。我们整个团队都喜欢他。',
+    'blog.firstInternship.managerTitle': '我的经理',
+    'blog.firstInternship.managerText':
+      '我的经理故意对我很严格。他喜欢看到我挣扎，因为他知道那是最深层次学习发生的地方。他是我学到这么多知识的主要原因之一，我非常感谢他的指导和对我的信任。经理可能决定实习的成败，所以我很高兴我遇到了一个好的。随着时间的推移，我们通过谈论实习、寻找合作工作和面试准备而建立了联系。他和我谈论了leetcode，以及这在他上大学时也是一个经常讨论的话题。他是我见过的最好的工程师之一，整个团队都对他非常尊敬。',
+    'blog.firstInternship.conclusionTitle': '结论',
+    'blog.firstInternship.conclusionText':
+      '总的来说，这次实习非常有趣，我在这四个月里学到了很多。尽管如此，我希望我做得更多，并进一步推动自己。这次经历教会我，成长发生在你走出舒适区的时候，我感谢每一个错误和学到的教训。',
 
     // Git blog content
     'blog.git.intro':

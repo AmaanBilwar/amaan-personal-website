@@ -93,13 +93,13 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
   return (
     <aside
       ref={scrollContainerRef}
-      className="hidden lg:block w-48 flex-shrink-0 sticky top-12 max-h-[calc(100vh-6rem)] overflow-y-auto"
+      className="hidden lg:block w-48 flex-shrink-0 sticky top-12 max-h-[calc(100vh-6rem)] overflow-y-auto px-2"
     >
       {/* Header */}
-      <h2 className="text-stone-500 text-base mb-4 mt-1 font-medium">contents</h2>
+      <h2 className="text-stone-500 text-base mb-4 mt-1 font-medium px-2">contents</h2>
 
       {/* Links */}
-      <ul className="space-y-3">
+      <ul className="space-y-1.5">
         {sections.map((section) => (
           <li key={section.id}>
             <a
@@ -107,10 +107,12 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
               onClick={(e) => handleClick(e, section.id)}
               className={`
                 block text-sm transition-colors duration-200
+                px-2 py-0.5 rounded-md
+                hover:bg-stone-800/80
                 ${
                   activeSection === section.id
-                    ? 'text-stone-300'
-                    : 'text-stone-500 hover:text-stone-400'
+                    ? 'text-stone-100'
+                    : 'text-stone-400 hover:text-stone-100'
                 }
               `}
             >

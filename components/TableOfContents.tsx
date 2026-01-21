@@ -113,7 +113,7 @@ export default function TableOfContents({ sections, title = 'contents' }: TableO
                 ${
                   activeSection === section.id
                     ? 'text-stone-100'
-                    : 'text-stone-400 hover:text-stone-100'
+                    : 'text-stone-500 hover:text-stone-100'
                 }
               `}
             >

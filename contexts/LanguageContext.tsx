@@ -200,6 +200,10 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.title': 'how i learned to code',
     'blog.coding.date': 'nicholas chen · december 26, 2025 · 5 min read',
     'blog.coding.intro': 'small learnings that taught me to code from start (top) to end (bottom)',
+    'blog.coding.year2023': '2023',
+    'blog.coding.year2024': '2024',
+    'blog.coding.year2025': '2025',
+    'blog.coding.year2026': '2026',
     'blog.coding.item1': '• built a hangman game in java',
     'blog.coding.item2':
       '• learned the basics of c++ from my computer science teacher in high school',
@@ -1329,6 +1333,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Blog coding content
     'blog.coding.intro': '从小（顶部）到大（底部）教我编程的小学习',
+    'blog.coding.year2023': '2023',
+    'blog.coding.year2024': '2024',
+    'blog.coding.year2025': '2025',
+    'blog.coding.year2026': '2026',
     'blog.coding.item1': '• 用 java 构建了一个猜词游戏',
     'blog.coding.item2': '• 从高中计算机科学老师那里学习了 C++ 的基础知识',
     'blog.coding.item3': '• 加入学校的编程俱乐部，从更好的程序员那里学习',

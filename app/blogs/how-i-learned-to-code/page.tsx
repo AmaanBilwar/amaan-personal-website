@@ -15,7 +15,7 @@ export default function SoftwareEngineeringLearningBlog() {
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
-      <article className="max-w-lg mx-auto">
+      <article className="w-full lg:max-w-lg mx-auto">
         {/* Back link */}
         <Link
           href="/"

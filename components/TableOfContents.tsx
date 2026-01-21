@@ -98,7 +98,7 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
       className="hidden lg:block w-48 flex-shrink-0 sticky top-12 max-h-[calc(100vh-6rem)] overflow-y-auto"
     >
       {/* Header */}
-      <h2 className="text-stone-500 text-base mb-4 font-medium">contents</h2>
+      <h2 className="text-stone-500 text-base mb-4 mt-1 font-medium">contents</h2>
 
       {/* Links */}
       <ul className="space-y-3">

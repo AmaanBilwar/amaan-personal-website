@@ -14,7 +14,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
       className={`${className} flex flex-wrap items-center justify-between gap-3 text-xs text-stone-400 max-w-lg w-full`}
     >
       {/* Social media icons */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-1.5">
         <a
           href="mailto:nicholas.chen243@gmail.com"
           className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"

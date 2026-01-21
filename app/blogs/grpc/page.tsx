@@ -1,20 +1,31 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Footer from '@/components/Footer';
+import TableOfContents, { TOCSection } from '@/components/TableOfContents';
 
 export default function GrpcBlog() {
   const { language, setLanguage, t } = useLanguage();
+
+  const sections: TOCSection[] = useMemo(() => [
+    { id: 'what-is-grpc', title: t('blog.grpc.whatIsTitle') },
+    { id: 'how-it-works', title: t('blog.grpc.howItWorksTitle') },
+    { id: 'why-good', title: t('blog.grpc.whyGoodTitle') },
+    { id: 'grpc-with-go', title: t('blog.grpc.grpcWithGoTitle') },
+    { id: 'when-to-use', title: t('blog.grpc.whenToUseTitle') },
+  ], [t]);
 
   useEffect(() => {
     document.title = `${t('blog.grpc.title')} | Nicholas Chen`;
   }, [t, language]);
 
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
-      <article className="max-w-lg mx-auto">
+    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto pt-12 flex gap-8 items-start justify-center">
+        <TableOfContents sections={sections} />
+        <article className="flex-1 max-w-lg">
         {/* Back link */}
         <Link
           href="/"
@@ -44,14 +55,14 @@ export default function GrpcBlog() {
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
             <p>{t('blog.grpc.intro')}</p>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="what-is-grpc" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.grpc.whatIsTitle')}
             </h2>
             <p>{t('blog.grpc.whatIsText')}</p>
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="how-it-works" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.grpc.howItWorksTitle')}
             </h2>
             <p className="mb-6">{t('blog.grpc.howItWorksText1')}</p>
@@ -184,7 +195,7 @@ message HelloReply {
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="why-good" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.grpc.whyGoodTitle')}
             </h2>
 
@@ -358,7 +369,7 @@ message User {
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="grpc-with-go" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.grpc.grpcWithGoTitle')}
             </h2>
             <p className="mb-4">{t('blog.grpc.grpcWithGoText1')}</p>
@@ -420,7 +431,7 @@ func main() {
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="when-to-use" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.grpc.whenToUseTitle')}
             </h2>
             <p className="mb-4">{t('blog.grpc.whenToUseIntro')}</p>
@@ -495,7 +506,8 @@ func main() {
         </div>
 
         <Footer className="mt-10" />
-      </article>
+        </article>
+      </div>
     </main>
   );
 }

@@ -1,20 +1,30 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Footer from '@/components/Footer';
+import TableOfContents, { TOCSection } from '@/components/TableOfContents';
 
 export default function FirstInternshipBlog() {
   const { language, setLanguage, t } = useLanguage();
+
+  const sections: TOCSection[] = useMemo(() => [
+    { id: 'how-got', title: t('blog.firstInternship.howGotTitle') },
+    { id: 'mistakes', title: t('blog.firstInternship.mistakesTitle') },
+    { id: 'work-experience', title: t('blog.firstInternship.workExperienceTitle') },
+    { id: 'reflections', title: t('blog.firstInternship.reflectionsTitle') },
+  ], [t]);
 
   useEffect(() => {
     document.title = `${t('blog.firstInternship.title')} | Nicholas Chen`;
   }, [t, language]);
 
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
-      <article className="max-w-lg mx-auto">
+    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto pt-12 flex gap-8 items-start justify-center">
+        <TableOfContents sections={sections} />
+        <article className="flex-1 max-w-lg">
         {/* Back link */}
         <Link
           href="/"
@@ -49,7 +59,7 @@ export default function FirstInternshipBlog() {
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="how-got" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.firstInternship.howGotTitle')}
             </h2>
             <p>{t('blog.firstInternship.howGotText1')}</p>
@@ -57,7 +67,7 @@ export default function FirstInternshipBlog() {
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="mistakes" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.firstInternship.mistakesTitle')}
             </h2>
             <p className="mb-4">{t('blog.firstInternship.mistakesIntro')}</p>
@@ -79,7 +89,7 @@ export default function FirstInternshipBlog() {
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="work-experience" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.firstInternship.workExperienceTitle')}
             </h2>
             <p>{t('blog.firstInternship.codingWithoutAiText1')}</p>
@@ -93,7 +103,7 @@ export default function FirstInternshipBlog() {
           </section>
 
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8">
+            <h2 id="reflections" className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8">
               {t('blog.firstInternship.reflectionsTitle')}
             </h2>
             <p>{t('blog.firstInternship.reflectionsText1')}</p>
@@ -104,7 +114,8 @@ export default function FirstInternshipBlog() {
 
         <hr className="border-stone-700 my-8" />
         <Footer />
-      </article>
+        </article>
+      </div>
     </main>
   );
 }

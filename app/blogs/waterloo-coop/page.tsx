@@ -1,12 +1,23 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Footer from '@/components/Footer';
+import TableOfContents, { TOCSection } from '@/components/TableOfContents';
 
 export default function WaterlooCoopBlog() {
   const { language, setLanguage, t } = useLanguage();
+
+  const sections: TOCSection[] = useMemo(() => [
+    { id: 'exploring', title: t('blog.waterlooCoop.exploringTitle') },
+    { id: 'learning', title: t('blog.waterlooCoop.learningTitle') },
+    { id: 'commitment', title: t('blog.waterlooCoop.commitmentTitle') },
+    { id: 'salaries', title: t('blog.waterlooCoop.salariesTitle') },
+    { id: 'prestige', title: t('blog.waterlooCoop.prestigeTitle') },
+    { id: 'misc', title: t('blog.waterlooCoop.miscTitle') },
+    { id: 'conclusion', title: t('blog.waterlooCoop.conclusionTitle') },
+  ], [t]);
 
   useEffect(() => {
     // Update document title for client-side
@@ -14,8 +25,10 @@ export default function WaterlooCoopBlog() {
   }, [t, language]);
 
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
-      <article className="max-w-lg mx-auto">
+    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto pt-12 flex gap-8 items-start justify-center">
+        <TableOfContents sections={sections} />
+        <article className="flex-1 max-w-lg">
         {/* Back link */}
         <Link
           href="/"
@@ -56,7 +69,7 @@ export default function WaterlooCoopBlog() {
           <p>{t('blog.waterlooCoop.intro')}</p>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+            <h2 id="exploring" className="text-base md:text-lg font-medium text-white mb-3 mt-6 scroll-mt-8">
               {t('blog.waterlooCoop.exploringTitle')}
             </h2>
 
@@ -92,7 +105,7 @@ export default function WaterlooCoopBlog() {
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+            <h2 id="learning" className="text-base md:text-lg font-medium text-white mb-3 mt-6 scroll-mt-8">
               {t('blog.waterlooCoop.learningTitle')}
             </h2>
 
@@ -132,7 +145,7 @@ export default function WaterlooCoopBlog() {
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+            <h2 id="commitment" className="text-base md:text-lg font-medium text-white mb-3 mt-6 scroll-mt-8">
               {t('blog.waterlooCoop.commitmentTitle')}
             </h2>
 
@@ -157,7 +170,7 @@ export default function WaterlooCoopBlog() {
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+            <h2 id="salaries" className="text-base md:text-lg font-medium text-white mb-3 mt-6 scroll-mt-8">
               {t('blog.waterlooCoop.salariesTitle')}
             </h2>
 
@@ -192,7 +205,7 @@ export default function WaterlooCoopBlog() {
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+            <h2 id="prestige" className="text-base md:text-lg font-medium text-white mb-3 mt-6 scroll-mt-8">
               {t('blog.waterlooCoop.prestigeTitle')}
             </h2>
 
@@ -215,7 +228,7 @@ export default function WaterlooCoopBlog() {
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+            <h2 id="misc" className="text-base md:text-lg font-medium text-white mb-3 mt-6 scroll-mt-8">
               {t('blog.waterlooCoop.miscTitle')}
             </h2>
 
@@ -251,7 +264,7 @@ export default function WaterlooCoopBlog() {
           </section>
 
           <section>
-            <h2 className="text-base md:text-lg font-medium text-white mb-3 mt-6">
+            <h2 id="conclusion" className="text-base md:text-lg font-medium text-white mb-3 mt-6 scroll-mt-8">
               {t('blog.waterlooCoop.conclusionTitle')}
             </h2>
 
@@ -265,7 +278,8 @@ export default function WaterlooCoopBlog() {
 
         <hr className="border-stone-700 my-8" />
         <Footer />
-      </article>
+        </article>
+      </div>
     </main>
   );
 }

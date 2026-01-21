@@ -1,12 +1,22 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Footer from '@/components/Footer';
+import TableOfContents, { TOCSection } from '@/components/TableOfContents';
 
 export default function OntologyTextToSqlBlog() {
   const { language, setLanguage, t } = useLanguage();
+
+  const sections: TOCSection[] = useMemo(() => [
+    { id: 'what-is', title: t('blog.ontology.whatIsTitle') },
+    { id: 'why-matter', title: t('blog.ontology.whyMatterTitle') },
+    { id: 'building', title: t('blog.ontology.buildingTitle') },
+    { id: 'how-engines', title: t('blog.ontology.howEnginesTitle') },
+    { id: 'vs-other', title: t('blog.ontology.vsOtherTitle') },
+    { id: 'future', title: t('blog.ontology.futureTitle') },
+  ], [t]);
 
   useEffect(() => {
     // Update document title for client-side
@@ -14,8 +24,10 @@ export default function OntologyTextToSqlBlog() {
   }, [t, language]);
 
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 py-12 px-4 md:px-8">
-      <article className="max-w-lg mx-auto">
+    <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto pt-12 flex gap-8 items-start justify-center">
+        <TableOfContents sections={sections} />
+        <article className="flex-1 max-w-lg">
         {/* Back link */}
         <Link
           href="/"
@@ -50,7 +62,7 @@ export default function OntologyTextToSqlBlog() {
         {/* Content */}
         <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
           <section>
-            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+            <h2 id="what-is" className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8">
               {t('blog.ontology.whatIsTitle')}
             </h2>
             <p>{t('blog.ontology.whatIsP1')}</p>
@@ -76,7 +88,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+            <h2 id="why-matter" className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8">
               {t('blog.ontology.whyMatterTitle')}
             </h2>
             <p>{t('blog.ontology.whyMatterP1')}</p>
@@ -102,7 +114,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+            <h2 id="building" className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8">
               {t('blog.ontology.buildingTitle')}
             </h2>
             <p>{t('blog.ontology.buildingP1')}</p>
@@ -148,7 +160,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+            <h2 id="how-engines" className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8">
               {t('blog.ontology.howEnginesTitle')}
             </h2>
             <p>{t('blog.ontology.howEnginesP1')}</p>
@@ -177,7 +189,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+            <h2 id="vs-other" className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8">
               {t('blog.ontology.vsOtherTitle')}
             </h2>
             <p>
@@ -211,7 +223,7 @@ export default function OntologyTextToSqlBlog() {
           </section>
 
           <section>
-            <h2 className="text-lg md:text-xl font-semibold text-stone-100 mb-3">
+            <h2 id="future" className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8">
               {t('blog.ontology.futureTitle')}
             </h2>
             <p>{t('blog.ontology.futureP1')}</p>
@@ -280,7 +292,8 @@ export default function OntologyTextToSqlBlog() {
         </div>
 
         <Footer className="mt-10" />
-      </article>
+        </article>
+      </div>
     </main>
   );
 }

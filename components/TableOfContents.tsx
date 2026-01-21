@@ -27,7 +27,7 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
       {
         rootMargin: '-20% 0px -70% 0px',
         threshold: 0,
-      }
+      },
     );
 
     sections.forEach((section) => {
@@ -43,44 +43,42 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
   // Auto-scroll active section into view within the TOC container
   useEffect(() => {
     if (!activeSection || !scrollContainerRef.current) return;
-    
+
     const container = scrollContainerRef.current;
-    const activeLink = container.querySelector(
-      `a[href="#${activeSection}"]`
-    ) as HTMLElement;
-    
+    const activeLink = container.querySelector(`a[href="#${activeSection}"]`) as HTMLElement;
+
     if (!activeLink) return;
-    
+
     const listItem = activeLink.closest('li') as HTMLElement;
     if (!listItem) return;
-    
+
     // Small delay to ensure DOM is ready
     const timeoutId = setTimeout(() => {
       const containerHeight = container.clientHeight;
       const containerScrollTop = container.scrollTop;
       const itemOffsetTop = listItem.offsetTop;
       const itemHeight = listItem.offsetHeight;
-      
+
       // Calculate visible bounds
       const itemTop = itemOffsetTop - containerScrollTop;
       const itemBottom = itemTop + itemHeight;
-      
+
       // Check if item needs to be scrolled into view
       const padding = 20; // Small padding from edges
-      const needsScroll = itemTop < padding || itemBottom > (containerHeight - padding);
-      
+      const needsScroll = itemTop < padding || itemBottom > containerHeight - padding;
+
       if (needsScroll) {
         // Center the item in viewport
-        const targetScroll = itemOffsetTop - (containerHeight / 2) + (itemHeight / 2);
+        const targetScroll = itemOffsetTop - containerHeight / 2 + itemHeight / 2;
         const maxScroll = container.scrollHeight - containerHeight;
-        
+
         container.scrollTo({
           top: Math.max(0, Math.min(targetScroll, maxScroll)),
           behavior: 'smooth',
         });
       }
     }, 100);
-    
+
     return () => clearTimeout(timeoutId);
   }, [activeSection]);
 
@@ -109,9 +107,10 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
               onClick={(e) => handleClick(e, section.id)}
               className={`
                 block text-sm transition-colors duration-200
-                ${activeSection === section.id
-                  ? 'text-stone-300'
-                  : 'text-stone-500 hover:text-stone-400'
+                ${
+                  activeSection === section.id
+                    ? 'text-stone-300'
+                    : 'text-stone-500 hover:text-stone-400'
                 }
               `}
             >

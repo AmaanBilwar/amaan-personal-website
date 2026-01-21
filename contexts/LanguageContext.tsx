@@ -195,6 +195,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Blog navigation
     'blog.back': 'back',
+    'blog.contents': 'contents',
     'blog.git.title': 'git commands',
     'blog.git.date': 'nicholas chen · december 21, 2025 · 4 min read',
     'blog.coding.title': 'how i learned to code',
@@ -925,6 +926,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Blog navigation
     'blog.back': '返回',
+    'blog.contents': '目录',
     'blog.git.title': 'git 命令',
     'blog.git.date': 'nicholas chen · 2025年12月21日 · 4分钟阅读',
     'blog.grpc.title': 'grpc',

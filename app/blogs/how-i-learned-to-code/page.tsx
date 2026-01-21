@@ -27,7 +27,7 @@ export default function SoftwareEngineeringLearningBlog() {
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
       <div className="max-w-6xl mx-auto pt-12 flex gap-8 items-start justify-center">
-        <TableOfContents sections={sections} />
+        <TableOfContents sections={sections} title={t('blog.contents')} />
         <article className="w-full lg:max-w-lg">
           {/* Back link */}
           <Link
@@ -445,7 +445,11 @@ export default function SoftwareEngineeringLearningBlog() {
                   {t('blog.coding.item36').includes('discord summarizer bot') ||
                   t('blog.coding.item36').includes('discord 摘要机器人') ? (
                     <>
-                      {t('blog.coding.item36').split(/discord summarizer bot|discord 摘要机器人/)[0]}
+                      {
+                        t('blog.coding.item36').split(
+                          /discord summarizer bot|discord 摘要机器人/,
+                        )[0]
+                      }
                       <a
                         href="https://github.com/nicholaschen09/summary-discord-bot"
                         target="_blank"
@@ -454,7 +458,11 @@ export default function SoftwareEngineeringLearningBlog() {
                       >
                         {language === 'zh' ? 'discord 摘要机器人' : 'discord summarizer bot'}
                       </a>
-                      {t('blog.coding.item36').split(/discord summarizer bot|discord 摘要机器人/)[1]}
+                      {
+                        t('blog.coding.item36').split(
+                          /discord summarizer bot|discord 摘要机器人/,
+                        )[1]
+                      }
                     </>
                   ) : (
                     t('blog.coding.item36')
@@ -721,7 +729,11 @@ export default function SoftwareEngineeringLearningBlog() {
                   {t('blog.coding.item60').includes('link route checker script') ||
                   t('blog.coding.item60').includes('链接路由检查脚本') ? (
                     <>
-                      {t('blog.coding.item60').split(/link route checker script|链接路由检查脚本/)[0]}
+                      {
+                        t('blog.coding.item60').split(
+                          /link route checker script|链接路由检查脚本/,
+                        )[0]
+                      }
                       <a
                         href="http://github.com/nicholaschen09/link-health-scanner"
                         target="_blank"
@@ -730,7 +742,11 @@ export default function SoftwareEngineeringLearningBlog() {
                       >
                         {language === 'zh' ? '链接路由检查脚本' : 'link route checker script'}
                       </a>
-                      {t('blog.coding.item60').split(/link route checker script|链接路由检查脚本/)[1]}
+                      {
+                        t('blog.coding.item60').split(
+                          /link route checker script|链接路由检查脚本/,
+                        )[1]
+                      }
                     </>
                   ) : (
                     t('blog.coding.item60')

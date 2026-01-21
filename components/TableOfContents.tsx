@@ -9,9 +9,10 @@ export interface TOCSection {
 
 interface TableOfContentsProps {
   sections: TOCSection[];
+  title?: string;
 }
 
-export default function TableOfContents({ sections }: TableOfContentsProps) {
+export default function TableOfContents({ sections, title = 'contents' }: TableOfContentsProps) {
   const [activeSection, setActiveSection] = useState<string>('');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -96,7 +97,7 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
       className="hidden lg:block w-48 flex-shrink-0 sticky top-12 max-h-[calc(100vh-6rem)] overflow-y-auto px-2"
     >
       {/* Header */}
-      <h2 className="text-stone-500 text-base mb-4 mt-1 font-medium px-2">contents</h2>
+      <h2 className="text-stone-500 text-base mb-4 mt-1 font-medium px-2">{title}</h2>
 
       {/* Links */}
       <ul className="space-y-1.5">

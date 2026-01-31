@@ -737,7 +737,7 @@ export default function SoftwareEngineeringLearningBlog() {
             </section>
 
             {/* 2026 Section */}
-            <section>
+            <section className="border-b border-stone-700 pb-6 mb-8">
               <h2
                 id="year-2026"
                 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8"
@@ -800,44 +800,52 @@ export default function SoftwareEngineeringLearningBlog() {
                     t('blog.coding.item63')
                   )}
                 </li>
-              </ul>
-              <p className="mt-6 text-stone-400 italic text-sm">{t('blog.coding.note')}</p>
-            </section>
-
-            <section className="border-t border-stone-700 pt-6 mt-8">
-              <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.coding.referencesTitle')}
-              </h3>
-              <ul className="space-y-2 text-stone-400 text-sm">
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-stone-200 transition-colors underline"
-                  >
-                    linkedin.com/in/nicholas-chen-85886726a
-                  </a>
+                  {t('blog.coding.item64').includes('uoftatlas.com') &&
+                  t('blog.coding.item64').includes('waterlooatlas') ? (
+                    <>
+                      {t('blog.coding.item64').split('uoftatlas.com')[0]}
+                      <a
+                        href="https://www.uoftatlas.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-200 transition-colors underline"
+                      >
+                        uoftatlas.com
+                      </a>
+                      {t('blog.coding.item64')
+                        .split('uoftatlas.com')[1]
+                        .split('waterlooatlas')[0]}
+                      <a
+                        href="https://waterlooatlas.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-200 transition-colors underline"
+                      >
+                        waterlooatlas
+                      </a>
+                      {t('blog.coding.item64').split('waterlooatlas')[1] || ''}
+                    </>
+                  ) : (
+                    t('blog.coding.item64')
+                  )}
                 </li>
                 <li>
-                  <a
-                    href="https://github.com/nicholaschen09"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-stone-200 transition-colors underline"
-                  >
-                    github.com/nicholaschen09
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://x.com/nicholaschen09"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-stone-200 transition-colors underline"
-                  >
-                    x.com/nicholaschen09
-                  </a>
+                  {t('blog.coding.item65').includes('blog') ||
+                  t('blog.coding.item65').includes('博客') ? (
+                    <>
+                      {t('blog.coding.item65').split(/blog|博客/)[0]}
+                      <Link
+                        href="/blogs/first-internship"
+                        className="hover:text-stone-200 transition-colors underline"
+                      >
+                        {language === 'zh' ? '博客' : 'blog'}
+                      </Link>
+                      {t('blog.coding.item65').split(/blog|博客/)[1] || ''}
+                    </>
+                  ) : (
+                    t('blog.coding.item65')
+                  )}
                 </li>
               </ul>
             </section>

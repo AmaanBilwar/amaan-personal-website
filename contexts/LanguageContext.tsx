@@ -277,8 +277,9 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item61': '• started learning some system design for programming',
     'blog.coding.item62': '• learned about grpc, wrote a blog on it',
     'blog.coding.item63': '• started contributing to open source projects like insforge',
+    'blog.coding.item64': '• saw a cool website called uoftatlas.com and made a clone waterlooatlas',
+    'blog.coding.item65': '• wrote a blog on my first engineering internship where i learned docker',
     'blog.coding.item9': "• tried to make an interactive valentine's day website",
-    'blog.coding.note': 'note: i am updating this everyday',
     'blog.coding.referencesTitle': 'references',
     'blog.ontology.title': 'why ontology for text-to-sql?',
     'blog.ontology.date': 'nicholas chen · november 21, 2025 · 10 min read',
@@ -1392,8 +1393,9 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item61': '• 开始学习一些编程的系统设计',
     'blog.coding.item62': '• 学习了 gRPC，并写了一篇关于它的博客',
     'blog.coding.item63': '• 开始为开源项目做贡献，如 insforge',
+    'blog.coding.item64': '• 看到了一个很酷的网站 uoftatlas.com 并制作了一个克隆 waterlooatlas',
+    'blog.coding.item65': '• 写了一篇关于我第一次工程实习的博客，在那里我学习了 docker',
     'blog.coding.item9': '• 尝试制作一个互动的情人节网站',
-    'blog.coding.note': '注：我每天都在更新这个',
     'blog.coding.referencesTitle': '参考文献',
 
     // Blog ontology content

@@ -565,8 +565,10 @@ const translations: Record<Language, Record<string, string>> = {
     'previously.title': 'previously',
     'previously.role1': 'engineering',
     'previously.role2': 'engineering',
+    'previously.role3': 'engineering',
     'previously.item1': 'ownr',
     'previously.item2': 'rbc',
+    'previously.item3': 'insforge',
 
     // Current roles (compact labels)
     'current.role1': 'engineering',
@@ -1206,8 +1208,10 @@ const translations: Record<Language, Record<string, string>> = {
     'previously.title': '之前经历...',
     'previously.role1': '工程',
     'previously.role2': '工程',
+    'previously.role3': '工程',
     'previously.item1': 'ownr',
     'previously.item2': 'rbc',
+    'previously.item3': 'insforge',
 
     // Current roles (compact labels)
     'current.role1': '工程',

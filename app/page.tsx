@@ -169,16 +169,6 @@ export default function Home() {
 
                   <li>
                     <a
-                      href="https://diff-digest-appp.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('projects.label.diffDigest')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="https://sql-query-parser.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -199,16 +189,6 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="https://github.com/DerrickHa/ht6"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('projects.label.basketbin')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="https://github.com/nicholaschen09/facial-recognition-neural-network"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -225,16 +205,6 @@ export default function Home() {
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
                       {t('projects.label.agentSearchEvals')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://github.com/nicholaschen09/summary-discord-bot"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('projects.label.summaryDiscordBot')}
                     </a>
                   </li>
                 </ul>

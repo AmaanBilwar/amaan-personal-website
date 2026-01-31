@@ -254,8 +254,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item39': '• tried learning haskell for the first time',
     'blog.coding.item40':
       '• built sql query parser with typescript and svelte for parsing flat json',
-    'blog.coding.item41':
-      '• created diff digest tool for fetching github pr diffs for ai summarization',
     'blog.coding.item42': '• landed a software engineering internship at textql for the fall',
     'blog.coding.item43': '• had to learn matlab for one of my uni courses during school',
     'blog.coding.item44': '• built a url shortener using golang and tailwind css hosted on railway',
@@ -540,22 +538,17 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.neoDiscordBot': 'discord bot that summarizes messages for you',
     'projects.facialRecognition':
       'deep learning CNN model for face identification and verification',
-    'projects.diffDigest': 'tool that turns git diffs into release notes with 5000+ website visits',
     'projects.sqlParser': 'parser that can query flat JSON objects',
     'projects.whiteboard': 'app to brainstorm, create and share ideas',
     'projects.dependabot': "app with 200+ users that's easier to use than github's dependabot",
     'projects.fernando': 'posture checker robot that won 2nd place at utra hacks',
-    'projects.basketbin': 'machine that sorts trash automatically using computer vision',
 
     // Projects list labels (home page)
     'projects.label.tiktok': 'tiktok view predictor',
-    'projects.label.diffDigest': 'diff digest',
     'projects.label.sqlParser': 'sql query parser',
     'projects.label.fernando': 'fernando',
-    'projects.label.basketbin': 'basketbin',
     'projects.label.facialRecognition': 'facial recognition',
     'projects.label.agentSearchEvals': 'agent search evals',
-    'projects.label.summaryDiscordBot': 'summary discord bot',
 
     // Home hero title
     'home.title': 'hi im nic',
@@ -1187,22 +1180,17 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.tiktokPredictor': '预测TikTok观看量的ML模型',
     'projects.neoDiscordBot': 'Discord机器人，为您总结消息',
     'projects.facialRecognition': '用于人脸识别和验证的深度学习CNN模型',
-    'projects.diffDigest': '将git差异转换为发布说明的工具，拥有5000+次网站访问',
     'projects.sqlParser': '可以查询扁平JSON对象的解析器',
     'projects.whiteboard': '用于头脑风暴、创建和分享想法的应用',
     'projects.dependabot': '拥有200+用户的应用，用于检查和更新存储库中的依赖项',
     'projects.fernando': '在utra黑客马拉松获得第二名的姿势检查机器人',
-    'projects.basketbin': '使用计算机视觉自动分拣垃圾的机器',
 
     // Projects list labels (home page) — keep English names in both languages
     'projects.label.tiktok': 'tiktok view predictor',
-    'projects.label.diffDigest': 'diff digest',
     'projects.label.sqlParser': 'sql query parser',
     'projects.label.fernando': 'fernando',
-    'projects.label.basketbin': 'basketbin',
     'projects.label.facialRecognition': 'facial recognition',
     'projects.label.agentSearchEvals': 'agent search evals',
-    'projects.label.summaryDiscordBot': 'summary discord bot',
 
     // Home hero title
     'home.title': '嗨，我是 nic',
@@ -1378,7 +1366,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item38': '• 用 python 和 typescript 制作了这个面部识别软件',
     'blog.coding.item39': '• 第一次尝试学习 haskell',
     'blog.coding.item40': '• 用 typescript 和 svelte 构建了 sql 查询解析器，用于解析扁平 json',
-    'blog.coding.item41': '• 创建了 diff digest 工具，用于获取 github pr diffs 以进行 ai 摘要',
     'blog.coding.item42': '• 在秋季获得了 textql 的软件工程实习',
     'blog.coding.item43': '• 在学校期间必须为其中一门大学课程学习 matlab',
     'blog.coding.item44': '• 使用 golang 和 tailwind css 构建了一个 url 缩短器，托管在 railway 上',

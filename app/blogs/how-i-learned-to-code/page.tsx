@@ -527,25 +527,6 @@ export default function SoftwareEngineeringLearningBlog() {
                   )}
                 </li>
                 <li>
-                  {t('blog.coding.item41').includes('diff digest tool') ||
-                  t('blog.coding.item41').includes('diff digest 工具') ? (
-                    <>
-                      {t('blog.coding.item41').split(/diff digest tool|diff digest 工具/)[0]}
-                      <a
-                        href="https://github.com/nicholaschen09/diff-digest"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-stone-200 transition-colors underline"
-                      >
-                        {language === 'zh' ? 'diff digest 工具' : 'diff digest tool'}
-                      </a>
-                      {t('blog.coding.item41').split(/diff digest tool|diff digest 工具/)[1]}
-                    </>
-                  ) : (
-                    t('blog.coding.item41')
-                  )}
-                </li>
-                <li>
                   {t('blog.coding.item42').includes('textql') ? (
                     <>
                       {t('blog.coding.item42').split('textql')[0]}

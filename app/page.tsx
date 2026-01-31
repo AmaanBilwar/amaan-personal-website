@@ -101,7 +101,7 @@ export default function Home() {
               <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
                   <a
-                    href="https://insforge.com/"
+                    href="https://insforge.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"

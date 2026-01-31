@@ -277,8 +277,10 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item61': '• started learning some system design for programming',
     'blog.coding.item62': '• learned about grpc, wrote a blog on it',
     'blog.coding.item63': '• started contributing to open source projects like insforge',
-    'blog.coding.item64': '• saw a cool website called uoftatlas.com and made a clone waterlooatlas',
-    'blog.coding.item65': '• wrote a blog on my first engineering internship where i learned docker',
+    'blog.coding.item64':
+      '• saw a cool website called uoftatlas.com and made a clone waterlooatlas',
+    'blog.coding.item65':
+      '• wrote a blog on my first engineering internship where i learned docker',
     'blog.coding.item9': "• tried to make an interactive valentine's day website",
     'blog.coding.referencesTitle': 'references',
     'blog.ontology.title': 'why ontology for text-to-sql?',

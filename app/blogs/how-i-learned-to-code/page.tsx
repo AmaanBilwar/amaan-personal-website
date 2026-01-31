@@ -813,9 +813,7 @@ export default function SoftwareEngineeringLearningBlog() {
                       >
                         uoftatlas.com
                       </a>
-                      {t('blog.coding.item64')
-                        .split('uoftatlas.com')[1]
-                        .split('waterlooatlas')[0]}
+                      {t('blog.coding.item64').split('uoftatlas.com')[1].split('waterlooatlas')[0]}
                       <a
                         href="https://waterlooatlas.vercel.app/"
                         target="_blank"

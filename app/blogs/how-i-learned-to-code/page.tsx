@@ -58,8 +58,6 @@ export default function SoftwareEngineeringLearningBlog() {
 
           {/* Content */}
           <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
-            <p className="text-stone-400 italic text-sm">{t('blog.coding.intro')}</p>
-
             {/* 2023 Section */}
             <section>
               <h2

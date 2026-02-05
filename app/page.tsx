@@ -217,28 +217,19 @@ export default function Home() {
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                   <li>
                     <a
-                      href="/blogs/select-star"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.selectStar.title')}
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      href="/blogs/grpc"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.grpc.title')}
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
                       href="/blogs/ontology-text-to-sql"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
                       {t('blog.ontology.title')}
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/blogs/select-star"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.selectStar.title')}
                     </a>
                   </li>
 
@@ -266,6 +257,15 @@ export default function Home() {
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
                       {t('blog.firstInternship.title')}
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/blogs/grpc"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.grpc.title')}
                     </a>
                   </li>
                 </ul>

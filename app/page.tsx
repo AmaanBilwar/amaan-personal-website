@@ -101,22 +101,6 @@ export default function Home() {
               <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
                   <a
-                    href="https://insforge.dev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
-                  >
-                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.role3')}
-                    </span>
-                    <img src="/insforge.png" alt="Insforge" className="w-4 h-4" />
-                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.item3')}
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://textql.com/"
                     target="_blank"
                     rel="noopener noreferrer"

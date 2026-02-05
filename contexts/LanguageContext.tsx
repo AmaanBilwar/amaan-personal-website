@@ -809,6 +809,10 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.widelyUsedBy2': 'kubernetes for its API',
     'blog.grpc.widelyUsedBy3': 'cloudflare for edge computing',
     'blog.grpc.referencesTitle': 'references',
+
+    // SELECT * blog
+    'blog.selectStar.title': 'why SELECT * hurts database performance',
+    'blog.selectStar.date': 'nicholas chen · february 5, 2026 · 5 min read',
   },
   zh: {
     // Hero section
@@ -1590,5 +1594,9 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.widelyUsedBy2': 'kubernetes 用于其 API',
     'blog.grpc.widelyUsedBy3': 'cloudflare 用于边缘计算',
     'blog.grpc.referencesTitle': '参考',
+
+    // SELECT * blog
+    'blog.selectStar.title': '为什么 SELECT * 会影响数据库性能',
+    'blog.selectStar.date': 'nicholas chen · 2026年2月5日 · 5分钟阅读',
   },
 };

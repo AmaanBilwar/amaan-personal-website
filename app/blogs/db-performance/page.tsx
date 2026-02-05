@@ -39,6 +39,8 @@ export default function SelectStarBlog() {
           </h1>
           <p className="text-stone-500 text-sm mb-6">{t('blog.selectStar.date')}</p>
 
+          {/* Cover image */}
+          <img src="/blogs/db-performance/db.png" alt="Database Performance" className="w-full mb-6" />
           <hr className="border-stone-700 mb-8" />
 
           <Footer className="mt-10" />

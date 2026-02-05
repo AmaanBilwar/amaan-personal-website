@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     title: 'Why SELECT * Hurts Database Performance',
     description: 'Understanding why SELECT * is bad for database performance and what to do instead',
     type: 'article',
-    images: ['https://nicholaschen.me/blogs/select-star/cover.png'],
+    images: ['https://nicholaschen.me/blogs/db-performance/db.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Why SELECT * Hurts Database Performance',
-    images: ['https://nicholaschen.me/blogs/select-star/cover.png'],
+    images: ['https://nicholaschen.me/blogs/db-performance/db.png'],
   },
 };
 

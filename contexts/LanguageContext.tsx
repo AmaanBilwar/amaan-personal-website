@@ -281,8 +281,7 @@ const translations: Record<Language, Record<string, string>> = {
       '• saw a cool website called uoftatlas.com and made a clone waterlooatlas',
     'blog.coding.item65':
       '• wrote a blog on my first engineering internship where i learned docker',
-    'blog.coding.item66':
-      '• updated sql query parser and learned about tokenization and AST',
+    'blog.coding.item66': '• updated sql query parser and learned about tokenization and AST',
     'blog.coding.item68': '• learned about vector embeddings during an interview',
     'blog.coding.item69': '• learned more about kubernetes from a blog',
     'blog.coding.item70': '• did 8 takehomes and learned a lot about pydantic',

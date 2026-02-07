@@ -224,7 +224,6 @@ export default function Home() {
                     </a>
                   </li>
 
-
                   <li>
                     <a
                       href="/blogs/how-i-learned-to-code"

@@ -102,7 +102,7 @@ export default function OntologyTextToSqlBlog() {
               </h2>
               <p>{t('blog.ontology.whyMatterP1')}</p>
               <p className="mt-4">{t('blog.ontology.whyMatterP2')}</p>
-              <ul className="mt-3 ml-4 space-y-1 text-stone-400">
+              <ul className="mt-3 ml-4 space-y-1 text-stone-300">
                 <li>• {t('blog.ontology.whyMatterLi1')}</li>
                 <li>• {t('blog.ontology.whyMatterLi2')}</li>
                 <li>• {t('blog.ontology.whyMatterLi3')}</li>

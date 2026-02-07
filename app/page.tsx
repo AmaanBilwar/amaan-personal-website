@@ -224,14 +224,6 @@ export default function Home() {
                     </a>
                   </li>
 
-                  <li>
-                    <a
-                      href="/blogs/db-performance"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.selectStar.title')}
-                    </a>
-                  </li>
 
                   <li>
                     <a

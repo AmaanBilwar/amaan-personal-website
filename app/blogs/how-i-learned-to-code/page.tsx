@@ -843,6 +843,45 @@ export default function SoftwareEngineeringLearningBlog() {
                     t('blog.coding.item65')
                   )}
                 </li>
+                <li>
+                  {t('blog.coding.item66').includes('sql query parser') ||
+                  t('blog.coding.item66').includes('sql 查询解析器') ? (
+                    <>
+                      {t('blog.coding.item66').split(/sql query parser|sql 查询解析器/)[0]}
+                      <a
+                        href="https://sql-query-parser.vercel.app/blog"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-200 transition-colors underline"
+                      >
+                        {language === 'zh' ? 'sql 查询解析器' : 'sql query parser'}
+                      </a>
+                      {t('blog.coding.item66').split(/sql query parser|sql 查询解析器/)[1]}
+                    </>
+                  ) : (
+                    t('blog.coding.item66')
+                  )}
+                </li>
+                <li>{t('blog.coding.item68')}</li>
+                <li>
+                  {t('blog.coding.item69').includes('kubernetes') ? (
+                    <>
+                      {t('blog.coding.item69').split('kubernetes')[0]}
+                      <a
+                        href="https://kylejeong.com/blog/what-is-kubernetes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-stone-200 transition-colors underline"
+                      >
+                        kubernetes
+                      </a>
+                      {t('blog.coding.item69').split('kubernetes')[1]}
+                    </>
+                  ) : (
+                    t('blog.coding.item69')
+                  )}
+                </li>
+                <li>{t('blog.coding.item70')}</li>
               </ul>
             </section>
           </div>

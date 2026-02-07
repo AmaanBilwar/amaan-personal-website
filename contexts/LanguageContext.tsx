@@ -281,6 +281,11 @@ const translations: Record<Language, Record<string, string>> = {
       '• saw a cool website called uoftatlas.com and made a clone waterlooatlas',
     'blog.coding.item65':
       '• wrote a blog on my first engineering internship where i learned docker',
+    'blog.coding.item66':
+      '• updated sql query parser and learned about tokenization and AST',
+    'blog.coding.item68': '• learned about vector embeddings during an interview',
+    'blog.coding.item69': '• learned more about kubernetes from a blog',
+    'blog.coding.item70': '• did 8 takehomes and learned a lot about pydantic',
     'blog.coding.item9': "• tried to make an interactive valentine's day website",
     'blog.coding.referencesTitle': 'references',
     'blog.ontology.title': 'why ontology for text-to-sql?',
@@ -809,10 +814,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.widelyUsedBy2': 'kubernetes for its API',
     'blog.grpc.widelyUsedBy3': 'cloudflare for edge computing',
     'blog.grpc.referencesTitle': 'references',
-
-    // SELECT * blog
-    'blog.selectStar.title': 'why SELECT * hurts database performance',
-    'blog.selectStar.date': 'nicholas chen · february 5, 2026 · 5 min read',
   },
   zh: {
     // Hero section
@@ -1401,6 +1402,10 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.coding.item63': '• 开始为开源项目做贡献，如 insforge',
     'blog.coding.item64': '• 看到了一个很酷的网站 uoftatlas.com 并制作了一个克隆 waterlooatlas',
     'blog.coding.item65': '• 写了一篇关于我第一次工程实习的博客，在那里我学习了 docker',
+    'blog.coding.item66': '• 更新了 sql 查询解析器，学习了标记化和抽象语法树 (AST)',
+    'blog.coding.item68': '• 在面试中学习了向量嵌入',
+    'blog.coding.item69': '• 从一篇博客中学习了更多关于 kubernetes 的知识',
+    'blog.coding.item70': '• 做了 8 个带回家的编程作业，并学习了很多关于 pydantic 的知识',
     'blog.coding.item9': '• 尝试制作一个互动的情人节网站',
     'blog.coding.referencesTitle': '参考文献',
 
@@ -1594,9 +1599,5 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.grpc.widelyUsedBy2': 'kubernetes 用于其 API',
     'blog.grpc.widelyUsedBy3': 'cloudflare 用于边缘计算',
     'blog.grpc.referencesTitle': '参考',
-
-    // SELECT * blog
-    'blog.selectStar.title': '为什么 SELECT * 会影响数据库性能',
-    'blog.selectStar.date': 'nicholas chen · 2026年2月5日 · 5分钟阅读',
   },
 };

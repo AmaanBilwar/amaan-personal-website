@@ -139,16 +139,13 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Home',
     'nav.draw': 'Draw',
-    'nav.blogs': 'writing',
+    'nav.blogs': 'blogs',
     'nav.draw.title': 'Draw something!',
     'nav.blogs.title': 'Read my writing!',
     'nav.contact': 'Contact',
     'nav.linkedin': 'LinkedIn',
     'nav.github': 'GitHub',
     'nav.twitter': 'Twitter',
-
-    // Language
-    'language.label': 'Language:',
 
     // Blogs page
     'blogs.pageTitle': 'Writing',

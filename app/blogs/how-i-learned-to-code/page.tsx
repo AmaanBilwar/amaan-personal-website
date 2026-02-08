@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import TableOfContents, { TOCSection } from '@/components/TableOfContents';
 
 export default function SoftwareEngineeringLearningBlog() {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   const sections: TOCSection[] = useMemo(
     () => [
@@ -22,7 +22,7 @@ export default function SoftwareEngineeringLearningBlog() {
   useEffect(() => {
     // Update document title for client-side
     document.title = `${t('blog.coding.title')} | Nicholas Chen`;
-  }, [t, language]);
+  }, [t]);
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
@@ -77,7 +77,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '猜词游戏' : 'hangman game'}
+                        hangman game
                       </a>
                       {t('blog.coding.item1').split('hangman game')[1]}
                     </>
@@ -145,7 +145,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'gpt wrapper' : 'gpt wrapper'}
+                        gpt wrapper
                       </a>
                       {t('blog.coding.item6').split('gpt wrapper')[1]}
                     </>
@@ -164,19 +164,19 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '学生注册' : 'student registration'}
+                        student registration
                       </a>
                       {t('blog.coding.item7').includes('and') ||
                       t('blog.coding.item7').includes('和') ? (
                         <>
-                          {language === 'zh' ? ' 和 ' : ' and '}
+                          {' and '}
                           <a
                             href="https://github.com/nicholaschen09/MobileCalculatorApp"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-stone-200 transition-colors underline"
                           >
-                            {language === 'zh' ? '移动计算器应用' : 'mobile calculator app'}
+                            mobile calculator app
                           </a>
                           {t('blog.coding.item7').split(/mobile calculator app|移动计算器应用/)[1]}
                         </>
@@ -217,7 +217,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '情人节网站' : "valentine's day website"}
+                        valentine's day website
                       </a>
                       {t('blog.coding.item9').split(/valentine's day website|情人节网站/)[1]}
                     </>
@@ -237,12 +237,12 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'geeks for geeks' : 'geeks for geeks'}
+                        geeks for geeks
                       </a>
                       {t('blog.coding.item11').includes('and') ||
                       t('blog.coding.item11').includes('和') ? (
                         <>
-                          {language === 'zh' ? ' 和 ' : ' and '}
+                          {' and '}
                           <a
                             href="https://www.w3schools.com/"
                             target="_blank"
@@ -288,7 +288,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '个人网站' : 'personal website'}
+                        personal website
                       </a>
                       {t('blog.coding.item16').split(/personal website|个人网站/)[1]}
                     </>
@@ -307,7 +307,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '滑铁卢大学' : 'university of waterloo'}
+                        university of waterloo
                       </a>
                       {t('blog.coding.item17').split(/university of waterloo|滑铁卢大学/)[1]}
                     </>
@@ -368,7 +368,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '垃圾分拣器' : 'trash sorter'}
+                        trash sorter
                       </a>
                       {t('blog.coding.item26').split(/trash sorter|垃圾分拣器/)[1]}
                     </>
@@ -391,7 +391,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '姿势检查机器人' : 'posture checking robot'}
+                        posture checking robot
                       </a>
                       {t('blog.coding.item31').split(/posture checking robot|姿势检查机器人/)[1]}
                     </>
@@ -431,7 +431,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'etl 流水线' : 'etl pipeline'}
+                        etl pipeline
                       </a>
                       {t('blog.coding.item35').split(/etl pipeline|etl 流水线/)[1]}
                     </>
@@ -454,7 +454,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'discord 摘要机器人' : 'discord summarizer bot'}
+                        discord summarizer bot
                       </a>
                       {
                         t('blog.coding.item36').split(
@@ -477,7 +477,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '图像处理器' : 'image processor'}
+                        image processor
                       </a>
                       {t('blog.coding.item37').split(/image processor|图像处理器/)[1]}
                     </>
@@ -496,7 +496,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '面部识别' : 'facial recognition'}
+                        facial recognition
                       </a>
                       {t('blog.coding.item38').split(/facial recognition|面部识别/)[1]}
                     </>
@@ -516,7 +516,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'sql 查询解析器' : 'sql query parser'}
+                        sql query parser
                       </a>
                       {t('blog.coding.item40').split(/sql query parser|sql 查询解析器/)[1]}
                     </>
@@ -554,7 +554,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'url 缩短器' : 'url shortener'}
+                        url shortener
                       </a>
                       {t('blog.coding.item44').split(/url shortener|url 缩短器/)[1]}
                     </>
@@ -572,7 +572,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'figma' : 'figma'}
+                        figma
                       </a>
                       {t('blog.coding.item45').split('figma')[1]}
                     </>
@@ -592,7 +592,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '个人网站' : 'personal website'}
+                        personal website
                       </a>
                       {t('blog.coding.item47').split(/personal website|个人网站/)[1]}
                     </>
@@ -613,9 +613,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh'
-                          ? 'textql 医疗保健登录页面'
-                          : 'textql healthcare landing page'}
+                        textql healthcare landing page
                       </a>
                       {t('blog.coding.item50').split(/textql healthcare|textql 医疗保健/)[1]}
                     </>
@@ -636,7 +634,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '本体' : 'ontology'}
+                        ontology
                       </a>
                       {t('blog.coding.item53').split(/ontology|本体/)[1]}
                     </>
@@ -658,7 +656,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '随机东西' : 'random things'}
+                        random things
                       </a>
                       {t('blog.coding.item57').split(/random things|随机东西/)[1]}
                     </>
@@ -677,7 +675,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'mercor ML 模型' : 'mercor ML model'}
+                        mercor ML model
                       </a>
                       {t('blog.coding.item58').split(/mercor ML model|mercor ML 模型/)[1]}
                     </>
@@ -696,7 +694,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '基准测试' : 'benchmarking'}
+                        benchmarking
                       </a>
                       {t('blog.coding.item59').split(/benchmarking|基准测试/)[1]}
                     </>
@@ -719,7 +717,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '链接路由检查脚本' : 'link route checker script'}
+                        link route checker script
                       </a>
                       {
                         t('blog.coding.item60').split(
@@ -754,7 +752,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '系统设计' : 'system design'}
+                        system design
                       </a>
                       {t('blog.coding.item61').split(/system design|系统设计/)[1]}
                     </>
@@ -771,7 +769,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         href="/blogs/grpc"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '博客' : 'blog'}
+                        blog
                       </Link>
                       {t('blog.coding.item62').split(/blog|博客/)[1] || ''}
                     </>
@@ -790,7 +788,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'insforge' : 'insforge'}
+                        insforge
                       </a>
                       {t('blog.coding.item63').split(/insforge|InsForge/)[1] || ''}
                     </>
@@ -835,7 +833,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         href="/blogs/first-internship"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? '博客' : 'blog'}
+                        blog
                       </Link>
                       {t('blog.coding.item65').split(/blog|博客/)[1] || ''}
                     </>
@@ -854,7 +852,7 @@ export default function SoftwareEngineeringLearningBlog() {
                         rel="noopener noreferrer"
                         className="hover:text-stone-200 transition-colors underline"
                       >
-                        {language === 'zh' ? 'sql 查询解析器' : 'sql query parser'}
+                        sql query parser
                       </a>
                       {t('blog.coding.item66').split(/sql query parser|sql 查询解析器/)[1]}
                     </>

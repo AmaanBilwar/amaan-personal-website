@@ -1,14 +1,10 @@
 'use client';
 
-import { useLanguage } from '@/contexts/LanguageContext';
-
 interface FooterProps {
   className?: string;
 }
 
 export default function Footer({ className = 'mt-20' }: FooterProps) {
-  const { language, setLanguage } = useLanguage();
-
   return (
     <div
       className={`${className} flex flex-wrap items-center justify-between gap-3 text-xs text-stone-400 max-w-lg w-full`}
@@ -16,7 +12,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
       {/* Social media icons */}
       <div className="flex items-center gap-1.5">
         <a
-          href="mailto:nicholas.chen243@gmail.com"
+          href="mailto:bilwarad@mail.uc.edu"
           className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
           aria-label="Email"
         >
@@ -31,7 +27,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           </svg>
         </a>
         <a
-          href="https://www.linkedin.com/in/nicholas-chen-85886726a/"
+          href="https://www.linkedin.com/in/amaanbilwar/"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
@@ -48,7 +44,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           </svg>
         </a>
         <a
-          href="https://github.com/nicholaschen09"
+          href="https://github.com/AmaanBilwar"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
@@ -65,7 +61,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           </svg>
         </a>
         <a
-          href="https://x.com/nicholaschen__"
+          href="https://x.com/BilwarAmaan"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
@@ -82,11 +78,11 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           </svg>
         </a>
         <a
-          href="https://nicholaschen243.wixsite.com/nicholas-chen"
+          href="https://amaandoes.tech"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
-          aria-label="Art Portfolio"
+          aria-label="Old Portfolio"
         >
           <svg
             width="22"
@@ -98,34 +94,6 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
             <rect x="3" y="3" width="18" height="18" />
           </svg>
         </a>
-      </div>
-      <div className="flex items-center flex-shrink-0">
-        {/* Language switcher */}
-        <div className="flex items-center gap-1.5">
-          <button
-            type="button"
-            onClick={() => setLanguage('en')}
-            className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
-              language === 'en'
-                ? 'bg-stone-800/80 text-white'
-                : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
-            }`}
-          >
-            EN
-          </button>
-          <span className="text-stone-600">/</span>
-          <button
-            type="button"
-            onClick={() => setLanguage('zh')}
-            className={`text-[10px] tracking-[0.18em] uppercase rounded-md px-2 py-0.5 transition-colors ${
-              language === 'zh'
-                ? 'bg-stone-800/80 text-white'
-                : 'text-stone-500 hover:bg-stone-800/80 hover:text-stone-100'
-            }`}
-          >
-            中文
-          </button>
-        </div>
       </div>
     </div>
   );

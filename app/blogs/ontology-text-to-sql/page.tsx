@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import TableOfContents, { TOCSection } from '@/components/TableOfContents';
 
 export default function OntologyTextToSqlBlog() {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   const sections: TOCSection[] = useMemo(
     () => [
@@ -24,7 +24,7 @@ export default function OntologyTextToSqlBlog() {
   useEffect(() => {
     // Update document title for client-side
     document.title = `${t('blog.ontology.title')} | Nicholas Chen`;
-  }, [t, language]);
+  }, [t]);
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">

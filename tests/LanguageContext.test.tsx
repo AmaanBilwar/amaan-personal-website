@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { LanguageProvider, useLanguage } from '../contexts/LanguageContext';
 import { ReactNode } from 'react';
 import { describe, it, expect } from 'vitest';
@@ -13,13 +13,8 @@ describe('LanguageContext', () => {
     expect(result.current.language).toBe('en');
   });
 
-  it('should change language', () => {
+  it('should return English translations', () => {
     const { result } = renderHook(() => useLanguage(), { wrapper });
-
-    act(() => {
-      result.current.setLanguage('zh');
-    });
-
-    expect(result.current.language).toBe('zh');
+    expect(result.current.t('nav.home')).toBe('Home');
   });
 });

@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Footer from '@/components/Footer';
 
 export default function Home() {
-  const { t, language, setLanguage } = useLanguage();
+  const { t } = useLanguage();
   const [isHovering, setIsHovering] = useState(false);
   const [typedChars, setTypedChars] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -74,9 +74,6 @@ export default function Home() {
 
   const getDisplayName = () => {
     if (typedChars > 0 || isHovering) {
-      if (language === 'zh') {
-        return '嗨，我是 nic' + extraChars.slice(0, typedChars);
-      }
       return 'hi im nic' + extraChars.slice(0, typedChars);
     }
     return t('home.title');
@@ -97,7 +94,11 @@ export default function Home() {
               onMouseLeave={() => setIsHovering(false)}
               onContextMenu={handleContextMenu}
             >
-              <img src="/ghcat.svg" alt="GitHub Cat" className="w-8 h-8 md:w-10 md:h-10 opacity-80" />
+              <img
+                src="/gh_woody.svg"
+                alt="GitHub Woddy"
+                className="w-8 h-8 md:w-10 md:h-10 opacity-80"
+              />
             </div>
             {contextMenu && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 z-50">
@@ -107,14 +108,32 @@ export default function Home() {
                 >
                   {copied ? (
                     <>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                       Copied!
                     </>
                   ) : (
                     <>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                       </svg>
@@ -135,7 +154,7 @@ export default function Home() {
           <ul className="text-xs md:text-sm text-stone-400 space-y-1">
             <li>
               <a
-                href="https://uwaterloo.ca/systems-design-engineering/"
+                href="https://www.ceas.uc.edu/academics/departments/electrical-computer-engineering/degrees-programs/computer-engineering-bachelor-of-science.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
@@ -143,9 +162,9 @@ export default function Home() {
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                   {t('current.role1')}
                 </span>
-                <img src="/uwaterloo_logo.jpeg" alt="University of Waterloo" className="w-4 h-4" />
+                <img src="/ucincy_logo.png" alt="University of Cincinnati" className="w-6 h-4" />
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                  uwaterloo
+                  ucincinnati
                 </span>
               </a>
             </li>
@@ -161,22 +180,6 @@ export default function Home() {
               <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
                   <a
-                    href="https://textql.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
-                  >
-                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('current.role2')}
-                    </span>
-                    <img src="/textql.jpg" alt="TextQL" className="w-4 h-4" />
-                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      textql
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://www.ownr.co/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -185,7 +188,7 @@ export default function Home() {
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.role1')}
                     </span>
-                    <img src="/ownrco_logo.jpeg" alt="Ownr" className="w-4 h-4" />
+                    <img src="/story.jpg" alt="Story" className="w-4 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.item1')}
                     </span>
@@ -193,7 +196,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="https://www.rbc.com/"
+                    href="https://www.honeywell.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
@@ -201,9 +204,25 @@ export default function Home() {
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.role2')}
                     </span>
-                    <img src="/rbc.jpeg" alt="RBC" className="w-4 h-4" />
+                    <img src="/Honeywell-Logo.png" alt="Honeywell" className="w-8 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
                       {t('previously.item2')}
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.honeywell.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
+                  >
+                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                      {t('previously.role3')}
+                    </span>
+                    <img src="/Honeywell-Logo.png" alt="Honeywell" className="w-8 h-4" />
+                    <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                      {t('previously.item3')}
                     </span>
                   </a>
                 </li>
@@ -218,53 +237,32 @@ export default function Home() {
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                   <li>
                     <a
-                      href="https://tiktokviewpredictor.vercel.app/"
+                      href="https://the-search-thing.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.tiktok')}
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      href="https://sql-query-parser.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('projects.label.sqlParser')}
+                      {t('projects.label.theSearchThing')}
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://github.com/enxilium/posture-checker-robot"
+                      href="https://github.com/AmaanBilwar/google-docs-but-its-your-terminal"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.fernando')}
+                      {t('projects.label.googledocs')}
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://github.com/nicholaschen09/facial-recognition-neural-network"
+                      href="https://github.com/SoarAILabs/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.facialRecognition')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://llm-benchmarking-kappa.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('projects.label.agentSearchEvals')}
+                      {t('projects.label.kite')}
                     </a>
                   </li>
                 </ul>

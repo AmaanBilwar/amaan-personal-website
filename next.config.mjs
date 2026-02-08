@@ -1,8 +1,8 @@
 // Defensive shim: if `localStorage` is missing or broken (common in SSR),
 // provide a no-op implementation so accessors never crash server code.
-if (typeof globalThis !== 'undefined') {
+if (typeof globalThis !== "undefined") {
   const ls = globalThis.localStorage;
-  if (!ls || typeof ls.getItem !== 'function') {
+  if (!ls || typeof ls.getItem !== "function") {
     globalThis.localStorage = {
       getItem: () => null,
       setItem: () => {},
@@ -18,7 +18,7 @@ if (typeof globalThis !== 'undefined') {
 
 let userConfig = undefined;
 try {
-  userConfig = await import('./v0-user-next.config');
+  userConfig = await import("./v0-user-next.config");
 } catch (e) {
   // ignore error
 }
@@ -49,7 +49,7 @@ function mergeConfig(nextConfig, userConfig) {
   }
 
   for (const key in userConfig) {
-    if (typeof nextConfig[key] === 'object' && !Array.isArray(nextConfig[key])) {
+    if (typeof nextConfig[key] === "object" && !Array.isArray(nextConfig[key])) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...userConfig[key],

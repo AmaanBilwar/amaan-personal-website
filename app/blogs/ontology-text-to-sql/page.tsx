@@ -1,35 +1,35 @@
-'use client';
+"use client";
 
-import { useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useLanguage } from '@/contexts/LanguageContext';
-import Footer from '@/components/Footer';
-import TableOfContents, { TOCSection } from '@/components/TableOfContents';
+import { useEffect, useMemo } from "react";
+import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+import Footer from "@/components/Footer";
+import TableOfContents, { TOCSection } from "@/components/TableOfContents";
 
 export default function OntologyTextToSqlBlog() {
   const { t } = useLanguage();
 
   const sections: TOCSection[] = useMemo(
     () => [
-      { id: 'what-is', title: t('blog.ontology.whatIsTitle') },
-      { id: 'why-matter', title: t('blog.ontology.whyMatterTitle') },
-      { id: 'building', title: t('blog.ontology.buildingTitle') },
-      { id: 'how-engines', title: t('blog.ontology.howEnginesTitle') },
-      { id: 'vs-other', title: t('blog.ontology.vsOtherTitle') },
-      { id: 'future', title: t('blog.ontology.futureTitle') },
+      { id: "what-is", title: t("blog.ontology.whatIsTitle") },
+      { id: "why-matter", title: t("blog.ontology.whyMatterTitle") },
+      { id: "building", title: t("blog.ontology.buildingTitle") },
+      { id: "how-engines", title: t("blog.ontology.howEnginesTitle") },
+      { id: "vs-other", title: t("blog.ontology.vsOtherTitle") },
+      { id: "future", title: t("blog.ontology.futureTitle") },
     ],
     [t],
   );
 
   useEffect(() => {
     // Update document title for client-side
-    document.title = `${t('blog.ontology.title')} | Nicholas Chen`;
+    document.title = `${t("blog.ontology.title")} | Nicholas Chen`;
   }, [t]);
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
       <div className="max-w-6xl mx-auto pt-12 flex gap-8 items-start justify-center">
-        <TableOfContents sections={sections} title={t('blog.contents')} />
+        <TableOfContents sections={sections} title={t("blog.contents")} />
         <article className="w-full lg:max-w-lg">
           {/* Back link */}
           <Link
@@ -45,14 +45,14 @@ export default function OntologyTextToSqlBlog() {
                 strokeLinejoin="round"
               />
             </svg>
-            {t('blog.back')}
+            {t("blog.back")}
           </Link>
 
           {/* Title */}
           <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-            {t('blog.ontology.title')}
+            {t("blog.ontology.title")}
           </h1>
-          <p className="text-stone-500 text-sm mb-6">{t('blog.ontology.date')}</p>
+          <p className="text-stone-500 text-sm mb-6">{t("blog.ontology.date")}</p>
 
           {/* Cover image */}
           <img
@@ -69,28 +69,28 @@ export default function OntologyTextToSqlBlog() {
                 id="what-is"
                 className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
               >
-                {t('blog.ontology.whatIsTitle')}
+                {t("blog.ontology.whatIsTitle")}
               </h2>
-              <p>{t('blog.ontology.whatIsP1')}</p>
-              <p className="mt-4">{t('blog.ontology.whatIsP2')}</p>
+              <p>{t("blog.ontology.whatIsP1")}</p>
+              <p className="mt-4">{t("blog.ontology.whatIsP2")}</p>
               <figure className="mt-6">
                 <img
                   src="/blogs/ontology/map.jpeg"
-                  alt={t('blog.ontology.mapAlt')}
+                  alt={t("blog.ontology.mapAlt")}
                   className="w-full"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.ontology.mapAlt')}
+                  {t("blog.ontology.mapAlt")}
                 </figcaption>
               </figure>
-              <p className="mt-4">{t('blog.ontology.whatIsP3')}</p>
+              <p className="mt-4">{t("blog.ontology.whatIsP3")}</p>
             </section>
 
             <section>
               <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.ontology.simpleExampleTitle')}
+                {t("blog.ontology.simpleExampleTitle")}
               </h3>
-              <p>{t('blog.ontology.simpleExampleP1')}</p>
+              <p>{t("blog.ontology.simpleExampleP1")}</p>
             </section>
 
             <section>
@@ -98,28 +98,28 @@ export default function OntologyTextToSqlBlog() {
                 id="why-matter"
                 className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
               >
-                {t('blog.ontology.whyMatterTitle')}
+                {t("blog.ontology.whyMatterTitle")}
               </h2>
-              <p>{t('blog.ontology.whyMatterP1')}</p>
-              <p className="mt-4">{t('blog.ontology.whyMatterP2')}</p>
+              <p>{t("blog.ontology.whyMatterP1")}</p>
+              <p className="mt-4">{t("blog.ontology.whyMatterP2")}</p>
               <ul className="mt-3 ml-4 space-y-1 text-stone-300">
-                <li>• {t('blog.ontology.whyMatterLi1')}</li>
-                <li>• {t('blog.ontology.whyMatterLi2')}</li>
-                <li>• {t('blog.ontology.whyMatterLi3')}</li>
-                <li>• {t('blog.ontology.whyMatterLi4')}</li>
+                <li>• {t("blog.ontology.whyMatterLi1")}</li>
+                <li>• {t("blog.ontology.whyMatterLi2")}</li>
+                <li>• {t("blog.ontology.whyMatterLi3")}</li>
+                <li>• {t("blog.ontology.whyMatterLi4")}</li>
               </ul>
               <figure className="mt-6">
                 <img
                   src="/blogs/ontology/graphs.jpeg"
-                  alt={t('blog.ontology.graphsAlt')}
+                  alt={t("blog.ontology.graphsAlt")}
                   className="w-full"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.ontology.graphsAlt')}
+                  {t("blog.ontology.graphsAlt")}
                 </figcaption>
               </figure>
-              <p className="mt-4">{t('blog.ontology.whyMatterP3')}</p>
-              <p className="mt-4">{t('blog.ontology.whyMatterP4')}</p>
+              <p className="mt-4">{t("blog.ontology.whyMatterP3")}</p>
+              <p className="mt-4">{t("blog.ontology.whyMatterP4")}</p>
             </section>
 
             <section>
@@ -127,47 +127,47 @@ export default function OntologyTextToSqlBlog() {
                 id="building"
                 className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
               >
-                {t('blog.ontology.buildingTitle')}
+                {t("blog.ontology.buildingTitle")}
               </h2>
-              <p>{t('blog.ontology.buildingP1')}</p>
+              <p>{t("blog.ontology.buildingP1")}</p>
               <figure className="mt-6">
                 <img
                   src="/blogs/ontology/adding-objects.jpeg"
-                  alt={t('blog.ontology.addingObjectsAlt')}
+                  alt={t("blog.ontology.addingObjectsAlt")}
                   className="w-full"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.ontology.addingObjectsAlt')}
+                  {t("blog.ontology.addingObjectsAlt")}
                 </figcaption>
               </figure>
-              <p className="mt-4">{t('blog.ontology.buildingP2')}</p>
-              <p className="mt-4">{t('blog.ontology.buildingP3')}</p>
-              <p className="mt-4">{t('blog.ontology.buildingP4')}</p>
-              <p className="mt-4">{t('blog.ontology.buildingP5')}</p>
-              <p className="mt-4">{t('blog.ontology.buildingP6')}</p>
+              <p className="mt-4">{t("blog.ontology.buildingP2")}</p>
+              <p className="mt-4">{t("blog.ontology.buildingP3")}</p>
+              <p className="mt-4">{t("blog.ontology.buildingP4")}</p>
+              <p className="mt-4">{t("blog.ontology.buildingP5")}</p>
+              <p className="mt-4">{t("blog.ontology.buildingP6")}</p>
               <figure className="mt-6">
                 <img
                   src="/blogs/ontology/attrs.jpeg"
-                  alt={t('blog.ontology.attrsAlt')}
+                  alt={t("blog.ontology.attrsAlt")}
                   className="w-full"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.ontology.attrsAlt')}
+                  {t("blog.ontology.attrsAlt")}
                 </figcaption>
               </figure>
             </section>
 
             <section>
               <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.ontology.goodEnoughTitle')}
+                {t("blog.ontology.goodEnoughTitle")}
               </h3>
-              <p>{t('blog.ontology.goodEnoughP1')}</p>
-              <p className="mt-4">{t('blog.ontology.goodEnoughP2')}</p>
+              <p>{t("blog.ontology.goodEnoughP1")}</p>
+              <p className="mt-4">{t("blog.ontology.goodEnoughP2")}</p>
               <ul className="mt-3 ml-4 space-y-1 text-stone-300">
-                <li>• {t('blog.ontology.goodEnoughLi1')}</li>
-                <li>• {t('blog.ontology.goodEnoughLi2')}</li>
-                <li>• {t('blog.ontology.goodEnoughLi3')}</li>
-                <li>• {t('blog.ontology.goodEnoughLi4')}</li>
+                <li>• {t("blog.ontology.goodEnoughLi1")}</li>
+                <li>• {t("blog.ontology.goodEnoughLi2")}</li>
+                <li>• {t("blog.ontology.goodEnoughLi3")}</li>
+                <li>• {t("blog.ontology.goodEnoughLi4")}</li>
               </ul>
             </section>
 
@@ -176,31 +176,31 @@ export default function OntologyTextToSqlBlog() {
                 id="how-engines"
                 className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
               >
-                {t('blog.ontology.howEnginesTitle')}
+                {t("blog.ontology.howEnginesTitle")}
               </h2>
-              <p>{t('blog.ontology.howEnginesP1')}</p>
-              <p className="mt-4">{t('blog.ontology.howEnginesP2')}</p>
-              <p className="mt-4">{t('blog.ontology.howEnginesP3')}</p>
-              <p className="mt-4">{t('blog.ontology.howEnginesP4')}</p>
-              <p className="mt-4">{t('blog.ontology.howEnginesP5')}</p>
+              <p>{t("blog.ontology.howEnginesP1")}</p>
+              <p className="mt-4">{t("blog.ontology.howEnginesP2")}</p>
+              <p className="mt-4">{t("blog.ontology.howEnginesP3")}</p>
+              <p className="mt-4">{t("blog.ontology.howEnginesP4")}</p>
+              <p className="mt-4">{t("blog.ontology.howEnginesP5")}</p>
               <figure className="mt-6">
                 <img
                   src="/blogs/ontology/chat.png"
-                  alt={t('blog.ontology.chatAlt')}
+                  alt={t("blog.ontology.chatAlt")}
                   className="w-full"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.ontology.chatAlt')}
+                  {t("blog.ontology.chatAlt")}
                 </figcaption>
               </figure>
             </section>
 
             <section>
               <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.ontology.ambiguityTitle')}
+                {t("blog.ontology.ambiguityTitle")}
               </h3>
-              <p>{t('blog.ontology.ambiguityP1')}</p>
-              <p className="mt-4">{t('blog.ontology.ambiguityP2')}</p>
+              <p>{t("blog.ontology.ambiguityP1")}</p>
+              <p className="mt-4">{t("blog.ontology.ambiguityP2")}</p>
             </section>
 
             <section>
@@ -208,34 +208,34 @@ export default function OntologyTextToSqlBlog() {
                 id="vs-other"
                 className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
               >
-                {t('blog.ontology.vsOtherTitle')}
+                {t("blog.ontology.vsOtherTitle")}
               </h2>
               <p>
                 <span className="text-stone-100 font-medium">
-                  {t('blog.ontology.vsOther.dbtTitle')}
-                </span>{' '}
-                {t('blog.ontology.vsOther.dbtText')}
+                  {t("blog.ontology.vsOther.dbtTitle")}
+                </span>{" "}
+                {t("blog.ontology.vsOther.dbtText")}
               </p>
               <p className="mt-4">
                 <span className="text-stone-100 font-medium">
-                  {t('blog.ontology.vsOther.biTitle')}
-                </span>{' '}
-                {t('blog.ontology.vsOther.biText')}
+                  {t("blog.ontology.vsOther.biTitle")}
+                </span>{" "}
+                {t("blog.ontology.vsOther.biText")}
               </p>
               <p className="mt-4">
                 <span className="text-stone-100 font-medium">
-                  {t('blog.ontology.vsOther.viewsTitle')}
-                </span>{' '}
-                {t('blog.ontology.vsOther.viewsText')}
+                  {t("blog.ontology.vsOther.viewsTitle")}
+                </span>{" "}
+                {t("blog.ontology.vsOther.viewsText")}
               </p>
               <figure className="mt-6">
                 <img
                   src="/blogs/ontology/sources.png"
-                  alt={t('blog.ontology.sourcesAlt')}
+                  alt={t("blog.ontology.sourcesAlt")}
                   className="w-full"
                 />
                 <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.ontology.sourcesAlt')}
+                  {t("blog.ontology.sourcesAlt")}
                 </figcaption>
               </figure>
             </section>
@@ -245,16 +245,16 @@ export default function OntologyTextToSqlBlog() {
                 id="future"
                 className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
               >
-                {t('blog.ontology.futureTitle')}
+                {t("blog.ontology.futureTitle")}
               </h2>
-              <p>{t('blog.ontology.futureP1')}</p>
-              <p className="mt-4">{t('blog.ontology.futureP2')}</p>
-              <p className="mt-4">{t('blog.ontology.futureP3')}</p>
+              <p>{t("blog.ontology.futureP1")}</p>
+              <p className="mt-4">{t("blog.ontology.futureP2")}</p>
+              <p className="mt-4">{t("blog.ontology.futureP3")}</p>
             </section>
 
             <section className="border-t border-stone-700 pt-6 mt-8">
               <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.ontology.referencesTitle')}
+                {t("blog.ontology.referencesTitle")}
               </h3>
               <ul className="space-y-2 text-stone-400 text-sm">
                 <li>
@@ -299,7 +299,7 @@ export default function OntologyTextToSqlBlog() {
                 </li>
               </ul>
               <p className="mt-4 text-stone-500 text-xs italic">
-                {t('blog.ontology.note')}{' '}
+                {t("blog.ontology.note")}{" "}
                 <a
                   href="https://textql.com"
                   target="_blank"

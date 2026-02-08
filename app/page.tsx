@@ -1,7 +1,7 @@
-'use client';
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import Footer from '@/components/Footer';
+"use client";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -21,7 +21,7 @@ export default function Home() {
   const handleCopySvg = useCallback(async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {
-      const res = await fetch('/ghcat.svg');
+      const res = await fetch("/ghcat.svg");
       const svgText = await res.text();
       await navigator.clipboard.writeText(svgText);
       setCopied(true);
@@ -37,11 +37,11 @@ export default function Home() {
   useEffect(() => {
     if (!contextMenu || copied) return;
     const close = () => setContextMenu(false);
-    window.addEventListener('click', close);
-    return () => window.removeEventListener('click', close);
+    window.addEventListener("click", close);
+    return () => window.removeEventListener("click", close);
   }, [contextMenu, copied]);
 
-  const extraChars = 'holas';
+  const extraChars = "holas";
 
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
@@ -74,9 +74,9 @@ export default function Home() {
 
   const getDisplayName = () => {
     if (typedChars > 0 || isHovering) {
-      return 'hi im nic' + extraChars.slice(0, typedChars);
+      return "hi im nic" + extraChars.slice(0, typedChars);
     }
-    return t('home.title');
+    return t("home.title");
   };
 
   return (
@@ -149,7 +149,7 @@ export default function Home() {
 
         <div>
           <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
-            {t('hero.currently')}
+            {t("hero.currently")}
           </p>
           <ul className="text-xs md:text-sm text-stone-400 space-y-1">
             <li>
@@ -160,7 +160,7 @@ export default function Home() {
                 className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
               >
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                  {t('current.role1')}
+                  {t("current.role1")}
                 </span>
                 <img src="/ucincy_logo.png" alt="University of Cincinnati" className="w-6 h-4" />
                 <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
@@ -175,7 +175,7 @@ export default function Home() {
           <div className="mt-4 space-y-3">
             <div>
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
-                {t('previously.title')}
+                {t("previously.title")}
               </p>
               <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
@@ -186,11 +186,11 @@ export default function Home() {
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                   >
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.role1')}
+                      {t("previously.role1")}
                     </span>
                     <img src="/story.jpg" alt="Story" className="w-4 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.item1')}
+                      {t("previously.item1")}
                     </span>
                   </a>
                 </li>
@@ -202,11 +202,11 @@ export default function Home() {
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                   >
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.role2')}
+                      {t("previously.role2")}
                     </span>
                     <img src="/Honeywell-Logo.png" alt="Honeywell" className="w-8 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.item2')}
+                      {t("previously.item2")}
                     </span>
                   </a>
                 </li>
@@ -218,11 +218,11 @@ export default function Home() {
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                   >
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.role3')}
+                      {t("previously.role3")}
                     </span>
                     <img src="/Honeywell-Logo.png" alt="Honeywell" className="w-8 h-4" />
                     <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
-                      {t('previously.item3')}
+                      {t("previously.item3")}
                     </span>
                   </a>
                 </li>
@@ -231,7 +231,7 @@ export default function Home() {
 
             <div>
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
-                {t('projects.title')}
+                {t("projects.title")}
               </p>
               <div className="-mx-2 px-2">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
@@ -242,7 +242,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.theSearchThing')}
+                      {t("projects.label.theSearchThing")}
                     </a>
                   </li>
                   <li>
@@ -252,7 +252,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.googledocs')}
+                      {t("projects.label.googledocs")}
                     </a>
                   </li>
                   <li>
@@ -262,7 +262,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.kite')}
+                      {t("projects.label.kite")}
                     </a>
                   </li>
                 </ul>
@@ -270,7 +270,7 @@ export default function Home() {
             </div>
 
             <div>
-              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
+              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t("nav.blogs")}</p>
               <div className="-mx-2 px-2">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                   <li>
@@ -278,7 +278,7 @@ export default function Home() {
                       href="/blogs/ontology-text-to-sql"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('blog.ontology.title')}
+                      {t("blog.ontology.title")}
                     </a>
                   </li>
 
@@ -287,7 +287,7 @@ export default function Home() {
                       href="/blogs/how-i-learned-to-code"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('blog.coding.title')}
+                      {t("blog.coding.title")}
                     </a>
                   </li>
 
@@ -296,7 +296,7 @@ export default function Home() {
                       href="/blogs/waterloo-coop"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('blog.waterlooCoop.title')}
+                      {t("blog.waterlooCoop.title")}
                     </a>
                   </li>
 
@@ -305,7 +305,7 @@ export default function Home() {
                       href="/blogs/first-internship"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('blog.firstInternship.title')}
+                      {t("blog.firstInternship.title")}
                     </a>
                   </li>
 
@@ -314,7 +314,7 @@ export default function Home() {
                       href="/blogs/grpc"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('blog.grpc.title')}
+                      {t("blog.grpc.title")}
                     </a>
                   </li>
                 </ul>

@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import { useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useLanguage } from '@/contexts/LanguageContext';
-import Footer from '@/components/Footer';
-import TableOfContents, { TOCSection } from '@/components/TableOfContents';
+import { useEffect, useMemo } from "react";
+import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+import Footer from "@/components/Footer";
+import TableOfContents, { TOCSection } from "@/components/TableOfContents";
 
 export default function GrpcBlog() {
   const { t } = useLanguage();
 
   const sections: TOCSection[] = useMemo(
     () => [
-      { id: 'what-is-grpc', title: t('blog.grpc.whatIsTitle') },
-      { id: 'how-it-works', title: t('blog.grpc.howItWorksTitle') },
-      { id: 'why-good', title: t('blog.grpc.whyGoodTitle') },
-      { id: 'grpc-with-go', title: t('blog.grpc.grpcWithGoTitle') },
-      { id: 'when-to-use', title: t('blog.grpc.whenToUseTitle') },
+      { id: "what-is-grpc", title: t("blog.grpc.whatIsTitle") },
+      { id: "how-it-works", title: t("blog.grpc.howItWorksTitle") },
+      { id: "why-good", title: t("blog.grpc.whyGoodTitle") },
+      { id: "grpc-with-go", title: t("blog.grpc.grpcWithGoTitle") },
+      { id: "when-to-use", title: t("blog.grpc.whenToUseTitle") },
     ],
     [t],
   );
 
   useEffect(() => {
-    document.title = `${t('blog.grpc.title')} | Nicholas Chen`;
+    document.title = `${t("blog.grpc.title")} | Nicholas Chen`;
   }, [t]);
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-stone-300 pb-12 px-4 md:px-8">
       <div className="max-w-6xl mx-auto pt-12 flex gap-8 items-start justify-center">
-        <TableOfContents sections={sections} title={t('blog.contents')} />
+        <TableOfContents sections={sections} title={t("blog.contents")} />
         <article className="w-full lg:max-w-lg">
           {/* Back link */}
           <Link
@@ -43,14 +43,14 @@ export default function GrpcBlog() {
                 strokeLinejoin="round"
               />
             </svg>
-            {t('blog.back')}
+            {t("blog.back")}
           </Link>
 
           {/* Title */}
           <h1 className="text-2xl md:text-3xl font-medium text-white mb-2">
-            {t('blog.grpc.title')}
+            {t("blog.grpc.title")}
           </h1>
-          <p className="text-stone-500 text-sm mb-6">{t('blog.grpc.date')}</p>
+          <p className="text-stone-500 text-sm mb-6">{t("blog.grpc.date")}</p>
 
           {/* Cover image */}
           <img src="/blogs/grpc/grpc_logo.png" alt="gRPC" className="w-full mb-6" />
@@ -59,14 +59,14 @@ export default function GrpcBlog() {
           {/* Content */}
           <div className="space-y-8 text-xs md:text-sm leading-relaxed" style={{ fontWeight: 400 }}>
             <section>
-              <p>{t('blog.grpc.intro')}</p>
+              <p>{t("blog.grpc.intro")}</p>
               <h2
                 id="what-is-grpc"
                 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8"
               >
-                {t('blog.grpc.whatIsTitle')}
+                {t("blog.grpc.whatIsTitle")}
               </h2>
-              <p>{t('blog.grpc.whatIsText')}</p>
+              <p>{t("blog.grpc.whatIsText")}</p>
             </section>
 
             <section>
@@ -74,9 +74,9 @@ export default function GrpcBlog() {
                 id="how-it-works"
                 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8"
               >
-                {t('blog.grpc.howItWorksTitle')}
+                {t("blog.grpc.howItWorksTitle")}
               </h2>
-              <p className="mb-6">{t('blog.grpc.howItWorksText1')}</p>
+              <p className="mb-6">{t("blog.grpc.howItWorksText1")}</p>
 
               <div className="mt-6 bg-white rounded-md p-4">
                 <img
@@ -86,10 +86,10 @@ export default function GrpcBlog() {
                 />
               </div>
               <p className="text-stone-500 italic text-center text-xs mt-2">
-                {t('blog.grpc.architectureCaption')}
+                {t("blog.grpc.architectureCaption")}
               </p>
 
-              <p className="mt-6">{t('blog.grpc.howItWorksText2')}</p>
+              <p className="mt-6">{t("blog.grpc.howItWorksText2")}</p>
 
               <div className="mt-8">
                 <pre className="bg-stone-800/50 p-4 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700">
@@ -114,20 +114,20 @@ message HelloReply {
 }`}
                 </pre>
                 <p className="text-stone-500 italic text-center text-xs mt-1">
-                  {t('blog.grpc.protoExampleCaption')}
+                  {t("blog.grpc.protoExampleCaption")}
                 </p>
               </div>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.usingApiTitle')}
+                {t("blog.grpc.usingApiTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.usingApiText')}</p>
-              <p className="mb-4">{t('blog.grpc.usingApiText2')}</p>
+              <p className="mb-4">{t("blog.grpc.usingApiText")}</p>
+              <p className="mb-4">{t("blog.grpc.usingApiText2")}</p>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.serviceMethodTypesTitle')}
+                {t("blog.grpc.serviceMethodTypesTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.serviceMethodTypesIntro')}</p>
+              <p className="mb-4">{t("blog.grpc.serviceMethodTypesIntro")}</p>
 
               <div className="my-6">
                 <img
@@ -136,30 +136,30 @@ message HelloReply {
                   className="w-full rounded-md border border-stone-700"
                 />
                 <p className="text-stone-500 italic text-center text-xs mt-1">
-                  {t('blog.grpc.serviceMethodTypesCaption')}
+                  {t("blog.grpc.serviceMethodTypesCaption")}
                 </p>
               </div>
 
               <ul className="space-y-4 text-stone-300 list-disc list-inside ml-4">
                 <li>
-                  <strong className="text-white">{t('blog.grpc.unaryRPCs')}</strong>:{' '}
-                  {t('blog.grpc.unaryRPCsDesc')}
+                  <strong className="text-white">{t("blog.grpc.unaryRPCs")}</strong>:{" "}
+                  {t("blog.grpc.unaryRPCsDesc")}
                   <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                     {`rpc GetUser(UserRequest) returns (UserResponse);`}
                   </pre>
                 </li>
 
                 <li>
-                  <strong className="text-white">{t('blog.grpc.serverStreamingRPCs')}</strong>:{' '}
-                  {t('blog.grpc.serverStreamingRPCsDesc')}
+                  <strong className="text-white">{t("blog.grpc.serverStreamingRPCs")}</strong>:{" "}
+                  {t("blog.grpc.serverStreamingRPCsDesc")}
                   <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                     {`rpc ListItems(ListRequest) returns (stream ItemResponse);`}
                   </pre>
                 </li>
 
                 <li>
-                  <strong className="text-white">{t('blog.grpc.clientStreamingRPCs')}</strong>:{' '}
-                  {t('blog.grpc.clientStreamingRPCsDesc')}
+                  <strong className="text-white">{t("blog.grpc.clientStreamingRPCs")}</strong>:{" "}
+                  {t("blog.grpc.clientStreamingRPCsDesc")}
                   <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                     {`rpc UploadData(stream DataChunk) returns (UploadResponse);`}
                   </pre>
@@ -167,9 +167,9 @@ message HelloReply {
 
                 <li>
                   <strong className="text-white">
-                    {t('blog.grpc.bidirectionalStreamingRPCs')}
+                    {t("blog.grpc.bidirectionalStreamingRPCs")}
                   </strong>
-                  : {t('blog.grpc.bidirectionalStreamingRPCsDesc')}
+                  : {t("blog.grpc.bidirectionalStreamingRPCsDesc")}
                   <pre className="bg-stone-800/50 p-3 rounded-md overflow-x-auto text-[10px] md:text-xs text-stone-200 border border-stone-700 mt-2">
                     {`rpc Chat(stream MessageRequest) returns (stream MessageResponse);`}
                   </pre>
@@ -177,34 +177,34 @@ message HelloReply {
               </ul>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.deadlinesTitle')}
+                {t("blog.grpc.deadlinesTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.deadlinesText')}</p>
+              <p className="mb-4">{t("blog.grpc.deadlinesText")}</p>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.rpcTerminationTitle')}
+                {t("blog.grpc.rpcTerminationTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.rpcTerminationText')}</p>
+              <p className="mb-4">{t("blog.grpc.rpcTerminationText")}</p>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.metadataTitle')}
+                {t("blog.grpc.metadataTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.metadataText')}</p>
+              <p className="mb-4">{t("blog.grpc.metadataText")}</p>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.channelsTitle')}
+                {t("blog.grpc.channelsTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.channelsText')}</p>
+              <p className="mb-4">{t("blog.grpc.channelsText")}</p>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.errorHandlingTitle')}
+                {t("blog.grpc.errorHandlingTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.errorHandlingText')}</p>
+              <p className="mb-4">{t("blog.grpc.errorHandlingText")}</p>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-3 mt-8">
-                {t('blog.grpc.securityTitle')}
+                {t("blog.grpc.securityTitle")}
               </h3>
-              <p className="mb-4">{t('blog.grpc.securityText')}</p>
+              <p className="mb-4">{t("blog.grpc.securityText")}</p>
             </section>
 
             <section>
@@ -212,15 +212,15 @@ message HelloReply {
                 id="why-good"
                 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8"
               >
-                {t('blog.grpc.whyGoodTitle')}
+                {t("blog.grpc.whyGoodTitle")}
               </h2>
 
-              <p className="mb-6">{t('blog.grpc.whyGoodText')}</p>
+              <p className="mb-6">{t("blog.grpc.whyGoodText")}</p>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-2 mt-6">
-                {t('blog.grpc.httpVsHttp2Title')}
+                {t("blog.grpc.httpVsHttp2Title")}
               </h3>
-              <p className="mb-6">{t('blog.grpc.httpVsHttp2Text')}</p>
+              <p className="mb-6">{t("blog.grpc.httpVsHttp2Text")}</p>
 
               <div className="my-6 overflow-x-auto">
                 <table className="w-full border-collapse text-xs md:text-sm">
@@ -275,21 +275,21 @@ message HelloReply {
                   className="w-full rounded-md border border-stone-700"
                 />
                 <p className="text-stone-500 italic text-center text-xs mt-1">
-                  {t('blog.grpc.http2Caption')}
+                  {t("blog.grpc.http2Caption")}
                 </p>
               </div>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-2 mt-8">
-                {t('blog.grpc.rpcVsRestTitle')}
+                {t("blog.grpc.rpcVsRestTitle")}
               </h3>
-              <p className="mb-6 whitespace-pre-wrap">{t('blog.grpc.rpcVsRestText')}</p>
+              <p className="mb-6 whitespace-pre-wrap">{t("blog.grpc.rpcVsRestText")}</p>
 
               <div className="my-6 overflow-x-auto">
                 <table className="w-full border-collapse text-xs md:text-sm">
                   <thead>
                     <tr className="border-b border-stone-700">
                       <th className="text-left py-3 px-4 font-semibold text-white">
-                        {t('blog.grpc.tableFeature')}
+                        {t("blog.grpc.tableFeature")}
                       </th>
                       <th className="text-left py-3 px-4 font-semibold text-white">gRPC</th>
                       <th className="text-left py-3 px-4 font-semibold text-white">REST</th>
@@ -298,59 +298,59 @@ message HelloReply {
                   <tbody className="text-stone-300">
                     <tr className="border-b border-stone-800">
                       <td className="py-3 px-4 font-medium text-stone-200">
-                        {t('blog.grpc.tableTransport')}
+                        {t("blog.grpc.tableTransport")}
                       </td>
                       <td className="py-3 px-4">HTTP/2</td>
                       <td className="py-3 px-4">HTTP/1.1</td>
                     </tr>
                     <tr className="border-b border-stone-800">
                       <td className="py-3 px-4 font-medium text-stone-200">
-                        {t('blog.grpc.tableDataFormat')}
+                        {t("blog.grpc.tableDataFormat")}
                       </td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableProtobufBinary')}</td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableJsonText')}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableProtobufBinary")}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableJsonText")}</td>
                     </tr>
                     <tr className="border-b border-stone-800">
                       <td className="py-3 px-4 font-medium text-stone-200">
-                        {t('blog.grpc.tableStreaming')}
+                        {t("blog.grpc.tableStreaming")}
                       </td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableStreamingNative')}</td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableStreamingLimited')}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableStreamingNative")}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableStreamingLimited")}</td>
                     </tr>
                     <tr className="border-b border-stone-800">
                       <td className="py-3 px-4 font-medium text-stone-200">
-                        {t('blog.grpc.tableCodeGeneration')}
+                        {t("blog.grpc.tableCodeGeneration")}
                       </td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableCodeGenAuto')}</td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableCodeGenManual')}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableCodeGenAuto")}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableCodeGenManual")}</td>
                     </tr>
                     <tr className="border-b border-stone-800">
                       <td className="py-3 px-4 font-medium text-stone-200">
-                        {t('blog.grpc.tableTypeSafety')}
+                        {t("blog.grpc.tableTypeSafety")}
                       </td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableTypeSafetyEnforced')}</td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableTypeSafetyRuntime')}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableTypeSafetyEnforced")}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableTypeSafetyRuntime")}</td>
                     </tr>
                     <tr className="border-b border-stone-800">
                       <td className="py-3 px-4 font-medium text-stone-200">
-                        {t('blog.grpc.tablePerformance')}
+                        {t("blog.grpc.tablePerformance")}
                       </td>
-                      <td className="py-3 px-4">{t('blog.grpc.tablePerformanceHigh')}</td>
-                      <td className="py-3 px-4">{t('blog.grpc.tablePerformanceLower')}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tablePerformanceHigh")}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tablePerformanceLower")}</td>
                     </tr>
                     <tr>
                       <td className="py-3 px-4 font-medium text-stone-200">
-                        {t('blog.grpc.tableBrowserSupport')}
+                        {t("blog.grpc.tableBrowserSupport")}
                       </td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableBrowserSupportLimited')}</td>
-                      <td className="py-3 px-4">{t('blog.grpc.tableBrowserSupportNative')}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableBrowserSupportLimited")}</td>
+                      <td className="py-3 px-4">{t("blog.grpc.tableBrowserSupportNative")}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               <h3 className="text-sm md:text-base font-semibold text-stone-100 mb-2 mt-8">
-                {t('blog.grpc.protobufVsJsonTitle')}
+                {t("blog.grpc.protobufVsJsonTitle")}
               </h3>
 
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -366,7 +366,7 @@ message User {
 // Serialized (binary, compact)`}
                   </pre>
                   <p className="text-stone-500 italic text-center text-xs mt-1">
-                    {t('blog.grpc.protobufCaption')}
+                    {t("blog.grpc.protobufCaption")}
                   </p>
                 </div>
 
@@ -380,7 +380,7 @@ message User {
 }`}
                   </pre>
                   <p className="text-stone-500 italic text-center text-xs mt-1">
-                    {t('blog.grpc.jsonCaption')}
+                    {t("blog.grpc.jsonCaption")}
                   </p>
                 </div>
               </div>
@@ -391,11 +391,11 @@ message User {
                 id="grpc-with-go"
                 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8"
               >
-                {t('blog.grpc.grpcWithGoTitle')}
+                {t("blog.grpc.grpcWithGoTitle")}
               </h2>
-              <p className="mb-4">{t('blog.grpc.grpcWithGoText1')}</p>
-              <p className="mb-4">{t('blog.grpc.grpcWithGoText2')}</p>
-              <p className="mb-4">{t('blog.grpc.grpcWithGoText3')}</p>
+              <p className="mb-4">{t("blog.grpc.grpcWithGoText1")}</p>
+              <p className="mb-4">{t("blog.grpc.grpcWithGoText2")}</p>
+              <p className="mb-4">{t("blog.grpc.grpcWithGoText3")}</p>
 
               <div className="my-6">
                 <img
@@ -404,7 +404,7 @@ message User {
                   className="w-full max-h-64 object-contain rounded-md border border-stone-700"
                 />
                 <p className="text-stone-500 italic text-center text-xs mt-1">
-                  {t('blog.grpc.goImageCaption')}
+                  {t("blog.grpc.goImageCaption")}
                 </p>
               </div>
 
@@ -427,7 +427,7 @@ func main() {
 }`}
                 </pre>
                 <p className="text-stone-500 italic text-center text-xs mt-1">
-                  {t('blog.grpc.serverExampleCaption')}
+                  {t("blog.grpc.serverExampleCaption")}
                 </p>
               </div>
 
@@ -446,7 +446,7 @@ func main() {
 }`}
                 </pre>
                 <p className="text-stone-500 italic text-center text-xs mt-1">
-                  {t('blog.grpc.clientExampleCaption')}
+                  {t("blog.grpc.clientExampleCaption")}
                 </p>
               </div>
             </section>
@@ -456,26 +456,26 @@ func main() {
                 id="when-to-use"
                 className="text-xl md:text-2xl font-semibold text-white mb-4 mt-8 scroll-mt-8"
               >
-                {t('blog.grpc.whenToUseTitle')}
+                {t("blog.grpc.whenToUseTitle")}
               </h2>
-              <p className="mb-4">{t('blog.grpc.whenToUseIntro')}</p>
+              <p className="mb-4">{t("blog.grpc.whenToUseIntro")}</p>
               <ul className="space-y-2 text-stone-300 list-disc list-inside ml-4 mb-4">
-                <li>{t('blog.grpc.whenToUse1')}</li>
-                <li>{t('blog.grpc.whenToUse2')}</li>
-                <li>{t('blog.grpc.whenToUse3')}</li>
-                <li>{t('blog.grpc.whenToUse4')}</li>
+                <li>{t("blog.grpc.whenToUse1")}</li>
+                <li>{t("blog.grpc.whenToUse2")}</li>
+                <li>{t("blog.grpc.whenToUse3")}</li>
+                <li>{t("blog.grpc.whenToUse4")}</li>
               </ul>
-              <p className="mb-4">{t('blog.grpc.widelyUsedBy')}</p>
+              <p className="mb-4">{t("blog.grpc.widelyUsedBy")}</p>
               <ul className="space-y-2 text-stone-300 list-disc list-inside ml-4">
-                <li>{t('blog.grpc.widelyUsedBy1')}</li>
-                <li>{t('blog.grpc.widelyUsedBy2')}</li>
-                <li>{t('blog.grpc.widelyUsedBy3')}</li>
+                <li>{t("blog.grpc.widelyUsedBy1")}</li>
+                <li>{t("blog.grpc.widelyUsedBy2")}</li>
+                <li>{t("blog.grpc.widelyUsedBy3")}</li>
               </ul>
             </section>
 
             <section className="border-t border-stone-700 pt-6 mt-8">
               <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.grpc.referencesTitle')}
+                {t("blog.grpc.referencesTitle")}
               </h3>
               <ul className="space-y-2 text-stone-400 text-sm">
                 <li>

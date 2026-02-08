@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 export interface TOCSection {
   id: string;
@@ -12,8 +12,8 @@ interface TableOfContentsProps {
   title?: string;
 }
 
-export default function TableOfContents({ sections, title = 'contents' }: TableOfContentsProps) {
-  const [activeSection, setActiveSection] = useState<string>('');
+export default function TableOfContents({ sections, title = "contents" }: TableOfContentsProps) {
+  const [activeSection, setActiveSection] = useState<string>("");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function TableOfContents({ sections, title = 'contents' }: TableO
         });
       },
       {
-        rootMargin: '-20% 0px -70% 0px',
+        rootMargin: "-20% 0px -70% 0px",
         threshold: 0,
       },
     );
@@ -50,7 +50,7 @@ export default function TableOfContents({ sections, title = 'contents' }: TableO
 
     if (!activeLink) return;
 
-    const listItem = activeLink.closest('li') as HTMLElement;
+    const listItem = activeLink.closest("li") as HTMLElement;
     if (!listItem) return;
 
     // Small delay to ensure DOM is ready
@@ -75,7 +75,7 @@ export default function TableOfContents({ sections, title = 'contents' }: TableO
 
         container.scrollTo({
           top: Math.max(0, Math.min(targetScroll, maxScroll)),
-          behavior: 'smooth',
+          behavior: "smooth",
         });
       }
     }, 100);
@@ -87,7 +87,7 @@ export default function TableOfContents({ sections, title = 'contents' }: TableO
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -112,8 +112,8 @@ export default function TableOfContents({ sections, title = 'contents' }: TableO
                 hover:bg-stone-800/80
                 ${
                   activeSection === section.id
-                    ? 'text-stone-100'
-                    : 'text-stone-500 hover:text-stone-100'
+                    ? "text-stone-100"
+                    : "text-stone-500 hover:text-stone-100"
                 }
               `}
             >

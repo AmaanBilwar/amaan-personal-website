@@ -237,7 +237,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.scene-ai-when.date': 'your name - month day, year - X min read',
     'blog.scene-ai-when.coverAlt': 'Cover image placeholder',
     'blog.scene-ai-when.section1.title': 'Introduction',
-    'blog.scene-ai-when.section1.p1': 'Write your opening paragraph here.',
+    'blog.scene-ai-when.section1.p1': `I know you all have heard it by now, but if you haven't here I am to introduce you to Scene AI. Scene AI started as this side project of mine to merge my love for video editing and computer software.`,
     'blog.scene-ai-when.section1.p2':
       'Add a second paragraph to set context or tell a short story.',
     'blog.scene-ai-when.section1.imageAlt': 'Section 1 image alt text',
@@ -245,68 +245,53 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.scene-ai-when.section1.p3': 'Add a final paragraph to wrap up this section.',
     'blog.scene-ai-when.section1.subsection.title': 'Subsection title',
     'blog.scene-ai-when.section1.subsection.p1': 'Write a short subsection paragraph here.',
-    'blog.scene-ai-when.section2.title': 'Section 2 title',
-    'blog.scene-ai-when.section2.p1': 'Introduce the main point for this section.',
-    'blog.scene-ai-when.section2.p2': 'Expand with a supporting detail or example.',
-    'blog.scene-ai-when.section2.listItem1': 'List item one',
-    'blog.scene-ai-when.section2.listItem2': 'List item two',
-    'blog.scene-ai-when.section2.listItem3': 'List item three',
-    'blog.scene-ai-when.section2.listItem4': 'List item four',
-    'blog.scene-ai-when.section2.imageAlt': 'Section 2 image alt text',
-    'blog.scene-ai-when.section2.imageCaption': 'Section 2 image caption',
-    'blog.scene-ai-when.section2.p3': 'Add a paragraph to explain the list or image above.',
-    'blog.scene-ai-when.section2.p4': 'Close the section with a takeaway.',
-    'blog.scene-ai-when.section3.title': 'Section 3 title',
-    'blog.scene-ai-when.section3.p1': 'Open this section with a key idea.',
+    'blog.scene-ai-when.section2.title': 'Where it all began',
+    'blog.scene-ai-when.section2.p1':
+      'It was really bizzare how it became a thing, if you know how I started.',
+    'blog.scene-ai-when.section2.p2': `
+    I was watching a video while eating, like any other human, and thought, “I know how to edit videos like this. Neat trick. I should get back into it.” Then I did what any other human does: moved on.
+
+
+    `,
+    'blog.scene-ai-when.section2.p3': `But the thought stuck. Finals ended. April 2025. I’m sitting in my room thinking, “Hmmm, now what?” I’m someone who likes being busy; having nothing to do is rare for me (ask my friends). That itch to make something turned into, “Okay, let’s actually do this.”
+`,
+    'blog.scene-ai-when.section2.p4': `
+    Video editing is fun. Programming’s grown on me thanks to two internships and building the DAQ(Data Acquisition System) for my school’s formula electric racecar team - Bearcats Electric Racing(BER). So why not combine the two? Big undertaking, sure. But at the start I was thinking small: a CLI tool just for me. No grand plan.. Also, I was already making social posts for BER, so the use case was real.`,
+    'blog.scene-ai-when.section2.p5': `
+    The idea was simple: take a video, pass flags like --trim, and get clean results. Easy, right? That’s what they all say.
+
+    I started researching. If you’re editing programmatically, there’s the undisputed GOAT: Ffmpeg. But I didn’t want to learn this ffmpeg syntax of DOOM and DESPAIR. I wanted something you could use without squinting at docs.
+
+    `,
+    'blog.scene-ai-when.section2.p6': `Python was the obvious starting point, familiar, fast to iterate, lots of libraries. CLI tools aren’t difficult* in any language if you know what you’re building.`,
+    'blog.scene-ai-when.section2.p7': `Three days in, maybe 30–45 minutes a day, I had a working prototype. No Adobe Premiere Pro crashes, no sluggish timelines, just code doing what I asked. I felt like Frankenstein watching his monster take a step.`,
+    'blog.scene-ai-when.section2.p8': `
+        Of course, I immediately wanted more features. That’s just how this goes. And soon “my little CLI” wasn’t little anymore: I built a backend, roped in a childhood friend as co-founder, put a frontend on top, and founded The Timeline Company. Scene AI was born (formerly Reduct), and the side-quest became a real thing`,
+    'blog.scene-ai-when.section3.title': 'Where it is now',
+    'blog.scene-ai-when.section3.p1': `I'm rebuilding the rough prototype into a codebase that is fast, stable, and easier to maintain. Parts that need raw performance live in Rust. The rest stay in Python for flexibility. The refactor is a steep curve, but worth it.`,
     'blog.scene-ai-when.section3.image1Alt': 'Section 3 image alt text',
     'blog.scene-ai-when.section3.image1Caption': 'Section 3 image caption',
     'blog.scene-ai-when.section3.p2': 'Add a supporting paragraph.',
-    'blog.scene-ai-when.section3.p3': 'Add another supporting paragraph.',
-    'blog.scene-ai-when.section3.p4': 'Share a detail, insight, or lesson learned.',
-    'blog.scene-ai-when.section3.p5': 'Optional extra context or example.',
-    'blog.scene-ai-when.section3.p6': 'Wrap this part up before the next image.',
-    'blog.scene-ai-when.section3.image2Alt': 'Section 3 image alt text',
-    'blog.scene-ai-when.section3.image2Caption': 'Section 3 image caption',
-    'blog.scene-ai-when.section3.subsection.title': 'Subsection title',
-    'blog.scene-ai-when.section3.subsection.p1': 'Write a short paragraph for this subsection.',
-    'blog.scene-ai-when.section3.subsection.p2': 'Add a second paragraph to round it out.',
-    'blog.scene-ai-when.section3.subsection.listItem1': 'Checklist item one',
-    'blog.scene-ai-when.section3.subsection.listItem2': 'Checklist item two',
-    'blog.scene-ai-when.section3.subsection.listItem3': 'Checklist item three',
+    'blog.scene-ai-when.section3.p3':
+      'We’re narrowing focus. Instead of chasing pros, we’re helping beginners, clubs, friends, and anyone who wants to post without wrestling timelines. Simple templates, smart assistants, and clean exports that get you to publish.',
+    'blog.scene-ai-when.section3.p4':
+      'Scene AI is in alpha with a growing waitlist. It’s stable enough to use, and we’re shipping improvements steadily. Expect more in 2026.',
+
     'blog.scene-ai-when.section3.subsection.listItem4': 'Checklist item four',
-    'blog.scene-ai-when.section4.title': 'Section 4 title',
-    'blog.scene-ai-when.section4.p1': 'Introduce the section topic.',
-    'blog.scene-ai-when.section4.p2': 'Add a supporting detail.',
-    'blog.scene-ai-when.section4.p3': 'Add another supporting detail.',
-    'blog.scene-ai-when.section4.p4': 'Add a practical example or result.',
-    'blog.scene-ai-when.section4.p5': 'Close with a short summary sentence.',
-    'blog.scene-ai-when.section4.imageAlt': 'Section 4 image alt text',
-    'blog.scene-ai-when.section4.imageCaption': 'Section 4 image caption',
-    'blog.scene-ai-when.section5.title': 'Subsection title',
-    'blog.scene-ai-when.section5.p1': 'Add a short paragraph for this subsection.',
-    'blog.scene-ai-when.section5.p2': 'Add a second short paragraph to finish.',
-    'blog.scene-ai-when.section6.title': 'Section 5 title',
-    'blog.scene-ai-when.section6.item1.title': 'Comparison item 1:',
-    'blog.scene-ai-when.section6.item1.text': 'Explain the first comparison item in 1-2 sentences.',
-    'blog.scene-ai-when.section6.item2.title': 'Comparison item 2:',
-    'blog.scene-ai-when.section6.item2.text':
-      'Explain the second comparison item in 1-2 sentences.',
-    'blog.scene-ai-when.section6.item3.title': 'Comparison item 3:',
-    'blog.scene-ai-when.section6.item3.text': 'Explain the third comparison item in 1-2 sentences.',
-    'blog.scene-ai-when.section6.imageAlt': 'Section 5 image alt text',
-    'blog.scene-ai-when.section6.imageCaption': 'Section 5 image caption',
-    'blog.scene-ai-when.section7.title': 'Section 6 title',
-    'blog.scene-ai-when.section7.p1': 'Summarize the future or next steps.',
-    'blog.scene-ai-when.section7.p2': 'Add a second paragraph with more detail.',
-    'blog.scene-ai-when.section7.p3': 'Close with a final thought.',
-    'blog.scene-ai-when.referencesTitle': 'references',
-    'blog.scene-ai-when.references.item1': 'https://example.com/source-1',
-    'blog.scene-ai-when.references.item2': 'https://example.com/source-2',
-    'blog.scene-ai-when.references.item3': 'https://example.com/source-3',
-    'blog.scene-ai-when.references.item4': 'https://example.com/source-4',
-    'blog.scene-ai-when.note': 'note: list your image sources or attributions at',
-    'blog.scene-ai-when.noteLinkLabel': 'your-source-site',
-    'blog.scene-ai-when.noteLinkUrl': 'https://example.com',
+    'blog.scene-ai-when.section4.title': 'Final Thoughts',
+    'blog.scene-ai-when.section4.p1': `let's write wrap it up, shall we?`,
+    'blog.scene-ai-when.section4.p2':
+      'Scene AI started as me scratching an itch: I like editing, I like building, so why not build the thing I wanted when I was editing? It’s not a moonshot manifesto, it’s a friendly, fast tool that helps you hit publish without spending your entire evening wrangling timelines.',
+    'blog.scene-ai-when.section4.p3': `I care about three things: speed, simplicity, and kindness.`,
+    'blog.scene-ai-when.section4.listItem1': `Speed, because waiting on a render bar is soul-sucking.`,
+    'blog.scene-ai-when.section4.listItem2': `Simplicity, because most people don’t want to learn a new cockpit to post a 30-second clip.`,
+    'blog.scene-ai-when.section4.listItem3': `Kindness, because guardrails, privacy, and a nudge of confidence matter when you’re putting yourself out there.`,
+    'blog.scene-ai-when.section4.p4':
+      'If any of this resonates - if you’ve got a club recap, a hackathon demo, a meme that deserves life outside your camera roll, come along. Join the waitlist, DM me ideas, send me weird edge cases.',
+    'blog.scene-ai-when.section4.p5': 'I won’t overpromise; I’ll ship, listen, and iterate.',
+    'blog.scene-ai-when.referencesTitle': 'notes',
+    'blog.scene-ai-when.references.item1': `Difficult is subjective. I can't write assembly, Ruby, Zig or Haskell so don't take my word for it`,
+
     // Projects section
     'projects.title': 'projects',
     'projects.languagesSectionTitle': "A few programming languages I've worked with...",

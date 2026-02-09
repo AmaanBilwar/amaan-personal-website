@@ -15,8 +15,6 @@ export default function OntologyTextToSqlBlog() {
       { id: 'why-matter', title: t('blog.scene-ai-when.section2.title') },
       { id: 'building', title: t('blog.scene-ai-when.section3.title') },
       { id: 'how-engines', title: t('blog.scene-ai-when.section4.title') },
-      { id: 'vs-other', title: t('blog.scene-ai-when.section6.title') },
-      { id: 'future', title: t('blog.scene-ai-when.section7.title') },
     ],
     [t],
   );
@@ -72,7 +70,7 @@ export default function OntologyTextToSqlBlog() {
                 {t('blog.scene-ai-when.section1.title')}
               </h2>
               <p>{t('blog.scene-ai-when.section1.p1')}</p>
-              <p className="mt-4">{t('blog.scene-ai-when.section1.p2')}</p>
+              {/*<p className="mt-4">{t('blog.scene-ai-when.section1.p2')}</p>*/}
               <figure className="mt-6">
                 <img
                   src="/blogs/scene-ai-when/placeholder.svg"
@@ -83,14 +81,7 @@ export default function OntologyTextToSqlBlog() {
                   {t('blog.scene-ai-when.section1.imageCaption')}
                 </figcaption>
               </figure>
-              <p className="mt-4">{t('blog.scene-ai-when.section1.p3')}</p>
-            </section>
-
-            <section>
-              <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.scene-ai-when.section1.subsection.title')}
-              </h3>
-              <p>{t('blog.scene-ai-when.section1.subsection.p1')}</p>
+              {/*<p className="mt-4">{t('blog.scene-ai-when.section1.p3')}</p>*/}
             </section>
 
             <section>
@@ -101,13 +92,9 @@ export default function OntologyTextToSqlBlog() {
                 {t('blog.scene-ai-when.section2.title')}
               </h2>
               <p>{t('blog.scene-ai-when.section2.p1')}</p>
+              <p>{t('blog.scene-ai-when.section2.p2')}</p>
+
               <p className="mt-4">{t('blog.scene-ai-when.section2.p2')}</p>
-              <ul className="mt-3 ml-4 space-y-1 text-stone-300">
-                <li>• {t('blog.scene-ai-when.section2.listItem1')}</li>
-                <li>• {t('blog.scene-ai-when.section2.listItem2')}</li>
-                <li>• {t('blog.scene-ai-when.section2.listItem3')}</li>
-                <li>• {t('blog.scene-ai-when.section2.listItem4')}</li>
-              </ul>
               <figure className="mt-6">
                 <img
                   src="/blogs/scene-ai-when/placeholder.svg"
@@ -118,8 +105,10 @@ export default function OntologyTextToSqlBlog() {
                   {t('blog.scene-ai-when.section2.imageCaption')}
                 </figcaption>
               </figure>
-              <p className="mt-4">{t('blog.scene-ai-when.section2.p3')}</p>
               <p className="mt-4">{t('blog.scene-ai-when.section2.p4')}</p>
+              <p className="mt-4">{t('blog.scene-ai-when.section2.p5')}</p>
+              <p className="mt-4">{t('blog.scene-ai-when.section2.p6')}</p>
+              <p className="mt-4">{t('blog.scene-ai-when.section2.p7')}</p>
             </section>
 
             <section>
@@ -143,34 +132,7 @@ export default function OntologyTextToSqlBlog() {
               <p className="mt-4">{t('blog.scene-ai-when.section3.p2')}</p>
               <p className="mt-4">{t('blog.scene-ai-when.section3.p3')}</p>
               <p className="mt-4">{t('blog.scene-ai-when.section3.p4')}</p>
-              <p className="mt-4">{t('blog.scene-ai-when.section3.p5')}</p>
-              <p className="mt-4">{t('blog.scene-ai-when.section3.p6')}</p>
-              <figure className="mt-6">
-                <img
-                  src="/blogs/scene-ai-when/placeholder.svg"
-                  alt={t('blog.scene-ai-when.section3.image2Alt')}
-                  className="w-full"
-                />
-                <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.scene-ai-when.section3.image2Caption')}
-                </figcaption>
-              </figure>
             </section>
-
-            <section>
-              <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.scene-ai-when.section3.subsection.title')}
-              </h3>
-              <p>{t('blog.scene-ai-when.section3.subsection.p1')}</p>
-              <p className="mt-4">{t('blog.scene-ai-when.section3.subsection.p2')}</p>
-              <ul className="mt-3 ml-4 space-y-1 text-stone-300">
-                <li>• {t('blog.scene-ai-when.section3.subsection.listItem1')}</li>
-                <li>• {t('blog.scene-ai-when.section3.subsection.listItem2')}</li>
-                <li>• {t('blog.scene-ai-when.section3.subsection.listItem3')}</li>
-                <li>• {t('blog.scene-ai-when.section3.subsection.listItem4')}</li>
-              </ul>
-            </section>
-
             <section>
               <h2
                 id="how-engines"
@@ -181,75 +143,13 @@ export default function OntologyTextToSqlBlog() {
               <p>{t('blog.scene-ai-when.section4.p1')}</p>
               <p className="mt-4">{t('blog.scene-ai-when.section4.p2')}</p>
               <p className="mt-4">{t('blog.scene-ai-when.section4.p3')}</p>
+              <ul className="mt-3 ml-4 space-y-1 text-stone-300">
+                <li>• {t('blog.scene-ai-when.section4.listItem1')}</li>
+                <li>• {t('blog.scene-ai-when.section4.listItem2')}</li>
+                <li>• {t('blog.scene-ai-when.section4.listItem3')}</li>
+              </ul>
               <p className="mt-4">{t('blog.scene-ai-when.section4.p4')}</p>
               <p className="mt-4">{t('blog.scene-ai-when.section4.p5')}</p>
-              <figure className="mt-6">
-                <img
-                  src="/blogs/scene-ai-when/placeholder.svg"
-                  alt={t('blog.scene-ai-when.section4.imageAlt')}
-                  className="w-full"
-                />
-                <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.scene-ai-when.section4.imageCaption')}
-                </figcaption>
-              </figure>
-            </section>
-
-            <section>
-              <h3 className="text-sm md:text-base font-semibold text-stone-200 mb-3">
-                {t('blog.scene-ai-when.section5.title')}
-              </h3>
-              <p>{t('blog.scene-ai-when.section5.p1')}</p>
-              <p className="mt-4">{t('blog.scene-ai-when.section5.p2')}</p>
-            </section>
-
-            <section>
-              <h2
-                id="vs-other"
-                className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
-              >
-                {t('blog.scene-ai-when.section6.title')}
-              </h2>
-              <p>
-                <span className="text-stone-100 font-medium">
-                  {t('blog.scene-ai-when.section6.item1.title')}
-                </span>{' '}
-                {t('blog.scene-ai-when.section6.item1.text')}
-              </p>
-              <p className="mt-4">
-                <span className="text-stone-100 font-medium">
-                  {t('blog.scene-ai-when.section6.item2.title')}
-                </span>{' '}
-                {t('blog.scene-ai-when.section6.item2.text')}
-              </p>
-              <p className="mt-4">
-                <span className="text-stone-100 font-medium">
-                  {t('blog.scene-ai-when.section6.item3.title')}
-                </span>{' '}
-                {t('blog.scene-ai-when.section6.item3.text')}
-              </p>
-              <figure className="mt-6">
-                <img
-                  src="/blogs/scene-ai-when/placeholder.svg"
-                  alt={t('blog.scene-ai-when.section6.imageAlt')}
-                  className="w-full"
-                />
-                <figcaption className="text-stone-500 text-xs mt-2 italic">
-                  {t('blog.scene-ai-when.section6.imageCaption')}
-                </figcaption>
-              </figure>
-            </section>
-
-            <section>
-              <h2
-                id="future"
-                className="text-lg md:text-xl font-semibold text-stone-100 mb-3 scroll-mt-8"
-              >
-                {t('blog.scene-ai-when.section7.title')}
-              </h2>
-              <p>{t('blog.scene-ai-when.section7.p1')}</p>
-              <p className="mt-4">{t('blog.scene-ai-when.section7.p2')}</p>
-              <p className="mt-4">{t('blog.scene-ai-when.section7.p3')}</p>
             </section>
 
             <section className="border-t border-stone-700 pt-6 mt-8">
@@ -267,48 +167,7 @@ export default function OntologyTextToSqlBlog() {
                     {t('blog.scene-ai-when.references.item1')}
                   </a>
                 </li>
-                <li>
-                  <a
-                    href={t('blog.scene-ai-when.references.item2')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-stone-200 transition-colors underline"
-                  >
-                    {t('blog.scene-ai-when.references.item2')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={t('blog.scene-ai-when.references.item3')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-stone-200 transition-colors underline"
-                  >
-                    {t('blog.scene-ai-when.references.item3')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={t('blog.scene-ai-when.references.item4')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-stone-200 transition-colors underline"
-                  >
-                    {t('blog.scene-ai-when.references.item4')}
-                  </a>
-                </li>
               </ul>
-              <p className="mt-4 text-stone-500 text-xs italic">
-                {t('blog.scene-ai-when.note')}{' '}
-                <a
-                  href={t('blog.scene-ai-when.noteLinkUrl')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-stone-300 underline"
-                >
-                  {t('blog.scene-ai-when.noteLinkLabel')}
-                </a>
-              </p>
             </section>
           </div>
 

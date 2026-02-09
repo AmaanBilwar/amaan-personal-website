@@ -153,7 +153,7 @@ export default function Home() {
               <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                 <li>
                   <a
-                    href="https://www.ownr.co/"
+                    href="https://www.story.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
@@ -169,7 +169,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="https://www.honeywell.com/"
+                    href="https://automation.honeywell.com/us/en/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
@@ -185,7 +185,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="https://www.honeywell.com/"
+                    href="https://automation.honeywell.com/us/en/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
@@ -246,6 +246,14 @@ export default function Home() {
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
               <div className="-mx-2 px-2">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                  <li>
+                    <a
+                      href="/blogs/introducing-jia"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.introducing-jia.title')}
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="/blogs/scene-ai-when"

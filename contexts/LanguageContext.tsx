@@ -333,6 +333,100 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.introducing-jia.section4.p2': 'No data retention by default, not as a hidden option.',
     'blog.introducing-jia.section4.p3': `I'm designing this in a way where I cannot read or access any information about the user or their files unless I have a confirmation, which will be asked for when or if a user reports a bug that requires me to look at their data.`,
 
+    // Blog template content
+    'blog.git101.title': 'Saving you from your Git troubles',
+    'blog.git101.date': 'Amaan Bilwar - February 25, 2026',
+    'blog.git101.coverAlt': 'Cover image placeholder',
+    'blog.git101.section1.title': 'Well Well Well',
+    'blog.git101.section1.p1':
+      "We've all been there. Learning how to program, learn about git & github, save code for free. Everything's so much fun at the start. and then BOOM. Its all over.",
+    'blog.git101.section1.p2':
+      'Let me save you this trouble of experiencing this downfall. So what do you actually need to know to save yourself from what I\'m going to call in this blog, "Your Git Troubles"?',
+    'blog.git101.section1.imageAlt': 'Explosion meme',
+    'blog.git101.section1.imageCaption': 'When you realize Git is not just "git add ."',
+    'blog.git101.section1.p3':
+      "P.S. the things Im going to be talking about are helpful but I wouldn't have felt that they were useful if it weren't for the tools I was using when going through these \"phases\". LazyGit is gonna be life saver for you lot, it does look intimidating at first but trust me it'll change your life.",
+    'blog.git101.section1.subsection.title': '',
+    'blog.git101.section1.subsection.p1': '',
+    'blog.git101.section2.title': 'Merge Conflicts',
+    'blog.git101.section2.p1': "Let's address the elephant in the room! (elephant sound effect!)",
+    'blog.git101.section2.p2':
+      "If you were expecting some magical way of resolving merge conflicts using agentic coding, vibe-coding or LLMs, let me break it to you, it's not as easy as it sounds. I know this because me and friends were trying to solve the same problem, resolving merge conflicts with soarailabs.",
+    'blog.git101.section2.listItem1':
+      'AI tools struggle with understanding context of the conflict',
+    'blog.git101.section2.listItem2': 'Manual resolution often faster for complex conflicts',
+    'blog.git101.section2.listItem3': 'Understand the codebase before using AI assistance',
+    'blog.git101.section2.listItem4': 'Communicate with teammates about conflicting changes',
+    'blog.git101.section2.imageAlt': '',
+    'blog.git101.section2.imageCaption': '',
+    'blog.git101.section2.p3':
+      "If you're interested in learning how we tried to tackle this, let me know.",
+    'blog.git101.section2.p4': '',
+    'blog.git101.section3.title': 'Rebasing',
+    'blog.git101.section3.p1':
+      'If you want the short version: rebasing is a cleaner, better way to merge. But if you want to understand why, keep reading.',
+    'blog.git101.section3.image1Alt': 'Rebase illustration',
+    'blog.git101.section3.image1Caption': 'Rebasing replays your commits on top of current main',
+    'blog.git101.section3.p2':
+      "Imagine you're working on a feature branch called 'feat-login'. Meanwhile, 'main' has moved forward with commits from other teammates. Instead of merging 'main' into your branch (which creates a messy merge commit), rebasing essentially replays your commits on top of the current 'main'.",
+    'blog.git101.section3.p3':
+      'Merge puts your changes off to the side with a note. Rebase moves them straight on top. Same result, cleaner history.',
+    'blog.git101.section3.p4': '',
+    'blog.git101.section3.p5': '',
+    'blog.git101.section3.p6': '',
+    'blog.git101.section3.image2Alt': '',
+    'blog.git101.section3.imageCaption': '',
+    'blog.git101.section3.subsection.title': "Why It's Important to Rebase",
+    'blog.git101.section3.subsection.p1':
+      "Cleaner Commit History: When you merge, you get those ugly \"Merge branch 'feat-login' into 'main'\" commits cluttering your history. With rebasing, your commits stack linearly on top of 'main'.",
+    'blog.git101.section3.subsection.p2':
+      "Fewer Merge Conflicts: When you regularly rebase onto 'main', you're constantly resolving conflicts in small doses. If you wait until the end and merge, you might have to untangle conflicts from weeks of divergent work all at once.",
+    'blog.git101.section3.subsection.listItem1': 'Cleaner commit history',
+    'blog.git101.section3.subsection.listItem2': 'Fewer merge conflicts',
+    'blog.git101.section3.subsection.listItem3': 'Instant feedback on breaking changes',
+    'blog.git101.section3.subsection.listItem4': '',
+    'blog.git101.section4.title': 'Cherry picking',
+    'blog.git101.section4.p1':
+      'Let me tell you when i first realized how powerful git rebase was. I was aware about this feature way before but never understood where I would personally use.',
+    'blog.git101.section4.p2':
+      'let me use the example that happened to me some time ago, which made me realize how good git cherry picking actually is. I was working on HelixDB, a graph database written in rust. I wanted to combine vector search and keyword search using their RRF reranker.',
+    'blog.git101.section4.p3':
+      "I was also writing another feature for helixdb - passing multiple params in their 'Embed' function. I wrote the Embed feature but decided it would probably be something only I use so there's no point in making a PR.",
+    'blog.git101.section4.p4':
+      'Accidentally, i checked out from the feat/embed branch to work on the RRF feature. My RRF feature relies on a lot of changes made during Embed feature work, and if thats not a feature thats going to be merged my RRF stuff wont work.',
+    'blog.git101.section4.p5':
+      "That's when I remembered git cherry picking - Apply the changes introduced by some existing commits. I basically yoinked commits from on top of the other feature branch, checked out a new branch from main and slapped those commits on to the new feature branch.",
+    'blog.git101.section4.imageAlt': '',
+    'blog.git101.section4.imageCaption': '',
+    'blog.git101.section5.title': 'Digestive Commits',
+    'blog.git101.section5.p1':
+      "Small, focused commits are the difference between a git history you can read and one that makes you want to rip your hair out. Think of commits like saving a document. You wouldn't write 5000 words, save once, then call it a day.",
+    'blog.git101.section5.p2':
+      "If your commit message has 'and' in it, it should probably be two commits. 'Added login form and validation' = two commits. 'Fixed bug in auth middleware' = one commit, good.",
+    'blog.git101.section6.title': 'Sane & Non AI PRs',
+    'blog.git101.section6.item1.title': 'Why it matters:',
+    'blog.git101.section6.item1.text':
+      'OSS can be incredible—open-sourcing the Linux kernel helped put Linux everywhere. Yet open source feels harder now: AI-assisted coding has led to repo standards being ignored.',
+    'blog.git101.section6.item2.title': 'Small PRs:',
+    'blog.git101.section6.item2.text':
+      "Your PR should be small and digestable. Maintainers shouldn't push it to the side because you remove 3k lines and added 7k lines. PRs with smaller changes are easier to review.",
+    'blog.git101.section6.item3.title': 'Respect the maintainers:',
+    'blog.git101.section6.item3.text':
+      "Stop using AI to make PRs (I recommend learning about the codebase with AI and being comfortable in navigating where different parts of the project live first). That's the least you can do to respect the project you want to contribute to.",
+    'blog.git101.section6.imageAlt': '',
+    'blog.git101.section6.imageCaption': '',
+    'blog.git101.section7.title': '',
+    'blog.git101.section7.p1': 'If I can tell that a PR is AI SLOP, trust me they can fs.',
+    'blog.git101.section7.p2': '',
+    'blog.git101.section7.p3': '',
+    'blog.git101.referencesTitle': 'references',
+    'blog.git101.references.item1': 'https://github.com/ghostty-org/ghostty',
+    'blog.git101.references.item2': 'https://github.com/mitchellh/vouch',
+    'blog.git101.references.item3': 'https://github.com/zed-industries/zed/',
+    'blog.git101.references.item4': 'https://zed.dev/community/zed-guild',
+    'blog.git101.note': '',
+    'blog.git101.noteLinkLabel': '',
+    'blog.git101.noteLinkUrl': '',
     // Projects section
     'projects.title': 'projects',
     'projects.languagesSectionTitle': "A few programming languages I've worked with...",
@@ -352,9 +446,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Projects list labels (home page)
     'projects.label.theSearchThing': 'the-search-thing',
-    'projects.label.googledocs': 'google docs for your terminal',
-    'projects.label.kite': 'kite',
-    'projects.label.agentSearchEvals': 'agent search evals',
+    'projects.label.openresolve': 'openresolve',
+    'projects.label.bettervscode': 'better-vscode',
 
     // Home hero title
     'home.title': 'hi im amaan',

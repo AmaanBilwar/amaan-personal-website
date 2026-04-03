@@ -127,6 +127,27 @@ export default function Home() {
           <ul className="text-xs md:text-sm text-stone-400 space-y-1">
             <li>
               <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
+                href="https://zed.dev/community/zed-guild"
+              >
+                Zed Guild
+                <img src="/zed.png" alt="University of Cincinnati" className="w-4 h-4" />
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
+                href="https://github.com/HelixDB/helix-db">
+                Secret HelixDB project
+                <img src="/hlxdb.jpg" alt="University of Cincinnati" className="w-4 h-4" />
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://www.ceas.uc.edu/academics/departments/electrical-computer-engineering/degrees-programs/computer-engineering-bachelor-of-science.html"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -210,7 +231,7 @@ export default function Home() {
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
                   <li>
                     <a
-                      href="https://the-search-thing.vercel.app/"
+                      href="https://github.com/AmaanBilwar/the-search-thing"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
@@ -220,32 +241,39 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="https://github.com/AmaanBilwar/google-docs-but-its-your-terminal"
+                      href="https://github.com/AmaanBilwar/openresolve"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.googledocs')}
+                      {t('projects.label.openresolve')}
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://github.com/SoarAILabs/"
+                      href="https://github.com/AmaanBilwar/better-vscode"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      {t('projects.label.kite')}
+                      {t('projects.label.bettervscode')}
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
-
             <div>
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
               <div className="-mx-2 px-2">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                  <li>
+                    <a
+                      href="/blogs/git101"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('blog.git101.title')}
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="/blogs/introducing-jia"
@@ -264,69 +292,8 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
+
               {/* Neighbours navigation under Blogs */}
-              <div className="mt-4 mb-4 flex items-center gap-2 text-xs text-stone-400">
-                {/* Left Arrow */}
-                <a
-                  href="https://about.ceruleanechoes.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex h-6 w-6 items-center justify-center rounded bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
-                >
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="opacity-60 transition-opacity duration-200 group-hover:opacity-100"
-                  >
-                    <path
-                      d="M12 15L6 9L12 3"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://www.sydeb.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex h-6 w-6 items-center justify-center rounded bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
-                >
-                  <img
-                    src="/white.svg"
-                    alt="White SVG Pattern"
-                    className="w-6 h-6 opacity-60 transition-opacity duration-200 group-hover:opacity-100"
-                  />
-                </a>
-                {/* Right Arrow */}
-                <a
-                  href="https://www.jordankhatri.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex h-6 w-6 items-center justify-center rounded bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
-                >
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="opacity-60 transition-opacity duration-200 group-hover:opacity-100"
-                  >
-                    <path
-                      d="M6 3L12 9L6 15"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-              </div>
             </div>
           </div>
         </div>

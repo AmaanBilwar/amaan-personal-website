@@ -70,7 +70,7 @@ export default function Home() {
               <img
                 src="/gh_woody.svg"
                 alt="GitHub Woddy"
-                className="w-8 h-8 md:w-10 md:h-10 opacity-80"
+                className="w-8 h-8 md:w-10 md:-10 opacity-80"
               />
             </div>
             {contextMenu && (
@@ -124,16 +124,17 @@ export default function Home() {
           <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
             {t('hero.currently')}
           </p>
-          <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+          <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
             <li>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
-                href="https://zed.dev/community/zed-guild"
+                href="https://github.com/zed-industries/zed/pulls?q=is%3Apr+author%3AAmaanBilwar"
               >
                 Zed Guild
                 <img src="/zed.png" alt="University of Cincinnati" className="w-4 h-4" />
+		bashing bugs
               </a>
             </li>
             <li>
@@ -141,9 +142,11 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
-                href="https://github.com/HelixDB/helix-db">
-                Secret HelixDB project
+                href="https://github.com/HelixDB/helix-db"
+              >
+                HelixDB 
                 <img src="/hlxdb.jpg" alt="University of Cincinnati" className="w-4 h-4" />
+		secret project
               </a>
             </li>
             <li>
@@ -164,14 +167,13 @@ export default function Home() {
             </li>
           </ul>
         </div>
-
         <div className="h-auto min-h-[80px] md:min-h-[60px]">
           <div className="mt-4 space-y-3">
             <div>
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
                 {t('previously.title')}
               </p>
-              <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+              <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                 <li>
                   <a
                     href="https://www.story.com/"
@@ -228,7 +230,7 @@ export default function Home() {
                 {t('projects.title')}
               </p>
               <div className="-mx-2 px-2">
-                <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                   <li>
                     <a
                       href="https://github.com/AmaanBilwar/the-search-thing"
@@ -241,16 +243,6 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="https://github.com/AmaanBilwar/openresolve"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('projects.label.openresolve')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="https://github.com/AmaanBilwar/better-vscode"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -259,13 +251,23 @@ export default function Home() {
                       {t('projects.label.bettervscode')}
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="https://github.com/AmaanBilwar/openresolve"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.openresolve')}
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
             <div>
               <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
               <div className="-mx-2 px-2">
-                <ul className="text-xs md:text-sm text-stone-400 space-y-1">
+                <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                   <li>
                     <a
                       href="/blogs/git101"
@@ -292,6 +294,8 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
+
+              <div className="border-t border-stone-800 mt-4 mb-2" />
 
               {/* Neighbours navigation under Blogs */}
             </div>

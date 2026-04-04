@@ -58,5 +58,3 @@ function mergeConfig(nextConfig, userConfig) {
 }
 
 export default nextConfig;
-
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());

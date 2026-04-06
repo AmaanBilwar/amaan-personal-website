@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
 interface FooterProps {
   className?: string;
 }
 
-export default function Footer({ className = "mt-20" }: FooterProps) {
+export default function Footer({ className = 'mt-20' }: FooterProps) {
   return (
     <div
       className={`${className} flex flex-wrap items-center justify-between gap-3 text-xs text-stone-400 max-w-lg w-full`}
@@ -75,23 +75,6 @@ export default function Footer({ className = "mt-20" }: FooterProps) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-        </a>
-        <a
-          href="https://amaandoes.tech"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex h-8 w-8 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
-          aria-label="Old Portfolio"
-        >
-          <svg
-            width="22"
-            height="21"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect x="3" y="3" width="18" height="18" />
           </svg>
         </a>
       </div>

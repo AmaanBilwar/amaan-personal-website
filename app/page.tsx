@@ -134,7 +134,7 @@ export default function Home() {
               >
                 Zed Guild
                 <img src="/zed.png" alt="University of Cincinnati" className="w-4 h-4" />
-		bashing bugs
+                bashing bugs
               </a>
             </li>
             <li>
@@ -144,9 +144,9 @@ export default function Home() {
                 className="group flex items-center gap-2 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                 href="https://github.com/HelixDB/helix-db"
               >
-                HelixDB 
+                HelixDB
                 <img src="/hlxdb.jpg" alt="University of Cincinnati" className="w-4 h-4" />
-		secret project
+                secret project
               </a>
             </li>
             <li>
@@ -294,10 +294,25 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
-              <div className="border-t border-stone-800 mt-4 mb-2" />
-
-              {/* Neighbours navigation under Blogs */}
+            </div>
+            <div>
+              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
+                {t('nav.resume')}
+              </p>
+              <div className="-mx-2 px-2">
+                <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
+                  <li>
+                    <a
+                      href="/resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      if you wanna hire me 
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

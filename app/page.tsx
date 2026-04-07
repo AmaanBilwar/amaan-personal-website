@@ -308,7 +308,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                     >
-                      if you wanna hire me 
+                      for when you wanna hire me 
                     </a>
                   </li>
                 </ul>

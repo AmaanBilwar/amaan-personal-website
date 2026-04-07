@@ -140,7 +140,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Home',
     'nav.draw': 'Draw',
     'nav.blogs': 'blogs',
-    'nav.resume': 'Resume',
+    'nav.resume': 'resume',
     'nav.draw.title': 'Draw something!',
     'nav.blogs.title': 'Read my writing!',
     'nav.contact': 'Contact',

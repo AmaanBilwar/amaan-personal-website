@@ -261,6 +261,16 @@ export default function Home() {
                       {t('projects.label.openresolve')}
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="https://github.com/AmaanBilwar/vim-extension"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                    >
+                      {t('projects.label.vim')}
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

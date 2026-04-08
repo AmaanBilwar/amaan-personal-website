@@ -524,6 +524,7 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.label.theSearchThing': 'the-search-thing',
     'projects.label.openresolve': 'openresolve',
     'projects.label.bettervscode': 'better-vscode',
+    'projects.label.vim': 'vim for the browser',
 
     // Home hero title
     'home.title': 'hi im amaan',

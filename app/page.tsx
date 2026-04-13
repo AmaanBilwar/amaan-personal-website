@@ -236,9 +236,14 @@ export default function Home() {
                       href="https://github.com/AmaanBilwar/the-search-thing"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                      className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                     >
-                      {t('projects.label.theSearchThing')}
+                      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('projects.label.theSearchThing')}
+                      </span>
+                      <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+                        — {t('projects.theSearchThing')}
+                      </span>
                     </a>
                   </li>
                   <li>
@@ -246,19 +251,74 @@ export default function Home() {
                       href="https://github.com/AmaanBilwar/better-vscode"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                      className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                     >
-                      {t('projects.label.bettervscode')}
+                      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('projects.label.bettervscode')}
+                      </span>
+                      <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+                        — {t('projects.bettervscode')}
+                      </span>
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://github.com/AmaanBilwar/openresolve"
+                      href="https://github.com/AmaanBilwar/pi-openresolve"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                      className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                     >
-                      {t('projects.label.openresolve')}
+                      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('projects.label.pi-openresolve')}
+                      </span>
+                      <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+                        — {t('projects.pi-openresolve')}
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/AmaanBilwar/zsh-zed"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
+                    >
+                      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('projects.label.zed-zsh')}
+                      </span>
+                      <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+                        — {t('projects.zedZsh')}
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/AmaanBilwar/hql.nvim"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
+                    >
+                      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('projects.label.hql-nvim')}
+                      </span>
+                      <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+                        — {t('projects.hqlNvim')}
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/AmaanBilwar/helix-indexer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
+                    >
+                      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('projects.label.helixdb-indexer')}
+                      </span>
+                      <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+                        — {t('projects.helixdbIndexer')}
+                      </span>
                     </a>
                   </li>
                   <li>
@@ -266,9 +326,14 @@ export default function Home() {
                       href="https://github.com/AmaanBilwar/vim-extension"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                      className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
                     >
-                      {t('projects.label.vim')}
+                      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+                        {t('projects.label.vim')}
+                      </span>
+                      <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+                        — {t('projects.vimBrowser')}
+                      </span>
                     </a>
                   </li>
                 </ul>

@@ -139,6 +139,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Home',
     'nav.draw': 'Draw',
+    'nav.projects': 'projects',
+    'nav.projects.title': 'Check out my projects!',
     'nav.blogs': 'blogs',
     'nav.resume': 'resume',
     'nav.draw.title': 'Draw something!',
@@ -505,25 +507,22 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.git101.noteLinkUrl': '',
     // Projects section
     'projects.title': 'projects',
-    'projects.languagesSectionTitle': "A few programming languages I've worked with...",
-    'projects.languagesTitle': "programming languages i've worked with",
-    'projects.golang': 'golang',
-    'projects.python': 'python',
-    'projects.typescript': 'typescript',
-    'projects.and': 'and',
     'projects.theSearchThing': 'semantic search engine for your OS',
-    'projects.neoDiscordBot': 'discord bot that summarizes messages for you',
-    'projects.facialRecognition':
-      'deep learning CNN model for face identification and verification',
     'projects.sqlParser': 'parser that can query flat JSON objects',
-    'projects.whiteboard': 'app to brainstorm, create and share ideas',
-    'projects.dependabot': "app with 200+ users that's easier to use than github's dependabot",
-    'projects.soarailabs': 'merge conflict resolver',
+    'projects.pi-openresolve': 'merge conflict resolver for pi',
+    'projects.bettervscode': 'private, fast, debloated vscode',
+    'projects.zedZsh': 'extension for zsh for the Zed IDE',
+    'projects.hqlNvim': 'neovim plugin for HQL highlighting',
+    'projects.helixdbIndexer': 'codebase indexer for agents',
+    'projects.vimBrowser': 'vim keybindings for your browser',
 
     // Projects list labels (home page)
     'projects.label.theSearchThing': 'the-search-thing',
-    'projects.label.openresolve': 'openresolve',
+    'projects.label.pi-openresolve': 'pi-openresolve',
     'projects.label.bettervscode': 'better-vscode',
+    'projects.label.hql-nvim': 'hql nvim plugin',
+    'projects.label.zed-zsh': 'zed zsh extension',
+    'projects.label.helixdb-indexer': 'helixdb codebase indexer',
     'projects.label.vim': 'vim for the browser',
 
     // Home hero title

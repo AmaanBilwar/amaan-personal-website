@@ -501,7 +501,7 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.tmux-clone.date': 'Amaan Bilwar - April 14, 2026',
     // 'blog.tmux-clone.coverAlt': 'Terminal multiplexer screenshot',
     'blog.tmux-clone.section1.title': 'What I Built',
-    'blog.tmux-clone.section1.p1': 'I built a Windows terminal multiplexer from scratch. Think tmux, but for Windows, written in Rust.',
+    'blog.tmux-clone.section1.p1': 'A more detailed version of this blog is already in the works with screenshots & code snippets. I built a Windows terminal multiplexer from scratch. Think tmux, but for Windows, written in Rust.',
     'blog.tmux-clone.section1.p2': 'Started as a learning project to understand how terminal multiplexers work under the hood. Wanted to know how tmux actually manages multiple terminals in one window.',
     'blog.tmux-clone.section1.p3': ' This blog documents what I learned building it, the challenges I faced, and why keyboard input on Windows is surprisingly difficult.',
     // 'blog.tmux-clone.section1.imageAlt': 'Project structure',

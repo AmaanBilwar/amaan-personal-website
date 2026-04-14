@@ -250,7 +250,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.tmux-clone.section2.listItem1': 'List item one',
     'blog.tmux-clone.section2.listItem2': 'List item two',
     'blog.tmux-clone.section2.listItem3': 'List item three',
-    'blog.tmux-clone.section2.listItem4': 'List item four',
     // 'blog.tmux-clone.section2.imageAlt': 'Section 2 image alt text',
     // 'blog.tmux-clone.section2.imageCaption': 'Section 2 image caption',
     'blog.tmux-clone.section2.p3': 'Add a paragraph to explain the list or image above.',

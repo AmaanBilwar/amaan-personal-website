@@ -99,7 +99,6 @@ export default function OntologyTextToSqlBlog() {
                 <li>• {t('blog.tmux-clone.section2.listItem1')}</li>
                 <li>• {t('blog.tmux-clone.section2.listItem2')}</li>
                 <li>• {t('blog.tmux-clone.section2.listItem3')}</li>
-                <li>• {t('blog.tmux-clone.section2.listItem4')}</li>
               </ul>
               <figure className="mt-6">
 	      {/*<img

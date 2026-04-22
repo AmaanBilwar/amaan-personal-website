@@ -339,63 +339,94 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <div>
-              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
-              <div className="-mx-2 px-2">
-                <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
-                  <li>
-                    <a
-                      href="/blogs/tmux-clone"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.tmux-clone.title')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/blogs/git101"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.git101.title')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/blogs/introducing-jia"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.introducing-jia.title')}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/blogs/scene-ai-when"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      {t('blog.scene-ai-when.title')}
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          </div>
+          <div className="mt-4">
+            <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.blogs')}</p>
+            <div className="-mx-2 px-2">
+              <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
+                <li>
+                  <a
+                    href="/blogs/tmux-clone"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('blog.tmux-clone.title')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/blogs/git101"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('blog.git101.title')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/blogs/introducing-jia"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('blog.introducing-jia.title')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/blogs/scene-ai-when"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('blog.scene-ai-when.title')}
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div>
-              <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
-                {t('nav.resume')}
-              </p>
-              <div className="-mx-2 px-2">
-                <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
-                  <li>
-                    <a
-                      href="/resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
-                    >
-                      for when you wanna hire me 
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          </div>
+          <div className="mt-4">
+            <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">{t('nav.oss')}</p>
+            <div className="-mx-2 px-2">
+              <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
+                <li>
+                  <a
+                    href="https://github.com/zed-industries/zed/pulls?q=is%3Apr+author%3AAmaanBilwar"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('oss.zed')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/google-gemini/gemini-cli/pulls/amaanbilwar"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('oss.geminicli')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/helixdb/helix-db/pulls/amaanbilwar"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    {t('oss.helixdb')}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-4">
+            <p className="mb-2 text-stone-100 text-xs md:text-sm font-medium">
+              {t('nav.resume')}
+            </p>
+            <div className="-mx-2 px-2">
+              <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
+                <li>
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                  >
+                    for when you wanna hire me
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -142,6 +142,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.projects': 'projects',
     'nav.projects.title': 'Check out my projects!',
     'nav.blogs': 'blogs',
+    'nav.oss': 'oss',
     'nav.resume': 'resume',
     'nav.draw.title': 'Draw something!',
     'nav.blogs.title': 'Read my writing!',
@@ -297,7 +298,6 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.tmux-clone.note': 'note: list your image sources or attributions at',
     'blog.tmux-clone.noteLinkLabel': 'your-source-site',
     'blog.tmux-clone.noteLinkUrl': 'https://example.com',
-    
 
     // scene ai when blog
     'blog.scene-ai-when.title': 'Scene AI When',
@@ -500,79 +500,111 @@ const translations: Record<Language, Record<string, string>> = {
     'blog.tmux-clone.date': 'Amaan Bilwar - April 14, 2026',
     // 'blog.tmux-clone.coverAlt': 'Terminal multiplexer screenshot',
     'blog.tmux-clone.section1.title': 'What I Built',
-    'blog.tmux-clone.section1.p1': 'A more detailed version of this blog is already in the works with screenshots & code snippets. I built a Windows terminal multiplexer from scratch. Think tmux, but for Windows, written in Rust.',
-    'blog.tmux-clone.section1.p2': 'Started as a learning project to understand how terminal multiplexers work under the hood. Wanted to know how tmux actually manages multiple terminals in one window.',
-    'blog.tmux-clone.section1.p3': ' This blog documents what I learned building it, the challenges I faced, and why keyboard input on Windows is surprisingly difficult.',
+    'blog.tmux-clone.section1.p1':
+      'A more detailed version of this blog is already in the works with screenshots & code snippets. I built a Windows terminal multiplexer from scratch. Think tmux, but for Windows, written in Rust.',
+    'blog.tmux-clone.section1.p2':
+      'Started as a learning project to understand how terminal multiplexers work under the hood. Wanted to know how tmux actually manages multiple terminals in one window.',
+    'blog.tmux-clone.section1.p3':
+      ' This blog documents what I learned building it, the challenges I faced, and why keyboard input on Windows is surprisingly difficult.',
     // 'blog.tmux-clone.section1.imageAlt': 'Project structure',
     'blog.tmux-clone.section1.imageCaption': 'The core components I built',
     'blog.tmux-clone.section2.title': 'Why Windows is Different',
-    'blog.tmux-clone.section2.p1': 'On Unix, PTYs (pseudo-terminals) are straightforward. On Windows, you need ConPTY - the Console Pseudo Terminal.',
-    'blog.tmux-clone.section2.p2': 'ConPTY is Microsoft solution for terminal emulation. It handles the complexity of translating between Windows console API and modern terminal expectations.',
+    'blog.tmux-clone.section2.p1':
+      'On Unix, PTYs (pseudo-terminals) are straightforward. On Windows, you need ConPTY - the Console Pseudo Terminal.',
+    'blog.tmux-clone.section2.p2':
+      'ConPTY is Microsoft solution for terminal emulation. It handles the complexity of translating between Windows console API and modern terminal expectations.',
     'blog.tmux-clone.section2.listItem1': 'CreatePseudoConsole() creates the PTY',
-    'blog.tmux-clone.section2.listItem2': 'Two pipes: input (write to shell) and output (read from shell)',
-    'blog.tmux-clone.section2.listItem3': 'CreateProcessW with STARTF_USESTDHANDLES spawns the shell',
+    'blog.tmux-clone.section2.listItem2':
+      'Two pipes: input (write to shell) and output (read from shell)',
+    'blog.tmux-clone.section2.listItem3':
+      'CreateProcessW with STARTF_USESTDHANDLES spawns the shell',
     // 'blog.tmux-clone.section2.listItem4': 'Much more complex than Unix ptys',
     // 'blog.tmux-clone.section2.imageAlt': 'ConPTY architecture diagram',
     'blog.tmux-clone.section2.imageCaption': 'How ConPTY connects your app to the shell',
-    'blog.tmux-clone.section2.p3': 'The key insight: Windows terminal apps need to create a pseudo console, then spawn a process where stdin/stdout connect to that console.',
-    'blog.tmux-clone.section2.p4': 'On Unix its just open(/dev/pts/X). On Windows its... significantly more.',
+    'blog.tmux-clone.section2.p3':
+      'The key insight: Windows terminal apps need to create a pseudo console, then spawn a process where stdin/stdout connect to that console.',
+    'blog.tmux-clone.section2.p4':
+      'On Unix its just open(/dev/pts/X). On Windows its... significantly more.',
 
     'blog.tmux-clone.section3.title': 'The Core Architecture',
     'blog.tmux-clone.section3.p1': 'Heres how the multiplexer works:',
     // 'blog.tmux-clone.section3.image1Alt': 'Architecture diagram',
     'blog.tmux-clone.section3.image1Caption': 'Data flow through the multiplexer',
-    'blog.tmux-clone.section3.p2': 'tty.rs wraps the ConPTY API. Creates the pseudo console and handles spawning cmd.exe or PowerShell.',
-    'blog.tmux-clone.section3.p3': 'pane.rs represents one terminal. Holds the TTY, title, and state for a single shell session.',
-    'blog.tmux-clone.section3.p4': 'window.rs manages multiple panes. Tracks layout and which pane is active.',
-    'blog.tmux-clone.section3.p5': 'ui.rs renders everything to the terminal. Draws borders, status bar, and terminal output.',
+    'blog.tmux-clone.section3.p2':
+      'tty.rs wraps the ConPTY API. Creates the pseudo console and handles spawning cmd.exe or PowerShell.',
+    'blog.tmux-clone.section3.p3':
+      'pane.rs represents one terminal. Holds the TTY, title, and state for a single shell session.',
+    'blog.tmux-clone.section3.p4':
+      'window.rs manages multiple panes. Tracks layout and which pane is active.',
+    'blog.tmux-clone.section3.p5':
+      'ui.rs renders everything to the terminal. Draws borders, status bar, and terminal output.',
     'blog.tmux-clone.section3.p6': 'main.rs ties it all together with the event loop.',
     // 'blog.tmux-clone.section3.image2Alt': 'Code snippet',
     'blog.tmux-clone.section3.image2Caption': 'Creating a new pane',
 
     'blog.tmux-clone.section3.subsection.title': 'Key Challenges',
-    'blog.tmux-clone.section3.subsection.p1': 'Building this taught me several things about Windows terminal programming:',
-    'blog.tmux-clone.section3.subsection.listItem1': 'ConPTY API is well-documented but tricky to use correctly',
+    'blog.tmux-clone.section3.subsection.p1':
+      'Building this taught me several things about Windows terminal programming:',
+    'blog.tmux-clone.section3.subsection.listItem1':
+      'ConPTY API is well-documented but tricky to use correctly',
     'blog.tmux-clone.section3.subsection.listItem2': 'Rust windows crate is excellent but verbose',
-    'blog.tmux-clone.section3.subsection.listItem3': 'Terminal rendering is complex (ANSI escape codes, cursor positioning)',
-    'blog.tmux-clone.section3.subsection.listItem4': 'Input handling is the hardest part on Windows',
+    'blog.tmux-clone.section3.subsection.listItem3':
+      'Terminal rendering is complex (ANSI escape codes, cursor positioning)',
+    'blog.tmux-clone.section3.subsection.listItem4':
+      'Input handling is the hardest part on Windows',
 
     'blog.tmux-clone.section4.title': 'The Keyboard Input Problem',
     'blog.tmux-clone.section4.p1': 'The biggest challenge: getting keyboard input to work.',
     'blog.tmux-clone.section4.p2': 'I tried multiple approaches:',
     'blog.tmux-clone.section4.p3': '1. crossterm event reading - events never came through',
-    'blog.tmux-clone.section4.p4': '2. Direct stdin read - characters went to the shell instead of my code',
+    'blog.tmux-clone.section4.p4':
+      '2. Direct stdin read - characters went to the shell instead of my code',
     'blog.tmux-clone.section4.p5': '3. Windows Console API - had various API issues',
     // 'blog.tmux-clone.section4.imageAlt': 'Debug output showing the problem',
     // 'blog.tmux-clone.section4.imageCaption': 'What I saw when keys were pressed - nothing!',
 
     'blog.tmux-clone.section5.title': 'Why This Happens',
-    'blog.tmux-clone.section5.p1': 'The fundamental issue is that terminal input is designed to go to the shell, not to your application.',
-    'blog.tmux-clone.section5.p2': 'Without raw mode interception at the right level, keys either go to cmd.exe or get lost in the ConPTY layer.',
+    'blog.tmux-clone.section5.p1':
+      'The fundamental issue is that terminal input is designed to go to the shell, not to your application.',
+    'blog.tmux-clone.section5.p2':
+      'Without raw mode interception at the right level, keys either go to cmd.exe or get lost in the ConPTY layer.',
 
     'blog.tmux-clone.section6.title': 'Alternatives',
     'blog.tmux-clone.section6.item1.title': 'Windows Terminal:',
-    'blog.tmux-clone.section6.item1.text': 'Microsofts official solution. Works great, has tabs and split panes.',
+    'blog.tmux-clone.section6.item1.text':
+      'Microsofts official solution. Works great, has tabs and split panes.',
     'blog.tmux-clone.section6.item2.title': 'WezTerm:',
-    'blog.tmux-clone.section6.item2.text': 'Fast, cross-platform terminal with built-in multiplexing.',
+    'blog.tmux-clone.section6.item2.text':
+      'Fast, cross-platform terminal with built-in multiplexing.',
     'blog.tmux-clone.section6.item3.title': 'Tabby:',
     'blog.tmux-clone.section6.item3.text': 'Electron-based with GUI, easier to extend.',
     // 'blog.tmux-clone.section6.imageAlt': 'Alternatives comparison',
-    'blog.tmux-clone.section6.imageCaption': 'If you need a working solution today, use these instead',
+    'blog.tmux-clone.section6.imageCaption':
+      'If you need a working solution today, use these instead',
 
     'blog.tmux-clone.section7.title': 'What I Learned',
-    'blog.tmux-clone.section7.p1': 'Even though its not finished, this project taught me a ton about systems programming on Windows.',
-    'blog.tmux-clone.section7.p2': 'The core terminal functionality works - spawning shells, reading output, rendering to screen. Its just the key input that blockers completion.',
-    'blog.tmux-clone.section7.p3': 'Sometimes the most valuable outcome is understanding WHY something is hard, not finishing it.',
+    'blog.tmux-clone.section7.p1':
+      'Even though its not finished, this project taught me a ton about systems programming on Windows.',
+    'blog.tmux-clone.section7.p2':
+      'The core terminal functionality works - spawning shells, reading output, rendering to screen. Its just the key input that blockers completion.',
+    'blog.tmux-clone.section7.p3':
+      'Sometimes the most valuable outcome is understanding WHY something is hard, not finishing it.',
 
     'blog.tmux-clone.referencesTitle': 'references',
-    'blog.tmux-clone.references.item1': 'https://devblogs.microsoft.com/commandline/windows-command-line-introducing-the-windows-pseudo-console-conpty/',
+    'blog.tmux-clone.references.item1':
+      'https://devblogs.microsoft.com/commandline/windows-command-line-introducing-the-windows-pseudo-console-conpty/',
     'blog.tmux-clone.references.item2': 'https://github.com/microsoft/terminal',
     'blog.tmux-clone.references.item3': 'https://crates.io/crates/windows',
     'blog.tmux-clone.references.item4': 'https://docs.rs/crossterm/latest/crossterm/',
-    'blog.tmux-clone.note': 'Note: If you want to build this, Id recommend using a different approach like leveraging existing terminal emulation crates or building in a language with better Windows terminal support.',
+    'blog.tmux-clone.note':
+      'Note: If you want to build this, Id recommend using a different approach like leveraging existing terminal emulation crates or building in a language with better Windows terminal support.',
     'blog.tmux-clone.noteLinkLabel': 'portable-pty crate',
     'blog.tmux-clone.noteLinkUrl': 'https://crates.io/crates/portable-pty',
-
+    // oss section
+    'oss.title': 'oss',
+    'oss.zed': 'Zed IDE',
+    'oss.geminicli': 'Gemini CLI',
+    'oss.helixdb': 'HelixDB',
     // Projects section
     'projects.title': 'projects',
     'projects.theSearchThing': 'semantic search engine for your OS',

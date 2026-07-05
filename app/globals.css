@@ -80,14 +80,13 @@ body {
   body {
     @apply bg-background text-foreground;
     font-family:
-      var(--font-jetbrains-mono),
-      ui-monospace,
-      SFMono-Regular,
-      "SF Mono",
-      Menlo,
-      Consolas,
-      "Liberation Mono",
-      monospace;
+      -apple-system,
+      BlinkMacSystemFont,
+      "SF Pro Text",
+      "SF Pro Display",
+      "Segoe UI",
+      system-ui,
+      sans-serif;
     font-weight: 500;
     font-feature-settings:
       "tnum" on,

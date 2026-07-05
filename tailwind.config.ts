@@ -9,8 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-jetbrains-mono)"],
-        mono: ["var(--font-jetbrains-mono)"],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          '"Segoe UI"',
+          "system-ui",
+          "sans-serif",
+        ],
+        mono: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          '"Segoe UI"',
+          "system-ui",
+          "sans-serif",
+        ],
         minecraft: ["var(--font-minecraft)"],
         "instrument-serif": ["var(--font-instrument-serif)"],
       },

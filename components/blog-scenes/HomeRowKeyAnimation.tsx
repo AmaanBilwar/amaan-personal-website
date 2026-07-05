@@ -7,16 +7,25 @@ import {
 } from '@/components/blog-scenes/home-row-key-sounds';
 
 const box = {
-  width: 100,
-  height: 100,
+  width: '100%',
+  aspectRatio: '1 / 1',
   backgroundColor: 'white',
   borderRadius: 4,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   color: 'black',
-  fontSize: 32,
+  fontSize: 'clamp(20px, 7vw, 32px)',
   fontWeight: 700,
+};
+
+const row = {
+  display: 'grid',
+  gap: 'clamp(8px, 2.5vw, 12px)',
+  gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+  margin: '24px auto 0',
+  maxWidth: 436,
+  width: '100%',
 };
 
 const letters1 = ['A', 'S', 'D', 'F'];
@@ -26,7 +35,7 @@ const rowDelay = (letters1.length - 1.5) * staggerDelay;
 const animationDuration = 0.28;
 const finalDelay = rowDelay + (letters2.length - 1) * staggerDelay + animationDuration;
 const soundVariant: HomeRowSoundVariant = 'lowThock';
-type AnimationState = 'idle' | 'preparing' | 'playing' | 'finished';
+type AnimationState = 'idle' | 'playing' | 'finished';
 
 export default function HomeRowKeyAnimation() {
   const [animationState, setAnimationState] = useState<AnimationState>('idle');
@@ -43,40 +52,48 @@ export default function HomeRowKeyAnimation() {
     timersRef.current = [];
   }
 
-  async function startAnimation() {
-    if (animationStateRef.current === 'preparing' || animationStateRef.current === 'playing') return;
+  function startAnimation() {
+    if (animationStateRef.current === 'playing') return;
 
     clearTimers();
-    animationStateRef.current = 'preparing';
-    setAnimationState('preparing');
-
-    await homeRowKeySounds.prepare();
-
     animationStateRef.current = 'playing';
     setAnimationState('playing');
     setRunId((currentRunId) => currentRunId + 1);
+
+    let audioReady = false;
+    void homeRowKeySounds.prepare().then((ready) => {
+      audioReady = ready;
+    });
 
     const schedule = (callback: () => void, delaySeconds: number) => {
       timersRef.current.push(window.setTimeout(callback, delaySeconds * 1000));
     };
 
     letters1.forEach((_, index) => {
-      schedule(() => void homeRowKeySounds.playKey(soundVariant, index), index * staggerDelay);
+      schedule(() => {
+        if (audioReady) void homeRowKeySounds.playKey(soundVariant, index);
+      }, index * staggerDelay);
     });
 
     letters2.forEach((_, index) => {
       schedule(
-        () => void homeRowKeySounds.playKey(soundVariant, letters1.length + index),
+        () => {
+          if (audioReady) void homeRowKeySounds.playKey(soundVariant, letters1.length + index);
+        },
         rowDelay + index * staggerDelay,
       );
     });
 
     schedule(
-      () => void homeRowKeySounds.playRowComplete(soundVariant, 0),
+      () => {
+        if (audioReady) void homeRowKeySounds.playRowComplete(soundVariant, 0);
+      },
       (letters1.length - 1) * staggerDelay + animationDuration,
     );
     schedule(
-      () => void homeRowKeySounds.playRowComplete(soundVariant, 1),
+      () => {
+        if (audioReady) void homeRowKeySounds.playRowComplete(soundVariant, 1);
+      },
       rowDelay + (letters2.length - 1) * staggerDelay + animationDuration,
     );
 
@@ -84,6 +101,11 @@ export default function HomeRowKeyAnimation() {
       animationStateRef.current = 'finished';
       setAnimationState('finished');
     }, finalDelay + 0.2);
+  }
+
+  function handlePointerDown(event: React.PointerEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    startAnimation();
   }
 
   useEffect(() => {
@@ -97,7 +119,7 @@ export default function HomeRowKeyAnimation() {
       if (event.code !== 'Space' || isTyping) return;
 
       event.preventDefault();
-      void startAnimation();
+      startAnimation();
     }
 
     window.addEventListener('keydown', handleKeyDown);
@@ -111,39 +133,41 @@ export default function HomeRowKeyAnimation() {
 
   const isPlaying = animationState === 'playing';
   const showKeys = animationState === 'playing' || animationState === 'finished';
-  const showStartButton = animationState === 'idle' || animationState === 'preparing';
+  const showStartButton = animationState === 'idle';
   const showReplayButton = animationState === 'finished';
 
   return (
-    <main style={{ margin: '32px 0' }}>
+    <main style={{ margin: '32px 0', overflow: 'visible', width: '100%' }}>
       <div style={{ display: 'flex', justifyContent: 'center', minHeight: 76 }}>
         {showStartButton && (
           <motion.button
             type="button"
-            onClick={() => void startAnimation()}
-            animate={animationState === 'preparing' ? { y: 5, scale: 0.985 } : { y: 0, scale: 1 }}
+            aria-label="Start home-row key animation"
+            onPointerDown={handlePointerDown}
+            animate={{ y: 0, scale: 1 }}
             style={{
-              width: 280,
+              width: 'min(280px, 100%)',
               height: 54,
               border: '1px solid rgba(255,255,255,0.24)',
               borderRadius: 12,
               background: 'linear-gradient(180deg, #f5f5f4 0%, #d6d3d1 100%)',
-              boxShadow:
-                animationState === 'preparing'
-                  ? '0 3px 0 #78716c, 0 10px 22px rgba(0,0,0,0.22)'
-                  : '0 8px 0 #78716c, 0 18px 30px rgba(0,0,0,0.28)',
+              boxShadow: '0 8px 0 #78716c, 0 18px 30px rgba(0,0,0,0.28)',
               color: '#1c1917',
               cursor: 'pointer',
               fontFamily: 'inherit',
               fontSize: 14,
               fontWeight: 700,
               letterSpacing: '0.08em',
+              touchAction: 'manipulation',
               textTransform: 'uppercase',
             }}
             transition={{ duration: 0.12 }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ y: 6, scale: 0.98 }}
           >
-            {animationState === 'preparing' ? 'loading audio...' : 'press spacebar'}
+            <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: 1.1 }}>
+              <span>spacebar</span>
+            </span>
           </motion.button>
         )}
 
@@ -151,14 +175,14 @@ export default function HomeRowKeyAnimation() {
           <motion.button
             type="button"
             aria-label="Replay animation"
-            onClick={() => void startAnimation()}
+            onPointerDown={handlePointerDown}
             animate={{ rotate: 0, scale: 1, opacity: 1 }}
             initial={{ rotate: -120, scale: 0.6, opacity: 0 }}
             style={{
               width: 54,
               height: 54,
               border: '1px solid rgba(255,255,255,0.22)',
-              borderRadius: 999,
+              borderRadius: 0,
               background: '#f5f5f4',
               color: '#1c1917',
               cursor: 'pointer',
@@ -191,7 +215,7 @@ export default function HomeRowKeyAnimation() {
         )}
       </div>
 
-      <div style={{ display: 'flex', gap: 12, marginTop: 24 }}>
+      <div style={row}>
         {letters1.map((letter, index) => (
           <motion.div
             key={`${runId}-${letter}`}
@@ -213,7 +237,7 @@ export default function HomeRowKeyAnimation() {
         ))}
       </div>
 
-      <div style={{ display: 'flex', gap: 12, marginTop: 24 }}>
+      <div style={row}>
         {letters2.map((letter, index) => (
           <motion.div
             key={`${runId}-${letter}`}

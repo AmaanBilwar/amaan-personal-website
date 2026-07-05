@@ -1,15 +1,7 @@
 import type { Metadata } from 'next';
 import type React from 'react';
-import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-jetbrains-mono',
-  weight: ['400', '700'],
-});
 
 const minecraft = localFont({
   src: '../public/fonts/MinecraftRegular-Bmg3.otf',
@@ -34,7 +26,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jetbrainsMono.variable} ${minecraft.variable}`}>
+    <html lang="en" className={minecraft.variable}>
       <body className={`bg-[#1a1a1a] min-h-screen antialiased`}>
         {children}
       </body>

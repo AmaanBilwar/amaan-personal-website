@@ -4,7 +4,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import rehypePrettyCode from 'rehype-pretty-code';
 import { Effect } from 'effect';
-import { codeHighlightingOptions } from '@/lib/codeHighlighting';
+// import { codeHighlightingOptions } from '@/lib/codeHighlighting';
 
 export class MarkdownToHtmlError extends Error {
   readonly _tag = 'MarkdownToHtmlError';
@@ -19,7 +19,7 @@ export const markdownToHtmlEffect = (markdown: string) => Effect.tryPromise({
   try: () => remark()
       .use(remarkRehype)
       .use(rehypeSlug)
-      .use(rehypePrettyCode, codeHighlightingOptions)
+      .use(rehypePrettyCode)
       .use(rehypeStringify)
       .process(markdown),
   catch: (cause) => new MarkdownToHtmlError(cause),

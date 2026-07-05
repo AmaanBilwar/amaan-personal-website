@@ -1,5 +1,5 @@
-import HomeRowModsDemo from '@/components/blog-scenes/HomeRowModsDemo';
+import HomeRowKeyAnimation from '@/components/blog-scenes/HomeRowKeyAnimation';
 
 export const mdxComponents = {
-  HomeRowModsDemo,
+  HomeRowKeyAnimation,
 };

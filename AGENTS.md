@@ -1,0 +1,3 @@
+- never build unless asked to
+- use subagents for all tasks
+- use exa mcp for web search

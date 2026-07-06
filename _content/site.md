@@ -1,6 +1,6 @@
 ---
 home:
-  title: hi im amaan
+  title: hi, im amaan
   currently:
     label: currently
     items:

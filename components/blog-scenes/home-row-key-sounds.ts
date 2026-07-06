@@ -156,6 +156,25 @@ class HomeRowKeySoundSystem {
     synth?.triggerAttackRelease(fifth, '32n', now + 0.055, 0.14);
   }
 
+  /** Deeper, sustained glass tone for letter → modifier reveal (distinct from key clicks). */
+  async playModifierReveal(index: number) {
+    if (!(await this.ready())) return;
+
+    const now = Tone.now();
+    const note = Tone.Frequency(this.noteFor(index, 0)).transpose(-5).toNote();
+    this.glass?.triggerAttackRelease(note, '16n', now, 0.16);
+    this.lowThock?.triggerAttackRelease(this.noteFor(index, -2), '8n', now + 0.02, 0.12);
+  }
+
+  /** Soft sweep when letters begin fading out. */
+  async playModifierTransitionStart() {
+    if (!(await this.ready())) return;
+
+    const now = Tone.now();
+    this.terminal?.triggerAttackRelease('A3', '8n', now, 0.1);
+    this.glass?.triggerAttackRelease('E4', '4n', now + 0.04, 0.08);
+  }
+
   async playSequence(variant: HomeRowSoundVariant, count = 8, stepMs = 150) {
     for (let index = 0; index < count; index++) {
       window.setTimeout(() => {

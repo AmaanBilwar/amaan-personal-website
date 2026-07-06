@@ -2,7 +2,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import HeroTitle from '@/components/HeroTitle';
 import type { SiteHome, SiteLinkItem, SiteRoleLinkItem } from '@/interfaces/site';
+import { useHoverTickSound } from '@/lib/use-hover-tick-sound';
 
 export interface BlogPostLink {
   slug: string;
@@ -11,13 +13,15 @@ export interface BlogPostLink {
 
 // A "currently"/"previously" entry: a role on the left, then either a logo or
 // an em-dash, then the linked name. Driven entirely by _content/site.md.
-function RoleItem({ item }: { item: SiteRoleLinkItem }) {
+function RoleItem({ item, onHover }: { item: SiteRoleLinkItem; onHover?: () => void }) {
   return (
     <li>
       <a
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
+        onPointerEnter={onHover}
+        onFocus={onHover}
         className="group flex flex-wrap items-center gap-x-2 gap-y-0.5 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
       >
         <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
@@ -41,13 +45,15 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
 
 // A projects/oss/resume entry: a label plus an optional description that fades
 // in on hover (used by the projects list).
-function LinkItem({ item }: { item: SiteLinkItem }) {
+function LinkItem({ item, onHover }: { item: SiteLinkItem; onHover?: () => void }) {
   return (
     <li>
       <a
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
+        onPointerEnter={onHover}
+        onFocus={onHover}
         className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
       >
         <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
@@ -76,6 +82,13 @@ export default function HomeClient({
 }) {
   const [isHovering, setIsHovering] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const { playHoverTick } = useHoverTickSound();
+  const soundIndexRef = useRef(0);
+
+  const nextHoverTick = useCallback(() => {
+    playHoverTick(soundIndexRef.current);
+    soundIndexRef.current += 1;
+  }, [playHoverTick]);
 
   const [contextMenu, setContextMenu] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -122,7 +135,7 @@ export default function HomeClient({
       {/* Hero Section */}
       <div className="max-w-lg w-full space-y-1 md:space-y-2 mx-auto">
         <div className="flex items-start justify-between mb-0">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white">{home.title}</h1>
+          <HeroTitle title={home.title} />
           <div className="relative -mt-3">
             <div
               className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-md cursor-pointer"
@@ -187,7 +200,7 @@ export default function HomeClient({
             <SectionLabel>{home.currently.label}</SectionLabel>
             <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
               {home.currently.items.map((item, i) => (
-                <RoleItem key={`${item.href}-${i}`} item={item} />
+                <RoleItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
               ))}
             </ul>
           </div>
@@ -199,7 +212,7 @@ export default function HomeClient({
                 <SectionLabel>{home.previously.label}</SectionLabel>
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                   {home.previously.items.map((item, i) => (
-                    <RoleItem key={`${item.href}-${i}`} item={item} />
+                    <RoleItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
                   ))}
                 </ul>
               </div>
@@ -211,7 +224,7 @@ export default function HomeClient({
                 <div className="-mx-2 px-2">
                   <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                     {home.projects.items.map((item, i) => (
-                      <LinkItem key={`${item.href}-${i}`} item={item} />
+                      <LinkItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
                     ))}
                   </ul>
                 </div>
@@ -227,6 +240,8 @@ export default function HomeClient({
                     <li key={post.slug}>
                       <Link
                         href={`/blogs/${post.slug}`}
+                        onPointerEnter={nextHoverTick}
+                        onFocus={nextHoverTick}
                         className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                       >
                         {post.title}
@@ -243,7 +258,7 @@ export default function HomeClient({
               <div className="-mx-2 px-2">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                   {home.oss.items.map((item, i) => (
-                    <LinkItem key={`${item.href}-${i}`} item={item} />
+                    <LinkItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
                   ))}
                 </ul>
               </div>
@@ -255,7 +270,7 @@ export default function HomeClient({
               <div className="-mx-2 px-2">
                 <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                   {home.resume.items.map((item, i) => (
-                    <LinkItem key={`${item.href}-${i}`} item={item} />
+                    <LinkItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
                   ))}
                 </ul>
               </div>

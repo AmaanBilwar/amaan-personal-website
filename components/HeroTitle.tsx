@@ -10,12 +10,16 @@ const titleStagger = 140;
 
 type HeroTitleProps = {
   title: string;
+  className?: string;
+  skipAnimation?: boolean;
 };
 
-export default function HeroTitle({ title }: HeroTitleProps) {
+export default function HeroTitle({ title, className, skipAnimation = false }: HeroTitleProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useLayoutEffect(() => {
+    if (skipAnimation) return;
+
     const element = titleRef.current;
     if (!element) return;
 
@@ -40,12 +44,12 @@ export default function HeroTitle({ title }: HeroTitleProps) {
       animation.revert();
       split.revert();
     };
-  }, [title]);
+  }, [title, skipAnimation]);
 
   return (
     <h1
       ref={titleRef}
-      className="shrink-0 overflow-visible pr-1 text-xl sm:text-2xl md:text-3xl font-normal text-white"
+      className={`shrink-0 overflow-visible pr-1 text-xl sm:text-2xl md:text-3xl font-normal text-white${className ? ` ${className}` : ''}`}
     >
       {title}
     </h1>

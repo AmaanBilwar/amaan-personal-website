@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { animate, stagger } from 'animejs';
+import { createTimeline, stagger } from 'animejs';
+import type { Timeline } from 'animejs';
 import Footer from '@/components/Footer';
 import HeroTitle from '@/components/HeroTitle';
 import type { SiteHome, SiteLinkItem, SiteRoleLinkItem } from '@/interfaces/site';
@@ -11,11 +12,21 @@ import { useHoverTickSound } from '@/lib/use-hover-tick-sound';
 
 const INTRO_SEEN_KEY = 'home-intro-seen';
 
-type IntroPhase = 'waiting' | 'titleMoving' | 'revealing' | 'done';
+type IntroPhase = 'waiting' | 'done';
 
 function prefersReducedMotion(): boolean {
   if (typeof window === 'undefined') return false;
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function hideSection(el: HTMLDivElement) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(8px)';
+}
+
+function showSection(el: HTMLDivElement) {
+  el.style.opacity = '1';
+  el.style.transform = 'none';
 }
 
 export interface BlogPostLink {
@@ -81,22 +92,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 function IntroBlock({
-  introPhase,
   blockRef,
   children,
   className = '',
+  introDone,
 }: {
-  introPhase: IntroPhase;
   blockRef?: (el: HTMLDivElement | null) => void;
   children: React.ReactNode;
   className?: string;
+  introDone: boolean;
 }) {
-  const hidden = introPhase === 'waiting' || introPhase === 'titleMoving';
   return (
     <div
       ref={blockRef}
-      className={`${className} ${hidden ? 'opacity-0 pointer-events-none' : ''}`}
-      aria-hidden={hidden}
+      className={`${className} ${introDone ? '' : 'pointer-events-none'}`}
+      aria-hidden={!introDone}
     >
       {children}
     </div>
@@ -111,22 +121,19 @@ export default function HomeClient({
   blogPosts: BlogPostLink[];
 }) {
   const [introPhase, setIntroPhase] = useState<IntroPhase>('waiting');
-  const [titleDocked, setTitleDocked] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [titleInFlow, setTitleInFlow] = useState(false);
   const [contextMenu, setContextMenu] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const floatingTitleRef = useRef<HTMLDivElement>(null);
   const titleSlotRef = useRef<HTMLDivElement>(null);
+  const titleWrapRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLParagraphElement>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const soundIndexRef = useRef(0);
+  const introTimelineRef = useRef<Timeline | null>(null);
 
-  const { playHoverTick } = useHoverTickSound(introPhase === 'done');
-
-  const nextHoverTick = useCallback(() => {
-    playHoverTick(soundIndexRef.current);
-    soundIndexRef.current += 1;
-  }, [playHoverTick]);
+  const introDone = introPhase === 'done';
+  const { playHoverTick } = useHoverTickSound(introDone);
 
   const setSectionRef = useCallback((index: number) => {
     return (el: HTMLDivElement | null) => {
@@ -135,98 +142,114 @@ export default function HomeClient({
   }, []);
 
   const finishIntro = useCallback(() => {
+    setTitleInFlow(true);
+    setIsAnimating(false);
     setIntroPhase('done');
     sessionStorage.setItem(INTRO_SEEN_KEY, '1');
   }, []);
 
-  const runSectionReveal = useCallback(() => {
-    const sections = sectionRefs.current.filter((el): el is HTMLDivElement => el !== null);
-    if (sections.length === 0) {
-      finishIntro();
-      return;
-    }
-
-    if (prefersReducedMotion()) {
-      sections.forEach((el) => {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      });
-      finishIntro();
-      return;
-    }
-
-    setIntroPhase('revealing');
-
-    sections.forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(8px)';
-    });
-
-    animate(sections, {
-      opacity: [0, 1],
-      y: [8, 0],
-      duration: 400,
-      delay: stagger(140, { start: 80 }),
-      ease: 'out(3)',
-      onComplete: finishIntro,
-    });
-  }, [finishIntro]);
-
-  const runTitleReposition = useCallback(() => {
-    const floating = floatingTitleRef.current;
+  const dockTitleInSlot = useCallback(() => {
+    const wrap = titleWrapRef.current;
     const slot = titleSlotRef.current;
+    if (!wrap) return;
 
-    if (!floating || !slot || prefersReducedMotion()) {
-      setTitleDocked(true);
-      runSectionReveal();
+    const spacer = slot?.querySelector('[data-title-spacer]');
+    if (spacer instanceof HTMLElement) {
+      spacer.style.display = 'none';
+    }
+
+    wrap.style.transform = '';
+    wrap.classList.remove(
+      'fixed',
+      'left-1/2',
+      'top-1/2',
+      '-translate-x-1/2',
+      '-translate-y-1/2',
+      'items-center',
+    );
+    wrap.classList.add('items-start');
+  }, []);
+
+  const runIntroTimeline = useCallback(() => {
+    const titleWrap = titleWrapRef.current;
+    const titleSlot = titleSlotRef.current;
+    const sections = sectionRefs.current.filter((el): el is HTMLDivElement => el !== null);
+
+    if (!titleWrap || !titleSlot) {
+      finishIntro();
       return;
     }
 
-    const floatingRect = floating.getBoundingClientRect();
-    const slotRect = slot.getBoundingClientRect();
-    const dx = slotRect.left - floatingRect.left;
-    const dy = slotRect.top - floatingRect.top;
+    const wrapRect = titleWrap.getBoundingClientRect();
+    const slotRect = titleSlot.getBoundingClientRect();
+    const dx = slotRect.left - wrapRect.left;
+    const dy = slotRect.top - wrapRect.top;
 
-    setIntroPhase('titleMoving');
+    const tl = createTimeline({
+      onComplete: () => {
+        introTimelineRef.current = null;
+        sections.forEach(showSection);
+        finishIntro();
+      },
+    });
+    introTimelineRef.current = tl;
 
     if (hintRef.current) {
-      animate(hintRef.current, {
+      tl.add(hintRef.current, {
         opacity: [1, 0],
         duration: 200,
         ease: 'out(2)',
       });
     }
 
-    animate(floating, {
-      x: dx,
-      y: dy,
-      duration: 550,
-      ease: 'out(3)',
-      onComplete: () => {
-        setTitleDocked(true);
-        floating.style.transform = '';
-        runSectionReveal();
+    tl.add(
+      titleWrap,
+      {
+        x: dx,
+        y: dy,
+        duration: 550,
+        ease: 'out(3)',
+        onComplete: dockTitleInSlot,
       },
-    });
-  }, [runSectionReveal]);
+      0,
+    );
+
+    if (sections.length > 0) {
+      tl.add(
+        sections,
+        {
+          opacity: [0, 1],
+          y: [8, 0],
+          duration: 400,
+          delay: stagger(140, { start: 80 }),
+          ease: 'out(3)',
+        },
+        '>',
+      );
+    }
+  }, [dockTitleInSlot, finishIntro]);
 
   const handleIntroClick = useCallback(() => {
     if (introPhase !== 'waiting') return;
     warmAudioContext();
 
+    const sections = sectionRefs.current.filter((el): el is HTMLDivElement => el !== null);
+
     if (prefersReducedMotion()) {
-      setTitleDocked(true);
-      const sections = sectionRefs.current.filter((el): el is HTMLDivElement => el !== null);
-      sections.forEach((el) => {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      });
+      sections.forEach(showSection);
       finishIntro();
       return;
     }
 
-    runTitleReposition();
-  }, [introPhase, runTitleReposition, finishIntro]);
+    sections.forEach(hideSection);
+    setIsAnimating(true);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        runIntroTimeline();
+      });
+    });
+  }, [introPhase, runIntroTimeline, finishIntro]);
 
   const handleContextMenu = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
@@ -250,11 +273,28 @@ export default function HomeClient({
     }
   }, []);
 
+  useLayoutEffect(() => {
+    if (introPhase === 'done') return;
+    sectionRefs.current
+      .filter((el): el is HTMLDivElement => el !== null)
+      .forEach(hideSection);
+  }, [introPhase]);
+
   useEffect(() => {
     if (sessionStorage.getItem(INTRO_SEEN_KEY) === '1') {
-      setTitleDocked(true);
+      setTitleInFlow(true);
       setIntroPhase('done');
+      sectionRefs.current
+        .filter((el): el is HTMLDivElement => el !== null)
+        .forEach(showSection);
     }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      introTimelineRef.current?.pause();
+      introTimelineRef.current = null;
+    };
   }, []);
 
   useEffect(() => {
@@ -267,8 +307,12 @@ export default function HomeClient({
   let sectionIndex = 0;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-12 relative z-10">
-      {introPhase === 'waiting' && (
+    <main
+      className={`flex min-h-screen flex-col items-center p-4 md:p-12 relative z-10 ${
+        introDone || isAnimating || titleInFlow ? 'justify-start' : 'justify-center'
+      }`}
+    >
+      {introPhase === 'waiting' && !isAnimating && (
         <button
           type="button"
           className="fixed inset-0 z-10 cursor-default"
@@ -277,27 +321,36 @@ export default function HomeClient({
         />
       )}
 
-      {!titleDocked && (
-        <div
-          ref={floatingTitleRef}
-          className="fixed left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3 pointer-events-none"
-        >
-          <HeroTitle title={home.title} />
-          {introPhase === 'waiting' && (
-            <p ref={hintRef} className="text-xs text-stone-600">
-              click anywhere
-            </p>
-          )}
-        </div>
-      )}
-
       <div className="max-w-lg w-full space-y-1 md:space-y-2 mx-auto">
         <div className="flex items-start justify-between mb-0">
-          <div ref={titleSlotRef} className={!titleDocked ? 'invisible' : ''}>
-            <HeroTitle title={home.title} skipAnimation />
+          <div ref={titleSlotRef} className="shrink-0">
+            {!titleInFlow && (
+              <h1
+                data-title-spacer
+                className="invisible pointer-events-none shrink-0 overflow-visible pr-1 text-xl sm:text-2xl md:text-3xl font-normal text-white"
+                aria-hidden
+              >
+                {home.title}
+              </h1>
+            )}
+            <div
+              ref={titleWrapRef}
+              className={
+                !titleInFlow
+                  ? 'fixed left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3 pointer-events-none'
+                  : 'flex flex-col items-start gap-3'
+              }
+            >
+              <HeroTitle title={home.title} />
+              {introPhase === 'waiting' && (
+                <p ref={hintRef} className="text-xs text-stone-600">
+                  click anywhere
+                </p>
+              )}
+            </div>
           </div>
 
-          <IntroBlock introPhase={introPhase} blockRef={setSectionRef(sectionIndex++)}>
+          <IntroBlock introDone={introDone} blockRef={setSectionRef(sectionIndex++)}>
             <div className="relative -mt-3">
               <div
                 className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-md cursor-pointer"
@@ -357,12 +410,12 @@ export default function HomeClient({
         </div>
 
         {home.currently && (
-          <IntroBlock introPhase={introPhase} blockRef={setSectionRef(sectionIndex++)}>
+          <IntroBlock introDone={introDone} blockRef={setSectionRef(sectionIndex++)}>
             <div>
               <SectionLabel>{home.currently.label}</SectionLabel>
               <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                 {home.currently.items.map((item, i) => (
-                  <RoleItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
+                  <RoleItem key={`${item.href}-${i}`} item={item} onHover={playHoverTick} />
                 ))}
               </ul>
             </div>
@@ -372,12 +425,12 @@ export default function HomeClient({
         <div className="h-auto min-h-[80px] md:min-h-[60px]">
           <div className="mt-4 space-y-3">
             {home.previously && (
-              <IntroBlock introPhase={introPhase} blockRef={setSectionRef(sectionIndex++)}>
+              <IntroBlock introDone={introDone} blockRef={setSectionRef(sectionIndex++)}>
                 <div>
                   <SectionLabel>{home.previously.label}</SectionLabel>
                   <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                     {home.previously.items.map((item, i) => (
-                      <RoleItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
+                      <RoleItem key={`${item.href}-${i}`} item={item} onHover={playHoverTick} />
                     ))}
                   </ul>
                 </div>
@@ -385,13 +438,13 @@ export default function HomeClient({
             )}
 
             {home.projects && (
-              <IntroBlock introPhase={introPhase} blockRef={setSectionRef(sectionIndex++)}>
+              <IntroBlock introDone={introDone} blockRef={setSectionRef(sectionIndex++)}>
                 <div>
                   <SectionLabel>{home.projects.label}</SectionLabel>
                   <div className="-mx-2 px-2">
                     <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                       {home.projects.items.map((item, i) => (
-                        <LinkItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
+                        <LinkItem key={`${item.href}-${i}`} item={item} onHover={playHoverTick} />
                       ))}
                     </ul>
                   </div>
@@ -402,7 +455,7 @@ export default function HomeClient({
 
           {home.blogs && (
             <IntroBlock
-              introPhase={introPhase}
+              introDone={introDone}
               blockRef={setSectionRef(sectionIndex++)}
               className="mt-4"
             >
@@ -414,8 +467,8 @@ export default function HomeClient({
                       <li key={post.slug}>
                         <Link
                           href={`/blogs/${post.slug}`}
-                          onPointerEnter={nextHoverTick}
-                          onFocus={nextHoverTick}
+                          onPointerEnter={playHoverTick}
+                          onFocus={playHoverTick}
                           className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
                         >
                           {post.title}
@@ -430,7 +483,7 @@ export default function HomeClient({
 
           {home.oss && (
             <IntroBlock
-              introPhase={introPhase}
+              introDone={introDone}
               blockRef={setSectionRef(sectionIndex++)}
               className="mt-4"
             >
@@ -439,7 +492,7 @@ export default function HomeClient({
                 <div className="-mx-2 px-2">
                   <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                     {home.oss.items.map((item, i) => (
-                      <LinkItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
+                      <LinkItem key={`${item.href}-${i}`} item={item} onHover={playHoverTick} />
                     ))}
                   </ul>
                 </div>
@@ -449,7 +502,7 @@ export default function HomeClient({
 
           {home.resume && (
             <IntroBlock
-              introPhase={introPhase}
+              introDone={introDone}
               blockRef={setSectionRef(sectionIndex++)}
               className="mt-4"
             >
@@ -458,7 +511,7 @@ export default function HomeClient({
                 <div className="-mx-2 px-2">
                   <ul className="text-xs md:text-sm text-stone-400 space-y-1 pl-2">
                     {home.resume.items.map((item, i) => (
-                      <LinkItem key={`${item.href}-${i}`} item={item} onHover={nextHoverTick} />
+                      <LinkItem key={`${item.href}-${i}`} item={item} onHover={playHoverTick} />
                     ))}
                   </ul>
                 </div>
@@ -467,7 +520,7 @@ export default function HomeClient({
           )}
         </div>
 
-        <IntroBlock introPhase={introPhase} blockRef={setSectionRef(sectionIndex++)}>
+        <IntroBlock introDone={introDone} blockRef={setSectionRef(sectionIndex++)}>
           <Footer />
         </IntroBlock>
       </div>

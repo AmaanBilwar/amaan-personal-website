@@ -11,15 +11,12 @@ const titleStagger = 140;
 type HeroTitleProps = {
   title: string;
   className?: string;
-  skipAnimation?: boolean;
 };
 
-export default function HeroTitle({ title, className, skipAnimation = false }: HeroTitleProps) {
+export default function HeroTitle({ title, className }: HeroTitleProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useLayoutEffect(() => {
-    if (skipAnimation) return;
-
     const element = titleRef.current;
     if (!element) return;
 
@@ -44,7 +41,7 @@ export default function HeroTitle({ title, className, skipAnimation = false }: H
       animation.revert();
       split.revert();
     };
-  }, [title, skipAnimation]);
+  }, [title]);
 
   return (
     <h1

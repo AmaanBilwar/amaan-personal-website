@@ -13,20 +13,17 @@ function prefersReducedMotion(): boolean {
 export function useHoverTickSound(enabled: boolean) {
   const lastPlayedRef = useRef(0);
 
-  const playHoverTick = useCallback(
-    (index: number) => {
-      if (!enabled || prefersReducedMotion()) return;
+  const playHoverTick = useCallback(() => {
+    if (!enabled || prefersReducedMotion()) return;
 
-      const now = Date.now();
-      if (now - lastPlayedRef.current < DEBOUNCE_MS) return;
-      lastPlayedRef.current = now;
+    const now = Date.now();
+    if (now - lastPlayedRef.current < DEBOUNCE_MS) return;
+    lastPlayedRef.current = now;
 
-      void playHoverTickSound(index).catch(() => {
-        // silent
-      });
-    },
-    [enabled],
-  );
+    void playHoverTickSound().catch(() => {
+      // silent
+    });
+  }, [enabled]);
 
   return { playHoverTick };
 }

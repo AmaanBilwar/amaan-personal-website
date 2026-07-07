@@ -36,6 +36,7 @@
     "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",
     "remark-rehype": "^11.1.2",
+    "rune-ascii": "^0.2.0",
     "tone": "^15.1.22"
   },
   "devDependencies": {

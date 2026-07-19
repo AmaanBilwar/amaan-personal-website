@@ -132,11 +132,13 @@ function Key({
 }
 
 export default function LowerLayerKeyboard() {
-  const [layerActive, setLayerActive] = useState(false);
+  const [pointerHeld, setPointerHeld] = useState(false);
+  const [keyboardHeld, setKeyboardHeld] = useState(false);
   const [pointerOver, setPointerOver] = useState(false);
+  const layerActive = pointerHeld || keyboardHeld;
 
   const setHeld = useCallback((held: boolean) => {
-    setLayerActive(held);
+    setPointerHeld(held);
   }, []);
 
   // Physical Left Alt while hovering the board (matches the post copy).
@@ -146,7 +148,7 @@ export default function LowerLayerKeyboard() {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.code !== "AltLeft" || e.repeat) return;
       e.preventDefault();
-      setLayerActive(true);
+      setKeyboardHeld(true);
     };
 
     window.addEventListener("keydown", onKeyDown);
@@ -155,9 +157,12 @@ export default function LowerLayerKeyboard() {
 
   useEffect(() => {
     const onKeyUp = (e: KeyboardEvent) => {
-      if (e.code === "AltLeft") setLayerActive(false);
+      if (e.code === "AltLeft") setKeyboardHeld(false);
     };
-    const onBlur = () => setLayerActive(false);
+    const onBlur = () => {
+      setKeyboardHeld(false);
+      setPointerHeld(false);
+    };
 
     window.addEventListener("keyup", onKeyUp);
     window.addEventListener("blur", onBlur);

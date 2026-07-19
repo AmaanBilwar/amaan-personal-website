@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type KeyDef = {
   id: string;
@@ -88,6 +88,7 @@ function Key({
     return (
       <button
         type="button"
+        data-tab-layer-control="true"
         aria-label="Hold for arrow keys"
         aria-pressed={layerActive}
         onPointerDown={(e) => {
@@ -132,11 +133,14 @@ function Key({
 }
 
 export default function ArrowKeysKeyboard() {
-  const [layerActive, setLayerActive] = useState(false);
+  const [pointerHeld, setPointerHeld] = useState(false);
+  const [keyboardHeld, setKeyboardHeld] = useState(false);
   const [pointerOver, setPointerOver] = useState(false);
+  const figureRef = useRef<HTMLElement | null>(null);
+  const layerActive = pointerHeld || keyboardHeld;
 
   const setHeld = useCallback((held: boolean) => {
-    setLayerActive(held);
+    setPointerHeld(held);
   }, []);
 
   // Physical Tab while hovering the board.
@@ -145,8 +149,18 @@ export default function ArrowKeysKeyboard() {
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.code !== "Tab" || e.repeat) return;
+
+      const activeElement = document.activeElement;
+      if (!(activeElement instanceof HTMLElement)) return;
+
+      const insideDemo = figureRef.current?.contains(activeElement) ?? false;
+      const onLayerControl = activeElement.matches(
+        "[data-tab-layer-control='true']",
+      );
+      if (!insideDemo || !onLayerControl) return;
+
       e.preventDefault();
-      setLayerActive(true);
+      setKeyboardHeld(true);
     };
 
     window.addEventListener("keydown", onKeyDown);
@@ -155,9 +169,12 @@ export default function ArrowKeysKeyboard() {
 
   useEffect(() => {
     const onKeyUp = (e: KeyboardEvent) => {
-      if (e.code === "Tab") setLayerActive(false);
+      if (e.code === "Tab") setKeyboardHeld(false);
     };
-    const onBlur = () => setLayerActive(false);
+    const onBlur = () => {
+      setKeyboardHeld(false);
+      setPointerHeld(false);
+    };
 
     window.addEventListener("keyup", onKeyUp);
     window.addEventListener("blur", onBlur);
@@ -169,6 +186,7 @@ export default function ArrowKeysKeyboard() {
 
   return (
     <figure
+      ref={figureRef}
       className="my-8"
       onPointerEnter={() => setPointerOver(true)}
       onPointerLeave={() => setPointerOver(false)}

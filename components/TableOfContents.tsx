@@ -105,11 +105,11 @@ export default function TableOfContents({
             className={`
               block text-sm transition-colors duration-200
               px-2 py-0.5 rounded-md
-              hover:bg-stone-800/80
+              hover:bg-stone-100
               ${
                 activeSection === section.id
-                  ? "text-stone-100"
-                  : "text-stone-500 hover:text-stone-100"
+                  ? "text-black"
+                  : "text-stone-500 hover:text-black"
               }
             `}
           >
@@ -124,7 +124,7 @@ export default function TableOfContents({
     return (
       <nav
         aria-label={title}
-        className="lg:hidden mb-8 border-l border-stone-700 pl-3"
+        className="lg:hidden mb-8 border-l border-stone-200 pl-3"
       >
         <h2 className="text-stone-500 text-sm mb-2 font-medium px-2">{title}</h2>
         {links}

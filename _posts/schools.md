@@ -1,6 +1,6 @@
 ---
 title: 'The Paradox of Indian Schools: High Talent, Broken Infrastructure'
-listTitle: 'indian schools'
+listTitle: 'schools in india'
 category: life
 date: '2026-06-10'
 author: 'Amaan'
@@ -33,6 +33,8 @@ Tell us the one thing that hurts the most. Then we build just that. Not a 200-fe
 - Fees taking too long to reconcile?
 - Parents missing notices on WhatsApp?
 - Timetables falling apart every month?
+
+---
 
 ## The Mission
 

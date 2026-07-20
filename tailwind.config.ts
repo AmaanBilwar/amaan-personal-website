@@ -9,7 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["var(--font-merriweather)", "Georgia", "serif"],
+        serif: [
+          '"Lucida Console"',
+          '"Lucida Sans Typewriter"',
+          "Monaco",
+          '"Courier New"',
+          "monospace",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",

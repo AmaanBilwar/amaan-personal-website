@@ -7,13 +7,13 @@ interface FooterProps {
 export default function Footer({ className = 'mt-20' }: FooterProps) {
   return (
     <div
-      className={`${className} flex flex-wrap items-center justify-between gap-3 text-sm text-stone-400 max-w-xl w-full`}
+      className={`${className} flex flex-wrap items-center justify-between gap-3 text-sm text-stone-600 max-w-xl w-full`}
     >
       {/* Social media icons */}
       <div className="flex items-center gap-2">
         <a
           href="mailto:bilwarad@mail.uc.edu"
-          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-600 hover:bg-stone-100 hover:text-black transition-colors"
           aria-label="Email"
         >
           <svg
@@ -30,7 +30,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           href="https://www.linkedin.com/in/amaanbilwar/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-600 hover:bg-stone-100 hover:text-black transition-colors"
           aria-label="LinkedIn"
         >
           <svg
@@ -47,7 +47,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           href="https://github.com/AmaanBilwar"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-600 hover:bg-stone-100 hover:text-black transition-colors"
           aria-label="GitHub"
         >
           <svg
@@ -64,7 +64,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           href="https://x.com/BilwarAmaan"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-600 hover:bg-stone-100 hover:text-black transition-colors"
           aria-label="X (Twitter)"
         >
           <svg
@@ -81,7 +81,7 @@ export default function Footer({ className = 'mt-20' }: FooterProps) {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-400 hover:bg-stone-800/80 hover:text-stone-100 transition-colors"
+          className="group flex h-9 w-9 items-center justify-center rounded-md bg-transparent text-stone-600 hover:bg-stone-100 hover:text-black transition-colors"
           aria-label="Resume"
         >
           <svg

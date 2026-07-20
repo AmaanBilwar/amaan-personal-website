@@ -20,7 +20,7 @@ const BLOG_CATEGORIES: { id: BlogCategory; label: string }[] = [
 function RoleRowContent({ item }: { item: SiteRoleLinkItem }) {
   return (
     <>
-      <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+      <span className="text-stone-600 group-hover:text-black transition-colors">
         {item.role}
       </span>
       {/* Keep the logo and name together so they wrap as one unit on narrow screens */}
@@ -30,7 +30,7 @@ function RoleRowContent({ item }: { item: SiteRoleLinkItem }) {
         ) : (
           "—"
         )}
-        <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+        <span className="text-stone-600 group-hover:text-black transition-colors">
           {item.name}
         </span>
       </span>
@@ -51,7 +51,7 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-wrap items-center gap-x-2 gap-y-0.5 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80"
+          className="group flex flex-wrap items-center gap-x-2 gap-y-0.5 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100"
         >
           <RoleRowContent item={item} />
         </a>
@@ -65,7 +65,7 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
-        className="group flex w-full flex-wrap items-center gap-x-2 gap-y-0.5 -mx-2 px-2 py-0.5 rounded-md text-left transition-colors hover:bg-stone-800/80"
+        className="group flex w-full flex-wrap items-center gap-x-2 gap-y-0.5 -mx-2 px-2 py-0.5 rounded-md text-left transition-colors hover:bg-stone-100"
       >
         <RoleRowContent item={item} />
       </button>
@@ -76,7 +76,7 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
       >
         <div className="overflow-hidden">
           <div className="flex gap-2 pl-5 pt-1.5 pb-1">
-            <span aria-hidden className="shrink-0 text-stone-600 select-none">
+            <span aria-hidden className="shrink-0 text-stone-400 select-none">
               ⤷
             </span>
             <p className="min-w-0 text-sm text-stone-500 leading-relaxed">
@@ -88,7 +88,7 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-stone-800/80 px-2 py-[3px] text-xs leading-none text-stone-400 hover:bg-stone-700/80 hover:text-stone-200 transition-colors align-middle"
+                    className="inline-flex items-center justify-center rounded-full bg-stone-100 px-2 py-[3px] text-xs leading-none text-stone-600 hover:bg-stone-200 hover:text-black transition-colors align-middle"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {item.name}
@@ -112,13 +112,13 @@ function LinkItem({ item }: { item: SiteLinkItem }) {
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+        className="group flex flex-wrap items-center gap-1 -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100 hover:text-black"
       >
-        <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
+        <span className="text-stone-600 group-hover:text-black transition-colors">
           {item.label}
         </span>
         {item.description && (
-          <span className="text-stone-600 group-hover:text-stone-400 transition-colors hidden group-hover:inline">
+          <span className="text-stone-400 group-hover:text-stone-600 transition-colors hidden group-hover:inline">
             — {item.description}
           </span>
         )}
@@ -128,7 +128,7 @@ function LinkItem({ item }: { item: SiteLinkItem }) {
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="mb-2.5 text-stone-100 text-sm md:text-base font-medium">{children}</p>;
+  return <p className="mb-2.5 text-black text-sm md:text-base font-medium">{children}</p>;
 }
 
 export default function HomeClient({
@@ -186,7 +186,7 @@ export default function HomeClient({
       {/* Hero Section */}
       <div className="max-w-xl w-full space-y-2 md:space-y-3 mx-auto">
         <div className="flex items-start justify-between mb-0">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-white">{home.title}</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black">{home.title}</h1>
           <div className="relative -mt-3">
             <div
               className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-md cursor-pointer"
@@ -197,14 +197,14 @@ export default function HomeClient({
               <img
                 src="/gh_woody.svg"
                 alt="GitHub Woddy"
-                className="w-10 h-10 md:w-12 md:h-12 opacity-80"
+                className="w-10 h-10 md:w-12 md:h-12 opacity-90"
               />
             </div>
             {contextMenu && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 z-50">
                 <button
                   onClick={handleCopySvg}
-                  className="flex items-center justify-center gap-2 px-3 py-2.5 text-sm text-stone-400 bg-stone-800/80 hover:text-stone-100 rounded-md whitespace-nowrap w-[120px]"
+                  className="flex items-center justify-center gap-2 px-3 py-2.5 text-sm text-stone-600 bg-stone-100 hover:text-black rounded-md whitespace-nowrap w-[120px] border border-stone-200"
                 >
                   {copied ? (
                     <>
@@ -249,11 +249,24 @@ export default function HomeClient({
         {home.currently && (
           <div>
             <SectionLabel>{home.currently.label}</SectionLabel>
-            <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
+            <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
               {home.currently.items.map((item, i) => (
                 <RoleItem key={`${item.href}-${i}`} item={item} />
               ))}
             </ul>
+          </div>
+        )}
+
+        {home.reading && (
+          <div>
+            <SectionLabel>{home.reading.label}</SectionLabel>
+            <div className="-mx-2 px-2">
+              <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
+                {home.reading.items.map((item, i) => (
+                  <LinkItem key={`${item.href}-${i}`} item={item} />
+                ))}
+              </ul>
+            </div>
           </div>
         )}
         <div className="h-auto">
@@ -261,7 +274,7 @@ export default function HomeClient({
             {home.previously && (
               <div>
                 <SectionLabel>{home.previously.label}</SectionLabel>
-                <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
+                <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
                   {home.previously.items.map((item, i) => (
                     <RoleItem key={`${item.href}-${i}`} item={item} />
                   ))}
@@ -273,21 +286,8 @@ export default function HomeClient({
               <div>
                 <SectionLabel>{home.projects.label}</SectionLabel>
                 <div className="-mx-2 px-2">
-                  <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
+                  <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
                     {home.projects.items.map((item, i) => (
-                      <LinkItem key={`${item.href}-${i}`} item={item} />
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-
-            {home.reading && (
-              <div>
-                <SectionLabel>{home.reading.label}</SectionLabel>
-                <div className="-mx-2 px-2">
-                  <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
-                    {home.reading.items.map((item, i) => (
                       <LinkItem key={`${item.href}-${i}`} item={item} />
                     ))}
                   </ul>
@@ -305,12 +305,12 @@ export default function HomeClient({
                   return (
                     <div key={id}>
                       <p className="mb-1.5 text-stone-500 text-sm md:text-base">{label}</p>
-                      <ul className="text-sm md:text-base text-stone-400 space-y-1.5">
+                      <ul className="text-sm md:text-base text-stone-600 space-y-1.5">
                         {posts.map((post) => (
                           <li key={post.slug}>
                             <Link
                               href={`/blogs/${post.slug}`}
-                              className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-800/80 hover:text-stone-100"
+                              className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100 hover:text-black"
                             >
                               {post.title}
                             </Link>
@@ -323,23 +323,11 @@ export default function HomeClient({
               </div>
             </div>
           )}
-          {home.reading && (
-            <div className="mt-5">
-              <SectionLabel>{home.reading.label}</SectionLabel>
-              <div className="-mx-2 px-2">
-                <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
-                  {home.reading.items.map((item, i) => (
-                    <LinkItem key={`${item.href}-${i}`} item={item} />
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
           {home.oss && (
             <div className="mt-5">
               <SectionLabel>{home.oss.label}</SectionLabel>
               <div className="-mx-2 px-2">
-                <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
+                <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
                   {home.oss.items.map((item, i) => (
                     <LinkItem key={`${item.href}-${i}`} item={item} />
                   ))}
@@ -347,11 +335,12 @@ export default function HomeClient({
               </div>
             </div>
           )}
+
           {home.resume && (
             <div className="mt-5">
               <SectionLabel>{home.resume.label}</SectionLabel>
               <div className="-mx-2 px-2">
-                <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
+                <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
                   {home.resume.items.map((item, i) => (
                     <LinkItem key={`${item.href}-${i}`} item={item} />
                   ))}

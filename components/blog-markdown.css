@@ -1,5 +1,5 @@
 .blog-markdown {
-  @apply text-base md:text-lg leading-relaxed break-words font-serif;
+  @apply text-base md:text-lg leading-relaxed break-words font-serif text-stone-700;
   font-weight: 400;
 }
 
@@ -8,25 +8,25 @@
 }
 
 .blog-markdown h2 {
-  @apply text-xl md:text-2xl font-semibold text-stone-100 mb-3 mt-8 scroll-mt-8;
+  @apply text-xl md:text-2xl font-semibold text-black mb-3 mt-8 scroll-mt-8;
 }
 
 .blog-markdown h2::before {
   content: "# ";
-  @apply text-stone-500 font-normal;
+  @apply text-stone-400 font-normal;
 }
 
 .blog-markdown h3 {
-  @apply text-base md:text-lg font-semibold text-stone-200 mb-3 mt-6 scroll-mt-8;
+  @apply text-base md:text-lg font-semibold text-stone-800 mb-3 mt-6 scroll-mt-8;
 }
 
 .blog-markdown h3::before {
   content: "## ";
-  @apply text-stone-500 font-normal;
+  @apply text-stone-400 font-normal;
 }
 
 .blog-markdown ul {
-  @apply my-3 ml-4 space-y-1 text-stone-300 list-none;
+  @apply my-3 ml-4 space-y-1 text-stone-700 list-none;
 }
 
 .blog-markdown ul li {
@@ -34,11 +34,11 @@
 }
 
 .blog-markdown ol {
-  @apply my-3 ml-4 space-y-1 text-stone-300 list-decimal;
+  @apply my-3 ml-4 space-y-1 text-stone-700 list-decimal;
 }
 
 .blog-markdown a {
-  @apply text-stone-200 underline hover:text-white transition-colors;
+  @apply text-stone-800 underline hover:text-black transition-colors;
 }
 
 .blog-markdown img {
@@ -58,23 +58,23 @@
 }
 
 .blog-markdown strong {
-  @apply text-stone-100 font-medium;
+  @apply text-black font-medium;
 }
 
 .blog-markdown hr {
-  @apply border-stone-700 my-8;
+  @apply border-stone-200 my-8;
 }
 
 .blog-markdown blockquote {
-  @apply border-l-2 border-stone-600 pl-4 text-stone-400 italic my-4;
+  @apply border-l-2 border-stone-300 pl-4 text-stone-600 italic my-4;
 }
 
 .blog-markdown code {
-  @apply bg-stone-800 text-stone-200 px-1 py-0.5 rounded text-sm;
+  @apply bg-stone-100 text-stone-800 px-1 py-0.5 rounded text-sm;
 }
 
 .blog-markdown pre {
-  @apply bg-stone-900 p-4 rounded-md overflow-x-auto my-4;
+  @apply bg-stone-100 p-4 rounded-md overflow-x-auto my-4;
 }
 
 .blog-markdown pre code {

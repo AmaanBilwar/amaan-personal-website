@@ -1,6 +1,6 @@
 ---
 title: 'Staying out of insert mode will save your life'
-listTitle: 'about vim insert mode'
+listTitle: 'vimsert mode'
 category: tech
 date: '2026-06-28'
 author: 'Amaan'
@@ -15,6 +15,8 @@ when i first started using vim(all thanks to primeagen), it was so much work to 
 the insert mode was where I was most comfortable with because thats what i was used to with other editors. but thats what makes it weak, and you might as well use any other editor.
 
 soon enough i realized that Normal mode is where the big boy moves happen.
+
+---
 
 ## how to get outta there
 
@@ -52,6 +54,8 @@ set timeoutlen=500
 
 in zed's case they handle this on their own so we're chilling.
 
+---
+
 ## good habit that might help you
 
 You probably noticed, as a good habit to learn i also disabled the arrow keys(though im used to it now) for navigation in vim so i dont have to move my hands around much when typing and till i get my hands on a split keyboard this'll do.
@@ -76,6 +80,8 @@ inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 ```
+
+---
 
 ### wrap it up
 

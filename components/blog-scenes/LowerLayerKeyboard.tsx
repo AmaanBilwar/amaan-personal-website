@@ -80,7 +80,7 @@ function Key({
   const display = showingLayer ? layerLabel : label;
 
   const baseClass = [
-    "flex h-7 select-none items-center justify-center rounded-[0.3rem] border font-sans text-[0.55rem] font-medium tracking-wide sm:h-8 sm:text-[0.65rem] md:h-9 md:text-xs",
+    "flex h-10 select-none items-center justify-center rounded-[0.35rem] border font-sans text-[0.65rem] font-medium tracking-wide sm:h-12 sm:text-xs md:h-14 md:text-sm",
     showingLayer ? "normal-case" : "uppercase",
   ].join(" ");
 
@@ -102,8 +102,8 @@ function Key({
           baseClass,
           "cursor-pointer touch-none outline-none transition-colors duration-100",
           layerActive
-            ? "border-stone-400 bg-stone-600 text-stone-50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
-            : "border-stone-500/80 bg-stone-800 text-stone-300 hover:border-stone-400 hover:text-stone-100",
+            ? "border-stone-500 bg-stone-300 text-black shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]"
+            : "border-stone-300 bg-white text-stone-700 hover:border-stone-400 hover:text-black",
         ].join(" ")}
         style={{ flex: `${width} 1 0`, minWidth: 0 }}
       >
@@ -117,10 +117,10 @@ function Key({
       className={[
         baseClass,
         showingLayer
-          ? "border-stone-500 bg-stone-700 text-stone-50"
+          ? "border-stone-400 bg-stone-200 text-black"
           : muted
-            ? "border-stone-700/80 bg-stone-900/80 text-stone-500"
-            : "border-stone-600/70 bg-stone-800 text-stone-200",
+            ? "border-stone-200 bg-stone-50 text-stone-400"
+            : "border-stone-300 bg-white text-stone-800",
         showingLayer ? "transition-colors duration-100" : "",
       ].join(" ")}
       style={{ flex: `${width} 1 0`, minWidth: 0 }}
@@ -180,14 +180,14 @@ export default function LowerLayerKeyboard() {
     >
       <div
         className={[
-          "flex w-full flex-col gap-1 rounded-xl border bg-stone-950/60 p-2.5 sm:gap-1.5 sm:p-3.5",
-          layerActive ? "border-stone-500/80" : "border-stone-700/60",
+          "flex w-full flex-col gap-1.5 rounded-xl border bg-stone-50 p-3 sm:gap-2 sm:p-4",
+          layerActive ? "border-stone-400" : "border-stone-200",
         ].join(" ")}
         role="group"
         aria-label="Keyboard with holdable left alt for the lower layer"
       >
         {ROWS.map((row, i) => (
-          <div key={i} className="flex w-full gap-1 sm:gap-1.5">
+          <div key={i} className="flex w-full gap-1.5 sm:gap-2">
             {row.map((keyDef) => (
               <Key
                 key={keyDef.id}

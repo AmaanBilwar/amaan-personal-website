@@ -54,9 +54,9 @@ home:
   blogs:
     label: blogs
   reading:
-    label: currently reading
+    label: reading
     items:
-      - label: "Computer systems: A Programmer's Perspective"
+      - label: "Computer Systems: A Programmer's Perspective"
         href: https://csapp.cs.cmu.edu/
   oss:
     label: oss

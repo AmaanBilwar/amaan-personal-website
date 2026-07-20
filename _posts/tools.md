@@ -14,9 +14,13 @@ For context: I mostly work on a [Legion 5 Pro](https://www.lenovo.com/us/en/p/la
 
 When I'm home it's the laptop plus whatever keyboard era I'm currently obsessed with. When I'm moving around, it's just the laptop.
 
+---
+
 ## Core
 
 I'm still pretty terminal-pilled, but the center of gravity moved when I switched hard to Zed. Shell, CLIs, and agents around the editor — not a full tmux-and-neovim desktop like it used to be.
+
+---
 
 ### Terminal emulator
 
@@ -25,6 +29,8 @@ I was a big [WezTerm](https://wezfurlong.org/wezterm/) guy. Configurability, GPU
 These days I'm on [Ghostty](https://ghostty.org) with [zsh](https://www.zsh.org) and [Fira Code](https://github.com/tonsky/FiraCode). Fast enough that I stop thinking about the emulator and just stay in the session. That's the whole job.
 
 I still have [tmux](https://github.com/tmux/tmux) installed, but I barely reach for it now. Same story with [neovim](https://neovim.io) — is still the quick-edit hammer; Zed has overtaken these.
+
+---
 
 ### Navigation and CLIs
 
@@ -35,9 +41,13 @@ Loose list of the ones I hit constantly:
 - [Atuin](https://atuin.sh) — syncable, searchable shell history. Once you pull the exact command you ran on another machine, default history feels broken. Ellie also accidentally improved my vim life via a Zed keymap post, so Atuin stays undefeated here.
 - ~~[LazyGit](https://github.com/jesseduffield/lazygit) — fast visual pass over git state when I don't want to reconstruct the world from flags. Intimidating for a day. Permanent after a week.~~
 
+---
+
 ### Keybinds
 
 I use vim motions in Zed. Vim surpirsingly came naturally to me and it's funny because when I first found out about it, I was very intimidated. AI has made setting it up and writing plugins so much easier, that setup cost basically vanished.
+
+---
 
 ## The editor
 
@@ -53,6 +63,8 @@ Use it once. You'll know what I'm talking about.
 
 ![zed workspace with agents](/zed-screenshot.png)
 _zed — where most of the day actually happens_
+
+---
 
 ## Agents
 
@@ -70,6 +82,8 @@ I also keep [Cursor CLI](https://cursor.com/docs/cli/overview) around because I 
 ![cursor agent + nvim + next in ghostty](/terminal.png)
 _how i code in the terminal when i'm not in zed_
 
+---
+
 ## Version control
 
 ### [Jujutsu (jj)](https://github.com/jj-vcs/jj)
@@ -77,6 +91,8 @@ _how i code in the terminal when i'm not in zed_
 I use jj with git as the backend, and I'm loving it so far. The model is simpler than the git story I had in my head, and once that clicks, a lot of the old ceremony feels optional.
 
 Here's a good resource if you want to get started with jj: [Jujutsu for Busy Devs](https://maddie.wtf/posts/2025-07-21-jujutsu-for-busy-devs). Mitchell Hashimoto has some great tweets about learning to use jj.
+
+---
 
 ## Browser
 
@@ -88,12 +104,16 @@ Building a usable browser on top of Chromium is already hard. What I find intere
 
 The UI is excellent. Wukko and jj have clearly spent a lot of time deleting wasted pixel space — dynamic, compact, and a few other modes depending on how much chrome you want. Same recommendation energy as Zed. Just try it.
 
+---
+
 ## Audio
 
 ### Headphones
 
 - **[Bose QuietComfort](https://www.bose.com/p/headphones/bose-quietcomfort-headphones/QCHP-HEADPHONEARN.html)** — comfortable, solid ANC, and I wear glasses. I've done 16–20 hour flights on these and they stay wearable the whole way. Good case, replaceable ear cups, battery life that still surprises me. Charges fast, lasts days if not weeks.
 - **[Apple EarPods (3.5mm)](https://www.apple.com/shop/product/MWU53AM/A/earpods-35mm-headphone-plug)** — not the performative wireless ones, the actual headphone-jack ones. I carry a USB-C adapter and keep both on me. They almost never tangle for me, sound better than they have any right to on a budget, and they're still one of the best cheap wired options out there.
+
+---
 
 ## Keyboards
 

@@ -63,10 +63,10 @@ function Key({ label, width = 1, muted }: KeyDef) {
   return (
     <div
       className={[
-        "flex h-7 items-center justify-center rounded-[0.3rem] border font-sans text-[0.55rem] font-medium uppercase tracking-wide sm:h-8 sm:text-[0.65rem] md:h-9 md:text-xs",
+        "flex h-10 items-center justify-center rounded-[0.35rem] border font-sans text-[0.65rem] font-medium uppercase tracking-wide sm:h-12 sm:text-xs md:h-14 md:text-sm",
         muted
-          ? "border-stone-700/80 bg-stone-900/80 text-stone-500"
-          : "border-stone-600/70 bg-stone-800 text-stone-200",
+          ? "border-stone-200 bg-stone-50 text-stone-400"
+          : "border-stone-300 bg-white text-stone-800",
       ].join(" ")}
       style={{ flex: `${width} 1 0`, minWidth: 0 }}
       aria-hidden
@@ -80,12 +80,12 @@ export default function NormalKeyboard() {
   return (
     <figure className="my-8">
       <div
-        className="flex w-full flex-col gap-1 rounded-xl border border-stone-700/60 bg-stone-950/60 p-2.5 sm:gap-1.5 sm:p-3.5"
+        className="flex w-full flex-col gap-1.5 rounded-xl border border-stone-200 bg-stone-50 p-3 sm:gap-2 sm:p-4"
         role="img"
         aria-label="A normal staggered 40 percent QWERTY keyboard layout"
       >
         {ROWS.map((row, i) => (
-          <div key={i} className="flex w-full gap-1 sm:gap-1.5">
+          <div key={i} className="flex w-full gap-1.5 sm:gap-2">
             {row.map((key, j) => (
               <Key key={`${i}-${j}-${key.label}`} {...key} />
             ))}

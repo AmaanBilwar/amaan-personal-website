@@ -3,17 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  /* Optionally update or remove these if not used */
-  --background-start-rgb: 220, 220, 220;
-  --background-end-rgb: 220, 220, 220;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  /* Remove this rule to avoid conflicts:
-  background: rgb(var(--background-start-rgb));
-  */
 }
 
 @layer utilities {
@@ -24,10 +20,8 @@ body {
 
 @layer base {
   :root {
-    /* Set an even darker grey background using HSL (10% lightness) */
-    --background: 0, 0%, 10%;
-    /* Adjust foreground for contrast */
-    --foreground: 0, 0%, 98%;
+    --background: 0, 0%, 100%;
+    --foreground: 0, 0%, 9%;
     --card: 0, 0%, 100%;
     --card-foreground: 0, 0%, 3.9%;
     --popover: 0, 0%, 100%;
@@ -61,11 +55,9 @@ body {
     --sidebar-ring: 217.2, 91.2%, 59.8%;
   }
 
-  /* Dark theme variables can be kept unchanged */
   .dark {
     --background: 0, 0%, 3.9%;
     --foreground: 0, 0%, 98%;
-    /* ... other dark theme variables ... */
   }
 
   * {
@@ -105,24 +97,22 @@ body {
     text-wrap: balance;
   }
 
-  /* Custom scrollbar for AI chat history */
   .ai-chat-scroll::-webkit-scrollbar {
     width: 8px;
-    background: #1a1a1a;
+    background: #f5f5f4;
   }
 
   .ai-chat-scroll::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #a8a29e;
     border-radius: 6px;
   }
 
   .ai-chat-scroll::-webkit-scrollbar-track {
-    background: #1a1a1a;
+    background: #f5f5f4;
   }
 
-  /* For Firefox */
   .ai-chat-scroll {
-    scrollbar-color: #333 #1a1a1a;
+    scrollbar-color: #a8a29e #f5f5f4;
     scrollbar-width: thin;
   }
 }

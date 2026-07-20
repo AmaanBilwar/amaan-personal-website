@@ -1,10 +1,10 @@
-'use client';
-import { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
-import Footer from '@/components/Footer';
-import type { SiteHome, SiteLinkItem, SiteRoleLinkItem } from '@/interfaces/site';
+"use client";
+import { useState, useEffect, useRef, useCallback } from "react";
+import Link from "next/link";
+import Footer from "@/components/Footer";
+import type { SiteHome, SiteLinkItem, SiteRoleLinkItem } from "@/interfaces/site";
 
-export type BlogCategory = 'tech' | 'life';
+export type BlogCategory = "tech" | "life";
 
 export interface BlogPostLink {
   slug: string;
@@ -13,8 +13,8 @@ export interface BlogPostLink {
 }
 
 const BLOG_CATEGORIES: { id: BlogCategory; label: string }[] = [
-  { id: 'tech', label: 'tech' },
-  { id: 'life', label: 'life' },
+  { id: "tech", label: "tech" },
+  { id: "life", label: "life" },
 ];
 
 function RoleRowContent({ item }: { item: SiteRoleLinkItem }) {
@@ -28,7 +28,7 @@ function RoleRowContent({ item }: { item: SiteRoleLinkItem }) {
         {item.icon ? (
           <img src={item.icon} alt={item.iconAlt ?? item.name} className="h-5 w-auto" />
         ) : (
-          '—'
+          "—"
         )}
         <span className="text-stone-400 group-hover:text-stone-100 transition-colors">
           {item.name}
@@ -71,7 +71,7 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
       </button>
       <div
         className={`grid transition-[grid-template-rows] duration-200 ease-out ${
-          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
         <div className="overflow-hidden">
@@ -83,7 +83,7 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
               {item.detail}
               {item.href && (
                 <>
-                  {' '}
+                  {" "}
                   <a
                     href={item.href}
                     target="_blank"
@@ -153,7 +153,7 @@ export default function HomeClient({
   const handleCopySvg = useCallback(async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {
-      const res = await fetch('/gh_woody.svg');
+      const res = await fetch("/gh_woody.svg");
       const svgText = await res.text();
       await navigator.clipboard.writeText(svgText);
       setCopied(true);
@@ -169,8 +169,8 @@ export default function HomeClient({
   useEffect(() => {
     if (!contextMenu || copied) return;
     const close = () => setContextMenu(false);
-    window.addEventListener('click', close);
-    return () => window.removeEventListener('click', close);
+    window.addEventListener("click", close);
+    return () => window.removeEventListener("click", close);
   }, [contextMenu, copied]);
 
   useEffect(() => {
@@ -294,7 +294,6 @@ export default function HomeClient({
                 </div>
               </div>
             )}
-
           </div>
           {home.blogs && blogPosts.length > 0 && (
             <div className="mt-5">

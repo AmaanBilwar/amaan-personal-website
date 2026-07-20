@@ -30,6 +30,7 @@ export interface SiteHome {
   previously?: SiteSection<SiteRoleLinkItem>;
   projects?: SiteSection<SiteLinkItem>;
   blogs?: { label: string };
+  reading?: SiteSection<SiteLinkItem>;
   oss?: SiteSection<SiteLinkItem>;
   resume?: SiteSection<SiteLinkItem>;
 }

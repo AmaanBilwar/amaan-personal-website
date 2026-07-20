@@ -103,7 +103,7 @@ function RoleItem({ item }: { item: SiteRoleLinkItem }) {
   );
 }
 
-// A projects/oss/resume entry: a label plus an optional description that fades
+// A reading/projects/oss/resume entry: a label plus an optional description that fades
 // in on hover (used by the projects list).
 function LinkItem({ item }: { item: SiteLinkItem }) {
   return (
@@ -281,6 +281,20 @@ export default function HomeClient({
                 </div>
               </div>
             )}
+
+            {home.reading && (
+              <div>
+                <SectionLabel>{home.reading.label}</SectionLabel>
+                <div className="-mx-2 px-2">
+                  <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
+                    {home.reading.items.map((item, i) => (
+                      <LinkItem key={`${item.href}-${i}`} item={item} />
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
           </div>
           {home.blogs && blogPosts.length > 0 && (
             <div className="mt-5">
@@ -307,6 +321,18 @@ export default function HomeClient({
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          )}
+          {home.reading && (
+            <div className="mt-5">
+              <SectionLabel>{home.reading.label}</SectionLabel>
+              <div className="-mx-2 px-2">
+                <ul className="text-sm md:text-base text-stone-400 space-y-1.5 pl-2">
+                  {home.reading.items.map((item, i) => (
+                    <LinkItem key={`${item.href}-${i}`} item={item} />
+                  ))}
+                </ul>
               </div>
             </div>
           )}

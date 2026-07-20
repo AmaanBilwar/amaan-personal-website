@@ -49,15 +49,22 @@ home:
         description: semantic search engine for your OS
         href: https://github.com/AmaanBilwar/the-search-thing
       - label: better-vscode
+        href: https://github.com/AmaanBilwar/better-vscode
         description: private, fast, debloated vscode
+  blogs:
     label: blogs
+  reading:
+    label: currently reading
+    items:
+      - label: "Computer systems: A Programmer's Perspective"
+        href: https://csapp.cs.cmu.edu/
   oss:
     label: oss
     items:
       - label: zed ide
         href: https://github.com/zed-industries/zed/pulls?q=is%3Apr+author%3AAmaanBilwar
       - label: gemini cli
-        href: https://github.com/google-gemini/gemini-cli/pulls/amaanbilwar
+        href: https://github.com/google-gemini/gemini-cli/pulls?q=+is%3Apr+author%3Aamaanbilwar+
       - label: helixdb
         href: https://github.com/helixdb/helix-db/pulls/amaanbilwar
 ui:

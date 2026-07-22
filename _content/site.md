@@ -67,6 +67,8 @@ home:
         href: https://github.com/google-gemini/gemini-cli/pulls?q=+is%3Apr+author%3Aamaanbilwar+
       - label: helixdb
         href: https://github.com/helixdb/helix-db/pulls/amaanbilwar
+  scratchpad:
+    label: scratchpad
 ui:
   blogBack: back
   blogContents: contents

@@ -32,6 +32,7 @@ export interface SiteHome {
   blogs?: { label: string };
   reading?: SiteSection<SiteLinkItem>;
   oss?: SiteSection<SiteLinkItem>;
+  scratchpad?: { label: string };
   resume?: SiteSection<SiteLinkItem>;
 }
 

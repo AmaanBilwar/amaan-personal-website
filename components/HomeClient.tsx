@@ -5,11 +5,12 @@ import Footer from "@/components/Footer";
 import type { SiteHome, SiteLinkItem, SiteRoleLinkItem } from "@/interfaces/site";
 
 export type BlogCategory = "tech" | "life";
+export type PostListCategory = BlogCategory | "scratchpad";
 
 export interface BlogPostLink {
   slug: string;
   title: string;
-  category: BlogCategory;
+  category: PostListCategory;
 }
 
 const BLOG_CATEGORIES: { id: BlogCategory; label: string }[] = [
@@ -295,7 +296,8 @@ export default function HomeClient({
               </div>
             )}
           </div>
-          {home.blogs && blogPosts.length > 0 && (
+          {home.blogs &&
+            blogPosts.some((post) => post.category === "tech" || post.category === "life") && (
             <div className="mt-5">
               <SectionLabel>{home.blogs.label}</SectionLabel>
               <div className="grid grid-cols-2 gap-x-6 pl-2">
@@ -333,6 +335,27 @@ export default function HomeClient({
                   ))}
                 </ul>
               </div>
+            </div>
+          )}
+
+          {home.scratchpad &&
+            blogPosts.some((post) => post.category === "scratchpad") && (
+            <div className="mt-5">
+              <SectionLabel>{home.scratchpad.label}</SectionLabel>
+              <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
+                {blogPosts
+                  .filter((post) => post.category === "scratchpad")
+                  .map((post) => (
+                    <li key={post.slug}>
+                      <Link
+                        href={`/blogs/${post.slug}`}
+                        className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100 hover:text-black"
+                      >
+                        {post.title}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
             </div>
           )}
 

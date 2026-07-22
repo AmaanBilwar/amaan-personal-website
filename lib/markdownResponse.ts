@@ -1,7 +1,7 @@
-import type { Post } from '@/interfaces/post';
-import type { SiteHome, SiteLinkItem, SiteRoleLinkItem, SiteSection } from '@/interfaces/site';
+import type { Post } from "@/interfaces/post";
+import type { SiteHome, SiteLinkItem, SiteRoleLinkItem, SiteSection } from "@/interfaces/site";
 
-const SITE_URL = 'https://amaandoes.tech';
+const SITE_URL = "https://amaandoes.tech";
 
 // Rough token estimate (~4 characters per token, matching common LLM tokenizers).
 // Surfaced to agents via the `x-markdown-tokens` response header so they can
@@ -17,27 +17,27 @@ export function markdownResponse(markdown: string): Response {
   return new Response(markdown, {
     status: 200,
     headers: {
-      'Content-Type': 'text/markdown; charset=utf-8',
-      'x-markdown-tokens': String(estimateTokens(markdown)),
+      "Content-Type": "text/markdown; charset=utf-8",
+      "x-markdown-tokens": String(estimateTokens(markdown)),
       // Content is prerendered and only changes on redeploy, so let the CDN
       // edge-cache it indefinitely (Vercel purges the cache on each deploy)
       // while browsers revalidate. `stale-while-revalidate` avoids a latency
       // spike on the first request after a purge.
-      'Cache-Control': 'public, max-age=0, s-maxage=31536000, stale-while-revalidate=86400',
-      Vary: 'Accept',
+      "Cache-Control": "public, max-age=0, s-maxage=31536000, stale-while-revalidate=86400",
+      Vary: "Accept",
     },
   });
 }
 
 function frontmatter(fields: Record<string, string | undefined>): string {
-  const lines = ['---'];
+  const lines = ["---"];
   for (const [key, value] of Object.entries(fields)) {
     if (value !== undefined) {
       lines.push(`${key}: ${JSON.stringify(value)}`);
     }
   }
-  lines.push('---', '');
-  return lines.join('\n');
+  lines.push("---", "");
+  return lines.join("\n");
 }
 
 export function buildPostMarkdown(post: Post): string {
@@ -46,41 +46,41 @@ export function buildPostMarkdown(post: Post): string {
     date: post.date,
     author: post.author,
     description: post.excerpt,
-    readingMinutes: post.readingMinutes,
+    readingMinutes: post.readingMinutes.toString(),
     url: `${SITE_URL}/blogs/${post.slug}`,
   });
   return `${fm}${post.content.trim()}\n`;
 }
 
 function isRoleLink(item: SiteLinkItem | SiteRoleLinkItem): item is SiteRoleLinkItem {
-  return 'role' in item;
+  return "role" in item;
 }
 
 function renderSection(section?: SiteSection<SiteLinkItem | SiteRoleLinkItem>): string {
-  if (!section) return '';
-  const lines = [`## ${section.label}`, ''];
+  if (!section) return "";
+  const lines = [`## ${section.label}`, ""];
   for (const item of section.items) {
     if (isRoleLink(item)) {
-      const detail = item.detail ? ` — ${item.detail}` : '';
+      const detail = item.detail ? ` — ${item.detail}` : "";
       lines.push(`- ${item.role} — [${item.name}](${item.href})${detail}`);
     } else {
-      const desc = item.description ? ` — ${item.description}` : '';
+      const desc = item.description ? ` — ${item.description}` : "";
       lines.push(`- [${item.label}](${item.href})${desc}`);
     }
   }
-  lines.push('');
-  return lines.join('\n');
+  lines.push("");
+  return lines.join("\n");
 }
 
 export function buildHomeMarkdown(
   home: SiteHome,
-  posts: Pick<Post, 'slug' | 'listTitle' | 'category'>[],
+  posts: Pick<Post, "slug" | "listTitle" | "category">[],
 ): string {
   const fm = frontmatter({ title: home.title, url: SITE_URL });
 
   const sections: string[] = [
     `# ${home.title}`,
-    '',
+    "",
     renderSection(home.currently),
     renderSection(home.previously),
     renderSection(home.projects),
@@ -88,21 +88,34 @@ export function buildHomeMarkdown(
 
   // Mirror the home page: short list titles grouped under tech / life.
   if (home.blogs) {
-    const blogLines = [`## ${home.blogs.label}`, ''];
-    for (const category of ['tech', 'life'] as const) {
+    const blogLines = [`## ${home.blogs.label}`, ""];
+    for (const category of ["tech", "life"] as const) {
       const grouped = posts.filter((post) => post.category === category);
       if (grouped.length === 0) continue;
-      blogLines.push(`### ${category}`, '');
+      blogLines.push(`### ${category}`, "");
       for (const post of grouped) {
         blogLines.push(`- [${post.listTitle}](${SITE_URL}/blogs/${post.slug})`);
       }
-      blogLines.push('');
+      blogLines.push("");
     }
-    sections.push(blogLines.join('\n'));
+    sections.push(blogLines.join("\n"));
   }
 
   sections.push(renderSection(home.oss));
+
+  if (home.scratchpad) {
+    const scratchpadPosts = posts.filter((post) => post.category === "scratchpad");
+    if (scratchpadPosts.length > 0) {
+      const lines = [`## ${home.scratchpad.label}`, ""];
+      for (const post of scratchpadPosts) {
+        lines.push(`- [${post.listTitle}](${SITE_URL}/blogs/${post.slug})`);
+      }
+      lines.push("");
+      sections.push(lines.join("\n"));
+    }
+  }
+
   sections.push(renderSection(home.resume));
 
-  return `${fm}${sections.join('\n')}`;
+  return `${fm}${sections.join("\n")}`;
 }

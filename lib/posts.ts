@@ -6,7 +6,7 @@ import { getReadingMinutes } from '@/lib/readingTime';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
-const VALID_CATEGORIES = new Set<PostCategory>(['tech', 'life']);
+const VALID_CATEGORIES = new Set<PostCategory>(['tech', 'life', 'scratchpad']);
 
 function parseCategory(value: unknown): PostCategory {
   if (typeof value === 'string' && VALID_CATEGORIES.has(value as PostCategory)) {

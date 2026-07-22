@@ -1,8 +1,8 @@
-export type PostCategory = 'tech' | 'life';
+export type PostCategory = "tech" | "life" | "scratchpad";
 
 export type Post = {
   slug: string;
-  extension: 'md' | 'mdx';
+  extension: "md" | "mdx";
   title: string;
   /** Short lowercase title for the home page list. Falls back to `title`. */
   listTitle: string;

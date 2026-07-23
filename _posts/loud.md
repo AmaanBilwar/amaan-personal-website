@@ -1,6 +1,6 @@
 ---
-title: 'passion'
-listTitle: 'passion'
+title: 'on speaking loudly'
+listTitle: 'on speaking loudly'
 category: scratchpad
 date: '2026-07-20'
 author: 'Amaan'
@@ -8,13 +8,8 @@ published: true
 excerpt: 'A place for my expeditious brains scattered thoughts.'
 ---
 
-There's now a very few things I speak very passionately about. Not sure why this is, but here it goes.
+There's now a very few things I speak very passionately or loudly about. Not sure why this is, but here it goes.
 
----
-
-I've started to speak about our countries politics a lot more openly. Though I'm not very educated when it comes to these things, I hope to change that. I've realized now more than ever how important it really is. I'm proud with the youth of this country to stand up after the last generations' absolute fuckery decision making has led this country into a very authoritarian state. It is now upon us to finally take a stand for our future. I cannot sit and stare at this fascist regime, i left the country to get higher education because of the exact reason I support this fully. Bettter education. 
-
-Accountability seems like an absurd idea to this regime. Not that they can use this protest as a vote bank but they'd rather kill the people that stand up against them. 
 
 ---
 
@@ -33,3 +28,5 @@ Most of it is to gain fake clout, and raise bigger numbers before their IPO. But
 I also have gotten back in letting my creative juices flow. No, I will not take back what I just typed. I want to create more meaningful content in video format, because that's what I'm relatively good at. You'll hopefully see some of this reflected on Blackboard's social media accounts and my own YouTube channel I'm trying to revive. See you there.
 
 ---
+
+[Politics]()

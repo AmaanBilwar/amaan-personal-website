@@ -17,6 +17,10 @@ items:
   - title: A Little Life
     author: Hanya Yanagihara
     status: reading 
+  - title: I, Robot 
+    href: https://www.google.com/search?q=asimov%27s++i%2C+robot&newwindow=1&sxsrf=APpeQnuqRPF_T7VQdwiCaNCCuNqFx7n95g%3A1784986250736&uact=5
+    author: Isaac Asimov
+    status: want 
 ---
 
 Site data for /reading. Your personal scratch list still lives in READING.md —

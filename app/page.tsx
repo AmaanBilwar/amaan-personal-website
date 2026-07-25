@@ -41,6 +41,10 @@ export default function HomePage() {
 
   const reading = getReadingContent();
   const readingItems = pickFeaturedReading(reading.items ?? [], home.reading?.featured);
+  const currentlyReadingTitle = home.currentlyReading?.title?.trim();
+  const currentlyReading = currentlyReadingTitle
+    ? (reading.items ?? []).find((item) => item.title.trim() === currentlyReadingTitle) ?? null
+    : null;
 
   const oss = getOssContent();
   const ossItems = pickFeaturedOss(oss.items ?? [], home.oss?.featured);
@@ -50,6 +54,7 @@ export default function HomePage() {
       home={home}
       blogPosts={blogPosts}
       readingItems={readingItems}
+      currentlyReading={currentlyReading}
       ossItems={ossItems}
     />
   );

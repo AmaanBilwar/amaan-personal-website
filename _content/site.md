@@ -15,6 +15,10 @@ home:
         name: UofCincy
         icon: /ucincy_logo.png
         iconAlt: University of Cincinnati
+  currentlyReading:
+    label: currently reading
+    # Must match a title in _content/reading.md
+    title: "I, Robot"
   previously:
     label: experience 
     items:
@@ -52,7 +56,7 @@ home:
         href: https://github.com/AmaanBilwar/better-vscode
         description: private, fast, debloated vscode
   blogs:
-    label: writing 
+    label: recent posts 
     # Curated subset on the home page. Full list lives at /blogs (nav: writing).
     featured:
       - home-row-mods

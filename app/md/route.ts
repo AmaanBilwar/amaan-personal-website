@@ -33,6 +33,11 @@ export function GET(): Response {
       })
     : (reading.items ?? []);
 
+  const currentlyReadingTitle = home.currentlyReading?.title?.trim();
+  const currentlyReading = currentlyReadingTitle
+    ? (reading.items ?? []).find((item) => item.title.trim() === currentlyReadingTitle) ?? null
+    : null;
+
   const oss = getOssContent();
   const featuredOss = home.oss?.featured;
   const byLabel = new Map((oss.items ?? []).map((item) => [item.label.trim(), item]));
@@ -43,5 +48,7 @@ export function GET(): Response {
       })
     : (oss.items ?? []);
 
-  return markdownResponse(buildHomeMarkdown(home, posts, readingItems, ossItems));
+  return markdownResponse(
+    buildHomeMarkdown(home, posts, readingItems, ossItems, currentlyReading),
+  );
 }

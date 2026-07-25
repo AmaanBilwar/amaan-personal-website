@@ -106,9 +106,7 @@ function LinkItem({ item }: { item: SiteLinkItem }) {
 
   const body = (
     <>
-      <span className="text-stone-600 group-hover:text-black transition-colors">
-        {item.label}
-      </span>
+      <span className="text-stone-600 group-hover:text-black transition-colors">{item.label}</span>
       {item.description && (
         <span className="text-stone-400 group-hover:text-stone-600 transition-colors hidden group-hover:inline">
           — {item.description}
@@ -140,11 +138,13 @@ export default function HomeClient({
   home,
   blogPosts,
   readingItems = [],
+  currentlyReading = null,
   ossItems = [],
 }: {
   home: SiteHome;
   blogPosts: BlogPostLink[];
   readingItems?: ReadingItem[];
+  currentlyReading?: ReadingItem | null;
   ossItems?: OssItem[];
 }) {
   const [isHovering, setIsHovering] = useState(false);
@@ -266,6 +266,33 @@ export default function HomeClient({
           </div>
         )}
 
+        {home.currentlyReading && currentlyReading && (
+          <div>
+            <SectionLabel>{home.currentlyReading.label}</SectionLabel>
+            <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
+              {currentlyReading.href ? (
+                <LinkItem
+                  item={{
+                    label: currentlyReading.title,
+                    href: currentlyReading.href,
+                    description: currentlyReading.author ?? currentlyReading.note,
+                  }}
+                />
+              ) : (
+                <li className="-mx-2 rounded-md px-2 py-0.5 text-stone-600">
+                  {currentlyReading.title}
+                  {(currentlyReading.author || currentlyReading.note) && (
+                    <span className="italic text-stone-400">
+                      {" "}
+                      — {currentlyReading.author ?? currentlyReading.note}
+                    </span>
+                  )}
+                </li>
+              )}
+            </ul>
+          </div>
+        )}
+
         <div className="h-auto">
           <div className="mt-5 space-y-4">
             {home.previously && (
@@ -293,95 +320,20 @@ export default function HomeClient({
             )}
           </div>
           {home.blogs && blogPosts.length > 0 && (
-              <div id="writing" className="mt-5 scroll-mt-16">
-                <SectionLabel>{home.blogs.label}</SectionLabel>
-                <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
-                  {blogPosts.map((post) => (
-                    <li key={post.slug}>
-                      <Link
-                        href={`/blogs/${post.slug}`}
-                        className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100 hover:text-black"
-                      >
-                        {post.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <div className="-mx-2 mt-2 px-2 pl-2">
-                  <Link
-                    href="/blogs"
-                    className="inline-block -mx-2 rounded-md px-2 py-0.5 text-sm md:text-base text-stone-500 transition-colors hover:bg-stone-100 hover:text-black"
-                  >
-                    see everything →
-                  </Link>
-                </div>
-              </div>
-            )}
-
-          {home.reading && (readingItems.length > 0 || (home.reading.items?.length ?? 0) > 0) && (
-            <div className="mt-5">
-              <SectionLabel>{home.reading.label}</SectionLabel>
-              <div className="-mx-2 px-2">
-                <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
-                  {readingItems.length > 0
-                    ? readingItems.map((item) =>
-                        item.href ? (
-                          <LinkItem
-                            key={item.title}
-                            item={{
-                              label: item.title,
-                              href: item.href,
-                              description: item.author ?? item.note,
-                            }}
-                          />
-                        ) : (
-                          <li key={item.title} className="-mx-2 rounded-md px-2 py-0.5 text-stone-600">
-                            {item.title}
-                            {(item.author || item.note) && (
-                              <span className="text-stone-400">
-                                {" "}
-                                — {item.author ?? item.note}
-                              </span>
-                            )}
-                          </li>
-                        ),
-                      )
-                    : home.reading.items?.map((item, i) => (
-                        <LinkItem key={`${item.href}-${i}`} item={item} />
-                      ))}
-                </ul>
-              </div>
-              <div className="-mx-2 mt-2 px-2 pl-2">
-                <Link
-                  href="/reading"
-                  className="inline-block -mx-2 rounded-md px-2 py-0.5 text-sm md:text-base text-stone-500 transition-colors hover:bg-stone-100 hover:text-black"
-                >
-                  see everything →
-                </Link>
-              </div>
-            </div>
-          )}
-
-          {home.oss && (ossItems.length > 0 || (home.oss.items?.length ?? 0) > 0) && (
-            <div className="mt-5">
-              <SectionLabel>{home.oss.label}</SectionLabel>
-              <div className="-mx-2 px-2">
-                <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
-                  {ossItems.length > 0
-                    ? ossItems.map((item) => <LinkItem key={item.label} item={item} />)
-                    : home.oss.items?.map((item, i) => (
-                        <LinkItem key={`${item.href}-${i}`} item={item} />
-                      ))}
-                </ul>
-              </div>
-              <div className="-mx-2 mt-2 px-2 pl-2">
-                <Link
-                  href="/oss"
-                  className="inline-block -mx-2 rounded-md px-2 py-0.5 text-sm md:text-base text-stone-500 transition-colors hover:bg-stone-100 hover:text-black"
-                >
-                  see everything →
-                </Link>
-              </div>
+            <div id="writing" className="mt-5 scroll-mt-16">
+              <SectionLabel>{home.blogs.label}</SectionLabel>
+              <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
+                {blogPosts.map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/blogs/${post.slug}`}
+                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100 hover:text-black"
+                    >
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 

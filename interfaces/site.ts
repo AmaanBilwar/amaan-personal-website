@@ -27,6 +27,8 @@ export interface SiteSection<T> {
 export interface SiteHome {
   title: string;
   currently?: SiteSection<SiteRoleLinkItem>;
+  /** Single book shown under currently — title must match `_content/reading.md`. */
+  currentlyReading?: { label: string; title: string };
   previously?: SiteSection<SiteRoleLinkItem>;
   projects?: SiteSection<SiteLinkItem>;
   blogs?: { label: string; /** Slugs shown on the home page. Omit to show all. */ featured?: string[] };

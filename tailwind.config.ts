@@ -9,11 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        // Prefer named SF Pro when installed; -apple-system/system-ui after so
+        // Linux doesn't short-circuit to the desktop UI font before SF Pro is tried.
         serif: [
-          "-apple-system",
-          "BlinkMacSystemFont",
           '"SF Pro Text"',
           '"SF Pro Display"',
+          "-apple-system",
+          "BlinkMacSystemFont",
           "system-ui",
           '"Segoe UI"',
           "Roboto",

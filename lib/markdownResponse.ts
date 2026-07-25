@@ -77,10 +77,20 @@ export function buildHomeMarkdown(
   posts: Pick<Post, "slug" | "listTitle" | "category">[],
   readingItems: Array<{ title: string; href?: string; author?: string; note?: string }> = [],
   ossItems: Array<{ label: string; href: string; description?: string }> = [],
+  currentlyReading: { title: string; href?: string; author?: string; note?: string } | null = null,
 ): string {
   const fm = frontmatter({ title: home.title, url: SITE_URL });
 
   const sections: string[] = [`# ${home.title}`, "", renderSection(home.currently)];
+
+  if (home.currentlyReading && currentlyReading) {
+    const meta = [currentlyReading.author, currentlyReading.note].filter(Boolean).join(" — ");
+    const suffix = meta ? ` — ${meta}` : "";
+    const line = currentlyReading.href
+      ? `- [${currentlyReading.title}](${currentlyReading.href})${suffix}`
+      : `- ${currentlyReading.title}${suffix}`;
+    sections.push(`## ${home.currentlyReading.label}`, "", line, "");
+  }
 
   sections.push(
     renderSection(home.previously),

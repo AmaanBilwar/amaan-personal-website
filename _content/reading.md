@@ -2,6 +2,9 @@
 title: reading
 description: things i'm reading, have read, or want to read
 items:
+  - title: The Future Worth Building Is Human 
+    href: https://thinkingmachines.ai/blog/the-future-worth-building-is-human/
+    status: read 
   - title: everyone should know simd 
     href: https://mitchellh.com/writing/everyone-should-know-simd    
     status: reading 

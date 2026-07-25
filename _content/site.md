@@ -16,7 +16,7 @@ home:
         icon: /ucincy_logo.png
         iconAlt: University of Cincinnati
   previously:
-    label: previously
+    label: experience 
     items:
       - role: Bug bashing
         href: https://zed.dev/community/guild
@@ -52,21 +52,25 @@ home:
         href: https://github.com/AmaanBilwar/better-vscode
         description: private, fast, debloated vscode
   blogs:
-    label: blogs
+    label: writing 
+    # Curated subset on the home page. Full list lives at /blogs (nav: writing).
+    featured:
+      - home-row-mods
+      - tools
+      - startup
   reading:
     label: reading
-    items:
-      - label: "Computer Systems: A Programmer's Perspective"
-        href: https://csapp.cs.cmu.edu/
+    # Curated subset on the home page. Full list lives at /reading.
+    featured:
+      - everyone should know simd
+      - "Computer Systems: A Programmer's Perspective"
+      - A Little Life
   oss:
     label: oss
-    items:
-      - label: zed ide
-        href: https://github.com/zed-industries/zed/pulls?q=is%3Apr+author%3AAmaanBilwar
-      - label: gemini cli
-        href: https://github.com/google-gemini/gemini-cli/pulls?q=+is%3Apr+author%3Aamaanbilwar+
-      - label: helixdb
-        href: https://github.com/helixdb/helix-db/pulls/amaanbilwar
+    # Curated subset on the home page. Full list lives at /oss.
+    featured:
+      - zed ide
+      - helixdb
   scratchpad:
     label: scratchpad
 ui:

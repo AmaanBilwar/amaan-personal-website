@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type React from "react";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-white min-h-screen antialiased font-serif text-black">{children}</body>
+      <body className="flex min-h-screen flex-col bg-white antialiased font-serif text-black">
+        <Navbar />
+        <div className="flex-1">{children}</div>
+      </body>
     </html>
   );
 }

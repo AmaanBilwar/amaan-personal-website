@@ -13,12 +13,8 @@ describe("Home Page", () => {
     expect(screen.getByText("currently")).toBeInTheDocument();
   });
 
-  it("renders blogs grouped by tech and life with short list titles", () => {
+  it("renders curated writing titles on the home page", () => {
     render(<Home />);
-    expect(screen.getByText("tech")).toBeInTheDocument();
-    expect(screen.getByText("life")).toBeInTheDocument();
-    // expect(screen.getByText('git troubles')).toBeInTheDocument();
     expect(screen.getByText("life lately")).toBeInTheDocument();
-    // expect(screen.queryByText("Saving you from your Git troubles")).not.toBeInTheDocument();
   });
 });

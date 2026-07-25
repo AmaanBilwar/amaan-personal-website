@@ -29,9 +29,21 @@ export interface SiteHome {
   currently?: SiteSection<SiteRoleLinkItem>;
   previously?: SiteSection<SiteRoleLinkItem>;
   projects?: SiteSection<SiteLinkItem>;
-  blogs?: { label: string };
-  reading?: SiteSection<SiteLinkItem>;
-  oss?: SiteSection<SiteLinkItem>;
+  blogs?: { label: string; /** Slugs shown on the home page. Omit to show all. */ featured?: string[] };
+  reading?: {
+    label: string;
+    /** Titles from `_content/reading.md` shown on the home page. Omit to show all. */
+    featured?: string[];
+    /** @deprecated Prefer `featured` + `_content/reading.md`. Kept for older site.md. */
+    items?: SiteLinkItem[];
+  };
+  oss?: {
+    label: string;
+    /** Labels from `_content/oss.md` shown on the home page. Omit to show all. */
+    featured?: string[];
+    /** @deprecated Prefer `featured` + `_content/oss.md`. */
+    items?: SiteLinkItem[];
+  };
   scratchpad?: { label: string };
   resume?: SiteSection<SiteLinkItem>;
 }

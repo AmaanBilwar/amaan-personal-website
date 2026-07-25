@@ -10,11 +10,16 @@ const config: Config = {
     extend: {
       fontFamily: {
         serif: [
-          '"Lucida Console"',
-          '"Lucida Sans Typewriter"',
-          "Monaco",
-          '"Courier New"',
-          "monospace",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          "system-ui",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          "sans-serif",
         ],
       },
       colors: {

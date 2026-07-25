@@ -15,3 +15,6 @@
 ## story books
 
 - a little life by hanya yanagihara
+
+
+- https://mitchellh.com/writing/everyone-should-know-simd

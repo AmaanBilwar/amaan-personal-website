@@ -6,6 +6,28 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-link {
+  transition:
+    transform 160ms var(--ease-out),
+    color 200ms ease,
+    background-color 200ms ease;
+}
+
+.nav-link:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link {
+    transition: color 150ms ease, background-color 150ms ease;
+  }
+
+  .nav-link:active {
+    transform: none;
+  }
 }
 
 body {

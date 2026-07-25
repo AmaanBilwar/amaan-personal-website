@@ -75,33 +75,56 @@ function renderSection(section?: SiteSection<SiteLinkItem | SiteRoleLinkItem>): 
 export function buildHomeMarkdown(
   home: SiteHome,
   posts: Pick<Post, "slug" | "listTitle" | "category">[],
+  readingItems: Array<{ title: string; href?: string; author?: string; note?: string }> = [],
+  ossItems: Array<{ label: string; href: string; description?: string }> = [],
 ): string {
   const fm = frontmatter({ title: home.title, url: SITE_URL });
 
-  const sections: string[] = [
-    `# ${home.title}`,
-    "",
-    renderSection(home.currently),
+  const sections: string[] = [`# ${home.title}`, "", renderSection(home.currently)];
+
+  sections.push(
     renderSection(home.previously),
     renderSection(home.projects),
-  ];
+  );
 
-  // Mirror the home page: short list titles grouped under tech / life.
+  // Mirror the home page: curated flat list.
   if (home.blogs) {
     const blogLines = [`## ${home.blogs.label}`, ""];
-    for (const category of ["tech", "life"] as const) {
-      const grouped = posts.filter((post) => post.category === category);
-      if (grouped.length === 0) continue;
-      blogLines.push(`### ${category}`, "");
-      for (const post of grouped) {
-        blogLines.push(`- [${post.listTitle}](${SITE_URL}/blogs/${post.slug})`);
-      }
-      blogLines.push("");
+    for (const post of posts) {
+      blogLines.push(`- [${post.listTitle}](${SITE_URL}/blogs/${post.slug})`);
     }
+    blogLines.push("", `- [see everything →](${SITE_URL}/blogs)`, "");
     sections.push(blogLines.join("\n"));
   }
 
-  sections.push(renderSection(home.oss));
+  if (home.reading && readingItems.length > 0) {
+    const lines = [`## ${home.reading.label}`, ""];
+    for (const item of readingItems) {
+      const meta = [item.author, item.note].filter(Boolean).join(" — ");
+      const suffix = meta ? ` — ${meta}` : "";
+      if (item.href) {
+        lines.push(`- [${item.title}](${item.href})${suffix}`);
+      } else {
+        lines.push(`- ${item.title}${suffix}`);
+      }
+    }
+    lines.push("", `- [see everything →](${SITE_URL}/reading)`, "");
+    sections.push(lines.join("\n"));
+  } else {
+    sections.push(renderSection(home.reading as SiteSection<SiteLinkItem> | undefined));
+  }
+
+  if (home.oss && ossItems.length > 0) {
+    const lines = [`## ${home.oss.label}`, ""];
+    for (const item of ossItems) {
+      const desc = item.description ? ` — ${item.description}` : "";
+      lines.push(`- [${item.label}](${item.href})${desc}`);
+    }
+    lines.push("", `- [see everything →](${SITE_URL}/oss)`, "");
+    sections.push(lines.join("\n"));
+  } else {
+    sections.push(renderSection(home.oss as SiteSection<SiteLinkItem> | undefined));
+  }
 
   if (home.scratchpad) {
     const scratchpadPosts = posts.filter((post) => post.category === "scratchpad");

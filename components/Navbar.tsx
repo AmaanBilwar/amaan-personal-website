@@ -39,19 +39,24 @@ export default function Navbar() {
         <Link
           href="/"
           aria-current={isHome ? "page" : undefined}
-          className="nav-link -ml-2 rounded-md px-2 py-1 text-sm text-stone-600 hover:bg-stone-100 hover:text-black"
+          className={[
+            "nav-link -ml-2 px-0 py-1 text-sm",
+            isHome
+              ? "text-black underline decoration-current underline-offset-4"
+              : "text-stone-600 hover:text-black",
+          ].join(" ")}
         >
-          amaan
+          Amaan
         </Link>
 
-        <ul className="flex items-center gap-0.5">
+        <ul className="flex items-center gap-3">
           {NAV_LINKS.map((link) => {
             const active = "isActive" in link && link.isActive(pathname);
             const className = [
-              "nav-link rounded-md px-2 py-1 text-sm",
+              "nav-link px-0 py-1 text-sm",
               active
-                ? "bg-stone-100 text-black"
-                : "text-stone-600 hover:bg-stone-100 hover:text-black",
+                ? "text-black underline decoration-current underline-offset-4"
+                : "text-stone-600 hover:text-black",
             ].join(" ");
 
             if ("external" in link) {

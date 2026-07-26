@@ -28,6 +28,7 @@ export default function HomePage() {
     slug: post.slug,
     title: post.listTitle,
     category: post.category,
+    date: post.date,
   }));
 
   const featuredBlogs = home.blogs?.featured;

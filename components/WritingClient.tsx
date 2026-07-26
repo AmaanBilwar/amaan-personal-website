@@ -16,7 +16,6 @@ const FILTERS: { id: "all" | PostCategory; label: string }[] = [
   { id: "all", label: "all" },
   { id: "tech", label: "tech" },
   { id: "life", label: "life" },
-  { id: "scratchpad", label: "scratchpad" },
 ];
 
 export default function WritingClient({ posts }: { posts: WritingPost[] }) {
@@ -32,19 +31,23 @@ export default function WritingClient({ posts }: { posts: WritingPost[] }) {
     [filter, posts],
   );
 
+  const writingPosts = useMemo(
+    () => posts.filter((post) => post.category !== "scratchpad"),
+    [posts],
+  );
+
+  const scratchpadPosts = useMemo(
+    () => posts.filter((post) => post.category === "scratchpad"),
+    [posts],
+  );
+
   return (
     <main className="relative z-10 flex min-h-full flex-col items-center p-5 md:p-12">
       <div className="mx-auto w-full max-w-xl space-y-5">
         <div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black">writing</h1>
-          <p className="mt-2 text-sm md:text-base text-stone-500">
-            {filter === "all"
-              ? `everything published — ${posts.length} ${posts.length === 1 ? "piece" : "pieces"}`
-              : `${filtered.length} of ${posts.length}`}
-          </p>
         </div>
-
-        <div className="flex flex-wrap gap-0.5" role="tablist" aria-label="Filter by category">
+        <div className="flex flex-wrap gap-3" role="tablist" aria-label="Filter by category">
           {available.map(({ id, label }) => {
             const active = filter === id;
             return (
@@ -55,10 +58,10 @@ export default function WritingClient({ posts }: { posts: WritingPost[] }) {
                 aria-selected={active}
                 onClick={() => setFilter(id)}
                 className={[
-                  "nav-link rounded-md px-2 py-1 text-sm",
+                  "nav-link px-0 py-1 text-sm",
                   active
-                    ? "bg-stone-100 text-black"
-                    : "text-stone-600 hover:bg-stone-100 hover:text-black",
+                    ? "text-black underline decoration-current underline-offset-4"
+                    : "text-stone-600 hover:text-black",
                 ].join(" ")}
               >
                 {label}
@@ -67,15 +70,53 @@ export default function WritingClient({ posts }: { posts: WritingPost[] }) {
           })}
         </div>
 
-        {filtered.length > 0 ? (
+        {filter === "all" ? (
+          <div className="space-y-3">
+            {writingPosts.length > 0 && (
+              <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
+                {writingPosts.map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/blogs/${post.slug}`}
+                      className="nav-link -mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
+                    >
+                      <span className="whitespace-nowrap text-stone-400">{post.date}</span>
+                      <span className="flex-1 text-right">{post.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {scratchpadPosts.length > 0 && (
+              <div className="pl-2">
+                <p className="mb-1.5 text-sm text-stone-500">scratchpad</p>
+                <ul className="text-sm md:text-base text-stone-600 space-y-1.5">
+                  {scratchpadPosts.map((post) => (
+                    <li key={post.slug}>
+                      <Link
+                        href={`/blogs/${post.slug}`}
+                        className="nav-link -mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
+                      >
+                        <span className="whitespace-nowrap text-stone-400">{post.date}</span>
+                        <span className="flex-1 text-right">{post.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : filtered.length > 0 ? (
           <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
             {filtered.map((post) => (
               <li key={post.slug}>
                 <Link
                   href={`/blogs/${post.slug}`}
-                  className="nav-link block -mx-2 rounded-md px-2 py-0.5 text-stone-600"
+                  className="nav-link -mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
                 >
-                  {post.title}
+                  <span className="whitespace-nowrap text-stone-400">{post.date}</span>
+                  <span className="flex-1 text-right">{post.title}</span>
                 </Link>
               </li>
             ))}

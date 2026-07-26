@@ -35,18 +35,10 @@ export default function OssClient({
       <div className="mx-auto w-full max-w-xl space-y-5">
         <div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black">{title}</h1>
-          {description && (
-            <p className="mt-2 text-sm md:text-base text-stone-500">{description}</p>
-          )}
-          <p className="mt-2 text-sm md:text-base text-stone-500">
-            {filter === "all"
-              ? `${items.length} ${items.length === 1 ? "project" : "projects"}`
-              : `${filtered.length} of ${items.length}`}
-          </p>
         </div>
 
         {filters.length > 1 && (
-          <div className="flex flex-wrap gap-0.5" role="tablist" aria-label="Filter by project">
+          <div className="flex flex-wrap gap-3" role="tablist" aria-label="Filter by project">
             {filters.map(({ id, label }) => {
               const active = filter === id;
               return (
@@ -57,10 +49,10 @@ export default function OssClient({
                   aria-selected={active}
                   onClick={() => setFilter(id)}
                   className={[
-                    "nav-link rounded-md px-2 py-1 text-sm",
+                    "nav-link px-0 py-1 text-sm",
                     active
-                      ? "bg-stone-100 text-black"
-                      : "text-stone-600 hover:bg-stone-100 hover:text-black",
+                      ? "text-black underline decoration-current underline-offset-4"
+                      : "text-stone-600 hover:text-black",
                   ].join(" ")}
                 >
                   {label}

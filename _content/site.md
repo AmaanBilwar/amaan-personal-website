@@ -45,7 +45,7 @@ home:
         name: Honeywell
         icon: /Honeywell-Logo.png
         iconAlt: Honeywell
-        detail: Distributed systems with Go, Kubernetes and Spring Boot to keep legacy services alive and kicking — distributed workflows, reliability work.
+        detail: Distributed systems with Go, Kubernetes and Spring Boot to keep legacy services alive and kicking. 
   projects:
     label: projects
     items:

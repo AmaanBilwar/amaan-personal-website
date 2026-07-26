@@ -13,6 +13,7 @@ export interface BlogPostLink {
   slug: string;
   title: string;
   category: PostListCategory;
+  date: string;
 }
 
 function RoleRowContent({ item }: { item: SiteRoleLinkItem }) {
@@ -190,6 +191,9 @@ export default function HomeClient({
     };
   }, [isHovering]);
 
+  const writingPosts = blogPosts.filter((post) => post.category !== "scratchpad");
+  const scratchpadPosts = blogPosts.filter((post) => post.category === "scratchpad");
+
   return (
     <main className="relative z-10 flex min-h-full flex-col items-center justify-center p-5 md:p-12">
       {/* Hero Section */}
@@ -323,37 +327,37 @@ export default function HomeClient({
             <div id="writing" className="mt-5 scroll-mt-16">
               <SectionLabel>{home.blogs.label}</SectionLabel>
               <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
-                {blogPosts.map((post) => (
+                {writingPosts.map((post) => (
                   <li key={post.slug}>
                     <Link
                       href={`/blogs/${post.slug}`}
-                      className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100 hover:text-black"
+                      className="-mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 transition-colors hover:bg-stone-100 hover:text-black"
                     >
-                      {post.title}
+                      <span className="whitespace-nowrap text-stone-400">{post.date}</span>
+                      <span className="flex-1 text-right">{post.title}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
-          )}
 
-          {home.scratchpad && blogPosts.some((post) => post.category === "scratchpad") && (
-            <div className="mt-5">
-              <SectionLabel>{home.scratchpad.label}</SectionLabel>
-              <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
-                {blogPosts
-                  .filter((post) => post.category === "scratchpad")
-                  .map((post) => (
-                    <li key={post.slug}>
-                      <Link
-                        href={`/blogs/${post.slug}`}
-                        className="block -mx-2 px-2 py-0.5 rounded-md transition-colors hover:bg-stone-100 hover:text-black"
-                      >
-                        {post.title}
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
+              {scratchpadPosts.length > 0 && (
+                <div className="mt-3 pl-2">
+                  <p className="mb-1.5 text-sm text-stone-500">{home.scratchpad?.label ?? "scratchpad"}</p>
+                  <ul className="text-sm md:text-base text-stone-600 space-y-1.5">
+                    {scratchpadPosts.map((post) => (
+                      <li key={post.slug}>
+                        <Link
+                          href={`/blogs/${post.slug}`}
+                          className="-mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 transition-colors hover:bg-stone-100 hover:text-black"
+                        >
+                          <span className="whitespace-nowrap text-stone-400">{post.date}</span>
+                          <span className="flex-1 text-right">{post.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           )}
 

@@ -81,7 +81,7 @@ export default function ReadingClient({ reading }: { reading: ReadingContent }) 
             spellCheck={false}
             className="w-full rounded-md border border-stone-200 bg-white px-3 py-2 text-sm text-stone-700 placeholder:text-stone-400 outline-none transition-[border-color] duration-200 ease focus:border-stone-400"
           />
-          <p className="mt-1.5 text-xs text-stone-400">
+          <p className="pl-2 mt-2 text-xs text-stone-400">
             {searching
               ? `${filtered.length} of ${totalCount}`
               : `${totalCount} ${totalCount === 1 ? "item" : "items"}`}

@@ -2,6 +2,15 @@
 title: reading
 description: things i'm reading, have read, or want to read
 items:
+  - title: GrapheneOS duress PIN could land a man in prison
+    href: https://www.androidauthority.com/grapheneos-duress-pin-us-prosecution-3691271/
+    status: read 
+  - title: the doom justifies the valuation 
+    href: https://geohot.github.io/blog/jekyll/update/2026/06/21/the-doom-justifies-the-valuation.html
+    status: read 
+  - title: AI 2040 and the Cult of Intelligence 
+    href: https://geohot.github.io/blog/jekyll/update/2026/07/11/ai-2040.html
+    status: read 
   - title: The Future Worth Building Is Human 
     href: https://thinkingmachines.ai/blog/the-future-worth-building-is-human/
     status: read 

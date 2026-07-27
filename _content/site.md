@@ -49,9 +49,12 @@ home:
   projects:
     label: projects
     items:
-      - label: the-search-thing
-        description: semantic search engine for your OS
+      - label: yet another video editor
+        description: NLE(browser, native, mobile) 
         href: https://github.com/AmaanBilwar/the-search-thing
+      - label: the-search-thing
+        description: fastest search tool for your computer 
+        href: https://github.com/the-search-thing/the-search-thing
       - label: better-vscode
         href: https://github.com/AmaanBilwar/better-vscode
         description: private, fast, debloated vscode

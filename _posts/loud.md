@@ -29,4 +29,6 @@ I also have gotten back in letting my creative juices flow. No, I will not take 
 
 ---
 
-[Politics]()
+[Politics]() 
+
+_will link to my substack eventually i dont want politics on here, not yet atleast_ 

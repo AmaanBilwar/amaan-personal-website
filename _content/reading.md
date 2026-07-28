@@ -2,9 +2,13 @@
 title: reading
 description: things i'm reading or have read
 items:
+  - title: "The forgotten history of how automakers invented the crime of 'jaywalking'"
+    href: https://www.vox.com/2015/1/15/7551873/jaywalking-history
+  - title: "exactly one: notes on copying myself"
+    href: https://primal.net/a/naddr1qvzqqqr4gupzqel4c202xkzc84ef8a0wfkkcz4zlrgtndenh36wnkl02krjx4z48qq3k27rpvd6xc7fddahx2ttwda6x2ueddahz6cm0wpukjmn894khjum9d3nqrejylm/
   - title: Crafting Interpreters
     href: https://craftinginterpreters.com/
-   - title: GrapheneOS duress PIN could land a man in prison
+  - title: GrapheneOS duress PIN could land a man in prison
     href: https://www.androidauthority.com/grapheneos-duress-pin-us-prosecution-3691271/
   - title: the doom justifies the valuation 
     href: https://geohot.github.io/blog/jekyll/update/2026/06/21/the-doom-justifies-the-valuation.html

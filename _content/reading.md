@@ -2,7 +2,9 @@
 title: reading
 description: things i'm reading or have read
 items:
-  - title: GrapheneOS duress PIN could land a man in prison
+  - title: Crafting Interpreters
+    href: https://craftinginterpreters.com/
+   - title: GrapheneOS duress PIN could land a man in prison
     href: https://www.androidauthority.com/grapheneos-duress-pin-us-prosecution-3691271/
   - title: the doom justifies the valuation 
     href: https://geohot.github.io/blog/jekyll/update/2026/06/21/the-doom-justifies-the-valuation.html

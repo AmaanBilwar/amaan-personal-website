@@ -51,7 +51,7 @@ home:
     items:
       - label: yet another video editor
         description: NLE(browser, native, mobile - eventually) 
-        href: https://github.com/AmaanBilwar/the-search-thing
+        href: https://amaandoes.tech/ 
       - label: the-search-thing
         description: fastest search tool for your computer 
         href: https://github.com/the-search-thing/the-search-thing

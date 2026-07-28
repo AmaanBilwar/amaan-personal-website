@@ -12,9 +12,3 @@
 - build a small database (b-tree + wal + transactions)
 - the dragon book about compilers
 
-## story books
-
-- a little life by hanya yanagihara
-
-
-- https://mitchellh.com/writing/everyone-should-know-simd

@@ -273,7 +273,7 @@ export default function HomeClient({
         {home.currentlyReading && currentlyReading && (
           <div>
             <SectionLabel>{home.currentlyReading.label}</SectionLabel>
-            <ul className="text-sm md:text-base text-stone-600 space-y-1.5 pl-2">
+            <ul className="text-sm md:text-base font-bold text-stone-600 space-y-1.5 pl-2">
               {currentlyReading.href ? (
                 <LinkItem
                   item={{

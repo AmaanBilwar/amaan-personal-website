@@ -28,3 +28,7 @@ Apparently this is a hot take? it's definitely not for me. and if it is for you,
 so this is what i meant by becoming a bad texter. not being available of people that don't value my time. and if they know for a fact they are doing this they for sure won't call. I don't they'd even have my number. So if you're one the people that i take 2-4 business days to respond to, Congratulations! now you know why. if it takes me longer than that, I either hate you from the bottom of my heart or responded to you in my head(seems to be happening a lot these days).
 
 ---
+
+how are you going to be upset when I respond to you with seemingly 0 interest? My guy you didn't want to talk to me, not the other way around. Oh look how the tables have turned. Reading this back makes me realize this is so stupid and people should set clear boundaries from the start. I am people. I had to get it off my chest and now that it's done. See you later, losers!
+
+---

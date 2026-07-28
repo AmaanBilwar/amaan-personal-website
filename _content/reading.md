@@ -2,6 +2,8 @@
 title: reading
 description: things i'm reading or have read
 items:
+  - title: The Handmade Manifesto
+    href: https://handmade.network/manifesto
   - title: "The forgotten history of how automakers invented the crime of 'jaywalking'"
     href: https://www.vox.com/2015/1/15/7551873/jaywalking-history
   - title: "exactly one: notes on copying myself"

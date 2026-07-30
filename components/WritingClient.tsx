@@ -58,7 +58,7 @@ export default function WritingClient({ posts }: { posts: WritingPost[] }) {
                 aria-selected={active}
                 onClick={() => setFilter(id)}
                 className={[
-                  "nav-link px-0 py-1 text-sm",
+                  "px-0 py-1 text-sm transition-colors",
                   active
                     ? "text-black underline decoration-current underline-offset-4"
                     : "text-stone-600 hover:text-black",
@@ -78,7 +78,7 @@ export default function WritingClient({ posts }: { posts: WritingPost[] }) {
                   <li key={post.slug}>
                     <Link
                       href={`/blogs/${post.slug}`}
-                      className="nav-link -mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
+                      className="-mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
                     >
                       <span className="whitespace-nowrap text-stone-400">{post.date}</span>
                       <span className="flex-1 text-right">{post.title}</span>
@@ -96,7 +96,7 @@ export default function WritingClient({ posts }: { posts: WritingPost[] }) {
                     <li key={post.slug}>
                       <Link
                         href={`/blogs/${post.slug}`}
-                        className="nav-link -mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
+                        className="-mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
                       >
                         <span className="whitespace-nowrap text-stone-400">{post.date}</span>
                         <span className="flex-1 text-right">{post.title}</span>
@@ -113,7 +113,7 @@ export default function WritingClient({ posts }: { posts: WritingPost[] }) {
               <li key={post.slug}>
                 <Link
                   href={`/blogs/${post.slug}`}
-                  className="nav-link -mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
+                  className="-mx-2 flex items-baseline justify-between gap-4 rounded-md px-2 py-0.5 text-stone-600"
                 >
                   <span className="whitespace-nowrap text-stone-400">{post.date}</span>
                   <span className="flex-1 text-right">{post.title}</span>

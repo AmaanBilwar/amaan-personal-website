@@ -25,7 +25,8 @@ describe("Blog post view", () => {
 
   it("renders the back link", () => {
     renderBlogPost();
-    expect(screen.getByText("back")).toBeInTheDocument();
+    const backLink = screen.getByText("back").closest("a");
+    expect(backLink).toHaveAttribute("href", "/writing");
   });
 
   it("renders reading time next to the date", () => {

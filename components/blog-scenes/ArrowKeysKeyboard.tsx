@@ -24,7 +24,7 @@ const ROWS: KeyDef[][] = [
     { id: "y", label: "Y" },
     { id: "u", label: "U" },
     { id: "i", label: "I", layerLabel: "↑" },
-    { id: "o", label: "O" },
+    { id: "o", label: "O", layerLabel: "`" },
     { id: "p", label: "P" },
     { id: "bsp", label: "bsp", width: 1.5, muted: true },
   ],

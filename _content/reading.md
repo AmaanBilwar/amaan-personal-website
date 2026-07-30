@@ -2,6 +2,8 @@
 title: reading
 description: things i'm reading or have read
 items:
+  - title: how to ask questions the smart way
+    href: https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way/blob/master/How-To-Ask-Questions-The-Smart-Way.md
   - title: The Handmade Manifesto
     href: https://handmade.network/manifesto
   - title: "The forgotten history of how automakers invented the crime of 'jaywalking'"
@@ -20,8 +22,6 @@ items:
     href: https://thinkingmachines.ai/blog/the-future-worth-building-is-human/
   - title: everyone should know simd 
     href: https://mitchellh.com/writing/everyone-should-know-simd    
-  - title: how to ask questions the smart way
-    href: http://www.catb.org/~esr/faqs/smart-questions.html
   - title: "Computer Systems: A Programmer's Perspective"
     href: https://csapp.cs.cmu.edu/
   - title: "Operating Systems: Three Easy Pieces"

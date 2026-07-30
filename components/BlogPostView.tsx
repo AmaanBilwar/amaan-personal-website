@@ -39,7 +39,7 @@ export default function BlogPostView({
       <div className="max-w-6xl mx-auto pt-12 flex gap-10 items-start justify-center">
         <article className="w-full max-w-4xl min-w-0">
           <Link
-            href="/"
+            href="/writing"
             className="inline-flex items-center gap-2 text-stone-500 hover:text-black hover:bg-stone-100 transition-colors mb-4 text-sm px-2 py-1 -ml-2 rounded-md"
           >
             <svg aria-label="Go back" width="16" height="16" viewBox="0 0 16 16" fill="none">

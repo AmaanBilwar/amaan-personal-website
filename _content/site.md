@@ -51,7 +51,7 @@ home:
     items:
       - label: yet another video editor
         description: NLE(browser, native, mobile - eventually) 
-        href: https://amaandoes.tech/ 
+        href: https://yave-hazel.vercel.app/ 
       - label: the-search-thing
         description: fastest search tool for your computer 
         href: https://github.com/the-search-thing/the-search-thing

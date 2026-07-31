@@ -1,6 +1,6 @@
 ## become goated 
 
-- [how to ask questions the smart way](http://www.catb.org/~esr/faqs/smart-questions.html)
+- [how to raise a $10 million seed round](https://x.com/v12sec/status/2082890648374424012)
 
 ## systems programming
 

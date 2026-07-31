@@ -4,9 +4,9 @@ home:
   currently:
     label: currently
     items:
-      - role: Co-Founder & CEO
-        href: https://campusos.framer.website
-        name: CampusOS
+      - role: Founder
+        href: https://yave-hazel.vercel.app/
+        name: yave 
       - role: Rewiring my brain with
         href: https://effect.website/
         name: Effect

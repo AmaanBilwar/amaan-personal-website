@@ -2,6 +2,8 @@
 title: reading
 description: things i'm reading or have read
 items:
+  - title: fast
+    href: https://patrickcollison.com/fast
   - title: A Safe Path to Open Weights
     href: https://thinkingmachines.ai/blog/a-safe-path-to-open-weights
   - title: Immediate-Mode Graphical User Interfaces(2005)

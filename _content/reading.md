@@ -2,6 +2,10 @@
 title: reading
 description: things i'm reading or have read
 items:
+  - title: A Safe Path to Open Weights
+    href: https://thinkingmachines.ai/blog/a-safe-path-to-open-weights
+  - title: Immediate-Mode Graphical User Interfaces(2005)
+    href: https://caseymuratori.com/blog_0001
   - title: how to ask questions the smart way
     href: https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way/blob/master/How-To-Ask-Questions-The-Smart-Way.md
   - title: The Handmade Manifesto

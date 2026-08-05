@@ -2,6 +2,8 @@
 title: reading
 description: things i'm reading or have read
 items:
+  - title: Quality sofware deserves your hard-earned cash 
+    href: https://stephango.com/quality-software
   - title: fast
     href: https://patrickcollison.com/fast
   - title: A Safe Path to Open Weights

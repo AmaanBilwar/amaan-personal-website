@@ -49,9 +49,12 @@ home:
   projects:
     label: projects
     items:
-      - label: yet another video editor
-        description: NLE(browser, native, mobile - eventually) 
+      - label: yave
+        description: fastest video editor in ur browser 
         href: https://yave-hazel.vercel.app/ 
+      - label: infinity storage engine
+        description: infinite storage for all your files 
+        href: https://amaandoes.tech/
       - label: the-search-thing
         description: fastest search tool for your computer 
         href: https://github.com/the-search-thing/the-search-thing

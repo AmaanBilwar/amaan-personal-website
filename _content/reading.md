@@ -2,6 +2,8 @@
 title: reading
 description: things i'm reading or have read
 items:
+  - title: Quality software 
+    href: https://x.com/almonk/status/2079461952577802549?s=20
   - title: Quality sofware deserves your hard-earned cash 
     href: https://stephango.com/quality-software
   - title: fast

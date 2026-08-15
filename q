@@ -5,7 +5,7 @@ home:
     label: currently
     items:
       - role: Founder
-        href: https://happy-computers.vercel.app
+        href: https://yave-hazel.vercel.app/
         name: Happy Computers 
       - role: Rewiring my brain with
         href: https://effect.website/

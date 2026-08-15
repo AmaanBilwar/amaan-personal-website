@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="if you get used to this in vim, you're gonna be so much faster" />
+    <title>Staying out of insert mode will save your life — Amaan</title>
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="./post.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">home</a>
+        <a href="./index.html">writing</a>
+        <a href="../reading.html">reading</a>
+        <a href="../oss.html">oss</a>
+        <a href="../resume.html">resume</a>
+      </nav>
+      <article>
+        <header>
+          <h1>Staying out of insert mode will save your life</h1>
+          <p class="post-meta">2026-06-28 · Amaan</p>
+        </header>
+        <h2 id="why-its-bad">why it's bad</h2>
+        <p>when i first started using vim(all thanks to primeagen), it was so much work to even get the basic things done. that's where the <code>i</code> and <code>Esc</code> key came in handy.</p>
+        <p>the insert mode was where I was most comfortable with because thats what i was used to with other editors. but thats what makes it weak, and you might as well use any other editor.</p>
+        <p>soon enough i realized that Normal mode is where the big boy moves happen.</p>
+        <hr>
+        <h2 id="how-to-get-outta-there">how to get outta there</h2>
+        <p>you're probably thingking just hit the <code>Esc</code> key. what's the fuss even about? This is not the best way to do this. If you wanna jump in and out of insert mode of all the time, you're going to want it to be as seamless as possible.</p>
+        <p>another way to get outta insert mode is to use the <code>Ctrl-[</code> (also known as <code>Ctrl-o</code>) key sequence to enter Normal mode.</p>
+        <pre><code class="language-vim">inoremap kj &#x3C;Esc>
+        </code></pre>
+        <p>how did i come up with this? the creator of <a href="https://atuin.sh/">atuin</a> actually! <a href="https://ellie.wtf/posts/switching-to-zed">ellie</a> has this blog post where she talks about switching to zed and she mentions using jj -> esc key.</p>
+        <blockquote>
+        <p>the funny thing is that i was reading it because i was contributing to Zed when i found the post &#x26; i wanted to read what she hates about zed so i can contribute actually good fixes that people care about.</p>
+        </blockquote>
+        <p>i literally just yoinked her keymap settings, made a few minor changes. Thank you Ellie! I LOVE ATUIN BTW (she's not reading this, is she?)</p>
+        <pre><code class="language-vim">[{
+          {
+            "context": "Editor &#x26;&#x26; vim_mode == insert",
+            "bindings": {
+              "j j": "vim::NormalBefore",
+              "escape": null,
+            },
+          },
+        }]
+        </code></pre>
+        <p>so what if i actually wanna type "jj"? like if i'm writing a blog post such as this one? i'd just have to wait a beat for the first <code>j</code> to get inserted. how long vim waits for u to finish the sequence is the <code>timeoutlen</code> setting, which defaults to 1000ms. just do this instead in your vim config:</p>
+        <pre><code class="language-vim">set timeoutlen=500
+        </code></pre>
+        <p>in zed's case they handle this on their own so we're chilling.</p>
+        <hr>
+        <h2 id="good-habit-that-might-help-you">good habit that might help you</h2>
+        <p>You probably noticed, as a good habit to learn i also disabled the arrow keys(though im used to it now) for navigation in vim so i dont have to move my hands around much when typing and till i get my hands on a split keyboard this'll do.</p>
+        <pre><code class="language-vim">{
+          "context": "Editor &#x26;&#x26; vim_mode",
+          "bindings": {
+            "left": null,
+            "right": null,
+            "up": null,
+            "down": null,
+          },
+        }
+        </code></pre>
+        <p>your real nvim config would become:</p>
+        <pre><code class="language-vim">inoremap &#x3C;Left>  &#x3C;NOP>
+        inoremap &#x3C;Right> &#x3C;NOP>
+        inoremap &#x3C;Up>    &#x3C;NOP>
+        inoremap &#x3C;Down>  &#x3C;NOP>
+        </code></pre>
+        <hr>
+        <h3 id="wrap-it-up">wrap it up</h3>
+        <p>this is all i had to say in this one, hope this helps out</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://ellie.wtf/posts/switching-to-zed/">https://ellie.wtf/posts/switching-to-zed/</a></li>
+        </ul>
+      </article>
+    </main>
+  </body>
+</html>

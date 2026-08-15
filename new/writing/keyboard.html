@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="home-row mods, carpal tunnel, and why you only need 34 keys" />
+    <title>My wrists hurt so i modded my keyboard — Amaan</title>
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="./post.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">home</a>
+        <a href="./index.html">writing</a>
+        <a href="../reading.html">reading</a>
+        <a href="../oss.html">oss</a>
+        <a href="../resume.html">resume</a>
+      </nav>
+      <article>
+        <header>
+          <h1>My wrists hurt so i modded my keyboard</h1>
+          <p class="post-meta">2026-07-15 · Amaan</p>
+        </header>
+        <p>I spend atleast ten hours a day on my computer. Evidentally, meaning my hands live in the same awkward posture for most of my waking life.</p>
+        <p>At some point my wrists started complaining. I wanted to type faster, but I also wanted to stop doing the wrist yoga that normal keyboards force you into. So I started looking into layouts, split boards, layers, and eventually home row mods.</p>
+        <p>One thing that becomes obvious once you pay attention: your hands are not evenly distributed over a full-size keyboard. Your left hand covers way fewer keys than your right. That imbalance is where a lot of the awkward reaching comes from.</p>
+        <p>add image here abt staggered keyboard hand position</p>
+        <p>This is what my keyboard looks like now:</p>
+        <hr>
+        <h2 id="home-row-mods">Home row mods</h2>
+        <p>The home row is where your fingers are supposed to rest. The bumps on <code>F</code> and <code>J</code> (called the homing bumps) are there so your index fingers can find home without looking.</p>
+        <p>Home row mods take that idea further. Instead of reaching for <code>CTRL</code>, <code>SHIFT</code>, <code>ALT</code>, or <code>CMD</code>, those modifiers live under your home row keys. Tap the key and you get the letter. Hold the key and it becomes a modifier.</p>
+        <p>For example:</p>
+        <ul>
+        <li>tap <code>A</code> → <code>A</code></li>
+        <li>hold <code>A</code> → modifier</li>
+        <li>tap <code>S</code> → <code>S</code></li>
+        <li>hold <code>S</code> → another modifier</li>
+        </ul>
+        <p>A better way to visualize this is:</p>
+        <p>The point is not to make the keyboard more complicated. The point is to stop leaving the home row every three seconds.</p>
+        <hr>
+        <h2 id="the-setup">The Setup</h2>
+        <p>I did this with <a href="https://github.com/jtroo/kanata">Kanata</a>, a keyboard remapper that lets you define tap-hold behavior (and layers) without flashing custom firmware.</p>
+        <p>My keyboards are very normal:</p>
+        <ul>
+        <li>Legion 5 Pro laptop keyboard</li>
+        <li>Redragon Kumara K552</li>
+        </ul>
+        <p>That was intentional. I wanted to see how far I could get before buying or building a split board.</p>
+        <hr>
+        <h2 id="the-layout">The Layout</h2>
+        <p>The exact bindings matter less than the rules behind them.</p>
+        <p>Most common modifiers should be the easiest to hold. Keys I fat-finger the most should not sit in dangerous places. Timing is what makes or breaks the whole thing: too short and normal typing turns into accidental shortcuts, too long and every shortcut feels laggy.</p>
+        <p>So the layout is less a keymap and more a negotiation between comfort, speed, and how much nonsense muscle memory is willing to relearn.</p>
+        <hr>
+        <h2 id="the-learning-curve">The Learning Curve</h2>
+        <p>Setting up Kanata was the easy part. Retraining years of muscle memory was not. Be vary that i was 130 wpm before doing all this, because again being fast is one thing, but being comfortable is another.</p>
+        <p>It took about a week before it stopped feeling cursed. At the start, backspace is still the weird one. That key has been carrying a lot of baggage.</p>
+        <hr>
+        <h2 id="layers-vs-home-row-mods">Layers vs home row mods</h2>
+        <p>I got the idea for layers from split keyboards.</p>
+        <p>On a split board, you often hold a thumb key and the same physical keys temporarily become arrows, numbers, symbols, navigation, media controls — whatever you mapped. Home row mods are mostly about bringing modifiers closer. Layers are about making the whole keyboard smaller and more programmable.</p>
+        <p>The tradeoff looks something like this:</p>
+        <ul>
+        <li>Home row mods are easier to add to a normal keyboard</li>
+        <li>Layers are more powerful once you commit (Spoiler alert: I did)</li>
+        <li>Home row mods can interfere with fast letter rolls</li>
+        <li>Layers can feel like learning a second keyboard</li>
+        <li>Both are solving the same problem: stop reaching so much</li>
+        </ul>
+        <p>I do not think one is strictly better. Home row mods are the easier on-ramp. Layers are what you eventually build the board around.</p>
+        <p>If you are still on a full-size keyboard, home row mods are easier to adopt. Layers make the keyboard programmatically smaller, but the physical keys are still sitting there <strong>tempting you</strong>. I mapped backspace to <code>[</code> and disabled the physical backspace key, and I still used to reach for the empty spot because the key was there. On a 34-key board, that temptation disappears.</p>
+        <p>I have not given up on layers. If you only use ~34 keys, you get a lot more room for everything else — which is a good segue to what comes next.</p>
+        <hr>
+        <h2 id="about-layers">About Layers</h2>
+        <p>I love them! I hated them at first because remembering where the keys were became difficult.</p>
+        <p>Let me explain how it works.</p>
+        <p>This is what my keyboard looks like.</p>
+        <p>Something you might have immediately noticed is the places where my <code>CTRL</code> and my <code>ESC</code> keys go. These are the most comfortable positions they can be in for me.</p>
+        <p>Wait wait wait! So do I never use the number keys, and the symbols. Well, <code>12345(){}&#x3C;></code>. So I obviously do use them. Where are they?</p>
+        <p>Hold down the left <code>ALT</code> key and see what happens to my keyboard.</p>
+        <p>See? they're right there. But what about the arrow keys?</p>
+        <p>Hold down <code>TAB</code>.</p>
+        <h2 id="was-it-worth-it">Was it worth it?</h2>
+        <p>100% Yes.</p>
+        <p>If you just want to type a little faster, there's better ways to do that. I am already 130+ WPM on full-size QWERTY.</p>
+        <p>For me the appeal is:</p>
+        <ul>
+        <li>getting rid of my wrist pain</li>
+        <li>comfort</li>
+        <li>fewer reaches</li>
+        <li>more space</li>
+        <li>and making the keyboard feel like something I control instead of something I tolerate.</li>
+        </ul>
+        <hr>
+        <h2 id="whats-next">What's next</h2>
+        <p>The obvious next step is a split keyboard — maybe buy one, maybe build one from scratch. Either way, home row mods made one thing clear: the default layout is just one very popular (and overhyped) opinion. The keyboard is a programmable interface. Do not make it boring.</p>
+        <hr>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://github.com/jtroo/kanata">kanata</a></li>
+        <li>add to this</li>
+        </ul>
+      </article>
+    </main>
+  </body>
+</html>

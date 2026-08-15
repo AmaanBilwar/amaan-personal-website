@@ -1,4 +1,4 @@
-sitemd---
+---
 home:
   title: hi, i'm Amaan
   currently:

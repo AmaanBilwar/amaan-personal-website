@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: Params) {
       coverAlt={post.coverAlt}
       contentHtml={contentHtml}
       sections={sections}
-      backLabel={ui?.blogBack}
+      backLabel={ui.blogBack}
       contentsLabel={ui.blogContents}
     >
       {content}

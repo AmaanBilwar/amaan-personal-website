@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="why and how i use the tools i use everyday" />
+    <title>on my personal development environment — Amaan</title>
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="./post.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html">home</a>
+        <a href="./index.html">writing</a>
+        <a href="../reading.html">reading</a>
+        <a href="../oss.html">oss</a>
+        <a href="../resume.html">resume</a>
+      </nav>
+      <article>
+        <header>
+          <h1>on my personal development environment</h1>
+          <p class="post-meta">2026-07-14 · Amaan</p>
+        </header>
+        <p>Now that we're six months into the year, I wanted to write up what my personal development environment looks like, plus the daily tools that actually make life easier.</p>
+        <p>For context: I mostly work on a <a href="https://www.lenovo.com/us/en/p/laptops/legion/legion-5-series/lenovo-legion-5-pro-16inch-amd-gen-9/82wm00c3us">Legion 5 Pro</a> running Ubuntu 24.04. I'm not the biggest fan of the distro, but it serves me well. If you've got strong opinions on what I should switch to next, feel free to email me: <a href="mailto:amaan@poke.com">amaan@poke.com</a>.</p>
+        <p>When I'm home it's the laptop plus whatever keyboard era I'm currently obsessed with. When I'm moving around, it's just the laptop.</p>
+        <hr>
+        <h2 id="core">Core</h2>
+        <p>I'm still pretty terminal-pilled, but the center of gravity moved when I switched hard to Zed. Shell, CLIs, and agents around the editor — not a full tmux-and-neovim desktop like it used to be.</p>
+        <hr>
+        <h3 id="terminal-emulator">Terminal emulator</h3>
+        <p>I was a big <a href="https://wezfurlong.org/wezterm/">WezTerm</a> guy. Configurability, GPU rendering, I was in deep. And then I had to admit the thing that kept nagging me: it's just slow as hell for how I work. I set it up in a way where when I launch Wezterm, it launches a tmux session and stays open but it just wasn't fast enough.</p>
+        <p>These days I'm on <a href="https://ghostty.org">Ghostty</a> with <a href="https://www.zsh.org">zsh</a> and <a href="https://github.com/tonsky/FiraCode">Fira Code</a>. Fast enough that I stop thinking about the emulator and just stay in the session. That's the whole job.</p>
+        <p>I still have <a href="https://github.com/tmux/tmux">tmux</a> installed, but I barely reach for it now. Same story with <a href="https://neovim.io">neovim</a> — is still the quick-edit hammer; Zed has overtaken these.</p>
+        <hr>
+        <h3 id="navigation-and-clis">Navigation and CLIs</h3>
+        <p>Loose list of the ones I hit constantly:</p>
+        <ul>
+        <li><a href="https://github.com/ajeetdsouza/zoxide">zoxide</a> — smarter <code>cd</code>. I barely type full paths anymore; <code>z</code> just teleports me.</li>
+        <li><a href="https://github.com/junegunn/fzf">fzf</a> — fuzzy finding for everything that should have been searchable already.</li>
+        <li><a href="https://atuin.sh">Atuin</a> — syncable, searchable shell history. Once you pull the exact command you ran on another machine, default history feels broken. Ellie also accidentally improved my vim life via a Zed keymap post, so Atuin stays undefeated here.</li>
+        <li><del><a href="https://github.com/jesseduffield/lazygit">LazyGit</a> — fast visual pass over git state when I don't want to reconstruct the world from flags. Intimidating for a day. Permanent after a week.</del></li>
+        </ul>
+        <hr>
+        <h3 id="keybinds">Keybinds</h3>
+        <p>I use vim motions in Zed. Vim surpirsingly came naturally to me and it's funny because when I first found out about it, I was very intimidated. AI has made setting it up and writing plugins so much easier, that setup cost basically vanished.</p>
+        <hr>
+        <h2 id="the-editor">The editor</h2>
+        <h3 id="zed"><a href="https://zed.dev">Zed</a></h3>
+        <p>I was on Windows waiting for Zed's Windows beta, hopped on as soon as it dropped (early access), and stayed. Then the whole setup moved over to Ubuntu with me.</p>
+        <p>I followed Zed pretty closely before I adopted it because building an IDE from scratch in Rust is interesting on its own. There are layers to this. I liked the founders' vision, stayed tapped in, then actually used it. Coming from Cursor, the first week was rough. The team's shipping speed is what got me hooked.</p>
+        <p>I've also contributed to Zed, and only after that did I really understand how much it takes to build something like this — a shader / game-like renderer, an editor on top of it, then keep iterating forever. Huge respect.</p>
+        <p>Use it once. You'll know what I'm talking about.</p>
+        <p><img src="../../public/zed-screenshot.png" alt="zed workspace with agents">
+        <em>zed — where most of the day actually happens</em></p>
+        <hr>
+        <h2 id="agents">Agents</h2>
+        <p>This is the part of the stack that moved the most this year.</p>
+        <p>I use <a href="https://zed.dev">Zed agents</a> in the editor, and I've been using the terminal agent stuff they recently added too — thanks to them for taking agents seriously as a first-class workflow instead of a bolted-on chat panel or whatever they had going on way back when. iykyk. Still needs work, it's getting there, that's why I love opensource.</p>
+        <p>For coding agents specifically, I'm heavily <a href="https://opencode.ai">OpenCode</a> pilled. Terminal-native, open source, feels like it belongs next to the shell instead of fighting it. Also, I have insane amounts of respect for the Opencode team, and more so for Kit. Thank you for making me Effect pilled, it's amazing.</p>
+        <p><img src="../../public/ghostty.png" alt="ghostty with zsh and fira code">
+        <em>opencode + fzf + jj running in ghostty</em></p>
+        <p>I also keep <a href="https://cursor.com/docs/cli/overview">Cursor CLI</a> around because I have about $700 in Cursor credits and I'm not leaving that on the table. Different tools, same job. OpenCode is the ideology. Cursor CLI is the added bonus.</p>
+        <p><img src="../../public/terminal.png" alt="cursor agent + nvim + next in ghostty">
+        <em>how i code in the terminal when i'm not in zed</em></p>
+        <hr>
+        <h2 id="version-control">Version control</h2>
+        <h3 id="jujutsu-jj"><a href="https://github.com/jj-vcs/jj">Jujutsu (jj)</a></h3>
+        <p>I use jj with git as the backend, and I'm loving it so far. The model is simpler than the git story I had in my head, and once that clicks, a lot of the old ceremony feels optional.</p>
+        <p>Here's a good resource if you want to get started with jj: <a href="https://maddie.wtf/posts/2025-07-21-jujutsu-for-busy-devs">Jujutsu for Busy Devs</a>. Mitchell Hashimoto has some great tweets about learning to use jj.</p>
+        <hr>
+        <h2 id="browser">Browser</h2>
+        <h3 id="helium"><a href="https://www.helium.computer">Helium</a></h3>
+        <p>Simple, fast, secure, privacy-first, open source. Built by two devs I respect a lot.</p>
+        <p>Building a usable browser on top of Chromium is already hard. What I find interesting is how they develop it: patches on top of ungoogled-chromium, so when upstream moves, they re-apply the patch set instead of carrying a giant divergent fork. Sounds clean. Still complex.</p>
+        <p>The UI is excellent. Wukko and jj have clearly spent a lot of time deleting wasted pixel space — dynamic, compact, and a few other modes depending on how much chrome you want. Same recommendation energy as Zed. Just try it.</p>
+        <hr>
+        <h2 id="audio">Audio</h2>
+        <h3 id="headphones">Headphones</h3>
+        <ul>
+        <li><strong><a href="https://www.bose.com/p/headphones/bose-quietcomfort-headphones/QCHP-HEADPHONEARN.html">Bose QuietComfort</a></strong> — comfortable, solid ANC, and I wear glasses. I've done 16–20 hour flights on these and they stay wearable the whole way. Good case, replaceable ear cups, battery life that still surprises me. Charges fast, lasts days if not weeks.</li>
+        <li><strong><a href="https://www.apple.com/shop/product/MWU53AM/A/earpods-35mm-headphone-plug">Apple EarPods (3.5mm)</a></strong> — not the performative wireless ones, the actual headphone-jack ones. I carry a USB-C adapter and keep both on me. They almost never tangle for me, sound better than they have any right to on a budget, and they're still one of the best cheap wired options out there.</li>
+        </ul>
+        <hr>
+        <h2 id="keyboards">Keyboards</h2>
+        <p>I spend most of my day on a keyboard, so this section keeps growing whether I want it to or not.</p>
+        <ul>
+        <li><strong><a href="https://redragonshop.com/products/redragon-kumara-k552">Redragon Kumara K552</a></strong> — first mechanical. Outemu blues (Cherry MX clones). I tried my best to be that annoyingly loud roommate.</li>
+        <li><strong>Legion 5 Pro laptop keyboard</strong> — the daily driver when I'm not on an external board. Fine. Surpirsingly good keyboard.</li>
+        <li><strong><a href="https://github.com/benvallack/Ferris-Sweep-Tweaked">Ferris Sweep</a></strong> (Ben Vallack territory) — current hobby / addiction / reason to live. Building it from scratch: custom PCBs, artwork, Kailh Choc Pro Red linears, blank keycaps, soldering, no case. 34 keys. Cannot wait for this to be done.</li>
+        </ul>
+        <p>If you only steal one idea from this post: optimize the thing your hands touch for eight hours a day.</p>
+      </article>
+    </main>
+  </body>
+</html>

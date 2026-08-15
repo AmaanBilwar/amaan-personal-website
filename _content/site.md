@@ -1,4 +1,4 @@
----
+sitemd---
 home:
   title: hi, i'm Amaan
   currently:
@@ -49,18 +49,15 @@ home:
   projects:
     label: projects
     items:
-      - label: yave
+      - label: Yave
         description: fastest video editor in ur browser 
         href: https://yave-hazel.vercel.app/ 
-      - label: infinity storage engine
+      - label: Stuff
         description: infinite storage for all your files 
         href: https://amaandoes.tech/
-      - label: the-search-thing
+      - label: the search thing
         description: fastest search tool for your computer 
         href: https://github.com/the-search-thing/the-search-thing
-      - label: better-vscode
-        href: https://github.com/AmaanBilwar/better-vscode
-        description: private, fast, debloated vscode
   blogs:
     label: recent posts 
     # Curated subset on the home page. Full list lives at /blogs (nav: writing).

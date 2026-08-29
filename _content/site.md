@@ -49,15 +49,18 @@ home:
   projects:
     label: projects
     items:
-      - label: Yave
-        description: fastest video editor in ur browser 
-        href: https://yave-hazel.vercel.app/ 
-      - label: Stuff
+      - label: yave 
+        description: fastest (ai)video editor in your browser 
+        href: https://amaandoes.tech/
+      - label: poof 
         description: infinite storage for all your files 
         href: https://amaandoes.tech/
       - label: the search thing
         description: fastest search tool for your computer 
-        href: https://github.com/the-search-thing/the-search-thing
+        href: https://amaandoes.tech/
+      - label: faster-python
+        description: a failed attempt to make python faster 
+        href: https://amaandoes.tech/
   blogs:
     label: recent posts 
     # Curated subset on the home page. Full list lives at /blogs (nav: writing).

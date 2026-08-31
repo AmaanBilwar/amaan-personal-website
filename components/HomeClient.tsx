@@ -119,7 +119,7 @@ function LinkItem({ item }: { item: SiteLinkItem }) {
   return (
     <li>
       {external ? (
-        <a href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+        <a href={item.href} rel="noopener noreferrer" className={className}>
           {body}
         </a>
       ) : (

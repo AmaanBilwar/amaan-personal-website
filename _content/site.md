@@ -17,8 +17,7 @@ home:
         iconAlt: University of Cincinnati
   currentlyReading:
     label: currently reading
-    # Must match a title in _content/reading.md
-    title: "I, Robot"
+    title: A Little Life
   previously:
     label: experience 
     items:
@@ -50,16 +49,13 @@ home:
     label: projects
     items:
       - label: yave 
-        description: fastest (ai)video editor in your browser 
+        description: non-linear video editor in your browser 
         href: https://amaandoes.tech/
       - label: poof 
-        description: infinite storage for all your files 
+        description: infinite storage for your computer 
         href: https://amaandoes.tech/
       - label: the search thing
-        description: fastest search tool for your computer 
-        href: https://amaandoes.tech/
-      - label: faster-python
-        description: a failed attempt to make python faster 
+        description: the best search tool for your computer 
         href: https://amaandoes.tech/
   blogs:
     label: recent posts 
@@ -70,7 +66,6 @@ home:
       - startup
   reading:
     label: reading
-    # Curated subset on the home page. Full list lives at /reading.
     featured:
       - everyone should know simd
       - "Computer Systems: A Programmer's Perspective"

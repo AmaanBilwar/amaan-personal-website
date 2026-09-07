@@ -7,9 +7,6 @@ home:
       - role: Founder
         href: https://happy-computers.vercel.app
         name: Happy Computers 
-      - role: Rewiring my brain with
-        href: https://effect.website/
-        name: Effect
       - role: Yelling at transistors
         href: https://www.ceas.uc.edu/academics/departments/electrical-computer-engineering/degrees-programs/computer-engineering-bachelor-of-science.html
         name: UofCincy

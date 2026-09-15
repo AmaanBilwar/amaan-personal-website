@@ -13,7 +13,7 @@ items:
   - title: Immediate-Mode Graphical User Interfaces(2005)
     href: https://caseymuratori.com/blog_0001
   - title: how to ask questions the smart way
-    href: https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way/blob/master/How-To-Ask-Questions-The-Smart-Way.md
+    href: http://www.catb.org/~esr/faqs/smart-questions.html 
   - title: The Handmade Manifesto
     href: https://handmade.network/manifesto
   - title: "The forgotten history of how automakers invented the crime of 'jaywalking'"

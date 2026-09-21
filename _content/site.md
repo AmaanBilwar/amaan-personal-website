@@ -48,11 +48,11 @@ home:
       - label: yave 
         description: non-linear video editor in your browser 
         href: https://amaandoes.tech/
-      - label: poof 
-        description: infinite storage for your computer 
-        href: https://amaandoes.tech/
+      - label: infinite storage engine 
+        description: cloud storage but its your filesystem 
+        href: https://github.com/AmaanBilwar/infinite-storage
       - label: the search thing
-        description: the best search tool for your computer 
+        description: fast search tool
         href: https://amaandoes.tech/
   blogs:
     label: recent posts 

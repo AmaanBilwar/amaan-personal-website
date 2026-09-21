@@ -46,7 +46,7 @@ home:
     label: projects
     items:
       - label: yave 
-        description: non-linear video editor in your browser 
+        description: agentic + fast video editor in your browser 
         href: https://amaandoes.tech/
       - label: infinite storage engine 
         description: cloud storage but its your filesystem 

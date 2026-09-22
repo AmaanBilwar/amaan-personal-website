@@ -4,7 +4,7 @@ listTitle: 'pivoting'
 category: tech
 date: '2026-09-01'
 author: 'Amaan'
-published: true 
+published: false 
 excerpt: 'Template for new blog posts — copy this file and write in markdown.'
 ---
 

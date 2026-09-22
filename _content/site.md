@@ -50,23 +50,18 @@ home:
         href: https://amaandoes.tech/
       - label: infinite storage engine 
         description: cloud storage but its your filesystem 
-        href: https://github.com/AmaanBilwar/infinite-storage
+        href: https://github.com/AmaanBilwar/infinite-storage.git
       - label: the search thing
         description: fast search tool
-        href: https://amaandoes.tech/
+        href: https://github.com/happy-computers/the-search-thing.git
   blogs:
     label: recent posts 
     # Curated subset on the home page. Full list lives at /blogs (nav: writing).
     featured:
-      - home-row-mods
       - tools
       - startup
   reading:
     label: reading
-    featured:
-      - everyone should know simd
-      - "Computer Systems: A Programmer's Perspective"
-      - A Little Life
   oss:
     label: oss
     # Curated subset on the home page. Full list lives at /oss.

@@ -1,4 +1,4 @@
-import HomeClient from "@/components/HomeClient";
+import HomeClient from "@/components/home-client";
 import type { OssItem } from "@/interfaces/oss";
 import type { ReadingItem } from "@/interfaces/reading";
 import { getOssContent, getReadingContent, getSiteContent } from "@/lib/content";
@@ -31,20 +31,11 @@ export default function HomePage() {
     date: post.date,
   }));
 
-  const featuredBlogs = home.blogs?.featured;
-  const postsBySlug = new Map(allPosts.map((post) => [post.slug, post]));
-  const blogPosts = featuredBlogs
-    ? featuredBlogs.flatMap((slug) => {
-        const post = postsBySlug.get(slug);
-        return post ? [post] : [];
-      })
-    : allPosts;
-
   const reading = getReadingContent();
   const readingItems = pickFeaturedReading(reading.items ?? [], home.reading?.featured);
   const currentlyReadingTitle = home.currentlyReading?.title?.trim();
   const currentlyReading = currentlyReadingTitle
-    ? (reading.items ?? []).find((item) => item.title.trim() === currentlyReadingTitle) ?? null
+    ? ((reading.items ?? []).find((item) => item.title.trim() === currentlyReadingTitle) ?? null)
     : null;
 
   const oss = getOssContent();
@@ -53,7 +44,7 @@ export default function HomePage() {
   return (
     <HomeClient
       home={home}
-      blogPosts={blogPosts}
+      blogPosts={allPosts}
       readingItems={readingItems}
       currentlyReading={currentlyReading}
       ossItems={ossItems}

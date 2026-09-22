@@ -6,7 +6,7 @@ date: '2026-06-10'
 author: 'Amaan'
 coverImage: '/blogs/campusos-header.png'
 coverAlt: 'CampusOS website header'
-published: true
+published: false
 excerpt: 'India produces sharp minds, but school operations still run on spreadsheets and WhatsApp.'
 ---
 

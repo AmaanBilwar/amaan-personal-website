@@ -4,7 +4,7 @@ listTitle: 'lazy texting'
 category: scratchpad
 date: '2026-07-25'
 author: 'Amaan'
-published: true 
+published: false
 excerpt: 'become a bad texter on purpose? stay with me now'
 ---
  

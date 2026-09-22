@@ -12,11 +12,8 @@ home:
         name: UofCincy
         icon: /ucincy_logo.png
         iconAlt: University of Cincinnati
-  currentlyReading:
-    label: currently reading
-    title: A Little Life
   previously:
-    label: experience 
+    label: experience
     items:
       - role: Bug bashing
         href: https://zed.dev/community/guild
@@ -46,17 +43,17 @@ home:
     label: projects
     items:
       - label: yave 
-        description: agentic + fast video editor in your browser 
+        description: fast & agentic video editor in your browser 
         href: https://amaandoes.tech/
       - label: infinite storage engine 
-        description: cloud storage but its your filesystem 
+        description: cloud storage as your filesystem 
         href: https://github.com/AmaanBilwar/infinite-storage.git
       - label: the search thing
         description: fast search tool
         href: https://github.com/happy-computers/the-search-thing.git
-  blogs:
-    label: recent posts 
-    # Curated subset on the home page. Full list lives at /blogs (nav: writing).
+  blog:
+    label: blogs
+    # Curated subset on the home page. Full list lives at /blog (nav: writing).
     featured:
       - tools
       - startup

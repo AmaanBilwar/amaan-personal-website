@@ -4,7 +4,7 @@ listTitle: 'dev environment'
 category: tech
 date: '2026-07-14'
 author: 'Amaan'
-published: true
+published: false
 excerpt: 'why and how i use the tools i use everyday'
 ---
 

@@ -1,1 +1,1 @@
-export { default, metadata } from "../blogs/page";
+export { default, metadata } from "../blog/page";

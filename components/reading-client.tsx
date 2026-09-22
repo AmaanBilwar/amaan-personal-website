@@ -1,14 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 import type { ReadingContent, ReadingItem } from "@/interfaces/reading";
 import { fuzzyScore } from "@/lib/fuzzy";
 
 function ReadingRow({ item }: { item: ReadingItem }) {
   const meta = [item.author, item.note].filter(Boolean).join(" — ");
-  const className =
-    "-mx-2 rounded-md px-2 py-0.5 text-stone-600";
+  const className = "-mx-2 rounded-md px-2 py-0.5 text-stone-600";
 
   const body = (
     <>
@@ -61,13 +60,15 @@ export default function ReadingClient({ reading }: { reading: ReadingContent }) 
     <main className="relative z-10 flex min-h-full flex-col items-center p-5 md:p-12">
       <div className="mx-auto w-full max-w-xl space-y-5">
         <div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black">{reading.title}</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black">
+            {reading.title}
+          </h1>
           {reading.description && (
             <p className="mt-2 text-sm md:text-base text-stone-500">{reading.description}</p>
           )}
         </div>
 
-        <div className="sticky top-12 z-40 -mx-1 bg-white/80 px-1 py-2 backdrop-blur-md">
+        <div className="reading-search-bar sticky top-12 z-40 -mx-1 bg-white/80 px-1 py-2 backdrop-blur-md">
           <label className="sr-only" htmlFor="reading-search">
             Search reading list
           </label>
@@ -79,7 +80,7 @@ export default function ReadingClient({ reading }: { reading: ReadingContent }) 
             placeholder="search (typos ok)…"
             autoComplete="off"
             spellCheck={false}
-            className="w-full rounded-md border border-stone-200 bg-white px-3 py-2 text-sm text-stone-700 placeholder:text-stone-400 outline-none transition-[border-color] duration-200 ease focus:border-stone-400"
+            className="reading-search w-full rounded-md border border-stone-200 bg-white px-3 py-2 text-sm text-stone-700 placeholder:text-stone-400 outline-none transition-[border-color] duration-200 ease focus:border-stone-400"
           />
           <p className="pl-2 mt-2 text-xs text-stone-400">
             {searching

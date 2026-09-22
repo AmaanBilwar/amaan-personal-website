@@ -34,7 +34,7 @@ export function proxy(request: NextRequest): NextResponse {
     let target: string | null = null;
     if (pathname === '/') {
       target = '/md';
-    } else if (pathname.startsWith('/blogs/')) {
+    } else if (pathname.startsWith('/blog/')) {
       target = `/md${pathname}`;
     }
 
@@ -54,5 +54,5 @@ export function proxy(request: NextRequest): NextResponse {
 }
 
 export const config = {
-  matcher: ['/', '/blogs/:path*'],
+  matcher: ['/', '/blog/:path*'],
 };

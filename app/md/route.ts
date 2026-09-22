@@ -1,5 +1,5 @@
 import { getOssContent, getReadingContent, getSiteContent } from "@/lib/content";
-import { buildHomeMarkdown, markdownResponse } from "@/lib/markdownResponse";
+import { buildHomeMarkdown, markdownResponse } from "@/lib/markdown-response";
 import { getAllPosts } from "@/lib/posts";
 
 // Prerendered at build time: the markdown is fully known from `_content`/`_posts`
@@ -14,7 +14,7 @@ export function GET(): Response {
     listTitle: post.listTitle,
     category: post.category,
   }));
-  const featured = home.blogs?.featured;
+  const featured = home.blog?.featured;
   const bySlug = new Map(allPosts.map((post) => [post.slug, post]));
   const posts = featured
     ? featured.flatMap((slug) => {
@@ -35,7 +35,7 @@ export function GET(): Response {
 
   const currentlyReadingTitle = home.currentlyReading?.title?.trim();
   const currentlyReading = currentlyReadingTitle
-    ? (reading.items ?? []).find((item) => item.title.trim() === currentlyReadingTitle) ?? null
+    ? ((reading.items ?? []).find((item) => item.title.trim() === currentlyReadingTitle) ?? null)
     : null;
 
   const oss = getOssContent();
@@ -48,7 +48,5 @@ export function GET(): Response {
       })
     : (oss.items ?? []);
 
-  return markdownResponse(
-    buildHomeMarkdown(home, posts, readingItems, ossItems, currentlyReading),
-  );
+  return markdownResponse(buildHomeMarkdown(home, posts, readingItems, ossItems, currentlyReading));
 }

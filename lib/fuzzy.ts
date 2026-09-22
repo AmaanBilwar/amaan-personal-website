@@ -4,7 +4,10 @@
  */
 
 function normalize(s: string): string {
-  return s.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
+  return s
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
 /** Subsequence match score — higher is better. null = no match. */
@@ -36,8 +39,8 @@ function subsequenceScore(query: string, text: string): number | null {
 /** Classic Levenshtein; early-exit when distance would exceed max. */
 function editDistance(a: string, b: string, max: number): number {
   if (Math.abs(a.length - b.length) > max) return max + 1;
-  const prev = new Array<number>(b.length + 1);
-  const curr = new Array<number>(b.length + 1);
+  const prev = Array.from<number>({ length: b.length + 1 });
+  const curr = Array.from<number>({ length: b.length + 1 });
   for (let j = 0; j <= b.length; j++) prev[j] = j;
 
   for (let i = 1; i <= a.length; i++) {

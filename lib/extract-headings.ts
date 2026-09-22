@@ -1,5 +1,5 @@
 import GithubSlugger from 'github-slugger';
-import type { TOCSection } from '@/components/TableOfContents';
+import type { TOCSection } from '@/components/table-of-contents';
 
 export function extractHeadings(markdown: string): TOCSection[] {
   const slugger = new GithubSlugger();

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ReadingClient from "@/components/ReadingClient";
+import ReadingClient from "@/components/reading-client";
 import { getReadingContent } from "@/lib/content";
 
 export const metadata: Metadata = {

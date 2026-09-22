@@ -47,7 +47,7 @@ export function buildPostMarkdown(post: Post): string {
     author: post.author,
     description: post.excerpt,
     readingMinutes: post.readingMinutes.toString(),
-    url: `${SITE_URL}/blogs/${post.slug}`,
+    url: `${SITE_URL}/blog/${post.slug}`,
   });
   return `${fm}${post.content.trim()}\n`;
 }
@@ -98,12 +98,12 @@ export function buildHomeMarkdown(
   );
 
   // Mirror the home page: curated flat list.
-  if (home.blogs) {
-    const blogLines = [`## ${home.blogs.label}`, ""];
+  if (home.blog) {
+    const blogLines = [`## ${home.blog.label}`, ""];
     for (const post of posts) {
-      blogLines.push(`- [${post.listTitle}](${SITE_URL}/blogs/${post.slug})`);
+      blogLines.push(`- [${post.listTitle}](${SITE_URL}/blog/${post.slug})`);
     }
-    blogLines.push("", `- [see everything →](${SITE_URL}/blogs)`, "");
+    blogLines.push("", `- [see everything →](${SITE_URL}/blog)`, "");
     sections.push(blogLines.join("\n"));
   }
 
@@ -141,7 +141,7 @@ export function buildHomeMarkdown(
     if (scratchpadPosts.length > 0) {
       const lines = [`## ${home.scratchpad.label}`, ""];
       for (const post of scratchpadPosts) {
-        lines.push(`- [${post.listTitle}](${SITE_URL}/blogs/${post.slug})`);
+        lines.push(`- [${post.listTitle}](${SITE_URL}/blog/${post.slug})`);
       }
       lines.push("");
       sections.push(lines.join("\n"));

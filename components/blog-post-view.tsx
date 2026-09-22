@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import type { ReactNode } from 'react';
-import Footer from '@/components/Footer';
-import TableOfContents, { TOCSection } from '@/components/TableOfContents';
-import { formatPostDate } from '@/lib/formatPostDate';
-import './blog-markdown.css';
+import Link from "next/link";
+import type { ReactNode } from "react";
+import Footer from "@/components/footer";
+import TableOfContents, { TOCSection } from "@/components/table-of-contents";
+import { formatPostDate } from "@/lib/format-post-date";
+import "./blog-markdown.css";
 
 interface BlogPostViewProps {
   title: string;
@@ -39,7 +39,7 @@ export default function BlogPostView({
       <div className="max-w-6xl mx-auto pt-12 flex gap-10 items-start justify-center">
         <article className="w-full max-w-4xl min-w-0">
           <Link
-            href="/writing"
+            href="/blog"
             className="inline-flex items-center gap-2 text-stone-500 hover:text-black hover:bg-stone-100 transition-colors mb-4 text-sm px-2 py-1 -ml-2 rounded-md"
           >
             <svg aria-label="Go back" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -59,16 +59,14 @@ export default function BlogPostView({
             {formatPostDate(date, author, readingMinutes)}
           </p>
 
-          {coverImage && (
-            <img src={coverImage} alt={coverAlt ?? title} className="w-full mb-6" />
-          )}
+          {coverImage && <img src={coverImage} alt={coverAlt ?? title} className="w-full mb-6" />}
 
           <TableOfContents sections={sections} title={contentsLabel} variant="inline" />
 
           <hr className="border-stone-200 mb-8" />
 
           <div className="blog-markdown">
-            {children ?? <div dangerouslySetInnerHTML={{ __html: contentHtml ?? '' }} />}
+            {children ?? <div dangerouslySetInnerHTML={{ __html: contentHtml ?? "" }} />}
           </div>
 
           <Footer className="mt-10" />

@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 interface FooterProps {
   className?: string;
 }
 
-export default function Footer({ className = 'mt-20' }: FooterProps) {
+export default function Footer({ className = "mt-20" }: FooterProps) {
   return (
     <div
-      className={`${className} flex flex-wrap items-center justify-between gap-3 text-sm text-stone-600 max-w-xl w-full`}
+      className={`flex w-full max-w-xl flex-wrap items-center justify-between gap-3 text-sm text-stone-600 ${className}`}
     >
       {/* Social media icons */}
       <div className="flex items-center gap-2">

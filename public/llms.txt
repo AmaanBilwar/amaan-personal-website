@@ -29,8 +29,8 @@
 
 ## Blog
 
-- Blog index: https://amaandoes.tech (see the "blogs" section)
-- Posts live at https://amaandoes.tech/blogs/{slug}
+- Blog index: https://amaandoes.tech (see the "blog" section)
+- Posts live at https://amaandoes.tech/blog/{slug}
 
 ## Open source
 

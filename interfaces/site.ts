@@ -31,7 +31,10 @@ export interface SiteHome {
   currentlyReading?: { label: string; title: string };
   previously?: SiteSection<SiteRoleLinkItem>;
   projects?: SiteSection<SiteLinkItem>;
-  blogs?: { label: string; /** Slugs shown on the home page. Omit to show all. */ featured?: string[] };
+  blog?: {
+    label: string;
+    /** Slugs shown on the home page. Omit to show all. */ featured?: string[];
+  };
   reading?: {
     label: string;
     /** Titles from `_content/reading.md` shown on the home page. Omit to show all. */

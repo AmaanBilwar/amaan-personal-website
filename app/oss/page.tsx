@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import OssClient from "@/components/OssClient";
+import OssClient from "@/components/oss-client";
 import { getOssContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -9,7 +9,5 @@ export const metadata: Metadata = {
 
 export default function OssPage() {
   const oss = getOssContent();
-  return (
-    <OssClient title={oss.title} description={oss.description} items={oss.items ?? []} />
-  );
+  return <OssClient title={oss.title} items={oss.items} />;
 }

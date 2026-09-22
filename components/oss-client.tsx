@@ -1,18 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 import type { OssItem } from "@/interfaces/oss";
 
-export default function OssClient({
-  title,
-  description,
-  items,
-}: {
-  title: string;
-  description?: string;
-  items: OssItem[];
-}) {
+export default function OssClient({ title, items }: { title: string; items: OssItem[] }) {
   const categories = useMemo(() => {
     const present = [...new Set(items.map((item) => item.category).filter(Boolean))] as string[];
     return present.sort((a, b) => a.localeCompare(b));

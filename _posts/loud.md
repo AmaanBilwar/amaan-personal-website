@@ -4,7 +4,7 @@ listTitle: 'on speaking loudly'
 category: scratchpad
 date: '2026-07-20'
 author: 'Amaan'
-published: true
+published: false
 excerpt: 'A place for my expeditious brains scattered thoughts.'
 ---
 

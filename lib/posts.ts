@@ -2,7 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 import type { Post, PostCategory } from '@/interfaces/post';
-import { getReadingMinutes } from '@/lib/readingTime';
+import { getReadingMinutes } from '@/lib/reading-time';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
@@ -15,7 +15,7 @@ function parseCategory(value: unknown): PostCategory {
   throw new Error(`Invalid post category: ${String(value)}`);
 }
 
-export function getPostSlugs(): string[] {
+function getPostSlugs(): string[] {
   return fs
     .readdirSync(postsDirectory)
     .filter((file) => /\.mdx?$/.test(file) && !file.startsWith('_'));

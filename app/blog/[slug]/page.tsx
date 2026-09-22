@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import BlogPostView from "@/components/BlogPostView";
+import BlogPostView from "@/components/blog-post-view";
 import { getSiteContent } from "@/lib/content";
-import { extractHeadings } from "@/lib/extractHeadings";
-import markdownToHtml from "@/lib/markdownToHtml";
-import { mdxToReact } from "@/lib/mdxToReact";
+import { extractHeadings } from "@/lib/extract-headings";
+import markdownToHtml from "@/lib/markdown-to-html";
+import { mdxToReact } from "@/lib/mdx-to-react";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 
 type Params = {

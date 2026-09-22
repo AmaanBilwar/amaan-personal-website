@@ -1,11 +1,11 @@
-import { notFound } from 'next/navigation';
-import { buildPostMarkdown, markdownResponse } from '@/lib/markdownResponse';
-import { getAllPosts, getPostBySlug } from '@/lib/posts';
+import { notFound } from "next/navigation";
+import { buildPostMarkdown, markdownResponse } from "@/lib/markdown-response";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
 
 // Prerendered at build time (one static response per published post) so the
-// markdown for `/blogs/[slug]` is served as a cached static asset.
+// markdown for `/blog/[slug]` is served as a cached static asset.
 // `proxy.ts` rewrites `Accept: text/markdown` requests here.
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export function generateStaticParams(): { slug: string }[] {

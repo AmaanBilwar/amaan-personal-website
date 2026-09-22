@@ -4,7 +4,7 @@ listTitle: 'vimsert mode'
 category: tech
 date: '2026-06-28'
 author: 'Amaan'
-published: true
+published: false
 excerpt: "if you get used to this in vim, you're gonna be so much faster"
 ---
 

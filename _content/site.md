@@ -21,7 +21,7 @@ home:
         icon: /zed.png
         iconAlt: Zed
         detail: Hunting and fixing bugs in Zed as part of the community guild — shell breakage, agent quirks and ui, and whatever else broke.
-      - role: Multi-agent systems
+      - role: Multi-agent swarms 
         href: https://www.story.com/
         name: Story
         icon: /story.jpg
@@ -44,7 +44,7 @@ home:
     items:
       - label: yave 
         description: fast & agentic video editor in your browser 
-        href: https://amaandoes.tech/
+        href: https://useyave.vercel.app/
       - label: infinite storage engine 
         description: cloud storage as your filesystem 
         href: https://github.com/AmaanBilwar/infinite-storage.git
